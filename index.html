@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Prototipo del Observatorio ANESDOR de matriculaciones de motocicletas en España.">
+<title>Observatorio ANESDOR · Motocicletas</title>
+<style>
+:root{--ink:#17212b;--muted:#5d6b78;--line:#dce3e8;--paper:#f4f7f9;--panel:#fff;--accent:#155eef;--good:#137547;--bad:#b42318}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#101828;color:white;padding:1.3rem max(1rem,calc((100vw - 1200px)/2))}
+header .eyebrow{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#b2ccff}
+header h1{margin:.2rem 0;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.15}
+header p{margin:.5rem 0 0;color:#d0d5dd;max-width:760px}
+main{max-width:1200px;margin:1.25rem auto;padding:0 1rem 2rem}
+.notice{padding:.8rem 1rem;border:1px solid #f5c26b;background:#fff8e6;border-radius:10px;margin-bottom:1rem}
+.filters,.cards,.grid{display:grid;gap:1rem}.filters{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));padding:1rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:1rem}
+label{display:block;font-size:.85rem;font-weight:650;margin-bottom:.3rem}select,button{font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem .7rem;background:white;color:var(--ink);width:100%}
+button{cursor:pointer;font-weight:650}.actions{display:flex;gap:.6rem;align-items:end}.actions button{background:#155eef;color:white;border-color:#155eef}.actions button.secondary{background:white;color:var(--ink);border-color:#c8d1da}
+.cards{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin:1rem 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;min-width:0}
+.card .label{color:var(--muted);font-size:.85rem}.card .value{font-size:1.75rem;font-weight:750;letter-spacing:-.03em}.card .sub{font-size:.85rem;color:var(--muted)}
+.grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);margin:1rem 0}.panel h2{font-size:1.1rem;margin:0 0 .7rem}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:.65rem .5rem;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}th{font-size:.8rem;color:var(--muted);font-weight:700}
+.bar-row{display:grid;grid-template-columns:minmax(75px,110px) 1fr 75px;gap:.6rem;align-items:center;margin:.9rem 0;font-size:.9rem}.bar{height:14px;background:#e8eef5;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:var(--accent);border-radius:99px}.delta-positive{color:var(--good)}.delta-negative{color:var(--bad)}
+.small{font-size:.85rem;color:var(--muted)}footer{max-width:1200px;margin:auto;padding:1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+a{color:var(--accent)}.tag{display:inline-block;background:#eef4ff;color:#1849a9;padding:.15rem .45rem;border-radius:5px;font-size:.78rem;font-weight:700}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:90px 1fr 65px}th,td{padding:.5rem .25rem;font-size:.86rem}}
+@media print{body{background:white}header{background:white;color:black;padding:0 0 1rem}header p,header .eyebrow{color:#333}.filters,.actions,.notice .hide-print{display:none!important}main{max-width:none;margin:0;padding:0}.card,.panel{break-inside:avoid}.grid{grid-template-columns:1fr 1fr}footer{max-width:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Observatorio de matriculaciones · Prototipo</div>
+  <h1>Motocicletas en España</h1>
+  <p>Panel inicial basado en tablas públicas de ANESDOR. Comparativa interanual, propulsión y descarga de los datos visibles.</p>
+</header>
+<main>
+  <div class="notice"><strong>Alcance de esta primera versión:</strong> incluye una muestra verificable de septiembre de 2025 y su acumulado enero-septiembre, por tipo de propulsión. Todavía no es un histórico completo ni dispone de filtros por modelo o provincia. No confundir esta muestra con datos actuales de 2026.</div>
+  <section class="filters" aria-label="Filtros del informe">
+    <div><label for="period">Periodo</label><select id="period"><option value="month">Mes: septiembre</option><option value="ytd">Acumulado: enero-septiembre</option></select></div>
+    <div><label for="fuel">Tipo de propulsión</label><select id="fuel"><option value="all">Todas</option><option value="Gasolina">Gasolina</option><option value="Eléctrica">Eléctrica</option></select></div>
+    <div><label for="year">Año de referencia</label><select id="year"><option value="2025">2025 frente a 2024</option></select></div>
+    <div class="actions"><button id="csv">Exportar CSV</button><button class="secondary" id="pdf">Imprimir / guardar PDF</button></div>
+  </section>
+  <section class="cards" aria-label="Indicadores principales">
+    <article class="card"><div class="label">Matriculaciones 2025</div><div class="value" id="current">—</div><div class="sub" id="periodLabel">Septiembre</div></article>
+    <article class="card"><div class="label">Mismo periodo de 2024</div><div class="value" id="previous">—</div><div class="sub">Base de comparación</div></article>
+    <article class="card"><div class="label">Variación interanual</div><div class="value" id="change">—</div><div class="sub" id="units">Diferencia en unidades: —</div></article>
+    <article class="card"><div class="label">Peso de la propulsión eléctrica</div><div class="value" id="electricShare">—</div><div class="sub">Sobre el total de motocicletas</div></article>
+  </section>
+  <section class="grid">
+    <article class="panel"><h2>Matriculaciones por propulsión</h2><div id="bars"></div><p class="small">La longitud de las barras representa las unidades de 2025 dentro del filtro elegido.</p></article>
+    <article class="panel"><h2>Tabla trazable</h2><div style="overflow-x:auto"><table><thead><tr><th>Propulsión</th><th>2025</th><th>2024</th><th>Δ unidades</th><th>Variación</th></tr></thead><tbody id="rows"></tbody></table></div><p class="small">Las variaciones se recalculan a partir de los valores de la fuente. Si el dato anterior es cero, la variación se muestra como no calculable.</p></article>
+  </section>
+  <section class="panel">
+    <h2>Fuente, metodología y estado</h2>
+    <p><strong>Fuente:</strong> ANESDOR / MSI, según el PDF oficial enlazado. <strong>Fecha de actualización de este prototipo:</strong> 26/10/2026. <strong>Periodo de los datos de muestra:</strong> septiembre de 2025 y acumulado enero-septiembre de 2025.</p>
+    <p>El informe de origen contiene tablas de matriculaciones de motocicletas por tipo de propulsión. Este prototipo no mezcla motocicletas con ciclomotores, triciclos ni otras categorías de vehículos ligeros.</p>
+    <p><strong>Documento original:</strong> <a href="https://www.anesdor.com/wp-content/uploads/2025/10/250930-Propulsi%C3%B3n-vn-septiembre.pdf" target="_blank" rel="noopener">Matriculaciones por tipo de propulsión · septiembre de 2025 (PDF)</a>.</p>
+    <p class="small">Limitaciones: muestra de un solo periodo; no se ha implementado todavía la descarga automática mensual, el archivo de todos los PDF, el desglose por modelos ni el desglose territorial. La próxima fase debe incorporar más meses y validación automática contra los documentos originales.</p>
+  </section>
+</main>
+<footer>Fuente: ANESDOR. Fecha de actualización del prototipo: 26/10/2026. Este sitio es un prototipo independiente y no está afiliado a ANESDOR.</footer>
+<script>
+const data = {
+  month: [
+    {fuel:"Gasolina",current:22533,previous:19493},
+    {fuel:"Eléctrica",current:369,previous:445}
+  ],
+  ytd: [
+    {fuel:"Gasolina",current:176175,previous:159663},
+    {fuel:"Eléctrica",current:4766,previous:3954}
+  ]
+};
+const fmt = n => new Intl.NumberFormat('es-ES').format(n);
+const pct = (a,b) => b === 0 ? null : (a-b)/b*100;
+function render(){
+ const period=document.querySelector('#period').value, fuel=document.querySelector('#fuel').value;
+ const all=data[period], rows=fuel==='all'?all:all.filter(x=>x.fuel===fuel);
+ const cur=rows.reduce((s,x)=>s+x.current,0), prev=rows.reduce((s,x)=>s+x.previous,0), diff=cur-prev, p=pct(cur,prev);
+ const total=data[period].reduce((s,x)=>s+x.current,0), electric=data[period].find(x=>x.fuel==='Eléctrica').current;
+ document.querySelector('#current').textContent=fmt(cur);
+ document.querySelector('#previous').textContent=fmt(prev);
+ document.querySelector('#change').textContent=p===null?'N/D':(p>0?'+':'')+p.toLocaleString('es-ES',{maximumFractionDigits:2})+'%';
+ document.querySelector('#change').className='value '+(diff>0?'delta-positive':diff<0?'delta-negative':'');
+ document.querySelector('#units').textContent='Diferencia en unidades: '+(diff>0?'+':'')+fmt(diff);
+ document.querySelector('#periodLabel').textContent=period==='month'?'Septiembre de 2025':'Enero-septiembre de 2025';
+ document.querySelector('#electricShare').textContent=(electric/total*100).toLocaleString('es-ES',{maximumFractionDigits:2})+'%';
+ document.querySelector('#rows').innerHTML=rows.map(x=>{
+   const d=x.current-x.previous, v=pct(x.current,x.previous);
+   return `<tr><td>${x.fuel}</td><td>${fmt(x.current)}</td><td>${fmt(x.previous)}</td><td>${d>0?'+':''}${fmt(d)}</td><td class="${d>0?'delta-positive':d<0?'delta-negative':''}">${v===null?'N/D':(v>0?'+':'')+v.toLocaleString('es-ES',{maximumFractionDigits:2})+'%'}</td></tr>`;
+ }).join('')+`<tr><th>Total filtrado</th><th>${fmt(cur)}</th><th>${fmt(prev)}</th><th>${diff>0?'+':''}${fmt(diff)}</th><th>${p===null?'N/D':(p>0?'+':'')+p.toLocaleString('es-ES',{maximumFractionDigits:2})+'%'}</th></tr>`;
+ const max=Math.max(...rows.map(x=>x.current),1);
+ document.querySelector('#bars').innerHTML=rows.map(x=>`<div class="bar-row"><span>${x.fuel}</span><div class="bar"><span style="width:${x.current/max*100}%"></span></div><strong>${fmt(x.current)}</strong></div>`).join('');
+}
+function exportCSV(){
+ const period=document.querySelector('#period').value, fuel=document.querySelector('#fuel').value;
+ const rows=data[period].filter(x=>fuel==='all'||x.fuel===fuel);
+ const lines=[['fuente','periodo','propulsion','matriculaciones_2025','matriculaciones_2024','diferencia_unidades','variacion_interanual_pct']];
+ rows.forEach(x=>lines.push(['ANESDOR',period==='month'?'2025-09':'2025-01/2025-09',x.fuel,x.current,x.previous,x.current-x.previous,pct(x.current,x.previous)??'']));
+ const csv='\ufeff'+lines.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')).join('\r\n');
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}), url=URL.createObjectURL(blob), a=document.createElement('a');
+ a.href=url;a.download='anesdor_motocicletas_'+period+'.csv';a.click();URL.revokeObjectURL(url);
+}
+document.querySelector('#period').addEventListener('change',render);
+document.querySelector('#fuel').addEventListener('change',render);
+document.querySelector('#csv').addEventListener('click',exportCSV);
+document.querySelector('#pdf').addEventListener('click',()=>window.print());
+render();
+</script>
+</body>
+</html>
