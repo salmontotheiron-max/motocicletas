@@ -1,40 +1,43 @@
-# Observatorio ANESDOR — prototipo inicial
+# Observatorio del mercado de automoción en España
 
-## Qué incluye
-- Web estática responsive.
-- Selector de periodo (septiembre de 2025 o acumulado enero-septiembre de 2025).
-- Filtro por tipo de propulsión.
-- Indicadores y variación interanual calculados en el navegador.
-- Exportación de la tabla filtrada a CSV.
-- Impresión del informe / guardar como PDF desde el navegador.
-- Enlace al PDF oficial utilizado.
+## Estado de la integración MATRABA
 
-## Datos incluidos
-Transcripción de la tabla de matriculaciones de motocicletas por tipo de propulsión del informe oficial ANESDOR:
-https://www.anesdor.com/wp-content/uploads/2025/10/250930-Propulsi%C3%B3n-vn-septiembre.pdf
+Se ha añadido un primer procesador de microdatos diarios MATRABA y un workflow de GitHub Actions en la rama `integracion-matraba-inicial`. Esta fase todavía no sustituye el dashboard ANESDOR ni debe considerarse validada para publicación hasta ejecutar el workflow y revisar los resultados.
 
-Septiembre 2025:
-- Gasolina: 22.533; septiembre 2024: 19.493
-- Eléctrica: 369; septiembre 2024: 445
-- Total: 22.902; septiembre 2024: 19.938
+### Procesador
 
-Acumulado enero-septiembre:
-- Gasolina: 176.175; enero-septiembre 2024: 159.663
-- Eléctrica: 4.766; enero-septiembre 2024: 3.954
-- Total: 180.941; enero-septiembre 2024: 163.617
+Ejecutar localmente:
 
-## Limitaciones
-Es una muestra funcional de interfaz y cálculo, no todavía un sistema de actualización automática ni una serie histórica completa. No contiene modelos ni provincias. No se deben presentar estos datos como los datos actuales de 2026.
+```bash
+python procesar_matraba.py --input-dir datos/matraba --output-dir public/data
+```
 
-## Publicación gratuita sugerida
-1. Crear un repositorio público en GitHub.
-2. Subir `index.html` a la raíz.
-3. En Settings → Pages, elegir desplegar desde la rama principal y carpeta raíz.
-4. GitHub Pages publicará una URL pública del tipo `https://USUARIO.github.io/REPOSITORIO/`.
+El directorio de entrada acepta archivos `export_mat_YYYYMMDD.txt` desde el 1 de septiembre de 2026. El procesador valida registros de ancho fijo (69 campos/714 caracteres) y que `FEC_PROCESO` coincida con la fecha del nombre del archivo. Los agregados se reconstruyen desde los archivos presentes; al reemplazar un archivo diario y volver a ejecutar, sus recuentos sustituyen los de esa fecha en lugar de sumarse a una ejecución anterior.
 
-## Siguiente fase
-- Auditar la serie mensual de PDF de ANESDOR.
-- Descargar y versionar los documentos originales.
-- Añadir los informes de cilindrada, modelos y geografía sólo cuando los PDF permitan verificar los datos.
-- Programar comprobaciones el día 15 y 20 mediante GitHub Actions.
-- Mantener una copia independiente del repositorio y exportaciones periódicas de los datos.
+### Salidas
+
+- `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: trámites `CLAVE_TRAMITE=1`, por periodo, código de tipo y nuevo/usado.
+- `public/data/tipo_operacion.csv`: trámites de códigos 1–9, A y B.
+- `public/data/manifest.json`: SHA-256 y cantidad de registros de cada fuente.
+- `public/data/periodos.json`: periodos con datos procesados.
+- `public/data/resumen.json`: resumen de ejecución y nota para los recuentos marcados con asterisco.
+
+Para vehículos nuevos se usa el mes de `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITACION`; si falta o es posterior a `FEC_PROCESO`, se usa la fecha de proceso y se marca con asterisco. La etiqueta `CLAVE_TRAMITE=1` significa matriculación ordinaria y de ciclomotores; no implica por sí sola que todos los vehículos sean nuevos.
+
+Si no hay archivos para un periodo, la interfaz debe mostrar literalmente **Dato no disponible en DGT**, no un cero. Un cero solo debe mostrarse si se ha procesado la fuente pertinente y no hay registros de esa categoría. No se deduplican automáticamente filas idénticas.
+
+### Actualización programada
+
+El workflow `.github/workflows/actualizar-matraba.yml` puede ejecutarse manualmente desde **GitHub → Actions → Actualizar datos MATRABA → Run workflow** y tiene una programación diaria. Descarga los ZIP diarios que estén disponibles desde el 1 de septiembre de 2026, procesa el conjunto y guarda los agregados en `public/data`.
+
+### Validación pendiente antes de publicación
+
+1. Ejecutar manualmente el workflow en la rama de trabajo.
+2. Comprobar los registros descargados y los SHA-256 del manifiesto contra los archivos oficiales.
+3. Revisar los CSV y confirmar que los meses incompletos se etiqueten como provisionales.
+4. Revisar el resultado de la descarga DGT: un fallo de red o un archivo no disponible no debe interpretarse como un día con cero matriculaciones.
+5. Mantener fuera de la web los microdatos originales y los campos identificativos o sensibles.
+
+## Prototipo anterior ANESDOR
+
+El `index.html` existente sigue siendo el prototipo estático ANESDOR de 2025. La incorporación del procesador no ha conectado todavía sus CSV al dashboard ni ha cambiado el contenido publicado.
