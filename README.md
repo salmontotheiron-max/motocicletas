@@ -2,7 +2,22 @@
 
 ## Estado de la integración MATRABA
 
-Se ha añadido un primer procesador de microdatos diarios MATRABA y un workflow de GitHub Actions en la rama `integracion-matraba-inicial`. Esta fase todavía no sustituye el dashboard ANESDOR ni debe considerarse validada para publicación hasta ejecutar el workflow y revisar los resultados.
+Se ha añadido un procesador de microdatos diarios MATRABA y un workflow de GitHub Actions en la rama `integracion-matraba-inicial`. Esta fase todavía no sustituye el dashboard ANESDOR ni debe considerarse validada para publicación hasta comprobar la cobertura de fuentes y los resultados.
+
+### Ámbito del observatorio
+
+El informe se limita a motocicletas y ciclomotores, manteniendo cada código `COD_TIPO` por separado:
+
+- `50`: Motocicleta de 2 ruedas sin sidecar.
+- `51`: Motocicleta con sidecar.
+- `52`: Motocarro.
+- `53`: Automóvil de 3 ruedas.
+- `54`: Cuadriciclo pesado.
+- `90`: Ciclomotor de 2 ruedas.
+- `91`: Ciclomotor de 3 ruedas.
+- `92`: Cuadriciclo ligero.
+
+Los códigos ajenos a este catálogo se excluyen de ambos informes. El código `60`, por ejemplo, corresponde a coche de inválido y no forma parte del ámbito.
 
 ### Procesador
 
@@ -16,11 +31,11 @@ El directorio de entrada acepta archivos `export_mat_YYYYMMDD.txt` desde el 1 de
 
 ### Salidas
 
-- `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: trámites `CLAVE_TRAMITE=1`, por periodo, código de tipo y nuevo/usado.
-- `public/data/tipo_operacion.csv`: trámites de códigos 1–9, A y B.
-- `public/data/manifest.json`: SHA-256 y cantidad de registros de cada fuente.
-- `public/data/periodos.json`: periodos con datos procesados.
-- `public/data/resumen.json`: resumen de ejecución y nota para los recuentos marcados con asterisco.
+- `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: trámites `CLAVE_TRAMITE=1`, por periodo, código de tipo y nuevo/usado, limitados al catálogo anterior.
+- `public/data/tipo_operacion.csv`: operaciones con claves 1–9, A y B, limitadas al mismo catálogo de tipos.
+- `public/data/manifest.json`: SHA-256 y cantidad de registros de cada fuente, además del filtro aplicado.
+- `public/data/periodos.json`: periodos con matriculaciones procesadas.
+- `public/data/resumen.json`: resumen de ejecución, filtro aplicado, exclusiones por código de tipo y nota para los recuentos marcados con asterisco.
 
 Para vehículos nuevos se usa el mes de `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITACION`; si falta o es posterior a `FEC_PROCESO`, se usa la fecha de proceso y se marca con asterisco. La etiqueta `CLAVE_TRAMITE=1` significa matriculación ordinaria y de ciclomotores; no implica por sí sola que todos los vehículos sean nuevos.
 
@@ -35,7 +50,7 @@ El workflow `.github/workflows/actualizar-matraba.yml` puede ejecutarse manualme
 1. Ejecutar manualmente el workflow en la rama de trabajo.
 2. Comprobar los registros descargados y los SHA-256 del manifiesto contra los archivos oficiales.
 3. Revisar los CSV y confirmar que los meses incompletos se etiqueten como provisionales.
-4. Revisar el resultado de la descarga DGT: un fallo de red o un archivo no disponible no debe interpretarse como un día con cero matriculaciones.
+4. Revisar la descarga DGT: un fallo de red o un archivo no disponible no debe interpretarse como un día con cero matriculaciones.
 5. Mantener fuera de la web los microdatos originales y los campos identificativos o sensibles.
 
 ## Prototipo anterior ANESDOR
