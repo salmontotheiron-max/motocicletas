@@ -119,7 +119,7 @@ def main():
  coverage={}
  if a.coverage_file:
   coverage=json.loads(Path(a.coverage_file).read_text(encoding='utf-8'))
-  (out/'cobertura_diaria.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+  (out/'cobertura_diaria.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  monthly={}
  for day in coverage.get('dias',[]):
   month=day['fecha'][:7]
@@ -131,8 +131,8 @@ def main():
   states=dict(entry['estados']); total=entry['dias_inventariados']
   valid=states.get('descargado_validado',0)
   month_status[month]={'estado':'completo' if valid==total else 'incompleto','dias_inventariados':total,'dias_descargados_validados':valid,'estados':states,'mensaje':None if valid else MISSING}
- (out/'manifest.json').write_text(json.dumps({'criterio_inicio':'2026-09-01','filtro_cod_tipo':sorted(TARGET_TYPE_CODES),'archivos':manifest,'cobertura_diaria':coverage.get('dias',[]),'cobertura_mensual':month_status},ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
- (out/'periodos.json').write_text(json.dumps({'periodos_disponibles':sorted(periods),'cobertura_mensual':month_status,'mensaje_sin_datos':MISSING},ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+ (out/'manifest.json').write_text(json.dumps({'criterio_inicio':'2026-09-01','filtro_cod_tipo':sorted(TARGET_TYPE_CODES),'archivos':manifest,'cobertura_diaria':coverage.get('dias',[]),'cobertura_mensual':month_status},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+ (out/'periodos.json').write_text(json.dumps({'periodos_disponibles':sorted(periods),'cobertura_mensual':month_status,'mensaje_sin_datos':MISSING},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  (out/'resumen.json').write_text(
   json.dumps({
    'archivos_procesados':len(manifest),
