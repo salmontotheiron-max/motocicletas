@@ -17,26 +17,6 @@ jobs:
           python-version: "3.x"
       - name: Ejecutar pruebas unitarias
         run: python -m unittest discover -s tests -v
-      - name: Descargar ficheros diarios disponibles desde septiembre de 2026
-        shell: bash
-        run: |
-          mkdir -p datos/matraba
-          start=$(date -u -d '2026-09-01' +%F)
-          end=$(date -u -d 'yesterday' +%F)
-          day="$start"
-          while [[ "$day" < "$end" || "$day" == "$end" ]]; do
-            stamp=$(date -u -d "$day" +%Y%m%d)
-            year=$(date -u -d "$day" +%Y)
-            month=$(date -u -d "$day" +%m)
-            url="https://www.dgt.es/microdatos/salida/$year/$month/vehiculos/matriculaciones/export_mat_$stamp.zip"
-            code=$(curl -L -sS -o "/tmp/$stamp.zip" -w '%{http_code}' "$url" || true)
-            if [[ "$code" == "200" ]] && unzip -tq "/tmp/$stamp.zip" >/dev/null 2>&1; then
-              unzip -Z1 "/tmp/$stamp.zip" | while IFS= read -r entry; do
-                if [[ "$entry" == *.txt ]]; then unzip -p "/tmp/$stamp.zip" "$entry" > "datos/matraba/export_mat_$stamp.txt"; fi
-              done
-            fi
-            day=$(date -u -d "$day + 1 day" +%F)
-          done
       - name: Generar inventario diario de descargas DGT
         run: python descargar_matraba.py --start 2026-09-01 --end "$(date -u -d 'yesterday' +%F)" --output-dir datos/matraba --coverage-file public/data/cobertura_diaria.json
       - name: Procesar todos los ficheros descargados y su cobertura
