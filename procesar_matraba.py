@@ -49,6 +49,7 @@ def main():
  p=argparse.ArgumentParser()
  p.add_argument('--input-dir',required=True)
  p.add_argument('--output-dir',required=True)
+ p.add_argument('--coverage-file')
  a=p.parse_args()
  src=Path(a.input_dir);out=Path(a.output_dir);out.mkdir(parents=True,exist_ok=True)
  counts=Counter();opcounts=Counter();manifest=[];periods=set()
