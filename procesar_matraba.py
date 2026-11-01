@@ -21,7 +21,16 @@ def main():
   if not m:continue
   named=datetime.strptime(m.group(1),'%Y%m%d').date();raw=f.read_bytes()
   if len(raw)%714:raise ValueError(f'{f.name}: tamaño total no divisible entre 714')
-  text=raw.decode('cp1252');rows=[text[i:i+714] for i in range(0,len(text),714) if text[i:i+714].strip()]
+  # MATRABA puede distribuir registros consecutivos o separados por CRLF/LF.
+  normalized=raw.replace(b'\\r\\n',b'\\n')
+  physical=[line for line in normalized.split(b'\\n') if line.strip()]
+  if physical and all(len(line)==714 for line in physical):
+   rows=[line.decode('cp1252') for line in physical]
+  elif len(raw)%714==0:
+   rows=[raw[i:i+714].decode('cp1252') for i in range(0,len(raw),714) if raw[i:i+714].strip()]
+  else:
+   lengths=sorted(set(len(line) for line in physical))
+   raise ValueError(f'{f.name}: registros de ancho inesperado; longitudes detectadas: {lengths[:10]}')
   for n,row in enumerate(rows,1):
    if len(row)!=714:raise ValueError(f'{f.name}:{n}: registro no mide 714 bytes')
    vals=[];pos=0
