@@ -23,13 +23,15 @@ def main():
   # MATRABA puede distribuir registros consecutivos o separados por CRLF/LF.
   normalized=raw.replace(b'\r\n',b'\n')
   physical=[line for line in normalized.split(b'\n') if line.strip()]
-  if physical and all(len(line)==714 for line in physical):
-   rows=[line.decode('cp1252') for line in physical]
-  elif len(raw)%714==0:
-   rows=[raw[i:i+714].decode('cp1252') for i in range(0,len(raw),714) if raw[i:i+714].strip()]
-  else:
-   lengths=sorted(set(len(line) for line in physical))
-   raise ValueError(f'{f.name}: registros de ancho inesperado; longitudes detectadas: {lengths[:10]}')
+  # La DGT antepone una línea informativa con la última matrícula asignada.
+  header=b'Veh\xedculos matriculados. Letras de la serie de la \xfaltima matr\xedcula asignada:'
+  if physical and physical[0].startswith(header):
+   physical=physical[1:]
+  invalid=[len(line) for line in physical if len(line)!=714]
+  if invalid:
+   lengths=sorted(set(invalid))
+   raise ValueError(f'{f.name}: registros de ancho inesperado tras retirar cabecera DGT reconocida; longitudes detectadas: {lengths[:10]}')
+  rows=[line.decode('cp1252') for line in physical]
   for n,row in enumerate(rows,1):
    if len(row)!=714:raise ValueError(f'{f.name}:{n}: registro no mide 714 bytes')
    vals=[];pos=0
