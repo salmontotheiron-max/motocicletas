@@ -33,8 +33,9 @@ El directorio de entrada acepta archivos `export_mat_YYYYMMDD.txt` desde el 1 de
 
 - `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: trámites `CLAVE_TRAMITE=1`, por periodo, código de tipo y nuevo/usado, limitados al catálogo anterior.
 - `public/data/tipo_operacion.csv`: operaciones con claves 1–9, A y B, limitadas al mismo catálogo de tipos.
-- `public/data/manifest.json`: SHA-256 y cantidad de registros de cada fuente, además del filtro aplicado.
-- `public/data/periodos.json`: periodos con matriculaciones procesadas.
+- `public/data/manifest.json`: SHA-256 y cantidad de registros de cada fuente, filtro aplicado e inventario diario/mensual.
+- `public/data/cobertura_diaria.json`: un registro por cada día consultado, con estado de descarga, HTTP, validación y número de registros.
+- `public/data/periodos.json`: periodos con matriculaciones procesadas y estado de cobertura mensual.
 - `public/data/resumen.json`: resumen de ejecución, filtro aplicado, exclusiones por código de tipo y nota para los recuentos marcados con asterisco.
 
 Para vehículos nuevos se usa el mes de `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITACION`; si falta o es posterior a `FEC_PROCESO`, se usa la fecha de proceso y se marca con asterisco. La etiqueta `CLAVE_TRAMITE=1` significa matriculación ordinaria y de ciclomotores; no implica por sí sola que todos los vehículos sean nuevos.
@@ -43,14 +44,14 @@ Si no hay archivos para un periodo, la interfaz debe mostrar literalmente **Dato
 
 ### Actualización programada
 
-El workflow `.github/workflows/actualizar-matraba.yml` puede ejecutarse manualmente desde **GitHub → Actions → Actualizar datos MATRABA → Run workflow** y tiene una programación diaria. Descarga los ZIP diarios que estén disponibles desde el 1 de septiembre de 2026, procesa el conjunto y guarda los agregados en `public/data`.
+El workflow `.github/workflows/actualizar-matraba.yml` puede ejecutarse manualmente desde **GitHub → Actions → Actualizar datos MATRABA → Run workflow** y tiene una programación diaria. El descargador `descargar_matraba.py` consulta todos los días desde el 1 de septiembre de 2026 y clasifica cada resultado como `descargado_validado`, `no_encontrado_dgt`, `error_http`, `error_red` o `fichero_invalido`. Valida ZIP, TXT, ancho de 714 bytes y `FEC_PROCESO`. Un día con HTTP 404 no se convierte en cero matriculaciones. Los meses solo se consideran completos si todos sus días inventariados tienen un fichero validado; en otro caso se etiquetan como incompletos. Los ficheros con pocos registros no se descartan por volumen.
 
 ### Validación pendiente antes de publicación
 
 1. Ejecutar manualmente el workflow en la rama de trabajo.
 2. Comprobar los registros descargados y los SHA-256 del manifiesto contra los archivos oficiales.
 3. Revisar los CSV y confirmar que los meses incompletos se etiqueten como provisionales.
-4. Revisar la descarga DGT: un fallo de red o un archivo no disponible no debe interpretarse como un día con cero matriculaciones.
+4. Revisar `cobertura_diaria.json`: un HTTP 404 se registra como no encontrado en DGT; los fallos de red/HTTP y los ficheros inválidos quedan diferenciados. Ninguno se interpreta como un día con cero matriculaciones.
 5. Mantener fuera de la web los microdatos originales y los campos identificativos o sensibles.
 
 ## Prototipo anterior ANESDOR
