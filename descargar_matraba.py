@@ -2,7 +2,6 @@
 """Descarga MATRABA y genera una auditoría diaria de cobertura."""
 import argparse
 import json
-import re
 import time
 import zipfile
 from datetime import date, datetime, timedelta
@@ -62,6 +61,10 @@ def inspect_zip(payload, expected_day):
 def download_day(day, output_dir, opener=urlopen, retries=2, pause=1):
     stamp = day.strftime("%Y%m%d")
     url = BASE.format(year=day.strftime("%Y"), month=day.strftime("%m"), stamp=stamp)
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    path = output_dir / f"export_mat_{stamp}.txt"
+    path.unlink(missing_ok=True)  # Evita reutilizar una descarga anterior fallida.
     last_error = None
     for attempt in range(retries + 1):
         try:
@@ -76,7 +79,6 @@ def download_day(day, output_dir, opener=urlopen, retries=2, pause=1):
             data, error, count = inspect_zip(payload, day)
             if error:
                 return {"fecha": day.isoformat(), "estado": "fichero_invalido", "detalle": error, "registros": count, "http_status": 200}
-            path = output_dir / f"export_mat_{stamp}.txt"
             path.write_bytes(data)
             return {"fecha": day.isoformat(), "estado": "descargado_validado", "archivo": path.name, "registros": count, "http_status": 200}
         except HTTPError as exc:
