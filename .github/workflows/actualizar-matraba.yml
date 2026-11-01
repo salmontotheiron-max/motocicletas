@@ -1,0 +1,48 @@
+name: Actualizar datos MATRABA
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "25 5 * * *"
+permissions:
+  contents: write
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integracion-matraba-inicial
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Descargar ficheros diarios disponibles desde septiembre de 2026
+        shell: bash
+        run: |
+          mkdir -p datos/matraba
+          start=$(date -u -d '2026-09-01' +%F)
+          end=$(date -u -d 'yesterday' +%F)
+          day="$start"
+          while [[ "$day" < "$end" || "$day" == "$end" ]]; do
+            stamp=$(date -u -d "$day" +%Y%m%d)
+            year=$(date -u -d "$day" +%Y)
+            month=$(date -u -d "$day" +%m)
+            url="https://www.dgt.es/microdatos/salida/$year/$month/vehiculos/matriculaciones/export_mat_$stamp.zip"
+            code=$(curl -L -sS -o "/tmp/$stamp.zip" -w '%{http_code}' "$url" || true)
+            if [[ "$code" == "200" ]] && unzip -tq "/tmp/$stamp.zip" >/dev/null 2>&1; then
+              unzip -Z1 "/tmp/$stamp.zip" | while IFS= read -r entry; do
+                if [[ "$entry" == *.txt ]]; then unzip -p "/tmp/$stamp.zip" "$entry" > "datos/matraba/export_mat_$stamp.txt"; fi
+              done
+            fi
+            day=$(date -u -d "$day + 1 day" +%F)
+          done
+      - name: Procesar todos los ficheros descargados
+        run: python procesar_matraba.py --input-dir datos/matraba --output-dir public/data
+      - name: Publicar agregados y manifiesto
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualiza agregados MATRABA"
+            git push origin integracion-matraba-inicial
+          fi
