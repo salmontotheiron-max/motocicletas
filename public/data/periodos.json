@@ -2,5 +2,26 @@
   "periodos_disponibles": [
     "2026-10"
   ],
+  "cobertura_mensual": {
+    "2026-09": {
+      "estado": "incompleto",
+      "dias_inventariados": 30,
+      "dias_descargados_validados": 0,
+      "estados": {
+        "no_encontrado_dgt": 30
+      },
+      "mensaje": "Dato no disponible en DGT"
+    },
+    "2026-10": {
+      "estado": "incompleto",
+      "dias_inventariados": 31,
+      "dias_descargados_validados": 24,
+      "estados": {
+        "descargado_validado": 24,
+        "no_encontrado_dgt": 7
+      },
+      "mensaje": null
+    }
+  },
   "mensaje_sin_datos": "Dato no disponible en DGT"
 }
