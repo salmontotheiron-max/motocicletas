@@ -37,8 +37,10 @@ jobs:
             fi
             day=$(date -u -d "$day + 1 day" +%F)
           done
-      - name: Procesar todos los ficheros descargados
-        run: python procesar_matraba.py --input-dir datos/matraba --output-dir public/data
+      - name: Generar inventario diario de descargas DGT
+        run: python descargar_matraba.py --start 2026-09-01 --end "$(date -u -d 'yesterday' +%F)" --output-dir datos/matraba --coverage-file public/data/cobertura_diaria.json
+      - name: Procesar todos los ficheros descargados y su cobertura
+        run: python procesar_matraba.py --input-dir datos/matraba --output-dir public/data --coverage-file public/data/cobertura_diaria.json
       - name: Publicar agregados y manifiesto
         run: |
           git config user.name "github-actions[bot]"
