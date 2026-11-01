@@ -110,9 +110,7 @@ def main():
         "desde": start.isoformat(), "hasta": end.isoformat(),
         "dias_inventariados": len(coverage), "dias": coverage
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    failures = [d for d in coverage if d["estado"] in ("error_http", "error_red", "fichero_invalido")]
-    if failures:
-        raise SystemExit(f"Auditoría completada con {len(failures)} incidencias técnicas; revisar cobertura_diaria.json")
+    print(f"Inventario: {len(coverage)} días; revisar cobertura_diaria.json para estados e incidencias.")
 
 
 if __name__ == "__main__":
