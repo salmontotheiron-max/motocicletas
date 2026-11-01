@@ -20,10 +20,9 @@ def main():
   m=re.fullmatch(r'export_mat_(\d{8})\.txt',f.name)
   if not m:continue
   named=datetime.strptime(m.group(1),'%Y%m%d').date();raw=f.read_bytes()
-  if len(raw)%714:raise ValueError(f'{f.name}: tamaño total no divisible entre 714')
   # MATRABA puede distribuir registros consecutivos o separados por CRLF/LF.
-  normalized=raw.replace(b'\\r\\n',b'\\n')
-  physical=[line for line in normalized.split(b'\\n') if line.strip()]
+  normalized=raw.replace(b'\r\n',b'\n')
+  physical=[line for line in normalized.split(b'\n') if line.strip()]
   if physical and all(len(line)==714 for line in physical):
    rows=[line.decode('cp1252') for line in physical]
   elif len(raw)%714==0:
