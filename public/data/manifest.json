@@ -1,5 +1,15 @@
 {
   "criterio_inicio": "2026-09-01",
+  "filtro_cod_tipo": [
+    "50",
+    "51",
+    "52",
+    "53",
+    "54",
+    "90",
+    "91",
+    "92"
+  ],
   "archivos": [
     {
       "archivo": "export_mat_20261001.txt",

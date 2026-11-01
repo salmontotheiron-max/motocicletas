@@ -1,7 +1,18 @@
 {
   "archivos_procesados": 24,
-  "registros_matriculaciones": 170284,
-  "registros_operaciones": 176795,
+  "registros_matriculaciones": 27843,
+  "registros_operaciones": 27898,
+  "filtro_cod_tipo": [
+    "50",
+    "51",
+    "52",
+    "53",
+    "54",
+    "90",
+    "91",
+    "92"
+  ],
+  "registros_excluidos_por_cod_tipo": 148897,
   "nota_fecha": "* Fecha de referencia asignada a partir de la fecha de proceso del fichero DGT, al no existir una fecha de tramitación válida o por ser esta posterior a la fecha de proceso.",
   "privacidad": "No exportar campos personales ni identificadores sensibles."
 }
