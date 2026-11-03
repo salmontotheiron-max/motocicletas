@@ -154,6 +154,12 @@
       "sha256": "14eec3269b39b06d7b58d4c712d30b2bd35e0a99df305dac9f751feeee3b2aaa",
       "registros": 21158,
       "fecha_proceso": "2026-10-30"
+    },
+    {
+      "archivo": "export_mat_20261031.txt",
+      "sha256": "7afc0edec3b9a11db3dcc4dcb0f0d4868851cc88414c884aeaaef9f93a69eb43",
+      "registros": 1,
+      "fecha_proceso": "2026-10-31"
     }
   ],
   "cobertura_diaria": [],
