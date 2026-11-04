@@ -1,6 +1,7 @@
 {
   "periodos_disponibles": [
-    "2026-10"
+    "2026-10",
+    "2026-11"
   ],
   "cobertura_mensual": {},
   "mensaje_sin_datos": "Dato no disponible en DGT"

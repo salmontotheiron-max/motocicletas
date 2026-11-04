@@ -160,6 +160,18 @@
       "sha256": "7afc0edec3b9a11db3dcc4dcb0f0d4868851cc88414c884aeaaef9f93a69eb43",
       "registros": 1,
       "fecha_proceso": "2026-10-31"
+    },
+    {
+      "archivo": "export_mat_20261102.txt",
+      "sha256": "ae0b66845b6b627fd41dcdb2340dc1f627b43eef23a4d34b30791e1314ae797c",
+      "registros": 1701,
+      "fecha_proceso": "2026-11-02"
+    },
+    {
+      "archivo": "export_mat_20261103.txt",
+      "sha256": "a0add387774d5b2fea40d99a5afcf6923ec50e8d2ea988defa00cb5ff9b49c5c",
+      "registros": 5664,
+      "fecha_proceso": "2026-11-03"
     }
   ],
   "cobertura_diaria": [],
