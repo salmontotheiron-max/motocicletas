@@ -68,15 +68,45 @@ jobs:
             --coverage-file public/data/cobertura_diaria.json
 
       # Publicar sólo si hay cambios en los agregados/manifiestos.
+      # Antes de cada push se integra el último estado remoto mediante rebase.
+      # Si otro proceso publica a la vez, se vuelve a intentar. Nunca se fuerza
+      # el push: un conflicto real detiene el workflow sin sobrescribir datos.
       - name: Publicar agregados y manifiesto
+        shell: bash
         run: |
+          set -euo pipefail
+          branch="integracion-matraba-inicial"
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data
-          if ! git diff --cached --quiet; then
-            git commit -m "Actualiza agregados MATRABA"
-            git push origin integracion-matraba-inicial
+
+          if git diff --cached --quiet; then
+            echo "No hay cambios en public/data; no es necesario publicar."
+            exit 0
           fi
+
+          git commit -m "Actualiza agregados MATRABA"
+
+          # Reintentar ante una actualización concurrente de la rama remota.
+          for attempt in 1 2 3; do
+            echo "Publicación: intento $attempt de 3."
+            git fetch origin "$branch"
+
+            # Integra los commits remotos sin sobrescribirlos.
+            # Si hay conflictos, rebase devuelve error y el workflow se detiene.
+            git rebase "origin/$branch"
+
+            if git push origin "HEAD:$branch"; then
+              echo "Agregados y manifiestos publicados correctamente."
+              exit 0
+            fi
+
+            echo "El push no ha prosperado; se volverá a consultar la rama remota."
+          done
+
+          echo "No se pudo publicar tras 3 intentos." >&2
+          exit 1
 
       # ------------------------------------------------------------------
       # ESCENARIO 1 CONSERVADO (NO ACTIVO)
