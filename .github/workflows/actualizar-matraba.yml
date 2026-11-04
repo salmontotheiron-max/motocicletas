@@ -22,7 +22,7 @@ on:
   schedule:
     - cron: "25 5 * * *"
 
-  # Escenario 1: calendario anterior (dos comprobaciones semanales/mes).
+  # Escenario 1: calendario anterior (días 1, 8, 15, 22 y 30; 28 de febrero).
   # Para volver al escenario 1, comentar el cron diario anterior y descomentar:
   # schedule:
   #   - cron: "25 5 1,8,15,22,30 * *"
