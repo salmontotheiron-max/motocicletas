@@ -174,6 +174,411 @@
       "fecha_proceso": "2026-11-03"
     }
   ],
-  "cobertura_diaria": [],
-  "cobertura_mensual": {}
+  "cobertura_diaria": [
+    {
+      "fecha": "2026-09-01",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-02",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-03",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-04",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-05",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-06",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-07",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-08",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-09",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-10",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-11",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-12",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-13",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-14",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-15",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-16",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-17",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-18",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-19",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-20",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-21",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-22",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-23",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-24",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-25",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-26",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-27",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-28",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-29",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-09-30",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-01",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261001.txt",
+      "registros": 5144,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-02",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261002.txt",
+      "registros": 4518,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-03",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-04",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-05",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261005.txt",
+      "registros": 5637,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-06",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261006.txt",
+      "registros": 5954,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-07",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261007.txt",
+      "registros": 6249,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-08",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261008.txt",
+      "registros": 6989,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-09",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261009.txt",
+      "registros": 5603,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-10",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-11",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261011.txt",
+      "registros": 1,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-12",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261012.txt",
+      "registros": 3,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-13",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261013.txt",
+      "registros": 5909,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-14",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261014.txt",
+      "registros": 7392,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-15",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261015.txt",
+      "registros": 7406,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-16",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261016.txt",
+      "registros": 7644,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-17",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-18",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-19",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261019.txt",
+      "registros": 6732,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-20",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261020.txt",
+      "registros": 8507,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-21",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261021.txt",
+      "registros": 8097,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-22",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261022.txt",
+      "registros": 8429,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-23",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261023.txt",
+      "registros": 7769,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-24",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261024.txt",
+      "registros": 1,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-25",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-10-26",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261026.txt",
+      "registros": 8844,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-27",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261027.txt",
+      "registros": 10554,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-28",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261028.txt",
+      "registros": 12092,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-29",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261029.txt",
+      "registros": 16164,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-30",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261030.txt",
+      "registros": 21158,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-10-31",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261031.txt",
+      "registros": 1,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-11-01",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
+    },
+    {
+      "fecha": "2026-11-02",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261102.txt",
+      "registros": 1701,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-11-03",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261103.txt",
+      "registros": 5664,
+      "http_status": 200
+    }
+  ],
+  "cobertura_mensual": {
+    "2026-09": {
+      "estado": "incompleto",
+      "dias_inventariados": 30,
+      "dias_descargados_validados": 0,
+      "estados": {
+        "no_encontrado_dgt": 30
+      },
+      "mensaje": "Dato no disponible en DGT"
+    },
+    "2026-10": {
+      "estado": "incompleto",
+      "dias_inventariados": 31,
+      "dias_descargados_validados": 25,
+      "estados": {
+        "descargado_validado": 25,
+        "no_encontrado_dgt": 6
+      },
+      "mensaje": null
+    },
+    "2026-11": {
+      "estado": "incompleto",
+      "dias_inventariados": 3,
+      "dias_descargados_validados": 2,
+      "estados": {
+        "no_encontrado_dgt": 1,
+        "descargado_validado": 2
+      },
+      "mensaje": null
+    }
+  }
 }

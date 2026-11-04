@@ -1,7 +1,7 @@
 {
   "desde": "2026-09-01",
-  "hasta": "2026-10-31",
-  "dias_inventariados": 61,
+  "hasta": "2026-11-03",
+  "dias_inventariados": 64,
   "dias": [
     {
       "fecha": "2026-09-01",
@@ -353,8 +353,29 @@
     },
     {
       "fecha": "2026-10-31",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261031.txt",
+      "registros": 1,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-11-01",
       "estado": "no_encontrado_dgt",
       "http_status": 404
+    },
+    {
+      "fecha": "2026-11-02",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261102.txt",
+      "registros": 1701,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-11-03",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261103.txt",
+      "registros": 5664,
+      "http_status": 200
     }
   ]
 }
