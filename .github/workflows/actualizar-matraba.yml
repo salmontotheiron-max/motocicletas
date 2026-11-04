@@ -1,43 +1,73 @@
+# Automatización de descarga y publicación de datos MATRABA (DGT).
+#
+# ESCENARIO ACTIVO: 2
+# Descargador Python dedicado, validación estructural de cada TXT,
+# inventario diario de cobertura, reintentos y pruebas unitarias.
+#
+# ESCENARIO 1 CONSERVADO:
+# Se mantiene comentado más abajo el método anterior basado en curl/unzip
+# dentro del propio workflow. Para recuperarlo habría que activar su bloque
+# de calendario y descarga, y desactivar los pasos del escenario 2.
+#
+# El workflow se define en main, pero ejecuta y publica el código de la
+# rama integracion-matraba-inicial. No cambiar esta referencia sin revisar
+# la estrategia de ramas y publicación.
+
 name: Actualizar datos MATRABA
+
 on:
   workflow_dispatch:
+
+  # Escenario 2: revisión diaria de la disponibilidad de ficheros DGT.
   schedule:
-    - cron: "25 5 1,8,15,22,30 * *"
-    - cron: "25 5 28 2 *"
+    - cron: "25 5 * * *"
+
+  # Escenario 1: calendario anterior (dos comprobaciones semanales/mes).
+  # Para volver al escenario 1, comentar el cron diario anterior y descomentar:
+  # schedule:
+  #   - cron: "25 5 1,8,15,22,30 * *"
+  #   - cron: "25 5 28 2 *"
+
 permissions:
   contents: write
+
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     steps:
+      # El código de descarga, procesador y pruebas vive en esta rama.
       - uses: actions/checkout@v5
         with:
           ref: integracion-matraba-inicial
+
       - uses: actions/setup-python@v6
         with:
           python-version: "3.x"
-      - name: Descargar ficheros diarios disponibles desde septiembre de 2026
-        shell: bash
+
+      # Escenario 2: detectar regresiones antes de descargar o publicar.
+      - name: Ejecutar pruebas unitarias
+        run: python -m unittest discover -s tests -v
+
+      # Escenario 2: descargar día a día, validar ZIP/TXT y registrar el
+      # estado de cada fecha (descargado, no encontrado, inválido o error).
+      - name: Generar inventario diario de descargas DGT
         run: |
-          mkdir -p datos/matraba
-          start=$(date -u -d '2026-09-01' +%F)
-          end=$(date -u -d 'yesterday' +%F)
-          day="$start"
-          while [[ "$day" < "$end" || "$day" == "$end" ]]; do
-            stamp=$(date -u -d "$day" +%Y%m%d)
-            year=$(date -u -d "$day" +%Y)
-            month=$(date -u -d "$day" +%m)
-            url="https://www.dgt.es/microdatos/salida/$year/$month/vehiculos/matriculaciones/export_mat_$stamp.zip"
-            code=$(curl -L -sS -o "/tmp/$stamp.zip" -w '%{http_code}' "$url" || true)
-            if [[ "$code" == "200" ]] && unzip -tq "/tmp/$stamp.zip" >/dev/null 2>&1; then
-              unzip -Z1 "/tmp/$stamp.zip" | while IFS= read -r entry; do
-                if [[ "$entry" == *.txt ]]; then unzip -p "/tmp/$stamp.zip" "$entry" > "datos/matraba/export_mat_$stamp.txt"; fi
-              done
-            fi
-            day=$(date -u -d "$day + 1 day" +%F)
-          done
-      - name: Procesar todos los ficheros descargados
-        run: python procesar_matraba.py --input-dir datos/matraba --output-dir public/data
+          python descargar_matraba.py \
+            --start 2026-09-01 \
+            --end "$(date -u -d 'yesterday' +%F)" \
+            --output-dir datos/matraba \
+            --coverage-file public/data/cobertura_diaria.json
+
+      # Procesar los ficheros validados y propagar la cobertura diaria
+      # y mensual a los manifiestos públicos.
+      - name: Procesar ficheros y cobertura
+        run: |
+          python procesar_matraba.py \
+            --input-dir datos/matraba \
+            --output-dir public/data \
+            --coverage-file public/data/cobertura_diaria.json
+
+      # Publicar sólo si hay cambios en los agregados/manifiestos.
       - name: Publicar agregados y manifiesto
         run: |
           git config user.name "github-actions[bot]"
@@ -47,3 +77,40 @@ jobs:
             git commit -m "Actualiza agregados MATRABA"
             git push origin integracion-matraba-inicial
           fi
+
+      # ------------------------------------------------------------------
+      # ESCENARIO 1 CONSERVADO (NO ACTIVO)
+      #
+      # Método anterior: el workflow descargaba directamente cada ZIP con
+      # curl, comprobaba el ZIP con unzip y extraía el TXT. Se conserva aquí
+      # como referencia recuperable, pero no debe ejecutarse junto al
+      # descargador del escenario 2.
+      #
+      # - name: Descargar ficheros diarios disponibles desde septiembre de 2026
+      #   shell: bash
+      #   run: |
+      #     mkdir -p datos/matraba
+      #     start=$(date -u -d '2026-09-01' +%F)
+      #     end=$(date -u -d 'yesterday' +%F)
+      #     day="$start"
+      #     while [[ "$day" < "$end" || "$day" == "$end" ]]; do
+      #       stamp=$(date -u -d "$day" +%Y%m%d)
+      #       year=$(date -u -d "$day" +%Y)
+      #       month=$(date -u -d "$day" +%m)
+      #       url="https://www.dgt.es/microdatos/salida/$year/$month/vehiculos/matriculaciones/export_mat_$stamp.zip"
+      #       code=$(curl -L -sS -o "/tmp/$stamp.zip" -w '%{http_code}' "$url" || true)
+      #       if [[ "$code" == "200" ]] && unzip -tq "/tmp/$stamp.zip" >/dev/null 2>&1; then
+      #         unzip -Z1 "/tmp/$stamp.zip" | while IFS= read -r entry; do
+      #           if [[ "$entry" == *.txt ]]; then
+      #             unzip -p "/tmp/$stamp.zip" "$entry" > "datos/matraba/export_mat_$stamp.txt"
+      #           fi
+      #         done
+      #       fi
+      #       day=$(date -u -d "$day + 1 day" +%F)
+      #     done
+      #
+      # El procesado/publicación del escenario 1 era el mismo procesador,
+      # pero sin pasarle --coverage-file:
+      # - name: Procesar todos los ficheros descargados
+      #   run: python procesar_matraba.py --input-dir datos/matraba --output-dir public/data
+      # ------------------------------------------------------------------
