@@ -548,6 +548,11 @@
       "archivo": "export_mat_20261103.txt",
       "registros": 5664,
       "http_status": 200
+    },
+    {
+      "fecha": "2026-11-04",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
     }
   ],
   "cobertura_mensual": {
@@ -572,10 +577,10 @@
     },
     "2026-11": {
       "estado": "incompleto",
-      "dias_inventariados": 3,
+      "dias_inventariados": 4,
       "dias_descargados_validados": 2,
       "estados": {
-        "no_encontrado_dgt": 1,
+        "no_encontrado_dgt": 2,
         "descargado_validado": 2
       },
       "mensaje": null
