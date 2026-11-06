@@ -172,6 +172,12 @@
       "sha256": "a0add387774d5b2fea40d99a5afcf6923ec50e8d2ea988defa00cb5ff9b49c5c",
       "registros": 5664,
       "fecha_proceso": "2026-11-03"
+    },
+    {
+      "archivo": "export_mat_20261104.txt",
+      "sha256": "f7c3a2d8ad623fb254f2406308fb1158ffddcea12132725b9c5c24ac5132ee72",
+      "registros": 5730,
+      "fecha_proceso": "2026-11-04"
     }
   ],
   "cobertura_diaria": [
@@ -551,6 +557,13 @@
     },
     {
       "fecha": "2026-11-04",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261104.txt",
+      "registros": 5730,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-11-05",
       "estado": "no_encontrado_dgt",
       "http_status": 404
     }
@@ -577,11 +590,11 @@
     },
     "2026-11": {
       "estado": "incompleto",
-      "dias_inventariados": 4,
-      "dias_descargados_validados": 2,
+      "dias_inventariados": 5,
+      "dias_descargados_validados": 3,
       "estados": {
         "no_encontrado_dgt": 2,
-        "descargado_validado": 2
+        "descargado_validado": 3
       },
       "mensaje": null
     }

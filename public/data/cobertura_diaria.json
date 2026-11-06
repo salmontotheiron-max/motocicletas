@@ -1,7 +1,7 @@
 {
   "desde": "2026-09-01",
-  "hasta": "2026-11-04",
-  "dias_inventariados": 65,
+  "hasta": "2026-11-05",
+  "dias_inventariados": 66,
   "dias": [
     {
       "fecha": "2026-09-01",
@@ -379,6 +379,13 @@
     },
     {
       "fecha": "2026-11-04",
+      "estado": "descargado_validado",
+      "archivo": "export_mat_20261104.txt",
+      "registros": 5730,
+      "http_status": 200
+    },
+    {
+      "fecha": "2026-11-05",
       "estado": "no_encontrado_dgt",
       "http_status": 404
     }
