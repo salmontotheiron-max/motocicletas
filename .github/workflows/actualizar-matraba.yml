@@ -1,10 +1,22 @@
-name: Actualizar datos MATRABA
+name: Actualizar datos MATRABA mensuales
+
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "25 5 * * *"
+    inputs:
+      months:
+        description: "Meses YYYY-MM separados por comas (vacío = mes actual y anterior)"
+        required: false
+        type: string
+        default: ""
+
+# La programación se activará únicamente después de validar el piloto de julio
+# y completar la carga inicial de 2026.
+# schedule:
+#   - cron: "25 5 1,8,15,22,28 * *"
+
 permissions:
   contents: write
+
 jobs:
   actualizar:
     runs-on: ubuntu-latest
@@ -14,19 +26,80 @@ jobs:
           ref: integracion-matraba-inicial
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.x"
+          python-version: "3.12"
+
       - name: Ejecutar pruebas unitarias
         run: python -m unittest discover -s tests -v
-      - name: Generar inventario diario de descargas DGT
-        run: python descargar_matraba.py --start 2026-09-01 --end "$(date -u -d 'yesterday' +%F)" --output-dir datos/matraba --coverage-file public/data/cobertura_diaria.json
-      - name: Procesar todos los ficheros descargados y su cobertura
-        run: python procesar_matraba.py --input-dir datos/matraba --output-dir public/data --coverage-file public/data/cobertura_diaria.json
-      - name: Publicar agregados y manifiesto
+
+      - name: Descargar y validar meses solicitados
+        env:
+          MONTHS_INPUT: ${{ inputs.months }}
+        run: |
+          args=()
+          if [ -n "$MONTHS_INPUT" ]; then
+            IFS=',' read -ra months <<< "$MONTHS_INPUT"
+            for month in "${months[@]}"; do
+              month="$(echo "$month" | xargs)"
+              [ -z "$month" ] || args+=(--month "$month")
+            done
+          fi
+          python descargar_matraba_mensual.py \
+            --output-dir datos/matraba_mensual/nuevos \
+            --inventory-file public/data/capturas_mensuales.json \
+            "${args[@]}"
+
+      - name: Recuperar ZIP históricos de GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p datos/matraba_mensual/archivo
+          gh release list --limit 1000 --json tagName --jq '.[].tagName' |
+          while IFS= read -r tag; do
+            [ -z "$tag" ] && continue
+            gh release download "$tag" \
+              --pattern 'export_mensual_mat_*.zip' \
+              --dir datos/matraba_mensual/archivo \
+              --clobber || true
+          done
+
+      - name: Crear Release del barrido y archivar ZIP nuevos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="matraba-barrido-${{ github.run_id }}-${{ github.run_attempt }}"
+          notes="$(mktemp)"
+          printf 'Captura automática/manual de microdatos mensuales MATRABA.\n\n' > "$notes"
+          printf 'Rama: integracion-matraba-inicial\n' >> "$notes"
+          printf 'Ejecución: %s\n' "$GITHUB_RUN_ID" >> "$notes"
+          gh release create "$tag" \
+            --title "MATRABA | barrido $GITHUB_RUN_ID" \
+            --notes-file "$notes"
+          gh release upload "$tag" public/data/capturas_mensuales.json
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases" \
+            --jq '.[].assets[].name' > /tmp/assets-previos.txt
+          while IFS= read -r file; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file")"
+            if grep -Fqx -- "$name" /tmp/assets-previos.txt; then
+              echo "Ya archivado: $name"
+            else
+              gh release upload "$tag" "$file"
+            fi
+          done < <(find datos/matraba_mensual/nuevos -type f -name '*.zip' | sort)
+
+      - name: Procesar última versión válida de cada mes
+        run: |
+          python procesar_matraba_mensual.py \
+            --input-dir datos/matraba_mensual \
+            --output-dir public/data \
+            --inventory-file public/data/capturas_mensuales.json
+
+      - name: Publicar inventario y agregados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data
           if ! git diff --cached --quiet; then
-            git commit -m "Actualiza agregados MATRABA"
+            git commit -m "Actualiza snapshots y agregados mensuales MATRABA"
             git push origin integracion-matraba-inicial
           fi
