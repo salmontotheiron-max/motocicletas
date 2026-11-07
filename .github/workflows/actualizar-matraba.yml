@@ -104,6 +104,16 @@ jobs:
             --inventory-file public/data/capturas_mensuales.json \
             --previous-dir public/data
 
+      - name: Publicar informe de auditoría como artefacto descargable
+        if: ${{ inputs.mode == 'piloto' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: matraba-auditoria-corregida
+          path: |
+            datos/matraba_mensual/resultados/*.csv
+            datos/matraba_mensual/resultados/*.json
+          retention-days: 14
+
       - name: Adjuntar resultados del piloto al Release
         if: ${{ inputs.mode == 'piloto' }}
         env:
