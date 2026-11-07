@@ -78,7 +78,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _ = p.process_archive(archive, "2026-09")
+            _, counts, _, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(counts[("2026-09", "53", "N", True)], 1)
             self.assertNotIn(("2026-10", "53", "N", False), counts)
             self.assertEqual(len(audit), 1)
@@ -92,7 +92,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row + b"\n" + row)
             archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _ = p.process_archive(archive, "2026-07")
+            _, counts, _, _, audit = p.process_archive(archive, "2026-07")
             self.assertEqual(sum(counts.values()), 2)
 
 
