@@ -2,11 +2,11 @@
 
 ## Estado de la integración MATRABA
 
-Se ha añadido un procesador de microdatos diarios MATRABA y un workflow de GitHub Actions en la rama `integracion-matraba-inicial`. Esta fase todavía no sustituye el dashboard ANESDOR ni debe considerarse validada para publicación hasta comprobar la cobertura de fuentes y los resultados.
+La integración está migrando de descargas diarias a snapshots mensuales de microdatos DGT. El desarrollo se realiza en la rama `integracion-matraba-inicial`; la rama `main` no se modifica.
 
 ### Ámbito del observatorio
 
-El informe se limita a motocicletas y ciclomotores, manteniendo cada código `COD_TIPO` por separado:
+El informe de motocicletas y ciclomotores mantiene separados los códigos `COD_TIPO`:
 
 - `50`: Motocicleta de 2 ruedas sin sidecar.
 - `51`: Motocicleta con sidecar.
@@ -17,43 +17,61 @@ El informe se limita a motocicletas y ciclomotores, manteniendo cada código `CO
 - `91`: Ciclomotor de 3 ruedas.
 - `92`: Cuadriciclo ligero.
 
-Los códigos ajenos a este catálogo se excluyen de ambos informes. El código `60`, por ejemplo, corresponde a coche de inválido y no forma parte del ámbito.
+Los códigos ajenos a este catálogo se excluyen de los dos informes. No se infieren categorías para códigos desconocidos.
 
-### Procesador
+### Modelo de captura mensual
 
-Ejecutar localmente:
+El descargador `descargar_matraba_mensual.py` consulta el mes actual y el anterior, salvo que se indiquen meses concretos mediante `--month YYYY-MM` (opción repetible).
 
-```bash
-python procesar_matraba.py --input-dir datos/matraba --output-dir public/data
-```
+La URL mensual utiliza el mes sin cero inicial en la ruta y seis cifras en el nombre del ZIP. Se validan:
 
-El directorio de entrada acepta archivos `export_mat_YYYYMMDD.txt` desde el 1 de septiembre de 2026. El procesador valida registros de ancho fijo (69 campos/714 caracteres) y que `FEC_PROCESO` coincida con la fecha del nombre del archivo. Los agregados se reconstruyen desde los archivos presentes; al reemplazar un archivo diario y volver a ejecutar, sus recuentos sustituyen los de esa fecha en lugar de sumarse a una ejecución anterior.
+- Integridad del ZIP mediante CRC.
+- Existencia de exactamente un TXT.
+- Cabecera mensual de 79 bytes.
+- Longitud de 714 bytes por registro.
+- Validez de la fecha `FEC_PROCESO` de cada registro.
 
-### Salidas
+No se exige que `FEC_PROCESO` coincida con el mes del fichero. No se exige un volumen mínimo y no se eliminan registros duplicados automáticamente. Un HTTP 404 se registra como `no_disponible_en_barrido`; los errores de red, HTTP y estructura se mantienen diferenciados.
 
-- `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: trámites `CLAVE_TRAMITE=1`, por periodo, código de tipo y nuevo/usado, limitados al catálogo anterior.
-- `public/data/tipo_operacion.csv`: operaciones con claves 1–9, A y B, limitadas al mismo catálogo de tipos.
-- `public/data/manifest.json`: SHA-256 y cantidad de registros de cada fuente, filtro aplicado e inventario diario/mensual.
-- `public/data/cobertura_diaria.json`: un registro por cada día consultado, con estado de descarga, HTTP, validación y número de registros.
-- `public/data/periodos.json`: periodos con matriculaciones procesadas y estado de cobertura mensual.
-- `public/data/resumen.json`: resumen de ejecución, filtro aplicado, exclusiones por código de tipo y nota para los recuentos marcados con asterisco.
+Cada ZIP se conserva con su SHA-256 en un nombre de archivo que identifica el periodo y la versión. El inventario `public/data/capturas_mensuales.json` mantiene el histórico de ejecuciones, fechas de captura, estados, tamaños, hashes y recuentos.
 
-Para vehículos nuevos se usa el mes de `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITACION`; si falta o es posterior a `FEC_PROCESO`, se usa la fecha de proceso y se marca con asterisco. La etiqueta `CLAVE_TRAMITE=1` significa matriculación ordinaria y de ciclomotores; no implica por sí sola que todos los vehículos sean nuevos.
+### Archivo de fuentes
 
-Si no hay archivos para un periodo, la interfaz debe mostrar literalmente **Dato no disponible en DGT**, no un cero. Un cero solo debe mostrarse si se ha procesado la fuente pertinente y no hay registros de esa categoría. No se deduplican automáticamente filas idénticas.
+Los ZIP originales se archivan como activos de **GitHub Releases** del repositorio. El repositorio es público, por lo que esos activos también son públicos. No se incorporan los ZIP al historial normal de Git.
 
-### Actualización programada
+Cada ejecución crea un Release de barrido. Un ZIP con el mismo nombre/hash que ya esté archivado no se vuelve a subir. Los ZIP históricos de Releases se recuperan antes de procesar, para que los agregados puedan reconstruirse con las fuentes conservadas.
 
-El workflow `.github/workflows/actualizar-matraba.yml` puede ejecutarse manualmente desde **GitHub → Actions → Actualizar datos MATRABA → Run workflow** y tiene una programación diaria. El descargador `descargar_matraba.py` consulta todos los días desde el 1 de septiembre de 2026 y clasifica cada resultado como `descargado_validado`, `no_encontrado_dgt`, `error_http`, `error_red` o `fichero_invalido`. Valida ZIP, TXT, ancho de 714 bytes y `FEC_PROCESO`. Un día con HTTP 404 no se convierte en cero matriculaciones. Los meses solo se consideran completos si todos sus días inventariados tienen un fichero validado; en otro caso se etiquetan como incompletos. Los ficheros con pocos registros no se descartan por volumen.
+### Procesamiento mensual
 
-### Validación pendiente antes de publicación
+El procesador `procesar_matraba_mensual.py` selecciona una única versión por mes: la última captura válida registrada en el inventario. Las versiones anteriores se conservan como evidencia y no se suman entre sí.
 
-1. Ejecutar manualmente el workflow en la rama de trabajo.
-2. Comprobar los registros descargados y los SHA-256 del manifiesto contra los archivos oficiales.
-3. Revisar los CSV y confirmar que los meses incompletos se etiqueten como provisionales.
-4. Revisar `cobertura_diaria.json`: un HTTP 404 se registra como no encontrado en DGT; los fallos de red/HTTP y los ficheros inválidos quedan diferenciados. Ninguno se interpreta como un día con cero matriculaciones.
-5. Mantener fuera de la web los microdatos originales y los campos identificativos o sensibles.
+Para vehículos nuevos se usa el mes de `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITACION`; si falta o es posterior a `FEC_PROCESO`, se usa la fecha de proceso y se marca con asterisco. El campo `FEC_PROCESO` se valida como fecha, pero no se utiliza para identificar el periodo del snapshot.
+
+Salidas:
+
+- `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: matriculaciones por periodo, código de tipo y nuevo/usado.
+- `public/data/tipo_operacion.csv`: operaciones por periodo y clave de trámite.
+- `public/data/manifest.json`: fuente seleccionada por periodo, SHA-256, tamaño, registros y rango de fechas de proceso.
+- `public/data/periodos.json`: periodos con fuente mensual procesada.
+- `public/data/resumen.json`: totales, exclusiones y criterios de procesamiento.
+- `public/data/capturas_mensuales.json`: inventario acumulado de barridos y descargas.
+
+Si no existe una fuente válida para un periodo, la interfaz debe mostrar **Dato no disponible en DGT**, no un cero. Un cero solo puede mostrarse cuando se ha procesado la fuente correspondiente y no contiene registros de esa categoría. No se exportan campos personales ni identificadores sensibles.
+
+### Ejecución y estado de la automatización
+
+El workflow `.github/workflows/actualizar-matraba.yml` se ejecuta manualmente desde GitHub Actions. Admite una lista opcional de meses, separados por comas; por ejemplo, `2026-07,2026-08,2026-09`. Si se deja vacío, consulta el mes actual y el anterior.
+
+La programación para los días 1, 8, 15, 22 y 28 está documentada pero permanece desactivada hasta completar las pruebas del piloto de julio y la carga inicial de los meses disponibles de 2026.
+
+### Validación pendiente
+
+1. Ejecutar la batería completa de pruebas en GitHub Actions.
+2. Descargar julio de 2026 y comparar el TXT contenido en el ZIP con el fichero mensual ya validado.
+3. Confirmar que el ZIP original se archiva en Releases y que el hash coincide.
+4. Cargar los meses disponibles de 2026 sin sumar capturas distintas del mismo mes.
+5. Revisar agregados y manifiestos antes de activar el cron.
 
 ## Prototipo anterior ANESDOR
 
-El `index.html` existente sigue siendo el prototipo estático ANESDOR de 2025. La incorporación del procesador no ha conectado todavía sus CSV al dashboard ni ha cambiado el contenido publicado.
+El `index.html` existente sigue siendo el prototipo estático ANESDOR de 2025. La migración MATRABA todavía no conecta sus CSV al dashboard ni sustituye el contenido del prototipo.
