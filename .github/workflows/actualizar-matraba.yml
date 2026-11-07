@@ -3,6 +3,14 @@ name: Actualizar datos MATRABA mensuales
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: "Piloto (no publica agregados) o actualizar (publica agregados)"
+        required: true
+        type: choice
+        options:
+          - piloto
+          - actualizar
+        default: piloto
       months:
         description: "Meses YYYY-MM separados por comas (vacío = mes actual y anterior)"
         required: false
@@ -67,8 +75,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           tag="matraba-barrido-${{ github.run_id }}-${{ github.run_attempt }}"
+          echo "RELEASE_TAG=$tag" >> "$GITHUB_ENV"
           notes="$(mktemp)"
-          printf 'Captura automática/manual de microdatos mensuales MATRABA.\n\n' > "$notes"
+          printf 'Captura de microdatos mensuales MATRABA.\n\n' > "$notes"
           printf 'Rama: integracion-matraba-inicial\n' >> "$notes"
           printf 'Ejecución: %s\n' "$GITHUB_RUN_ID" >> "$notes"
           gh release create "$tag" \
@@ -91,15 +100,34 @@ jobs:
         run: |
           python procesar_matraba_mensual.py \
             --input-dir datos/matraba_mensual \
-            --output-dir public/data \
+            --output-dir datos/matraba_mensual/resultados \
             --inventory-file public/data/capturas_mensuales.json
 
-      - name: Publicar inventario y agregados
+      - name: Adjuntar resultados del piloto al Release
+        if: ${{ inputs.mode == 'piloto' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "$RELEASE_TAG" datos/matraba_mensual/resultados/*.csv
+          gh release upload "$RELEASE_TAG" datos/matraba_mensual/resultados/*.json
+
+      - name: Publicar agregados
+        if: ${{ inputs.mode == 'actualizar' || github.event_name == 'schedule' }}
+        run: |
+          cp datos/matraba_mensual/resultados/* public/data/
+
+      - name: Publicar inventario y agregados en la rama de trabajo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data
+          if [ "${{ inputs.mode }}" = "actualizar" ] || [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            git add public/data
+            message="Actualiza snapshots y agregados mensuales MATRABA"
+          else
+            git add public/data/capturas_mensuales.json
+            message="Registra captura piloto mensual MATRABA"
+          fi
           if ! git diff --cached --quiet; then
-            git commit -m "Actualiza snapshots y agregados mensuales MATRABA"
+            git commit -m "$message"
             git push origin integracion-matraba-inicial
           fi
