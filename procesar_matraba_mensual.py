@@ -95,6 +95,7 @@ def process_archive(path, period):
     opcounts = Counter()
     excluded = Counter()
     process_dates = []
+    audit_rows = []
     for number, row in enumerate(rows, 1):
         values = []
         offset = 0
@@ -136,6 +137,31 @@ def process_archive(path, period):
             )
         )
 
+        if future_matriculation:
+            audit_rows.append([
+                path.name, number, "FEC_MATRICULA_POSTERIOR_A_FEC_PROCESO",
+                vehicle_type, operation, new_used,
+                matriculation_date.isoformat(), 
+                transaction_date.isoformat() if transaction_date else "",
+                process_date.isoformat(),
+            ])
+        if operation not in OPS:
+            audit_rows.append([
+                path.name, number, "CLAVE_TRAMITE_NO_CATALOGADA",
+                vehicle_type, operation, new_used,
+                matriculation_date.isoformat() if matriculation_date else "",
+                transaction_date.isoformat() if transaction_date else "",
+                process_date.isoformat(),
+            ])
+        if new_used in ("N", "U") and reference_date is None:
+            audit_rows.append([
+                path.name, number, "FECHA_REFERENCIA_NO_DISPONIBLE",
+                vehicle_type, operation, new_used,
+                matriculation_date.isoformat() if matriculation_date else "",
+                transaction_date.isoformat() if transaction_date else "",
+                process_date.isoformat(),
+            ])
+
         if operation == "1" and reference_date and reference_date.strftime("%Y-%m") >= START and new_used in ("N", "U"):
             counts[(reference_date.strftime("%Y-%m"), vehicle_type, new_used, substitute)] += 1
         if operation in OPS and reference_date and reference_date.strftime("%Y-%m") >= START:
@@ -153,7 +179,7 @@ def process_archive(path, period):
         "registros": record_count,
         "fec_proceso_min": min(process_dates) if process_dates else None,
         "fec_proceso_max": max(process_dates) if process_dates else None,
-    }, counts, opcounts, excluded
+    }, counts, opcounts, excluded, audit_rows
 
 
 def main():
@@ -161,6 +187,7 @@ def main():
     parser.add_argument("--input-dir", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--inventory-file")
+    parser.add_argument("--previous-dir")
     args = parser.parse_args()
     output = Path(args.output_dir)
     output.mkdir(parents=True, exist_ok=True)
@@ -170,12 +197,14 @@ def main():
     opcounts = Counter()
     excluded = Counter()
     manifest = []
+    audit_rows = []
     for period, archive in selected.items():
-        info, month_counts, month_ops, month_excluded = process_archive(archive, period)
+        info, month_counts, month_ops, month_excluded, month_audit = process_archive(archive, period)
         manifest.append(info)
         counts.update(month_counts)
         opcounts.update(month_ops)
         excluded.update(month_excluded)
+        audit_rows.extend(month_audit)
 
     with (output / "matriculaciones_nuevos_usados_por_tipo.csv").open("w", newline="", encoding="utf-8-sig") as handle:
         writer = csv.writer(handle)
@@ -188,6 +217,46 @@ def main():
         writer.writerow(["periodo", "CLAVE_TRAMITE", "descripcion_operacion", "recuento", "fecha_sustitutiva_con_asterisco"])
         for key, value in sorted(opcounts.items()):
             writer.writerow([key[0], key[1], OPS[key[1]], value, "*" if key[2] else ""])
+
+    with (output / "auditoria_registros.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["archivo", "linea_txt", "incidencia", "COD_TIPO", "CLAVE_TRAMITE",
+                         "NUEVO_USADO", "FEC_MATRICULA", "FEC_TRAMITE", "FEC_PROCESO"])
+        writer.writerows(audit_rows)
+
+    def write_comparison(previous_name, current_name, output_name, key_columns):
+        if not args.previous_dir:
+            return
+        previous_path = Path(args.previous_dir) / previous_name
+        current_path = output / current_name
+        if not previous_path.exists() or not current_path.exists():
+            return
+        def read_counts(file_path):
+            result = Counter()
+            with file_path.open("r", newline="", encoding="utf-8-sig") as source:
+                for row in csv.DictReader(source):
+                    key = tuple(row.get(column, "") for column in key_columns)
+                    result[key] += int(row.get("recuento", "0") or 0)
+            return result
+        old_counts = read_counts(previous_path)
+        new_counts = read_counts(current_path)
+        with (output / output_name).open("w", newline="", encoding="utf-8-sig") as handle:
+            writer = csv.writer(handle)
+            writer.writerow(key_columns + ["recuento_anterior", "recuento_corregido", "diferencia"])
+            for key in sorted(set(old_counts) | set(new_counts)):
+                old_value, new_value = old_counts[key], new_counts[key]
+                writer.writerow(list(key) + [old_value, new_value, new_value - old_value])
+
+    write_comparison(
+        "matriculaciones_nuevos_usados_por_tipo.csv",
+        "matriculaciones_nuevos_usados_por_tipo.csv",
+        "comparacion_matriculaciones.csv",
+        ["periodo", "COD_TIPO", "descripcion_tipo", "nuevo_usado", "fecha_sustitutiva_con_asterisco"],
+    )
+    write_comparison(
+        "tipo_operacion.csv", "tipo_operacion.csv", "comparacion_operaciones.csv",
+        ["periodo", "CLAVE_TRAMITE", "descripcion_operacion", "fecha_sustitutiva_con_asterisco"],
+    )
 
     available = sorted(selected.keys())
     (output / "manifest.json").write_text(json.dumps({
@@ -210,6 +279,8 @@ def main():
         "filtro_cod_tipo": sorted(TARGET_TYPE_CODES),
         "registros_excluidos_por_cod_tipo": sum(excluded.values()),
         "exclusiones_por_codigo": dict(sorted(excluded.items())),
+        "registros_auditados_con_incidencias": len(audit_rows),
+        "incidencias_por_tipo": dict(sorted(Counter(row[2] for row in audit_rows).items())),
         "nota_fecha": "* En usados se utiliza FEC_TRAMITE (campo 22) cuando es válida y no posterior a FEC_PROCESO; en caso contrario se usa FEC_PROCESO y se marca con asterisco. En nuevos, si FEC_MATRICULA es posterior a FEC_PROCESO, se usa FEC_PROCESO y se marca con asterisco.",
         "privacidad": "No exportar campos personales ni identificadores sensibles.",
         "duplicados": "No se eliminan filas idénticas automáticamente.",
