@@ -1,0 +1,25 @@
+{
+  "esquema": 1,
+  "ultima_captura_utc": "2026-11-07T17:54:52.777652+00:00",
+  "ejecuciones": [
+    {
+      "fecha_captura_utc": "2026-11-07T17:54:52.777652+00:00",
+      "periodos_consultados": [
+        "2026-07"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-07",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-07/export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
+          "nombre_txt": null,
+          "sha256": "9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000",
+          "bytes_zip": 17837719,
+          "bytes_txt": 135209440,
+          "registros": 189104,
+          "url": "https://www.dgt.es/microdatos/salida/2026/7/vehiculos/matriculaciones/export_mensual_mat_202607.zip"
+        }
+      ]
+    }
+  ]
+}
