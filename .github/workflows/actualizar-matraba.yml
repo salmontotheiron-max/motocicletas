@@ -101,7 +101,8 @@ jobs:
           python procesar_matraba_mensual.py \
             --input-dir datos/matraba_mensual \
             --output-dir datos/matraba_mensual/resultados \
-            --inventory-file public/data/capturas_mensuales.json
+            --inventory-file public/data/capturas_mensuales.json \
+            --previous-dir public/data
 
       - name: Adjuntar resultados del piloto al Release
         if: ${{ inputs.mode == 'piloto' }}
