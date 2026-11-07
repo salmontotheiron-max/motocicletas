@@ -1,4 +1,5 @@
 import json
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -45,11 +46,12 @@ class MonthlyProcessorTests(unittest.TestCase):
 
     def test_processes_monthly_zip_without_matching_process_month(self):
         with tempfile.TemporaryDirectory() as tmp:
-            archive = Path(tmp) / ("export_mensual_mat_202607_" + "a" * 64 + ".zip")
             row = make_record(FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
                               COD_TIPO="50", CLAVE_TRAMITE="1",
                               NUEVO_USADO="N", FEC_PROCESO="31102026")
-            archive.write_bytes(make_zip(row))
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
             info, counts, ops, excluded = p.process_archive(archive, "2026-07")
             self.assertEqual(info["registros"], 1)
             self.assertEqual(sum(counts.values()), 1)
@@ -62,7 +64,6 @@ class MonthlyProcessorTests(unittest.TestCase):
             row = make_record(FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
                               COD_TIPO="50", CLAVE_TRAMITE="1",
                               NUEVO_USADO="N", FEC_PROCESO="31072026")
-            archive.write_bytes(make_zip(row + b"\n" + row))
             _, counts, _, _ = p.process_archive(archive, "2026-07")
             self.assertEqual(sum(counts.values()), 2)
 
