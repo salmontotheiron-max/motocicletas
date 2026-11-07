@@ -12,7 +12,7 @@ import descargar_matraba_mensual as d
 
 def make_record(**fields):
     values = [""] * 69
-    indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 2, "COD_TIPO": 7,
+    indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 22, "COD_TIPO": 7,
                "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "FEC_PROCESO": 68}
     for name, value in fields.items():
         values[indexes[name]] = value
@@ -57,6 +57,30 @@ class MonthlyProcessorTests(unittest.TestCase):
             self.assertEqual(sum(counts.values()), 1)
             self.assertEqual(sum(ops.values()), 1)
             self.assertEqual(sum(excluded.values()), 0)
+
+
+    def test_uses_certified_fec_tramite_field_for_used_vehicles(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(FEC_MATRICULA="15082026", FEC_TRAMITACION="15082026",
+                              COD_TIPO="50", CLAVE_TRAMITE="1",
+                              NUEVO_USADO="U", FEC_PROCESO="01092026")
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, counts, _, _ = p.process_archive(archive, "2026-09")
+            self.assertEqual(counts[("2026-08", "50", "U", False)], 1)
+
+    def test_future_matriculation_date_uses_process_month_and_is_flagged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(FEC_MATRICULA="08102026", FEC_TRAMITACION="01092026",
+                              COD_TIPO="53", CLAVE_TRAMITE="1",
+                              NUEVO_USADO="N", FEC_PROCESO="01092026")
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, counts, _, _ = p.process_archive(archive, "2026-09")
+            self.assertEqual(counts[("2026-09", "53", "N", True)], 1)
+            self.assertNotIn(("2026-10", "53", "N", False), counts)
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
