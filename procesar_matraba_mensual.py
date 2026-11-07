@@ -174,7 +174,7 @@ def main():
         for key, value in sorted(opcounts.items()):
             writer.writerow([key[0], key[1], OPS[key[1]], value, "*" if key[2] else ""])
 
-    available = sorted({key[0] for key in counts})
+    available = sorted(selected.keys())
     (output / "manifest.json").write_text(json.dumps({
         "modelo": "mensual",
         "criterio_inicio": START,
