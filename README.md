@@ -60,7 +60,12 @@ Si no existe una fuente válida para un periodo, la interfaz debe mostrar **Dato
 
 ### Ejecución y estado de la automatización
 
-El workflow `.github/workflows/actualizar-matraba.yml` se ejecuta manualmente desde GitHub Actions. Admite una lista opcional de meses, separados por comas; por ejemplo, `2026-07,2026-08,2026-09`. Si se deja vacío, consulta el mes actual y el anterior.
+El workflow `.github/workflows/actualizar-matraba.yml` se ejecuta manualmente desde GitHub Actions y ofrece dos modos:
+
+- `piloto` (predeterminado): descarga, archiva y procesa las fuentes; adjunta los resultados al Release, pero no sustituye los agregados publicados.
+- `actualizar`: además publica los CSV y JSON generados en `public/data`.
+
+Admite una lista opcional de meses separados por comas; por ejemplo, `2026-07,2026-08,2026-09`. Si se deja vacío, consulta el mes actual y el anterior.
 
 La programación para los días 1, 8, 15, 22 y 28 está documentada pero permanece desactivada hasta completar las pruebas del piloto de julio y la carga inicial de los meses disponibles de 2026.
 
