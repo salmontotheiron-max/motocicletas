@@ -1,0 +1,71 @@
+import json
+import tempfile
+import unittest
+from pathlib import Path
+from io import BytesIO
+import zipfile
+
+import procesar_matraba_mensual as p
+import descargar_matraba_mensual as d
+
+
+def make_record(**fields):
+    values = [""] * 69
+    indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 2, "COD_TIPO": 7,
+               "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "FEC_PROCESO": 68}
+    for name, value in fields.items():
+        values[indexes[name]] = value
+    return "".join(value.ljust(width)[:width] for value, width in zip(values, p.WIDTHS)).encode("cp1252")
+
+
+def make_zip(record):
+    data = BytesIO()
+    with zipfile.ZipFile(data, "w", zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("mat.txt", b"H" * 79 + b"\n" + record)
+    return data.getvalue()
+
+
+class MonthlyProcessorTests(unittest.TestCase):
+    def test_selects_latest_capture_for_each_month(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            older = root / "export_mensual_mat_202607_" + Path("a" * 64 + ".zip")
+            newer = root / "export_mensual_mat_202607_" + Path("b" * 64 + ".zip")
+            older.write_bytes(b"x")
+            newer.write_bytes(b"x")
+            inventory = root / "inventory.json"
+            inventory.write_text(json.dumps({"ejecuciones": [
+                {"fecha_captura_utc": "2026-11-01T00:00:00Z", "capturas": [
+                    {"archivo": str(older), "estado": "descargado_validado"}]},
+                {"fecha_captura_utc": "2026-11-08T00:00:00Z", "capturas": [
+                    {"archivo": str(newer), "estado": "descargado_validado"}]},
+            ]}), encoding="utf-8")
+            selected = p.select_latest_archives(root, inventory)
+            self.assertEqual(selected["2026-07"].name, newer.name)
+
+    def test_processes_monthly_zip_without_matching_process_month(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / ("export_mensual_mat_202607_" + "a" * 64 + ".zip")
+            row = make_record(FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
+                              COD_TIPO="50", CLAVE_TRAMITE="1",
+                              NUEVO_USADO="N", FEC_PROCESO="31102026")
+            archive.write_bytes(make_zip(row))
+            info, counts, ops, excluded = p.process_archive(archive, "2026-07")
+            self.assertEqual(info["registros"], 1)
+            self.assertEqual(sum(counts.values()), 1)
+            self.assertEqual(sum(ops.values()), 1)
+            self.assertEqual(sum(excluded.values()), 0)
+
+    def test_duplicate_rows_are_not_silently_removed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / ("export_mensual_mat_202607_" + "a" * 64 + ".zip")
+            row = make_record(FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
+                              COD_TIPO="50", CLAVE_TRAMITE="1",
+                              NUEVO_USADO="N", FEC_PROCESO="31072026")
+            archive.write_bytes(make_zip(row + b"\n" + row))
+            _, counts, _, _ = p.process_archive(archive, "2026-07")
+            self.assertEqual(sum(counts.values()), 2)
+
+
+if __name__ == "__main__":
+    unittest.main()
