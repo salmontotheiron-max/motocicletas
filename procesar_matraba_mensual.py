@@ -106,7 +106,8 @@ def process_archive(path, period):
             raise ValueError(f"{path.name}:{number}: FEC_PROCESO inválida")
         process_dates.append(process_date.isoformat())
         matriculation_date = parse_date(values[0])
-        transaction_date = parse_date(values[2])
+        # FEC_TRAMITE está en el campo 22 (offsets [157:165]).
+        transaction_date = parse_date(values[22])
         operation = values[21]
         new_used = values[25]
         vehicle_type = values[7]
@@ -115,14 +116,24 @@ def process_archive(path, period):
             excluded[vehicle_type or "(vacío)"] += 1
             continue
 
+        # Una fecha de matriculación posterior al proceso DGT no puede
+        # asignar el registro a un mes futuro. Se usa FEC_PROCESO como
+        # referencia conservadora y se identifica con asterisco.
+        future_matriculation = (
+            new_used == "N" and matriculation_date is not None
+            and matriculation_date > process_date
+        )
         reference_date = (
-            matriculation_date if new_used == "N"
+            process_date if future_matriculation
+            else matriculation_date if new_used == "N"
             else transaction_date if transaction_date and transaction_date <= process_date
             else process_date if new_used == "U"
             else None
         )
-        substitute = new_used == "U" and (
-            not transaction_date or transaction_date > process_date
+        substitute = future_matriculation or (
+            new_used == "U" and (
+                not transaction_date or transaction_date > process_date
+            )
         )
 
         if operation == "1" and reference_date and reference_date.strftime("%Y-%m") >= START and new_used in ("N", "U"):
@@ -199,7 +210,7 @@ def main():
         "filtro_cod_tipo": sorted(TARGET_TYPE_CODES),
         "registros_excluidos_por_cod_tipo": sum(excluded.values()),
         "exclusiones_por_codigo": dict(sorted(excluded.items())),
-        "nota_fecha": "* En usados se utiliza FEC_TRAMITACION cuando es válida y no posterior a FEC_PROCESO; en caso contrario se usa FEC_PROCESO y se marca con asterisco.",
+        "nota_fecha": "* En usados se utiliza FEC_TRAMITE (campo 22) cuando es válida y no posterior a FEC_PROCESO; en caso contrario se usa FEC_PROCESO y se marca con asterisco. En nuevos, si FEC_MATRICULA es posterior a FEC_PROCESO, se usa FEC_PROCESO y se marca con asterisco.",
         "privacidad": "No exportar campos personales ni identificadores sensibles.",
         "duplicados": "No se eliminan filas idénticas automáticamente.",
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
