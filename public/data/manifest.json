@@ -14,6 +14,60 @@
   ],
   "archivos": [
     {
+      "archivo": "export_mensual_mat_202601_a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7.zip",
+      "periodo_fuente": "2026-01",
+      "sha256": "a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7",
+      "bytes_zip": 12218198,
+      "registros": 130543,
+      "fec_proceso_min": "2026-01-02",
+      "fec_proceso_max": "2026-01-30"
+    },
+    {
+      "archivo": "export_mensual_mat_202602_dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03.zip",
+      "periodo_fuente": "2026-02",
+      "sha256": "dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03",
+      "bytes_zip": 14724174,
+      "registros": 161682,
+      "fec_proceso_min": "2026-02-02",
+      "fec_proceso_max": "2026-02-27"
+    },
+    {
+      "archivo": "export_mensual_mat_202603_70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0.zip",
+      "periodo_fuente": "2026-03",
+      "sha256": "70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0",
+      "bytes_zip": 18782350,
+      "registros": 210097,
+      "fec_proceso_min": "2026-03-02",
+      "fec_proceso_max": "2026-03-31"
+    },
+    {
+      "archivo": "export_mensual_mat_202604_e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3.zip",
+      "periodo_fuente": "2026-04",
+      "sha256": "e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3",
+      "bytes_zip": 16389678,
+      "registros": 180135,
+      "fec_proceso_min": "2026-04-01",
+      "fec_proceso_max": "2026-04-30"
+    },
+    {
+      "archivo": "export_mensual_mat_202605_272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f.zip",
+      "periodo_fuente": "2026-05",
+      "sha256": "272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f",
+      "bytes_zip": 17332519,
+      "registros": 189626,
+      "fec_proceso_min": "2026-05-04",
+      "fec_proceso_max": "2026-05-29"
+    },
+    {
+      "archivo": "export_mensual_mat_202606_3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf.zip",
+      "periodo_fuente": "2026-06",
+      "sha256": "3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf",
+      "bytes_zip": 19658972,
+      "registros": 217004,
+      "fec_proceso_min": "2026-06-01",
+      "fec_proceso_max": "2026-06-30"
+    },
+    {
       "archivo": "export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
       "periodo_fuente": "2026-07",
       "sha256": "9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000",
@@ -21,7 +75,25 @@
       "registros": 189104,
       "fec_proceso_min": "2026-07-01",
       "fec_proceso_max": "2026-07-31"
+    },
+    {
+      "archivo": "export_mensual_mat_202608_e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a.zip",
+      "periodo_fuente": "2026-08",
+      "sha256": "e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a",
+      "bytes_zip": 12021955,
+      "registros": 126610,
+      "fec_proceso_min": "2026-08-03",
+      "fec_proceso_max": "2026-08-31"
+    },
+    {
+      "archivo": "export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
+      "periodo_fuente": "2026-09",
+      "sha256": "0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12",
+      "bytes_zip": 15991671,
+      "registros": 169941,
+      "fec_proceso_min": "2026-09-01",
+      "fec_proceso_max": "2026-09-30"
     }
   ],
-  "capturas_validas_procesadas": 1
+  "capturas_validas_procesadas": 9
 }
