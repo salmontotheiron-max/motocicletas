@@ -1,13 +1,8 @@
 ﻿periodo,CLAVE_TRAMITE,descripcion_operacion,recuento,fecha_sustitutiva_con_asterisco
-2026-10,1,Matriculación ordinaria y de ciclomotores,27237,
-2026-10,1,Matriculación ordinaria y de ciclomotores,606,*
-2026-10,5,Rematriculación,2,*
-2026-10,9,Matriculación temporal,4,
-2026-10,9,Matriculación temporal,16,*
-2026-10,B,Paso de matrícula temporal a definitiva,2,
-2026-10,B,Paso de matrícula temporal a definitiva,31,*
-2026-11,1,Matriculación ordinaria y de ciclomotores,3685,
-2026-11,1,Matriculación ordinaria y de ciclomotores,94,*
-2026-11,9,Matriculación temporal,1,
-2026-11,9,Matriculación temporal,1,*
-2026-11,B,Paso de matrícula temporal a definitiva,6,*
+2026-07,1,Matriculación ordinaria y de ciclomotores,33342,
+2026-07,1,Matriculación ordinaria y de ciclomotores,643,*
+2026-07,5,Rematriculación,4,*
+2026-07,9,Matriculación temporal,4,
+2026-07,9,Matriculación temporal,17,*
+2026-07,B,Paso de matrícula temporal a definitiva,3,
+2026-07,B,Paso de matrícula temporal a definitiva,55,*
