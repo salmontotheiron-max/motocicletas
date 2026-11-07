@@ -29,8 +29,8 @@ class MonthlyProcessorTests(unittest.TestCase):
     def test_selects_latest_capture_for_each_month(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            older = root / "export_mensual_mat_202607_" + Path("a" * 64 + ".zip")
-            newer = root / "export_mensual_mat_202607_" + Path("b" * 64 + ".zip")
+            older = root / ("export_mensual_mat_202607_" + "a" * 64 + ".zip")
+            newer = root / ("export_mensual_mat_202607_" + "b" * 64 + ".zip")
             older.write_bytes(b"x")
             newer.write_bytes(b"x")
             inventory = root / "inventory.json"
