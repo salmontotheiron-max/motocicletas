@@ -6,6 +6,7 @@ import json
 import time
 import zipfile
 from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
 from io import BytesIO
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -21,7 +22,7 @@ BASE_URL = (
 
 def month_pair(today=None):
     """Devuelve mes actual y anterior en calendario local del runner."""
-    today = today or date.today()
+    today = today or datetime.now(ZoneInfo("Europe/Madrid")).date()
     first = today.replace(day=1)
     previous_last = first.fromordinal(first.toordinal() - 1)
     return [previous_last.strftime("%Y-%m"), first.strftime("%Y-%m")]
@@ -141,10 +142,23 @@ def main():
     results = [download_month(month, args.output_dir) for month in months]
     inventory_path = Path(args.inventory_file)
     inventory_path.parent.mkdir(parents=True, exist_ok=True)
-    inventory = {
-        "fecha_captura_utc": datetime.now(timezone.utc).isoformat(),
+    captured_at = datetime.now(timezone.utc).isoformat()
+    previous = {"ejecuciones": []}
+    if inventory_path.exists():
+        try:
+            previous = json.loads(inventory_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            raise SystemExit("El inventario existente no es JSON válido; no se sobrescribe.")
+    executions = previous.get("ejecuciones", [])
+    executions.append({
+        "fecha_captura_utc": captured_at,
         "periodos_consultados": months,
         "capturas": results,
+    })
+    inventory = {
+        "esquema": 1,
+        "ultima_captura_utc": captured_at,
+        "ejecuciones": executions,
     }
     inventory_path.write_text(
         json.dumps(inventory, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
