@@ -130,10 +130,14 @@ def process_archive(path, period):
         if operation in OPS and reference_date and reference_date.strftime("%Y-%m") >= START:
             opcounts[(reference_date.strftime("%Y-%m"), operation, substitute)] += 1
 
+    digest = hashlib.sha256(payload).hexdigest()
+    expected_digest = path.stem.rsplit("_", 1)[-1]
+    if digest != expected_digest:
+        raise ValueError(f"{path.name}: SHA-256 no coincide con el nombre del snapshot")
     return {
         "archivo": path.name,
         "periodo_fuente": period,
-        "sha256": hashlib.sha256(payload).hexdigest(),
+        "sha256": digest,
         "bytes_zip": len(payload),
         "registros": record_count,
         "fec_proceso_min": min(process_dates) if process_dates else None,
