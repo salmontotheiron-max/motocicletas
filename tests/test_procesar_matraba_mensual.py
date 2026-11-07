@@ -60,10 +60,12 @@ class MonthlyProcessorTests(unittest.TestCase):
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
-            archive = Path(tmp) / ("export_mensual_mat_202607_" + "a" * 64 + ".zip")
             row = make_record(FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
                               COD_TIPO="50", CLAVE_TRAMITE="1",
                               NUEVO_USADO="N", FEC_PROCESO="31072026")
+            payload = make_zip(row + b"\\n" + row)
+            archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
             _, counts, _, _ = p.process_archive(archive, "2026-07")
             self.assertEqual(sum(counts.values()), 2)
 
