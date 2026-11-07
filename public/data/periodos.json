@@ -25,11 +25,11 @@
     },
     "2026-11": {
       "estado": "incompleto",
-      "dias_inventariados": 5,
-      "dias_descargados_validados": 3,
+      "dias_inventariados": 6,
+      "dias_descargados_validados": 4,
       "estados": {
         "no_encontrado_dgt": 2,
-        "descargado_validado": 3
+        "descargado_validado": 4
       },
       "mensaje": null
     }
