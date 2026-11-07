@@ -139,7 +139,7 @@ def process_archive(path, period):
 
         if future_matriculation:
             audit_rows.append([
-                path.name, number, "FEC_MATRICULA_POSTERIOR_A_FEC_PROCESO",
+                path.name, number + 1, "FEC_MATRICULA_POSTERIOR_A_FEC_PROCESO",
                 vehicle_type, operation, new_used,
                 matriculation_date.isoformat(), 
                 transaction_date.isoformat() if transaction_date else "",
@@ -147,7 +147,7 @@ def process_archive(path, period):
             ])
         if operation not in OPS:
             audit_rows.append([
-                path.name, number, "CLAVE_TRAMITE_NO_CATALOGADA",
+                path.name, number + 1, "CLAVE_TRAMITE_NO_CATALOGADA",
                 vehicle_type, operation, new_used,
                 matriculation_date.isoformat() if matriculation_date else "",
                 transaction_date.isoformat() if transaction_date else "",
@@ -155,7 +155,7 @@ def process_archive(path, period):
             ])
         if new_used in ("N", "U") and reference_date is None:
             audit_rows.append([
-                path.name, number, "FECHA_REFERENCIA_NO_DISPONIBLE",
+                path.name, number + 1, "FECHA_REFERENCIA_NO_DISPONIBLE",
                 vehicle_type, operation, new_used,
                 matriculation_date.isoformat() if matriculation_date else "",
                 transaction_date.isoformat() if transaction_date else "",
