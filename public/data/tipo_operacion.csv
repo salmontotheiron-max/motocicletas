@@ -1,61 +1,13 @@
 ﻿periodo,CLAVE_TRAMITE,descripcion_operacion,recuento,fecha_sustitutiva_con_asterisco
-2026-01,1,Matriculación ordinaria y de ciclomotores,17051,
-2026-01,1,Matriculación ordinaria y de ciclomotores,425,*
-2026-01,5,Rematriculación,2,*
-2026-01,9,Matriculación temporal,5,
-2026-01,9,Matriculación temporal,7,*
-2026-01,B,Paso de matrícula temporal a definitiva,1,
-2026-01,B,Paso de matrícula temporal a definitiva,29,*
-2026-02,1,Matriculación ordinaria y de ciclomotores,18469,
-2026-02,1,Matriculación ordinaria y de ciclomotores,473,*
-2026-02,5,Rematriculación,1,*
-2026-02,9,Matriculación temporal,3,
-2026-02,9,Matriculación temporal,20,*
-2026-02,B,Paso de matrícula temporal a definitiva,21,*
-2026-03,1,Matriculación ordinaria y de ciclomotores,26413,
-2026-03,1,Matriculación ordinaria y de ciclomotores,611,*
-2026-03,5,Rematriculación,1,*
-2026-03,9,Matriculación temporal,6,
-2026-03,9,Matriculación temporal,22,*
-2026-03,B,Paso de matrícula temporal a definitiva,33,*
-2026-04,1,Matriculación ordinaria y de ciclomotores,25577,
-2026-04,1,Matriculación ordinaria y de ciclomotores,569,*
-2026-04,5,Rematriculación,2,*
-2026-04,9,Matriculación temporal,7,
-2026-04,9,Matriculación temporal,18,*
-2026-04,B,Paso de matrícula temporal a definitiva,1,
-2026-04,B,Paso de matrícula temporal a definitiva,30,*
-2026-05,1,Matriculación ordinaria y de ciclomotores,28650,
-2026-05,1,Matriculación ordinaria y de ciclomotores,583,*
-2026-05,5,Rematriculación,5,*
-2026-05,9,Matriculación temporal,2,
-2026-05,9,Matriculación temporal,23,*
-2026-05,B,Paso de matrícula temporal a definitiva,1,
-2026-05,B,Paso de matrícula temporal a definitiva,37,*
-2026-06,1,Matriculación ordinaria y de ciclomotores,34436,
-2026-06,1,Matriculación ordinaria y de ciclomotores,679,*
-2026-06,9,Matriculación temporal,9,
-2026-06,9,Matriculación temporal,21,*
-2026-06,B,Paso de matrícula temporal a definitiva,2,
-2026-06,B,Paso de matrícula temporal a definitiva,38,*
-2026-07,1,Matriculación ordinaria y de ciclomotores,33342,
-2026-07,1,Matriculación ordinaria y de ciclomotores,643,*
-2026-07,5,Rematriculación,4,*
-2026-07,9,Matriculación temporal,4,
-2026-07,9,Matriculación temporal,17,*
-2026-07,B,Paso de matrícula temporal a definitiva,3,
-2026-07,B,Paso de matrícula temporal a definitiva,55,*
-2026-08,1,Matriculación ordinaria y de ciclomotores,22014,
-2026-08,1,Matriculación ordinaria y de ciclomotores,521,*
-2026-08,5,Rematriculación,2,*
-2026-08,9,Matriculación temporal,15,*
-2026-08,B,Paso de matrícula temporal a definitiva,1,
-2026-08,B,Paso de matrícula temporal a definitiva,27,*
-2026-09,1,Matriculación ordinaria y de ciclomotores,30044,
-2026-09,1,Matriculación ordinaria y de ciclomotores,613,*
-2026-09,5,Rematriculación,1,*
-2026-09,9,Matriculación temporal,3,
-2026-09,9,Matriculación temporal,19,*
-2026-09,B,Paso de matrícula temporal a definitiva,1,
-2026-09,B,Paso de matrícula temporal a definitiva,35,*
-2026-10,1,Matriculación ordinaria y de ciclomotores,1,
+2026-10,1,Matriculación ordinaria y de ciclomotores,27237,
+2026-10,1,Matriculación ordinaria y de ciclomotores,606,*
+2026-10,5,Rematriculación,2,*
+2026-10,9,Matriculación temporal,4,
+2026-10,9,Matriculación temporal,16,*
+2026-10,B,Paso de matrícula temporal a definitiva,2,
+2026-10,B,Paso de matrícula temporal a definitiva,31,*
+2026-11,1,Matriculación ordinaria y de ciclomotores,4708,
+2026-11,1,Matriculación ordinaria y de ciclomotores,132,*
+2026-11,9,Matriculación temporal,1,
+2026-11,9,Matriculación temporal,2,*
+2026-11,B,Paso de matrícula temporal a definitiva,9,*
