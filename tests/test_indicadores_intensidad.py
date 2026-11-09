@@ -20,7 +20,7 @@ class IndicadoresIntensidadTests(unittest.TestCase):
         self.assertEqual(population["NA"]["provincia"], "Navarra")
         self.assertEqual(park["SG"]["parque_motocicletas"], 11497)
 
-    def test_calcula_indicadores_y_alerta_sin_excluir_seg o_via(self):
+    def test_calcula_indicadores_y_alerta_sin_excluir_segovia(self):
         with tempfile.TemporaryDirectory() as temp:
             temp = Path(temp)
             provincial = temp / "provincial.csv"
