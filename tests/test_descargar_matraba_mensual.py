@@ -27,6 +27,10 @@ class MonthlyDownloaderTests(unittest.TestCase):
     def test_month_pair_crosses_year_boundary(self):
         self.assertEqual(d.month_pair(date(2027, 1, 4)), ["2026-12", "2027-01"])
 
+    def test_validate_month_accepts_compact_and_hyphenated_formats(self):
+        self.assertEqual(d.validate_month("202609"), "2026-09")
+        self.assertEqual(d.validate_month("2026-09"), "2026-09")
+
     def test_monthly_header_and_records(self):
         payload = zip_payload(b"H" * 79 + b"\n" + record() + b"\n")
         data, error, count = d.inspect_zip(payload)
