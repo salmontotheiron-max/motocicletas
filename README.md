@@ -56,6 +56,15 @@ Salidas:
 - `public/data/periodos.json`: periodos con fuente mensual procesada.
 - `public/data/resumen.json`: totales, exclusiones y criterios de procesamiento.
 - `public/data/capturas_mensuales.json`: inventario acumulado de barridos y descargas.
+- `public/data/ranking_motocicletas_provincia.csv`: ranking acumulado por provincia, con recuento, peso porcentual, puesto y número de periodos con datos. Mantiene separados nuevos (provincia de matriculación) y usados (provincia de domicilio del vehículo).
+- `public/data/evolucion_motocicletas_provincia.csv`: evolución mensual provincial, con recuentos y peso porcentual dentro de cada ámbito y mes.
+- `public/data/resumen_territorial.json`: totales, número de provincias, concentración de las cinco y diez primeras, periodos disponibles y trazabilidad de códigos provinciales vacíos.
+
+El script `generar_informe_provincial.py` produce estas tres salidas a partir del CSV provincial. La generación se ejecuta en el workflow mensual y queda cubierta por pruebas automatizadas. Los códigos provinciales vacíos se identifican expresamente; no se asigna una provincia por inferencia. El código `NA` se conserva como Navarra.
+
+Los rankings absolutos no se interpretan como tasas de penetración ni como intensidad de mercado por habitante. Si en una fase posterior se incorpora una fuente oficial y comparable de población o parque de motocicletas, podrán añadirse indicadores relativos sin sustituir los recuentos originales.
+
+Las cifras elevadas de una provincia, incluida Segovia, no se corrigen ni se descartan por su magnitud. Se conservan cuando proceden de los microdatos DGT y superan las validaciones de integridad. Su interpretación contextual se separa de la validación del dato.
 
 Si no existe una fuente válida para un periodo, la interfaz debe mostrar **Dato no disponible en DGT**, no un cero. Un cero solo puede mostrarse cuando se ha procesado la fuente correspondiente y no contiene registros de esa categoría. No se exportan campos personales ni identificadores sensibles.
 

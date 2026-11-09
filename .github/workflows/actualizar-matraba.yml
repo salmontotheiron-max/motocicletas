@@ -101,6 +101,12 @@ jobs:
             --inventory-file public/data/capturas_mensuales.json \
             --previous-dir public/data
 
+      - name: Generar rankings y evolución provincial
+        run: |
+          python generar_informe_provincial.py \
+            --input datos/matraba_mensual/resultados/matriculaciones_motocicletas_por_provincia.csv \
+            --output-dir datos/matraba_mensual/resultados
+
       - name: Publicar informe de auditoría como artefacto descargable
         if: ${{ inputs.mode == 'piloto' }}
         uses: actions/upload-artifact@v5
