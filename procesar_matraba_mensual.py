@@ -117,32 +117,38 @@ def process_archive(path, period):
             excluded[vehicle_type or "(vacío)"] += 1
             continue
 
-        # Una fecha de matriculación posterior al proceso DGT no puede
-        # asignar el registro a un mes futuro. Se usa FEC_PROCESO como
-        # referencia conservadora y se identifica con asterisco.
+        # Para nuevos, la referencia de matriculación es FEC_MATRICULA.
+        # Para usados, se observa el cambio de titular mediante FEC_TRAMITE.
+        # Una fecha de referencia posterior a FEC_PROCESO es incoherente:
+        # se audita y se excluye el registro, sin sustituirla por otra fecha.
         future_matriculation = (
             new_used == "N" and matriculation_date is not None
             and matriculation_date > process_date
         )
+        future_transaction = (
+            transaction_date is not None and transaction_date > process_date
+        )
         reference_date = (
-            process_date if future_matriculation
-            else matriculation_date if new_used == "N"
-            else transaction_date if transaction_date and transaction_date <= process_date
-            else process_date if new_used == "U"
+            matriculation_date if new_used == "N"
+            else transaction_date if new_used == "U"
             else None
         )
-        substitute = future_matriculation or (
-            new_used == "U" and (
-                not transaction_date or transaction_date > process_date
-            )
-        )
+        invalid_future = future_matriculation or future_transaction
 
         if future_matriculation:
             audit_rows.append([
                 path.name, number + 1, "FEC_MATRICULA_POSTERIOR_A_FEC_PROCESO",
                 vehicle_type, operation, new_used,
-                matriculation_date.isoformat(), 
+                matriculation_date.isoformat(),
                 transaction_date.isoformat() if transaction_date else "",
+                process_date.isoformat(),
+            ])
+        if future_transaction:
+            audit_rows.append([
+                path.name, number + 1, "FEC_TRAMITE_POSTERIOR_A_FEC_PROCESO",
+                vehicle_type, operation, new_used,
+                matriculation_date.isoformat() if matriculation_date else "",
+                transaction_date.isoformat(),
                 process_date.isoformat(),
             ])
         if operation not in OPS:
@@ -162,10 +168,13 @@ def process_archive(path, period):
                 process_date.isoformat(),
             ])
 
+        if invalid_future:
+            continue
+
         if operation == "1" and reference_date and reference_date.strftime("%Y-%m") >= START and new_used in ("N", "U"):
-            counts[(reference_date.strftime("%Y-%m"), vehicle_type, new_used, substitute)] += 1
-        if operation in OPS and reference_date and reference_date.strftime("%Y-%m") >= START:
-            opcounts[(reference_date.strftime("%Y-%m"), operation, substitute)] += 1
+            counts[(reference_date.strftime("%Y-%m"), vehicle_type, new_used, False)] += 1
+        if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
+            opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
 
     digest = hashlib.sha256(payload).hexdigest()
     expected_digest = path.stem.rsplit("_", 1)[-1]
@@ -281,7 +290,7 @@ def main():
         "exclusiones_por_codigo": dict(sorted(excluded.items())),
         "registros_auditados_con_incidencias": len(audit_rows),
         "incidencias_por_tipo": dict(sorted(Counter(row[2] for row in audit_rows).items())),
-        "nota_fecha": "* En usados se utiliza FEC_TRAMITE (campo 22) cuando es válida y no posterior a FEC_PROCESO; en caso contrario se usa FEC_PROCESO y se marca con asterisco. En nuevos, si FEC_MATRICULA es posterior a FEC_PROCESO, se usa FEC_PROCESO y se marca con asterisco.",
+        "nota_fecha": "En nuevos se utiliza FEC_MATRICULA. En usados se utiliza FEC_TRAMITE para observar los cambios de titular. Si FEC_MATRICULA (nuevos) o FEC_TRAMITE (cualquier operación) es posterior a FEC_PROCESO, se excluye el registro y se anota en auditoría. No se sustituyen fechas futuras por FEC_PROCESO.",
         "privacidad": "No exportar campos personales ni identificadores sensibles.",
         "duplicados": "No se eliminan filas idénticas automáticamente.",
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
