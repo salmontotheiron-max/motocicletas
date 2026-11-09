@@ -17,10 +17,9 @@ on:
         type: string
         default: ""
 
-# La programación se activará únicamente después de validar el piloto de julio
-# y completar la carga inicial de 2026.
-# schedule:
-#   - cron: "25 5 1,8,15,22,28 * *"
+# Barridos programados: días 1, 8, 15, 22 y 28 a las 05:25 UTC.
+schedule:
+  - cron: "25 5 1,8,15,22,28 * *"
 
 permissions:
   contents: write
@@ -30,8 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-        with:
-          ref: integracion-matraba-inicial
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
@@ -78,7 +75,7 @@ jobs:
           echo "RELEASE_TAG=$tag" >> "$GITHUB_ENV"
           notes="$(mktemp)"
           printf 'Captura de microdatos mensuales MATRABA.\n\n' > "$notes"
-          printf 'Rama: integracion-matraba-inicial\n' >> "$notes"
+          printf 'Rama: %s\n' "$GITHUB_REF_NAME" >> "$notes"
           printf 'Ejecución: %s\n' "$GITHUB_RUN_ID" >> "$notes"
           gh release create "$tag" \
             --title "MATRABA | barrido $GITHUB_RUN_ID" \
@@ -127,7 +124,7 @@ jobs:
         run: |
           cp datos/matraba_mensual/resultados/* public/data/
 
-      - name: Publicar inventario y agregados en la rama de trabajo
+      - name: Publicar inventario y agregados en la rama de ejecución
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -140,5 +137,5 @@ jobs:
           fi
           if ! git diff --cached --quiet; then
             git commit -m "$message"
-            git push origin integracion-matraba-inicial
+            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
           fi
