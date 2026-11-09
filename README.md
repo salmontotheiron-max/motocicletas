@@ -50,7 +50,8 @@ Para vehículos nuevos se usa `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITE`,
 Salidas:
 
 - `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: matriculaciones por periodo, código de tipo y nuevo/usado.
-- `public/data/matriculaciones_motocicletas_por_provincia.csv`: motocicletas (códigos 50 y 51) por periodo y provincia. En nuevos se utiliza `COD_PROVINCIA_MAT` (provincia donde fue matriculado el vehículo); en usados, `COD_PROVINCIA_VEH` (provincia donde está domiciliado el vehículo). El campo `ambito_provincial` identifica cuál de las dos dimensiones se está usando. Los códigos no catalogados se conservan y se etiquetan, no se descartan.
+- `public/data/matriculaciones_motocicletas_por_provincia.csv`: motocicletas (códigos 50 y 51) por periodo y provincia. En nuevos se utiliza `COD_PROVINCIA_MAT`; en usados, `COD_PROVINCIA_VEH`. Los códigos no catalogados se conservan y se etiquetan, no se descartan.
+- `matriculaciones_motocicletas_cruce_provincias_nuevas.csv`: cruce exploratorio por periodo entre provincia de matriculación (`COD_PROVINCIA_MAT`) y provincia del domicilio registrado del vehículo (`COD_PROVINCIA_VEH`) para motocicletas nuevas. No identifica necesariamente la residencia efectiva del comprador.
 - `public/data/tipo_operacion.csv`: operaciones por periodo y clave de trámite.
 - `public/data/manifest.json`: fuente seleccionada por periodo, SHA-256, tamaño, registros y rango de fechas de proceso.
 - `public/data/periodos.json`: periodos con fuente mensual procesada.
