@@ -1,0 +1,116 @@
+name: Validación histórica provincial
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validar-agregado-provincial:
+    name: Procesar ZIP históricos y contrastar totales
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Descargar código del PR
+        uses: actions/checkout@v5
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Descargar ZIP históricos y verificar SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p datos-historicos
+          cat > /tmp/descargas.txt <<'EOF'
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202601_a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202602_dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202603_70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202604_e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202605_272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202606_3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42398621011-1/export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202608_e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a.zip
+          https://github.com/salmontotheiron-max/motocicletas/releases/download/matraba-barrido-42400760701-1/export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip
+          EOF
+          while IFS= read -r url; do
+            [ -n "$url" ] || continue
+            file="datos-historicos/${url##*/}"
+            echo "Descargando ${file##*/}"
+            curl --fail --location --retry 3 --silent --show-error "$url" --output "$file"
+          done < /tmp/descargas.txt
+          (cd datos-historicos && sha256sum -c <(for f in *.zip; do
+            hash="${f%.zip}"; hash="${hash##*_}"
+            printf '%s  %s\n' "$hash" "$f"
+          done))
+          test "$(find datos-historicos -maxdepth 1 -name '*.zip' | wc -l)" -eq 9
+
+      - name: Ejecutar procesador provincial
+        run: |
+          python procesar_matraba_mensual.py \
+            --input-dir datos-historicos \
+            --output-dir resultado-provincial
+
+      - name: Contrastar totales provinciales con totales generales
+        run: |
+          python - <<'PY'
+          import csv
+          from collections import Counter
+          from pathlib import Path
+
+          out = Path("resultado-provincial")
+          general = Counter()
+          with (out / "matriculaciones_nuevos_usados_por_tipo.csv").open(encoding="utf-8-sig", newline="") as f:
+              for row in csv.DictReader(f):
+                  if row["COD_TIPO"] in {"50", "51"}:
+                      general[(row["periodo"], row["nuevo_usado"])] += int(row["recuento"])
+
+          provincial = Counter()
+          with (out / "matriculaciones_motocicletas_por_provincia.csv").open(encoding="utf-8-sig", newline="") as f:
+              for row in csv.DictReader(f):
+                  expected_scope = "matriculacion" if row["nuevo_usado"] == "Nuevo" else "domicilio_vehiculo"
+                  if row["ambito_provincial"] != expected_scope:
+                      raise SystemExit(f"Ámbito provincial incorrecto: {row}")
+                  provincial[(row["periodo"], row["nuevo_usado"])] += int(row["recuento"])
+
+          expected_periods = {f"2026-{month:02d}" for month in range(1, 10)}
+          actual_periods = {period for period, _ in general}
+          if actual_periods != expected_periods:
+              raise SystemExit(f"Periodos generales inesperados: {sorted(actual_periods)}")
+          if general != provincial:
+              keys = sorted(set(general) | set(provincial))
+              differences = [(k, general[k], provincial[k]) for k in keys if general[k] != provincial[k]]
+              raise SystemExit(f"Discrepancias en totales: {differences}")
+
+          report = [
+              "VALIDACIÓN PROVINCIAL: CORRECTA",
+              "ZIP descargados y verificados: 9/9",
+              "Periodos procesados: enero-septiembre de 2026",
+              "Códigos de vehículo: 50 y 51",
+              "Ámbitos: nuevos por matriculación; usados por domicilio del vehículo",
+              "",
+              "periodo,nuevos,usados,total",
+          ]
+          for period in sorted(expected_periods):
+              new = general[(period, "Nuevo")]
+              used = general[(period, "Usado")]
+              report.append(f"{period},{new},{used},{new + used}")
+          (out / "informe_validacion_provincial.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
+          print("\n".join(report))
+          PY
+
+      - name: Publicar resultados como artefacto temporal
+        uses: actions/upload-artifact@v4
+        with:
+          name: validacion-provincial-enero-septiembre-2026
+          path: |
+            resultado-provincial/matriculaciones_motocicletas_por_provincia.csv
+            resultado-provincial/informe_validacion_provincial.txt
+            resultado-provincial/manifest.json
+          retention-days: 7
+          if-no-files-found: error
