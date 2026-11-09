@@ -27,6 +27,28 @@ TYPES = {
     "92": "Cuadriciclo ligero",
 }
 TARGET_TYPE_CODES = frozenset(TYPES)
+MOTORCYCLE_CODES = frozenset({"50", "51"})
+PROVINCES = {
+    "A": "Alicante/Alacant", "AB": "Albacete", "AL": "Almería",
+    "AV": "Ávila", "B": "Barcelona", "BA": "Badajoz",
+    "BI": "Bizkaia", "BU": "Burgos", "C": "A Coruña",
+    "CA": "Cádiz", "CC": "Cáceres", "CE": "Ceuta",
+    "CO": "Córdoba", "CR": "Ciudad Real", "CS": "Castellón/Castelló",
+    "CU": "Cuenca", "DS": "Desconocido", "EX": "Extranjero",
+    "GC": "Las Palmas", "GI": "Girona", "GR": "Granada",
+    "GU": "Guadalajara", "H": "Huelva", "HU": "Huesca",
+    "IB": "Illes Balears", "J": "Jaén", "L": "Lleida",
+    "LE": "León", "LO": "La Rioja", "LU": "Lugo",
+    "M": "Madrid", "MA": "Málaga", "ML": "Melilla",
+    "MU": "Murcia", "NA": "Navarra", "O": "Asturias",
+    "OU": "Ourense", "P": "Palencia", "PO": "Pontevedra",
+    "S": "Cantabria", "SA": "Salamanca", "SC": "Servicios Centrales",
+    "SE": "Sevilla", "SG": "Segovia", "SO": "Soria",
+    "SS": "Gipuzkoa", "T": "Tarragona", "TE": "Teruel",
+    "TF": "Santa Cruz de Tenerife", "TO": "Toledo",
+    "V": "Valencia/València", "VA": "Valladolid",
+    "VI": "Araba/Álava", "Z": "Zaragoza", "ZA": "Zamora",
+}
 OPS = {
     "1": "Matriculación ordinaria y de ciclomotores",
     "2": "Transferencia", "3": "Baja definitiva",
@@ -92,6 +114,7 @@ def process_archive(path, period):
         lines.pop()
     rows = [line.decode("cp1252") for line in lines[1:]]
     counts = Counter()
+    provincial_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     process_dates = []
@@ -112,6 +135,8 @@ def process_archive(path, period):
         operation = values[21]
         new_used = values[25]
         vehicle_type = values[7]
+        province_vehicle = values[19]
+        province_registration = values[20]
 
         if vehicle_type not in TARGET_TYPE_CODES:
             excluded[vehicle_type or "(vacío)"] += 1
@@ -172,7 +197,19 @@ def process_archive(path, period):
             continue
 
         if operation == "1" and reference_date and reference_date.strftime("%Y-%m") >= START and new_used in ("N", "U"):
-            counts[(reference_date.strftime("%Y-%m"), vehicle_type, new_used, False)] += 1
+            reference_period = reference_date.strftime("%Y-%m")
+            counts[(reference_period, vehicle_type, new_used, False)] += 1
+            if vehicle_type in MOTORCYCLE_CODES:
+                # En nuevos se clasifica por provincia de matriculación.
+                # En usados se clasifica por provincia de domicilio del vehículo.
+                province_scope, province_code = (
+                    ("matriculacion", province_registration) if new_used == "N"
+                    else ("domicilio_vehiculo", province_vehicle)
+                )
+                provincial_counts[(
+                    reference_period, province_scope, province_code or "(vacío)",
+                    vehicle_type, new_used
+                )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
 
@@ -188,7 +225,7 @@ def process_archive(path, period):
         "registros": record_count,
         "fec_proceso_min": min(process_dates) if process_dates else None,
         "fec_proceso_max": max(process_dates) if process_dates else None,
-    }, counts, opcounts, excluded, audit_rows
+    }, counts, provincial_counts, opcounts, excluded, audit_rows
 
 
 def main():
@@ -203,14 +240,16 @@ def main():
 
     selected = select_latest_archives(args.input_dir, args.inventory_file)
     counts = Counter()
+    provincial_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     manifest = []
     audit_rows = []
     for period, archive in selected.items():
-        info, month_counts, month_ops, month_excluded, month_audit = process_archive(archive, period)
+        info, month_counts, month_provincial, month_ops, month_excluded, month_audit = process_archive(archive, period)
         manifest.append(info)
         counts.update(month_counts)
+        provincial_counts.update(month_provincial)
         opcounts.update(month_ops)
         excluded.update(month_excluded)
         audit_rows.extend(month_audit)
@@ -220,6 +259,18 @@ def main():
         writer.writerow(["periodo", "COD_TIPO", "descripcion_tipo", "nuevo_usado", "recuento", "fecha_sustitutiva_con_asterisco"])
         for key, value in sorted(counts.items()):
             writer.writerow([key[0], key[1], TYPES[key[1]], "Nuevo" if key[2] == "N" else "Usado", value, "*" if key[3] else ""])
+
+    with (output / "matriculaciones_motocicletas_por_provincia.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["periodo", "ambito_provincial", "COD_PROVINCIA", "provincia",
+                         "COD_TIPO", "nuevo_usado", "recuento"])
+        for key, value in sorted(provincial_counts.items()):
+            period, scope, province_code, vehicle_type, new_used = key
+            writer.writerow([
+                period, scope, province_code,
+                PROVINCES.get(province_code, "Código no catalogado"),
+                vehicle_type, "Nuevo" if new_used == "N" else "Usado", value,
+            ])
 
     with (output / "tipo_operacion.csv").open("w", newline="", encoding="utf-8-sig") as handle:
         writer = csv.writer(handle)

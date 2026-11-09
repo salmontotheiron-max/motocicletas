@@ -45,11 +45,12 @@ Cada ejecución crea un Release de barrido. Un ZIP con el mismo nombre/hash que 
 
 El procesador `procesar_matraba_mensual.py` selecciona una única versión por mes: la última captura válida registrada en el inventario. Las versiones anteriores se conservan como evidencia y no se suman entre sí.
 
-Para vehículos nuevos se usa `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITE`, porque el informe observa cambios de titularidad que no necesariamente modifican `FEC_MATRICULA`. Las operaciones se fechan igualmente por `FEC_TRAMITE`. Si la fecha de referencia de un registro es posterior a `FEC_PROCESO`, se excluye el registro y se anota en la auditoría; no se sustituye por `FEC_PROCESO`. Los registros sin fecha de referencia válida tampoco se incorporan al recuento correspondiente. `FEC_PROCESO` se utiliza como control de coherencia y no para asignar el periodo.
+Para vehículos nuevos se usa `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITE`, porque el informe observa cambios de titularidad que no necesariamente modifican `FEC_MATRICULA`. En el agregado territorial de motocicletas, los nuevos se agrupan por provincia de matriculación (`COD_PROVINCIA_MAT`) y los usados por provincia de domicilio del vehículo (`COD_PROVINCIA_VEH`); son dimensiones distintas y no deben sumarse como una única distribución territorial. Las operaciones se fechan igualmente por `FEC_TRAMITE`. Si la fecha de referencia de un registro es posterior a `FEC_PROCESO`, se excluye el registro y se anota en la auditoría; no se sustituye por `FEC_PROCESO`. Los registros sin fecha de referencia válida tampoco se incorporan al recuento correspondiente. `FEC_PROCESO` se utiliza como control de coherencia y no para asignar el periodo.
 
 Salidas:
 
 - `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: matriculaciones por periodo, código de tipo y nuevo/usado.
+- `public/data/matriculaciones_motocicletas_por_provincia.csv`: motocicletas (códigos 50 y 51) por periodo y provincia. En nuevos se utiliza `COD_PROVINCIA_MAT` (provincia donde fue matriculado el vehículo); en usados, `COD_PROVINCIA_VEH` (provincia donde está domiciliado el vehículo). El campo `ambito_provincial` identifica cuál de las dos dimensiones se está usando. Los códigos no catalogados se conservan y se etiquetan, no se descartan.
 - `public/data/tipo_operacion.csv`: operaciones por periodo y clave de trámite.
 - `public/data/manifest.json`: fuente seleccionada por periodo, SHA-256, tamaño, registros y rango de fechas de proceso.
 - `public/data/periodos.json`: periodos con fuente mensual procesada.
