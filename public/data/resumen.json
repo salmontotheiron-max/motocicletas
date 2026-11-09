@@ -1,8 +1,8 @@
 {
   "archivos_procesados": 9,
   "periodos_procesados": 9,
-  "registros_matriculaciones": 241115,
-  "registros_operaciones": 241649,
+  "registros_matriculaciones": 241110,
+  "registros_operaciones": 241644,
   "filtro_cod_tipo": [
     "50",
     "51",
@@ -103,7 +103,7 @@
   "incidencias_por_tipo": {
     "FEC_MATRICULA_POSTERIOR_A_FEC_PROCESO": 5
   },
-  "nota_fecha": "* En usados se utiliza FEC_TRAMITE (campo 22) cuando es válida y no posterior a FEC_PROCESO; en caso contrario se usa FEC_PROCESO y se marca con asterisco. En nuevos, si FEC_MATRICULA es posterior a FEC_PROCESO, se usa FEC_PROCESO y se marca con asterisco.",
+  "nota_fecha": "En nuevos se utiliza FEC_MATRICULA. En usados se utiliza FEC_TRAMITE para observar los cambios de titular. Si FEC_MATRICULA (nuevos) o FEC_TRAMITE (cualquier operación) es posterior a FEC_PROCESO, se excluye el registro y se anota en auditoría. No se sustituyen fechas futuras por FEC_PROCESO.",
   "privacidad": "No exportar campos personales ni identificadores sensibles.",
   "duplicados": "No se eliminan filas idénticas automáticamente."
 }
