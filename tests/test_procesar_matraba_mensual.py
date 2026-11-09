@@ -79,10 +79,23 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
             _, counts, _, _, audit = p.process_archive(archive, "2026-09")
-            self.assertEqual(counts[("2026-09", "53", "N", True)], 1)
+            self.assertEqual(sum(counts.values()), 0)
             self.assertNotIn(("2026-10", "53", "N", False), counts)
             self.assertEqual(len(audit), 1)
             self.assertEqual(audit[0][2], "FEC_MATRICULA_POSTERIOR_A_FEC_PROCESO")
+
+    def test_future_transaction_date_excludes_used_vehicle_and_operation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(FEC_MATRICULA="15082026", FEC_TRAMITACION="10092026",
+                              COD_TIPO="50", CLAVE_TRAMITE="1",
+                              NUEVO_USADO="U", FEC_PROCESO="01092026")
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, counts, ops, _, audit = p.process_archive(archive, "2026-09")
+            self.assertEqual(sum(counts.values()), 0)
+            self.assertEqual(sum(ops.values()), 0)
+            self.assertEqual(audit[0][2], "FEC_TRAMITE_POSTERIOR_A_FEC_PROCESO")
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
