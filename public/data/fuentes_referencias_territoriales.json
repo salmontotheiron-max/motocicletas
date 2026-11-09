@@ -1,0 +1,17 @@
+{
+  "poblacion": {
+    "fuente": "INE; cifras oficiales declaradas por Real Decreto 1117/2025",
+    "fecha_referencia": "2025-01-01",
+    "fecha_descarga": "2026-11-09",
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-25362"
+  },
+  "parque_motocicletas": {
+    "fuente": "DGT, Anuario Estadístico General 2025, tabla 75",
+    "fecha_referencia": "2025-12-31",
+    "fecha_descarga": "2026-11-09",
+    "url": "https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/publicaciones/Anuario_Estadistico_General/Anuario-General-2025.pdf",
+    "total_nacional": 4510222
+  },
+  "cobertura": 52,
+  "nota": "Los CSV conservan el código provincial DGT y el valor oficial. La trazabilidad completa de cada tabla se documenta aquí."
+}

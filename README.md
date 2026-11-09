@@ -90,3 +90,25 @@ El workflow incorpora un calendario para los días 1, 8, 15, 22 y 28 de cada mes
 ## Prototipo anterior ANESDOR
 
 El `index.html` existente sigue siendo el prototipo estático ANESDOR de 2025. La migración MATRABA todavía no conecta sus CSV al dashboard ni sustituye el contenido del prototipo.
+
+
+### Indicadores relativos de intensidad territorial
+
+Se incorporan dos referencias oficiales provinciales:
+
+- `public/data/poblacion_provincial_2025.csv`: cifras oficiales de población a 1 de enero de 2025 (INE, declaradas por el Real Decreto 1117/2025).
+- `public/data/parque_motocicletas_provincia_2025.csv`: parque de motocicletas a 31 de diciembre de 2025 (DGT, Anuario Estadístico General 2025, tabla 75).
+- `public/data/fuentes_referencias_territoriales.json`: fuentes, fechas de referencia y descarga, cobertura y total nacional de control.
+
+El script `generar_indicadores_intensidad.py` genera:
+
+- `indicadores_intensidad_territorial.csv`: matriculaciones nuevas acumuladas por 1.000 habitantes y como porcentaje del parque provincial de referencia.
+- `metodologia_indicadores_territoriales.json`: periodos, fórmulas, fuentes y limitaciones.
+
+La cobertura de los dos denominadores debe ser exactamente de 52 territorios (50 provincias y las ciudades autónomas), sin códigos duplicados, nombres incompatibles ni fechas de referencia distintas de las declaradas. El total del parque de motocicletas debe coincidir con 4.510.222 unidades de la tabla 75 de la DGT.
+
+Los indicadores se calculan únicamente para motocicletas nuevas (códigos 50 y 51), por provincia de matriculación. No se calculan ratios para usados: estos son cambios de titularidad por provincia de domicilio del vehículo y no todas las compraventas. Los flujos acumulados de 2026 se comparan con población de 1-1-2025 y parque de 31-12-2025; por tanto, son indicadores descriptivos de intensidad, no tasas de renovación ni cuotas de mercado.
+
+Se marca `REVISAR` cuando las matriculaciones acumuladas alcanzan el 25% del parque de referencia. El umbral es una señal operativa de revisión, no una anomalía confirmada. No excluye ni corrige registros. En particular, los valores elevados de Segovia se conservan íntegramente.
+
+La generación se ejecuta en el workflow mensual después del agregado provincial, por lo que los dos archivos de salida se publican junto con el resto de datos cuando el workflow actualiza `public/data`.
