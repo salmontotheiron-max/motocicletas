@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import re
 import time
 import zipfile
 from datetime import date, datetime, timezone
@@ -29,12 +30,16 @@ def month_pair(today=None):
 
 
 def validate_month(value):
+    # Acepta YYYY-MM y YYYYMM para evitar errores de formato al introducir
+    # meses desde el formulario de GitHub Actions.
+    if re.fullmatch(r"\\d{6}", value):
+        value = value[:4] + "-" + value[4:]
     try:
         parsed = datetime.strptime(value, "%Y-%m")
     except ValueError as exc:
-        raise argparse.ArgumentTypeError("El mes debe tener formato YYYY-MM") from exc
+        raise argparse.ArgumentTypeError("El mes debe tener formato YYYY-MM o YYYYMM") from exc
     if parsed.strftime("%Y-%m") != value:
-        raise argparse.ArgumentTypeError("El mes debe tener formato YYYY-MM")
+        raise argparse.ArgumentTypeError("El mes debe tener formato YYYY-MM o YYYYMM")
     return value
 
 
