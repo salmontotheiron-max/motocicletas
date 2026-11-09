@@ -32,7 +32,7 @@ def month_pair(today=None):
 def validate_month(value):
     # Acepta YYYY-MM y YYYYMM para evitar errores de formato al introducir
     # meses desde el formulario de GitHub Actions.
-    if re.fullmatch(r"\\d{6}", value):
+    if re.fullmatch(r"\d{6}", value):
         value = value[:4] + "-" + value[4:]
     try:
         parsed = datetime.strptime(value, "%Y-%m")
