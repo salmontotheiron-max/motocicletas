@@ -1,0 +1,352 @@
+{
+  "esquema": 1,
+  "ultima_captura_utc": "2026-11-09T11:15:49.664379+00:00",
+  "ejecuciones": [
+    {
+      "fecha_captura_utc": "2026-11-07T17:54:52.777652+00:00",
+      "periodos_consultados": [
+        "2026-07"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-07",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-07/export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
+          "nombre_txt": null,
+          "sha256": "9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000",
+          "bytes_zip": 17837719,
+          "bytes_txt": 135209440,
+          "registros": 189104,
+          "url": "https://www.dgt.es/microdatos/salida/2026/7/vehiculos/matriculaciones/export_mensual_mat_202607.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-07T18:02:41.594033+00:00",
+      "periodos_consultados": [
+        "2026-07"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-07",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-07/export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
+          "nombre_txt": null,
+          "sha256": "9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000",
+          "bytes_zip": 17837719,
+          "bytes_txt": 135209440,
+          "registros": 189104,
+          "url": "https://www.dgt.es/microdatos/salida/2026/7/vehiculos/matriculaciones/export_mensual_mat_202607.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-07T18:20:28.375140+00:00",
+      "periodos_consultados": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-01",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-01/export_mensual_mat_202601_a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7.zip",
+          "nombre_txt": null,
+          "sha256": "a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7",
+          "bytes_zip": 12218198,
+          "bytes_txt": 93338325,
+          "registros": 130543,
+          "url": "https://www.dgt.es/microdatos/salida/2026/1/vehiculos/matriculaciones/export_mensual_mat_202601.zip"
+        },
+        {
+          "periodo": "2026-02",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-02/export_mensual_mat_202602_dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03.zip",
+          "nombre_txt": null,
+          "sha256": "dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03",
+          "bytes_zip": 14724174,
+          "bytes_txt": 115602710,
+          "registros": 161682,
+          "url": "https://www.dgt.es/microdatos/salida/2026/2/vehiculos/matriculaciones/export_mensual_mat_202602.zip"
+        },
+        {
+          "periodo": "2026-03",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-03/export_mensual_mat_202603_70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0.zip",
+          "nombre_txt": null,
+          "sha256": "70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0",
+          "bytes_zip": 18782350,
+          "bytes_txt": 150219435,
+          "registros": 210097,
+          "url": "https://www.dgt.es/microdatos/salida/2026/3/vehiculos/matriculaciones/export_mensual_mat_202603.zip"
+        },
+        {
+          "periodo": "2026-04",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-04/export_mensual_mat_202604_e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3.zip",
+          "nombre_txt": null,
+          "sha256": "e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3",
+          "bytes_zip": 16389678,
+          "bytes_txt": 128796605,
+          "registros": 180135,
+          "url": "https://www.dgt.es/microdatos/salida/2026/4/vehiculos/matriculaciones/export_mensual_mat_202604.zip"
+        },
+        {
+          "periodo": "2026-05",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-05/export_mensual_mat_202605_272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f.zip",
+          "nombre_txt": null,
+          "sha256": "272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f",
+          "bytes_zip": 17332519,
+          "bytes_txt": 135582670,
+          "registros": 189626,
+          "url": "https://www.dgt.es/microdatos/salida/2026/5/vehiculos/matriculaciones/export_mensual_mat_202605.zip"
+        },
+        {
+          "periodo": "2026-06",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-06/export_mensual_mat_202606_3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf.zip",
+          "nombre_txt": null,
+          "sha256": "3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf",
+          "bytes_zip": 19658972,
+          "bytes_txt": 155157940,
+          "registros": 217004,
+          "url": "https://www.dgt.es/microdatos/salida/2026/6/vehiculos/matriculaciones/export_mensual_mat_202606.zip"
+        },
+        {
+          "periodo": "2026-07",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-07/export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
+          "nombre_txt": null,
+          "sha256": "9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000",
+          "bytes_zip": 17837719,
+          "bytes_txt": 135209440,
+          "registros": 189104,
+          "url": "https://www.dgt.es/microdatos/salida/2026/7/vehiculos/matriculaciones/export_mensual_mat_202607.zip"
+        },
+        {
+          "periodo": "2026-08",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-08/export_mensual_mat_202608_e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a.zip",
+          "nombre_txt": null,
+          "sha256": "e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a",
+          "bytes_zip": 12021955,
+          "bytes_txt": 90526230,
+          "registros": 126610,
+          "url": "https://www.dgt.es/microdatos/salida/2026/8/vehiculos/matriculaciones/export_mensual_mat_202608.zip"
+        },
+        {
+          "periodo": "2026-09",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-09/export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
+          "nombre_txt": null,
+          "sha256": "0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12",
+          "bytes_zip": 15991671,
+          "bytes_txt": 121507895,
+          "registros": 169941,
+          "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/matriculaciones/export_mensual_mat_202609.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-07T18:42:20.981227+00:00",
+      "periodos_consultados": [
+        "2026-10",
+        "2026-11"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-10",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/10/vehiculos/matriculaciones/export_mensual_mat_202610.zip"
+        },
+        {
+          "periodo": "2026-11",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/11/vehiculos/matriculaciones/export_mensual_mat_202611.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-09T10:27:19.042403+00:00",
+      "periodos_consultados": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-01",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-01/export_mensual_mat_202601_a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7.zip",
+          "nombre_txt": null,
+          "sha256": "a3204bedf03cda0008dee3bb5be2c3c589a7a24aec959b6e96fa07f0338ddec7",
+          "bytes_zip": 12218198,
+          "bytes_txt": 93338325,
+          "registros": 130543,
+          "url": "https://www.dgt.es/microdatos/salida/2026/1/vehiculos/matriculaciones/export_mensual_mat_202601.zip"
+        },
+        {
+          "periodo": "2026-02",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-02/export_mensual_mat_202602_dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03.zip",
+          "nombre_txt": null,
+          "sha256": "dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03",
+          "bytes_zip": 14724174,
+          "bytes_txt": 115602710,
+          "registros": 161682,
+          "url": "https://www.dgt.es/microdatos/salida/2026/2/vehiculos/matriculaciones/export_mensual_mat_202602.zip"
+        },
+        {
+          "periodo": "2026-03",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-03/export_mensual_mat_202603_70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0.zip",
+          "nombre_txt": null,
+          "sha256": "70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0",
+          "bytes_zip": 18782350,
+          "bytes_txt": 150219435,
+          "registros": 210097,
+          "url": "https://www.dgt.es/microdatos/salida/2026/3/vehiculos/matriculaciones/export_mensual_mat_202603.zip"
+        },
+        {
+          "periodo": "2026-04",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-04/export_mensual_mat_202604_e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3.zip",
+          "nombre_txt": null,
+          "sha256": "e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3",
+          "bytes_zip": 16389678,
+          "bytes_txt": 128796605,
+          "registros": 180135,
+          "url": "https://www.dgt.es/microdatos/salida/2026/4/vehiculos/matriculaciones/export_mensual_mat_202604.zip"
+        },
+        {
+          "periodo": "2026-05",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-05/export_mensual_mat_202605_272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f.zip",
+          "nombre_txt": null,
+          "sha256": "272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f",
+          "bytes_zip": 17332519,
+          "bytes_txt": 135582670,
+          "registros": 189626,
+          "url": "https://www.dgt.es/microdatos/salida/2026/5/vehiculos/matriculaciones/export_mensual_mat_202605.zip"
+        },
+        {
+          "periodo": "2026-06",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-06/export_mensual_mat_202606_3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf.zip",
+          "nombre_txt": null,
+          "sha256": "3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf",
+          "bytes_zip": 19658972,
+          "bytes_txt": 155157940,
+          "registros": 217004,
+          "url": "https://www.dgt.es/microdatos/salida/2026/6/vehiculos/matriculaciones/export_mensual_mat_202606.zip"
+        },
+        {
+          "periodo": "2026-07",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-07/export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
+          "nombre_txt": null,
+          "sha256": "9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000",
+          "bytes_zip": 17837719,
+          "bytes_txt": 135209440,
+          "registros": 189104,
+          "url": "https://www.dgt.es/microdatos/salida/2026/7/vehiculos/matriculaciones/export_mensual_mat_202607.zip"
+        },
+        {
+          "periodo": "2026-08",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-08/export_mensual_mat_202608_e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a.zip",
+          "nombre_txt": null,
+          "sha256": "e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a",
+          "bytes_zip": 12021955,
+          "bytes_txt": 90526230,
+          "registros": 126610,
+          "url": "https://www.dgt.es/microdatos/salida/2026/8/vehiculos/matriculaciones/export_mensual_mat_202608.zip"
+        },
+        {
+          "periodo": "2026-09",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-09/export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
+          "nombre_txt": null,
+          "sha256": "0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12",
+          "bytes_zip": 15991671,
+          "bytes_txt": 121507895,
+          "registros": 169941,
+          "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/matriculaciones/export_mensual_mat_202609.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-09T11:06:36.752443+00:00",
+      "periodos_consultados": [
+        "2026-09"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-09",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-09/export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
+          "nombre_txt": null,
+          "sha256": "0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12",
+          "bytes_zip": 15991671,
+          "bytes_txt": 121507895,
+          "registros": 169941,
+          "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/matriculaciones/export_mensual_mat_202609.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-09T11:14:03.988779+00:00",
+      "periodos_consultados": [
+        "2026-09"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-09",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-09/export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
+          "nombre_txt": null,
+          "sha256": "0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12",
+          "bytes_zip": 15991671,
+          "bytes_txt": 121507895,
+          "registros": 169941,
+          "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/matriculaciones/export_mensual_mat_202609.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-09T11:15:49.664379+00:00",
+      "periodos_consultados": [
+        "2026-09"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-09",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-09/export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
+          "nombre_txt": null,
+          "sha256": "0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12",
+          "bytes_zip": 15991671,
+          "bytes_txt": 121507895,
+          "registros": 169941,
+          "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/matriculaciones/export_mensual_mat_202609.zip"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+﻿periodo,CLAVE_TRAMITE,descripcion_operacion,fecha_sustitutiva_con_asterisco,recuento_anterior,recuento_corregido,diferencia
+2026-01,1,Matriculación ordinaria y de ciclomotores,,17476,17476,0
+2026-01,5,Rematriculación,,2,2,0
+2026-01,9,Matriculación temporal,,12,12,0
+2026-01,B,Paso de matrícula temporal a definitiva,,30,30,0
+2026-02,1,Matriculación ordinaria y de ciclomotores,,18941,18941,0
+2026-02,1,Matriculación ordinaria y de ciclomotores,*,1,0,-1
+2026-02,5,Rematriculación,,1,1,0
+2026-02,9,Matriculación temporal,,23,23,0
+2026-02,B,Paso de matrícula temporal a definitiva,,21,21,0
+2026-03,1,Matriculación ordinaria y de ciclomotores,,27024,27024,0
+2026-03,5,Rematriculación,,1,1,0
+2026-03,9,Matriculación temporal,,28,28,0
+2026-03,B,Paso de matrícula temporal a definitiva,,33,33,0
+2026-04,1,Matriculación ordinaria y de ciclomotores,,26146,26146,0
+2026-04,1,Matriculación ordinaria y de ciclomotores,*,1,0,-1
+2026-04,5,Rematriculación,,2,2,0
+2026-04,9,Matriculación temporal,,25,25,0
+2026-04,B,Paso de matrícula temporal a definitiva,,31,31,0
+2026-05,1,Matriculación ordinaria y de ciclomotores,,29233,29233,0
+2026-05,1,Matriculación ordinaria y de ciclomotores,*,1,0,-1
+2026-05,5,Rematriculación,,5,5,0
+2026-05,9,Matriculación temporal,,25,25,0
+2026-05,B,Paso de matrícula temporal a definitiva,,38,38,0
+2026-06,1,Matriculación ordinaria y de ciclomotores,,35113,35113,0
+2026-06,1,Matriculación ordinaria y de ciclomotores,*,1,0,-1
+2026-06,9,Matriculación temporal,,30,30,0
+2026-06,B,Paso de matrícula temporal a definitiva,,40,40,0
+2026-07,1,Matriculación ordinaria y de ciclomotores,,33985,33985,0
+2026-07,5,Rematriculación,,4,4,0
+2026-07,9,Matriculación temporal,,21,21,0
+2026-07,B,Paso de matrícula temporal a definitiva,,58,58,0
+2026-08,1,Matriculación ordinaria y de ciclomotores,,22535,22535,0
+2026-08,5,Rematriculación,,2,2,0
+2026-08,9,Matriculación temporal,,15,15,0
+2026-08,B,Paso de matrícula temporal a definitiva,,28,28,0
+2026-09,1,Matriculación ordinaria y de ciclomotores,,30657,30657,0
+2026-09,1,Matriculación ordinaria y de ciclomotores,*,1,0,-1
+2026-09,5,Rematriculación,,1,1,0
+2026-09,9,Matriculación temporal,,22,22,0
+2026-09,B,Paso de matrícula temporal a definitiva,,36,36,0
