@@ -56,6 +56,12 @@ jobs:
             --input-dir datos-historicos \
             --output-dir resultado-provincial
 
+      - name: Generar y validar informe territorial
+        run: |
+          python generar_informe_provincial.py \
+            --input resultado-provincial/matriculaciones_motocicletas_por_provincia.csv \
+            --output-dir resultado-provincial
+
       - name: Contrastar totales provinciales con totales generales
         run: |
           python - <<'PY'
@@ -112,5 +118,8 @@ jobs:
             resultado-provincial/matriculaciones_motocicletas_por_provincia.csv
             resultado-provincial/informe_validacion_provincial.txt
             resultado-provincial/manifest.json
+            resultado-provincial/ranking_motocicletas_provincia.csv
+            resultado-provincial/evolucion_motocicletas_provincia.csv
+            resultado-provincial/resumen_territorial.json
           retention-days: 7
           if-no-files-found: error
