@@ -97,6 +97,36 @@ class MonthlyProcessorTests(unittest.TestCase):
             self.assertEqual(sum(ops.values()), 0)
             self.assertEqual(audit[0][2], "FEC_TRAMITE_POSTERIOR_A_FEC_PROCESO")
 
+    def test_future_transaction_date_excludes_operation_even_for_new_vehicle(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(FEC_MATRICULA="15082026", FEC_TRAMITACION="10092026",
+                              COD_TIPO="50", CLAVE_TRAMITE="1",
+                              NUEVO_USADO="N", FEC_PROCESO="01092026")
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, counts, ops, _, audit = p.process_archive(archive, "2026-09")
+            self.assertEqual(sum(counts.values()), 0)
+            self.assertEqual(sum(ops.values()), 0)
+            self.assertEqual(len(audit), 1)
+            self.assertEqual(audit[0][2], "FEC_TRAMITE_POSTERIOR_A_FEC_PROCESO")
+
+    def test_used_vehicle_without_valid_transaction_date_is_excluded(self):
+        for transaction_date in ("", "31132026"):
+            with self.subTest(transaction_date=transaction_date):
+                with tempfile.TemporaryDirectory() as tmp:
+                    row = make_record(FEC_MATRICULA="15082026", FEC_TRAMITACION=transaction_date,
+                                      COD_TIPO="50", CLAVE_TRAMITE="1",
+                                      NUEVO_USADO="U", FEC_PROCESO="01092026")
+                    payload = make_zip(row)
+                    archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
+                    archive.write_bytes(payload)
+                    _, counts, ops, _, audit = p.process_archive(archive, "2026-09")
+                    self.assertEqual(sum(counts.values()), 0)
+                    self.assertEqual(sum(ops.values()), 0)
+                    self.assertEqual(len(audit), 1)
+                    self.assertEqual(audit[0][2], "FECHA_REFERENCIA_NO_DISPONIBLE")
+
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
             row = make_record(FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
