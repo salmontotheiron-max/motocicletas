@@ -17,9 +17,9 @@ on:
         type: string
         default: ""
 
-# Barridos programados: días 1, 8, 15, 22 y 28 a las 05:25 UTC.
-schedule:
-  - cron: "25 5 1,8,15,22,28 * *"
+  # Barridos programados: días 1, 8, 15, 22 y 28 a las 05:25 UTC.
+  schedule:
+    - cron: "25 5 1,8,15,22,28 * *"
 
 permissions:
   contents: write
