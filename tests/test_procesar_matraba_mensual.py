@@ -52,7 +52,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            info, counts, provincial, ops, excluded, audit = p.process_archive(archive, "2026-07")
+            info, counts, provincial, cross, ops, excluded, audit = p.process_archive(archive, "2026-07")
             self.assertEqual(info["registros"], 1)
             self.assertEqual(sum(counts.values()), 1)
             self.assertEqual(sum(ops.values()), 1)
@@ -67,7 +67,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _, _, audit = p.process_archive(archive, "2026-09")
+            _, counts, _, _, _, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(counts[("2026-08", "50", "U", False)], 1)
 
     def test_future_matriculation_date_uses_process_month_and_is_flagged(self):
@@ -78,7 +78,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _, _, audit = p.process_archive(archive, "2026-09")
+            _, counts, _, _, _, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(sum(counts.values()), 0)
             self.assertNotIn(("2026-10", "53", "N", False), counts)
             self.assertEqual(len(audit), 1)
@@ -92,7 +92,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, ops, _, audit = p.process_archive(archive, "2026-09")
+            _, counts, _, _, ops, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(sum(counts.values()), 0)
             self.assertEqual(sum(ops.values()), 0)
             self.assertEqual(audit[0][2], "FEC_TRAMITE_POSTERIOR_A_FEC_PROCESO")
@@ -105,7 +105,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, ops, _, audit = p.process_archive(archive, "2026-09")
+            _, counts, _, _, ops, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(sum(counts.values()), 0)
             self.assertEqual(sum(ops.values()), 0)
             self.assertEqual(len(audit), 1)
@@ -121,7 +121,7 @@ class MonthlyProcessorTests(unittest.TestCase):
                     payload = make_zip(row)
                     archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
                     archive.write_bytes(payload)
-                    _, counts, _, ops, _, audit = p.process_archive(archive, "2026-09")
+                    _, counts, _, _, ops, _, audit = p.process_archive(archive, "2026-09")
                     self.assertEqual(sum(counts.values()), 0)
                     self.assertEqual(sum(ops.values()), 0)
                     self.assertEqual(len(audit), 1)
@@ -144,9 +144,11 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(new_row + b"\n" + used_row)
             archive = Path(tmp) / ("export_mensual_mat_202608_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, _, provincial, _, _, _ = p.process_archive(archive, "2026-08")
+            _, _, provincial, cross, _, _, _ = p.process_archive(archive, "2026-08")
             self.assertEqual(provincial[("2026-07", "matriculacion", "A", "50", "N")], 1)
             self.assertEqual(provincial[("2026-08", "domicilio_vehiculo", "MU", "50", "U")], 1)
+            self.assertEqual(cross[("2026-07", "A", "MU", "50")], 1)
+            self.assertEqual(sum(cross.values()), 1)
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -156,7 +158,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row + b"\n" + row)
             archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _, _, audit = p.process_archive(archive, "2026-07")
+            _, counts, _, _, _, _, audit = p.process_archive(archive, "2026-07")
             self.assertEqual(sum(counts.values()), 2)
 
 
