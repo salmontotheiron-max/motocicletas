@@ -1,0 +1,37 @@
+{
+  "periodos": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "criterio_geografico": {
+    "matriculacion": "Provincia de matriculación del vehículo nuevo (COD_PROVINCIA_MAT).",
+    "domicilio_vehiculo": "Provincia de domicilio del vehículo usado (COD_PROVINCIA_VEH)."
+  },
+  "totales_y_concentracion": {
+    "matriculacion": {
+      "total": 219565,
+      "provincias": 52,
+      "top_5_recuento": 100998,
+      "top_5_porcentaje": 45.9991,
+      "top_10_recuento": 142389,
+      "top_10_porcentaje": 64.8505
+    },
+    "domicilio_vehiculo": {
+      "total": 3078,
+      "provincias": 51,
+      "top_5_recuento": 1451,
+      "top_5_porcentaje": 47.141,
+      "top_10_recuento": 1983,
+      "top_10_porcentaje": 64.425
+    }
+  },
+  "codigos_provinciales_vacios": [],
+  "nota_interpretacion": "Los recuentos de nuevos y usados usan ámbitos geográficos distintos. Los usados representan cambios de titularidad y no todas las compraventas."
+}

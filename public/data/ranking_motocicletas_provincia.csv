@@ -1,0 +1,104 @@
+﻿ambito_provincial,COD_PROVINCIA,provincia,recuento,peso_porcentual,puesto,periodos_con_datos
+matriculacion,B,Barcelona,38180,17.3889,1,9
+matriculacion,M,Madrid,25351,11.546,2,9
+matriculacion,MA,Málaga,14512,6.6094,3,9
+matriculacion,V,Valencia/València,12128,5.5236,4,9
+matriculacion,CA,Cádiz,10827,4.9311,5,9
+matriculacion,A,Alicante/Alacant,9381,4.2725,6,9
+matriculacion,SG,Segovia,8908,4.0571,7,9
+matriculacion,IB,Illes Balears,8739,3.9801,8,9
+matriculacion,SE,Sevilla,7254,3.3038,9,9
+matriculacion,CO,Córdoba,7109,3.2378,10,9
+matriculacion,MU,Murcia,6813,3.103,11,9
+matriculacion,GC,Las Palmas,6509,2.9645,12,9
+matriculacion,TF,Santa Cruz de Tenerife,4693,2.1374,13,9
+matriculacion,GR,Granada,4187,1.907,14,9
+matriculacion,T,Tarragona,4025,1.8332,15,9
+matriculacion,Z,Zaragoza,3901,1.7767,16,9
+matriculacion,GI,Girona,3879,1.7667,17,9
+matriculacion,PO,Pontevedra,3848,1.7526,18,9
+matriculacion,O,Asturias,3381,1.5399,19,9
+matriculacion,BI,Bizkaia,3029,1.3795,20,9
+matriculacion,J,Jaén,2931,1.3349,21,9
+matriculacion,SS,Gipuzkoa,2588,1.1787,22,9
+matriculacion,S,Cantabria,2266,1.032,23,9
+matriculacion,H,Huelva,2116,0.9637,24,9
+matriculacion,AL,Almería,1864,0.849,25,9
+matriculacion,NA,Navarra,1729,0.7875,26,9
+matriculacion,VA,Valladolid,1724,0.7852,27,9
+matriculacion,CS,Castellón/Castelló,1566,0.7132,28,9
+matriculacion,BA,Badajoz,1558,0.7096,29,9
+matriculacion,C,A Coruña,1521,0.6927,30,9
+matriculacion,AB,Albacete,1501,0.6836,31,9
+matriculacion,L,Lleida,1198,0.5456,32,9
+matriculacion,TO,Toledo,1042,0.4746,33,9
+matriculacion,LE,León,1007,0.4586,34,9
+matriculacion,VI,Araba/Álava,974,0.4436,35,9
+matriculacion,CE,Ceuta,827,0.3767,36,9
+matriculacion,CC,Cáceres,776,0.3534,37,9
+matriculacion,BU,Burgos,771,0.3511,38,9
+matriculacion,LO,La Rioja,768,0.3498,39,9
+matriculacion,CR,Ciudad Real,634,0.2888,40,9
+matriculacion,SA,Salamanca,608,0.2769,41,9
+matriculacion,ML,Melilla,593,0.2701,42,9
+matriculacion,GU,Guadalajara,567,0.2582,43,9
+matriculacion,LU,Lugo,445,0.2027,44,9
+matriculacion,OU,Ourense,273,0.1243,45,9
+matriculacion,TE,Teruel,266,0.1211,46,9
+matriculacion,P,Palencia,255,0.1161,47,9
+matriculacion,HU,Huesca,190,0.0865,48,9
+matriculacion,CU,Cuenca,133,0.0606,49,9
+matriculacion,ZA,Zamora,96,0.0437,50,9
+matriculacion,SO,Soria,79,0.036,51,9
+matriculacion,AV,Ávila,45,0.0205,52,9
+domicilio_vehiculo,A,Alicante/Alacant,418,13.5802,1,9
+domicilio_vehiculo,M,Madrid,354,11.501,2,9
+domicilio_vehiculo,B,Barcelona,322,10.4613,3,9
+domicilio_vehiculo,MA,Málaga,198,6.4327,4,9
+domicilio_vehiculo,MU,Murcia,159,5.1657,5,9
+domicilio_vehiculo,V,Valencia/València,142,4.6134,6,9
+domicilio_vehiculo,IB,Illes Balears,140,4.5484,7,9
+domicilio_vehiculo,TF,Santa Cruz de Tenerife,99,3.2164,8,9
+domicilio_vehiculo,GI,Girona,78,2.5341,9,9
+domicilio_vehiculo,AL,Almería,73,2.3717,10,9
+domicilio_vehiculo,SE,Sevilla,71,2.3067,11,9
+domicilio_vehiculo,C,A Coruña,66,2.1442,12,9
+domicilio_vehiculo,CA,Cádiz,64,2.0793,13,9
+domicilio_vehiculo,GR,Granada,61,1.9818,14,9
+domicilio_vehiculo,PO,Pontevedra,61,1.9818,14,9
+domicilio_vehiculo,T,Tarragona,60,1.9493,16,9
+domicilio_vehiculo,GC,Las Palmas,52,1.6894,17,9
+domicilio_vehiculo,NA,Navarra,47,1.527,18,9
+domicilio_vehiculo,S,Cantabria,45,1.462,19,8
+domicilio_vehiculo,SS,Gipuzkoa,43,1.397,20,9
+domicilio_vehiculo,O,Asturias,42,1.3645,21,9
+domicilio_vehiculo,BI,Bizkaia,34,1.1046,22,9
+domicilio_vehiculo,CS,Castellón/Castelló,30,0.9747,23,9
+domicilio_vehiculo,L,Lleida,26,0.8447,24,9
+domicilio_vehiculo,OU,Ourense,26,0.8447,24,8
+domicilio_vehiculo,VA,Valladolid,26,0.8447,24,8
+domicilio_vehiculo,LE,León,25,0.8122,27,9
+domicilio_vehiculo,TO,Toledo,25,0.8122,27,8
+domicilio_vehiculo,Z,Zaragoza,24,0.7797,29,9
+domicilio_vehiculo,BA,Badajoz,22,0.7147,30,8
+domicilio_vehiculo,H,Huelva,21,0.6823,31,8
+domicilio_vehiculo,AB,Albacete,20,0.6498,32,8
+domicilio_vehiculo,CR,Ciudad Real,18,0.5848,33,7
+domicilio_vehiculo,CO,Córdoba,18,0.5848,33,9
+domicilio_vehiculo,BU,Burgos,17,0.5523,35,7
+domicilio_vehiculo,CC,Cáceres,17,0.5523,35,8
+domicilio_vehiculo,LO,La Rioja,17,0.5523,35,7
+domicilio_vehiculo,LU,Lugo,17,0.5523,35,7
+domicilio_vehiculo,SA,Salamanca,15,0.4873,39,6
+domicilio_vehiculo,SG,Segovia,14,0.4548,40,6
+domicilio_vehiculo,J,Jaén,12,0.3899,41,7
+domicilio_vehiculo,AV,Ávila,11,0.3574,42,5
+domicilio_vehiculo,VI,Araba/Álava,10,0.3249,43,6
+domicilio_vehiculo,HU,Huesca,7,0.2274,44,5
+domicilio_vehiculo,P,Palencia,7,0.2274,44,6
+domicilio_vehiculo,CU,Cuenca,6,0.1949,46,5
+domicilio_vehiculo,GU,Guadalajara,6,0.1949,46,5
+domicilio_vehiculo,ZA,Zamora,6,0.1949,46,5
+domicilio_vehiculo,CE,Ceuta,4,0.13,49,4
+domicilio_vehiculo,ML,Melilla,1,0.0325,50,1
+domicilio_vehiculo,SO,Soria,1,0.0325,50,1

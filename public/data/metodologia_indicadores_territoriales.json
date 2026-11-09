@@ -1,0 +1,39 @@
+{
+  "periodos_matriculaciones": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "ambito": "Motocicletas nuevas (COD_TIPO 50 y 51), provincia de matriculación",
+  "poblacion": {
+    "fecha_referencia": "2025-01-01",
+    "fuente": "INE / BOE-A-2025-25362",
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-25362"
+  },
+  "parque_motocicletas": {
+    "fecha_referencia": "2025-12-31",
+    "fuente": "DGT, Anuario Estadístico General 2025, tabla 75",
+    "url": "https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/publicaciones/Anuario_Estadistico_General/Anuario-General-2025.pdf",
+    "total_nacional": 4510222
+  },
+  "indicadores": {
+    "matriculaciones_por_1000_habitantes": "matriculaciones nuevas acumuladas / población provincial * 1000",
+    "matriculaciones_sobre_parque_pct": "matriculaciones nuevas acumuladas / parque de motocicletas * 100"
+  },
+  "alerta": {
+    "umbral_pct": 25.0,
+    "criterio": "Marca REVISAR cuando las matriculaciones acumuladas igualan o superan el 25% del parque de referencia. Es un umbral operativo de revisión, no una anomalía confirmada ni una tasa de renovación."
+  },
+  "limitaciones": [
+    "Los nuevos se asignan por provincia de matriculación; el parque se asigna por provincia del parque registrado por la DGT.",
+    "Los indicadores describen un flujo acumulado frente a denominadores de referencia, no cuotas de mercado ni tasas de renovación.",
+    "No se calculan indicadores relativos para usados: son cambios de titularidad por provincia de domicilio del vehículo y no todas las compraventas.",
+    "Las cifras elevadas se conservan; la alerta no excluye ni corrige registros."
+  ]
+}

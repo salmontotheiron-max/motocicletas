@@ -13,7 +13,6 @@
 2026-01,92,Cuadriciclo ligero,Nuevo,,216,216,0
 2026-01,92,Cuadriciclo ligero,Usado,,14,14,0
 2026-02,50,Motocicleta de 2 ruedas sin sidecar,Nuevo,,17037,17037,0
-2026-02,50,Motocicleta de 2 ruedas sin sidecar,Nuevo,*,1,0,-1
 2026-02,50,Motocicleta de 2 ruedas sin sidecar,Usado,,327,327,0
 2026-02,51,Motocicleta con sidecar,Nuevo,,77,77,0
 2026-02,51,Motocicleta con sidecar,Usado,,6,6,0
@@ -53,7 +52,6 @@
 2026-04,54,Cuadriciclo pesado,Nuevo,,78,78,0
 2026-04,54,Cuadriciclo pesado,Usado,,1,1,0
 2026-04,90,Ciclomotor de 2 ruedas,Nuevo,,1013,1013,0
-2026-04,90,Ciclomotor de 2 ruedas,Nuevo,*,1,0,-1
 2026-04,90,Ciclomotor de 2 ruedas,Usado,,195,195,0
 2026-04,91,Ciclomotor de 3 ruedas,Nuevo,,6,6,0
 2026-04,92,Cuadriciclo ligero,Nuevo,,193,193,0
@@ -69,14 +67,12 @@
 2026-05,54,Cuadriciclo pesado,Nuevo,,132,132,0
 2026-05,54,Cuadriciclo pesado,Usado,,7,7,0
 2026-05,90,Ciclomotor de 2 ruedas,Nuevo,,1165,1165,0
-2026-05,90,Ciclomotor de 2 ruedas,Nuevo,*,1,0,-1
 2026-05,90,Ciclomotor de 2 ruedas,Usado,,216,216,0
 2026-05,91,Ciclomotor de 3 ruedas,Nuevo,,5,5,0
 2026-05,91,Ciclomotor de 3 ruedas,Usado,,2,2,0
 2026-05,92,Cuadriciclo ligero,Nuevo,,254,254,0
 2026-05,92,Cuadriciclo ligero,Usado,,14,14,0
 2026-06,50,Motocicleta de 2 ruedas sin sidecar,Nuevo,,31883,31883,0
-2026-06,50,Motocicleta de 2 ruedas sin sidecar,Nuevo,*,1,0,-1
 2026-06,50,Motocicleta de 2 ruedas sin sidecar,Usado,,388,388,0
 2026-06,51,Motocicleta con sidecar,Nuevo,,140,140,0
 2026-06,51,Motocicleta con sidecar,Usado,,11,11,0
@@ -126,7 +122,6 @@
 2026-09,51,Motocicleta con sidecar,Usado,,5,5,0
 2026-09,52,Motocarro,Nuevo,,10,10,0
 2026-09,53,Automóvil de 3 ruedas,Nuevo,,283,283,0
-2026-09,53,Automóvil de 3 ruedas,Nuevo,*,1,0,-1
 2026-09,53,Automóvil de 3 ruedas,Usado,,4,4,0
 2026-09,54,Cuadriciclo pesado,Nuevo,,116,116,0
 2026-09,54,Cuadriciclo pesado,Usado,,7,7,0
