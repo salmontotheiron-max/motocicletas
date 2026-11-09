@@ -1,38 +1,14 @@
 {
   "periodos_disponibles": [
-    "2026-10",
-    "2026-11"
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
   ],
-  "cobertura_mensual": {
-    "2026-09": {
-      "estado": "incompleto",
-      "dias_inventariados": 30,
-      "dias_descargados_validados": 0,
-      "estados": {
-        "no_encontrado_dgt": 30
-      },
-      "mensaje": "Dato no disponible en DGT"
-    },
-    "2026-10": {
-      "estado": "incompleto",
-      "dias_inventariados": 31,
-      "dias_descargados_validados": 25,
-      "estados": {
-        "descargado_validado": 25,
-        "no_encontrado_dgt": 6
-      },
-      "mensaje": null
-    },
-    "2026-11": {
-      "estado": "incompleto",
-      "dias_inventariados": 8,
-      "dias_descargados_validados": 5,
-      "estados": {
-        "no_encontrado_dgt": 3,
-        "descargado_validado": 5
-      },
-      "mensaje": null
-    }
-  },
   "mensaje_sin_datos": "Dato no disponible en DGT"
 }
