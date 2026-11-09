@@ -107,6 +107,14 @@ jobs:
             --input datos/matraba_mensual/resultados/matriculaciones_motocicletas_por_provincia.csv \
             --output-dir datos/matraba_mensual/resultados
 
+      - name: Calcular indicadores de intensidad territorial
+        run: |
+          python generar_indicadores_intensidad.py \
+            --provincial datos/matraba_mensual/resultados/matriculaciones_motocicletas_por_provincia.csv \
+            --population public/data/poblacion_provincial_2025.csv \
+            --park public/data/parque_motocicletas_provincia_2025.csv \
+            --output-dir datos/matraba_mensual/resultados
+
       - name: Publicar informe de auditoría como artefacto descargable
         if: ${{ inputs.mode == 'piloto' }}
         uses: actions/upload-artifact@v5
