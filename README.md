@@ -67,7 +67,7 @@ El workflow `.github/workflows/actualizar-matraba.yml` se ejecuta manualmente de
 
 Admite una lista opcional de meses separados por comas; por ejemplo, `2026-07,2026-08,2026-09`. Si se deja vacío, consulta el mes actual y el anterior.
 
-La programación para los días 1, 8, 15, 22 y 28 está documentada pero permanece desactivada hasta validar el criterio de fechas y ejecutar un nuevo piloto.
+El workflow incorpora un calendario para los días 1, 8, 15, 22 y 28 de cada mes a las 05:25 UTC. GitHub Actions solo ejecutará ese calendario cuando esta versión esté integrada en la rama predeterminada `main`. Las ejecuciones programadas publicarán automáticamente los agregados en la rama desde la que se ejecuten. La hora corresponde a UTC: 06:25 en horario peninsular de invierno y 07:25 en horario de verano.
 
 ### Validación pendiente
 
