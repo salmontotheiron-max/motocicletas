@@ -45,7 +45,7 @@ Cada ejecución crea un Release de barrido. Un ZIP con el mismo nombre/hash que 
 
 El procesador `procesar_matraba_mensual.py` selecciona una única versión por mes: la última captura válida registrada en el inventario. Las versiones anteriores se conservan como evidencia y no se suman entre sí.
 
-Para vehículos nuevos se usa el mes de `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITACION`; si falta o es posterior a `FEC_PROCESO`, se usa la fecha de proceso y se marca con asterisco. El campo `FEC_PROCESO` se valida como fecha, pero no se utiliza para identificar el periodo del snapshot.
+Para vehículos nuevos se usa `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITE`, porque el informe observa cambios de titularidad que no necesariamente modifican `FEC_MATRICULA`. Las operaciones se fechan igualmente por `FEC_TRAMITE`. Si la fecha de referencia de un registro es posterior a `FEC_PROCESO`, se excluye el registro y se anota en la auditoría; no se sustituye por `FEC_PROCESO`. Los registros sin fecha de referencia válida tampoco se incorporan al recuento correspondiente. `FEC_PROCESO` se utiliza como control de coherencia y no para asignar el periodo.
 
 Salidas:
 
@@ -67,7 +67,7 @@ El workflow `.github/workflows/actualizar-matraba.yml` se ejecuta manualmente de
 
 Admite una lista opcional de meses separados por comas; por ejemplo, `2026-07,2026-08,2026-09`. Si se deja vacío, consulta el mes actual y el anterior.
 
-La programación para los días 1, 8, 15, 22 y 28 está documentada pero permanece desactivada hasta completar las pruebas del piloto de julio y la carga inicial de los meses disponibles de 2026.
+La programación para los días 1, 8, 15, 22 y 28 está documentada pero permanece desactivada hasta validar el criterio de fechas y ejecutar un nuevo piloto.
 
 ### Validación pendiente
 
