@@ -121,7 +121,7 @@ class MonthlyProcessorTests(unittest.TestCase):
                     payload = make_zip(row)
                     archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
                     archive.write_bytes(payload)
-                    _, counts, ops, _, audit = p.process_archive(archive, "2026-09")
+                    _, counts, _, ops, _, audit = p.process_archive(archive, "2026-09")
                     self.assertEqual(sum(counts.values()), 0)
                     self.assertEqual(sum(ops.values()), 0)
                     self.assertEqual(len(audit), 1)
