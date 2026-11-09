@@ -592,6 +592,11 @@
       "fecha": "2026-11-07",
       "estado": "no_encontrado_dgt",
       "http_status": 404
+    },
+    {
+      "fecha": "2026-11-08",
+      "estado": "no_encontrado_dgt",
+      "http_status": 404
     }
   ],
   "cobertura_mensual": {
@@ -616,10 +621,10 @@
     },
     "2026-11": {
       "estado": "incompleto",
-      "dias_inventariados": 7,
+      "dias_inventariados": 8,
       "dias_descargados_validados": 5,
       "estados": {
-        "no_encontrado_dgt": 2,
+        "no_encontrado_dgt": 3,
         "descargado_validado": 5
       },
       "mensaje": null
