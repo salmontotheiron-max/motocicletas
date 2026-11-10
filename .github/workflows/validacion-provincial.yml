@@ -64,9 +64,9 @@ jobs:
 
       - name: Auditar composición de motocicletas nuevas
         run: |
-          python auditar_composicion_motocicletas.py \\
-            --input-dir datos-historicos \\
-            --cross resultado-provincial/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \\
+          python auditar_composicion_motocicletas.py \
+            --input-dir datos-historicos \
+            --cross resultado-provincial/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \
             --output resultado-provincial/composicion_motocicletas_nuevas.csv
 
       - name: Contrastar totales provinciales con totales generales
