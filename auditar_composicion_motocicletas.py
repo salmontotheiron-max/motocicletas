@@ -91,6 +91,22 @@ def add_cumulative_period(counts, denominators, label="2026-01/09"):
     denominators.update(cumulative_denominators)
 
 
+def validate_reconciliation(counts, denominators):
+    """Comprueba que cada dimensión cubre el total de su ámbito y periodo."""
+    dimensions = {name for name in DIMENSIONS}
+    for (province, period), total in denominators.items():
+        for dimension in dimensions:
+            observed = sum(
+                count for (p, t, dim, _), count in counts.items()
+                if p == province and t == period and dim == dimension
+            )
+            if observed != total:
+                raise ValueError(
+                    f"Descuadre {province}/{period}/{dimension}: "
+                    f"{observed} != {total}"
+                )
+
+
 def read_dispersal(path):
     totals, external = Counter(), Counter()
     with Path(path).open("r", newline="", encoding="utf-8-sig") as handle:
@@ -181,6 +197,7 @@ def main():
     # Añade una vista acumulada enero-septiembre. La supresión se aplica
     # después de acumular, evitando ocultar marcas/modelos por umbrales mensuales.
     add_cumulative_period(counts, denominators)
+    validate_reconciliation(counts, denominators)
 
     target_provinces = set(dispersal) | {"SG"}
     rows = []
