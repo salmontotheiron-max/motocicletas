@@ -167,17 +167,19 @@ def build_report(cross_path, provincial_path, output_dir):
         flows.items(), key=lambda item: (-item[1], names_mat.get(item[0][0], item[0][0]), names_veh.get(item[0][1], item[0][1]))
     )]
 
-    # Matriz cuadrada completa, incluyendo combinaciones sin registros.
-    mat_codes = sorted(code for code in names_mat if code != "(vacío)")
-    veh_codes = sorted(code for code in names_veh if code != "(vacío)")
+    # Matriz cuadrada completa: unión de códigos de ambas dimensiones,
+    # incluyendo combinaciones sin registros y provincias sin flujo observado
+    # en una de las dos dimensiones.
+    all_codes = sorted((set(names_mat) | set(names_veh)) - {"(vacío)"})
+    province_names = {**names_veh, **names_mat}
     matrix_rows = []
-    for mat_code in mat_codes:
-        for veh_code in veh_codes:
+    for mat_code in all_codes:
+        for veh_code in all_codes:
             matrix_rows.append({
                 "COD_PROVINCIA_MAT": mat_code,
-                "provincia_matriculacion": names_mat[mat_code],
+                "provincia_matriculacion": province_names[mat_code],
                 "COD_PROVINCIA_VEH": veh_code,
-                "provincia_domicilio_vehiculo": names_veh[veh_code],
+                "provincia_domicilio_vehiculo": province_names[veh_code],
                 "recuento": matrix[(mat_code, veh_code)],
             })
 
