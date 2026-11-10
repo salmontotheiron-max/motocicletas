@@ -70,6 +70,7 @@ class IntegratedReportTests(unittest.TestCase):
                     "indicadores_intensidad_territorial.csv",
                     "dispersion_balance_provincial.csv",
                     "dispersion_provincias_flujos.csv",
+                    "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
                     "matriculaciones_nuevos_usados_por_tipo.csv",
                     "informe_dispersion_provincias.json"]
         if not all((data / name).exists() for name in required):
