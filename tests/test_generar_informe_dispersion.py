@@ -41,6 +41,13 @@ class DispersionReportTests(unittest.TestCase):
             self.assertEqual(summary["matriz_filas"], 9)
             self.assertEqual(summary["segovia"]["domicilio_madrid"], 3)
             self.assertEqual(summary["segovia"]["domicilio_segovia"], 1)
+            balance = {row["COD_PROVINCIA"]: row for row in summary["balance_interprovincial_por_provincia"]}
+            self.assertEqual(balance["SG"]["salidas_interprovinciales"], 3)
+            self.assertEqual(balance["SG"]["entradas_interprovinciales"], 0)
+            self.assertEqual(balance["SG"]["saldo_neto_entradas_menos_salidas"], -3)
+            self.assertEqual(balance["SG"]["saldo_neto_sobre_matriculaciones_pct"], -75.0)
+            self.assertEqual(balance["M"]["entradas_interprovinciales"], 3)
+            self.assertTrue((root / "out" / "dispersion_balance_provincial.csv").exists())
             self.assertTrue((root / "out" / "matriz_dispersion_provincias.csv").exists())
             self.assertTrue((root / "out" / "informe_dispersion_provincias.json").exists())
 
