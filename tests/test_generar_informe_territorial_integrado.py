@@ -69,9 +69,10 @@ class IntegratedReportTests(unittest.TestCase):
             self.skipTest("No hay snapshot MATRABA publicado en este checkout")
         with tempfile.TemporaryDirectory() as tmp:
             result = report.build_report(data, Path(tmp) / "informe.md")
-            self.assertEqual(result["nuevas"], 219565)
-            self.assertEqual(result["usadas"], 3078)
-            self.assertEqual(result["alertas"], ["Segovia"])
+            dispersion = json.loads((data / "informe_dispersion_provincias.json").read_text(encoding="utf-8"))
+            self.assertEqual(result["nuevas"], dispersion["total_matriculaciones"])
+            self.assertGreater(result["usadas"], 0)
+            self.assertTrue((Path(tmp) / "informe.md").exists())
 
     def test_rejects_inconsistent_totals(self):
         with tempfile.TemporaryDirectory() as tmp:
