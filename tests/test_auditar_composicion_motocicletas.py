@@ -23,6 +23,12 @@ class CompositionAuditTests(unittest.TestCase):
         self.assertEqual(a.MINIMUMS["municipio"], 20)
         self.assertEqual(a.DIMENSIONS["marca"][1], 10)
 
+    def test_suppressed_totals_are_not_published_below_threshold(self):
+        self.assertEqual(a.safe_published_count(9, "marca"), "")
+        self.assertEqual(a.safe_published_count(10, "marca"), 10)
+        self.assertEqual(a.safe_published_count(19, "municipio"), "")
+        self.assertEqual(a.safe_published_count(20, "municipio"), 20)
+
     def test_only_expected_dimensions_are_exported(self):
         self.assertEqual(set(a.DIMENSIONS), {
             "clase_matricula", "marca", "modelo", "procedencia",
