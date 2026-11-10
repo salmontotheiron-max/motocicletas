@@ -62,6 +62,13 @@ class IntegratedReportTests(unittest.TestCase):
             self.assertIn("Diagnóstico provincial: dispersión superior al 20%",body)
             self.assertEqual(result["provincias_dispersion_mayor_20"],1)
             self.assertEqual(result["provincias_estables_mayor_20"],1)
+            diagnostic = report.dispersion_diagnostics(report.rows(
+                data/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
+                {"periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH",
+                 "provincia_domicilio_vehiculo","COD_TIPO","recuento"}))[0]
+            self.assertEqual(diagnostic["principal_destino"],"Madrid")
+            self.assertEqual(diagnostic["principal_destino_codigo"],"M")
+            self.assertIn("| 1/1 | Madrid |",body)
 
     def test_generates_report_from_published_snapshot(self):
         data = Path(__file__).resolve().parents[1] / "public" / "data"
