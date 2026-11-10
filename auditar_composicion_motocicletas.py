@@ -19,6 +19,7 @@ DIMENSIONS = {
     "marca": (3, 10, "marca ITV"),
     "modelo": (4, 10, "modelo ITV"),
     "procedencia": (5, 10, "procedencia ITV"),
+    "propulsion": (8, 10, "tipo de propulsión"),
     "cilindrada_cc": (9, 10, "cilindrada en cm³"),
     "titular_fisico_juridico": (26, 10, "naturaleza del titular"),
     "servicio": (28, 10, "servicio del vehículo"),
@@ -30,6 +31,13 @@ CLASS_LABELS = {
     "0": "Ordinaria", "1": "Turística", "2": "Remolque",
     "3": "Diplomática", "4": "Reservada", "5": "Vehículo especial",
     "6": "Ciclomotor", "7": "Transporte temporal", "8": "Histórica",
+}
+PROPULSION_LABELS = {
+    "0": "Gasolina", "1": "Diésel", "2": "Eléctrico",
+    "3": "Otros", "4": "Butano", "5": "Solar",
+    "6": "GLP", "7": "Gas natural comprimido",
+    "8": "Gas natural licuado", "9": "Hidrógeno",
+    "A": "Biometano", "B": "Etanol", "C": "Biodiésel",
 }
 ORIGIN_LABELS = {
     "0": "Fabricación nacional", "1": "Importación no comunitaria",
@@ -157,6 +165,8 @@ def main():
                 category = values[index] or "(no informado)"
                 if dimension == "clase_matricula":
                     category = CLASS_LABELS.get(category, f"Código {category}")
+                elif dimension == "propulsion":
+                    category = PROPULSION_LABELS.get(category, f"Código {category}")
                 elif dimension == "procedencia":
                     category = ORIGIN_LABELS.get(category, f"Código {category}")
                 elif dimension == "servicio":
