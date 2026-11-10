@@ -35,6 +35,34 @@ ORIGIN_LABELS = {
     "0": "Fabricación nacional", "1": "Importación no comunitaria",
     "2": "Subasta", "3": "Importación UE",
 }
+SERVICE_LABELS = {
+    "A00": "Público: sin especificar",
+    "A01": "Público: alquiler sin conductor",
+    "A02": "Público: alquiler con conductor",
+    "A03": "Público: aprendizaje de conducción",
+    "A04": "Público: taxi",
+    "A05": "Público: auxilio en carretera",
+    "A07": "Público: ambulancia",
+    "A08": "Público: funerario",
+    "A09": "Particular: obras",
+    "A10": "Público: mercancías peligrosas",
+    "A11": "Público: basurero",
+    "A12": "Público: transporte escolar",
+    "A13": "Público: policía",
+    "A14": "Público: bomberos",
+    "A15": "Público: protección civil y salvamento",
+    "A16": "Público: defensa",
+    "A18": "Público: actividad económica",
+    "A20": "Público: mercancías perecederas",
+    "B00": "Particular: sin especificar",
+    "B06": "Particular: agrícola",
+    "B07": "Particular: código B07",
+    "B09": "Particular: obras",
+    "B17": "Particular: vivienda",
+    "B18": "Particular: actividad económica",
+    "B19": "Particular: recreativo",
+    "B21": "Particular: vehículo para ferias",
+}
 
 
 def read_dispersal(path):
@@ -113,6 +141,8 @@ def main():
                     category = CLASS_LABELS.get(category, f"Código {category}")
                 elif dimension == "procedencia":
                     category = ORIGIN_LABELS.get(category, f"Código {category}")
+                elif dimension == "servicio":
+                    category = SERVICE_LABELS.get(category, category)
                 elif dimension == "titular_fisico_juridico":
                     category = {"D": "Persona física", "X": "Persona jurídica"}.get(category, category)
                 elif dimension == "renting":
