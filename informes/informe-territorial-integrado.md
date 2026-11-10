@@ -112,6 +112,87 @@ Matriz: 2.704 celdas. Cruce y agregado provincial: 219.565 y 219.565; diferencia
 | Burgos | 771 | 268 | 34,76% |
 | Pontevedra | 3.848 | 1.307 | 33,97% |
 
+### Diagnóstico provincial: dispersión superior al 20%
+
+Se incluyen todas las provincias cuyo porcentaje acumulado de matriculaciones con domicilio registral externo supera el 20%. El porcentaje se calcula sobre domicilios conocidos. Se muestran volumen, persistencia mensual y concentración de destinos. El HHI se calcula sobre las salidas interprovinciales: 0 indica máxima dispersión y 10.000 concentración en un único destino. El número efectivo de destinos equivale a 10.000/HHI. La muestra pequeña se marca con menos de 300 domicilios conocidos; esos porcentajes requieren cautela.
+
+| Provincia | Nuevas | Salidas | Externo | Meses >20% | Top destino | Top 1 | Top 3 | HHI | Muestra |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Segovia | 8.908 | 8.734 | 98,05% | 9/9 | Madrid | 77,02% | 82,68% | 5.960 | Adecuada |
+| Córdoba | 7.109 | 4.703 | 66,16% | 9/9 | Sevilla | 42,63% | 68,85% | 2.309 | Adecuada |
+| Madrid | 25.351 | 12.183 | 48,06% | 9/9 | Barcelona | 16,79% | 30,57% | 532 | Adecuada |
+| Jaén | 2.931 | 1.327 | 45,27% | 9/9 | Granada | 79,88% | 89,60% | 6.442 | Adecuada |
+| Palencia | 255 | 102 | 40,00% | 9/9 | Cantabria | 56,86% | 76,47% | 3.541 | Pequeña |
+| Sevilla | 7.254 | 2.579 | 35,55% | 9/9 | Almería | 28,07% | 64,72% | 1.797 | Adecuada |
+| Araba/Álava | 974 | 342 | 35,11% | 9/9 | Bizkaia | 27,19% | 57,31% | 1.442 | Adecuada |
+| Toledo | 1.042 | 365 | 35,03% | 9/9 | Madrid | 41,10% | 61,64% | 1.995 | Adecuada |
+| Burgos | 771 | 268 | 34,76% | 9/9 | Araba/Álava | 16,42% | 38,81% | 759 | Adecuada |
+| Pontevedra | 3.848 | 1.307 | 33,97% | 9/9 | A Coruña | 60,52% | 90,21% | 4.320 | Adecuada |
+| Guadalajara | 567 | 182 | 32,10% | 9/9 | Madrid | 55,49% | 80,22% | 3.612 | Adecuada |
+| Cáceres | 776 | 236 | 30,41% | 9/9 | Badajoz | 70,34% | 80,51% | 5.026 | Adecuada |
+| Las Palmas | 6.509 | 1.908 | 29,31% | 9/9 | Santa Cruz de Tenerife | 99,95% | 100,00% | 9.990 | Adecuada |
+| Albacete | 1.501 | 421 | 28,05% | 9/9 | Cuenca | 30,40% | 49,64% | 1.322 | Adecuada |
+| La Rioja | 768 | 209 | 27,21% | 9/9 | Navarra | 36,36% | 58,37% | 1.752 | Adecuada |
+| Zamora | 96 | 26 | 27,08% | 7/9 | Salamanca | 19,23% | 50,00% | 1.243 | Pequeña |
+| Valladolid | 1.724 | 464 | 26,91% | 9/9 | Palencia | 19,83% | 48,92% | 1.128 | Adecuada |
+| Lugo | 445 | 117 | 26,29% | 9/9 | A Coruña | 34,19% | 75,21% | 2.213 | Adecuada |
+| Zaragoza | 3.901 | 1.006 | 25,79% | 9/9 | Madrid | 21,77% | 55,96% | 1.226 | Adecuada |
+| Ávila | 45 | 11 | 24,44% | 4/9 | Madrid | 72,73% | 90,91% | 5.537 | Pequeña |
+| Salamanca | 608 | 145 | 23,85% | 8/9 | Cáceres | 25,52% | 62,07% | 1.519 | Adecuada |
+| Murcia | 6.813 | 1.599 | 23,47% | 8/9 | Alicante/Alacant | 69,29% | 82,24% | 4.926 | Adecuada |
+| Navarra | 1.729 | 379 | 21,92% | 6/9 | La Rioja | 65,96% | 82,59% | 4.522 | Adecuada |
+| Teruel | 266 | 55 | 20,68% | 5/9 | Zaragoza | 20,00% | 41,82% | 936 | Pequeña |
+| Girona | 3.879 | 777 | 20,03% | 6/9 | Barcelona | 88,67% | 91,89% | 7.873 | Adecuada |
+
+Provincias por encima del 20%: **25**. Superan el umbral en todos sus meses con datos: **18**. La persistencia se calcula con porcentajes mensuales sobre domicilios conocidos.
+
+### Concentración de destinos
+
+| Provincia | Destino principal | Registros | % de salidas | Tres destinos % | HHI | Destinos efectivos |
+| --- | --- | --- | --- | --- | --- | --- |
+| Segovia | Madrid | 6.727 | 77,02% | 82,68% | 5.960 | 1,68 |
+| Córdoba | Sevilla | 2.005 | 42,63% | 68,85% | 2.309 | 4,33 |
+| Madrid | Barcelona | 2.045 | 16,79% | 30,57% | 532 | 18,79 |
+| Jaén | Granada | 1.060 | 79,88% | 89,60% | 6.442 | 1,55 |
+| Palencia | Cantabria | 58 | 56,86% | 76,47% | 3.541 | 2,82 |
+| Sevilla | Almería | 724 | 28,07% | 64,72% | 1.797 | 5,56 |
+| Araba/Álava | Bizkaia | 93 | 27,19% | 57,31% | 1.442 | 6,93 |
+| Toledo | Madrid | 150 | 41,10% | 61,64% | 1.995 | 5,01 |
+| Burgos | Araba/Álava | 44 | 16,42% | 38,81% | 759 | 13,18 |
+| Pontevedra | A Coruña | 791 | 60,52% | 90,21% | 4.320 | 2,32 |
+| Guadalajara | Madrid | 101 | 55,49% | 80,22% | 3.612 | 2,77 |
+| Cáceres | Badajoz | 166 | 70,34% | 80,51% | 5.026 | 1,99 |
+| Las Palmas | Santa Cruz de Tenerife | 1.907 | 99,95% | 100,00% | 9.990 | 1,00 |
+| Albacete | Cuenca | 128 | 30,40% | 49,64% | 1.322 | 7,57 |
+| La Rioja | Navarra | 76 | 36,36% | 58,37% | 1.752 | 5,71 |
+
+La intensidad de dispersión y la concentración de destinos son dimensiones distintas: una provincia puede tener muchas matriculaciones domiciliadas fuera y dirigirlas casi todas a un único destino, o repartirlas entre numerosas provincias.
+
+### Principales corredores interprovinciales
+
+| Provincia matriculación | Domicilio vehículo | Registros |
+| --- | --- | --- |
+| Segovia | Madrid | 6.727 |
+| Barcelona | Girona | 2.228 |
+| Madrid | Barcelona | 2.045 |
+| Córdoba | Sevilla | 2.005 |
+| Las Palmas | Santa Cruz de Tenerife | 1.907 |
+| Murcia | Alicante/Alacant | 1.108 |
+| Cádiz | Sevilla | 1.090 |
+| Jaén | Granada | 1.060 |
+| Córdoba | Madrid | 921 |
+| Madrid | Illes Balears | 912 |
+| Barcelona | Madrid | 866 |
+| Barcelona | Illes Balears | 827 |
+| Pontevedra | A Coruña | 791 |
+| Madrid | Toledo | 767 |
+| Sevilla | Almería | 724 |
+| Sevilla | Málaga | 693 |
+| Girona | Barcelona | 689 |
+| Valencia/València | Alicante/Alacant | 638 |
+| Madrid | Valencia/València | 637 |
+| Santa Cruz de Tenerife | Las Palmas | 623 |
+
 ## 7. Balance interprovincial
 
 Salidas: matriculadas en la provincia y domiciliadas fuera. Entradas: domiciliadas en la provincia y matriculadas fuera. Saldo = entradas menos salidas. No son movimientos físicos.
