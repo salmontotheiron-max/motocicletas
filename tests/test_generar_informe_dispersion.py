@@ -38,7 +38,7 @@ class DispersionReportTests(unittest.TestCase):
             self.assertEqual(summary["otra_provincia"], 3)
             self.assertEqual(summary["porcentaje_interprovincial_sobre_domicilios_conocidos"], 60.0)
             self.assertTrue(summary["validacion"]["agregado_provincial_coincide"])
-            self.assertEqual(summary["matriz_filas"], 4)
+            self.assertEqual(summary["matriz_filas"], 6)
             self.assertEqual(summary["segovia"]["domicilio_madrid"], 3)
             self.assertEqual(summary["segovia"]["domicilio_segovia"], 1)
             self.assertTrue((root / "out" / "matriz_dispersion_provincias.csv").exists())
