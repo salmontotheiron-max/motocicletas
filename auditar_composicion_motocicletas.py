@@ -65,6 +65,12 @@ SERVICE_LABELS = {
 }
 
 
+def safe_published_count(count, dimension):
+    """No publica ni siquiera el total agregado si sigue bajo el umbral."""
+    threshold = MINIMUMS.get(dimension, 10)
+    return count if count >= threshold else ""
+
+
 def read_dispersal(path):
     totals, external = Counter(), Counter()
     with Path(path).open("r", newline="", encoding="utf-8-sig") as handle:
@@ -181,8 +187,7 @@ def main():
                          "dimension", "descripcion_dimension", "categoria",
                          "recuento", "total_motocicletas_nuevas"])
         for key, count in sorted(merged.items()):
-            threshold = MINIMUMS.get(key[3], 10)
-            published_count = count if count >= threshold else ""
+            published_count = safe_published_count(count, key[3])
             writer.writerow(list(key[:-1]) + [published_count, key[-1]])
 
 
