@@ -34,6 +34,10 @@ class IntegratedReportTests(unittest.TestCase):
             ["periodo","COD_TIPO","nuevo_usado","recuento"],
             [{"periodo":"2026-01","COD_TIPO":"50","nuevo_usado":"Nuevo","recuento":str(total-1)},
              {"periodo":"2026-01","COD_TIPO":"50","nuevo_usado":"Usado","recuento":"1"}])
+        self.write_csv(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
+            ["periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"],
+            [{"periodo":"2026-01","COD_PROVINCIA_MAT":"SG","provincia_matriculacion":"Segovia","COD_PROVINCIA_VEH":"SG","provincia_domicilio_vehiculo":"Segovia","COD_TIPO":"50","recuento":"1"},
+             {"periodo":"2026-01","COD_PROVINCIA_MAT":"SG","provincia_matriculacion":"Segovia","COD_PROVINCIA_VEH":"M","provincia_domicilio_vehiculo":"Madrid","COD_TIPO":"50","recuento":"2"}])
         dispersion = {"total_matriculaciones":3,"misma_provincia":1,"otra_provincia":2,
             "domicilio_no_informado":0,"porcentaje_misma_provincia":33.3333,
             "porcentaje_interprovincial_sobre_domicilios_conocidos":66.6667,"matriz_filas":4,
@@ -55,6 +59,16 @@ class IntegratedReportTests(unittest.TestCase):
             self.assertIn("2026-01",body)
             self.assertIn("REVISAR",body)
             self.assertIn("Domicilio Madrid",body)
+            self.assertIn("Diagnóstico provincial: dispersión superior al 20%",body)
+            self.assertEqual(result["provincias_dispersion_mayor_20"],1)
+            self.assertEqual(result["provincias_estables_mayor_20"],1)
+            diagnostic = report.dispersion_diagnostics(report.rows(
+                data/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
+                {"periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH",
+                 "provincia_domicilio_vehiculo","COD_TIPO","recuento"}))[0]
+            self.assertEqual(diagnostic["principal_destino"],"Madrid")
+            self.assertEqual(diagnostic["principal_destino_codigo"],"M")
+            self.assertIn("| 1/1 | Madrid |",body)
 
     def test_generates_report_from_published_snapshot(self):
         data = Path(__file__).resolve().parents[1] / "public" / "data"
@@ -63,6 +77,7 @@ class IntegratedReportTests(unittest.TestCase):
                     "indicadores_intensidad_territorial.csv",
                     "dispersion_balance_provincial.csv",
                     "dispersion_provincias_flujos.csv",
+                    "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
                     "matriculaciones_nuevos_usados_por_tipo.csv",
                     "informe_dispersion_provincias.json"]
         if not all((data / name).exists() for name in required):
