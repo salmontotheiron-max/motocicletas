@@ -22,6 +22,7 @@ class CompositionAuditTests(unittest.TestCase):
     def test_thresholds_are_more_restrictive_for_municipality(self):
         self.assertEqual(a.MINIMUMS["municipio"], 20)
         self.assertEqual(a.DIMENSIONS["marca"][1], 10)
+        self.assertEqual(a.DIMENSIONS["propulsion"][0], 8)
 
     def test_cumulative_period_sums_months_without_losing_monthly_rows(self):
         from collections import Counter
@@ -46,7 +47,7 @@ class CompositionAuditTests(unittest.TestCase):
 
     def test_only_expected_dimensions_are_exported(self):
         self.assertEqual(set(a.DIMENSIONS), {
-            "clase_matricula", "marca", "modelo", "procedencia",
+            "clase_matricula", "marca", "modelo", "procedencia", "propulsion",
             "cilindrada_cc", "titular_fisico_juridico", "servicio",
             "municipio", "renting",
         })
