@@ -37,7 +37,9 @@ frente al 44,97 % nacional y el 38,39 % de las otras 24 provincias.
 Las categorías 124 y 125 cc suman el 55,41 % en Segovia, el 49,86 % nacional
 y el 44,29 % en las otras 24 provincias. El código de cilindrada «0» se
 mantiene como valor no informado/no interpretable; no se atribuye a propulsión
-eléctrica.
+eléctrica. Los porcentajes de las tablas usan como denominador el total de
+matriculaciones de cada ámbito; las categorías restantes, incluidas las
+agrupadas por supresión estadística, no se desglosan en estas tablas.
 
 ### Propulsión
 
@@ -48,7 +50,9 @@ eléctrica.
 
 La proporción eléctrica de Segovia es superior a los dos grupos de comparación.
 Es una diferencia descriptiva; no demuestra que la propulsión explique la
-dispersión registral.
+dispersión registral. En el agregado nacional y en las otras 24 provincias
+hay, respectivamente, una y veinte unidades agrupadas en categorías de
+propulsión suprimidas por el umbral; no se asignan a gasolina ni a eléctrico.
 
 ### Titularidad y renting
 
@@ -58,12 +62,19 @@ dispersión registral.
 | Persona jurídica | 6,78 % | 9,86 % | 10,80 % |
 | Renting | 0,00 % | 0,33 % | 0,78 % |
 
+En las otras 24 provincias, cinco registros de titularidad y dos de renting
+pertenecen a categorías suprimidas por el umbral. No se reasignan a persona
+física/jurídica ni a renting/no renting.
+
 ### Procedencia registrada
 
 En Segovia constan 5.662 unidades (63,58 %) como importación no comunitaria,
 3.224 (36,19 %) como importación UE y 21 (0,24 %) con código no informado.
 La procedencia es el descriptor administrativo MATRABA: no identifica el país
-concreto de fabricación ni permite inferir la cadena comercial.
+concreto de fabricación ni permite inferir la cadena comercial. En Segovia
+queda además un registro en una categoría de procedencia suprimida por no
+alcanzar el umbral mínimo; por ello, las tres cifras desglosadas suman 8.907,
+no el denominador completo de 8.908.
 
 ### Modelos más frecuentes en Segovia
 
