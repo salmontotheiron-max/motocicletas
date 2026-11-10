@@ -197,7 +197,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
       "La intensidad de dispersión y la concentración de destinos son dimensiones distintas: una provincia puede tener muchas matriculaciones domiciliadas fuera y dirigirlas casi todas a un único destino, o repartirlas entre numerosas provincias.","",
       "### Principales corredores interprovinciales","",
       mdtable(["Provincia matriculación","Domicilio vehículo","Registros"],[[r["provincia_matriculacion"],r["provincia_domicilio_vehiculo"],fmt(r["recuento"])] for r in flows[:20]]),"",
-      "## 7. Balance interprovincial",""
+      "## 7. Balance interprovincial","",
       "Salidas: matriculadas en la provincia y domiciliadas fuera. Entradas: domiciliadas en la provincia y matriculadas fuera. Saldo = entradas menos salidas. No son movimientos físicos.","",
       "### Saldos negativos","",mdtable(["Provincia","Salidas","Entradas","Saldo"],[[r["provincia"],fmt(r["salidas_interprovinciales"]),fmt(r["entradas_interprovinciales"]),fmt(r["saldo_neto_entradas_menos_salidas"])] for r in neg]),"",
       "### Saldos positivos","",mdtable(["Provincia","Salidas","Entradas","Saldo"],[[r["provincia"],fmt(r["salidas_interprovinciales"]),fmt(r["entradas_interprovinciales"]),"+"+fmt(r["saldo_neto_entradas_menos_salidas"])] for r in pos]),"",
