@@ -108,6 +108,66 @@ def dispersion_diagnostics(cross_rows, threshold=20.0):
     diagnostics.sort(key=lambda x: (-x["porcentaje_domicilio_externo"], -x["salidas_interprovinciales"], x["provincia"]))
     return diagnostics
 
+
+def corridor_diagnostics(cross_rows):
+    """Resume persistencia, peso mensual y simetría de cada corredor dirigido."""
+    from collections import defaultdict
+    counts = defaultdict(Counter)
+    origin_out = Counter()
+    province_names = {}
+    periods = set()
+    for row in cross_rows:
+        if row["COD_TIPO"].strip() not in MOTOS:
+            raise ValueError("El cruce contiene un COD_TIPO ajeno a motocicletas 50/51")
+        period = row["periodo"].strip()
+        origin, destination = row["COD_PROVINCIA_MAT"].strip(), row["COD_PROVINCIA_VEH"].strip()
+        count = int(row["recuento"])
+        if count < 0:
+            raise ValueError("El cruce contiene recuentos negativos")
+        if not origin or not destination or origin == destination:
+            continue
+        periods.add(period)
+        province_names[origin] = row["provincia_matriculacion"].strip() or origin
+        province_names[destination] = row["provincia_domicilio_vehiculo"].strip() or destination
+        counts[(origin, destination)][period] += count
+        origin_out[(period, origin)] += count
+    all_periods = sorted(periods)
+    results = []
+    for (origin, destination), monthly in counts.items():
+        total = sum(monthly.values())
+        reverse = sum(counts.get((destination, origin), {}).values())
+        active = [p for p in all_periods if monthly.get(p, 0) > 0]
+        monthly_shares = [
+            100 * monthly[p] / origin_out[(p, origin)]
+            for p in active if origin_out[(p, origin)]
+        ]
+        combined = total + reverse
+        symmetry = 100 * (1 - abs(total - reverse) / combined) if combined else 0.0
+        results.append({
+            "COD_PROVINCIA_MAT": origin,
+            "provincia_matriculacion": province_names.get(origin, origin),
+            "COD_PROVINCIA_VEH": destination,
+            "provincia_domicilio_vehiculo": province_names.get(destination, destination),
+            "recuento": total,
+            "meses_activos": len(active),
+            "meses_periodo": len(all_periods),
+            "persistencia_pct": 100 * len(active) / len(all_periods) if all_periods else 0.0,
+            "media_mensual_periodo": total / len(all_periods) if all_periods else 0.0,
+            "minimo_mes_activo": min((monthly[p] for p in active), default=0),
+            "maximo_mes": max(monthly.values(), default=0),
+            "peso_salidas_origen_pct": 100 * total / sum(origin_out[(p, origin)] for p in all_periods) if all_periods else 0.0,
+            "peso_medio_mensual_pct": sum(monthly_shares) / len(monthly_shares) if monthly_shares else 0.0,
+            "peso_maximo_mensual_pct": max(monthly_shares, default=0.0),
+            "flujo_inverso": reverse,
+            "simetria_pct": symmetry,
+            "diferencia_direccional": total - reverse,
+            "evolucion_mensual": ";".join(f"{p}:{monthly.get(p, 0)}" for p in all_periods),
+            "evolucion_mensual_pct": ";".join(f"{p}:{(100 * monthly.get(p, 0) / origin_out[(p, origin)] if origin_out[(p, origin)] else 0):.2f}" for p in all_periods),
+        })
+    results.sort(key=lambda x: (-x["recuento"], x["provincia_matriculacion"], x["provincia_domicilio_vehiculo"]))
+    return results
+
+
 def build_report(data_dir="public/data", output="informes/informe-territorial-integrado.md"):
     d = Path(data_dir)
     provincial = rows(d/"matriculaciones_motocicletas_por_provincia.csv",
@@ -125,8 +185,13 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
     cross = rows(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
         {"periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"})
     diagnostics = dispersion_diagnostics(cross)
+    corridors = corridor_diagnostics(cross)
     high_dispersion = [r for r in diagnostics if r["porcentaje_domicilio_externo"] > 20]
     stable_high = [r for r in high_dispersion if r["meses_supera_20_pct"] == r["meses_con_datos"]]
+    corridor_by_origin = {}
+    for corridor in corridors:
+        corridor_by_origin.setdefault(corridor["COD_PROVINCIA_MAT"], corridor)
+    high_dispersion_corridors = [corridor_by_origin[r["COD_PROVINCIA_MAT"]] for r in high_dispersion if r["COD_PROVINCIA_MAT"] in corridor_by_origin]
     periods = sorted({r["periodo"] for r in provincial})
     if not periods: raise ValueError("No hay periodos provinciales")
     y, m = map(int, periods[-1].split("-"))
@@ -202,6 +267,21 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
          pct(r["principal_destino_pct_salidas"]),pct(r["tres_destinos_pct_salidas"]),
          dec(r["hhi_destinos_0_10000"],0),dec(r["numero_efectivo_destinos"])] for r in high_dispersion[:15]]),"",
       "La intensidad de dispersión y la concentración de destinos son dimensiones distintas: una provincia puede tener muchas matriculaciones domiciliadas fuera y dirigirlas casi todas a un único destino, o repartirlas entre numerosas provincias.","",
+      "### Estabilidad y simetría de corredores", "",
+      "Cada corredor se define por provincia de matriculación → provincia de domicilio registral. Persistencia = meses con flujo positivo / meses disponibles. El peso sobre salidas usa como denominador todas las salidas interprovinciales del origen. La simetría compara ambos sentidos: 100% indica volúmenes iguales; 0% indica que solo existe flujo en un sentido. Los indicadores describen registros, no desplazamientos físicos.", "",
+      "**20 corredores de mayor volumen**", "",
+      mdtable(["Origen → domicilio","Registros","Meses activos","Persistencia","Peso salidas origen","Flujo inverso","Simetría"],[
+        [r["provincia_matriculacion"]+" → "+r["provincia_domicilio_vehiculo"],fmt(r["recuento"]),
+         str(r["meses_activos"])+"/"+str(r["meses_periodo"]),pct(r["persistencia_pct"]),
+         pct(r["peso_salidas_origen_pct"]),fmt(r["flujo_inverso"]),pct(r["simetria_pct"])]
+        for r in corridors[:20]]), "",
+      "**Corredor principal de cada provincia con dispersión superior al 20%**", "",
+      mdtable(["Origen → domicilio","Registros","Meses activos","Peso salidas origen","Flujo inverso","Simetría","Evolución mensual (n)","Peso mensual (%)"],[
+        [r["provincia_matriculacion"]+" → "+r["provincia_domicilio_vehiculo"],fmt(r["recuento"]),
+         str(r["meses_activos"])+"/"+str(r["meses_periodo"]),pct(r["peso_salidas_origen_pct"]),
+         fmt(r["flujo_inverso"]),pct(r["simetria_pct"]),r["evolucion_mensual"],r["evolucion_mensual_pct"]]
+        for r in high_dispersion_corridors]), "",
+      "El detalle completo de corredores, incluidos recuentos mensuales, peso mensual y flujo inverso, se publica en dispersion_corredores_estabilidad.csv.", "",
       "### Principales corredores interprovinciales","",
       mdtable(["Provincia matriculación","Domicilio vehículo","Registros"],[[r["provincia_matriculacion"],r["provincia_domicilio_vehiculo"],fmt(r["recuento"])] for r in flows[:20]]),"",
       "## 7. Balance interprovincial","",
@@ -229,8 +309,12 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
       "Los CSV y JSON fuente se publican en public/data: agregado provincial, ranking, evolución, indicadores de intensidad, matriz, flujos, balance y resumen de dispersión. Este documento se regenera en cada ejecución que publica agregados.","",
       "**Nota metodológica:** Resultados orientativos por el enmascaramiento parcial de bastidores. El acceso a bastidores completos permitiría verificar coincidencias individuales y reducir incertidumbres.",""
     ]
+    corridor_path = d/"dispersion_corredores_estabilidad.csv"
+    corridor_fields = ["COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","recuento","meses_activos","meses_periodo","persistencia_pct","media_mensual_periodo","minimo_mes_activo","maximo_mes","peso_salidas_origen_pct","peso_medio_mensual_pct","peso_maximo_mensual_pct","flujo_inverso","simetria_pct","diferencia_direccional","evolucion_mensual","evolucion_mensual_pct"]
+    with corridor_path.open("w",encoding="utf-8-sig",newline="") as f:
+        writer=csv.DictWriter(f,fieldnames=corridor_fields); writer.writeheader(); writer.writerows(corridors)
     target=Path(output); target.parent.mkdir(parents=True,exist_ok=True); target.write_text("\n".join(text),encoding="utf-8")
-    return {"periodos":periods,"nuevas":total_new,"usadas":total_used,"alertas":[r["provincia"] for r in alerts],"provincias_dispersion_mayor_20":len(high_dispersion),"provincias_estables_mayor_20":len(stable_high),"output":str(target)}
+    return {"periodos":periods,"nuevas":total_new,"usadas":total_used,"alertas":[r["provincia"] for r in alerts],"provincias_dispersion_mayor_20":len(high_dispersion),"provincias_estables_mayor_20":len(stable_high),"corredores":len(corridors),"csv_corredores":str(corridor_path),"output":str(target)}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__); p.add_argument("--data-dir",default="public/data"); p.add_argument("--output",default="informes/informe-territorial-integrado.md")
