@@ -71,6 +71,18 @@ def safe_published_count(count, dimension):
     return count if count >= threshold else ""
 
 
+def add_cumulative_period(counts, denominators, label="2026-01/09"):
+    """Añade una dimensión temporal acumulada sin perder el detalle mensual."""
+    cumulative_counts = Counter()
+    cumulative_denominators = Counter()
+    for (province, month, dimension, category), count in counts.items():
+        cumulative_counts[(province, label, dimension, category)] += count
+    for (province, month), count in denominators.items():
+        cumulative_denominators[(province, label)] += count
+    counts.update(cumulative_counts)
+    denominators.update(cumulative_denominators)
+
+
 def read_dispersal(path):
     totals, external = Counter(), Counter()
     with Path(path).open("r", newline="", encoding="utf-8-sig") as handle:
@@ -158,14 +170,7 @@ def main():
 
     # Añade una vista acumulada enero-septiembre. La supresión se aplica
     # después de acumular, evitando ocultar marcas/modelos por umbrales mensuales.
-    cumulative_counts = Counter()
-    cumulative_denominators = Counter()
-    for (province, month, dimension, category), count in counts.items():
-        cumulative_counts[(province, "2026-01/09", dimension, category)] += count
-    for (province, month), count in denominators.items():
-        cumulative_denominators[(province, "2026-01/09")] += count
-    counts.update(cumulative_counts)
-    denominators.update(cumulative_denominators)
+    add_cumulative_period(counts, denominators)
 
     target_provinces = set(dispersal) | {"SG"}
     rows = []
