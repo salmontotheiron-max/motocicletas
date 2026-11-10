@@ -1,0 +1,46 @@
+name: Auditoría de composición MATRABA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Ejecutar pruebas unitarias
+        run: python -m unittest discover -s tests -v
+      - name: Recuperar ZIP históricos de Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p datos/matraba_mensual/archivo
+          gh release list --limit 1000 --json tagName --jq '.[].tagName' |
+          while IFS= read -r tag; do
+            [ -z "$tag" ] && continue
+            gh release download "$tag" --pattern 'export_mensual_mat_*.zip' --dir datos/matraba_mensual/archivo --clobber || true
+          done
+      - name: Ejecutar procesador base para generar cruce provincial
+        run: |
+          python procesar_matraba_mensual.py \
+            --input-dir datos/matraba_mensual \
+            --output-dir datos/matraba_mensual/resultados \
+            --inventory-file public/data/capturas_mensuales.json
+      - name: Generar composición agregada
+        run: |
+          python auditar_composicion_motocicletas.py \
+            --input-dir datos/matraba_mensual \
+            --cross datos/matraba_mensual/resultados/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \
+            --inventory-file public/data/capturas_mensuales.json \
+            --output datos/matraba_mensual/resultados/composicion_motocicletas_nuevas.csv
+      - uses: actions/upload-artifact@v5
+        with:
+          name: auditoria-composicion-motocicletas
+          path: datos/matraba_mensual/resultados/composicion_motocicletas_nuevas.csv
+          retention-days: 14
