@@ -181,7 +181,9 @@ def main():
                          "dimension", "descripcion_dimension", "categoria",
                          "recuento", "total_motocicletas_nuevas"])
         for key, count in sorted(merged.items()):
-            writer.writerow(list(key[:-1]) + [count, key[-1]])
+            threshold = MINIMUMS.get(key[3], 10)
+            published_count = count if count >= threshold else ""
+            writer.writerow(list(key[:-1]) + [published_count, key[-1]])
 
 
 if __name__ == "__main__":
