@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""Auditoría agregada de composición de motocicletas nuevas MATRABA (50/51)."""
+import argparse
+import csv
+import zipfile
+from collections import Counter
+from pathlib import Path
+
+from descargar_matraba_mensual import inspect_zip
+from procesar_matraba_mensual import (
+    MOTORCYCLE_CODES, PROVINCES, START, WIDTHS, parse_date,
+    period_from_name, select_latest_archives,
+)
+
+# Índices de campos según el diseño MATRABA (base cero).
+DIMENSIONS = {
+    "clase_matricula": (1, 1, "clase de matrícula"),
+    "marca": (3, 10, "marca ITV"),
+    "modelo": (4, 10, "modelo ITV"),
+    "procedencia": (5, 10, "procedencia ITV"),
+    "cilindrada_cc": (9, 10, "cilindrada en cm³"),
+    "titular_fisico_juridico": (26, 10, "naturaleza del titular"),
+    "servicio": (28, 10, "servicio del vehículo"),
+    "municipio": (30, 20, "municipio del domicilio registral"),
+    "renting": (34, 10, "indicador de renting"),
+}
+MINIMUMS = {"municipio": 20}
+
+
+def read_dispersal(path):
+    totals, external = Counter(), Counter()
+    with Path(path).open("r", newline="", encoding="utf-8-sig") as handle:
+        for row in csv.DictReader(handle):
+            province = row.get("COD_PROVINCIA_MAT", "")
+            if not province or province == "(vacío)":
+                continue
+            count = int(row.get("recuento", "0") or 0)
+            totals[province] += count
+            if row.get("COD_PROVINCIA_MAT") != row.get("COD_PROVINCIA_VEH"):
+                external[province] += count
+    return {
+        code for code, total in totals.items()
+        if total and external[code] / total > 0.20
+    }
+
+
+def extract_rows(archive_path):
+    payload = archive_path.read_bytes()
+    text, error, _ = inspect_zip(payload)
+    if error:
+        raise ValueError(f"{archive_path.name}: {error}")
+    lines = text.replace(b"\r\n", b"\n").split(b"\n")
+    if lines and not lines[-1]:
+        lines.pop()
+    for line_number, raw in enumerate(lines[1:], 2):
+        row = raw.decode("cp1252")
+        values, offset = [], 0
+        for width in WIDTHS:
+            values.append(row[offset:offset + width].strip())
+            offset += width
+        date = parse_date(values[0])
+        process_date = parse_date(values[68])
+        # Mismo universo del informe territorial: operación 1, nuevo N,
+        # tipos 50/51 y FEC_MATRICULA no posterior a FEC_PROCESO.
+        if (values[7] not in MOTORCYCLE_CODES or values[21] != "1"
+                or values[25] != "N" or date is None or process_date is None
+                or date > process_date or date.strftime("%Y-%m") < START):
+            continue
+        province = values[20] or "(vacío)"
+        yield date.strftime("%Y-%m"), province, values
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input-dir", required=True)
+    parser.add_argument("--cross", required=True,
+                        help="CSV de cruce provincia de matriculación/domicilio")
+    parser.add_argument("--output", required=True)
+    parser.add_argument("--inventory-file")
+    args = parser.parse_args()
+
+    dispersal = read_dispersal(args.cross)
+    selected = select_latest_archives(args.input_dir, args.inventory_file)
+    counts = Counter()
+    denominators = Counter()
+    for period, archive in selected.items():
+        for month, province, values in extract_rows(archive):
+            if month != period:
+                # El archivo mensual contiene trámites retrospectivos; se asigna
+                # el periodo por FEC_MATRICULA, no por mes del ZIP.
+                pass
+            denominators[("NACIONAL", month)] += 1
+            denominators[(province, month)] += 1
+            for dimension, (index, threshold, _) in DIMENSIONS.items():
+                category = values[index] or "(no informado)"
+                counts[("NACIONAL", month, dimension, category)] += 1
+                counts[(province, month, dimension, category)] += 1
+
+    target_provinces = set(dispersal) | {"SG"}
+    rows = []
+    for key, count in sorted(counts.items()):
+        province, period, dimension, category = key
+        if province != "NACIONAL" and province not in target_provinces:
+            continue
+        threshold = MINIMUMS.get(dimension, 10)
+        if count >= threshold:
+            published_category = category
+            published_count = count
+        else:
+            published_category = f"SUPRIMIDO (<{threshold})"
+            published_count = count
+        rows.append((period, province,
+                     "Nacional" if province == "NACIONAL" else PROVINCES.get(province, province),
+                     dimension, DIMENSIONS[dimension][2],
+                     published_category, published_count,
+                     denominators[(province, period)]))
+
+    # Agrupa las categorías de baja frecuencia en una sola celda suprimida.
+    merged = Counter()
+    for period, code, name, dimension, label, category, count, total in rows:
+        merged[(period, code, name, dimension, label, category, total)] += count
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["periodo", "COD_PROVINCIA_MAT", "provincia",
+                         "dimension", "descripcion_dimension", "categoria",
+                         "recuento", "total_motocicletas_nuevas"])
+        for key, count in sorted(merged.items()):
+            writer.writerow(list(key[:-1]) + [count, key[-1]])
+
+
+if __name__ == "__main__":
+    main()
