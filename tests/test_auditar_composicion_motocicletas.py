@@ -23,6 +23,21 @@ class CompositionAuditTests(unittest.TestCase):
         self.assertEqual(a.MINIMUMS["municipio"], 20)
         self.assertEqual(a.DIMENSIONS["marca"][1], 10)
 
+    def test_cumulative_period_sums_months_without_losing_monthly_rows(self):
+        from collections import Counter
+        counts = Counter({
+            ("SG", "2026-01", "marca", "HONDA"): 4,
+            ("SG", "2026-02", "marca", "HONDA"): 7,
+        })
+        denominators = Counter({
+            ("SG", "2026-01"): 10,
+            ("SG", "2026-02"): 12,
+        })
+        a.add_cumulative_period(counts, denominators)
+        self.assertEqual(counts[("SG", "2026-01/09", "marca", "HONDA")], 11)
+        self.assertEqual(denominators[("SG", "2026-01/09")], 22)
+        self.assertEqual(counts[("SG", "2026-01", "marca", "HONDA")], 4)
+
     def test_suppressed_totals_are_not_published_below_threshold(self):
         self.assertEqual(a.safe_published_count(9, "marca"), "")
         self.assertEqual(a.safe_published_count(10, "marca"), 10)
