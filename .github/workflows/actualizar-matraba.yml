@@ -115,6 +115,13 @@ jobs:
             --park public/data/parque_motocicletas_provincia_2025.csv \
             --output-dir datos/matraba_mensual/resultados
 
+      - name: Generar informe de dispersión entre provincias
+        run: |
+          python generar_informe_dispersion.py \
+            --cross datos/matraba_mensual/resultados/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \
+            --provincial datos/matraba_mensual/resultados/matriculaciones_motocicletas_por_provincia.csv \
+            --output-dir datos/matraba_mensual/resultados
+
       - name: Publicar informe de auditoría como artefacto descargable
         if: ${{ inputs.mode == 'piloto' }}
         uses: actions/upload-artifact@v5

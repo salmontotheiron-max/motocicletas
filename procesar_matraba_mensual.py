@@ -115,6 +115,7 @@ def process_archive(path, period):
     rows = [line.decode("cp1252") for line in lines[1:]]
     counts = Counter()
     provincial_counts = Counter()
+    provincial_cross_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     process_dates = []
@@ -210,6 +211,13 @@ def process_archive(path, period):
                     reference_period, province_scope, province_code or "(vacío)",
                     vehicle_type, new_used
                 )] += 1
+                if new_used == "N":
+                    # Contraste exploratorio: provincia de matriculación frente
+                    # a provincia del domicilio registrado del vehículo.
+                    provincial_cross_counts[(
+                        reference_period, province_registration or "(vacío)",
+                        province_vehicle or "(vacío)", vehicle_type
+                    )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
 
@@ -225,7 +233,7 @@ def process_archive(path, period):
         "registros": record_count,
         "fec_proceso_min": min(process_dates) if process_dates else None,
         "fec_proceso_max": max(process_dates) if process_dates else None,
-    }, counts, provincial_counts, opcounts, excluded, audit_rows
+    }, counts, provincial_counts, provincial_cross_counts, opcounts, excluded, audit_rows
 
 
 def main():
@@ -241,15 +249,17 @@ def main():
     selected = select_latest_archives(args.input_dir, args.inventory_file)
     counts = Counter()
     provincial_counts = Counter()
+    provincial_cross_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     manifest = []
     audit_rows = []
     for period, archive in selected.items():
-        info, month_counts, month_provincial, month_ops, month_excluded, month_audit = process_archive(archive, period)
+        info, month_counts, month_provincial, month_cross, month_ops, month_excluded, month_audit = process_archive(archive, period)
         manifest.append(info)
         counts.update(month_counts)
         provincial_counts.update(month_provincial)
+        provincial_cross_counts.update(month_cross)
         opcounts.update(month_ops)
         excluded.update(month_excluded)
         audit_rows.extend(month_audit)
@@ -270,6 +280,21 @@ def main():
                 period, scope, province_code,
                 PROVINCES.get(province_code, "Código no catalogado"),
                 vehicle_type, "Nuevo" if new_used == "N" else "Usado", value,
+            ])
+
+    with (output / "matriculaciones_motocicletas_cruce_provincias_nuevas.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["periodo", "COD_PROVINCIA_MAT", "provincia_matriculacion",
+                         "COD_PROVINCIA_VEH", "provincia_domicilio_vehiculo",
+                         "COD_TIPO", "recuento"])
+        for key, value in sorted(provincial_cross_counts.items()):
+            period, registration_code, vehicle_code, vehicle_type = key
+            writer.writerow([
+                period, registration_code,
+                PROVINCES.get(registration_code, "Código no catalogado") if registration_code != "(vacío)" else "Código vacío",
+                vehicle_code,
+                PROVINCES.get(vehicle_code, "Código no catalogado") if vehicle_code != "(vacío)" else "Código vacío",
+                vehicle_type, value,
             ])
 
     with (output / "tipo_operacion.csv").open("w", newline="", encoding="utf-8-sig") as handle:

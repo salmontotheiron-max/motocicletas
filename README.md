@@ -50,7 +50,8 @@ Para vehículos nuevos se usa `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITE`,
 Salidas:
 
 - `public/data/matriculaciones_nuevos_usados_por_tipo.csv`: matriculaciones por periodo, código de tipo y nuevo/usado.
-- `public/data/matriculaciones_motocicletas_por_provincia.csv`: motocicletas (códigos 50 y 51) por periodo y provincia. En nuevos se utiliza `COD_PROVINCIA_MAT` (provincia donde fue matriculado el vehículo); en usados, `COD_PROVINCIA_VEH` (provincia donde está domiciliado el vehículo). El campo `ambito_provincial` identifica cuál de las dos dimensiones se está usando. Los códigos no catalogados se conservan y se etiquetan, no se descartan.
+- `public/data/matriculaciones_motocicletas_por_provincia.csv`: motocicletas (códigos 50 y 51) por periodo y provincia. En nuevos se utiliza `COD_PROVINCIA_MAT`; en usados, `COD_PROVINCIA_VEH`. Los códigos no catalogados se conservan y se etiquetan, no se descartan.
+- `matriculaciones_motocicletas_cruce_provincias_nuevas.csv`: cruce exploratorio por periodo entre provincia de matriculación (`COD_PROVINCIA_MAT`) y provincia del domicilio registrado del vehículo (`COD_PROVINCIA_VEH`) para motocicletas nuevas. No identifica necesariamente la residencia efectiva del comprador.
 - `public/data/tipo_operacion.csv`: operaciones por periodo y clave de trámite.
 - `public/data/manifest.json`: fuente seleccionada por periodo, SHA-256, tamaño, registros y rango de fechas de proceso.
 - `public/data/periodos.json`: periodos con fuente mensual procesada.
@@ -59,8 +60,13 @@ Salidas:
 - `public/data/ranking_motocicletas_provincia.csv`: ranking acumulado por provincia, con recuento, peso porcentual, puesto y número de periodos con datos. Mantiene separados nuevos (provincia de matriculación) y usados (provincia de domicilio del vehículo).
 - `public/data/evolucion_motocicletas_provincia.csv`: evolución mensual provincial, con recuentos y peso porcentual dentro de cada ámbito y mes.
 - `public/data/resumen_territorial.json`: totales, número de provincias, concentración de las cinco y diez primeras, periodos disponibles y trazabilidad de códigos provinciales vacíos.
+- `public/data/informe_dispersion_provincias.json`: resumen nacional de coincidencia y dispersión, evolución mensual, ranking provincial, principales flujos, seguimiento de Segovia y validación de totales.
+- `public/data/dispersion_provincias_mensual.csv`: evolución mensual de matriculaciones en la misma provincia, en otra provincia y con domicilio no informado.
+- `public/data/dispersion_provincias_ranking.csv`: ranking por provincia de matriculación, con volúmenes y porcentaje de domicilios externos sobre domicilios conocidos.
+- `public/data/dispersion_provincias_flujos.csv`: flujos interprovinciales ordenados por volumen.
+- `public/data/matriz_dispersion_provincias.csv`: matriz completa de combinaciones entre provincias de matriculación y domicilio, incluidos los pares con cero registros.
 
-El script `generar_informe_provincial.py` produce estas tres salidas a partir del CSV provincial. La generación se ejecuta en el workflow mensual y queda cubierta por pruebas automatizadas. Los códigos provinciales vacíos se identifican expresamente; no se asigna una provincia por inferencia. El código `NA` se conserva como Navarra.
+El script `generar_informe_provincial.py` produce estas tres salidas a partir del CSV provincial. La generación se ejecuta en el workflow mensual y queda cubierta por pruebas automatizadas. Los códigos provinciales vacíos se identifican expresamente; no se asigna una provincia por inferencia. El código `NA` se conserva como Navarra. El script `generar_informe_dispersion.py` cruza el CSV de matriculación y domicilio de vehículos nuevos con el agregado provincial, exige coincidencia exacta de los totales y genera el resumen, evolución, ranking, flujos y matriz de dispersión. La matriz se presenta en formato largo y contiene todas las combinaciones de las provincias presentes en ambas dimensiones, también las que tienen recuento cero. El informe se regenera en cada ejecución mensual y sus salidas quedan incluidas en los artefactos piloto y en la publicación de agregados.
 
 Los rankings absolutos no se interpretan como tasas de penetración ni como intensidad de mercado por habitante. Si en una fase posterior se incorpora una fuente oficial y comparable de población o parque de motocicletas, podrán añadirse indicadores relativos sin sustituir los recuentos originales.
 
