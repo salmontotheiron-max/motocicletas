@@ -185,7 +185,7 @@ def build_report(cross_path, provincial_path, output_dir):
     segovia_known = segovia_total["misma_provincia"] + segovia_total["otra_provincia"]
     segovia = {
         "matriculaciones": segovia_total["total"],
-        "domicilio_segoviа": segovia_total["misma_provincia"],
+        "domicilio_segovia": segovia_total["misma_provincia"],
         "domicilio_otra_provincia": segovia_total["otra_provincia"],
         "domicilio_madrid": destinations_segovia[MADRID_CODE],
         "porcentaje_domicilio_externo_sobre_conocidos": round(100 * segovia_total["otra_provincia"] / segovia_known, 4) if segovia_known else None,
@@ -198,7 +198,7 @@ def build_report(cross_path, provincial_path, output_dir):
             {
                 "periodo": period,
                 "matriculaciones": segovia_monthly[period]["total"],
-                "domicilio_segровia": segovia_monthly[period]["Segovia"],
+                "domicilio_segovia": segovia_monthly[period]["Segovia"],
                 "domicilio_madrid": segovia_monthly[period]["Madrid"],
                 "domicilio_otras_provincias": segovia_monthly[period]["otras_provincias"],
                 "domicilio_no_informado": segovia_monthly[period]["domicilio_no_informado"],
