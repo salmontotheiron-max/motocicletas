@@ -156,6 +156,17 @@ def main():
                 counts[("NACIONAL", month, dimension, category)] += 1
                 counts[(province, month, dimension, category)] += 1
 
+    # Añade una vista acumulada enero-septiembre. La supresión se aplica
+    # después de acumular, evitando ocultar marcas/modelos por umbrales mensuales.
+    cumulative_counts = Counter()
+    cumulative_denominators = Counter()
+    for (province, month, dimension, category), count in counts.items():
+        cumulative_counts[(province, "2026-01/09", dimension, category)] += count
+    for (province, month), count in denominators.items():
+        cumulative_denominators[(province, "2026-01/09")] += count
+    counts.update(cumulative_counts)
+    denominators.update(cumulative_denominators)
+
     target_provinces = set(dispersal) | {"SG"}
     rows = []
     for key, count in sorted(counts.items()):
