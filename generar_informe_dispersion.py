@@ -167,6 +167,10 @@ def build_report(cross_path, provincial_path, output_dir):
         flows.items(), key=lambda item: (-item[1], names_mat.get(item[0][0], item[0][0]), names_veh.get(item[0][1], item[0][1]))
     )]
 
+    for code in set(names_mat) & set(names_veh):
+        if names_mat[code] != names_veh[code]:
+            raise ValueError(f"Nombres provinciales incompatibles entre dimensiones para {code}: {names_mat[code]!r} / {names_veh[code]!r}")
+
     # Matriz cuadrada completa: unión de códigos de ambas dimensiones,
     # incluyendo combinaciones sin registros y provincias sin flujo observado
     # en una de las dos dimensiones.
@@ -218,8 +222,8 @@ def build_report(cross_path, provincial_path, output_dir):
         "domicilio_no_informado": unknown,
         "porcentaje_misma_provincia": round(100 * same / total, 4) if total else None,
         "porcentaje_interprovincial_sobre_domicilios_conocidos": round(100 * different / known_total, 4) if known_total else None,
-        "provincias_matriculacion": len(mat_codes),
-        "provincias_domicilio": len(veh_codes),
+        "provincias_matriculacion": sum(code != "(vacío)" for code in names_mat),
+        "provincias_domicilio": sum(code != "(vacío)" for code in names_veh),
         "matriz_filas": len(matrix_rows),
         "validacion": {
             "agregado_provincial_coincide": True,
