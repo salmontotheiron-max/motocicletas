@@ -62,6 +62,13 @@ jobs:
             --input resultado-provincial/matriculaciones_motocicletas_por_provincia.csv \
             --output-dir resultado-provincial
 
+      - name: Auditar composición de motocicletas nuevas
+        run: |
+          python auditar_composicion_motocicletas.py \
+            --input-dir datos-historicos \
+            --cross resultado-provincial/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \
+            --output resultado-provincial/composicion_motocicletas_nuevas.csv
+
       - name: Contrastar totales provinciales con totales generales
         run: |
           python - <<'PY'
@@ -121,5 +128,6 @@ jobs:
             resultado-provincial/ranking_motocicletas_provincia.csv
             resultado-provincial/evolucion_motocicletas_provincia.csv
             resultado-provincial/resumen_territorial.json
+            resultado-provincial/composicion_motocicletas_nuevas.csv
           retention-days: 7
           if-no-files-found: error
