@@ -56,6 +56,23 @@ class IntegratedReportTests(unittest.TestCase):
             self.assertIn("REVISAR",body)
             self.assertIn("Domicilio Madrid",body)
 
+    def test_generates_report_from_published_snapshot(self):
+        data = Path(__file__).resolve().parents[1] / "public" / "data"
+        required = ["matriculaciones_motocicletas_por_provincia.csv",
+                    "ranking_motocicletas_provincia.csv",
+                    "indicadores_intensidad_territorial.csv",
+                    "dispersion_balance_provincial.csv",
+                    "dispersion_provincias_flujos.csv",
+                    "matriculaciones_nuevos_usados_por_tipo.csv",
+                    "informe_dispersion_provincias.json"]
+        if not all((data / name).exists() for name in required):
+            self.skipTest("No hay snapshot MATRABA publicado en este checkout")
+        with tempfile.TemporaryDirectory() as tmp:
+            result = report.build_report(data, Path(tmp) / "informe.md")
+            self.assertEqual(result["nuevas"], 219565)
+            self.assertEqual(result["usadas"], 3078)
+            self.assertEqual(result["alertas"], ["Segovia"])
+
     def test_rejects_inconsistent_totals(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp); data=self.fixture(root,total=5)
