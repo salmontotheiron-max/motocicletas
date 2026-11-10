@@ -54,7 +54,7 @@ class IntegratedReportTests(unittest.TestCase):
             self.assertEqual(result["alertas"],["Segovia"])
             self.assertIn("2026-01",body)
             self.assertIn("REVISAR",body)
-            self.assertIn("domicilio Madrid",body)
+            self.assertIn("Domicilio Madrid",body)
 
     def test_rejects_inconsistent_totals(self):
         with tempfile.TemporaryDirectory() as tmp:
