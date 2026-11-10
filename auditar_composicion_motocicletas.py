@@ -2,6 +2,7 @@
 """Auditoría agregada de composición de motocicletas nuevas MATRABA (50/51)."""
 import argparse
 import csv
+import hashlib
 import zipfile
 from collections import Counter
 from pathlib import Path
@@ -25,6 +26,15 @@ DIMENSIONS = {
     "renting": (34, 10, "indicador de renting"),
 }
 MINIMUMS = {"municipio": 20}
+CLASS_LABELS = {
+    "0": "Ordinaria", "1": "Turística", "2": "Remolque",
+    "3": "Diplomática", "4": "Reservada", "5": "Vehículo especial",
+    "6": "Ciclomotor", "7": "Transporte temporal", "8": "Histórica",
+}
+ORIGIN_LABELS = {
+    "0": "Fabricación nacional", "1": "Importación no comunitaria",
+    "2": "Subasta", "3": "Importación UE",
+}
 
 
 def read_dispersal(path):
@@ -47,6 +57,9 @@ def read_dispersal(path):
 def extract_rows(archive_path):
     payload = archive_path.read_bytes()
     text, error, _ = inspect_zip(payload)
+    expected_digest = archive_path.stem.rsplit("_", 1)[-1]
+    if hashlib.sha256(payload).hexdigest() != expected_digest:
+        raise ValueError(f"{archive_path.name}: SHA-256 no coincide con el nombre del snapshot")
     if error:
         raise ValueError(f"{archive_path.name}: {error}")
     lines = text.replace(b"\r\n", b"\n").split(b"\n")
@@ -96,6 +109,14 @@ def main():
             denominators[(province, month)] += 1
             for dimension, (index, threshold, _) in DIMENSIONS.items():
                 category = values[index] or "(no informado)"
+                if dimension == "clase_matricula":
+                    category = CLASS_LABELS.get(category, f"Código {category}")
+                elif dimension == "procedencia":
+                    category = ORIGIN_LABELS.get(category, f"Código {category}")
+                elif dimension == "titular_fisico_juridico":
+                    category = {"D": "Persona física", "X": "Persona jurídica"}.get(category, category)
+                elif dimension == "renting":
+                    category = {"S": "Renting", "N": "No renting"}.get(category, category)
                 counts[("NACIONAL", month, dimension, category)] += 1
                 counts[(province, month, dimension, category)] += 1
 
