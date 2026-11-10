@@ -18,7 +18,8 @@ acumulados por periodo y provincia: mínimo 10 unidades por categoría y 20 para
 municipio. Las categorías por debajo del umbral se agrupan como suprimidas.
 
 No se exportan bastidores, nombres, identificadores personales, códigos postales
-ni domicilios individuales. Los códigos de servicio, renting y procedencia se
+ni domicilios individuales. El municipio se refiere al domicilio registral del
+vehículo y no al lugar de compra, entrega o concesionario. Los códigos de servicio, renting y procedencia se
 presentan como categorías descriptivas; por sí solos no acreditan uso comercial,
 flota, concesionario ni causa de la discrepancia territorial.
 
