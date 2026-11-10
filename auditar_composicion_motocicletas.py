@@ -60,11 +60,14 @@ def extract_rows(archive_path):
             offset += width
         date = parse_date(values[0])
         process_date = parse_date(values[68])
+        transaction_date = parse_date(values[22])
         # Mismo universo del informe territorial: operación 1, nuevo N,
         # tipos 50/51 y FEC_MATRICULA no posterior a FEC_PROCESO.
         if (values[7] not in MOTORCYCLE_CODES or values[21] != "1"
                 or values[25] != "N" or date is None or process_date is None
-                or date > process_date or date.strftime("%Y-%m") < START):
+                or date > process_date
+                or (transaction_date is not None and transaction_date > process_date)
+                or date.strftime("%Y-%m") < START):
             continue
         province = values[20] or "(vacío)"
         yield date.strftime("%Y-%m"), province, values
