@@ -39,6 +39,18 @@ class CompositionAuditTests(unittest.TestCase):
         self.assertEqual(denominators[("SG", "2026-01/09")], 22)
         self.assertEqual(counts[("SG", "2026-01", "marca", "HONDA")], 4)
 
+    def test_reconciliation_detects_missing_dimension_counts(self):
+        from collections import Counter
+        denominators = Counter({("SG", "2026-01"): 10})
+        counts = Counter({
+            ("SG", "2026-01", dim, "A"): 10
+            for dim in a.DIMENSIONS
+        })
+        a.validate_reconciliation(counts, denominators)
+        counts[("SG", "2026-01", "marca", "A")] = 9
+        with self.assertRaises(ValueError):
+            a.validate_reconciliation(counts, denominators)
+
     def test_suppressed_totals_are_not_published_below_threshold(self):
         self.assertEqual(a.safe_published_count(9, "marca"), "")
         self.assertEqual(a.safe_published_count(10, "marca"), 10)
