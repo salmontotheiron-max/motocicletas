@@ -90,6 +90,8 @@ def build_report(cross_path, provincial_path, output_dir):
     monthly = defaultdict(Counter)
     by_registration = defaultdict(Counter)
     flows = Counter()
+    outgoing = Counter()
+    incoming = Counter()
     matrix = Counter()
     destinations_segovia = Counter()
     segovia_monthly = defaultdict(Counter)
@@ -113,6 +115,8 @@ def build_report(cross_path, provincial_path, output_dir):
             month["otra_provincia"] += count
             registration["otra_provincia"] += count
             flows[(mat_code, veh_code)] += count
+            outgoing[mat_code] += count
+            incoming[veh_code] += count
         if mat_code == SEGOVIA_CODE:
             destinations_segovia[veh_code] += count
             sm = segovia_monthly[period]
@@ -156,6 +160,28 @@ def build_report(cross_path, provincial_path, output_dir):
         -(row["porcentaje_domicilio_externo_sobre_conocidos"] or 0),
         -row["domicilio_otra_provincia"], row["provincia_matriculacion"],
     ))
+
+    # Balance por provincia: entradas menos salidas. Las entradas y salidas
+    # solo incluyen pares con ambas provincias conocidas y distintas.
+    balance_rows = []
+    all_province_codes = sorted((set(names_mat) | set(names_veh)) - {"(vacío)"})
+    for code in all_province_codes:
+        registrations = by_registration.get(code, Counter())["total"]
+        exits = outgoing[code]
+        entries = incoming[code]
+        net = entries - exits
+        balance_rows.append({
+            "COD_PROVINCIA": code,
+            "provincia": names_mat.get(code, names_veh.get(code, "Código no catalogado")),
+            "matriculaciones": registrations,
+            "salidas_interprovinciales": exits,
+            "entradas_interprovinciales": entries,
+            "saldo_neto_entradas_menos_salidas": net,
+            "salidas_sobre_matriculaciones_pct": round(100 * exits / registrations, 4) if registrations else None,
+            "entradas_sobre_matriculaciones_pct": round(100 * entries / registrations, 4) if registrations else None,
+            "saldo_neto_sobre_matriculaciones_pct": round(100 * net / registrations, 4) if registrations else None,
+        })
+    balance_rows.sort(key=lambda row: (row["saldo_neto_entradas_menos_salidas"], row["provincia"]))
 
     flow_rows = [{
         "COD_PROVINCIA_MAT": mat_code,
@@ -234,6 +260,9 @@ def build_report(cross_path, provincial_path, output_dir):
         "evolucion_mensual": monthly_rows,
         "ranking_provincial": ranking_rows,
         "principales_flujos_interprovinciales": flow_rows[:30],
+        "balance_interprovincial_por_provincia": balance_rows,
+        "provincias_mayor_saldo_positivo": sorted(balance_rows, key=lambda row: (-row["saldo_neto_entradas_menos_salidas"], row["provincia"]))[:10],
+        "provincias_mayor_saldo_negativo": balance_rows[:10],
         "segovia": segovia,
         "nota_metodologica": (
             "COD_PROVINCIA_MAT identifica la provincia de matriculación. "
@@ -257,6 +286,7 @@ def build_report(cross_path, provincial_path, output_dir):
     write_csv("dispersion_provincias_mensual.csv", monthly_rows)
     write_csv("dispersion_provincias_ranking.csv", ranking_rows)
     write_csv("dispersion_provincias_flujos.csv", flow_rows)
+    write_csv("dispersion_balance_provincial.csv", balance_rows)
     write_csv("matriz_dispersion_provincias.csv", matrix_rows)
     (output / "informe_dispersion_provincias.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
