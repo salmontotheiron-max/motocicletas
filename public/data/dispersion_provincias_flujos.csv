@@ -1,0 +1,1417 @@
+﻿COD_PROVINCIA_MAT,provincia_matriculacion,COD_PROVINCIA_VEH,provincia_domicilio_vehiculo,recuento
+SG,Segovia,M,Madrid,6727
+B,Barcelona,GI,Girona,2228
+M,Madrid,B,Barcelona,2045
+CO,Córdoba,SE,Sevilla,2005
+GC,Las Palmas,TF,Santa Cruz de Tenerife,1907
+MU,Murcia,A,Alicante/Alacant,1108
+CA,Cádiz,SE,Sevilla,1090
+J,Jaén,GR,Granada,1060
+CO,Córdoba,M,Madrid,921
+M,Madrid,IB,Illes Balears,912
+B,Barcelona,M,Madrid,866
+B,Barcelona,IB,Illes Balears,827
+PO,Pontevedra,C,A Coruña,791
+M,Madrid,TO,Toledo,767
+SE,Sevilla,AL,Almería,724
+SE,Sevilla,MA,Málaga,693
+GI,Girona,B,Barcelona,689
+V,Valencia/València,A,Alicante/Alacant,638
+M,Madrid,V,Valencia/València,637
+TF,Santa Cruz de Tenerife,GC,Las Palmas,623
+B,Barcelona,T,Tarragona,605
+M,Madrid,A,Alicante/Alacant,503
+V,Valencia/València,CS,Castellón/Castelló,442
+A,Alicante/Alacant,V,Valencia/València,414
+M,Madrid,GU,Guadalajara,392
+M,Madrid,MA,Málaga,376
+M,Madrid,MU,Murcia,358
+PO,Pontevedra,OU,Ourense,326
+M,Madrid,GI,Girona,317
+CO,Córdoba,CA,Cádiz,312
+SG,Segovia,B,Barcelona,312
+V,Valencia/València,IB,Illes Balears,311
+M,Madrid,SE,Sevilla,307
+M,Madrid,CA,Cádiz,281
+MA,Málaga,CA,Cádiz,279
+M,Madrid,GR,Granada,262
+M,Madrid,BI,Bizkaia,256
+M,Madrid,BA,Badajoz,252
+M,Madrid,T,Tarragona,252
+SE,Sevilla,H,Huelva,252
+NA,Navarra,LO,La Rioja,250
+B,Barcelona,L,Lleida,235
+T,Tarragona,B,Barcelona,233
+M,Madrid,S,Cantabria,232
+M,Madrid,O,Asturias,228
+Z,Zaragoza,M,Madrid,219
+SE,Sevilla,GR,Granada,218
+M,Madrid,AL,Almería,217
+M,Madrid,SS,Gipuzkoa,208
+M,Madrid,PO,Pontevedra,205
+M,Madrid,SA,Salamanca,205
+SE,Sevilla,CO,Córdoba,201
+CO,Córdoba,BI,Bizkaia,199
+M,Madrid,Z,Zaragoza,199
+MA,Málaga,GR,Granada,196
+H,Huelva,SE,Sevilla,193
+M,Madrid,LE,León,188
+A,Alicante/Alacant,MU,Murcia,186
+SG,Segovia,TO,Toledo,182
+M,Madrid,C,A Coruña,181
+M,Madrid,CS,Castellón/Castelló,181
+M,Madrid,VA,Valladolid,178
+Z,Zaragoza,HU,Huesca,174
+C,A Coruña,PO,Pontevedra,173
+Z,Zaragoza,NA,Navarra,170
+CC,Cáceres,BA,Badajoz,166
+BI,Bizkaia,S,Cantabria,163
+CA,Cádiz,MA,Málaga,161
+M,Madrid,CR,Ciudad Real,161
+BA,Badajoz,CC,Cáceres,157
+SE,Sevilla,CA,Cádiz,157
+CO,Córdoba,PO,Pontevedra,151
+TO,Toledo,M,Madrid,150
+M,Madrid,NA,Navarra,149
+MA,Málaga,CO,Córdoba,149
+A,Alicante/Alacant,M,Madrid,146
+M,Madrid,CC,Cáceres,142
+MU,Murcia,AL,Almería,134
+M,Madrid,ZA,Zamora,132
+MA,Málaga,M,Madrid,131
+T,Tarragona,CS,Castellón/Castelló,130
+CO,Córdoba,MA,Málaga,129
+GR,Granada,MA,Málaga,129
+M,Madrid,AB,Albacete,129
+MA,Málaga,SE,Sevilla,129
+AB,Albacete,CU,Cuenca,128
+B,Barcelona,V,Valencia/València,128
+CO,Córdoba,J,Jaén,126
+M,Madrid,J,Jaén,126
+M,Madrid,AV,Ávila,123
+M,Madrid,L,Lleida,122
+M,Madrid,CO,Córdoba,120
+M,Madrid,BU,Burgos,111
+SG,Segovia,V,Valencia/València,111
+V,Valencia/València,M,Madrid,110
+CO,Córdoba,S,Cantabria,105
+GU,Guadalajara,M,Madrid,101
+CO,Córdoba,LE,León,97
+SG,Segovia,A,Alicante/Alacant,97
+VI,Araba/Álava,BI,Bizkaia,93
+IB,Illes Balears,M,Madrid,93
+M,Madrid,LO,La Rioja,93
+B,Barcelona,MA,Málaga,92
+VA,Valladolid,P,Palencia,92
+SG,Segovia,GU,Guadalajara,90
+SG,Segovia,MA,Málaga,88
+GR,Granada,AL,Almería,86
+M,Madrid,CU,Cuenca,86
+M,Madrid,SG,Segovia,86
+Z,Zaragoza,L,Lleida,86
+GR,Granada,J,Jaén,85
+GR,Granada,PO,Pontevedra,85
+VA,Valladolid,M,Madrid,84
+M,Madrid,HU,Huesca,83
+CO,Córdoba,O,Asturias,82
+J,Jaén,M,Madrid,82
+SE,Sevilla,J,Jaén,82
+L,Lleida,HU,Huesca,81
+CA,Cádiz,M,Madrid,78
+T,Tarragona,L,Lleida,77
+LO,La Rioja,NA,Navarra,76
+M,Madrid,H,Huelva,76
+M,Madrid,OU,Ourense,76
+Z,Zaragoza,TE,Teruel,75
+MU,Murcia,V,Valencia/València,73
+SG,Segovia,AV,Ávila,71
+CO,Córdoba,C,A Coruña,70
+SE,Sevilla,M,Madrid,70
+S,Cantabria,BI,Bizkaia,68
+CO,Córdoba,AL,Almería,68
+M,Madrid,VI,Araba/Álava,68
+BI,Bizkaia,VI,Araba/Álava,66
+B,Barcelona,A,Alicante/Alacant,65
+BI,Bizkaia,SS,Gipuzkoa,65
+SG,Segovia,SE,Sevilla,65
+O,Asturias,S,Cantabria,63
+PO,Pontevedra,LU,Lugo,62
+SG,Segovia,Z,Zaragoza,62
+B,Barcelona,MU,Murcia,61
+B,Barcelona,SE,Sevilla,61
+V,Valencia/València,B,Barcelona,61
+CA,Cádiz,H,Huelva,59
+MU,Murcia,GR,Granada,59
+CS,Castellón/Castelló,V,Valencia/València,58
+P,Palencia,S,Cantabria,58
+B,Barcelona,TO,Toledo,56
+VI,Araba/Álava,BU,Burgos,54
+MA,Málaga,J,Jaén,54
+SG,Segovia,IB,Illes Balears,53
+B,Barcelona,CS,Castellón/Castelló,51
+VA,Valladolid,SA,Salamanca,51
+VA,Valladolid,ZA,Zamora,51
+MU,Murcia,M,Madrid,50
+SG,Segovia,MU,Murcia,50
+VI,Araba/Álava,SS,Gipuzkoa,49
+O,Asturias,M,Madrid,49
+S,Cantabria,M,Madrid,48
+O,Asturias,LE,León,47
+CO,Córdoba,GR,Granada,47
+H,Huelva,BA,Badajoz,47
+J,Jaén,CO,Córdoba,47
+A,Alicante/Alacant,AB,Albacete,46
+GR,Granada,CO,Córdoba,46
+C,A Coruña,LU,Lugo,45
+SE,Sevilla,BA,Badajoz,45
+B,Barcelona,Z,Zaragoza,44
+BU,Burgos,VI,Araba/Álava,44
+M,Madrid,LU,Lugo,44
+SG,Segovia,BI,Bizkaia,43
+GR,Granada,SE,Sevilla,42
+AB,Albacete,V,Valencia/València,41
+GU,Guadalajara,CU,Cuenca,41
+L,Lleida,B,Barcelona,41
+M,Madrid,P,Palencia,41
+AB,Albacete,M,Madrid,40
+AL,Almería,GR,Granada,40
+L,Lleida,T,Tarragona,40
+LU,Lugo,C,A Coruña,40
+MU,Murcia,AB,Albacete,40
+PO,Pontevedra,M,Madrid,40
+SG,Segovia,C,A Coruña,40
+SG,Segovia,CR,Ciudad Real,40
+SG,Segovia,CA,Cádiz,40
+TO,Toledo,CR,Ciudad Real,40
+B,Barcelona,GR,Granada,39
+BI,Bizkaia,BU,Burgos,39
+V,Valencia/València,MU,Murcia,39
+B,Barcelona,CA,Cádiz,38
+SG,Segovia,VA,Valladolid,38
+SS,Gipuzkoa,BI,Bizkaia,37
+IB,Illes Balears,B,Barcelona,37
+M,Madrid,SO,Soria,37
+SA,Salamanca,CC,Cáceres,37
+SG,Segovia,PO,Pontevedra,37
+CO,Córdoba,B,Barcelona,36
+GR,Granada,CA,Cádiz,36
+CO,Córdoba,SS,Gipuzkoa,35
+TO,Toledo,CC,Cáceres,35
+VA,Valladolid,LE,León,35
+AB,Albacete,CR,Ciudad Real,34
+VI,Araba/Álava,CA,Cádiz,34
+B,Barcelona,SS,Gipuzkoa,34
+BU,Burgos,M,Madrid,34
+LE,León,ZA,Zamora,34
+MA,Málaga,AL,Almería,34
+VA,Valladolid,SG,Segovia,34
+B,Barcelona,BI,Bizkaia,33
+GR,Granada,M,Madrid,33
+SA,Salamanca,ZA,Zamora,33
+SG,Segovia,CS,Castellón/Castelló,33
+SG,Segovia,CU,Cuenca,33
+A,Alicante/Alacant,IB,Illes Balears,32
+CO,Córdoba,H,Huelva,32
+LU,Lugo,O,Asturias,32
+M,Madrid,TE,Teruel,32
+NA,Navarra,Z,Zaragoza,32
+SG,Segovia,GR,Granada,32
+V,Valencia/València,TE,Teruel,32
+NA,Navarra,SS,Gipuzkoa,31
+C,A Coruña,OU,Ourense,30
+MA,Málaga,B,Barcelona,30
+SG,Segovia,O,Asturias,30
+VI,Araba/Álava,M,Madrid,29
+SS,Gipuzkoa,NA,Navarra,29
+SG,Segovia,SS,Gipuzkoa,29
+SG,Segovia,GI,Girona,29
+V,Valencia/València,AB,Albacete,29
+AB,Albacete,MU,Murcia,28
+B,Barcelona,C,A Coruña,27
+CO,Córdoba,A,Alicante/Alacant,27
+SG,Segovia,BA,Badajoz,27
+SG,Segovia,S,Cantabria,27
+SG,Segovia,NA,Navarra,27
+TO,Toledo,AV,Ávila,27
+AB,Albacete,PO,Pontevedra,26
+BU,Burgos,P,Palencia,26
+CO,Córdoba,BA,Badajoz,26
+J,Jaén,AL,Almería,26
+SG,Segovia,H,Huelva,26
+SG,Segovia,J,Jaén,26
+T,Tarragona,V,Valencia/València,26
+B,Barcelona,HU,Huesca,25
+B,Barcelona,PO,Pontevedra,25
+S,Cantabria,O,Asturias,25
+CA,Cádiz,GR,Granada,25
+LO,La Rioja,VI,Araba/Álava,25
+SG,Segovia,AL,Almería,25
+SG,Segovia,LE,León,25
+AL,Almería,MU,Murcia,24
+CA,Cádiz,BA,Badajoz,24
+CA,Cádiz,CO,Córdoba,24
+CO,Córdoba,CR,Ciudad Real,24
+SE,Sevilla,MU,Murcia,24
+V,Valencia/València,MA,Málaga,24
+VA,Valladolid,BU,Burgos,24
+V,Valencia/València,CU,Cuenca,23
+Z,Zaragoza,B,Barcelona,23
+Z,Zaragoza,SS,Gipuzkoa,23
+AB,Albacete,A,Alicante/Alacant,22
+CO,Córdoba,SG,Segovia,22
+CO,Córdoba,V,Valencia/València,22
+IB,Illes Balears,V,Valencia/València,22
+T,Tarragona,M,Madrid,22
+B,Barcelona,AL,Almería,21
+BU,Burgos,BI,Bizkaia,21
+CS,Castellón/Castelló,T,Tarragona,21
+H,Huelva,CA,Cádiz,21
+LO,La Rioja,SO,Soria,21
+SG,Segovia,CC,Cáceres,21
+SG,Segovia,CO,Córdoba,21
+Z,Zaragoza,SO,Soria,21
+CR,Ciudad Real,TO,Toledo,20
+CO,Córdoba,MU,Murcia,20
+LE,León,P,Palencia,20
+SA,Salamanca,AV,Ávila,20
+SG,Segovia,T,Tarragona,20
+Z,Zaragoza,SE,Sevilla,20
+A,Alicante/Alacant,B,Barcelona,19
+AL,Almería,M,Madrid,19
+BU,Burgos,VA,Valladolid,19
+CS,Castellón/Castelló,M,Madrid,19
+CO,Córdoba,OU,Ourense,19
+H,Huelva,CO,Córdoba,19
+J,Jaén,MA,Málaga,19
+LO,La Rioja,BI,Bizkaia,19
+Z,Zaragoza,T,Tarragona,19
+A,Alicante/Alacant,CA,Cádiz,18
+B,Barcelona,O,Asturias,18
+B,Barcelona,LE,León,18
+BU,Burgos,S,Cantabria,18
+IB,Illes Balears,MA,Málaga,18
+J,Jaén,CR,Ciudad Real,18
+SG,Segovia,BU,Burgos,18
+Z,Zaragoza,LO,La Rioja,18
+VI,Araba/Álava,S,Cantabria,17
+VI,Araba/Álava,LO,La Rioja,17
+B,Barcelona,CR,Ciudad Real,17
+B,Barcelona,NA,Navarra,17
+CR,Ciudad Real,M,Madrid,17
+GI,Girona,M,Madrid,17
+LE,León,O,Asturias,17
+MU,Murcia,B,Barcelona,17
+MA,Málaga,BI,Bizkaia,17
+OU,Ourense,LU,Lugo,17
+VA,Valladolid,AV,Ávila,17
+Z,Zaragoza,BI,Bizkaia,17
+O,Asturias,LU,Lugo,16
+B,Barcelona,J,Jaén,16
+S,Cantabria,P,Palencia,16
+CC,Cáceres,M,Madrid,16
+GR,Granada,OU,Ourense,16
+LE,León,BU,Burgos,16
+LE,León,M,Madrid,16
+LE,León,VA,Valladolid,16
+LU,Lugo,OU,Ourense,16
+MU,Murcia,IB,Illes Balears,16
+MA,Málaga,H,Huelva,16
+MA,Málaga,V,Valencia/València,16
+P,Palencia,VA,Valladolid,16
+SG,Segovia,L,Lleida,16
+SE,Sevilla,B,Barcelona,16
+V,Valencia/València,CA,Cádiz,16
+Z,Zaragoza,V,Valencia/València,16
+B,Barcelona,CO,Córdoba,15
+CA,Cádiz,IB,Illes Balears,15
+GR,Granada,B,Barcelona,15
+GR,Granada,BI,Bizkaia,15
+GR,Granada,IB,Illes Balears,15
+J,Jaén,CA,Cádiz,15
+LO,La Rioja,BU,Burgos,15
+NA,Navarra,SO,Soria,15
+PO,Pontevedra,LE,León,15
+SG,Segovia,OU,Ourense,15
+SG,Segovia,SA,Salamanca,15
+V,Valencia/València,SE,Sevilla,15
+AL,Almería,MA,Málaga,14
+VI,Araba/Álava,NA,Navarra,14
+B,Barcelona,BA,Badajoz,14
+CR,Ciudad Real,J,Jaén,14
+SS,Gipuzkoa,M,Madrid,14
+GR,Granada,MU,Murcia,14
+HU,Huesca,L,Lleida,14
+MA,Málaga,TO,Toledo,14
+SG,Segovia,LO,La Rioja,14
+SG,Segovia,ZA,Zamora,14
+T,Tarragona,GI,Girona,14
+T,Tarragona,IB,Illes Balears,14
+V,Valencia/València,GR,Granada,14
+A,Alicante/Alacant,MA,Málaga,13
+BA,Badajoz,M,Madrid,13
+B,Barcelona,BU,Burgos,13
+B,Barcelona,S,Cantabria,13
+B,Barcelona,LO,La Rioja,13
+GR,Granada,A,Alicante/Alacant,13
+SA,Salamanca,VA,Valladolid,13
+V,Valencia/València,C,A Coruña,13
+V,Valencia/València,CO,Córdoba,13
+V,Valencia/València,Z,Zaragoza,13
+Z,Zaragoza,A,Alicante/Alacant,13
+AB,Albacete,B,Barcelona,12
+A,Alicante/Alacant,CS,Castellón/Castelló,12
+B,Barcelona,VI,Araba/Álava,12
+B,Barcelona,H,Huelva,12
+CA,Cádiz,J,Jaén,12
+IB,Illes Balears,SE,Sevilla,12
+MA,Málaga,CR,Ciudad Real,12
+SG,Segovia,SO,Soria,12
+V,Valencia/València,NA,Navarra,12
+A,Alicante/Alacant,CR,Ciudad Real,11
+O,Asturias,C,A Coruña,11
+BI,Bizkaia,M,Madrid,11
+BU,Burgos,SS,Gipuzkoa,11
+GR,Granada,Z,Zaragoza,11
+MA,Málaga,BA,Badajoz,11
+MA,Málaga,IB,Illes Balears,11
+MA,Málaga,MU,Murcia,11
+TE,Teruel,Z,Zaragoza,11
+V,Valencia/València,J,Jaén,11
+V,Valencia/València,TO,Toledo,11
+AB,Albacete,C,A Coruña,10
+AB,Albacete,J,Jaén,10
+AB,Albacete,SE,Sevilla,10
+BA,Badajoz,H,Huelva,10
+BA,Badajoz,SE,Sevilla,10
+B,Barcelona,CC,Cáceres,10
+B,Barcelona,GU,Guadalajara,10
+B,Barcelona,LU,Lugo,10
+B,Barcelona,VA,Valladolid,10
+BI,Bizkaia,B,Barcelona,10
+BU,Burgos,LE,León,10
+S,Cantabria,BU,Burgos,10
+CA,Cádiz,B,Barcelona,10
+CO,Córdoba,LU,Lugo,10
+CO,Córdoba,T,Tarragona,10
+CO,Córdoba,TO,Toledo,10
+CO,Córdoba,Z,Zaragoza,10
+GR,Granada,C,A Coruña,10
+GR,Granada,V,Valencia/València,10
+J,Jaén,SE,Sevilla,10
+L,Lleida,Z,Zaragoza,10
+MA,Málaga,C,A Coruña,10
+MA,Málaga,A,Alicante/Alacant,10
+SG,Segovia,AB,Albacete,10
+SG,Segovia,HU,Huesca,10
+SE,Sevilla,IB,Illes Balears,10
+SE,Sevilla,V,Valencia/València,10
+V,Valencia/València,CR,Ciudad Real,10
+Z,Zaragoza,VI,Araba/Álava,10
+VI,Araba/Álava,SE,Sevilla,9
+O,Asturias,BI,Bizkaia,9
+O,Asturias,VA,Valladolid,9
+B,Barcelona,OU,Ourense,9
+B,Barcelona,TE,Teruel,9
+CO,Córdoba,CS,Castellón/Castelló,9
+CO,Córdoba,IB,Illes Balears,9
+CO,Córdoba,VA,Valladolid,9
+LU,Lugo,PO,Pontevedra,9
+MU,Murcia,MA,Málaga,9
+NA,Navarra,VI,Araba/Álava,9
+SA,Salamanca,M,Madrid,9
+SG,Segovia,VI,Araba/Álava,9
+SG,Segovia,P,Palencia,9
+Z,Zaragoza,CS,Castellón/Castelló,9
+Z,Zaragoza,IB,Illes Balears,9
+C,A Coruña,LE,León,8
+AB,Albacete,GR,Granada,8
+A,Alicante/Alacant,AL,Almería,8
+A,Alicante/Alacant,SS,Gipuzkoa,8
+A,Alicante/Alacant,GR,Granada,8
+A,Alicante/Alacant,SE,Sevilla,8
+O,Asturias,B,Barcelona,8
+O,Asturias,IB,Illes Balears,8
+B,Barcelona,AB,Albacete,8
+CC,Cáceres,SA,Salamanca,8
+CA,Cádiz,A,Alicante/Alacant,8
+CA,Cádiz,AL,Almería,8
+CA,Cádiz,V,Valencia/València,8
+SS,Gipuzkoa,S,Cantabria,8
+GI,Girona,IB,Illes Balears,8
+GI,Girona,L,Lleida,8
+H,Huelva,M,Madrid,8
+LO,La Rioja,M,Madrid,8
+LE,León,OU,Ourense,8
+MU,Murcia,GI,Girona,8
+MU,Murcia,J,Jaén,8
+NA,Navarra,BI,Bizkaia,8
+SG,Segovia,TE,Teruel,8
+SE,Sevilla,A,Alicante/Alacant,8
+T,Tarragona,A,Alicante/Alacant,8
+TO,Toledo,B,Barcelona,8
+TO,Toledo,CU,Cuenca,8
+V,Valencia/València,AL,Almería,8
+V,Valencia/València,BI,Bizkaia,8
+V,Valencia/València,BU,Burgos,8
+V,Valencia/València,PO,Pontevedra,8
+V,Valencia/València,T,Tarragona,8
+VA,Valladolid,TO,Toledo,8
+VA,Valladolid,V,Valencia/València,8
+Z,Zaragoza,MU,Murcia,8
+AV,Ávila,M,Madrid,8
+C,A Coruña,M,Madrid,7
+A,Alicante/Alacant,NA,Navarra,7
+O,Asturias,P,Palencia,7
+O,Asturias,PO,Pontevedra,7
+O,Asturias,ZA,Zamora,7
+BA,Badajoz,B,Barcelona,7
+B,Barcelona,ZA,Zamora,7
+B,Barcelona,AV,Ávila,7
+BI,Bizkaia,O,Asturias,7
+BI,Bizkaia,NA,Navarra,7
+BU,Burgos,MA,Málaga,7
+BU,Burgos,SG,Segovia,7
+CS,Castellón/Castelló,B,Barcelona,7
+CS,Castellón/Castelló,Z,Zaragoza,7
+CR,Ciudad Real,AB,Albacete,7
+CA,Cádiz,BI,Bizkaia,7
+CA,Cádiz,CC,Cáceres,7
+CO,Córdoba,ZA,Zamora,7
+H,Huelva,MA,Málaga,7
+IB,Illes Balears,A,Alicante/Alacant,7
+IB,Illes Balears,CA,Cádiz,7
+IB,Illes Balears,GR,Granada,7
+IB,Illes Balears,MU,Murcia,7
+LO,La Rioja,Z,Zaragoza,7
+L,Lleida,GI,Girona,7
+LU,Lugo,LE,León,7
+MU,Murcia,SE,Sevilla,7
+MA,Málaga,SS,Gipuzkoa,7
+MA,Málaga,LE,León,7
+MA,Málaga,SA,Salamanca,7
+PO,Pontevedra,B,Barcelona,7
+SG,Segovia,LU,Lugo,7
+T,Tarragona,HU,Huesca,7
+TE,Teruel,V,Valencia/València,7
+TO,Toledo,J,Jaén,7
+V,Valencia/València,GI,Girona,7
+V,Valencia/València,HU,Huesca,7
+VA,Valladolid,S,Cantabria,7
+A,Alicante/Alacant,O,Asturias,6
+A,Alicante/Alacant,BI,Bizkaia,6
+A,Alicante/Alacant,BU,Burgos,6
+A,Alicante/Alacant,GU,Guadalajara,6
+A,Alicante/Alacant,PO,Pontevedra,6
+AL,Almería,SE,Sevilla,6
+O,Asturias,A,Alicante/Alacant,6
+O,Asturias,CA,Cádiz,6
+BA,Badajoz,MA,Málaga,6
+B,Barcelona,P,Palencia,6
+BU,Burgos,A,Alicante/Alacant,6
+BU,Burgos,O,Asturias,6
+S,Cantabria,VI,Araba/Álava,6
+CA,Cádiz,SA,Salamanca,6
+CO,Córdoba,VI,Araba/Álava,6
+CO,Córdoba,NA,Navarra,6
+SS,Gipuzkoa,B,Barcelona,6
+SS,Gipuzkoa,LO,La Rioja,6
+SS,Gipuzkoa,Z,Zaragoza,6
+GI,Girona,A,Alicante/Alacant,6
+GR,Granada,O,Asturias,6
+GR,Granada,CR,Ciudad Real,6
+GR,Granada,H,Huelva,6
+GR,Granada,T,Tarragona,6
+J,Jaén,TO,Toledo,6
+LO,La Rioja,SS,Gipuzkoa,6
+LE,León,B,Barcelona,6
+MU,Murcia,CS,Castellón/Castelló,6
+MA,Málaga,S,Cantabria,6
+MA,Málaga,NA,Navarra,6
+MA,Málaga,PO,Pontevedra,6
+MA,Málaga,T,Tarragona,6
+MA,Málaga,VA,Valladolid,6
+MA,Málaga,Z,Zaragoza,6
+OU,Ourense,PO,Pontevedra,6
+PO,Pontevedra,BI,Bizkaia,6
+PO,Pontevedra,V,Valencia/València,6
+SA,Salamanca,BA,Badajoz,6
+SE,Sevilla,C,A Coruña,6
+SE,Sevilla,T,Tarragona,6
+SE,Sevilla,TO,Toledo,6
+T,Tarragona,MA,Málaga,6
+T,Tarragona,Z,Zaragoza,6
+TO,Toledo,GU,Guadalajara,6
+TO,Toledo,IB,Illes Balears,6
+TO,Toledo,MU,Murcia,6
+TO,Toledo,MA,Málaga,6
+V,Valencia/València,S,Cantabria,6
+V,Valencia/València,VA,Valladolid,6
+Z,Zaragoza,GU,Guadalajara,6
+Z,Zaragoza,MA,Málaga,6
+C,A Coruña,O,Asturias,5
+AB,Albacete,MA,Málaga,5
+AB,Albacete,TO,Toledo,5
+A,Alicante/Alacant,CU,Cuenca,5
+A,Alicante/Alacant,H,Huelva,5
+AL,Almería,B,Barcelona,5
+AL,Almería,CA,Cádiz,5
+AL,Almería,IB,Illes Balears,5
+BA,Badajoz,SS,Gipuzkoa,5
+BA,Badajoz,TO,Toledo,5
+B,Barcelona,SG,Segovia,5
+BI,Bizkaia,LO,La Rioja,5
+BU,Burgos,LO,La Rioja,5
+BU,Burgos,SO,Soria,5
+S,Cantabria,VA,Valladolid,5
+CR,Ciudad Real,CU,Cuenca,5
+CC,Cáceres,AV,Ávila,5
+CA,Cádiz,O,Asturias,5
+CA,Cádiz,BU,Burgos,5
+CO,Córdoba,BU,Burgos,5
+CO,Córdoba,CC,Cáceres,5
+CO,Córdoba,GI,Girona,5
+CO,Córdoba,LO,La Rioja,5
+CO,Córdoba,L,Lleida,5
+SS,Gipuzkoa,VI,Araba/Álava,5
+GI,Girona,MU,Murcia,5
+GI,Girona,T,Tarragona,5
+GR,Granada,LE,León,5
+J,Jaén,A,Alicante/Alacant,5
+J,Jaén,B,Barcelona,5
+J,Jaén,V,Valencia/València,5
+L,Lleida,M,Madrid,5
+L,Lleida,TE,Teruel,5
+M,Madrid,TF,Santa Cruz de Tenerife,5
+MU,Murcia,CR,Ciudad Real,5
+MU,Murcia,CA,Cádiz,5
+MA,Málaga,OU,Ourense,5
+NA,Navarra,M,Madrid,5
+PO,Pontevedra,O,Asturias,5
+PO,Pontevedra,CA,Cádiz,5
+SE,Sevilla,O,Asturias,5
+SE,Sevilla,BI,Bizkaia,5
+T,Tarragona,C,A Coruña,5
+T,Tarragona,SS,Gipuzkoa,5
+T,Tarragona,GR,Granada,5
+TE,Teruel,HU,Huesca,5
+TO,Toledo,CS,Castellón/Castelló,5
+V,Valencia/València,O,Asturias,5
+V,Valencia/València,H,Huelva,5
+V,Valencia/València,L,Lleida,5
+V,Valencia/València,LU,Lugo,5
+VA,Valladolid,CC,Cáceres,5
+ZA,Zamora,SA,Salamanca,5
+Z,Zaragoza,O,Asturias,5
+AB,Albacete,CA,Cádiz,4
+AB,Albacete,GU,Guadalajara,4
+A,Alicante/Alacant,LE,León,4
+A,Alicante/Alacant,T,Tarragona,4
+A,Alicante/Alacant,TO,Toledo,4
+A,Alicante/Alacant,Z,Zaragoza,4
+AL,Almería,GI,Girona,4
+O,Asturias,LO,La Rioja,4
+O,Asturias,MU,Murcia,4
+O,Asturias,SA,Salamanca,4
+BA,Badajoz,AV,Ávila,4
+B,Barcelona,CU,Cuenca,4
+B,Barcelona,SA,Salamanca,4
+BI,Bizkaia,P,Palencia,4
+BI,Bizkaia,PO,Pontevedra,4
+BU,Burgos,CA,Cádiz,4
+BU,Burgos,ZA,Zamora,4
+S,Cantabria,B,Barcelona,4
+CR,Ciudad Real,AL,Almería,4
+CR,Ciudad Real,CO,Córdoba,4
+CR,Ciudad Real,MA,Málaga,4
+CR,Ciudad Real,SE,Sevilla,4
+CR,Ciudad Real,V,Valencia/València,4
+CC,Cáceres,SE,Sevilla,4
+CC,Cáceres,TO,Toledo,4
+CA,Cádiz,C,A Coruña,4
+CA,Cádiz,MU,Murcia,4
+CO,Córdoba,GU,Guadalajara,4
+CO,Córdoba,SA,Salamanca,4
+SS,Gipuzkoa,V,Valencia/València,4
+GR,Granada,CS,Castellón/Castelló,4
+GR,Granada,GI,Girona,4
+GU,Guadalajara,MA,Málaga,4
+H,Huelva,J,Jaén,4
+HU,Huesca,B,Barcelona,4
+IB,Illes Balears,AL,Almería,4
+IB,Illes Balears,BA,Badajoz,4
+IB,Illes Balears,CS,Castellón/Castelló,4
+IB,Illes Balears,J,Jaén,4
+IB,Illes Balears,T,Tarragona,4
+LO,La Rioja,B,Barcelona,4
+LO,La Rioja,HU,Huesca,4
+LE,León,C,A Coruña,4
+LE,León,MU,Murcia,4
+MU,Murcia,BI,Bizkaia,4
+MU,Murcia,CU,Cuenca,4
+MU,Murcia,SS,Gipuzkoa,4
+MU,Murcia,TF,Santa Cruz de Tenerife,4
+MU,Murcia,T,Tarragona,4
+MA,Málaga,O,Asturias,4
+MA,Málaga,CS,Castellón/Castelló,4
+MA,Málaga,LO,La Rioja,4
+MA,Málaga,ZA,Zamora,4
+NA,Navarra,HU,Huesca,4
+OU,Ourense,C,A Coruña,4
+P,Palencia,BU,Burgos,4
+PO,Pontevedra,Z,Zaragoza,4
+SE,Sevilla,GU,Guadalajara,4
+SE,Sevilla,L,Lleida,4
+SE,Sevilla,PO,Pontevedra,4
+T,Tarragona,BI,Bizkaia,4
+T,Tarragona,S,Cantabria,4
+T,Tarragona,CR,Ciudad Real,4
+T,Tarragona,MU,Murcia,4
+T,Tarragona,TE,Teruel,4
+TE,Teruel,B,Barcelona,4
+TE,Teruel,CS,Castellón/Castelló,4
+TE,Teruel,M,Madrid,4
+TO,Toledo,AB,Albacete,4
+TO,Toledo,BA,Badajoz,4
+TO,Toledo,SS,Gipuzkoa,4
+TO,Toledo,H,Huelva,4
+TO,Toledo,V,Valencia/València,4
+V,Valencia/València,CC,Cáceres,4
+V,Valencia/València,SS,Gipuzkoa,4
+V,Valencia/València,LE,León,4
+V,Valencia/València,OU,Ourense,4
+V,Valencia/València,AV,Ávila,4
+VA,Valladolid,O,Asturias,4
+VA,Valladolid,BI,Bizkaia,4
+VA,Valladolid,SS,Gipuzkoa,4
+ZA,Zamora,LE,León,4
+ZA,Zamora,M,Madrid,4
+ZA,Zamora,VA,Valladolid,4
+Z,Zaragoza,BA,Badajoz,4
+Z,Zaragoza,S,Cantabria,4
+Z,Zaragoza,CR,Ciudad Real,4
+Z,Zaragoza,CO,Córdoba,4
+Z,Zaragoza,PO,Pontevedra,4
+AB,Albacete,O,Asturias,3
+AB,Albacete,BI,Bizkaia,3
+AB,Albacete,GI,Girona,3
+A,Alicante/Alacant,BA,Badajoz,3
+A,Alicante/Alacant,S,Cantabria,3
+A,Alicante/Alacant,CO,Córdoba,3
+A,Alicante/Alacant,GI,Girona,3
+A,Alicante/Alacant,VA,Valladolid,3
+A,Alicante/Alacant,AV,Ávila,3
+VI,Araba/Álava,O,Asturias,3
+VI,Araba/Álava,B,Barcelona,3
+O,Asturias,BA,Badajoz,3
+O,Asturias,SS,Gipuzkoa,3
+O,Asturias,GI,Girona,3
+O,Asturias,GU,Guadalajara,3
+O,Asturias,MA,Málaga,3
+O,Asturias,NA,Navarra,3
+O,Asturias,V,Valencia/València,3
+BA,Badajoz,J,Jaén,3
+BA,Badajoz,SA,Salamanca,3
+BA,Badajoz,V,Valencia/València,3
+B,Barcelona,SO,Soria,3
+BI,Bizkaia,A,Alicante/Alacant,3
+BI,Bizkaia,IB,Illes Balears,3
+BI,Bizkaia,LE,León,3
+BI,Bizkaia,LU,Lugo,3
+BU,Burgos,BA,Badajoz,3
+BU,Burgos,B,Barcelona,3
+BU,Burgos,GR,Granada,3
+S,Cantabria,C,A Coruña,3
+S,Cantabria,CC,Cáceres,3
+S,Cantabria,LE,León,3
+CR,Ciudad Real,BI,Bizkaia,3
+CC,Cáceres,CO,Córdoba,3
+CC,Cáceres,MA,Málaga,3
+CA,Cádiz,VI,Araba/Álava,3
+CA,Cádiz,S,Cantabria,3
+CA,Cádiz,OU,Ourense,3
+CA,Cádiz,TO,Toledo,3
+CA,Cádiz,Z,Zaragoza,3
+CO,Córdoba,P,Palencia,3
+SS,Gipuzkoa,MA,Málaga,3
+GI,Girona,GR,Granada,3
+GI,Girona,H,Huelva,3
+GI,Girona,MA,Málaga,3
+GI,Girona,OU,Ourense,3
+GI,Girona,V,Valencia/València,3
+GI,Girona,Z,Zaragoza,3
+GR,Granada,BA,Badajoz,3
+GR,Granada,GU,Guadalajara,3
+GR,Granada,HU,Huesca,3
+GR,Granada,TO,Toledo,3
+GU,Guadalajara,B,Barcelona,3
+GU,Guadalajara,TO,Toledo,3
+GU,Guadalajara,AV,Ávila,3
+H,Huelva,GR,Granada,3
+HU,Huesca,M,Madrid,3
+HU,Huesca,Z,Zaragoza,3
+IB,Illes Balears,S,Cantabria,3
+IB,Illes Balears,CO,Córdoba,3
+IB,Illes Balears,SS,Gipuzkoa,3
+IB,Illes Balears,GI,Girona,3
+IB,Illes Balears,PO,Pontevedra,3
+J,Jaén,H,Huelva,3
+J,Jaén,IB,Illes Balears,3
+J,Jaén,PO,Pontevedra,3
+LO,La Rioja,S,Cantabria,3
+LE,León,J,Jaén,3
+L,Lleida,LE,León,3
+MU,Murcia,O,Asturias,3
+MU,Murcia,CO,Córdoba,3
+MU,Murcia,H,Huelva,3
+MU,Murcia,NA,Navarra,3
+MA,Málaga,AB,Albacete,3
+MA,Málaga,CC,Cáceres,3
+MA,Málaga,GC,Las Palmas,3
+MA,Málaga,ML,Melilla,3
+NA,Navarra,BU,Burgos,3
+NA,Navarra,L,Lleida,3
+NA,Navarra,MA,Málaga,3
+NA,Navarra,TE,Teruel,3
+NA,Navarra,V,Valencia/València,3
+P,Palencia,BI,Bizkaia,3
+P,Palencia,SS,Gipuzkoa,3
+P,Palencia,M,Madrid,3
+PO,Pontevedra,S,Cantabria,3
+PO,Pontevedra,GU,Guadalajara,3
+PO,Pontevedra,TO,Toledo,3
+PO,Pontevedra,VA,Valladolid,3
+SA,Salamanca,CO,Córdoba,3
+SE,Sevilla,AB,Albacete,3
+SE,Sevilla,CC,Cáceres,3
+SE,Sevilla,HU,Huesca,3
+SE,Sevilla,NA,Navarra,3
+SE,Sevilla,VA,Valladolid,3
+T,Tarragona,VI,Araba/Álava,3
+T,Tarragona,O,Asturias,3
+T,Tarragona,J,Jaén,3
+T,Tarragona,LO,La Rioja,3
+T,Tarragona,LE,León,3
+T,Tarragona,PO,Pontevedra,3
+T,Tarragona,TO,Toledo,3
+TE,Teruel,A,Alicante/Alacant,3
+TE,Teruel,T,Tarragona,3
+TO,Toledo,C,A Coruña,3
+TO,Toledo,BI,Bizkaia,3
+TO,Toledo,S,Cantabria,3
+TO,Toledo,CA,Cádiz,3
+TO,Toledo,CO,Córdoba,3
+TO,Toledo,SE,Sevilla,3
+TO,Toledo,T,Tarragona,3
+V,Valencia/València,GU,Guadalajara,3
+VA,Valladolid,MA,Málaga,3
+VA,Valladolid,PO,Pontevedra,3
+VA,Valladolid,SO,Soria,3
+VA,Valladolid,Z,Zaragoza,3
+Z,Zaragoza,AB,Albacete,3
+Z,Zaragoza,BU,Burgos,3
+Z,Zaragoza,CC,Cáceres,3
+Z,Zaragoza,CA,Cádiz,3
+Z,Zaragoza,OU,Ourense,3
+Z,Zaragoza,SA,Salamanca,3
+Z,Zaragoza,TO,Toledo,3
+Z,Zaragoza,VA,Valladolid,3
+C,A Coruña,A,Alicante/Alacant,2
+C,A Coruña,SS,Gipuzkoa,2
+C,A Coruña,GR,Granada,2
+AB,Albacete,AL,Almería,2
+AB,Albacete,CS,Castellón/Castelló,2
+AB,Albacete,CC,Cáceres,2
+AB,Albacete,CO,Córdoba,2
+AB,Albacete,IB,Illes Balears,2
+AB,Albacete,SA,Salamanca,2
+AB,Albacete,T,Tarragona,2
+AB,Albacete,Z,Zaragoza,2
+A,Alicante/Alacant,VI,Araba/Álava,2
+A,Alicante/Alacant,CC,Cáceres,2
+A,Alicante/Alacant,J,Jaén,2
+A,Alicante/Alacant,LO,La Rioja,2
+A,Alicante/Alacant,SO,Soria,2
+A,Alicante/Alacant,TE,Teruel,2
+AL,Almería,A,Alicante/Alacant,2
+AL,Almería,CR,Ciudad Real,2
+AL,Almería,H,Huelva,2
+AL,Almería,J,Jaén,2
+AL,Almería,L,Lleida,2
+AL,Almería,V,Valencia/València,2
+VI,Araba/Álava,H,Huelva,2
+VI,Araba/Álava,J,Jaén,2
+VI,Araba/Álava,LU,Lugo,2
+VI,Araba/Álava,MA,Málaga,2
+VI,Araba/Álava,OU,Ourense,2
+VI,Araba/Álava,VA,Valladolid,2
+O,Asturias,VI,Araba/Álava,2
+O,Asturias,BU,Burgos,2
+O,Asturias,CR,Ciudad Real,2
+O,Asturias,OU,Ourense,2
+O,Asturias,TF,Santa Cruz de Tenerife,2
+O,Asturias,SG,Segovia,2
+O,Asturias,SE,Sevilla,2
+O,Asturias,Z,Zaragoza,2
+BA,Badajoz,A,Alicante/Alacant,2
+BA,Badajoz,S,Cantabria,2
+BA,Badajoz,CR,Ciudad Real,2
+BA,Badajoz,CA,Cádiz,2
+BA,Badajoz,PO,Pontevedra,2
+BI,Bizkaia,CR,Ciudad Real,2
+BI,Bizkaia,CC,Cáceres,2
+BI,Bizkaia,GI,Girona,2
+BI,Bizkaia,SA,Salamanca,2
+BI,Bizkaia,SE,Sevilla,2
+BU,Burgos,C,A Coruña,2
+BU,Burgos,CS,Castellón/Castelló,2
+BU,Burgos,GU,Guadalajara,2
+BU,Burgos,IB,Illes Balears,2
+BU,Burgos,MU,Murcia,2
+BU,Burgos,SA,Salamanca,2
+BU,Burgos,TF,Santa Cruz de Tenerife,2
+BU,Burgos,T,Tarragona,2
+BU,Burgos,V,Valencia/València,2
+BU,Burgos,Z,Zaragoza,2
+BU,Burgos,AV,Ávila,2
+S,Cantabria,CA,Cádiz,2
+S,Cantabria,SS,Gipuzkoa,2
+S,Cantabria,IB,Illes Balears,2
+S,Cantabria,LO,La Rioja,2
+S,Cantabria,LU,Lugo,2
+S,Cantabria,NA,Navarra,2
+S,Cantabria,PO,Pontevedra,2
+S,Cantabria,ZA,Zamora,2
+S,Cantabria,AV,Ávila,2
+CS,Castellón/Castelló,SS,Gipuzkoa,2
+CS,Castellón/Castelló,GI,Girona,2
+CS,Castellón/Castelló,SE,Sevilla,2
+CS,Castellón/Castelló,TE,Teruel,2
+CS,Castellón/Castelló,VA,Valladolid,2
+CR,Ciudad Real,A,Alicante/Alacant,2
+CR,Ciudad Real,BA,Badajoz,2
+CR,Ciudad Real,BU,Burgos,2
+CR,Ciudad Real,CS,Castellón/Castelló,2
+CR,Ciudad Real,CA,Cádiz,2
+CR,Ciudad Real,GR,Granada,2
+CR,Ciudad Real,GU,Guadalajara,2
+CR,Ciudad Real,MU,Murcia,2
+CU,Cuenca,AB,Albacete,2
+CU,Cuenca,GR,Granada,2
+CC,Cáceres,AL,Almería,2
+CC,Cáceres,O,Asturias,2
+CC,Cáceres,B,Barcelona,2
+CC,Cáceres,S,Cantabria,2
+CC,Cáceres,CA,Cádiz,2
+CC,Cáceres,SS,Gipuzkoa,2
+CC,Cáceres,H,Huelva,2
+CC,Cáceres,VA,Valladolid,2
+CA,Cádiz,CS,Castellón/Castelló,2
+CA,Cádiz,CR,Ciudad Real,2
+CA,Cádiz,SS,Gipuzkoa,2
+CA,Cádiz,HU,Huesca,2
+CA,Cádiz,LO,La Rioja,2
+CA,Cádiz,PO,Pontevedra,2
+CA,Cádiz,T,Tarragona,2
+CO,Córdoba,HU,Huesca,2
+SS,Gipuzkoa,A,Alicante/Alacant,2
+SS,Gipuzkoa,O,Asturias,2
+SS,Gipuzkoa,CA,Cádiz,2
+SS,Gipuzkoa,IB,Illes Balears,2
+SS,Gipuzkoa,LE,León,2
+SS,Gipuzkoa,L,Lleida,2
+SS,Gipuzkoa,MU,Murcia,2
+SS,Gipuzkoa,PO,Pontevedra,2
+SS,Gipuzkoa,T,Tarragona,2
+GI,Girona,BI,Bizkaia,2
+GI,Girona,CS,Castellón/Castelló,2
+GI,Girona,CA,Cádiz,2
+GI,Girona,J,Jaén,2
+GI,Girona,PO,Pontevedra,2
+GR,Granada,AB,Albacete,2
+GR,Granada,S,Cantabria,2
+GR,Granada,SS,Gipuzkoa,2
+GR,Granada,LU,Lugo,2
+GR,Granada,SG,Segovia,2
+GU,Guadalajara,A,Alicante/Alacant,2
+GU,Guadalajara,CS,Castellón/Castelló,2
+GU,Guadalajara,CR,Ciudad Real,2
+GU,Guadalajara,SG,Segovia,2
+GU,Guadalajara,SO,Soria,2
+GU,Guadalajara,VA,Valladolid,2
+H,Huelva,A,Alicante/Alacant,2
+H,Huelva,AL,Almería,2
+H,Huelva,VI,Araba/Álava,2
+H,Huelva,O,Asturias,2
+H,Huelva,B,Barcelona,2
+H,Huelva,CC,Cáceres,2
+H,Huelva,IB,Illes Balears,2
+H,Huelva,L,Lleida,2
+H,Huelva,AV,Ávila,2
+IB,Illes Balears,O,Asturias,2
+IB,Illes Balears,BI,Bizkaia,2
+IB,Illes Balears,CR,Ciudad Real,2
+IB,Illes Balears,LU,Lugo,2
+IB,Illes Balears,Z,Zaragoza,2
+J,Jaén,AB,Albacete,2
+J,Jaén,GU,Guadalajara,2
+J,Jaén,MU,Murcia,2
+J,Jaén,NA,Navarra,2
+LO,La Rioja,C,A Coruña,2
+LO,La Rioja,O,Asturias,2
+LO,La Rioja,CA,Cádiz,2
+LO,La Rioja,IB,Illes Balears,2
+LO,La Rioja,MA,Málaga,2
+LO,La Rioja,V,Valencia/València,2
+LE,León,BI,Bizkaia,2
+L,Lleida,CS,Castellón/Castelló,2
+L,Lleida,IB,Illes Balears,2
+LU,Lugo,B,Barcelona,2
+LU,Lugo,M,Madrid,2
+LU,Lugo,MA,Málaga,2
+M,Madrid,GC,Las Palmas,2
+MU,Murcia,C,A Coruña,2
+MU,Murcia,VI,Araba/Álava,2
+MU,Murcia,L,Lleida,2
+MU,Murcia,PO,Pontevedra,2
+MU,Murcia,SA,Salamanca,2
+MU,Murcia,TO,Toledo,2
+MA,Málaga,BU,Burgos,2
+MA,Málaga,CE,Ceuta,2
+MA,Málaga,CU,Cuenca,2
+MA,Málaga,GI,Girona,2
+MA,Málaga,GU,Guadalajara,2
+MA,Málaga,TF,Santa Cruz de Tenerife,2
+MA,Málaga,SO,Soria,2
+NA,Navarra,B,Barcelona,2
+NA,Navarra,S,Cantabria,2
+NA,Navarra,CC,Cáceres,2
+OU,Ourense,M,Madrid,2
+P,Palencia,SA,Salamanca,2
+P,Palencia,SG,Segovia,2
+P,Palencia,ZA,Zamora,2
+PO,Pontevedra,A,Alicante/Alacant,2
+PO,Pontevedra,VI,Araba/Álava,2
+PO,Pontevedra,CS,Castellón/Castelló,2
+PO,Pontevedra,CO,Córdoba,2
+PO,Pontevedra,SS,Gipuzkoa,2
+PO,Pontevedra,IB,Illes Balears,2
+PO,Pontevedra,SE,Sevilla,2
+PO,Pontevedra,ZA,Zamora,2
+SA,Salamanca,BI,Bizkaia,2
+SA,Salamanca,BU,Burgos,2
+SA,Salamanca,S,Cantabria,2
+SA,Salamanca,SS,Gipuzkoa,2
+SA,Salamanca,HU,Huesca,2
+SA,Salamanca,P,Palencia,2
+SA,Salamanca,PO,Pontevedra,2
+SA,Salamanca,SE,Sevilla,2
+SE,Sevilla,SS,Gipuzkoa,2
+SE,Sevilla,ML,Melilla,2
+SE,Sevilla,P,Palencia,2
+SE,Sevilla,Z,Zaragoza,2
+T,Tarragona,BA,Badajoz,2
+T,Tarragona,CO,Córdoba,2
+T,Tarragona,H,Huelva,2
+T,Tarragona,NA,Navarra,2
+T,Tarragona,SA,Salamanca,2
+T,Tarragona,VA,Valladolid,2
+TE,Teruel,CU,Cuenca,2
+TE,Teruel,GR,Granada,2
+TE,Teruel,SA,Salamanca,2
+TE,Teruel,SE,Sevilla,2
+TO,Toledo,A,Alicante/Alacant,2
+TO,Toledo,BU,Burgos,2
+TO,Toledo,GI,Girona,2
+TO,Toledo,GR,Granada,2
+TO,Toledo,LU,Lugo,2
+TO,Toledo,SA,Salamanca,2
+V,Valencia/València,BA,Badajoz,2
+V,Valencia/València,LO,La Rioja,2
+V,Valencia/València,P,Palencia,2
+V,Valencia/València,ZA,Zamora,2
+VA,Valladolid,C,A Coruña,2
+VA,Valladolid,B,Barcelona,2
+VA,Valladolid,CS,Castellón/Castelló,2
+VA,Valladolid,CO,Córdoba,2
+VA,Valladolid,GR,Granada,2
+VA,Valladolid,J,Jaén,2
+VA,Valladolid,MU,Murcia,2
+VA,Valladolid,SE,Sevilla,2
+ZA,Zamora,BI,Bizkaia,2
+Z,Zaragoza,C,A Coruña,2
+Z,Zaragoza,CU,Cuenca,2
+Z,Zaragoza,GI,Girona,2
+Z,Zaragoza,J,Jaén,2
+Z,Zaragoza,P,Palencia,2
+Z,Zaragoza,SG,Segovia,2
+C,A Coruña,AB,Albacete,1
+C,A Coruña,BI,Bizkaia,1
+C,A Coruña,BU,Burgos,1
+C,A Coruña,CS,Castellón/Castelló,1
+C,A Coruña,CO,Córdoba,1
+C,A Coruña,IB,Illes Balears,1
+C,A Coruña,J,Jaén,1
+C,A Coruña,MU,Murcia,1
+C,A Coruña,MA,Málaga,1
+C,A Coruña,SE,Sevilla,1
+C,A Coruña,TO,Toledo,1
+AB,Albacete,BA,Badajoz,1
+AB,Albacete,BU,Burgos,1
+AB,Albacete,H,Huelva,1
+AB,Albacete,HU,Huesca,1
+AB,Albacete,LO,La Rioja,1
+AB,Albacete,LU,Lugo,1
+AB,Albacete,NA,Navarra,1
+AB,Albacete,OU,Ourense,1
+AB,Albacete,AV,Ávila,1
+A,Alicante/Alacant,C,A Coruña,1
+A,Alicante/Alacant,HU,Huesca,1
+A,Alicante/Alacant,L,Lleida,1
+A,Alicante/Alacant,LU,Lugo,1
+A,Alicante/Alacant,OU,Ourense,1
+A,Alicante/Alacant,SA,Salamanca,1
+A,Alicante/Alacant,SG,Segovia,1
+A,Alicante/Alacant,ZA,Zamora,1
+AL,Almería,C,A Coruña,1
+AL,Almería,AB,Albacete,1
+AL,Almería,BA,Badajoz,1
+AL,Almería,BI,Bizkaia,1
+AL,Almería,CC,Cáceres,1
+AL,Almería,SS,Gipuzkoa,1
+AL,Almería,LE,León,1
+AL,Almería,ML,Melilla,1
+AL,Almería,OU,Ourense,1
+AL,Almería,PO,Pontevedra,1
+AL,Almería,Z,Zaragoza,1
+VI,Araba/Álava,AL,Almería,1
+VI,Araba/Álava,BA,Badajoz,1
+VI,Araba/Álava,CS,Castellón/Castelló,1
+VI,Araba/Álava,CO,Córdoba,1
+VI,Araba/Álava,HU,Huesca,1
+VI,Araba/Álava,P,Palencia,1
+VI,Araba/Álava,TO,Toledo,1
+VI,Araba/Álava,V,Valencia/València,1
+O,Asturias,AL,Almería,1
+O,Asturias,CS,Castellón/Castelló,1
+O,Asturias,CC,Cáceres,1
+O,Asturias,GR,Granada,1
+O,Asturias,H,Huelva,1
+O,Asturias,HU,Huesca,1
+O,Asturias,GC,Las Palmas,1
+O,Asturias,TO,Toledo,1
+BA,Badajoz,AL,Almería,1
+BA,Badajoz,VI,Araba/Álava,1
+BA,Badajoz,BI,Bizkaia,1
+BA,Badajoz,CO,Córdoba,1
+BA,Badajoz,GR,Granada,1
+BA,Badajoz,L,Lleida,1
+BA,Badajoz,T,Tarragona,1
+BA,Badajoz,Z,Zaragoza,1
+BI,Bizkaia,C,A Coruña,1
+BI,Bizkaia,CA,Cádiz,1
+BI,Bizkaia,H,Huelva,1
+BI,Bizkaia,HU,Huesca,1
+BI,Bizkaia,J,Jaén,1
+BI,Bizkaia,MU,Murcia,1
+BI,Bizkaia,SO,Soria,1
+BI,Bizkaia,TO,Toledo,1
+BI,Bizkaia,V,Valencia/València,1
+BI,Bizkaia,Z,Zaragoza,1
+BU,Burgos,AL,Almería,1
+BU,Burgos,GI,Girona,1
+BU,Burgos,J,Jaén,1
+BU,Burgos,GC,Las Palmas,1
+BU,Burgos,NA,Navarra,1
+BU,Burgos,OU,Ourense,1
+BU,Burgos,PO,Pontevedra,1
+BU,Burgos,SE,Sevilla,1
+BU,Burgos,TE,Teruel,1
+BU,Burgos,TO,Toledo,1
+S,Cantabria,CR,Ciudad Real,1
+S,Cantabria,GU,Guadalajara,1
+S,Cantabria,H,Huelva,1
+S,Cantabria,J,Jaén,1
+S,Cantabria,MU,Murcia,1
+S,Cantabria,MA,Málaga,1
+S,Cantabria,SA,Salamanca,1
+S,Cantabria,SE,Sevilla,1
+S,Cantabria,V,Valencia/València,1
+S,Cantabria,Z,Zaragoza,1
+CS,Castellón/Castelló,AB,Albacete,1
+CS,Castellón/Castelló,A,Alicante/Alacant,1
+CS,Castellón/Castelló,AL,Almería,1
+CS,Castellón/Castelló,VI,Araba/Álava,1
+CS,Castellón/Castelló,CC,Cáceres,1
+CS,Castellón/Castelló,GR,Granada,1
+CS,Castellón/Castelló,H,Huelva,1
+CS,Castellón/Castelló,IB,Illes Balears,1
+CS,Castellón/Castelló,J,Jaén,1
+CS,Castellón/Castelló,GC,Las Palmas,1
+CS,Castellón/Castelló,L,Lleida,1
+CS,Castellón/Castelló,MU,Murcia,1
+CS,Castellón/Castelló,MA,Málaga,1
+CS,Castellón/Castelló,NA,Navarra,1
+CS,Castellón/Castelló,PO,Pontevedra,1
+CS,Castellón/Castelló,SO,Soria,1
+CR,Ciudad Real,C,A Coruña,1
+CR,Ciudad Real,O,Asturias,1
+CR,Ciudad Real,B,Barcelona,1
+CR,Ciudad Real,S,Cantabria,1
+CR,Ciudad Real,SS,Gipuzkoa,1
+CR,Ciudad Real,H,Huelva,1
+CR,Ciudad Real,LE,León,1
+CR,Ciudad Real,NA,Navarra,1
+CR,Ciudad Real,PO,Pontevedra,1
+CR,Ciudad Real,Z,Zaragoza,1
+CU,Cuenca,A,Alicante/Alacant,1
+CU,Cuenca,BA,Badajoz,1
+CU,Cuenca,BU,Burgos,1
+CU,Cuenca,CC,Cáceres,1
+CU,Cuenca,CO,Córdoba,1
+CU,Cuenca,SE,Sevilla,1
+CU,Cuenca,Z,Zaragoza,1
+CC,Cáceres,C,A Coruña,1
+CC,Cáceres,A,Alicante/Alacant,1
+CC,Cáceres,BU,Burgos,1
+CC,Cáceres,GI,Girona,1
+CC,Cáceres,LE,León,1
+CC,Cáceres,OU,Ourense,1
+CC,Cáceres,P,Palencia,1
+CC,Cáceres,PO,Pontevedra,1
+CC,Cáceres,TE,Teruel,1
+CC,Cáceres,ZA,Zamora,1
+CC,Cáceres,Z,Zaragoza,1
+CA,Cádiz,AB,Albacete,1
+CA,Cádiz,GI,Girona,1
+CA,Cádiz,LE,León,1
+CA,Cádiz,L,Lleida,1
+CA,Cádiz,LU,Lugo,1
+CA,Cádiz,NA,Navarra,1
+CA,Cádiz,P,Palencia,1
+CA,Cádiz,VA,Valladolid,1
+CO,Córdoba,AB,Albacete,1
+CO,Córdoba,SO,Soria,1
+CO,Córdoba,TE,Teruel,1
+CO,Córdoba,AV,Ávila,1
+SS,Gipuzkoa,C,A Coruña,1
+SS,Gipuzkoa,BU,Burgos,1
+SS,Gipuzkoa,CS,Castellón/Castelló,1
+SS,Gipuzkoa,CU,Cuenca,1
+SS,Gipuzkoa,GI,Girona,1
+SS,Gipuzkoa,GR,Granada,1
+SS,Gipuzkoa,J,Jaén,1
+SS,Gipuzkoa,SE,Sevilla,1
+SS,Gipuzkoa,TO,Toledo,1
+SS,Gipuzkoa,VA,Valladolid,1
+SS,Gipuzkoa,AV,Ávila,1
+GI,Girona,O,Asturias,1
+GI,Girona,S,Cantabria,1
+GI,Girona,CO,Córdoba,1
+GI,Girona,GU,Guadalajara,1
+GI,Girona,HU,Huesca,1
+GI,Girona,LO,La Rioja,1
+GI,Girona,LU,Lugo,1
+GI,Girona,NA,Navarra,1
+GI,Girona,SA,Salamanca,1
+GI,Girona,SE,Sevilla,1
+GI,Girona,TO,Toledo,1
+GR,Granada,LO,La Rioja,1
+GR,Granada,GC,Las Palmas,1
+GR,Granada,SA,Salamanca,1
+GR,Granada,TF,Santa Cruz de Tenerife,1
+GR,Granada,TE,Teruel,1
+GU,Guadalajara,C,A Coruña,1
+GU,Guadalajara,BA,Badajoz,1
+GU,Guadalajara,BI,Bizkaia,1
+GU,Guadalajara,GI,Girona,1
+GU,Guadalajara,GR,Granada,1
+GU,Guadalajara,H,Huelva,1
+GU,Guadalajara,IB,Illes Balears,1
+GU,Guadalajara,J,Jaén,1
+GU,Guadalajara,LE,León,1
+GU,Guadalajara,NA,Navarra,1
+GU,Guadalajara,P,Palencia,1
+GU,Guadalajara,TF,Santa Cruz de Tenerife,1
+GU,Guadalajara,SE,Sevilla,1
+GU,Guadalajara,V,Valencia/València,1
+GU,Guadalajara,Z,Zaragoza,1
+H,Huelva,C,A Coruña,1
+H,Huelva,BI,Bizkaia,1
+H,Huelva,BU,Burgos,1
+H,Huelva,CR,Ciudad Real,1
+H,Huelva,LO,La Rioja,1
+H,Huelva,MU,Murcia,1
+H,Huelva,OU,Ourense,1
+H,Huelva,SA,Salamanca,1
+H,Huelva,TF,Santa Cruz de Tenerife,1
+H,Huelva,T,Tarragona,1
+H,Huelva,VA,Valladolid,1
+H,Huelva,Z,Zaragoza,1
+HU,Huesca,GI,Girona,1
+HU,Huesca,GC,Las Palmas,1
+HU,Huesca,SE,Sevilla,1
+HU,Huesca,T,Tarragona,1
+IB,Illes Balears,CU,Cuenca,1
+IB,Illes Balears,GU,Guadalajara,1
+IB,Illes Balears,LE,León,1
+IB,Illes Balears,NA,Navarra,1
+IB,Illes Balears,SG,Segovia,1
+IB,Illes Balears,VA,Valladolid,1
+J,Jaén,C,A Coruña,1
+J,Jaén,O,Asturias,1
+J,Jaén,BI,Bizkaia,1
+J,Jaén,BU,Burgos,1
+J,Jaén,S,Cantabria,1
+J,Jaén,CC,Cáceres,1
+J,Jaén,LO,La Rioja,1
+J,Jaén,LU,Lugo,1
+J,Jaén,SA,Salamanca,1
+J,Jaén,T,Tarragona,1
+J,Jaén,Z,Zaragoza,1
+J,Jaén,AV,Ávila,1
+LO,La Rioja,A,Alicante/Alacant,1
+LO,La Rioja,CS,Castellón/Castelló,1
+LO,La Rioja,J,Jaén,1
+LO,La Rioja,LE,León,1
+LO,La Rioja,MU,Murcia,1
+LO,La Rioja,PO,Pontevedra,1
+LO,La Rioja,SA,Salamanca,1
+LO,La Rioja,T,Tarragona,1
+LO,La Rioja,TE,Teruel,1
+GC,Las Palmas,BI,Bizkaia,1
+LE,León,A,Alicante/Alacant,1
+LE,León,VI,Araba/Álava,1
+LE,León,CA,Cádiz,1
+LE,León,CO,Córdoba,1
+LE,León,GI,Girona,1
+LE,León,HU,Huesca,1
+LE,León,IB,Illes Balears,1
+LE,León,LU,Lugo,1
+LE,León,SA,Salamanca,1
+LE,León,SG,Segovia,1
+LE,León,SE,Sevilla,1
+LE,León,TO,Toledo,1
+LE,León,Z,Zaragoza,1
+LE,León,AV,Ávila,1
+L,Lleida,BA,Badajoz,1
+L,Lleida,CU,Cuenca,1
+L,Lleida,SS,Gipuzkoa,1
+L,Lleida,GU,Guadalajara,1
+L,Lleida,V,Valencia/València,1
+LU,Lugo,A,Alicante/Alacant,1
+LU,Lugo,VI,Araba/Álava,1
+LU,Lugo,BI,Bizkaia,1
+LU,Lugo,BU,Burgos,1
+LU,Lugo,GI,Girona,1
+LU,Lugo,P,Palencia,1
+LU,Lugo,SA,Salamanca,1
+MU,Murcia,BA,Badajoz,1
+MU,Murcia,S,Cantabria,1
+MU,Murcia,CC,Cáceres,1
+MU,Murcia,GU,Guadalajara,1
+MU,Murcia,LO,La Rioja,1
+MU,Murcia,GC,Las Palmas,1
+MU,Murcia,LE,León,1
+MU,Murcia,LU,Lugo,1
+MU,Murcia,ML,Melilla,1
+MU,Murcia,ZA,Zamora,1
+MA,Málaga,VI,Araba/Álava,1
+MA,Málaga,LU,Lugo,1
+MA,Málaga,P,Palencia,1
+NA,Navarra,O,Asturias,1
+NA,Navarra,H,Huelva,1
+NA,Navarra,P,Palencia,1
+NA,Navarra,T,Tarragona,1
+OU,Ourense,A,Alicante/Alacant,1
+OU,Ourense,SS,Gipuzkoa,1
+OU,Ourense,LO,La Rioja,1
+OU,Ourense,T,Tarragona,1
+P,Palencia,O,Asturias,1
+P,Palencia,GR,Granada,1
+P,Palencia,LE,León,1
+P,Palencia,MA,Málaga,1
+P,Palencia,NA,Navarra,1
+P,Palencia,OU,Ourense,1
+P,Palencia,TE,Teruel,1
+P,Palencia,V,Valencia/València,1
+P,Palencia,AV,Ávila,1
+PO,Pontevedra,BA,Badajoz,1
+PO,Pontevedra,BU,Burgos,1
+PO,Pontevedra,CR,Ciudad Real,1
+PO,Pontevedra,CU,Cuenca,1
+PO,Pontevedra,CC,Cáceres,1
+PO,Pontevedra,GR,Granada,1
+PO,Pontevedra,HU,Huesca,1
+PO,Pontevedra,J,Jaén,1
+PO,Pontevedra,MU,Murcia,1
+PO,Pontevedra,MA,Málaga,1
+PO,Pontevedra,SA,Salamanca,1
+PO,Pontevedra,SG,Segovia,1
+SA,Salamanca,C,A Coruña,1
+SA,Salamanca,AL,Almería,1
+SA,Salamanca,O,Asturias,1
+SA,Salamanca,GU,Guadalajara,1
+SA,Salamanca,MU,Murcia,1
+SA,Salamanca,SG,Segovia,1
+SA,Salamanca,T,Tarragona,1
+SA,Salamanca,TO,Toledo,1
+SE,Sevilla,CS,Castellón/Castelló,1
+SE,Sevilla,CE,Ceuta,1
+SE,Sevilla,CR,Ciudad Real,1
+SE,Sevilla,LE,León,1
+SE,Sevilla,OU,Ourense,1
+SE,Sevilla,ZA,Zamora,1
+SO,Soria,B,Barcelona,1
+SO,Soria,BI,Bizkaia,1
+SO,Soria,GR,Granada,1
+SO,Soria,IB,Illes Balears,1
+SO,Soria,J,Jaén,1
+SO,Soria,M,Madrid,1
+SO,Soria,MU,Murcia,1
+SO,Soria,NA,Navarra,1
+SO,Soria,PO,Pontevedra,1
+T,Tarragona,AB,Albacete,1
+T,Tarragona,AL,Almería,1
+T,Tarragona,BU,Burgos,1
+T,Tarragona,CC,Cáceres,1
+T,Tarragona,CA,Cádiz,1
+T,Tarragona,LU,Lugo,1
+T,Tarragona,P,Palencia,1
+TE,Teruel,BA,Badajoz,1
+TE,Teruel,SS,Gipuzkoa,1
+TE,Teruel,GI,Girona,1
+TE,Teruel,H,Huelva,1
+TE,Teruel,MU,Murcia,1
+TE,Teruel,NA,Navarra,1
+TO,Toledo,AL,Almería,1
+TO,Toledo,O,Asturias,1
+TO,Toledo,LE,León,1
+TO,Toledo,OU,Ourense,1
+TO,Toledo,PO,Pontevedra,1
+TO,Toledo,SO,Soria,1
+TO,Toledo,ZA,Zamora,1
+TO,Toledo,Z,Zaragoza,1
+V,Valencia/València,VI,Araba/Álava,1
+V,Valencia/València,SA,Salamanca,1
+V,Valencia/València,SG,Segovia,1
+VA,Valladolid,VI,Araba/Álava,1
+VA,Valladolid,BA,Badajoz,1
+VA,Valladolid,CR,Ciudad Real,1
+VA,Valladolid,CA,Cádiz,1
+VA,Valladolid,GI,Girona,1
+VA,Valladolid,GU,Guadalajara,1
+VA,Valladolid,LO,La Rioja,1
+VA,Valladolid,LU,Lugo,1
+ZA,Zamora,VI,Araba/Álava,1
+ZA,Zamora,S,Cantabria,1
+ZA,Zamora,CA,Cádiz,1
+ZA,Zamora,IB,Illes Balears,1
+ZA,Zamora,P,Palencia,1
+ZA,Zamora,Z,Zaragoza,1
+ZA,Zamora,AV,Ávila,1
+Z,Zaragoza,AL,Almería,1
+Z,Zaragoza,H,Huelva,1
+Z,Zaragoza,ZA,Zamora,1
+AV,Ávila,S,Cantabria,1
+AV,Ávila,P,Palencia,1
+AV,Ávila,TO,Toledo,1
