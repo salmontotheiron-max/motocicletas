@@ -162,6 +162,7 @@ def corridor_diagnostics(cross_rows):
             "simetria_pct": symmetry,
             "diferencia_direccional": total - reverse,
             "evolucion_mensual": ";".join(f"{p}:{monthly.get(p, 0)}" for p in all_periods),
+            "evolucion_mensual_pct": ";".join(f"{p}:{(100 * monthly.get(p, 0) / origin_out[(p, origin)] if origin_out[(p, origin)] else 0):.2f}" for p in all_periods),
         })
     results.sort(key=lambda x: (-x["recuento"], x["provincia_matriculacion"], x["provincia_domicilio_vehiculo"]))
     return results
@@ -275,10 +276,10 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
          pct(r["peso_salidas_origen_pct"]),fmt(r["flujo_inverso"]),pct(r["simetria_pct"])]
         for r in corridors[:20]]), "",
       "**Corredor principal de cada provincia con dispersión superior al 20%**", "",
-      mdtable(["Origen → domicilio","Registros","Meses activos","Peso salidas origen","Flujo inverso","Simetría","Evolución mensual"],[
+      mdtable(["Origen → domicilio","Registros","Meses activos","Peso salidas origen","Flujo inverso","Simetría","Evolución mensual (n)","Peso mensual (%)"],[
         [r["provincia_matriculacion"]+" → "+r["provincia_domicilio_vehiculo"],fmt(r["recuento"]),
          str(r["meses_activos"])+"/"+str(r["meses_periodo"]),pct(r["peso_salidas_origen_pct"]),
-         fmt(r["flujo_inverso"]),pct(r["simetria_pct"]),r["evolucion_mensual"]]
+         fmt(r["flujo_inverso"]),pct(r["simetria_pct"]),r["evolucion_mensual"],r["evolucion_mensual_pct"]]
         for r in high_dispersion_corridors]), "",
       "El detalle completo de corredores, incluidos recuentos mensuales, peso mensual y flujo inverso, se publica en dispersion_corredores_estabilidad.csv.", "",
       "### Principales corredores interprovinciales","",
@@ -309,7 +310,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
       "**Nota metodológica:** Resultados orientativos por el enmascaramiento parcial de bastidores. El acceso a bastidores completos permitiría verificar coincidencias individuales y reducir incertidumbres.",""
     ]
     corridor_path = d/"dispersion_corredores_estabilidad.csv"
-    corridor_fields = ["COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","recuento","meses_activos","meses_periodo","persistencia_pct","media_mensual_periodo","minimo_mes_activo","maximo_mes","peso_salidas_origen_pct","peso_medio_mensual_pct","peso_maximo_mensual_pct","flujo_inverso","simetria_pct","diferencia_direccional","evolucion_mensual"]
+    corridor_fields = ["COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","recuento","meses_activos","meses_periodo","persistencia_pct","media_mensual_periodo","minimo_mes_activo","maximo_mes","peso_salidas_origen_pct","peso_medio_mensual_pct","peso_maximo_mensual_pct","flujo_inverso","simetria_pct","diferencia_direccional","evolucion_mensual","evolucion_mensual_pct"]
     with corridor_path.open("w",encoding="utf-8-sig",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=corridor_fields); writer.writeheader(); writer.writerows(corridors)
     target=Path(output); target.parent.mkdir(parents=True,exist_ok=True); target.write_text("\n".join(text),encoding="utf-8")
