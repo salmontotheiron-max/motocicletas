@@ -92,18 +92,18 @@ def add_cumulative_period(counts, denominators, label="2026-01/09"):
 
 
 def validate_reconciliation(counts, denominators):
-    """Comprueba que cada dimensión cubre el total de su ámbito y periodo."""
-    dimensions = {name for name in DIMENSIONS}
+    """Comprueba la conciliación por dimensión en una sola pasada."""
+    observed = Counter()
+    for (province, period, dimension, _category), count in counts.items():
+        observed[(province, period, dimension)] += count
+
     for (province, period), total in denominators.items():
-        for dimension in dimensions:
-            observed = sum(
-                count for (p, t, dim, _), count in counts.items()
-                if p == province and t == period and dim == dimension
-            )
-            if observed != total:
+        for dimension in DIMENSIONS:
+            actual = observed[(province, period, dimension)]
+            if actual != total:
                 raise ValueError(
                     f"Descuadre {province}/{period}/{dimension}: "
-                    f"{observed} != {total}"
+                    f"{actual} != {total}"
                 )
 
 
