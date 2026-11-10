@@ -36,6 +36,12 @@ def dispersion_diagnostics(cross_rows, threshold=20.0):
     from collections import defaultdict
     monthly = defaultdict(lambda: {"total": 0, "known": 0, "external": 0, "destinations": Counter()})
     cumulative = defaultdict(lambda: {"total": 0, "known": 0, "external": 0, "destinations": Counter(), "name": ""})
+    destination_names = {}
+    for row in cross_rows:
+        destination_code = row["COD_PROVINCIA_VEH"].strip()
+        destination_name = row["provincia_domicilio_vehiculo"].strip()
+        if destination_code and destination_name:
+            destination_names[destination_code] = destination_name
     for row in cross_rows:
         if row["COD_TIPO"].strip() not in MOTOS:
             raise ValueError("El cruce contiene un COD_TIPO ajeno a motocicletas 50/51")
@@ -86,7 +92,8 @@ def dispersion_diagnostics(cross_rows, threshold=20.0):
             "minimo_mensual_pct": min((x[1] for x in valid), default=None),
             "maximo_mensual_pct": max((x[1] for x in valid), default=None),
             "destinos_distintos": len(destinations),
-            "principal_destino": ordered[0][0] if ordered else "",
+            "principal_destino_codigo": ordered[0][0] if ordered else "",
+            "principal_destino": destination_names.get(ordered[0][0], ordered[0][0]) if ordered else "",
             "principal_destino_registros": ordered[0][1] if ordered else 0,
             "principal_destino_pct_salidas": top1, "tres_destinos_pct_salidas": top3,
             "hhi_destinos_0_10000": hhi,
