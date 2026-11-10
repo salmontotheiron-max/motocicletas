@@ -69,6 +69,16 @@ class IntegratedReportTests(unittest.TestCase):
             self.assertEqual(diagnostic["principal_destino"],"Madrid")
             self.assertEqual(diagnostic["principal_destino_codigo"],"M")
             self.assertIn("| 1/1 | Madrid |",body)
+            self.assertIn("Estabilidad y simetría de corredores",body)
+            corridor_rows = report.corridor_diagnostics(report.rows(
+                data/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
+                {"periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH",
+                 "provincia_domicilio_vehiculo","COD_TIPO","recuento"}))
+            self.assertEqual(corridor_rows[0]["recuento"],2)
+            self.assertEqual(corridor_rows[0]["meses_activos"],1)
+            self.assertEqual(corridor_rows[0]["flujo_inverso"],0)
+            self.assertEqual(corridor_rows[0]["simetria_pct"],0)
+            self.assertTrue((data/"dispersion_corredores_estabilidad.csv").exists())
 
     def test_generates_report_from_published_snapshot(self):
         data = Path(__file__).resolve().parents[1] / "public" / "data"
