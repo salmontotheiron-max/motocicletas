@@ -119,3 +119,10 @@ Los indicadores se calculan únicamente para motocicletas nuevas (códigos 50 y 
 Se marca `REVISAR` cuando las matriculaciones acumuladas alcanzan el 25% del parque de referencia. El umbral es una señal operativa de revisión, no una anomalía confirmada. No excluye ni corrige registros. En particular, los valores elevados de Segovia se conservan íntegramente.
 
 La generación se ejecuta en el workflow mensual después del agregado provincial, por lo que los dos archivos de salida se publican junto con el resto de datos cuando el workflow actualiza `public/data`.
+
+
+### Informe territorial integrado recurrente
+
+El script `generar_informe_territorial_integrado.py` construye `informes/informe-territorial-integrado.md` a partir de los CSV y JSON generados en cada ejecución MATRABA. Incluye la serie mensual, concentración provincial, intensidad respecto a población y parque, dispersión entre provincia de matriculación y domicilio del vehículo, balance de entradas/salidas, flujos origen-destino y seguimiento de Segovia. El generador verifica que el total de motocicletas nuevas por códigos 50/51 coincide con el cruce provincial y que este ha superado la conciliación con el agregado independiente.
+
+En los barridos programados y en el modo manual `actualizar`, el informe se incorpora al commit junto con `public/data`. En modo `piloto`, se adjunta al artefacto y al GitHub Release, sin actualizar el informe publicado en la rama. La generación está cubierta por pruebas unitarias. Los umbrales se muestran como alertas de revisión, nunca como anomalías confirmadas.

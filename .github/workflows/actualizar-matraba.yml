@@ -122,6 +122,12 @@ jobs:
             --provincial datos/matraba_mensual/resultados/matriculaciones_motocicletas_por_provincia.csv \
             --output-dir datos/matraba_mensual/resultados
 
+      - name: Generar informe territorial integrado recurrente
+        run: |
+          python generar_informe_territorial_integrado.py \
+            --data-dir datos/matraba_mensual/resultados \
+            --output informes/informe-territorial-integrado.md
+
       - name: Publicar informe de auditoría como artefacto descargable
         if: ${{ inputs.mode == 'piloto' }}
         uses: actions/upload-artifact@v5
@@ -130,6 +136,7 @@ jobs:
           path: |
             datos/matraba_mensual/resultados/*.csv
             datos/matraba_mensual/resultados/*.json
+            informes/informe-territorial-integrado.md
           retention-days: 14
 
       - name: Adjuntar resultados del piloto al Release
@@ -139,6 +146,7 @@ jobs:
         run: |
           gh release upload "$RELEASE_TAG" datos/matraba_mensual/resultados/*.csv
           gh release upload "$RELEASE_TAG" datos/matraba_mensual/resultados/*.json
+          gh release upload "$RELEASE_TAG" informes/informe-territorial-integrado.md
 
       - name: Publicar agregados
         if: ${{ inputs.mode == 'actualizar' || github.event_name == 'schedule' }}
@@ -150,7 +158,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ "${{ inputs.mode }}" = "actualizar" ] || [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
-            git add public/data
+            git add public/data informes/informe-territorial-integrado.md
             message="Actualiza snapshots y agregados mensuales MATRABA"
           else
             git add public/data/capturas_mensuales.json
