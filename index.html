@@ -199,7 +199,7 @@ function renderRanking(f){
     rows=state.ranking.filter(r=>r.ambito_provincial==="matriculacion").sort((a,b)=>Number(a.puesto)-Number(b.puesto)).slice(0,10).map(r=>({name:r.provincia,value:Number(r.recuento)}));
   }else{
     const map=new Map();
-    state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind))
+    state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province))
       .forEach(r=>map.set(r.provincia,(map.get(r.provincia)||0)+Number(r.recuento||0)));
     rows=[...map].map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value).slice(0,10);
   }
