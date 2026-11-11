@@ -47,6 +47,7 @@ db.close()
 - UUID generados por la aplicación; no se usa el nombre como clave.
 - Intervalos de vigencia semiabiertos `[valid_from, valid_to)`; extremos desconocidos admitidos.
 - Las observaciones son append-only. Las correcciones se incorporan como nuevas observaciones.
+- Los alias, sujetos/objetos de afirmaciones y origen/destino de fusiones tienen integridad referencial polimórfica validada mediante triggers SQLite, tanto en inserciones como en actualizaciones.
 - Las relaciones pueden coexistir; no se impone unicidad de importador o concesionario por marca.
 - La validación comprueba integridad SQLite, claves foráneas y coherencia de intervalos.
 - La tabla `claim` conserva afirmaciones y contradicciones con su evidencia.
