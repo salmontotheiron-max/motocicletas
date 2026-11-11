@@ -140,8 +140,8 @@ JOIN source s ON s.source_id = obs.source_id
 WHERE e.event_id = :event_id
 ORDER BY obs.observed_at, s.publisher;
 
--- 7. Relaciones cuya situación temporal NO puede determinarse para una fecha.
--- Incluye extremos desconocidos y estados pendientes/disputados/no confirmados.
+-- 7. Relaciones que no pueden afirmarse vigentes en una fecha.
+-- Distingue extremos desconocidos, intervalos fuera de fecha y estados no confirmados.
 -- Parámetros: :outlet_id, :as_of_date
 SELECT
   o.display_name AS outlet,
@@ -154,7 +154,7 @@ SELECT
     WHEN r.valid_from IS NULL AND r.valid_to IS NULL THEN 'ambos_extremos_desconocidos'
     WHEN r.valid_from IS NULL THEN 'inicio_desconocido'
     WHEN r.valid_from > :as_of_date THEN 'inicio_posterior_a_fecha_consultada'
-    WHEN r.valid_to IS NOT NULL AND :as_of_date >= r.valid_to THEN 'fuera_del_intervalo'
+    WHEN r.valid_to IS NOT NULL AND :as_of_date >= r.valid_to THEN 'vigencia_terminada_antes_de_fecha'
     WHEN r.valid_to IS NULL THEN 'fin_desconocido'
     WHEN r.status NOT IN ('active_confirmed','historical_confirmed') THEN 'estado_no_confirmado'
     ELSE 'requiere_revision'
@@ -172,7 +172,7 @@ WHERE r.outlet_id = :outlet_id
   )
 ORDER BY b.canonical_name, r.activity;
 
--- 8. Relaciones marca-empresa con vigencia o confirmación insuficiente.
+-- 8. Relaciones marca-empresa que no pueden afirmarse vigentes en una fecha.
 -- Parámetros: :brand_id, :as_of_date
 SELECT
   b.canonical_name AS brand,
@@ -187,7 +187,7 @@ SELECT
     WHEN r.valid_from IS NULL THEN 'inicio_desconocido'
     WHEN r.valid_to IS NULL THEN 'fin_desconocido'
     WHEN r.valid_from > :as_of_date THEN 'inicio_posterior_a_fecha_consultada'
-    WHEN :as_of_date >= r.valid_to THEN 'fuera_del_intervalo'
+    WHEN :as_of_date >= r.valid_to THEN 'vigencia_terminada_antes_de_fecha'
     WHEN r.status NOT IN ('active_confirmed','historical_confirmed') THEN 'estado_no_confirmado'
     ELSE 'requiere_revision'
   END AS motivo_indeterminacion
