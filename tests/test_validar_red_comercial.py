@@ -69,6 +69,16 @@ class TestEsquemaRedComercial(unittest.TestCase):
                 "cl2","brand","b1","relaciona","outlet","inexistente",
                 "supported","obs1","high","accepted"
             ))
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(base, (
+                "cl-incomplete-1","brand","b1","relaciona","brand",None,
+                "supported","obs1","high","accepted"
+            ))
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(base, (
+                "cl-incomplete-2","brand","b1","relaciona",None,"b2",
+                "supported","obs1","high","accepted"
+            ))
         self.db.execute(base, (
             "cl3","brand","b1","relaciona","brand","b2",
             "supported","obs1","high","accepted"
