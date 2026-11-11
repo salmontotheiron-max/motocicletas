@@ -115,6 +115,37 @@ class TestEsquemaRedComercial(unittest.TestCase):
                 "UPDATE entity_merge SET target_entity_id='inexistente' WHERE merge_id='m3'"
             )
 
+    def test_no_elimina_entidades_referenciadas_polinomicamente(self):
+        self._insertar_entidades_y_evidencia()
+        self.db.execute("""
+            INSERT INTO outlet VALUES
+              ('o2','Establecimiento 2',NULL,NULL,NULL,NULL,NULL,'2024-01-01')
+        """)
+        self.db.execute("""
+            INSERT INTO entity_alias
+              (alias_id,entity_type,entity_id,alias_text,normalized_alias)
+            VALUES ('a1','brand','b1','Alias','alias')
+        """)
+        self.db.execute("""
+            INSERT INTO claim
+              (claim_id,subject_type,subject_id,predicate,claim_status,
+               observation_id,confidence,review_status)
+            VALUES ('cl1','company','c1','test','supported',
+                    'obs1','high','accepted')
+        """)
+        self.db.execute("""
+            INSERT INTO entity_merge
+              (merge_id,entity_type,source_entity_id,target_entity_id,merged_at,reason)
+            VALUES ('m1','outlet','o1','o2','2026-11-11','Prueba')
+        """)
+        for table, entity_id in (
+            ("brand", "b1"), ("company", "c1"), ("outlet", "o1")
+        ):
+            with self.subTest(table=table), self.assertRaises(sqlite3.IntegrityError):
+                column = {"brand": "brand_id", "company": "company_id",
+                          "outlet": "outlet_id"}[table]
+                self.db.execute(f"DELETE FROM {table} WHERE {column}=?", (entity_id,))
+
     def test_permite_dos_importadores_sucesivos(self):
         self.db.executescript("""
             INSERT INTO brand VALUES ('b1','Marca X','ES','2024-01-01',NULL);
