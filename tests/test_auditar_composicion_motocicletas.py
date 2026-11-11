@@ -57,6 +57,18 @@ class CompositionAuditTests(unittest.TestCase):
         self.assertEqual(a.safe_published_count(19, "municipio"), "")
         self.assertEqual(a.safe_published_count(20, "municipio"), 20)
 
+    def test_all_provinces_mode_includes_observed_provinces(self):
+        selected = a.select_output_provinces(
+            {"SG", "CO"}, {"SG", "CO", "M", "B"}, all_provinces=True
+        )
+        self.assertEqual(selected, {"SG", "CO", "M", "B"})
+
+    def test_default_selection_preserves_high_dispersal_scope(self):
+        selected = a.select_output_provinces(
+            {"SG", "CO"}, {"SG", "CO", "M", "B"}
+        )
+        self.assertEqual(selected, {"SG", "CO"})
+
     def test_only_expected_dimensions_are_exported(self):
         self.assertEqual(set(a.DIMENSIONS), {
             "clase_matricula", "marca", "modelo", "procedencia", "propulsion",
