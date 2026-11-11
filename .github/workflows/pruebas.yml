@@ -1,6 +1,9 @@
 name: Pruebas automatizadas
 
 on:
+  push:
+    branches:
+      - analisis-municipal-prioritarias
   pull_request:
     branches:
       - main
