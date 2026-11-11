@@ -20,6 +20,91 @@ class TestEsquemaRedComercial(unittest.TestCase):
     def test_esquema_inicial_integro(self):
         self.assertEqual(validate_database(self.db), [])
 
+    def _insertar_entidades_y_evidencia(self):
+        self.db.executescript("""
+            INSERT INTO brand VALUES ('b1','Marca 1','ES','2024-01-01',NULL);
+            INSERT INTO brand VALUES ('b2','Marca 2','ES','2024-01-01',NULL);
+            INSERT INTO company VALUES ('c1','Empresa 1','ES','2024-01-01');
+            INSERT INTO outlet VALUES
+              ('o1','Establecimiento 1',NULL,NULL,NULL,NULL,NULL,'2024-01-01');
+            INSERT INTO source VALUES
+              ('s1','Fuente','company_page',NULL,'Fuente de prueba','primary_business',NULL);
+            INSERT INTO observation (observation_id,source_id,observed_at)
+              VALUES ('obs1','s1','2026-11-11T10:00:00+01:00');
+        """)
+
+    def test_alias_exige_entidad_existente_en_alta_y_cambio(self):
+        self._insertar_entidades_y_evidencia()
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute("""
+                INSERT INTO entity_alias
+                  (alias_id,entity_type,entity_id,alias_text,normalized_alias)
+                VALUES ('a1','brand','inexistente','Alias','alias')
+            """)
+        self.db.execute("""
+            INSERT INTO entity_alias
+              (alias_id,entity_type,entity_id,alias_text,normalized_alias)
+            VALUES ('a1','brand','b1','Alias','alias')
+        """)
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(
+                "UPDATE entity_alias SET entity_id='inexistente' WHERE alias_id='a1'"
+            )
+
+    def test_claim_exige_sujeto_y_objeto_existentes(self):
+        self._insertar_entidades_y_evidencia()
+        base = (
+            "INSERT INTO claim "
+            "(claim_id,subject_type,subject_id,predicate,object_type,object_id,"
+            "claim_status,observation_id,confidence,review_status) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?)"
+        )
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(base, (
+                "cl1","brand","inexistente","relaciona","brand","b2",
+                "supported","obs1","high","accepted"
+            ))
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(base, (
+                "cl2","brand","b1","relaciona","outlet","inexistente",
+                "supported","obs1","high","accepted"
+            ))
+        self.db.execute(base, (
+            "cl3","brand","b1","relaciona","brand","b2",
+            "supported","obs1","high","accepted"
+        ))
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(
+                "UPDATE claim SET object_id='inexistente' WHERE claim_id='cl3'"
+            )
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(
+                "UPDATE claim SET subject_id='inexistente' WHERE claim_id='cl3'"
+            )
+
+    def test_entity_merge_exige_origen_y_destino_existentes(self):
+        self._insertar_entidades_y_evidencia()
+        base = (
+            "INSERT INTO entity_merge "
+            "(merge_id,entity_type,source_entity_id,target_entity_id,merged_at,reason) "
+            "VALUES (?,?,?,?,?,?)"
+        )
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(base, (
+                "m1","brand","inexistente","b2","2026-11-11","Prueba"
+            ))
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(base, (
+                "m2","brand","b1","inexistente","2026-11-11","Prueba"
+            ))
+        self.db.execute(base, (
+            "m3","brand","b1","b2","2026-11-11","Prueba"
+        ))
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(
+                "UPDATE entity_merge SET target_entity_id='inexistente' WHERE merge_id='m3'"
+            )
+
     def test_permite_dos_importadores_sucesivos(self):
         self.db.executescript("""
             INSERT INTO brand VALUES ('b1','Marca X','ES','2024-01-01',NULL);
