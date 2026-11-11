@@ -3,110 +3,229 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Prototipo del Observatorio ANESDOR de matriculaciones de motocicletas en España.">
-<title>Observatorio ANESDOR · Motocicletas</title>
+<meta name="description" content="Dashboard del Observatorio de motocicletas basado en datos agregados oficiales de DGT MATRABA.">
+<title>Observatorio MATRABA · Motocicletas</title>
 <style>
-:root{--ink:#17212b;--muted:#5d6b78;--line:#dce3e8;--paper:#f4f7f9;--panel:#fff;--accent:#155eef;--good:#137547;--bad:#b42318}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{background:#101828;color:white;padding:1.3rem max(1rem,calc((100vw - 1200px)/2))}
-header .eyebrow{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#b2ccff}
-header h1{margin:.2rem 0;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.15}
-header p{margin:.5rem 0 0;color:#d0d5dd;max-width:760px}
-main{max-width:1200px;margin:1.25rem auto;padding:0 1rem 2rem}
-.notice{padding:.8rem 1rem;border:1px solid #f5c26b;background:#fff8e6;border-radius:10px;margin-bottom:1rem}
+:root{--ink:#17212b;--muted:#5d6b78;--line:#dce3e8;--paper:#f4f7f9;--panel:#fff;--accent:#155eef;--teal:#087e8b;--good:#137547;--warn:#9a6700;--bad:#b42318}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#101828;color:white;padding:1.4rem max(1rem,calc((100vw - 1240px)/2))}
+header .eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#b2ccff}
+header h1{margin:.2rem 0;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15}
+header p{margin:.55rem 0 0;color:#d0d5dd;max-width:850px}
+main{max-width:1240px;margin:1.2rem auto;padding:0 1rem 2rem}
+.status{padding:.8rem 1rem;border:1px solid #b2ddff;background:#eff8ff;border-radius:10px;margin-bottom:1rem}
+.status.error{border-color:#fda29b;background:#fef3f2}.status.warn{border-color:#fedf89;background:#fffaeb}
 .filters,.cards,.grid{display:grid;gap:1rem}.filters{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));padding:1rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:1rem}
-label{display:block;font-size:.85rem;font-weight:650;margin-bottom:.3rem}select,button{font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem .7rem;background:white;color:var(--ink);width:100%}
-button{cursor:pointer;font-weight:650}.actions{display:flex;gap:.6rem;align-items:end}.actions button{background:#155eef;color:white;border-color:#155eef}.actions button.secondary{background:white;color:var(--ink);border-color:#c8d1da}
-.cards{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin:1rem 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;min-width:0}
-.card .label{color:var(--muted);font-size:.85rem}.card .value{font-size:1.75rem;font-weight:750;letter-spacing:-.03em}.card .sub{font-size:.85rem;color:var(--muted)}
-.grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);margin:1rem 0}.panel h2{font-size:1.1rem;margin:0 0 .7rem}
-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:.65rem .5rem;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}th{font-size:.8rem;color:var(--muted);font-weight:700}
-.bar-row{display:grid;grid-template-columns:minmax(75px,110px) 1fr 75px;gap:.6rem;align-items:center;margin:.9rem 0;font-size:.9rem}.bar{height:14px;background:#e8eef5;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:var(--accent);border-radius:99px}.delta-positive{color:var(--good)}.delta-negative{color:var(--bad)}
-.small{font-size:.85rem;color:var(--muted)}footer{max-width:1200px;margin:auto;padding:1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
-a{color:var(--accent)}.tag{display:inline-block;background:#eef4ff;color:#1849a9;padding:.15rem .45rem;border-radius:5px;font-size:.78rem;font-weight:700}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:90px 1fr 65px}th,td{padding:.5rem .25rem;font-size:.86rem}}
-@media print{body{background:white}header{background:white;color:black;padding:0 0 1rem}header p,header .eyebrow{color:#333}.filters,.actions,.notice .hide-print{display:none!important}main{max-width:none;margin:0;padding:0}.card,.panel{break-inside:avoid}.grid{grid-template-columns:1fr 1fr}footer{max-width:none}}
+label{display:block;font-size:.84rem;font-weight:700;margin-bottom:.3rem}select,button{font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem .7rem;background:white;color:var(--ink);width:100%}
+button{cursor:pointer;font-weight:700}.actions{display:flex;gap:.6rem;align-items:end}.actions button{background:#155eef;color:white;border-color:#155eef}.actions button.secondary{background:white;color:var(--ink);border-color:#c8d1da}
+.cards{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:1rem 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;min-width:0}
+.card .label{color:var(--muted);font-size:.84rem}.card .value{font-size:1.8rem;font-weight:780;letter-spacing:-.035em}.card .sub{font-size:.82rem;color:var(--muted)}
+.grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);margin:1rem 0}.panel h2{font-size:1.08rem;margin:0 0 .7rem}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:.58rem .48rem;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}th{font-size:.78rem;color:var(--muted);font-weight:750}
+.chart{width:100%;height:auto;display:block;overflow:visible}.legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}.legend span:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent);margin-right:.35rem}.legend .used:before{background:var(--teal)}
+.bar-row{display:grid;grid-template-columns:minmax(85px,145px) 1fr 72px;gap:.55rem;align-items:center;margin:.75rem 0;font-size:.86rem}.bar{height:13px;background:#e8eef5;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:var(--accent);border-radius:99px}
+.small{font-size:.82rem;color:var(--muted)}.tag{display:inline-block;background:#eef4ff;color:#1849a9;padding:.15rem .45rem;border-radius:5px;font-size:.76rem;font-weight:750}
+.note{border-left:3px solid #98a2b3;padding:.2rem .7rem;color:var(--muted);font-size:.85rem;margin:.7rem 0}
+footer{max-width:1240px;margin:auto;padding:1rem;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+a{color:var(--accent)}.nowrap{white-space:nowrap}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:100px 1fr 65px}th,td{padding:.48rem .22rem;font-size:.82rem}}
+@media print{body{background:white}header{background:white;color:black;padding:0 0 1rem}header p,header .eyebrow{color:#333}.filters,.actions{display:none!important}main{max-width:none;margin:0;padding:0}.card,.panel{break-inside:avoid}.grid{grid-template-columns:1fr 1fr}footer{max-width:none}}
 </style>
 </head>
 <body>
 <header>
-  <div class="eyebrow">Observatorio de matriculaciones · Prototipo</div>
+  <div class="eyebrow">Observatorio del mercado · Fuente DGT MATRABA</div>
   <h1>Motocicletas en España</h1>
-  <p>Panel inicial basado en tablas públicas de ANESDOR. Comparativa interanual, propulsión y descarga de los datos visibles.</p>
+  <p>Matriculaciones nuevas, cambios de titularidad y distribución territorial. Datos agregados descargados del repositorio de capturas mensuales y actualizados cuando se publica una nueva versión válida.</p>
 </header>
 <main>
-  <div class="notice"><strong>Alcance de esta primera versión:</strong> incluye una muestra verificable de septiembre de 2025 y su acumulado enero-septiembre, por tipo de propulsión. Todavía no es un histórico completo ni dispone de filtros por modelo o provincia. No confundir esta muestra con datos actuales de 2026.</div>
-  <section class="filters" aria-label="Filtros del informe">
-    <div><label for="period">Periodo</label><select id="period"><option value="month">Mes: septiembre</option><option value="ytd">Acumulado: enero-septiembre</option></select></div>
-    <div><label for="fuel">Tipo de propulsión</label><select id="fuel"><option value="all">Todas</option><option value="Gasolina">Gasolina</option><option value="Eléctrica">Eléctrica</option></select></div>
-    <div><label for="year">Año de referencia</label><select id="year"><option value="2025">2025 frente a 2024</option></select></div>
-    <div class="actions"><button id="csv">Exportar CSV</button><button class="secondary" id="pdf">Imprimir / guardar PDF</button></div>
+  <div id="status" class="status" role="status" aria-live="polite">Cargando datos oficiales de MATRABA…</div>
+  <section class="filters" aria-label="Filtros del observatorio">
+    <div><label for="period">Periodo</label><select id="period"><option value="all">Todos los meses disponibles</option></select></div>
+    <div><label for="province">Provincia</label><select id="province"><option value="all">Todas las provincias</option></select></div>
+    <div><label for="kind">Categoría registral</label><select id="kind"><option value="all">Motocicletas (50 + 51)</option><option value="50">Tipo 50 · Dos ruedas sin sidecar</option><option value="51">Tipo 51 · Con sidecar</option></select></div>
+    <div class="actions"><button id="csv">Exportar datos filtrados</button><button id="pdf" class="secondary">Imprimir / PDF</button></div>
   </section>
   <section class="cards" aria-label="Indicadores principales">
-    <article class="card"><div class="label">Matriculaciones 2025</div><div class="value" id="current">—</div><div class="sub" id="periodLabel">Septiembre</div></article>
-    <article class="card"><div class="label">Mismo periodo de 2024</div><div class="value" id="previous">—</div><div class="sub">Base de comparación</div></article>
-    <article class="card"><div class="label">Variación interanual</div><div class="value" id="change">—</div><div class="sub" id="units">Diferencia en unidades: —</div></article>
-    <article class="card"><div class="label">Peso de la propulsión eléctrica</div><div class="value" id="electricShare">—</div><div class="sub">Sobre el total de motocicletas</div></article>
+    <article class="card"><div class="label">Matriculaciones nuevas</div><div class="value" id="newTotal">—</div><div class="sub" id="newScope">Provincia de matriculación</div></article>
+    <article class="card"><div class="label">Cambios de titularidad usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
+    <article class="card"><div class="label">Peso de la provincia</div><div class="value" id="provinceShare">—</div><div class="sub">Sobre las matriculaciones nuevas nacionales</div></article>
+    <article class="card"><div class="label">Periodos con datos</div><div class="value" id="periodCount">—</div><div class="sub" id="cutoff">Según inventario publicado</div></article>
   </section>
   <section class="grid">
-    <article class="panel"><h2>Matriculaciones por propulsión</h2><div id="bars"></div><p class="small">La longitud de las barras representa las unidades de 2025 dentro del filtro elegido.</p></article>
-    <article class="panel"><h2>Tabla trazable</h2><div style="overflow-x:auto"><table><thead><tr><th>Propulsión</th><th>2025</th><th>2024</th><th>Δ unidades</th><th>Variación</th></tr></thead><tbody id="rows"></tbody></table></div><p class="small">Las variaciones se recalculan a partir de los valores de la fuente. Si el dato anterior es cero, la variación se muestra como no calculable.</p></article>
+    <article class="panel">
+      <h2>Evolución mensual</h2>
+      <div class="legend"><span>Nuevas</span><span class="used">Usadas · cambio de titularidad</span></div>
+      <svg id="trend" class="chart" viewBox="0 0 700 270" role="img" aria-label="Evolución mensual de matriculaciones nuevas y cambios de titularidad"></svg>
+      <p class="small">Las series se calculan por separado: nuevas según provincia de matriculación; usadas según provincia del domicilio registral del vehículo.</p>
+    </article>
+    <article class="panel">
+      <h2>Composición por tipo</h2>
+      <div id="typeBars"></div>
+      <p class="small">Tipos DGT incluidos: 50 y 51. Se excluyen ciclomotores, motocarros, triciclos y cuadriciclos.</p>
+    </article>
+  </section>
+  <section class="grid">
+    <article class="panel">
+      <h2>Provincias por matriculaciones nuevas</h2>
+      <div id="ranking"></div>
+      <p class="small">Ordenadas por volumen dentro del periodo y los filtros seleccionados. No equivale a ventas del concesionario ni a residencia del comprador.</p>
+    </article>
+    <article class="panel">
+      <h2>Intensidad territorial · acumulado disponible</h2>
+      <div style="overflow-x:auto"><table><thead><tr><th>Provincia</th><th>Nuevas</th><th>Por 1.000 hab.</th><th>Sobre parque</th></tr></thead><tbody id="intensity"></tbody></table></div>
+      <p class="small" id="intensityNote">Indicadores publicados por MATRABA para el acumulado de periodos disponible. No se recalculan al cambiar el filtro mensual.</p>
+    </article>
   </section>
   <section class="panel">
-    <h2>Fuente, metodología y estado</h2>
-    <p><strong>Fuente:</strong> ANESDOR / MSI, según el PDF oficial enlazado. <strong>Fecha de actualización de este prototipo:</strong> 26/10/2026. <strong>Periodo de los datos de muestra:</strong> septiembre de 2025 y acumulado enero-septiembre de 2025.</p>
-    <p>El informe de origen contiene tablas de matriculaciones de motocicletas por tipo de propulsión. Este prototipo no mezcla motocicletas con ciclomotores, triciclos ni otras categorías de vehículos ligeros.</p>
-    <p><strong>Documento original:</strong> <a href="https://www.anesdor.com/wp-content/uploads/2025/10/250930-Propulsi%C3%B3n-vn-septiembre.pdf" target="_blank" rel="noopener">Matriculaciones por tipo de propulsión · septiembre de 2025 (PDF)</a>.</p>
-    <p class="small">Limitaciones: muestra de un solo periodo; no se ha implementado todavía la descarga automática mensual, el archivo de todos los PDF, el desglose por modelos ni el desglose territorial. La próxima fase debe incorporar más meses y validación automática contra los documentos originales.</p>
+    <h2>Datos, fuente y metodología</h2>
+    <p><strong>Fuente primaria:</strong> microdatos mensuales DGT MATRABA, archivados y procesados en el <a href="https://github.com/salmontotheiron-max/motocicletas" target="_blank" rel="noopener">repositorio del observatorio</a>. Los datos mostrados proceden exclusivamente de los agregados publicados en <code>public/data</code>.</p>
+    <p><strong>Universo:</strong> códigos DGT 50 (motocicleta de dos ruedas sin sidecar) y 51 (motocicleta con sidecar). La serie de usados representa registros de cambio de titularidad, no todas las compraventas.</p>
+    <p><strong>Geografía:</strong> las nuevas se atribuyen a la provincia de matriculación. Los cambios de titularidad usados se atribuyen a la provincia del domicilio registral del vehículo. No son magnitudes territorialmente equivalentes.</p>
+    <p><strong>Interpretación:</strong> el domicilio registral no demuestra residencia efectiva, lugar de compra, concesionario, entrega ni uso habitual. Las intensidades por población y parque son indicadores descriptivos; no son cuotas comerciales ni tasas de compra de residentes.</p>
+    <p class="small" id="manifestInfo">El manifiesto de publicación identifica las capturas fuente y sus hashes SHA-256.</p>
   </section>
 </main>
-<footer>Fuente: ANESDOR. Fecha de actualización del prototipo: 26/10/2026. Este sitio es un prototipo independiente y no está afiliado a ANESDOR.</footer>
+<footer>Observatorio independiente basado en datos agregados de DGT MATRABA. Los periodos no publicados se muestran como no disponibles y nunca se interpretan como cero.</footer>
 <script>
-const data = {
-  month: [
-    {fuel:"Gasolina",current:22533,previous:19493},
-    {fuel:"Eléctrica",current:369,previous:445}
-  ],
-  ytd: [
-    {fuel:"Gasolina",current:176175,previous:159663},
-    {fuel:"Eléctrica",current:4766,previous:3954}
-  ]
+"use strict";
+const BASE = "public/data/";
+const FILES = {
+  manifest: "manifest.json",
+  periods: "periodos.json",
+  monthly: "matriculaciones_nuevos_usados_por_tipo.csv",
+  provincial: "matriculaciones_motocicletas_por_provincia.csv",
+  ranking: "ranking_motocicletas_provincia.csv",
+  intensity: "indicadores_intensidad_territorial.csv"
 };
-const fmt = n => new Intl.NumberFormat('es-ES').format(n);
-const pct = (a,b) => b === 0 ? null : (a-b)/b*100;
+const fmt = n => new Intl.NumberFormat("es-ES").format(n);
+const dec = (n,d=2) => Number(n).toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
+const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[]};
+const el = id => document.getElementById(id);
+function parseCSV(text){
+  const rows=[];let row=[],field="",quoted=false;
+  text=text.replace(/^\uFEFF/,"");
+  for(let i=0;i<text.length;i++){
+    const c=text[i], next=text[i+1];
+    if(quoted){if(c==='"'&&next==='"'){field+='"';i++;}else if(c==='"'){quoted=false;}else{field+=c;}}
+    else if(c==='"'){quoted=true;}
+    else if(c===","){row.push(field);field="";}
+    else if(c==="\n"){row.push(field);rows.push(row);row=[];field="";}
+    else if(c!=="\r"){field+=c;}
+  }
+  if(field.length||row.length){row.push(field);rows.push(row);}
+  const headers=rows.shift()||[];
+  return rows.filter(r=>r.some(v=>v!=="")).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??""])));
+}
+async function loadText(path){
+  const response=await fetch(BASE+path,{cache:"no-store"});
+  if(!response.ok) throw new Error("No se pudo cargar "+path+" (HTTP "+response.status+")");
+  return response.text();
+}
+async function loadJSON(path){return JSON.parse(await loadText(path));}
+async function loadData(){
+  const [manifest,periods,monthly,provincial,ranking,intensity]=await Promise.all([
+    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity)
+  ]);
+  state.manifest=manifest;state.periods=periods.periodos_disponibles||[];
+  state.monthly=parseCSV(monthly);state.provincial=parseCSV(provincial);
+  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);
+  if(!state.periods.length) throw new Error("El inventario no contiene periodos disponibles.");
+  populateFilters();render();
+  const files=(manifest.archivos||[]).length;
+  el("status").className="status";
+  el("status").textContent="Datos MATRABA cargados correctamente · "+files+" capturas fuente verificadas en el manifiesto · "+state.periods.length+" periodos disponibles.";
+  el("manifestInfo").textContent="Manifiesto: "+files+" ZIP fuente, con hash SHA-256 y metadatos de proceso. Última captura registrada: "+(manifest.ultima_captura_utc||"fecha no indicada")+".";
+}
+function populateFilters(){
+  const p=el("period");state.periods.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;p.appendChild(o);});
+  const prov=[...new Set(state.provincial.filter(x=>x.ambito_provincial==="matriculacion"&&x.nuevo_usado==="Nuevo"&&["50","51"].includes(x.COD_TIPO)).map(x=>x.provincia))].sort((a,b)=>a.localeCompare(b,"es"));
+  const s=el("province");prov.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;s.appendChild(o);});
+}
+function selected(){
+  return {period:el("period").value,province:el("province").value,kind:el("kind").value};
+}
+function typeOK(r,k){return k==="all"||r.COD_TIPO===k;}
+function provincialSum(period,province,kind,scope,used){
+  return state.provincial.filter(r=>(period==="all"||r.periodo===period)&&r.ambito_provincial===scope&&typeOK(r,kind)&&
+    (used?r.nuevo_usado==="Usado":r.nuevo_usado==="Nuevo")&&(province==="all"||r.provincia===province))
+    .reduce((s,r)=>s+(Number(r.recuento)||0),0);
+}
+function nationalNew(period,kind){
+  return state.monthly.filter(r=>(period==="all"||r.periodo===period)&&r.nuevo_usado==="Nuevo"&&typeOK(r,kind))
+    .reduce((s,r)=>s+(Number(r.recuento)||0),0);
+}
 function render(){
- const period=document.querySelector('#period').value, fuel=document.querySelector('#fuel').value;
- const all=data[period], rows=fuel==='all'?all:all.filter(x=>x.fuel===fuel);
- const cur=rows.reduce((s,x)=>s+x.current,0), prev=rows.reduce((s,x)=>s+x.previous,0), diff=cur-prev, p=pct(cur,prev);
- const total=data[period].reduce((s,x)=>s+x.current,0), electric=data[period].find(x=>x.fuel==='Eléctrica').current;
- document.querySelector('#current').textContent=fmt(cur);
- document.querySelector('#previous').textContent=fmt(prev);
- document.querySelector('#change').textContent=p===null?'N/D':(p>0?'+':'')+p.toLocaleString('es-ES',{maximumFractionDigits:2})+'%';
- document.querySelector('#change').className='value '+(diff>0?'delta-positive':diff<0?'delta-negative':'');
- document.querySelector('#units').textContent='Diferencia en unidades: '+(diff>0?'+':'')+fmt(diff);
- document.querySelector('#periodLabel').textContent=period==='month'?'Septiembre de 2025':'Enero-septiembre de 2025';
- document.querySelector('#electricShare').textContent=(electric/total*100).toLocaleString('es-ES',{maximumFractionDigits:2})+'%';
- document.querySelector('#rows').innerHTML=rows.map(x=>{
-   const d=x.current-x.previous, v=pct(x.current,x.previous);
-   return `<tr><td>${x.fuel}</td><td>${fmt(x.current)}</td><td>${fmt(x.previous)}</td><td>${d>0?'+':''}${fmt(d)}</td><td class="${d>0?'delta-positive':d<0?'delta-negative':''}">${v===null?'N/D':(v>0?'+':'')+v.toLocaleString('es-ES',{maximumFractionDigits:2})+'%'}</td></tr>`;
- }).join('')+`<tr><th>Total filtrado</th><th>${fmt(cur)}</th><th>${fmt(prev)}</th><th>${diff>0?'+':''}${fmt(diff)}</th><th>${p===null?'N/D':(p>0?'+':'')+p.toLocaleString('es-ES',{maximumFractionDigits:2})+'%'}</th></tr>`;
- const max=Math.max(...rows.map(x=>x.current),1);
- document.querySelector('#bars').innerHTML=rows.map(x=>`<div class="bar-row"><span>${x.fuel}</span><div class="bar"><span style="width:${x.current/max*100}%"></span></div><strong>${fmt(x.current)}</strong></div>`).join('');
+  const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
+  const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
+  const national=nationalNew(f.period,f.kind);
+  const share=f.province==="all"?100:(national?newValue/national*100:0);
+  el("newTotal").textContent=fmt(newValue);el("usedTotal").textContent=fmt(usedValue);
+  el("provinceShare").textContent=dec(share,2)+"%";
+  el("periodCount").textContent=f.period==="all"?String(state.periods.length):"1";
+  el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
+  el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
+  el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
+  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);
+}
+function renderTrend(f){
+  const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
+  const points=state.periods.map(p=>({p,n:provincialSum(p,f.province,f.kind,"matriculacion",false),u:provincialSum(p,f.province,f.kind,"domicilio_vehiculo",true)}));
+  const max=Math.max(1,...points.flatMap(x=>[x.n,x.u]));
+  const x=i=>L+(points.length===1?plotW/2:i*plotW/(points.length-1)),y=v=>T+plotH-(v/max)*plotH;
+  let svg="";
+  for(let i=0;i<=4;i++){const v=max*i/4,yy=y(v);svg+='<line x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'" stroke="#e5eaf0"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="#667085">'+fmt(Math.round(v))+'</text>';}
+  const line=key=>points.map((p,i)=>(i?"L":"M")+x(i)+","+y(p[key])).join(" ");
+  if(points.length){svg+='<path d="'+line("n")+'" fill="none" stroke="#155eef" stroke-width="3"/><path d="'+line("u")+'" fill="none" stroke="#087e8b" stroke-width="3"/>';
+    points.forEach((p,i)=>{svg+='<circle cx="'+x(i)+'" cy="'+y(p.n)+'" r="3.5" fill="#155eef"/><circle cx="'+x(i)+'" cy="'+y(p.u)+'" r="3.5" fill="#087e8b"/><text x="'+x(i)+'" y="'+(H-15)+'" text-anchor="middle" font-size="10" fill="#667085">'+p.p.slice(5)+'</text>';});
+  }
+  el("trend").innerHTML=svg;
+}
+function renderTypes(f){
+  const rows=state.monthly.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&
+    (f.province==="all"||state.provincial.some(p=>p.periodo===r.periodo&&p.provincia===f.province&&p.ambito_provincial==="matriculacion"&&p.nuevo_usado==="Nuevo"&&p.COD_TIPO===r.COD_TIPO)));
+  const totals={};
+  rows.forEach(r=>{const name=r.descripcion_tipo;totals[name]=(totals[name]||0)+Number(r.recuento||0);});
+  const max=Math.max(1,...Object.values(totals));
+  el("typeBars").innerHTML=Object.entries(totals).map(([name,value])=>'<div class="bar-row"><span>'+name.replace("Motocicleta de ","")+'</span><div class="bar"><span style="width:'+(value/max*100)+'%"></span></div><strong>'+fmt(value)+'</strong></div>').join("")||'<p class="small">Sin datos para la selección.</p>';
+}
+function renderRanking(f){
+  let rows;
+  if(f.period==="all"&&f.province==="all"&&f.kind==="all"){
+    rows=state.ranking.filter(r=>r.ambito_provincial==="matriculacion").sort((a,b)=>Number(a.puesto)-Number(b.puesto)).slice(0,10).map(r=>({name:r.provincia,value:Number(r.recuento)}));
+  }else{
+    const map=new Map();
+    state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind))
+      .forEach(r=>map.set(r.provincia,(map.get(r.provincia)||0)+Number(r.recuento||0)));
+    rows=[...map].map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value).slice(0,10);
+  }
+  const max=Math.max(1,...rows.map(r=>r.value));
+  el("ranking").innerHTML=rows.map((r,i)=>'<div class="bar-row"><span>'+(i+1)+'. '+r.name+'</span><div class="bar"><span style="width:'+(r.value/max*100)+'%"></span></div><strong>'+fmt(r.value)+'</strong></div>').join("")||'<p class="small">Sin datos para la selección.</p>';
+}
+function renderIntensity(f){
+  let rows=state.intensity.slice().sort((a,b)=>Number(b.matriculaciones_nuevas)-Number(a.matriculaciones_nuevas));
+  if(f.province!=="all")rows=rows.filter(r=>r.provincia===f.province);
+  rows=rows.slice(0,10);
+  el("intensity").innerHTML=rows.map(r=>'<tr><td>'+r.provincia+'</td><td>'+fmt(Number(r.matriculaciones_nuevas))+'</td><td>'+dec(Number(r.matriculaciones_por_1000_habitantes),2)+'</td><td>'+dec(Number(r.matriculaciones_sobre_parque_pct),2)+'%</td></tr>').join("")||'<tr><td colspan="4">Sin datos</td></tr>';
+  const months=state.intensity[0]?.periodos?.split("|")||[];
+  el("intensityNote").textContent="Indicadores fijos del acumulado "+(months[0]||"")+" a "+(months[months.length-1]||"")+". No cambian al seleccionar un mes ni se recalculan por tipo 50/51.";
 }
 function exportCSV(){
- const period=document.querySelector('#period').value, fuel=document.querySelector('#fuel').value;
- const rows=data[period].filter(x=>fuel==='all'||x.fuel===fuel);
- const lines=[['fuente','periodo','propulsion','matriculaciones_2025','matriculaciones_2024','diferencia_unidades','variacion_interanual_pct']];
- rows.forEach(x=>lines.push(['ANESDOR',period==='month'?'2025-09':'2025-01/2025-09',x.fuel,x.current,x.previous,x.current-x.previous,pct(x.current,x.previous)??'']));
- const csv='\ufeff'+lines.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')).join('\r\n');
- const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}), url=URL.createObjectURL(blob), a=document.createElement('a');
- a.href=url;a.download='anesdor_motocicletas_'+period+'.csv';a.click();URL.revokeObjectURL(url);
+  const f=selected(),rows=[];
+  state.periods.filter(p=>f.period==="all"||p===f.period).forEach(p=>{
+    const newRows=state.provincial.filter(r=>r.periodo===p&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+    const usedRows=state.provincial.filter(r=>r.periodo===p&&r.ambito_provincial==="domicilio_vehiculo"&&r.nuevo_usado==="Usado"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+    newRows.forEach(r=>rows.push([p,"Nueva","Provincia de matriculación",r.provincia,r.COD_TIPO,r.recuento]));
+    usedRows.forEach(r=>rows.push([p,"Usada · cambio de titularidad","Provincia del domicilio registral",r.provincia,r.COD_TIPO,r.recuento]));
+  });
+  const head=["periodo","categoria","ambito_geografico","provincia","COD_TIPO","recuento"];
+  const csv="\uFEFF"+[head,...rows].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(";")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="matraba_motocicletas_filtrado.csv";a.click();URL.revokeObjectURL(url);
 }
-document.querySelector('#period').addEventListener('change',render);
-document.querySelector('#fuel').addEventListener('change',render);
-document.querySelector('#csv').addEventListener('click',exportCSV);
-document.querySelector('#pdf').addEventListener('click',()=>window.print());
-render();
+["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
+el("csv").addEventListener("click",exportCSV);el("pdf").addEventListener("click",()=>window.print());
+loadData().catch(error=>{el("status").className="status error";el("status").textContent="No se han podido cargar los agregados MATRABA. "+error.message+" Comprueba que el dashboard se sirve desde la raíz del repositorio y que public/data está publicado.";});
 </script>
 </body>
 </html>
