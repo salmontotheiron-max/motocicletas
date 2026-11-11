@@ -7,6 +7,8 @@
 
 -- 1. Cronología de eventos asociados a un establecimiento.
 -- Parámetro: :outlet_id
+-- Las listas se agregan por separado para evitar multiplicaciones entre marcas,
+-- empresas y fuentes cuando un evento afecta a varias entidades.
 SELECT
   e.event_id,
   e.event_type,
@@ -14,30 +16,54 @@ SELECT
   e.detected_at,
   e.event_status,
   e.notes,
-  b.canonical_name AS brand,
-  c.legal_name AS company,
-  o.display_name AS outlet,
-  s.publisher,
-  s.url,
-  obs.source_published_at,
-  obs.source_effective_date,
-  obs.observed_at
+  (
+    SELECT group_concat(x.canonical_name, '; ')
+    FROM (
+      SELECT DISTINCT b.canonical_name
+      FROM change_event_brand eb
+      JOIN brand b ON b.brand_id = eb.brand_id
+      WHERE eb.event_id = e.event_id
+      ORDER BY b.canonical_name
+    ) x
+  ) AS brands,
+  (
+    SELECT group_concat(x.legal_name, '; ')
+    FROM (
+      SELECT DISTINCT c.legal_name
+      FROM change_event_company ec
+      JOIN company c ON c.company_id = ec.company_id
+      WHERE ec.event_id = e.event_id AND c.legal_name IS NOT NULL
+      ORDER BY c.legal_name
+    ) x
+  ) AS companies,
+  (
+    SELECT group_concat(x.display_name, '; ')
+    FROM (
+      SELECT DISTINCT o.display_name
+      FROM change_event_outlet eo2
+      JOIN outlet o ON o.outlet_id = eo2.outlet_id
+      WHERE eo2.event_id = e.event_id
+      ORDER BY o.display_name
+    ) x
+  ) AS outlets,
+  (
+    SELECT group_concat(x.source_label, '; ')
+    FROM (
+      SELECT DISTINCT s.publisher || ' — ' || coalesce(s.url, '') AS source_label
+      FROM change_event_observation ceo
+      JOIN observation obs ON obs.observation_id = ceo.observation_id
+      JOIN source s ON s.source_id = obs.source_id
+      WHERE ceo.event_id = e.event_id
+      ORDER BY source_label
+    ) x
+  ) AS sources
 FROM change_event e
-LEFT JOIN change_event_outlet eo ON eo.event_id = e.event_id
-LEFT JOIN outlet o ON o.outlet_id = eo.outlet_id
-LEFT JOIN change_event_brand eb ON eb.event_id = e.event_id
-LEFT JOIN brand b ON b.brand_id = eb.brand_id
-LEFT JOIN change_event_company ec ON ec.event_id = e.event_id
-LEFT JOIN company c ON c.company_id = ec.company_id
-LEFT JOIN change_event_observation ceo ON ceo.event_id = e.event_id
-LEFT JOIN observation obs ON obs.observation_id = ceo.observation_id
-LEFT JOIN source s ON s.source_id = obs.source_id
+JOIN change_event_outlet eo ON eo.event_id = e.event_id
 WHERE eo.outlet_id = :outlet_id
 ORDER BY
   CASE WHEN e.effective_date IS NULL THEN 1 ELSE 0 END,
   e.effective_date,
-  e.detected_at,
-  s.publisher;
+  e.detected_at;
 
 -- 2. Marcas asociadas a un establecimiento en una fecha.
 -- Parámetros: :outlet_id, :as_of_date
@@ -127,9 +153,9 @@ SELECT
   CASE
     WHEN r.valid_from IS NULL AND r.valid_to IS NULL THEN 'ambos_extremos_desconocidos'
     WHEN r.valid_from IS NULL THEN 'inicio_desconocido'
-    WHEN r.valid_to IS NULL THEN 'fin_desconocido'
     WHEN r.valid_from > :as_of_date THEN 'inicio_posterior_a_fecha_consultada'
-    WHEN :as_of_date >= r.valid_to THEN 'fuera_del_intervalo'
+    WHEN r.valid_to IS NOT NULL AND :as_of_date >= r.valid_to THEN 'fuera_del_intervalo'
+    WHEN r.valid_to IS NULL THEN 'fin_desconocido'
     WHEN r.status NOT IN ('active_confirmed','historical_confirmed') THEN 'estado_no_confirmado'
     ELSE 'requiere_revision'
   END AS motivo_indeterminacion
