@@ -7,17 +7,21 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   inspeccionar-fuentes:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+      - name: Instalar dependencia de lectura XLSX
+        run: python -m pip install --disable-pip-version-check openpyxl
 
       - name: Descargar fuentes oficiales
         run: |
@@ -33,16 +37,41 @@ jobs:
 
       - name: Inspeccionar estructura y producir inventario
         run: |
-          python -m pip install --disable-pip-version-check openpyxl
           python inspeccionar_fuentes_municipales.py \
             --ine fuentes-municipales/ine_padron_29005.csv \
             --dgt fuentes-municipales/dgt_municipal_2025.xlsx \
             --output fuentes-municipales/inventario_fuentes.txt
 
-      - name: Publicar fuentes e inventario para análisis reproducible
+      - name: Descargar el artefacto provincial MATRABA validado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          RUN_ID="$(gh run list --workflow "Validación histórica provincial" \
+            --branch "$GITHUB_HEAD_REF" --status success \
+            --json databaseId --limit 1 --jq '.[0].databaseId')"
+          test -n "$RUN_ID" && test "$RUN_ID" != "null"
+          mkdir -p fuentes-municipales/matraba
+          gh run download "$RUN_ID" \
+            --name validacion-provincial-enero-septiembre-2026 \
+            --dir fuentes-municipales/matraba
+          MATRABA_CSV="$(find fuentes-municipales/matraba -name composicion_motocicletas_nuevas.csv -print -quit)"
+          test -n "$MATRABA_CSV"
+          echo "MATRABA_CSV=$MATRABA_CSV" >> "$GITHUB_ENV"
+
+      - name: Calcular indicadores municipales y validar conciliación
+        run: |
+          python analizar_concentracion_municipal.py \
+            --matraba "$MATRABA_CSV" \
+            --ine fuentes-municipales/ine_padron_29005.csv \
+            --dgt fuentes-municipales/dgt_municipal_2025.xlsx \
+            --output fuentes-municipales/resultados_municipales_2026_ene_sep.csv \
+            --summary fuentes-municipales/resumen_municipal_2026_ene_sep.json
+
+      - name: Publicar fuentes y resultados reproducibles
         uses: actions/upload-artifact@v4
         with:
-          name: fuentes-municipales-oficiales-2025
+          name: fuentes-y-resultados-municipales-2025-2026
           path: fuentes-municipales/
           retention-days: 7
           if-no-files-found: error
