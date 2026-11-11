@@ -67,7 +67,8 @@ jobs:
           python auditar_composicion_motocicletas.py \
             --input-dir datos-historicos \
             --cross resultado-provincial/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \
-            --output resultado-provincial/composicion_motocicletas_nuevas.csv
+            --output resultado-provincial/composicion_motocicletas_nuevas.csv \
+            --all-provinces
 
       - name: Contrastar totales provinciales con totales generales
         run: |
