@@ -14,7 +14,6 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from openpyxl import load_workbook
 
 PERIOD = "2026-01/09"
 SUPPRESSED = "SUPRIMIDO (<20)"
@@ -138,6 +137,8 @@ def read_ine(path: Path) -> dict[str, int]:
 
 
 def read_dgt(path: Path) -> dict[str, dict[str, object]]:
+    from openpyxl import load_workbook
+
     workbook = load_workbook(path, read_only=True, data_only=True)
     try:
         sheet = workbook["DatosMunicipalesGeneral_2025"]
