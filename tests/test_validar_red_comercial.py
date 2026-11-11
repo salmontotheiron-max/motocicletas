@@ -88,6 +88,18 @@ class TestEsquemaRedComercial(unittest.TestCase):
                 "INSERT INTO change_event_outlet VALUES ('e1','outlet-inexistente','afectado')"
             )
 
+    def test_vocabulario_admite_eventos_de_entrada_y_cierre(self):
+        allowed = {
+            row[0] for row in self.db.execute(
+                "SELECT sql FROM sqlite_master WHERE type='table' AND name='change_event'"
+            )
+        }
+        self.assertEqual(len(allowed), 1)
+        schema_sql = next(iter(allowed))
+        for event_type in ("outlet_closed", "brand_entered_market",
+                           "brand_distributor_appointed"):
+            self.assertIn(event_type, schema_sql)
+
     def test_evento_admite_varias_entidades_afectadas(self):
         self.db.executescript("""
             INSERT INTO brand VALUES ('b1','Suzuki','ES','2024-01-01',NULL);
