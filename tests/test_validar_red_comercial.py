@@ -1,5 +1,6 @@
 import sqlite3
 import unittest
+from pathlib import Path
 
 from validar_red_comercial import (
     initialize_database,
@@ -113,6 +114,27 @@ class TestEsquemaRedComercial(unittest.TestCase):
         self.assertEqual(
             self.db.execute(
                 "SELECT COUNT(*) FROM change_event_brand WHERE event_id='e1'"
+            ).fetchone()[0],
+            2,
+        )
+
+    def test_carga_piloto_documental_y_conserva_integridad(self):
+        fixture = Path(__file__).resolve().parents[1] / "datos" / "piloto_red_comercial_2026-11-11.sql"
+        self.db.executescript(fixture.read_text(encoding="utf-8"))
+        self.assertEqual(validate_database(self.db), [])
+        self.assertEqual(
+            self.db.execute("SELECT COUNT(*) FROM change_event").fetchone()[0],
+            5,
+        )
+        self.assertEqual(
+            self.db.execute(
+                "SELECT event_status FROM change_event WHERE event_id='event-motos-copa-suzuki-ended'"
+            ).fetchone()[0],
+            "candidate",
+        )
+        self.assertEqual(
+            self.db.execute(
+                "SELECT COUNT(*) FROM change_event_outlet WHERE event_id='event-zontes-madrid-added'"
             ).fetchone()[0],
             2,
         )
