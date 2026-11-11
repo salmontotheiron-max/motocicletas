@@ -170,7 +170,8 @@ function render(){
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
-  const points=state.periods.map(p=>({p,n:provincialSum(p,f.province,f.kind,"matriculacion",false),u:provincialSum(p,f.province,f.kind,"domicilio_vehiculo",true)}));
+  const periods=f.period==="all"?state.periods:[f.period];
+  const points=periods.map(p=>({p,n:provincialSum(p,f.province,f.kind,"matriculacion",false),u:provincialSum(p,f.province,f.kind,"domicilio_vehiculo",true)}));
   const max=Math.max(1,...points.flatMap(x=>[x.n,x.u]));
   const x=i=>L+(points.length===1?plotW/2:i*plotW/(points.length-1)),y=v=>T+plotH-(v/max)*plotH;
   let svg="";
@@ -182,10 +183,12 @@ function renderTrend(f){
   el("trend").innerHTML=svg;
 }
 function renderTypes(f){
-  const rows=state.monthly.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&
-    (f.province==="all"||state.provincial.some(p=>p.periodo===r.periodo&&p.provincia===f.province&&p.ambito_provincial==="matriculacion"&&p.nuevo_usado==="Nuevo"&&p.COD_TIPO===r.COD_TIPO)));
+  const rows=f.province==="all"
+    ?state.monthly.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind))
+    :state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&r.provincia===f.province);
+  const descriptions={"50":"Motocicleta de dos ruedas sin sidecar","51":"Motocicleta con sidecar"};
   const totals={};
-  rows.forEach(r=>{const name=r.descripcion_tipo;totals[name]=(totals[name]||0)+Number(r.recuento||0);});
+  rows.forEach(r=>{const name=descriptions[r.COD_TIPO]||r.descripcion_tipo||("Tipo "+r.COD_TIPO);totals[name]=(totals[name]||0)+Number(r.recuento||0);});
   const max=Math.max(1,...Object.values(totals));
   el("typeBars").innerHTML=Object.entries(totals).map(([name,value])=>'<div class="bar-row"><span>'+name.replace("Motocicleta de ","")+'</span><div class="bar"><span style="width:'+(value/max*100)+'%"></span></div><strong>'+fmt(value)+'</strong></div>').join("")||'<p class="small">Sin datos para la selección.</p>';
 }
@@ -203,7 +206,7 @@ function renderRanking(f){
   el("ranking").innerHTML=rows.map((r,i)=>'<div class="bar-row"><span>'+(i+1)+'. '+r.name+'</span><div class="bar"><span style="width:'+(r.value/max*100)+'%"></span></div><strong>'+fmt(r.value)+'</strong></div>').join("")||'<p class="small">Sin datos para la selección.</p>';
 }
 function renderIntensity(f){
-  let rows=state.intensity.slice().sort((a,b)=>Number(b.matriculaciones_nuevas)-Number(a.matriculaciones_nuevas));
+  let rows=state.intensity.slice().sort((a,b)=>Number(b.matriculaciones_por_1000_habitantes)-Number(a.matriculaciones_por_1000_habitantes));
   if(f.province!=="all")rows=rows.filter(r=>r.provincia===f.province);
   rows=rows.slice(0,10);
   el("intensity").innerHTML=rows.map(r=>'<tr><td>'+r.provincia+'</td><td>'+fmt(Number(r.matriculaciones_nuevas))+'</td><td>'+dec(Number(r.matriculaciones_por_1000_habitantes),2)+'</td><td>'+dec(Number(r.matriculaciones_sobre_parque_pct),2)+'%</td></tr>').join("")||'<tr><td colspan="4">Sin datos</td></tr>';
