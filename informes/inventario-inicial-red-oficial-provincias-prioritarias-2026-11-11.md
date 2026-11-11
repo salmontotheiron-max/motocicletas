@@ -72,3 +72,33 @@ Fuente: https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posv
 ## 6. Limitaciones
 
 Este inventario no es un censo completo ni permite calcular todavía cuota de cobertura. La extracción de localizadores dinámicos está incompleta. Los recuentos de matriculaciones MATRABA son registros administrativos, no ventas minoristas, ubicación de concesionario, lugar de entrega ni residencia del comprador. La dimensión municipal MATRABA representa domicilio registral y tiene supresiones por privacidad.
+
+
+## 7. Ampliación de evidencia oficial — KYMCO y depuración Honda (11/11/2026)
+
+La consulta de fichas individuales del localizador oficial KYMCO permite añadir los siguientes **concesionarios oficiales**. Se distingue expresamente de los agentes GENIUS, que son puntos oficiales de servicio/posventa y no se suman como concesionarios.
+
+| Provincia | Marca | Establecimiento | Municipio | Clasificación | Evidencia oficial |
+|---|---|---|---|---|---|
+| Barcelona | KYMCO | KYMCO BCN | Barcelona | Concesionario oficial | https://www.kymco.es/encuentranos/3774 |
+| Barcelona | KYMCO | Turó Recambios | Barcelona | Concesionario oficial | https://www.kymco.es/encuentranos/4255 |
+| Alicante | KYMCO | KYMCO Alicante | Alicante | Concesionario oficial | https://www.kymco.es/encuentranos/4397 |
+| Málaga | KYMCO | KYMCO Yadea Málaga | Málaga | Concesionario oficial | https://www.kymco.es/encuentranos/4478 |
+| Málaga | KYMCO | El Motorista Málaga | Málaga | Concesionario oficial | https://www.kymco.es/encuentranos/3971 |
+| Cádiz | KYMCO | El Motorista | Algeciras | Concesionario oficial | https://www.kymco.es/encuentranos/4404 |
+
+**Puntos KYMCO que no deben sumarse como concesionarios:** Motos Duarte (San Pedro Alcántara), Moto Fusión (Marbella), Moto Tensión (Torremolinos), Motos Bracho (Estepona), Motos Valdivia (Coín), Grupo Recambios Juanito (Villamartín), Ruiz Herrera (El Puerto de Santa María) y Motos La Vila (Villajoyosa) aparecen en las fichas consultadas como **Servicio Oficial GENIUS**. Son evidencia de capilaridad posventa y requieren una categoría separada. Fuentes: https://www.kymco.es/encuentranos/3910 ; https://www.kymco.es/encuentranos/3508 ; https://www.kymco.es/encuentranos/3688 ; https://www.kymco.es/encuentranos/3505 ; https://www.kymco.es/encuentranos/3687 ; https://www.kymco.es/encuentranos/4487 ; https://www.kymco.es/encuentranos/3680 ; https://www.kymco.es/encuentranos/4475 .
+
+La comunicación corporativa KYMCO de 1/9/2026 cifra la red nacional en 762 puntos oficiales de venta y posventa y enumera 15 incorporaciones en 14 plazas; incluye Máquina Motors Barcelona, Basolí Sabadell, Motos Balart L'Hospitalet y Motos Turó Terrassa. Ese total nacional mezcla categorías y **no es comparable con un recuento de concesionarios de venta**. Fuente: https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/
+
+### Depuración del directorio Honda
+
+El directorio oficial de Honda lista establecimientos de venta y también entradas separadas de taller/servicio. No deben contarse como dos concesionarios cuando comparten operador o dirección. La búsqueda actual del directorio muestra, entre otros, AKAIMOTO Barcelona (Sant Boi), AKAIMOTO Sabadell, Control 94 Barcelona, Control 94 L'Hospitalet, Honda Taule Diagonal, Honda Taule Gran Via, Impala, Motor Center MM (Badalona), Motor Set (Mataró), Esteban Parres (Elche), Esteban Parres Torrevieja, Grupo Prim (Alicante), Levante Motor (Benidorm), Lopera (Málaga), Servihonda Fuengirola, Servihonda Marbella, Servihonda Málaga, Motos Romero Algeciras/Jerez/San Fernando y Autoferro Murcia/Cartagena. Debe abrirse cada ficha para confirmar si incluye **Ventas**; las fichas rotuladas TALLER se excluyen del censo de venta. Fuente del directorio vivo: https://www.honda.es/motorcycles/concesionarios.html . Fichas de ventas contrastadas: https://www.honda.es/motorcycles/concesionarios/S44406.html y https://www.honda.es/motorcycles/concesionarios/S41284.html .
+
+### Implicación territorial preliminar
+
+- Barcelona, Málaga, Alicante y Algeciras ya tienen evidencia directa de concesionarios oficiales KYMCO en fichas del importador.
+- En Málaga y Cádiz se observa además una capa de agentes GENIUS fuera de las capitales; esto amplía cobertura posventa, pero no acredita venta de vehículo nuevo.
+- Para Murcia no se ha recuperado todavía una ficha de concesionario KYMCO con resultado inequívoco en esta búsqueda; se mantiene como **pendiente**, no como ausencia de red.
+- Yamaha, SYM y Voge siguen pendientes de extracción verificable por localidad. Sus localizadores oficiales son interactivos y no se deben completar con resultados de directorios de terceros.
+
