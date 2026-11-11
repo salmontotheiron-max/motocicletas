@@ -11,7 +11,7 @@ permissions:
 jobs:
   inspeccionar-fuentes:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
 
@@ -29,7 +29,7 @@ jobs:
           curl --fail --location --retry 3 --silent --show-error \
             "https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/informacion_municipal/Datos-municipales-general/DatosMunicipalesGeneral_2025.xlsx" \
             --output fuentes-municipales/dgt_municipal_2025.xlsx
-          sha256sum fuentes-municipales/*
+          (cd fuentes-municipales && sha256sum ine_padron_29005.csv dgt_municipal_2025.xlsx > SHA256SUMS)
 
       - name: Inspeccionar estructura y producir inventario
         run: |
@@ -39,9 +39,10 @@ jobs:
             --dgt fuentes-municipales/dgt_municipal_2025.xlsx \
             --output fuentes-municipales/inventario_fuentes.txt
 
-      - name: Publicar inventario de fuentes
+      - name: Publicar fuentes e inventario para análisis reproducible
         uses: actions/upload-artifact@v4
         with:
-          name: inspeccion-fuentes-municipales-oficiales
-          path: fuentes-municipales/inventario_fuentes.txt
+          name: fuentes-municipales-oficiales-2025
+          path: fuentes-municipales/
           retention-days: 7
+          if-no-files-found: error
