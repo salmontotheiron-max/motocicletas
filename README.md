@@ -2,7 +2,7 @@
 
 ## Estado de la integración MATRABA
 
-La integración MATRABA está incorporada en `main` y utiliza snapshots mensuales de microdatos DGT. El workflow `.github/workflows/actualizar-matraba.yml` descarga, valida, archiva y procesa las capturas; publica los agregados cuando se ejecuta en modo `actualizar` o mediante el calendario programado. El dashboard `index.html` sigue siendo un prototipo ANESDOR independiente y todavía no consume estos agregados.
+La integración MATRABA está incorporada en `main` y utiliza snapshots mensuales de microdatos DGT. El workflow `.github/workflows/actualizar-matraba.yml` descarga, valida, archiva y procesa las capturas; publica los agregados cuando se ejecuta en modo `actualizar` o mediante el calendario programado. El dashboard `index.html` está conectado a los agregados MATRABA publicados en `public/data/` y ofrece filtros por periodo, provincia y categoría registral, indicadores, gráficos y exportación.
 
 ### Ámbito del observatorio
 
