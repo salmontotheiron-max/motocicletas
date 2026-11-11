@@ -1,3 +1,4 @@
+import re
 import sqlite3
 import unittest
 from pathlib import Path
@@ -124,7 +125,7 @@ class TestEsquemaRedComercial(unittest.TestCase):
         self.assertEqual(validate_database(self.db), [])
         self.assertEqual(
             self.db.execute("SELECT COUNT(*) FROM change_event").fetchone()[0],
-            5,
+            6,
         )
         self.assertEqual(
             self.db.execute(
@@ -136,7 +137,13 @@ class TestEsquemaRedComercial(unittest.TestCase):
             self.db.execute(
                 "SELECT COUNT(*) FROM change_event_outlet WHERE event_id='event-zontes-madrid-added'"
             ).fetchone()[0],
-            2,
+            1,
+        )
+        self.assertEqual(
+            self.db.execute(
+                "SELECT COUNT(*) FROM change_event_outlet WHERE event_id='event-zontes-service-madrid'"
+            ).fetchone()[0],
+            1,
         )
 
     def test_intervalos_iso(self):
@@ -146,6 +153,29 @@ class TestEsquemaRedComercial(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_interval("2025-01-01", "2025-01-01")
 
+
+    def test_consultas_historicas_se_ejecutan_sobre_el_piloto(self):
+        fixture = Path(__file__).resolve().parents[1] / "datos" / "piloto_red_comercial_2026-11-11.sql"
+        queries = Path(__file__).resolve().parents[1] / "consultas_historicas_red_comercial.sql"
+        self.db.executescript(fixture.read_text(encoding="utf-8"))
+        sections = re.split(r"(?=-- [1-8]\\.)", queries.read_text(encoding="utf-8"))
+        sections = [section.strip() for section in sections if re.search(r"\\bSELECT\\b", section, re.I)]
+        self.assertEqual(len(sections), 8)
+        params = {
+            "outlet_id": "outlet-motos-copa-valladolid",
+            "as_of_date": "2026-06-10",
+            "brand_id": "brand-zxmoto-es",
+            "date_from": "2026-06-01",
+            "date_to": "2026-07-01",
+            "event_id": "event-zontes-madrid-added",
+        }
+        results = [self.db.execute(section, params).fetchall() for section in sections]
+        self.assertEqual(len(results[0]), 2)
+        self.assertEqual(len(results[3]), 1)
+        self.assertEqual(len(results[4]), 5)
+        self.assertEqual(len(results[5]), 1)
+        self.assertEqual(len(results[6]), 0)
+        self.assertEqual(len(results[7]), 1)
 
 if __name__ == "__main__":
     unittest.main()
