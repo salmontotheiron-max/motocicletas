@@ -55,7 +55,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="grid">
     <article class="panel">
       <h2>Evolución mensual</h2>
-      <div class="legend"><span>Nuevas</span><span class="used">Usadas · cambio de titularidad</span></div>
+      <div class="legend"><span>Nuevas · escala izquierda</span><span class="used">Usadas · escala derecha</span></div>
       <svg id="trend" class="chart" viewBox="0 0 700 270" role="img" aria-label="Evolución mensual de matriculaciones nuevas y cambios de titularidad"></svg>
       <p class="small">Las series se calculan por separado: nuevas según provincia de matriculación; usadas según provincia del domicilio registral del vehículo.</p>
     </article>
@@ -172,13 +172,14 @@ function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
   const periods=f.period==="all"?state.periods:[f.period];
   const points=periods.map(p=>({p,n:provincialSum(p,f.province,f.kind,"matriculacion",false),u:provincialSum(p,f.province,f.kind,"domicilio_vehiculo",true)}));
-  const max=Math.max(1,...points.flatMap(x=>[x.n,x.u]));
-  const x=i=>L+(points.length===1?plotW/2:i*plotW/(points.length-1)),y=v=>T+plotH-(v/max)*plotH;
+  const maxN=Math.max(1,...points.map(x=>x.n)),maxU=Math.max(1,...points.map(x=>x.u));
+  const x=i=>L+(points.length===1?plotW/2:i*plotW/(points.length-1));
+  const yN=v=>T+plotH-(v/maxN)*plotH,yU=v=>T+plotH-(v/maxU)*plotH;
   let svg="";
-  for(let i=0;i<=4;i++){const v=max*i/4,yy=y(v);svg+='<line x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'" stroke="#e5eaf0"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="#667085">'+fmt(Math.round(v))+'</text>';}
-  const line=key=>points.map((p,i)=>(i?"L":"M")+x(i)+","+y(p[key])).join(" ");
-  if(points.length){svg+='<path d="'+line("n")+'" fill="none" stroke="#155eef" stroke-width="3"/><path d="'+line("u")+'" fill="none" stroke="#087e8b" stroke-width="3"/>';
-    points.forEach((p,i)=>{svg+='<circle cx="'+x(i)+'" cy="'+y(p.n)+'" r="3.5" fill="#155eef"/><circle cx="'+x(i)+'" cy="'+y(p.u)+'" r="3.5" fill="#087e8b"/><text x="'+x(i)+'" y="'+(H-15)+'" text-anchor="middle" font-size="10" fill="#667085">'+p.p.slice(5)+'</text>';});
+  for(let i=0;i<=4;i++){const vn=maxN*i/4,vu=maxU*i/4,yy=T+plotH-(i/4)*plotH;svg+='<line x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'" stroke="#e5eaf0"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="#155eef">'+fmt(Math.round(vn))+'</text><text x="'+(W-R+6)+'" y="'+(yy+4)+'" text-anchor="start" font-size="10" fill="#087e8b">'+fmt(Math.round(vu))+'</text>';}
+  const line=(key,scale)=>points.map((p,i)=>(i?"L":"M")+x(i)+","+scale(p[key])).join(" ");
+  if(points.length){svg+='<path d="'+line("n",yN)+'" fill="none" stroke="#155eef" stroke-width="3"/><path d="'+line("u",yU)+'" fill="none" stroke="#087e8b" stroke-width="3"/>';
+    points.forEach((p,i)=>{svg+='<circle cx="'+x(i)+'" cy="'+yN(p.n)+'" r="3.5" fill="#155eef"/><circle cx="'+x(i)+'" cy="'+yU(p.u)+'" r="3.5" fill="#087e8b"/><text x="'+x(i)+'" y="'+(H-15)+'" text-anchor="middle" font-size="10" fill="#667085">'+p.p.slice(5)+'</text>';});
   }
   el("trend").innerHTML=svg;
 }
