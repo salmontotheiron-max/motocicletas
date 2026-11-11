@@ -145,7 +145,8 @@ CREATE TABLE IF NOT EXISTS claim (
 CREATE TABLE IF NOT EXISTS change_event (
   event_id TEXT PRIMARY KEY,
   event_type TEXT NOT NULL CHECK (event_type IN
-    ('brand_importer_change','dealer_added','dealer_removed','dealer_operator_change',
+    ('brand_importer_change','brand_entered_market','brand_distributor_appointed',
+     'dealer_added','dealer_removed','dealer_operator_change','outlet_closed',
      'outlet_relocated','brand_added_to_outlet','brand_removed_from_outlet',
      'service_scope_change','name_change','unverified_disappearance','other')),
   effective_date TEXT,
