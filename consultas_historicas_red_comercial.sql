@@ -1,6 +1,8 @@
 -- Consultas de referencia para el histórico de red comercial.
 -- Ejecutar con parámetros nombrados desde SQLite.
 -- Los intervalos de vigencia son semiabiertos [valid_from, valid_to).
+-- Un extremo NULL es DESCONOCIDO, no un inicio remoto ni una vigencia indefinida.
+-- Las consultas 2 y 3 solo devuelven intervalos acotados y confirmados.
 -- No confundir fecha de publicación, fecha de observación y fecha efectiva.
 
 -- 1. Cronología de eventos asociados a un establecimiento.
@@ -50,8 +52,11 @@ FROM outlet_brand_relation r
 JOIN outlet o ON o.outlet_id = r.outlet_id
 JOIN brand b ON b.brand_id = r.brand_id
 WHERE r.outlet_id = :outlet_id
-  AND (r.valid_from IS NULL OR r.valid_from <= :as_of_date)
-  AND (r.valid_to IS NULL OR :as_of_date < r.valid_to)
+  AND r.valid_from IS NOT NULL
+  AND r.valid_from <= :as_of_date
+  AND r.valid_to IS NOT NULL
+  AND :as_of_date < r.valid_to
+  AND r.status IN ('active_confirmed','historical_confirmed')
 ORDER BY b.canonical_name, r.activity;
 
 -- 3. Importador/distribuidor de una marca en una fecha.
@@ -68,8 +73,11 @@ FROM brand_company_relation r
 JOIN brand b ON b.brand_id = r.brand_id
 JOIN company c ON c.company_id = r.company_id
 WHERE r.brand_id = :brand_id
-  AND (r.valid_from IS NULL OR r.valid_from <= :as_of_date)
-  AND (r.valid_to IS NULL OR :as_of_date < r.valid_to)
+  AND r.valid_from IS NOT NULL
+  AND r.valid_from <= :as_of_date
+  AND r.valid_to IS NOT NULL
+  AND :as_of_date < r.valid_to
+  AND r.status IN ('active_confirmed','historical_confirmed')
 ORDER BY r.role, c.legal_name;
 
 -- 4. Eventos con fecha efectiva conocida dentro de un intervalo.
@@ -105,3 +113,67 @@ JOIN observation obs ON obs.observation_id = ceo.observation_id
 JOIN source s ON s.source_id = obs.source_id
 WHERE e.event_id = :event_id
 ORDER BY obs.observed_at, s.publisher;
+
+-- 7. Relaciones cuya situación temporal NO puede determinarse para una fecha.
+-- Incluye extremos desconocidos y estados pendientes/disputados/no confirmados.
+-- Parámetros: :outlet_id, :as_of_date
+SELECT
+  o.display_name AS outlet,
+  b.canonical_name AS brand,
+  r.activity,
+  r.valid_from,
+  r.valid_to,
+  r.status,
+  CASE
+    WHEN r.valid_from IS NULL AND r.valid_to IS NULL THEN 'ambos_extremos_desconocidos'
+    WHEN r.valid_from IS NULL THEN 'inicio_desconocido'
+    WHEN r.valid_to IS NULL THEN 'fin_desconocido'
+    WHEN r.valid_from > :as_of_date THEN 'inicio_posterior_a_fecha_consultada'
+    WHEN :as_of_date >= r.valid_to THEN 'fuera_del_intervalo'
+    WHEN r.status NOT IN ('active_confirmed','historical_confirmed') THEN 'estado_no_confirmado'
+    ELSE 'requiere_revision'
+  END AS motivo_indeterminacion
+FROM outlet_brand_relation r
+JOIN outlet o ON o.outlet_id = r.outlet_id
+JOIN brand b ON b.brand_id = r.brand_id
+WHERE r.outlet_id = :outlet_id
+  AND (
+    r.valid_from IS NULL
+    OR r.valid_to IS NULL
+    OR r.status NOT IN ('active_confirmed','historical_confirmed')
+    OR r.valid_from > :as_of_date
+    OR :as_of_date >= r.valid_to
+  )
+ORDER BY b.canonical_name, r.activity;
+
+-- 8. Relaciones marca-empresa con vigencia o confirmación insuficiente.
+-- Parámetros: :brand_id, :as_of_date
+SELECT
+  b.canonical_name AS brand,
+  c.legal_name AS company,
+  r.role,
+  r.territory,
+  r.valid_from,
+  r.valid_to,
+  r.status,
+  CASE
+    WHEN r.valid_from IS NULL AND r.valid_to IS NULL THEN 'ambos_extremos_desconocidos'
+    WHEN r.valid_from IS NULL THEN 'inicio_desconocido'
+    WHEN r.valid_to IS NULL THEN 'fin_desconocido'
+    WHEN r.valid_from > :as_of_date THEN 'inicio_posterior_a_fecha_consultada'
+    WHEN :as_of_date >= r.valid_to THEN 'fuera_del_intervalo'
+    WHEN r.status NOT IN ('active_confirmed','historical_confirmed') THEN 'estado_no_confirmado'
+    ELSE 'requiere_revision'
+  END AS motivo_indeterminacion
+FROM brand_company_relation r
+JOIN brand b ON b.brand_id = r.brand_id
+JOIN company c ON c.company_id = r.company_id
+WHERE r.brand_id = :brand_id
+  AND (
+    r.valid_from IS NULL
+    OR r.valid_to IS NULL
+    OR r.status NOT IN ('active_confirmed','historical_confirmed')
+    OR r.valid_from > :as_of_date
+    OR :as_of_date >= r.valid_to
+  )
+ORDER BY r.role, c.legal_name;
