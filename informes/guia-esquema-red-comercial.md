@@ -7,9 +7,18 @@ Este esquema implementa la primera capa del diseño descrito en
 
 - `esquema_red_comercial.sql`: tablas, claves, vocabularios, índices y protección de observaciones.
 - `validar_red_comercial.py`: inicialización y comprobaciones de integridad.
-- `tests/test_validar_red_comercial.py`: pruebas unitarias del modelo.
+- `tests/test_validar_red_comercial.py`: pruebas unitarias del modelo y del piloto.
+- `datos/piloto_red_comercial_2026-11-11.sql`: carga idempotente de casos documentados (Motos Copa/Suzuki, Zontes Centro Madrid y entrada de ZXMOTO/Desmotrón).
 
 ## Uso
+
+Desde la raíz del repositorio, para cargar el piloto en una base inicializada:
+
+```bash
+python -c "from validar_red_comercial import initialize_database; db=initialize_database('red_comercial.sqlite'); db.executescript(open('datos/piloto_red_comercial_2026-11-11.sql', encoding='utf-8').read()); db.close()"
+```
+
+La carga usa `INSERT OR IGNORE` y puede repetirse. No es un censo: los operadores societarios no identificados se dejan sin asignar, las fechas desconocidas permanecen nulas y los indicios se mantienen como candidatos.
 
 Desde la raíz del repositorio:
 
