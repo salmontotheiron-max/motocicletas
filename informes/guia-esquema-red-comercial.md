@@ -9,6 +9,7 @@ Este esquema implementa la primera capa del diseño descrito en
 - `validar_red_comercial.py`: inicialización y comprobaciones de integridad.
 - `tests/test_validar_red_comercial.py`: pruebas unitarias del modelo y del piloto.
 - `datos/piloto_red_comercial_2026-11-11.sql`: carga idempotente de casos documentados (Motos Copa/Suzuki, Zontes Centro Madrid y entrada de ZXMOTO/Desmotrón).
+- `consultas_historicas_red_comercial.sql`: consultas de cronología por establecimiento, relaciones vigentes a una fecha, distribuidores por marca, eventos fechados/no fechados y trazabilidad de evidencias.
 
 ## Uso
 
@@ -18,7 +19,7 @@ Desde la raíz del repositorio, para cargar el piloto en una base inicializada:
 python -c "from validar_red_comercial import initialize_database; db=initialize_database('red_comercial.sqlite'); db.executescript(open('datos/piloto_red_comercial_2026-11-11.sql', encoding='utf-8').read()); db.close()"
 ```
 
-La carga usa `INSERT OR IGNORE` y puede repetirse. No es un censo: los operadores societarios no identificados se dejan sin asignar, las fechas desconocidas permanecen nulas y los indicios se mantienen como candidatos.
+La carga usa `INSERT OR IGNORE` y puede repetirse. Para explorar el piloto, abrir `consultas_historicas_red_comercial.sql` y ejecutar cada consulta con los parámetros indicados en sus comentarios (por ejemplo, `:outlet_id` y `:as_of_date`). Las consultas temporales aplican intervalos semiabiertos `[valid_from, valid_to)`; las fechas efectivas desconocidas se muestran en una consulta separada para que no desaparezcan del seguimiento. No es un censo: los operadores societarios no identificados se dejan sin asignar, las fechas desconocidas permanecen nulas y los indicios se mantienen como candidatos.
 
 Desde la raíz del repositorio:
 
