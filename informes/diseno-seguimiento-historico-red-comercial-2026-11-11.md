@@ -159,7 +159,7 @@ Las afirmaciones no se eliminan al aparecer una fuente contradictoria. Se añade
 Tabla `change_event` para clasificar diferencias observadas:
 
 - `event_id`
-- `event_type`: `brand_importer_change`, `dealer_added`, `dealer_removed`, `dealer_operator_change`, `outlet_relocated`, `brand_added_to_outlet`, `brand_removed_from_outlet`, `service_scope_change`, `name_change`, `unverified_disappearance`, `other`
+- `event_type`: `brand_importer_change`, `brand_entered_market`, `brand_distributor_appointed`, `dealer_added`, `dealer_removed`, `dealer_operator_change`, `outlet_closed`, `outlet_relocated`, `brand_added_to_outlet`, `brand_removed_from_outlet`, `service_scope_change`, `name_change`, `unverified_disappearance`, `other`
 - `entity_ids` / relaciones afectadas
 - `effective_date` (nullable)
 - `detected_at`
