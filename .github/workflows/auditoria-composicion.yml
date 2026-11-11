@@ -38,7 +38,8 @@ jobs:
             --input-dir datos/matraba_mensual \
             --cross datos/matraba_mensual/resultados/matriculaciones_motocicletas_cruce_provincias_nuevas.csv \
             --inventory-file public/data/capturas_mensuales.json \
-            --output datos/matraba_mensual/resultados/composicion_motocicletas_nuevas.csv
+            --output datos/matraba_mensual/resultados/composicion_motocicletas_nuevas.csv \
+            --all-provinces
       - uses: actions/upload-artifact@v5
         with:
           name: auditoria-composicion-motocicletas
