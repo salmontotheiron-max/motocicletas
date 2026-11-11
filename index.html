@@ -184,12 +184,14 @@ function renderTrend(f){
   el("trend").innerHTML=svg;
 }
 function renderTypes(f){
+  // Este panel representa exclusivamente el universo de motocicletas DGT: tipos 50 y 51.
+  const motorcycleTypes=["50","51"];
   const rows=f.province==="all"
-    ?state.monthly.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind))
-    :state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&r.provincia===f.province);
+    ?state.monthly.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.nuevo_usado==="Nuevo"&&motorcycleTypes.includes(r.COD_TIPO)&&typeOK(r,f.kind))
+    :state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&motorcycleTypes.includes(r.COD_TIPO)&&typeOK(r,f.kind)&&r.provincia===f.province);
   const descriptions={"50":"Motocicleta de dos ruedas sin sidecar","51":"Motocicleta con sidecar"};
   const totals={};
-  rows.forEach(r=>{const name=descriptions[r.COD_TIPO]||r.descripcion_tipo||("Tipo "+r.COD_TIPO);totals[name]=(totals[name]||0)+Number(r.recuento||0);});
+  rows.forEach(r=>{const name=descriptions[r.COD_TIPO];if(name)totals[name]=(totals[name]||0)+Number(r.recuento||0);});
   const max=Math.max(1,...Object.values(totals));
   el("typeBars").innerHTML=Object.entries(totals).map(([name,value])=>'<div class="bar-row"><span>'+name.replace("Motocicleta de ","")+'</span><div class="bar"><span style="width:'+(value/max*100)+'%"></span></div><strong>'+fmt(value)+'</strong></div>').join("")||'<p class="small">Sin datos para la selección.</p>';
 }
