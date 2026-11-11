@@ -144,7 +144,7 @@ Los top N se calculan sobre los N municipios visibles con mayor recuento, excluy
 
 ## 6. Enriquecimiento municipal con población y parque oficiales
 
-Se ha añadido un cruce por código INE entre los domicilios municipales visibles de MATRABA, el padrón municipal del INE a 1 de enero de 2025 y el parque municipal de motocicletas DGT 2025. El cruce se realiza **por municipio de domicilio registral en el conjunto nacional**, no restringiendo el numerador a la provincia donde se matriculó el vehículo. Así se evita atribuir a un municipio únicamente las operaciones matriculadas en su propia provincia.
+Se ha añadido un cruce por código INE entre los domicilios municipales visibles de MATRABA, el padrón municipal del INE a 1 de enero de 2025 y el parque municipal de motocicletas DGT 2025. El cruce se realiza **por municipio de domicilio registral en el conjunto nacional**, no restringiendo el numerador a la provincia donde se matriculó el vehículo. Así se evita atribuir a un municipio únicamente las operaciones matriculadas en su propia provincia. Se utiliza la población INE como denominador: la columna de población del Excel DGT difiere de la serie INE en 5.944 de los 8.132 municipios comparables, por lo que no se mezclan ambas cifras ni se sustituye una fuente por otra sin criterio.
 
 ### Cobertura y conciliación
 
