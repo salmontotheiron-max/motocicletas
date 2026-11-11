@@ -158,8 +158,8 @@ class TestEsquemaRedComercial(unittest.TestCase):
         fixture = Path(__file__).resolve().parents[1] / "datos" / "piloto_red_comercial_2026-11-11.sql"
         queries = Path(__file__).resolve().parents[1] / "consultas_historicas_red_comercial.sql"
         self.db.executescript(fixture.read_text(encoding="utf-8"))
-        sections = re.split(r"(?=-- [1-8]\\.)", queries.read_text(encoding="utf-8"))
-        sections = [section.strip() for section in sections if re.search(r"\\bSELECT\\b", section, re.I)]
+        sections = re.split(r"(?=-- [1-8]\.)", queries.read_text(encoding="utf-8"))
+        sections = [section.strip() for section in sections if re.search(r"\bSELECT\b", section, re.I)]
         self.assertEqual(len(sections), 8)
         params = {
             "outlet_id": "outlet-motos-copa-valladolid",
