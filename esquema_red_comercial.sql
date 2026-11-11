@@ -161,6 +161,29 @@ CREATE TABLE IF NOT EXISTS change_event_observation (
   PRIMARY KEY (event_id, observation_id)
 );
 
+-- Asociaciones tipadas: mantienen integridad referencial real con cada entidad.
+-- Un evento puede afectar a varias marcas, empresas y establecimientos.
+CREATE TABLE IF NOT EXISTS change_event_brand (
+  event_id TEXT NOT NULL REFERENCES change_event(event_id),
+  brand_id TEXT NOT NULL REFERENCES brand(brand_id),
+  role_in_event TEXT,
+  PRIMARY KEY (event_id, brand_id)
+);
+
+CREATE TABLE IF NOT EXISTS change_event_company (
+  event_id TEXT NOT NULL REFERENCES change_event(event_id),
+  company_id TEXT NOT NULL REFERENCES company(company_id),
+  role_in_event TEXT,
+  PRIMARY KEY (event_id, company_id)
+);
+
+CREATE TABLE IF NOT EXISTS change_event_outlet (
+  event_id TEXT NOT NULL REFERENCES change_event(event_id),
+  outlet_id TEXT NOT NULL REFERENCES outlet(outlet_id),
+  role_in_event TEXT,
+  PRIMARY KEY (event_id, outlet_id)
+);
+
 CREATE TABLE IF NOT EXISTS entity_merge (
   merge_id TEXT PRIMARY KEY,
   entity_type TEXT NOT NULL CHECK (entity_type IN ('brand','company','outlet')),
@@ -185,6 +208,12 @@ CREATE INDEX IF NOT EXISTS idx_claim_subject
   ON claim(subject_type, subject_id, predicate);
 CREATE INDEX IF NOT EXISTS idx_change_event_status
   ON change_event(event_status, detected_at);
+CREATE INDEX IF NOT EXISTS idx_event_brand_entity
+  ON change_event_brand(brand_id, event_id);
+CREATE INDEX IF NOT EXISTS idx_event_company_entity
+  ON change_event_company(company_id, event_id);
+CREATE INDEX IF NOT EXISTS idx_event_outlet_entity
+  ON change_event_outlet(outlet_id, event_id);
 
 -- La evidencia observada es append-only: las correcciones se añaden como nuevas
 -- observaciones y afirmaciones, nunca se reescribe el registro original.
