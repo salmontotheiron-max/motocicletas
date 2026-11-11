@@ -39,6 +39,7 @@ db.close()
 - Las relaciones pueden coexistir; no se impone unicidad de importador o concesionario por marca.
 - La validación comprueba integridad SQLite, claves foráneas y coherencia de intervalos.
 - La tabla `claim` conserva afirmaciones y contradicciones con su evidencia.
+- Los eventos se vinculan a marcas, empresas y establecimientos mediante tablas de asociación tipadas (`change_event_brand`, `change_event_company`, `change_event_outlet`), con claves foráneas reales.
 - No incluye rastreo web, deduplicación automática ni inferencia de bajas. Esas funciones quedan fuera de esta primera capa.
 
 **Importante:** `valid_to = NULL` no demuestra vigencia actual. Una consulta de situación actual deberá aplicar reglas de recencia y estado de confirmación.
