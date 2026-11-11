@@ -197,6 +197,109 @@ CREATE TABLE IF NOT EXISTS entity_merge (
   UNIQUE (entity_type, source_entity_id)
 );
 
+-- Integridad referencial para las relaciones polimórficas (entity_type, entity_id).
+-- SQLite no admite una FK condicional a varias tablas: los triggers reproducen
+-- esa garantía tanto en altas como en cambios de identificador/tipo.
+CREATE TRIGGER IF NOT EXISTS entity_alias_entity_exists_insert
+BEFORE INSERT ON entity_alias
+BEGIN
+  SELECT CASE WHEN NOT (
+    (NEW.entity_type = 'brand' AND EXISTS
+      (SELECT 1 FROM brand WHERE brand_id = NEW.entity_id)) OR
+    (NEW.entity_type = 'company' AND EXISTS
+      (SELECT 1 FROM company WHERE company_id = NEW.entity_id)) OR
+    (NEW.entity_type = 'outlet' AND EXISTS
+      (SELECT 1 FROM outlet WHERE outlet_id = NEW.entity_id))
+  ) THEN RAISE(ABORT, 'entity_alias references a missing entity') END;
+END;
+
+CREATE TRIGGER IF NOT EXISTS entity_alias_entity_exists_update
+BEFORE UPDATE OF entity_type, entity_id ON entity_alias
+BEGIN
+  SELECT CASE WHEN NOT (
+    (NEW.entity_type = 'brand' AND EXISTS
+      (SELECT 1 FROM brand WHERE brand_id = NEW.entity_id)) OR
+    (NEW.entity_type = 'company' AND EXISTS
+      (SELECT 1 FROM company WHERE company_id = NEW.entity_id)) OR
+    (NEW.entity_type = 'outlet' AND EXISTS
+      (SELECT 1 FROM outlet WHERE outlet_id = NEW.entity_id))
+  ) THEN RAISE(ABORT, 'entity_alias references a missing entity') END;
+END;
+
+CREATE TRIGGER IF NOT EXISTS claim_subject_exists_insert
+BEFORE INSERT ON claim
+BEGIN
+  SELECT CASE WHEN NOT (
+    (NEW.subject_type = 'brand' AND EXISTS
+      (SELECT 1 FROM brand WHERE brand_id = NEW.subject_id)) OR
+    (NEW.subject_type = 'company' AND EXISTS
+      (SELECT 1 FROM company WHERE company_id = NEW.subject_id)) OR
+    (NEW.subject_type = 'outlet' AND EXISTS
+      (SELECT 1 FROM outlet WHERE outlet_id = NEW.subject_id))
+  ) THEN RAISE(ABORT, 'claim references a missing subject entity') END;
+  SELECT CASE WHEN NEW.object_type IS NOT NULL AND NOT (
+    (NEW.object_type = 'brand' AND EXISTS
+      (SELECT 1 FROM brand WHERE brand_id = NEW.object_id)) OR
+    (NEW.object_type = 'company' AND EXISTS
+      (SELECT 1 FROM company WHERE company_id = NEW.object_id)) OR
+    (NEW.object_type = 'outlet' AND EXISTS
+      (SELECT 1 FROM outlet WHERE outlet_id = NEW.object_id))
+  ) THEN RAISE(ABORT, 'claim references a missing object entity') END;
+END;
+
+CREATE TRIGGER IF NOT EXISTS claim_subject_exists_update
+BEFORE UPDATE OF subject_type, subject_id, object_type, object_id ON claim
+BEGIN
+  SELECT CASE WHEN NOT (
+    (NEW.subject_type = 'brand' AND EXISTS
+      (SELECT 1 FROM brand WHERE brand_id = NEW.subject_id)) OR
+    (NEW.subject_type = 'company' AND EXISTS
+      (SELECT 1 FROM company WHERE company_id = NEW.subject_id)) OR
+    (NEW.subject_type = 'outlet' AND EXISTS
+      (SELECT 1 FROM outlet WHERE outlet_id = NEW.subject_id))
+  ) THEN RAISE(ABORT, 'claim references a missing subject entity') END;
+  SELECT CASE WHEN NEW.object_type IS NOT NULL AND NOT (
+    (NEW.object_type = 'brand' AND EXISTS
+      (SELECT 1 FROM brand WHERE brand_id = NEW.object_id)) OR
+    (NEW.object_type = 'company' AND EXISTS
+      (SELECT 1 FROM company WHERE company_id = NEW.object_id)) OR
+    (NEW.object_type = 'outlet' AND EXISTS
+      (SELECT 1 FROM outlet WHERE outlet_id = NEW.object_id))
+  ) THEN RAISE(ABORT, 'claim references a missing object entity') END;
+END;
+
+CREATE TRIGGER IF NOT EXISTS entity_merge_entities_exist_insert
+BEFORE INSERT ON entity_merge
+BEGIN
+  SELECT CASE WHEN NOT (
+    (NEW.entity_type = 'brand' AND
+      EXISTS (SELECT 1 FROM brand WHERE brand_id = NEW.source_entity_id) AND
+      EXISTS (SELECT 1 FROM brand WHERE brand_id = NEW.target_entity_id)) OR
+    (NEW.entity_type = 'company' AND
+      EXISTS (SELECT 1 FROM company WHERE company_id = NEW.source_entity_id) AND
+      EXISTS (SELECT 1 FROM company WHERE company_id = NEW.target_entity_id)) OR
+    (NEW.entity_type = 'outlet' AND
+      EXISTS (SELECT 1 FROM outlet WHERE outlet_id = NEW.source_entity_id) AND
+      EXISTS (SELECT 1 FROM outlet WHERE outlet_id = NEW.target_entity_id))
+  ) THEN RAISE(ABORT, 'entity_merge references a missing source or target entity') END;
+END;
+
+CREATE TRIGGER IF NOT EXISTS entity_merge_entities_exist_update
+BEFORE UPDATE OF entity_type, source_entity_id, target_entity_id ON entity_merge
+BEGIN
+  SELECT CASE WHEN NOT (
+    (NEW.entity_type = 'brand' AND
+      EXISTS (SELECT 1 FROM brand WHERE brand_id = NEW.source_entity_id) AND
+      EXISTS (SELECT 1 FROM brand WHERE brand_id = NEW.target_entity_id)) OR
+    (NEW.entity_type = 'company' AND
+      EXISTS (SELECT 1 FROM company WHERE company_id = NEW.source_entity_id) AND
+      EXISTS (SELECT 1 FROM company WHERE company_id = NEW.target_entity_id)) OR
+    (NEW.entity_type = 'outlet' AND
+      EXISTS (SELECT 1 FROM outlet WHERE outlet_id = NEW.source_entity_id) AND
+      EXISTS (SELECT 1 FROM outlet WHERE outlet_id = NEW.target_entity_id))
+  ) THEN RAISE(ABORT, 'entity_merge references a missing source or target entity') END;
+END;
+
 CREATE INDEX IF NOT EXISTS idx_observation_source_time
   ON observation(source_id, observed_at);
 CREATE INDEX IF NOT EXISTS idx_brand_company_lookup
