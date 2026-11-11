@@ -137,6 +137,8 @@ VALUES
    'candidate','La pérdida de condición de proveedor oficial se sitúa antes del cierre; fecha exacta pendiente.'),
   ('event-zontes-madrid-added','brand_added_to_outlet','2026-06-10','2026-11-11T18:00:00+01:00',
    'confirmed','Nueva implantación Zontes en el local anteriormente ocupado por Motorcity; operador societario no identificado.'),
+  ('event-zontes-service-madrid','service_scope_change',NULL,'2026-11-11T18:00:00+01:00',
+   'candidate','Referencia sectorial a posventa Zontes en una dirección distinta; alcance y vigencia pendientes de verificación.'),
   ('event-zxmoto-market-entry','brand_entered_market',NULL,'2026-11-11T18:00:00+01:00',
    'confirmed','Entrada anunciada el 26-02-2026; fecha efectiva de inicio comercial no precisada.'),
   ('event-zxmoto-distributor','brand_distributor_appointed',NULL,'2026-11-11T18:00:00+01:00',
@@ -146,7 +148,7 @@ INSERT OR IGNORE INTO change_event_observation VALUES
   ('event-motos-copa-close','obs-motos-copa-close'),
   ('event-motos-copa-suzuki-ended','obs-motos-copa-suzuki'),
   ('event-zontes-madrid-added','obs-zontes-opening'),
-  ('event-zontes-madrid-added','obs-zontes-service'),
+  ('event-zontes-service-madrid','obs-zontes-service'),
   ('event-zxmoto-market-entry','obs-zxmoto-distributor'),
   ('event-zxmoto-distributor','obs-zxmoto-distributor'),
   ('event-zxmoto-distributor','obs-zxmoto-legal');
@@ -154,7 +156,8 @@ INSERT OR IGNORE INTO change_event_observation VALUES
 INSERT OR IGNORE INTO change_event_brand VALUES
   ('event-motos-copa-close','brand-suzuki-es','marca asociada en el expediente'),
   ('event-motos-copa-suzuki-ended','brand-suzuki-es','marca cuya representación habría terminado'),
-  ('event-zontes-madrid-added','brand-zontes-es','marca incorporada al establecimiento'),
+  ('event-zontes-madrid-added','brand-zontes-es','marca incorporada al punto de venta'),
+  ('event-zontes-service-madrid','brand-zontes-es','marca de la posventa mencionada'),
   ('event-zxmoto-market-entry','brand-zxmoto-es','marca que inicia operaciones en España'),
   ('event-zxmoto-distributor','brand-zxmoto-es','marca objeto de distribución');
 
@@ -165,7 +168,7 @@ INSERT OR IGNORE INTO change_event_outlet VALUES
   ('event-motos-copa-close','outlet-motos-copa-valladolid','establecimiento cerrado'),
   ('event-motos-copa-suzuki-ended','outlet-motos-copa-valladolid','establecimiento afectado'),
   ('event-zontes-madrid-added','outlet-zontes-centro-madrid','local de venta/exposición'),
-  ('event-zontes-madrid-added','outlet-zontes-posventa-madrid','ubicación de posventa mencionada');
+  ('event-zontes-service-madrid','outlet-zontes-posventa-madrid','ubicación de posventa mencionada');
 
 -- No se crean registros nominales de nuevos concesionarios ZXMOTO sin fuentes
 -- individualizadas. La señal general comunicada por el usuario queda en el informe
