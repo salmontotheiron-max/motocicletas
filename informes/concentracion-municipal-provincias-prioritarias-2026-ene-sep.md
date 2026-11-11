@@ -136,7 +136,7 @@ Los top N se calculan sobre los N municipios visibles con mayor recuento, excluy
 - Provincia de matriculación y municipio de domicilio registral pueden pertenecer a provincias distintas. No interpretar las filas externas como ventas locales.
 - La categoría `SUPRIMIDO (<20)` agrupa registros ocultos para preservar confidencialidad. No se intenta reconstruirlos.
 - La dimensión municipal no está cruzada con las dimensiones de marca, modelo, cilindrada, propulsión o titularidad. No se puede afirmar qué marcas lideran en Marbella, Jerez o Cartagena con este fichero.
-- Los datos de población y parque disponibles en el repositorio son provinciales, no municipales. No se calculan tasas municipales por habitante ni por parque.
+- La primera versión del cribado no disponía de denominadores municipales; la sección 6 incorpora el cruce posterior con población INE 2025 y parque DGT 2025, sujeto a las exclusiones y límites de cobertura allí descritos.
 - Para convertir este cribado en una decisión de implantación se necesita enriquecer con población y parque municipal oficiales, además de validar red de concesionarios, competencia, movilidad y cobertura comercial.
 
 **Conclusión:** Málaga ofrece la mayor concentración visible; Cádiz y Alicante muestran una red de municipios más repartida; Barcelona combina escala y área metropolitana; Murcia presenta dos polos principales, pero también mayor supresión y señales de domicilios registrales fuera de la provincia. Estas conclusiones sirven para seleccionar dónde investigar, no para estimar ventas o rentabilidad.
