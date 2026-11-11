@@ -15,7 +15,7 @@ permissions:
 jobs:
   inspeccionar-fuentes:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v5
 
@@ -45,15 +45,32 @@ jobs:
             --dgt fuentes-municipales/dgt_municipal_2025.xlsx \
             --output fuentes-municipales/inventario_fuentes.txt
 
-      - name: Descargar el artefacto provincial MATRABA validado
+      - name: Descargar el artefacto MATRABA del mismo commit
         env:
           GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          SOURCE_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           set -euo pipefail
-          RUN_ID="$(gh run list --workflow "Validación histórica provincial" \
-            --branch "$GITHUB_HEAD_REF" --status success \
-            --json databaseId --limit 1 --jq '.[0].databaseId')"
-          test -n "$RUN_ID" && test "$RUN_ID" != "null"
+          RUN_ID=""
+          for attempt in $(seq 1 90); do
+            RUNS="$(gh run list --workflow "Validación histórica provincial" \
+              --branch "$SOURCE_BRANCH" --commit "$SOURCE_SHA" \
+              --json databaseId,status,conclusion --limit 20)"
+            RUN_ID="$(jq -r '[.[] | select(.status == "completed" and .conclusion == "success")][0].databaseId // empty' <<< "$RUNS")"
+            if [ -n "$RUN_ID" ]; then
+              break
+            fi
+            FAILED="$(jq -r '[.[] | select(.status == "completed" and .conclusion != "success")] | length' <<< "$RUNS")"
+            if [ "$FAILED" -gt 0 ]; then
+              echo "La validación provincial del commit $SOURCE_SHA ha terminado sin éxito."
+              jq . <<< "$RUNS"
+              exit 1
+            fi
+            echo "Esperando la validación provincial del commit $SOURCE_SHA (intento $attempt/90)..."
+            sleep 20
+          done
+          test -n "$RUN_ID" || { echo "No se encontró una validación provincial satisfactoria para $SOURCE_SHA"; exit 1; }
           mkdir -p fuentes-municipales/matraba
           gh run download "$RUN_ID" \
             --name validacion-provincial-enero-septiembre-2026 \
@@ -61,6 +78,7 @@ jobs:
           MATRABA_CSV="$(find fuentes-municipales/matraba -name composicion_motocicletas_nuevas.csv -print -quit)"
           test -n "$MATRABA_CSV"
           echo "MATRABA_CSV=$MATRABA_CSV" >> "$GITHUB_ENV"
+          echo "Artefacto MATRABA obtenido del run $RUN_ID para el commit $SOURCE_SHA"
 
       - name: Calcular indicadores municipales y validar conciliación
         run: |
