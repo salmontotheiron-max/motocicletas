@@ -303,6 +303,43 @@ BEGIN
   ) THEN RAISE(ABORT, 'entity_merge references a missing source or target entity') END;
 END;
 
+-- Impide que una entidad referenciada se elimine y deje referencias huérfanas.
+CREATE TRIGGER IF NOT EXISTS brand_no_delete_if_polymorphic_reference
+BEFORE DELETE ON brand
+WHEN EXISTS (SELECT 1 FROM entity_alias WHERE entity_type='brand' AND entity_id=OLD.brand_id)
+  OR EXISTS (SELECT 1 FROM claim WHERE
+      (subject_type='brand' AND subject_id=OLD.brand_id) OR
+      (object_type='brand' AND object_id=OLD.brand_id))
+  OR EXISTS (SELECT 1 FROM entity_merge WHERE entity_type='brand' AND
+      (source_entity_id=OLD.brand_id OR target_entity_id=OLD.brand_id))
+BEGIN
+  SELECT RAISE(ABORT, 'brand is referenced by alias, claim or entity_merge');
+END;
+
+CREATE TRIGGER IF NOT EXISTS company_no_delete_if_polymorphic_reference
+BEFORE DELETE ON company
+WHEN EXISTS (SELECT 1 FROM entity_alias WHERE entity_type='company' AND entity_id=OLD.company_id)
+  OR EXISTS (SELECT 1 FROM claim WHERE
+      (subject_type='company' AND subject_id=OLD.company_id) OR
+      (object_type='company' AND object_id=OLD.company_id))
+  OR EXISTS (SELECT 1 FROM entity_merge WHERE entity_type='company' AND
+      (source_entity_id=OLD.company_id OR target_entity_id=OLD.company_id))
+BEGIN
+  SELECT RAISE(ABORT, 'company is referenced by alias, claim or entity_merge');
+END;
+
+CREATE TRIGGER IF NOT EXISTS outlet_no_delete_if_polymorphic_reference
+BEFORE DELETE ON outlet
+WHEN EXISTS (SELECT 1 FROM entity_alias WHERE entity_type='outlet' AND entity_id=OLD.outlet_id)
+  OR EXISTS (SELECT 1 FROM claim WHERE
+      (subject_type='outlet' AND subject_id=OLD.outlet_id) OR
+      (object_type='outlet' AND object_id=OLD.outlet_id))
+  OR EXISTS (SELECT 1 FROM entity_merge WHERE entity_type='outlet' AND
+      (source_entity_id=OLD.outlet_id OR target_entity_id=OLD.outlet_id))
+BEGIN
+  SELECT RAISE(ABORT, 'outlet is referenced by alias, claim or entity_merge');
+END;
+
 CREATE INDEX IF NOT EXISTS idx_observation_source_time
   ON observation(source_id, observed_at);
 CREATE INDEX IF NOT EXISTS idx_brand_company_lookup
