@@ -103,9 +103,31 @@ El workflow incorpora un calendario para los días 1, 8, 15, 22 y 28 de cada mes
 - En los barridos del 10-11-2026, octubre y noviembre de 2026 devolvieron HTTP 404 y quedaron registrados como `no_disponible_en_barrido`. No deben interpretarse como meses con cero matriculaciones. Se debe repetir la consulta en los siguientes barridos hasta que DGT publique las capturas.
 - Tras cada ejecución programada, revisar el estado del workflow, el inventario, los hashes, el manifiesto y la publicación de agregados e informe.
 
-## Prototipo anterior ANESDOR
+## Dashboard conectado a MATRABA
 
-El `index.html` existente sigue siendo el prototipo estático ANESDOR de 2025. La migración MATRABA todavía no conecta sus CSV al dashboard ni sustituye el contenido del prototipo.
+El `index.html` consume directamente los agregados publicados en `public/data`; no utiliza la muestra estática ANESDOR de 2025 ni requiere una API externa.
+
+### Contenido y filtros
+
+- Filtro por periodo mensual o acumulado de todos los periodos disponibles.
+- Filtro por provincia.
+- Filtro por código 50 (motocicleta de dos ruedas sin sidecar) o 51 (motocicleta con sidecar).
+- Indicadores de matriculaciones nuevas y cambios de titularidad usados.
+- Evolución mensual, composición por tipo y ranking provincial.
+- Tabla de intensidad territorial con población y parque de referencia.
+- Exportación CSV del subconjunto filtrado e impresión/guardado en PDF.
+
+### Fuentes consumidas
+
+- `manifest.json` y `periodos.json`: inventario, periodos disponibles y trazabilidad de capturas.
+- `matriculaciones_nuevos_usados_por_tipo.csv`: serie mensual nacional por código y condición nuevo/usado.
+- `matriculaciones_motocicletas_por_provincia.csv`: distribución provincial y mensual.
+- `ranking_motocicletas_provincia.csv`: ranking acumulado publicado.
+- `indicadores_intensidad_territorial.csv`: intensidad por población y parque.
+
+Las nuevas se agregan por provincia de matriculación; los usados, por provincia del domicilio registral del vehículo. El panel mantiene ambos universos separados y etiqueta el alcance geográfico en indicadores, gráficos y exportaciones. Los indicadores de población/parque corresponden al acumulado publicado y no se recalculan al seleccionar un mes o un único código.
+
+El dashboard debe servirse desde la raíz del sitio para que las rutas relativas `public/data/` resuelvan correctamente. Si un fichero no está disponible o falla la carga, muestra un error explícito; no sustituye ausencias por ceros.
 
 
 ### Indicadores relativos de intensidad territorial
