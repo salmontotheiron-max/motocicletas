@@ -124,6 +124,13 @@ def read_dispersal(path):
     }
 
 
+def select_output_provinces(dispersal, observed_provinces, all_provinces=False):
+    """Selecciona ámbitos provinciales sin alterar el universo de cálculo."""
+    if all_provinces:
+        return set(observed_provinces) | {"SG"}
+    return set(dispersal) | {"SG"}
+
+
 def extract_rows(archive_path):
     payload = archive_path.read_bytes()
     text, error, _ = inspect_zip(payload)
@@ -163,6 +170,8 @@ def main():
                         help="CSV de cruce provincia de matriculación/domicilio")
     parser.add_argument("--output", required=True)
     parser.add_argument("--inventory-file")
+    parser.add_argument("--all-provinces", action="store_true",
+                        help="Publica el detalle de composición de todas las provincias")
     args = parser.parse_args()
 
     dispersal = read_dispersal(args.cross)
@@ -199,7 +208,10 @@ def main():
     add_cumulative_period(counts, denominators)
     validate_reconciliation(counts, denominators)
 
-    target_provinces = set(dispersal) | {"SG"}
+    observed_provinces = {province for province, _period in denominators if province != "NACIONAL"}
+    target_provinces = select_output_provinces(
+        dispersal, observed_provinces, args.all_provinces
+    )
     rows = []
     for key, count in sorted(counts.items()):
         province, period, dimension, category = key
