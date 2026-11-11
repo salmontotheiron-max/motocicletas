@@ -140,3 +140,102 @@ Los top N se calculan sobre los N municipios visibles con mayor recuento, excluy
 - Para convertir este cribado en una decisión de implantación se necesita enriquecer con población y parque municipal oficiales, además de validar red de concesionarios, competencia, movilidad y cobertura comercial.
 
 **Conclusión:** Málaga ofrece la mayor concentración visible; Cádiz y Alicante muestran una red de municipios más repartida; Barcelona combina escala y área metropolitana; Murcia presenta dos polos principales, pero también mayor supresión y señales de domicilios registrales fuera de la provincia. Estas conclusiones sirven para seleccionar dónde investigar, no para estimar ventas o rentabilidad.
+
+
+## 6. Enriquecimiento municipal con población y parque oficiales
+
+Se ha añadido un cruce por código INE entre los domicilios municipales visibles de MATRABA, el padrón municipal del INE a 1 de enero de 2025 y el parque municipal de motocicletas DGT 2025. El cruce se realiza **por municipio de domicilio registral en el conjunto nacional**, no restringiendo el numerador a la provincia donde se matriculó el vehículo. Así se evita atribuir a un municipio únicamente las operaciones matriculadas en su propia provincia.
+
+### Cobertura y conciliación
+
+| Concepto | Unidades |
+|---|---:|
+| Total nacional de matriculaciones nuevas | 219.565 |
+| Domicilios suprimidos por privacidad | 41.331 |
+| Domicilios visibles asignados a código INE | 170.984 |
+| Domicilios visibles sin equivalencia segura | 7.250 |
+| Cobertura de asignación sobre registros visibles | 95,93% |
+| Municipios DGT con código INE y población INE 2025 | 8.132 |
+| Municipios sin dato de parque DGT | 3 |
+| Municipios con parque DGT igual a cero | 100 |
+
+La conciliación municipal cierra: 170.984 + 41.331 + 7.250 = 219.565. Los 7.250 registros no asignados no se reparten por aproximación. Los homónimos y nombres insuficientes —por ejemplo, Torrent, San José, San Miguel, Arroyomolinos, Cieza o Santiago— permanecen excluidos mientras no exista evidencia inequívoca. Los códigos provinciales se leen como texto: esto preserva correctamente el código `NA` de Navarra.
+
+### Indicadores
+
+- **Matriculaciones por 1.000 habitantes:** domicilios registrales visibles asignados al municipio / población INE 2025 × 1.000.
+- **Matriculaciones por 1.000 motocicletas del parque:** domicilios registrales visibles asignados al municipio / parque de motocicletas DGT 2025 × 1.000.
+- Los municipios con parque cero no reciben tasa por parque; no se sustituye el denominador por otro indicador.
+- El numerador está afectado por supresión y por los 7.250 registros visibles no asignados. Las tasas son intensidades registrales observadas, no tasas de compra de residentes ni cuotas de mercado.
+
+### Principales municipios en las cinco provincias prioritarias
+
+Los recuentos incluyen las matriculaciones nacionales cuyo domicilio registral se asigna al municipio, con independencia de la provincia de matriculación.
+
+#### Barcelona
+
+| Municipio | Registros visibles | Por 1.000 habitantes | Por 1.000 motos del parque |
+|---|---:|---:|---:|
+| Barcelona | 11.916 | 6,9 | 44,1 |
+| L'Hospitalet de Llobregat | 1.580 | 5,5 | 59,8 |
+| Badalona | 1.509 | 6,5 | 61,3 |
+| Terrassa | 996 | 4,3 | 44,6 |
+| Sabadell | 957 | 4,2 | 49,0 |
+
+#### Málaga
+
+| Municipio | Registros visibles | Por 1.000 habitantes | Por 1.000 motos del parque |
+|---|---:|---:|---:|
+| Málaga | 5.034 | 8,4 | 62,5 |
+| Marbella | 1.785 | 11,2 | 88,4 |
+| Mijas | 1.029 | 10,8 | 62,9 |
+| Fuengirola | 767 | 9,0 | 62,2 |
+| Vélez-Málaga | 650 | 7,6 | 55,8 |
+
+#### Cádiz
+
+| Municipio | Registros visibles | Por 1.000 habitantes | Por 1.000 motos del parque |
+|---|---:|---:|---:|
+| Jerez de la Frontera | 1.983 | 9,3 | 90,3 |
+| Algeciras | 1.047 | 8,3 | 75,9 |
+| Cádiz | 852 | 7,7 | 61,6 |
+| Chiclana de la Frontera | 778 | 8,6 | 69,8 |
+| San Fernando | 771 | 8,3 | 76,2 |
+
+#### Alicante/Alacant
+
+| Municipio | Registros visibles | Por 1.000 habitantes | Por 1.000 motos del parque |
+|---|---:|---:|---:|
+| Alicante/Alacant | 2.172 | 5,9 | 56,6 |
+| Elche | 1.154 | 4,7 | 52,0 |
+| Benidorm | 485 | 6,3 | 45,7 |
+| Torrevieja | 464 | 4,7 | 61,5 |
+| San Vicente del Raspeig | 362 | 6,0 | 48,9 |
+
+#### Murcia
+
+| Municipio | Registros visibles | Por 1.000 habitantes | Por 1.000 motos del parque |
+|---|---:|---:|---:|
+| Murcia | 2.040 | 4,3 | 42,7 |
+| Cartagena | 791 | 3,6 | 43,6 |
+| Lorca | 291 | 2,9 | 32,5 |
+| Águilas | 284 | 7,5 | 45,1 |
+| Molina de Segura | 241 | 3,1 | 39,0 |
+
+### Lectura comparativa
+
+- **Málaga y su litoral occidental** destacan en intensidad registral relativa: Marbella y Mijas superan 10 domicilios nuevos visibles por 1.000 habitantes; Marbella alcanza 88,4 por 1.000 motocicletas del parque.
+- **Cádiz** presenta valores elevados en Jerez, Algeciras y San Fernando, con Jerez en 90,3 por 1.000 motocicletas del parque.
+- **Barcelona** concentra el mayor volumen absoluto; la tasa por población es más moderada en la capital, mientras que varios municipios metropolitanos muestran más registros por 1.000 motos del parque.
+- **Alicante/Alacant** presenta un patrón heterogéneo: Calp y Santa Pola también destacan en tasas relativas, aunque no figuren entre los cinco primeros por volumen.
+- **Murcia** tiene menor intensidad por población en la capital y Cartagena que los principales municipios de Málaga y Cádiz; Águilas destaca dentro de la provincia.
+
+Estas diferencias sirven para priorizar comprobaciones comerciales y territoriales, no para inferir causalidad, propensión individual de compra o ventas realizadas en concesionarios locales.
+
+### Fuentes y reproducibilidad
+
+- INE, padrón municipal 2025, CSV tabla 29005: https://www.ine.es/jaxiT3/files/t/csv_bdsc/29005.csv
+- DGT, Datos municipales — información general 2025: https://www.dgt.es/menusecundario/dgt-en-cifras/dgt-en-cifras-resultados/dgt-en-cifras-detalle/Datos-municipales-informacion-general-2025/
+- Excel DGT 2025: https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/informacion_municipal/Datos-municipales-general/DatosMunicipalesGeneral_2025.xlsx
+- MATRABA: `composicion_motocicletas_nuevas.csv`, periodo `2026-01/09`, dimensión `municipio`, artefacto de validación provincial del commit analizado.
+- Script reproducible: `analizar_concentracion_municipal.py`. Genera un CSV municipal completo y un resumen JSON de cobertura a partir de los tres ficheros de entrada. Las equivalencias editoriales se documentan en el propio script; cualquier alias que no resuelva a un único código DGT hace fallar la ejecución.
