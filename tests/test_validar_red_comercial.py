@@ -36,13 +36,11 @@ class TestEsquemaRedComercial(unittest.TestCase):
         self.assertEqual(count, 2)
 
     def test_no_permite_intervalo_invertido(self):
+        self.db.executescript("""
+            INSERT INTO brand VALUES ('b1','Marca X','ES','2024-01-01',NULL);
+            INSERT INTO company VALUES ('c1','Empresa','ES','2024-01-01');
+        """)
         with self.assertRaises(sqlite3.IntegrityError):
-            self.db.execute("""
-                INSERT INTO brand VALUES ('b1','Marca X','ES','2024-01-01',NULL)
-            """)
-            self.db.execute("""
-                INSERT INTO company VALUES ('c1','Empresa','ES','2024-01-01')
-            """)
             self.db.execute("""
                 INSERT INTO brand_company_relation
                 (relation_id,brand_id,company_id,role,territory,valid_from,valid_to,
