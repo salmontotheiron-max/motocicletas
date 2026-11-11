@@ -2,7 +2,7 @@
 
 ## Estado de la integración MATRABA
 
-La integración está migrando de descargas diarias a snapshots mensuales de microdatos DGT. El desarrollo se realiza en la rama `integracion-matraba-inicial`; la rama `main` no se modifica.
+La integración MATRABA está incorporada en `main` y utiliza snapshots mensuales de microdatos DGT. El workflow `.github/workflows/actualizar-matraba.yml` descarga, valida, archiva y procesa las capturas; publica los agregados cuando se ejecuta en modo `actualizar` o mediante el calendario programado. El dashboard `index.html` sigue siendo un prototipo ANESDOR independiente y todavía no consume estos agregados.
 
 ### Ámbito del observatorio
 
@@ -87,13 +87,21 @@ Admite una lista opcional de meses separados por comas; por ejemplo, `2026-07,20
 
 El workflow incorpora un calendario para los días 1, 8, 15, 22 y 28 de cada mes a las 05:25 UTC. GitHub Actions solo ejecutará ese calendario cuando esta versión esté integrada en la rama predeterminada `main`. Las ejecuciones programadas publicarán automáticamente los agregados en la rama desde la que se ejecuten. La hora corresponde a UTC: 06:25 en horario peninsular de invierno y 07:25 en horario de verano.
 
-### Validación pendiente
+### Estado de verificación de la automatización (11-11-2026)
 
-1. Ejecutar la batería completa de pruebas en GitHub Actions.
-2. Descargar julio de 2026 y comparar el TXT contenido en el ZIP con el fichero mensual ya validado.
-3. Confirmar que el ZIP original se archiva en Releases y que el hash coincide.
-4. Cargar los meses disponibles de 2026 sin sumar capturas distintas del mismo mes.
-5. Revisar agregados y manifiestos antes de activar el cron.
+**Verificado en GitHub Actions y en los datos publicados:**
+
+- La batería de pruebas del workflow MATRABA terminó correctamente en las ejecuciones revisadas. La ejecución del 10-11-2026 incluyó 41 pruebas unitarias, todas superadas.
+- El workflow se ejecutó manualmente en `main` en modo de publicación (`actualizar`) y finalizó con éxito en las ejecuciones [42870781861](https://github.com/salmontotheiron-max/motocicletas/actions/runs/42870781861) y [42873221287](https://github.com/salmontotheiron-max/motocicletas/actions/runs/42873221287).
+- Se procesaron nueve periodos disponibles de 2026, de enero a septiembre, con una versión válida seleccionada por mes.
+- Los ZIP originales de enero a septiembre están archivados como activos de GitHub Releases. Los nombres incluyen el SHA-256 y el procesador vuelve a comprobarlo antes de generar los agregados.
+- Las ejecuciones publicaron los agregados en `public/data` y generaron el informe territorial integrado.
+
+**Pendiente de verificación operativa:**
+
+- El calendario está configurado para los días 1, 8, 15, 22 y 28 a las 05:25 UTC. La primera ejecución programada posterior a esta revisión está prevista para el 15-11-2026; debe comprobarse que GitHub Actions la inicia y que termina correctamente.
+- En los barridos del 10-11-2026, octubre y noviembre de 2026 devolvieron HTTP 404 y quedaron registrados como `no_disponible_en_barrido`. No deben interpretarse como meses con cero matriculaciones. Se debe repetir la consulta en los siguientes barridos hasta que DGT publique las capturas.
+- Tras cada ejecución programada, revisar el estado del workflow, el inventario, los hashes, el manifiesto y la publicación de agregados e informe.
 
 ## Prototipo anterior ANESDOR
 
