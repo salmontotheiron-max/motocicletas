@@ -1,0 +1,44 @@
+# Esquema SQLite del seguimiento histórico
+
+Este esquema implementa la primera capa del diseño descrito en
+`diseno-seguimiento-historico-red-comercial-2026-11-11.md`.
+
+## Archivos
+
+- `esquema_red_comercial.sql`: tablas, claves, vocabularios, índices y protección de observaciones.
+- `validar_red_comercial.py`: inicialización y comprobaciones de integridad.
+- `tests/test_validar_red_comercial.py`: pruebas unitarias del modelo.
+
+## Uso
+
+Desde la raíz del repositorio:
+
+```bash
+python validar_red_comercial.py
+python -m unittest discover -s tests -p 'test_*.py'
+```
+
+Para inicializar una base persistente:
+
+```python
+from validar_red_comercial import initialize_database, validate_database
+
+db = initialize_database("red_comercial.sqlite")
+errors = validate_database(db)
+if errors:
+    raise RuntimeError(errors)
+db.close()
+```
+
+## Decisiones y límites
+
+- SQLite con claves foráneas activadas por conexión.
+- UUID generados por la aplicación; no se usa el nombre como clave.
+- Intervalos de vigencia semiabiertos `[valid_from, valid_to)`; extremos desconocidos admitidos.
+- Las observaciones son append-only. Las correcciones se incorporan como nuevas observaciones.
+- Las relaciones pueden coexistir; no se impone unicidad de importador o concesionario por marca.
+- La validación comprueba integridad SQLite, claves foráneas y coherencia de intervalos.
+- La tabla `claim` conserva afirmaciones y contradicciones con su evidencia.
+- No incluye rastreo web, deduplicación automática ni inferencia de bajas. Esas funciones quedan fuera de esta primera capa.
+
+**Importante:** `valid_to = NULL` no demuestra vigencia actual. Una consulta de situación actual deberá aplicar reglas de recencia y estado de confirmación.
