@@ -1,6 +1,9 @@
 name: Inspección de fuentes municipales oficiales
 
 on:
+  push:
+    branches:
+      - analisis-municipal-prioritarias
   pull_request:
     branches:
       - main
