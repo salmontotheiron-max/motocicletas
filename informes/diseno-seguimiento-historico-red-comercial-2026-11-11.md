@@ -167,6 +167,8 @@ Tabla `change_event` para clasificar diferencias observadas:
 - `supporting_observation_ids`
 - `notes`
 
+La asociación del evento con las entidades afectadas se mantiene mediante tablas tipadas con claves foráneas: `change_event_brand`, `change_event_company` y `change_event_outlet`. Un evento puede afectar a varias entidades de cada tipo; así se evita una relación polimórfica sin integridad referencial.
+
 Una desaparición de un localizador web genera `unverified_disappearance` candidato; no una baja confirmada. Una baja solo se confirma con evidencia positiva suficiente (por ejemplo, comunicado de cierre, confirmación de la empresa o fuente oficial equivalente).
 
 ## 6. Reglas de identidad y deduplicación
@@ -276,6 +278,7 @@ No iniciar un rastreo nacional ni publicar rankings de cobertura hasta superar l
 - Venta y posventa pueden coexistir o diferir para el mismo establecimiento.
 - Un cambio de operador no duplica el establecimiento físico.
 - Los conflictos entre fuentes permanecen visibles y trazables.
+- Cada evento puede vincularse a una o varias marcas, empresas y establecimientos con integridad referencial.
 - Cada dato publicado puede remontarse a observaciones y fuentes concretas.
 - Las consultas históricas explicitan incertidumbre y fecha de corte.
 
