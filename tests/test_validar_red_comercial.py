@@ -63,6 +63,48 @@ class TestEsquemaRedComercial(unittest.TestCase):
                 "UPDATE observation SET notes='corregido' WHERE observation_id='o1'"
             )
 
+
+    def test_evento_se_vincula_a_entidades_con_integridad(self):
+        self.db.executescript("""
+            INSERT INTO brand VALUES ('b1','Suzuki','ES','2024-01-01',NULL);
+            INSERT INTO outlet VALUES
+              ('o1','Motos Copa','Valladolid',NULL,'47',NULL,NULL,'2024-01-01');
+            INSERT INTO change_event
+              VALUES ('e1','dealer_removed','2025-09-30','2026-11-11T10:00:00+01:00',
+                      'confirmed','Cierre del establecimiento');
+            INSERT INTO change_event_brand
+              VALUES ('e1','b1','marca relacionada');
+            INSERT INTO change_event_outlet
+              VALUES ('e1','o1','establecimiento afectado');
+        """)
+        self.assertEqual(
+            self.db.execute(
+                "SELECT COUNT(*) FROM change_event_outlet WHERE outlet_id='o1'"
+            ).fetchone()[0],
+            1,
+        )
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.db.execute(
+                "INSERT INTO change_event_outlet VALUES ('e1','outlet-inexistente','afectado')"
+            )
+
+    def test_evento_admite_varias_entidades_afectadas(self):
+        self.db.executescript("""
+            INSERT INTO brand VALUES ('b1','Suzuki','ES','2024-01-01',NULL);
+            INSERT INTO brand VALUES ('b2','Zontes','ES','2024-01-01',NULL);
+            INSERT INTO change_event
+              VALUES ('e1','brand_added_to_outlet',NULL,'2026-11-11T10:00:00+01:00',
+                      'candidate','Evento de prueba');
+            INSERT INTO change_event_brand VALUES ('e1','b1','marca anterior');
+            INSERT INTO change_event_brand VALUES ('e1','b2','marca nueva');
+        """)
+        self.assertEqual(
+            self.db.execute(
+                "SELECT COUNT(*) FROM change_event_brand WHERE event_id='e1'"
+            ).fetchone()[0],
+            2,
+        )
+
     def test_intervalos_iso(self):
         validate_interval("2024-01-01", "2025-01-01")
         with self.assertRaises(ValueError):
