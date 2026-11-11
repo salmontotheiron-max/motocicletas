@@ -139,6 +139,9 @@ CREATE TABLE IF NOT EXISTS claim (
   confidence TEXT NOT NULL CHECK (confidence IN ('high','medium','low')),
   review_status TEXT NOT NULL CHECK (review_status IN
     ('unreviewed','accepted','rejected','needs_review')),
+  CHECK ((object_type IS NULL AND object_id IS NULL) OR
+         (object_type IN ('brand','company','outlet') AND object_id IS NOT NULL
+          AND length(trim(object_id)) > 0)),
   CHECK (valid_from IS NULL OR valid_to IS NULL OR valid_to > valid_from)
 );
 
