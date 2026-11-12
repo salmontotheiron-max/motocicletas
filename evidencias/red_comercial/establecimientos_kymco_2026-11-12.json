@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "brand": "KYMCO",
+  "source_policy": "Se incorporan puntos cuando la marca/importador los identifica como concesionarios y existe evidencia pública del operador sobre marca y ubicación. No se convierten agentes GENIUS ni talleres asociados en puntos de venta sin evidencia individual de venta.",
+  "source": {
+    "source_type": "official_brand_dealer_announcement_plus_operator_page",
+    "publisher": "KYMCO España; Basolí Sabadell",
+    "url": "https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/",
+    "supporting_urls": [
+      "https://basolisabadell.com/kymco/",
+      "https://basolisabadell.com/"
+    ],
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official_and_primary_business",
+    "notes": "KYMCO identifica Basolí Sabadell como uno de los nuevos concesionarios incorporados en 2026. El operador publica gama KYMCO, recambios originales, tienda, taller y dirección."
+  },
+  "outlet_count": 1,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1
+    },
+    "by_municipality": {
+      "Sabadell": 1
+    },
+    "sales": 1,
+    "service": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "kymco-basoli-sabadell",
+      "brand": "KYMCO",
+      "trading_name": "Basolí Sabadell",
+      "operator": "Motorka Sabadell, S.L. (denominación legal no contrastada en esta revisión)",
+      "province": "Barcelona",
+      "municipality": "Sabadell",
+      "public_address": "C. dels Cardona, 56, 08203 Sabadell, Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/",
+      "supporting_urls": [
+        "https://basolisabadell.com/kymco/",
+        "https://basolisabadell.com/"
+      ],
+      "evidence_type": "official_brand_announcement_plus_operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "KYMCO España incluye expresamente Basolí Sabadell entre los nuevos concesionarios de 2026. Basolí ofrece vehículos KYMCO, recambios originales y publica tienda y taller en Cardona 56. Se registra una única sede; no se extrapola a otras sucursales del grupo."
+    }
+  ]
+}
