@@ -18,6 +18,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Descargar repositorio
+        id: checkout
         uses: actions/checkout@v5
         with:
           ref: ${{ github.ref_name }}
@@ -30,6 +31,7 @@ jobs:
       - name: Ejecutar capturas
         run: python capturar_fuentes_red_comercial.py
       - name: Persistir evidencias versionadas
+        if: always() && steps.checkout.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
