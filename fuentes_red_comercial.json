@@ -1044,10 +1044,10 @@
     },
     {
       "source_id": "source-aprilia-ciao-moto-alicante-news",
-      "source_role": "primary_evidence",
+      "source_role": "primary_monitoring",
       "brand_id": "brand-aprilia",
       "publisher": "Piaggio & C. SpA / Aprilia España",
-      "source_type": "official_dealer_announcement",
+      "source_type": "official_statement",
       "url": "https://www.aprilia.com/es_ES/aprilia-world/dealer/nuevo-concesionario-en-alicante/",
       "title": "Nuevo concesionario del Grupo Piaggio en Alicante: Ciao Moto",
       "reliability_class": "primary_official",
@@ -1057,7 +1057,7 @@
         "service"
       ],
       "capture_mode": "http_html",
-      "discovery_status": "individual_outlet_confirmed",
+      "discovery_status": "directory_content_visible",
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 30,
       "notes": "La comunicación oficial identifica Ciao Moto como concesionario oficial del Grupo Piaggio y declara expresamente que el showroom de Avenida de Orihuela 99 expone modelos de Aprilia, Piaggio, Vespa y Moto Guzzi, además de disponer de taller técnico. Evidencia directa de comercialización Aprilia en ese establecimiento."
