@@ -460,7 +460,7 @@
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Actividad comercial actual en España acreditada por fichas del localizador oficial Piaggio. Primera revisión individual en Barcelona; la cobertura de las demás provincias prioritarias sigue pendiente."
+      "notes": "Actividad comercial actual en España acreditada por fichas individuales del localizador oficial Piaggio. Primera revisión individual documenta puntos en Barcelona y Murcia; Málaga, Cádiz y Alicante siguen pendientes de ficha vigente individualizada."
     },
     {
       "brand_id": "brand-qjmotor",
@@ -1221,6 +1221,26 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "La página de ofertas del operador publica una QJ SRK 800 con precio y condiciones comerciales actuales, e identifica la dirección del establecimiento en Murcia. La página corporativa no incluye QJ en su lista de concesiones oficiales, por lo que solo se acredita oferta comercial, no autorización oficial."
+    },
+    {
+      "source_id": "source-piaggio-jesant-murcia",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-piaggio",
+      "publisher": "Piaggio & C. SpA / Piaggio España",
+      "source_type": "official_directory",
+      "url": "https://commercial.piaggio.com/es_ES/dealer-locator/murcia/automocion-jesant-s-l/",
+      "title": "Automoción Jesant, S.L. — distribuidor y asistencia oficial Piaggio en Murcia",
+      "reliability_class": "primary_official",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Ficha individual vigente del localizador oficial Piaggio. Identifica Automoción Jesant, S.L. como Distribuidor Oficial y Punto de Asistencia Oficial en Crta. Santa Catalina 45, 30012 Murcia. La ficha acredita venta y servicio."
     }
   ]
 }

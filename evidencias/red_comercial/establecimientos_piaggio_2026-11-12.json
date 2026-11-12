@@ -19,13 +19,14 @@
     "reliability": "primary_official",
     "notes": "Las fichas individuales distinguen expresamente Distribuidor Oficial y Punto de Asistencia Oficial/Autorizado."
   },
-  "outlet_count": 3,
+  "outlet_count": 4,
   "counts": {
     "by_province": {
-      "Barcelona": 3
+      "Barcelona": 3,
+      "Murcia": 1
     },
-    "sales": 2,
-    "service": 3,
+    "sales": 3,
+    "service": 4,
     "service_only": 1
   },
   "outlets": [
@@ -86,13 +87,32 @@
       "official_authorization_status": "listed_by_official_brand",
       "observed_at": "2026-11-12",
       "notes": "La ficha oficial lo clasifica como Punto de Asistencia Autorizado, no como Distribuidor Oficial. No se cuenta como punto de venta."
+    },
+    {
+      "outlet_id": "piaggio-automocion-jesant-murcia",
+      "brand": "Piaggio",
+      "trading_name": "AUTOMOCION JESANT, S.L.",
+      "operator": "Automoción Jesant, S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Crta. Santa Catalina, 45, 30012 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://commercial.piaggio.com/es_ES/dealer-locator/murcia/automocion-jesant-s-l/",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del localizador oficial Piaggio clasifica el establecimiento como Distribuidor Oficial y Punto de Asistencia Oficial. La ficha publica teléfonos 968 345 100 y 667 690 538; se omiten del inventario para mantener el criterio de direcciones públicas y funciones comerciales."
     }
   ],
   "limitations": [
     "El inventario es un mínimo documental observado, no un censo exhaustivo de la red Piaggio.",
     "La cobertura comprobada en esta entrega se limita a tres fichas de Barcelona: dos distribuidores oficiales y un punto de asistencia autorizado.",
-    "No se incorporan puntos de Málaga, Cádiz, Alicante o Murcia sin una ficha oficial vigente individualizada.",
     "Un listado promocional antiguo de concesionarios no se utiliza para acreditar la red actual ni para completar provincias sin evidencia vigente.",
-    "Las sedes de un mismo operador se mantienen separadas cuando corresponden a establecimientos físicos distintos."
+    "Las sedes de un mismo operador se mantienen separadas cuando corresponden a establecimientos físicos distintos.",
+    "La cobertura de Málaga, Cádiz y Alicante sigue pendiente de fichas individuales vigentes; no se infiere ausencia de red en esas provincias."
   ]
 }
