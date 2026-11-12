@@ -129,7 +129,6 @@ Las nuevas se agregan por provincia de matriculación; los usados, por provincia
 
 El dashboard debe servirse desde la raíz del sitio para que las rutas relativas `public/data/` resuelvan correctamente. Si un fichero no está disponible o falla la carga, muestra un error explícito; no sustituye ausencias por ceros.
 
-
 ### Indicadores relativos de intensidad territorial
 
 Se incorporan dos referencias oficiales provinciales:
@@ -151,9 +150,20 @@ Se marca `REVISAR` cuando las matriculaciones acumuladas alcanzan el 25% del par
 
 La generación se ejecuta en el workflow mensual después del agregado provincial, por lo que los dos archivos de salida se publican junto con el resto de datos cuando el workflow actualiza `public/data`.
 
-
 ### Informe territorial integrado recurrente
 
 El script `generar_informe_territorial_integrado.py` construye `informes/informe-territorial-integrado.md` a partir de los CSV y JSON generados en cada ejecución MATRABA. El diagnóstico de dispersión incorpora todas las provincias con más del 20% de domicilios externos, su persistencia mensual, concentración de destinos (principal destino, tres primeros, HHI y número efectivo de destinos) y una advertencia para muestras inferiores a 300 domicilios conocidos. Incluye la serie mensual, concentración provincial, intensidad respecto a población y parque, dispersión entre provincia de matriculación y domicilio del vehículo, balance de entradas/salidas, flujos origen-destino, persistencia y variabilidad mensual de corredores, comparación del flujo inverso y seguimiento de Segovia. El generador verifica que el total de motocicletas nuevas por códigos 50/51 coincide con el cruce provincial y que este ha superado la conciliación con el agregado independiente.
 
 En los barridos programados y en el modo manual `actualizar`, el informe se incorpora al commit junto con `public/data`. En modo `piloto`, se adjunta al artefacto y al GitHub Release, sin actualizar el informe publicado en la rama. La generación está cubierta por pruebas unitarias. Los umbrales se muestran como alertas de revisión, nunca como anomalías confirmadas.
+
+## Seguimiento histórico de la red comercial
+
+El modelo temporal de marcas, empresas responsables, establecimientos, relaciones comerciales, eventos y evidencias está incorporado en `main`. Su diseño y casos piloto se describen en:
+
+- [Diseño del seguimiento histórico](informes/diseno-seguimiento-historico-red-comercial-2026-11-11.md).
+- [Guía del esquema SQLite](informes/guia-esquema-red-comercial.md).
+- [Variabilidad de la red comercial en España](informes/variabilidad-red-comercial-espana-2026-11-11.md).
+
+La captura reproducible está en fase piloto de desarrollo. El inventario `fuentes_red_comercial.json` define seis URLs públicas; `capturar_fuentes_red_comercial.py` consulta exclusivamente esas direcciones y compara hashes. La migración `migraciones/002_capturas_fuentes.sql` registra el resultado por fuente y captura. El proceso no rastrea enlaces, no conserva páginas completas y no infiere altas/bajas comerciales. Consulta la [guía de captura reproducible](informes/guia-captura-reproducible-red-comercial.md).
+
+**Estado:** la captura técnica y sus pruebas están propuestas en una rama de trabajo. La programación periódica, el comparador semántico y la cola de revisión humana quedan pendientes de validación del piloto.
