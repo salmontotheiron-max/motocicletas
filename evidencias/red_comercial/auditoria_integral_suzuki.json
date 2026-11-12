@@ -5,17 +5,17 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 36,
-    "pending_entries": 40,
-    "reviewed_groups": 17,
-    "coverage": "Registro de control de auditoría; 36 de 76 entradas evaluadas individualmente. Las 40 entradas restantes continúan pendientes; no equivale a auditoría completa."
+    "individually_assessed_entries": 39,
+    "pending_entries": 37,
+    "reviewed_groups": 18,
+    "coverage": "Registro de control de auditoría; 39 de 76 entradas evaluadas individualmente. Las 37 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "pending_individual_review": 40,
-    "unresolved_address_or_operator": 9,
-    "corroborated_operator_and_location": 12,
+    "pending_individual_review": 37,
+    "unresolved_address_or_operator": 10,
+    "corroborated_operator_and_location": 13,
     "same_location_multiple_service_entries": 4,
-    "same_operator_multiple_locations": 11
+    "same_operator_multiple_locations": 12
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -28,7 +28,8 @@
     "La revisión de Barcelona (12/11/2026) contrasta las ocho entradas con el localizador oficial Suzuki y páginas actuales de cada operador; las cuatro entradas Maquina Motors se agrupan bajo un mismo operador, pero corresponden a cuatro ubicaciones diferenciadas.",
     "Las direcciones comerciales y los servicios se cuentan por ubicación física declarada por el operador; una ficha de taller o exposición no genera por sí sola una segunda ubicación.",
     "La revisión de Cádiz (12/11/2026) contrasta las cuatro entradas El Motorista con el localizador oficial Suzuki y el directorio actual del operador; se agrupan bajo un único operador con cuatro ubicaciones diferenciadas. En Jerez, el taller técnico publicado en C. Amianto se distingue de la tienda Suzuki de Av. de Europa y no se suma como sede Suzuki independiente.",
-    "La revisión de Santa Cruz de Tenerife (12/11/2026) contrasta cuatro entradas con el localizador Suzuki y páginas actuales de Fierro Motor y Femotor/Grupo Fedeauto. Fierro Motor se agrupa como un operador con tienda Suzuki en C/ Goya, 3 y taller oficial en C/ Islas Filipinas, 9; la entrada de La Palma mantiene discrepancia entre nº 31 del localizador y nº 32 publicado por el operador, sin atribuir autorización Suzuki específica a esa sede. Femotor confirma exposición y taller Suzuki en Av. de los Majuelos, 24, como una sola ubicación."
+    "La revisión de Santa Cruz de Tenerife (12/11/2026) contrasta cuatro entradas con el localizador Suzuki y páginas actuales de Fierro Motor y Femotor/Grupo Fedeauto. Fierro Motor se agrupa como un operador con tienda Suzuki en C/ Goya, 3 y taller oficial en C/ Islas Filipinas, 9; la entrada de La Palma mantiene discrepancia entre nº 31 del localizador y nº 32 publicado por el operador, sin atribuir autorización Suzuki específica a esa sede. Femotor confirma exposición y taller Suzuki en Av. de los Majuelos, 24, como una sola ubicación.",
+    "La revisión de Las Palmas (12/11/2026) contrasta las tres entradas con el localizador Suzuki Moto, la web oficial de Fedeauto y fuentes sectoriales/comerciales de Pole Position. Fedeauto se mantiene sin corroborar como red de motocicletas porque su web acredita Suzuki automóvil, sin prueba específica de motos. Pole Position se confirma como operador Suzuki de motocicletas en Av. de Escaleritas, 70; su taller de C. Joaquín Blume, 21 se conserva como ubicación técnica del mismo operador, con autorización Suzuki específica no acreditada independientemente."
   ],
   "entries": [
     {
@@ -742,13 +743,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "C/ Diego Vega Sarmiento 54, 35014, Las Palmas de Gran Canaria",
       "directory_phone": "928 475 080",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-fedeauto-las-palmas",
+      "operator_assessment": "Grupo Fedeauto / Fedeauto",
+      "counting_recommendation": "El localizador Suzuki de motocicletas incluye la dirección, pero las fuentes actuales del operador consultadas describen actividad Suzuki de automóviles y no acreditan expresamente venta o servicio de motocicletas en esta sede. Mantener sin contar como establecimiento Suzuki de motos corroborado hasta confirmar el alcance de la representación.",
+      "confidence": "high_for_car_dealership;low_for_motorcycle_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://fedeauto.redsuzuki.es/",
+        "https://www.grupofedeauto.com/contacto",
+        "https://auto.suzuki.es/concesionarios"
+      ],
+      "limitation": "La web oficial del operador acredita concesionario Suzuki de automóviles, no permite por sí sola extrapolar representación de motocicletas; la entrada permanece en el directorio Suzuki Moto."
     },
     {
       "source_id": "suzuki-dir-043",
@@ -757,13 +763,17 @@
       "service_type": "Exposición",
       "directory_address": "Avenida Escaleritas número 70, 35011, Las Palmas de Gran Canaria",
       "directory_phone": "928 48 50 92",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-pole-position-las-palmas",
+      "operator_assessment": "Pole Position Moto Sport S.L.",
+      "counting_recommendation": "1 ubicación de exposición de motocicletas Suzuki corroborada en Av. de Escaleritas, 70, Las Palmas de Gran Canaria. La actividad como concesionario oficial Suzuki de motos consta en información sectorial reciente (marzo de 2025) y coincide con el localizador oficial; no equivale a comprobación presencial ni de ventas actuales.",
+      "confidence": "high_for_operator_and_motorcycle_dealer_activity;medium_for_current_status",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.canariasenmoto.com/index.php?id=31831&pagina=moteros&ver=noticia",
+        "https://www.canariasenmoto.com/index.php?id_empresa=30&pagina=empresas&ver=empresa"
+      ],
+      "limitation": "Evidencia sectorial fechada en marzo de 2025 más localizador actual; sin visita física, llamada ni prueba de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-044",
@@ -772,13 +782,18 @@
       "service_type": "Taller",
       "directory_address": "C. Joaquín Blume, 21 - Escaleritas, 35011, Las palmas",
       "directory_phone": "928 48 50 92",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-pole-position-las-palmas",
+      "operator_assessment": "Pole Position Moto Sport S.L.",
+      "counting_recommendation": "Taller atribuido al mismo operador en C. Joaquín Blume, 21, Las Palmas de Gran Canaria; teléfono coincidente con la exposición de Av. de Escaleritas, 70. Mantener como ubicación técnica separada, pero sin elevar a taller oficial Suzuki actual porque la evidencia pública localizada no confirma de forma independiente esa autorización para esta dirección.",
+      "confidence": "medium_for_same_operator_and_workshop_location;low_for_current_suzuki_authorization",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.paginasamarillas.es/f/las-palmas-de-gran-canaria/pole-position_162862668_000000004.html",
+        "https://www.cylex.es/las-palmas-de-gran-canaria/pole-position-moto-sport-s-l--11715163.html",
+        "https://www.canariasenmoto.com/index.php?id_empresa=30&pagina=empresas&ver=empresa"
+      ],
+      "limitation": "La dirección del taller se apoya en directorios comerciales y teléfono coincidente; la representación oficial Suzuki está corroborada para el operador, no de forma independiente para esta sede técnica."
     },
     {
       "source_id": "suzuki-dir-045",
