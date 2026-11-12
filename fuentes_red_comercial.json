@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "description": "Fuentes públicas seleccionadas para probar captura reproducible. No es un censo ni un listado exhaustivo de concesionarios.",
+  "sources": [
+    {
+      "source_id": "src-zontes-centro-madrid-motociclismo",
+      "publisher": "Motociclismo",
+      "source_type": "press",
+      "reliability_class": "secondary_reputable",
+      "title": "Inauguración de Zontes Centro Madrid",
+      "url": "https://www.motociclismo.es/noticias/zontes-inaugura-nuevo-concesionario-en-pleno-centro-madrid_328379_102.html"
+    },
+    {
+      "source_id": "src-zontes-centro-madrid-revista-tu-moto",
+      "publisher": "Revista Tu Moto",
+      "source_type": "press",
+      "reliability_class": "secondary_reputable",
+      "title": "Zontes Centro Madrid",
+      "url": "https://revistatumoto.com/zontes-centro-madrid/"
+    },
+    {
+      "source_id": "src-zxmoto-aviso-legal",
+      "publisher": "ZXMOTO España",
+      "source_type": "company_page",
+      "reliability_class": "primary_business",
+      "title": "Aviso legal ZXMOTO España",
+      "url": "https://zxmoto.es/aviso-legal/"
+    },
+    {
+      "source_id": "src-zxmoto-desmotron-soymotero",
+      "publisher": "SoyMotero",
+      "source_type": "press",
+      "reliability_class": "secondary_reputable",
+      "title": "ZXMOTO inicia operaciones en España",
+      "url": "https://soymotero.net/noticia/zxmoto-inicia-operaciones-en-espana/"
+    },
+    {
+      "source_id": "src-zxmoto-desmotron-mototaller",
+      "publisher": "MotoTaller",
+      "source_type": "press",
+      "reliability_class": "secondary_reputable",
+      "title": "ZXMOTO aterriza en España con Desmotrón",
+      "url": "https://mototaller.info/zxmoto-aterriza-en-espana-con-desmotron-como-distribuidor-exclusivo/"
+    },
+    {
+      "source_id": "src-motos-copa-cierre-elespanol",
+      "publisher": "El Español",
+      "source_type": "press",
+      "reliability_class": "secondary_reputable",
+      "title": "Cierre de Motos Copa en Valladolid",
+      "url": "https://www.elespanol.com/castilla-y-leon/region/valladolid/20250930/cierre-sorpresa-concesionario-motos-valladolid-afectados-vigilan-evitar-lleve/1003743947325_0.html"
+    }
+  ]
+}
