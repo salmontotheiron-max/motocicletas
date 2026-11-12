@@ -1,22 +1,46 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "country_scope": "ES",
   "registry_reviewed_at": "2026-11-12",
   "default_capture_interval_days": 7,
+  "market_scope": {
+    "coverage": "open_market",
+    "tracks": [
+      "manufacturer_entry",
+      "manufacturer_exit",
+      "brand_entry",
+      "brand_exit",
+      "importer_or_distributor_change",
+      "outlet_opening",
+      "outlet_closure",
+      "outlet_relocation",
+      "dealer_operator_change",
+      "brand_added_to_outlet",
+      "brand_removed_from_outlet",
+      "sales_or_service_scope_change"
+    ],
+    "discovery_is_continuous": true,
+    "unknown_brands_allowed": true,
+    "unknown_manufacturers_allowed": true
+  },
   "policy": {
     "official_sources_only_for_primary_registry": true,
+    "discovery_sources_may_be_secondary": true,
     "absence_is_not_closure": true,
+    "announcement_is_not_operation": true,
     "manual_review_required_before_history_update": true,
     "capture_user_agent": "ObservatorioRedComercial/1.0"
   },
+  "manufacturers": [],
   "brands": [
-    {"brand_id": "brand-suzuki", "canonical_name": "Suzuki", "market_status": "established"},
-    {"brand_id": "brand-zontes-es", "canonical_name": "Zontes", "market_status": "established"},
-    {"brand_id": "brand-zxmoto-es", "canonical_name": "ZXMOTO", "market_status": "recent_entry"}
+    {"brand_id": "brand-suzuki", "canonical_name": "Suzuki", "manufacturer_id": null, "market_status": "established"},
+    {"brand_id": "brand-zontes-es", "canonical_name": "Zontes", "manufacturer_id": null, "market_status": "established"},
+    {"brand_id": "brand-zxmoto-es", "canonical_name": "ZXMOTO", "manufacturer_id": null, "market_status": "recent_entry"}
   ],
   "sources": [
     {
       "source_id": "source-suzuki-es-moto-dealers",
+      "source_role": "primary_monitoring",
       "brand_id": "brand-suzuki",
       "publisher": "Suzuki Moto España",
       "source_type": "official_directory",
@@ -33,6 +57,7 @@
     },
     {
       "source_id": "source-zontes-es-dealers",
+      "source_role": "primary_monitoring",
       "brand_id": "brand-zontes-es",
       "publisher": "Turbimot, S.L.U. / Zontes España",
       "source_type": "official_directory",
@@ -49,6 +74,7 @@
     },
     {
       "source_id": "source-zxmoto-es-dealers",
+      "source_role": "primary_monitoring",
       "brand_id": "brand-zxmoto-es",
       "publisher": "Desmotrón, S.L.U. / ZXMOTO España",
       "source_type": "official_directory",
