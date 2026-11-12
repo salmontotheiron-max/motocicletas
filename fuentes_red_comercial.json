@@ -1125,7 +1125,7 @@
     {
       "source_id": "source-qjmotor-motos-bordoy-business",
       "source_role": "market_discovery",
-      "brand_id": "brand-qjmotor",
+      "brand_id": null,
       "publisher": "Motos Bordoy, S.A.",
       "source_type": "company_page",
       "url": "https://www.motosbordoybarcelona.com/es/quienes-somos",
@@ -1146,7 +1146,7 @@
     {
       "source_id": "source-qjmotor-expomoto-malaga-business",
       "source_role": "market_discovery",
-      "brand_id": "brand-qjmotor",
+      "brand_id": null,
       "publisher": "Expomoto Málaga",
       "source_type": "company_page",
       "url": "https://expomotomalaga.es/marcas/qjmotor/",
@@ -1166,7 +1166,7 @@
     {
       "source_id": "source-qjmotor-castro-cadiz-business",
       "source_role": "market_discovery",
-      "brand_id": "brand-qjmotor",
+      "brand_id": null,
       "publisher": "Castro La Motocicleta",
       "source_type": "company_page",
       "url": "https://castrolamotocicleta.com/qj-motor/",
@@ -1186,7 +1186,7 @@
     {
       "source_id": "source-qjmotor-grupo-prim-alicante-business",
       "source_role": "market_discovery",
-      "brand_id": "brand-qjmotor",
+      "brand_id": null,
       "publisher": "Grupo Prim",
       "source_type": "company_page",
       "url": "https://www.grupoprim.com/",
@@ -1206,7 +1206,7 @@
     {
       "source_id": "source-qjmotor-francisco-belmonte-murcia-business",
       "source_role": "market_discovery",
-      "brand_id": "brand-qjmotor",
+      "brand_id": null,
       "publisher": "Francisco Belmonte, S.A.",
       "source_type": "company_page",
       "url": "https://franciscobelmonte.com/promociones-ofertas-de-motos/",
