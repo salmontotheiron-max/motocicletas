@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "Suzuki",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se incorporan entradas del localizador oficial específico de Suzuki Moto. Se interpreta Exposición como punto de venta listado, Taller como servicio posventa y Taller y Exposición como ambas funciones. Cada dirección física se cuenta por separado; no se deducen ventas realizadas ni actividad diaria.",
+  "source": {
+    "source_type": "official_brand_directory",
+    "publisher": "Suzuki Motor Ibérica / Suzuki Moto España",
+    "url": "https://moto.suzuki.es/concesionarios",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "Directorio oficial con listados provinciales que indican funciones de exposición y/o taller."
+  },
+  "outlet_count": 18,
+  "counts": {
+    "by_province": {
+      "Barcelona": 8,
+      "Málaga": 3,
+      "Cádiz": 4,
+      "Alicante": 2,
+      "Murcia": 1
+    },
+    "sales": 17,
+    "service": 11,
+    "service_only": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "suzuki-barcelona-box-sicilia",
+      "trading_name": "BOX SICILIA 210",
+      "operator": "BOX SICILIA 210",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C. Sicilia, 210, 08013, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-maquina-brusi",
+      "trading_name": "MAQUINA MOTORS",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Brusi, 92, 08006, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-maquina-manresa",
+      "trading_name": "MAQUINA MOTORS MANRESA",
+      "operator": "MAQUINA MOTORS MANRESA",
+      "province": "Barcelona",
+      "municipality": "Sant Fruitós de Bages",
+      "public_address": "P.I. Riu d'Or, Ctra. de Berga, km 1, 08272 Sant Fruitós de Bages, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-maquina-mollet",
+      "trading_name": "MAQUINA MOTORS MOLLET",
+      "operator": "MAQUINA MOTORS MOLLET",
+      "province": "Barcelona",
+      "municipality": "Mollet del Vallès",
+      "public_address": "Av. d'Antoni Gaudí, 73, 08100 Mollet del Vallès, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-maquina-terrassa",
+      "trading_name": "MAQUINA MOTORS TERRASSA",
+      "operator": "MAQUINA MOTORS TERRASSA",
+      "province": "Barcelona",
+      "municipality": "Terrassa",
+      "public_address": "Carrer de l'Anoia, 7, 08221 Terrassa, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-moto-stop-carbo",
+      "trading_name": "MOTO STOP CARBÓ",
+      "operator": "MOTO STOP CARBÓ",
+      "province": "Barcelona",
+      "municipality": "Castelldefels",
+      "public_address": "Pau Casals, 4, 08860 Castelldefels, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-motos-boquet",
+      "trading_name": "MOTOS BOQUET",
+      "operator": "MOTOS BOQUET",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "C. El Torrent, 39-43, 08302 Mataró, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-barcelona-oriol-motos",
+      "trading_name": "ORIOL MOTOS",
+      "operator": "ORIOL MOTOS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Rocafort, 89, 08015, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-malaga-siebla-exposicion",
+      "trading_name": "SIEBLA",
+      "operator": "SIEBLA",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "Calle Ramón Gómez de la Serna, 17, 29600 Marbella, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-malaga-siebla-taller",
+      "trading_name": "SIEBLA",
+      "operator": "SIEBLA",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "C. Carbón, 38, 29603 Marbella, Málaga, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller."
+    },
+    {
+      "outlet_id": "suzuki-malaga-sk-motos",
+      "trading_name": "SK MOTOS",
+      "operator": "SK MOTOS",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "C. La Bohème, 50, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-cadiz-motorista-cadiz",
+      "trading_name": "EL MOTORISTA",
+      "operator": "EL MOTORISTA",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Plaza de Madrid, 9, 11010 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-cadiz-motorista-chiclana",
+      "trading_name": "EL MOTORISTA",
+      "operator": "EL MOTORISTA",
+      "province": "Cádiz",
+      "municipality": "Chiclana de la Frontera",
+      "public_address": "Virgen del Carmen, 2, 11130 Chiclana de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-cadiz-motorista-algeciras",
+      "trading_name": "EL MOTORISTA",
+      "operator": "EL MOTORISTA",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Ctra. Málaga, km 108, 11205 Algeciras, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Exposición."
+    },
+    {
+      "outlet_id": "suzuki-cadiz-motorista-jerez",
+      "trading_name": "EL MOTORISTA",
+      "operator": "EL MOTORISTA",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avda. Europa, 13, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-alicante-motocicletas-marin",
+      "trading_name": "MOTOCICLETAS MARÍN",
+      "operator": "MOTOCICLETAS MARÍN",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avda. de Alicante, 96, 03203 Elche, Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-alicante-motocicletas-prim",
+      "trading_name": "MOTOCICLETAS PRIM ALICANTE",
+      "operator": "MOTOCICLETAS PRIM ALICANTE",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carretera de Ocaña, 31, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    },
+    {
+      "outlet_id": "suzuki-murcia-motos-marin",
+      "trading_name": "MOTOS MARIN MURCIA",
+      "operator": "MOTOS MARIN MURCIA",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Av. San Juan de la Cruz, 18, 30011 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://moto.suzuki.es/concesionarios",
+      "evidence_type": "official_brand_directory_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Entrada del listado provincial del localizador oficial Suzuki Moto; la etiqueta de función visible es Taller y Exposición."
+    }
+  ],
+  "limitations": [
+    "Inventario documental de las cinco provincias prioritarias a partir del listado visible del localizador; no es un censo exhaustivo de toda la red Suzuki en España.",
+    "Las entradas se cuentan por dirección física y función publicada; sedes de un mismo operador pueden corresponder a direcciones distintas.",
+    "El rótulo Exposición acredita presencia de exposición/venta listada, no ventas efectivas, matriculaciones ni cuota del establecimiento.",
+    "Los puntos rotulados solo como Taller no se cuentan como puntos de venta.",
+    "No se infiere ausencia de red en provincias no auditadas."
+  ],
+  "methodology": "Consulta manual del localizador oficial Suzuki Moto. Se transcriben establecimientos bajo las cinco provincias prioritarias y se asignan roles según las etiquetas expresas Taller, Exposición y Taller y Exposición. Se deduplica por dirección física, no por operador. Consulta del 2026-11-12."
+}
