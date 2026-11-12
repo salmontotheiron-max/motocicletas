@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se acepta la autodeclaración comercial pública y específica del operador como evidencia de oferta de marca. La autorización oficial del fabricante/importador se conserva como campo separado y no se infiere de una mera autodeclaración. Los directorios publicados por terceros o dominios no confirmados se incluyen como oferta comercial declarada, con la limitación explícita.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Cuenta en la cobertura comercial descriptiva cuando existe una declaración pública concreta del operador o un directorio de tiendas que identifica el punto y la marca.",
+    "official_authorization": "Solo se etiqueta self_declared_official o importer_and_operator_declaration cuando la propia entidad lo declara; not_independently_confirmed indica que no se ha contrastado con el importador/fabricante."
+  },
+  "outlet_count": 9,
+  "counts": {
+    "by_brand": {
+      "Zontes": 3,
+      "SYM": 3,
+      "Voge": 3
+    },
+    "by_province": {
+      "Barcelona": 6,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Murcia": 1
+    },
+    "sales": 9
+  },
+  "outlets": [
+    {
+      "outlet_id": "zontes-zontes-murcia",
+      "brand": "Zontes",
+      "trading_name": "Zontes Murcia / Steel Center",
+      "operator": "Steel Center, S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Av. del Progreso, 232, B, 30012 Murcia",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://zontesmurcia.com/",
+      "supporting_urls": [
+        "https://zontesmurcia.com/nosotros/",
+        "https://zontesmurcia.com/taller/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El propio establecimiento se identifica como concesionario/distribuidor y punto de venta oficial Zontes; publica gama, atención comercial, prueba de vehículos y taller."
+    },
+    {
+      "outlet_id": "zontes-grupo-via-republica-argentina",
+      "brand": "Zontes",
+      "trading_name": "Zontes Barcelona – República Argentina",
+      "operator": "Grupo Vía Motos",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Av. de la República Argentina, 83, 08023 Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://grupoviamotos.com/",
+      "supporting_urls": [
+        "https://zontesbarcelona.com/contacto/",
+        "https://zontesbarcelona.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Grupo Vía identifica expresamente el nº 83 como concesionario oficial Zontes; el sitio específico Zontes Barcelona confirma dirección, contacto y venta."
+    },
+    {
+      "outlet_id": "zontes-grupo-via-avenida-madrid",
+      "brand": "Zontes",
+      "trading_name": "Zontes Barcelona – Avenida Madrid",
+      "operator": "Grupo Vía Motos",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Av. de Madrid, 80, 08028 Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://grupoviamotos.com/",
+      "supporting_urls": [
+        "https://zontesbarcelona.com/contacto/",
+        "https://zontesbarcelona.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Grupo Vía identifica expresamente el nº 80 como concesionario oficial Zontes; el sitio específico Zontes Barcelona confirma dirección, contacto y venta."
+    },
+    {
+      "outlet_id": "sym-motos-bordoy-balmes",
+      "brand": "SYM",
+      "trading_name": "Motos Bordoy – Balmes",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Balmes, 186, 08006 Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/tiendas",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/servicios",
+        "https://www.motosbordoybarcelona.com/es/sym-20-anos-siempre-contigo",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "notes": "Motos Bordoy declara ser importador de SYM en España; sus páginas ofrecen vehículos nuevos SYM y citan esta tienda entre sus puntos de venta. La propia empresa se declara concesionario oficial SYM."
+    },
+    {
+      "outlet_id": "sym-motos-bordoy-valencia-barcelona",
+      "brand": "SYM",
+      "trading_name": "Motos Bordoy – Valencia",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Valencia, 179, 08011 Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/tiendas",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/servicios",
+        "https://www.motosbordoybarcelona.com/es/sym-20-anos-siempre-contigo",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "notes": "Motos Bordoy declara ser importador de SYM en España; sus páginas ofrecen vehículos nuevos SYM y citan esta tienda entre sus puntos de venta. La propia empresa se declara concesionario oficial SYM."
+    },
+    {
+      "outlet_id": "sym-motos-bordoy-urgell",
+      "brand": "SYM",
+      "trading_name": "Motos Bordoy – Urgell",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Comte d'Urgell, 240, 08036 Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/tiendas",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/servicios",
+        "https://www.motosbordoybarcelona.com/es/sym-20-anos-siempre-contigo",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "notes": "Motos Bordoy declara ser importador de SYM en España; sus páginas ofrecen vehículos nuevos SYM y citan esta tienda entre sus puntos de venta. La propia empresa se declara concesionario oficial SYM."
+    },
+    {
+      "outlet_id": "voge-vogospain-jerez",
+      "brand": "Voge",
+      "trading_name": "Vogo Spain / punto Jerez",
+      "operator": "Vogo Spain (denominación publicada en el directorio)",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Platino, 1, 11405 Jerez de la Frontera, Cádiz",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://vogospain.com/es/tiendas",
+      "evidence_type": "published_store_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El directorio publicado en vogospain.com incluye el punto con dirección y contacto. Se incorpora como oferta comercial declarada a efectos de cobertura; la correspondencia societaria/dominio con ONETRÓN y la red oficial VOGE no se da por probada."
+    },
+    {
+      "outlet_id": "voge-vogospain-badametal",
+      "brand": "Voge",
+      "trading_name": "BADAMETAL",
+      "operator": "BADAMETAL",
+      "province": "Barcelona",
+      "municipality": "Badalona",
+      "public_address": "C/ de Nàpols, 42, 08914 Badalona, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://vogospain.com/es/tiendas",
+      "evidence_type": "published_store_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El directorio publicado en vogospain.com incluye BADAMETAL con dirección y teléfono. Se incorpora como oferta comercial declarada a efectos de cobertura; la correspondencia societaria/dominio con ONETRÓN y la red oficial VOGE no se da por probada."
+    },
+    {
+      "outlet_id": "voge-udesign-san-pedro-alcantara",
+      "brand": "Voge",
+      "trading_name": "UDESING",
+      "operator": "UDESING",
+      "province": "Málaga",
+      "municipality": "San Pedro Alcántara",
+      "public_address": "Calle Luxemburgo esquina Calle Turquía, Polígono Industrial, 29670 San Pedro Alcántara, Málaga",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://vogospain.com/es/tiendas",
+      "evidence_type": "published_store_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El directorio publicado en vogospain.com incluye UDESING con dirección, teléfono y correo. Se incorpora como oferta comercial declarada a efectos de cobertura; la correspondencia societaria/dominio con ONETRÓN y la red oficial VOGE no se da por probada."
+    }
+  ]
+}
