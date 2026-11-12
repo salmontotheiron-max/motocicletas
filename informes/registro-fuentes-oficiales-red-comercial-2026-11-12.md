@@ -52,3 +52,23 @@ Un anuncio de lanzamiento no prueba actividad comercial efectiva. La ausencia de
 3. Implementar capturas con fecha, URL final, estado HTTP, tipo de contenido, hash y evidencia.
 4. Comparar capturas y generar candidatos, sin actualización automática del histórico.
 5. Incorporar marcas y fabricantes nuevos conforme se descubran y verifiquen.
+
+## Hallazgos iniciales de fuentes de establecimientos (12-11-2026)
+
+La revisión de fuentes públicas ha identificado páginas de establecimientos que se presentan como representantes de marca:
+
+- Zontes Murcia declara ser distribuidor y punto de venta oficial, con atención comercial y técnica, en Av. del Progreso, 232 B, Murcia: https://zontesmurcia.com/.
+- Zontes BCN declara ser distribuidor y punto de venta oficial en Barcelona: https://zontesbarcelona.com/.
+- ZXMOTO ASBA Barcelona se presenta como franquicia de la marca, identifica a Comercial Impala, S.A. y señala Carrer de Calvet 51: https://zxmotoasba.com/dealership.
+
+Estas páginas se han incorporado como fuentes de descubrimiento de tipo company_page y fiabilidad primary_business. Son declaraciones de los propios establecimientos, no confirmaciones del fabricante ni eventos históricos aprobados. Deben contrastarse con el directorio oficial, el operador legal y la evidencia de actividad efectiva antes de crear o actualizar entidades del histórico.
+
+La página oficial de ZXMOTO continúa mostrando «Próximas aperturas» en la vista textual del localizador, mientras existen páginas de establecimientos que declaran operar con la marca. Esta discrepancia justifica el seguimiento paralelo de directorios oficiales y evidencia empresarial secundaria; no se resolverá inventando una lista oficial.
+
+## Captura periódica: primera implementación
+
+El script capturar_fuentes_red_comercial.py realiza peticiones HTTPS de lectura con User-Agent identificable, timeout, límite de tamaño y comprobación de robots.txt. No ejecuta JavaScript ni automatiza formularios o geolocalización. Extrae texto visible, registra fecha UTC, URL solicitada/final, estado HTTP, tipo de contenido, SHA-256 y resultado técnico. Conserva el HTML original comprimido cuando el contenido es nuevo y mantiene un registro JSONL de observaciones.
+
+El workflow .github/workflows/capturar-red-comercial.yml permite ejecución manual y programa barridos semanales los lunes a las 06:40 UTC. Tras la integración en la rama predeterminada, persistirá snapshots y metadatos mediante commits versionados. Las fuentes con captura manual quedan fuera de la ejecución automática.
+
+La captura es una observación de fuente, no una extracción fiable de establecimientos. Los localizadores dinámicos pueden devolver una carcasa HTML sin sus registros; el resultado se marca y se mantiene como evidencia técnica, sin interpretar una lista vacía como cese. La comparación semántica y la generación de candidatos quedan para la siguiente fase.
