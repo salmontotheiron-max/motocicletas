@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se aceptan como puntos de venta los establecimientos individualizados en el directorio oficial de Triumph España y vinculados a una ficha de concesionario de la marca. Las funciones de venta y servicio se registran solo cuando la ficha oficial publica oferta, exposición, test ride, mantenimiento o taller. La autorización oficial deriva de la inclusión en el directorio del fabricante, no de una autodeclaración del operador.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Punto individualizado por Triumph España en su directorio oficial.",
+    "official_authorization": "manufacturer_listed significa que el fabricante incluye el establecimiento en su directorio oficial; no implica auditoría independiente de la entidad jurídica ni medición de ventas."
+  },
+  "outlet_count": 8,
+  "counts": {
+    "by_province": {
+      "Barcelona": 4,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 8,
+    "service": 8
+  },
+  "official_locator": {
+    "url": "https://www.triumphmotorcycles.es/GetDealerList.aspx?market=32",
+    "status": "directory_content_visible",
+    "notes": "Listado oficial de concesionarios Triumph España extraíble, con nombres, direcciones y enlaces a fichas individuales. Las fichas oficiales confirman los roles y servicios descritos."
+  },
+  "outlets": [
+    {
+      "outlet_id": "triumph-barcelona-italo",
+      "brand": "Triumph",
+      "trading_name": "Triumph Barcelona | Italo Motor",
+      "operator": "ITALO MOTOR",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer d'Aragó, 562, 08026 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/italo-grup",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial lo identifica como concesionario Triumph y publica motos nuevas, taller y servicios."
+    },
+    {
+      "outlet_id": "triumph-barcelona-maquina",
+      "brand": "Triumph",
+      "trading_name": "Triumph Barcelona | Maquina Motors",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Provenza, 297, 08037 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/maquina-motors",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial identifica el concesionario, exposición/ofertas y servicio técnico."
+    },
+    {
+      "outlet_id": "triumph-barcelona-mollet",
+      "brand": "Triumph",
+      "trading_name": "Triumph Mollet | Maquina Motors",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Mollet del Vallès",
+      "public_address": "Avenida Gaudí, 73, 08100 Mollet del Vallès, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/maquina-mollet",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial identifica el concesionario y publica ofertas, mantenimiento y contacto de servicio técnico."
+    },
+    {
+      "outlet_id": "triumph-barcelona-motissimo",
+      "brand": "Triumph",
+      "trading_name": "Motissimo Barcelona",
+      "operator": "MOTISSIMO TEAM S.L.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Comandant Benítez, 23 y 25, bajo, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/motissimo-team-sl",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Concesionario oficial Triumph especializado en gama off-road; la ficha oficial publica ofertas y mantenimiento. Se conserva la especialización off-road."
+    },
+    {
+      "outlet_id": "triumph-malaga",
+      "brand": "Triumph",
+      "trading_name": "Triumph Málaga",
+      "operator": "TRIUMPH MÁLAGA",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Av. José Ortega y Gasset, 124, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/triumph-malaga",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial indica exposición de gama completa y horario específico de servicio técnico."
+    },
+    {
+      "outlet_id": "triumph-cadiz-jerez",
+      "brand": "Triumph",
+      "trading_name": "Triumph Jerez",
+      "operator": "TRIUMPH JEREZ",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Rda. Aurora Boreal, s/n, CC Luz Shopping, 11408 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/triumph-jerez",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial describe exposición de motocicletas y taller para reparación y mantenimiento."
+    },
+    {
+      "outlet_id": "triumph-alicante",
+      "brand": "Triumph",
+      "trading_name": "Triumph Alicante",
+      "operator": "TRIUMPH ALICANTE",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carretera de Ocaña, 29, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/triumph-alicante",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial declara concesionario oficial, exposición, mantenimiento y test ride."
+    },
+    {
+      "outlet_id": "triumph-murcia-steel-british",
+      "brand": "Triumph",
+      "trading_name": "Triumph Murcia | Steel British",
+      "operator": "STEEL BRITISH",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida del Progreso, 195, 30012 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.triumphmotorcycles.es/concesionarios/spain/steel-british",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La ficha oficial la identifica como Triumph Murcia y publica ofertas y mantenimiento; Triumph también la menciona como concesionario oficial."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental de las cinco provincias prioritarias; no es un censo nacional.",
+    "La inclusión en el directorio oficial acredita pertenencia a la red publicada por Triumph, no ventas realizadas ni matriculaciones.",
+    "Motissimo Barcelona aparece especializado en Triumph off-road; no debe interpretarse como oferta de toda la gama de carretera.",
+    "Los roles de servicio se derivan de los servicios publicados en las fichas oficiales; no se infieren volúmenes, capacidad ni disponibilidad de taller.",
+    "No se infiere ausencia de red en provincias no auditadas."
+  ],
+  "methodology": "Consulta del directorio oficial Triumph España y contraste de las fichas individuales enlazadas para cada punto de las cinco provincias prioritarias. Se deduplica por dirección física y se distinguen venta y servicio según la descripción oficial. Fecha de consulta: 2026-11-12."
+}
