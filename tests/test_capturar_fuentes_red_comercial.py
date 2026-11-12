@@ -7,7 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from capturar_fuentes_red_comercial import (
-    extract_visible_text, fetch_page, persist_capture, robots_allowed
+    capture_all, extract_visible_text, fetch_page, persist_capture, robots_allowed
 )
 
 
@@ -73,7 +73,7 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
 
     def test_robots_fail_closed_si_no_se_puede_consultar(self):
         from urllib.error import URLError
-        with patch("capturar_fuentes_red_comercial.urlopen", side_effect=URLError("offline")):
+        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=URLError("offline")):
             allowed, status = robots_allowed("https://example.test/dealers")
         self.assertFalse(allowed)
         self.assertIn("robots_unavailable", status)
@@ -163,6 +163,36 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
             result = fetch_page("https://example.test", ["www.example.test"])
         self.assertEqual(result["capture_status"], "captured")
         robots.assert_called_once_with("https://www.example.test/dealers")
+
+
+    def test_robots_no_sigue_redireccion_automaticamente(self):
+        from urllib.error import HTTPError
+        from email.message import Message
+        headers = Message()
+        headers["Location"] = "https://external.example/robots.txt"
+        redirect = HTTPError("https://example.test/robots.txt", 302, "Found", headers, None)
+        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=redirect) as opener:
+            allowed, status = robots_allowed("https://example.test/dealers")
+        self.assertFalse(allowed)
+        self.assertIn("robots_http_302", status)
+        self.assertEqual(opener.call_count, 1)
+
+    def test_registra_fallos_aunque_ninguna_fuente_se_capture(self):
+        source = {"source_id": "source-test", "source_role": "primary_monitoring",
+                  "url": "https://example.test", "capture_mode": "http_html"}
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch("capturar_fuentes_red_comercial.load_sources", return_value=[source]), \
+             patch("capturar_fuentes_red_comercial.robots_allowed",
+                   return_value=(False, "robots_unavailable")), \
+             patch("capturar_fuentes_red_comercial.time.sleep"):
+            records = capture_all(evidence_dir=Path(tmp))
+        self.assertEqual(records[0]["capture_status"], "robots_disallowed")
+        log = Path(tmp) / "capturas.jsonl"
+        summary = Path(tmp) / "ultima_captura.json"
+        self.assertTrue(log.exists())
+        self.assertTrue(summary.exists())
+        self.assertIn('"robots_disallowed"', log.read_text(encoding="utf-8"))
+        self.assertEqual(json.loads(summary.read_text(encoding="utf-8"))["failures"], 1)
 
 
 if __name__ == "__main__":
