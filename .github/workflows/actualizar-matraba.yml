@@ -101,6 +101,14 @@ jobs:
             --inventory-file public/data/capturas_mensuales.json \
             --previous-dir public/data
 
+      - name: Detectar marcas en nuevas matriculaciones
+        run: |
+          python descubrir_marcas_matraba.py \
+            --input-dir datos/matraba_mensual \
+            --output-dir datos/matraba_mensual/resultados \
+            --inventory-file public/data/capturas_mensuales.json \
+            --registry-file fuentes_red_comercial.json
+
       - name: Generar rankings y evolución provincial
         run: |
           python generar_informe_provincial.py \
