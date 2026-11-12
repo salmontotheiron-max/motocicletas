@@ -1,0 +1,49 @@
+name: Comparar capturas de red comercial
+
+on:
+  workflow_run:
+    workflows:
+      - Capturar fuentes de red comercial
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capturas-red-comercial
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar la rama principal con la captura ya persistida
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Ejecutar pruebas automatizadas
+        run: python -m unittest discover -s tests -v
+
+      - name: Comparar capturas consecutivas por fuente
+        run: python comparar_capturas_red_comercial.py
+
+      - name: Versionar candidatos e informe de comparación
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidencias/red_comercial/candidatos_cambio.jsonl evidencias/red_comercial/resumen_comparacion.json
+          if git diff --cached --quiet; then
+            echo "No hay cambios en el resultado de la comparación."
+          else
+            git commit -m "Comparar capturas de red comercial"
+            git push origin HEAD:refs/heads/main
+          fi
