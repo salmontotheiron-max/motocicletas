@@ -15,9 +15,9 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 from urllib.robotparser import RobotFileParser
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener, urlopen
 
 ROOT = Path(__file__).resolve().parent
 REGISTRY = ROOT / "fuentes_red_comercial.json"
@@ -95,52 +95,120 @@ def robots_allowed(url: str) -> tuple[bool, str]:
         return False, f"robots_unavailable:{type(exc).__name__}"
 
 
-def fetch_page(url: str) -> dict:
-    request = Request(url, headers={
-        "User-Agent": USER_AGENT,
-        "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",
-    })
-    try:
-        with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
-            final_url = response.geturl()
-            parsed_final = urlparse(final_url)
-            parsed_original = urlparse(url)
-            original_host = (parsed_original.hostname or "").lower()
-            final_host = (parsed_final.hostname or "").lower()
-            same_site = (final_host == original_host
-                         or final_host.endswith("." + original_host)
-                         or original_host.endswith("." + final_host))
-            if parsed_final.scheme != "https" or not same_site:
-                return {"capture_status": "redirect_rejected", "http_status": response.status,
-                        "final_url": final_url, "error": "redirect_outside_https_source_domain"}
-            content_type = response.headers.get("Content-Type", "")
-            body = response.read(MAX_RESPONSE_BYTES + 1)
-            status = response.status
-    except HTTPError as exc:
-        body = exc.read(MAX_RESPONSE_BYTES + 1)
-        return {
-            "capture_status": "http_error", "http_status": exc.code,
-            "final_url": exc.geturl(), "content_type": exc.headers.get("Content-Type", ""),
-            "body": body[:MAX_RESPONSE_BYTES], "error": f"HTTP {exc.code}",
-        }
-    except (URLError, TimeoutError, OSError) as exc:
-        return {"capture_status": "network_error", "http_status": None,
-                "final_url": None, "content_type": None, "error": str(exc)}
+class _NoRedirectHandler(HTTPRedirectHandler):
+    """Devuelve las redirecciones al llamador para validarlas antes de seguirlas."""
 
-    if len(body) > MAX_RESPONSE_BYTES:
-        return {"capture_status": "response_too_large", "http_status": status,
-                "final_url": final_url, "content_type": content_type,
-                "error": f"response_exceeds_{MAX_RESPONSE_BYTES}_bytes"}
-    if status < 200 or status >= 300:
-        return {"capture_status": "http_error", "http_status": status,
-                "final_url": final_url, "content_type": content_type,
-                "body": body, "error": f"HTTP {status}"}
-    if "html" not in content_type.lower():
-        return {"capture_status": "unexpected_content_type", "http_status": status,
-                "final_url": final_url, "content_type": content_type,
-                "error": "expected_html"}
-    return {"capture_status": "captured", "http_status": status,
-            "final_url": final_url, "content_type": content_type, "body": body}
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def _open_without_redirects(request: Request):
+    return build_opener(_NoRedirectHandler).open(request, timeout=TIMEOUT_SECONDS)
+
+
+def _valid_redirect_target(target: str, original_host: str, allowed_hosts: set[str]) -> bool:
+    parsed = urlparse(target)
+    host = (parsed.hostname or "").lower().rstrip(".")
+    try:
+        port = parsed.port
+    except ValueError:
+        return False
+    return (
+        parsed.scheme == "https"
+        and bool(host)
+        and parsed.username is None
+        and parsed.password is None
+        and port in (None, 443)
+        and host in allowed_hosts
+        and original_host in allowed_hosts
+    )
+
+
+def fetch_page(url: str, allowed_redirect_hosts: list[str] | None = None) -> dict:
+    """Descarga HTML siguiendo solo redirecciones HTTPS previamente autorizadas.
+
+    Por defecto solo se permite el hostname exacto de la URL registrada.
+    Se pueden declarar hosts alternativos exactos en allowed_redirect_hosts.
+    Cada destino de redirección debe superar además su propia comprobación robots.txt.
+    """
+    parsed_original = urlparse(url)
+    original_host = (parsed_original.hostname or "").lower().rstrip(".")
+    allowed_hosts = {original_host}
+    allowed_hosts.update(
+        str(host).lower().rstrip(".") for host in (allowed_redirect_hosts or [])
+    )
+    if parsed_original.scheme != "https" or not original_host:
+        return {"capture_status": "invalid_source_url", "http_status": None,
+                "final_url": url, "error": "source_must_be_https"}
+
+    current_url = url
+    max_redirects = 5
+    redirect_codes = {301, 302, 303, 307, 308}
+    for redirect_count in range(max_redirects + 1):
+        request = Request(current_url, headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",
+        })
+        try:
+            with _open_without_redirects(request) as response:
+                final_url = response.geturl()
+                if not _valid_redirect_target(final_url, original_host, allowed_hosts):
+                    return {"capture_status": "redirect_rejected",
+                            "http_status": response.status, "final_url": final_url,
+                            "error": "final_url_outside_authorized_https_hosts"}
+                content_type = response.headers.get("Content-Type", "")
+                body = response.read(MAX_RESPONSE_BYTES + 1)
+                status = response.status
+        except HTTPError as exc:
+            if exc.code in redirect_codes:
+                location = exc.headers.get("Location")
+                if not location:
+                    return {"capture_status": "redirect_rejected", "http_status": exc.code,
+                            "final_url": exc.geturl(), "error": "redirect_without_location"}
+                target = urljoin(current_url, location)
+                if redirect_count >= max_redirects:
+                    return {"capture_status": "redirect_limit_exceeded",
+                            "http_status": exc.code, "final_url": target,
+                            "error": f"more_than_{max_redirects}_redirects"}
+                if not _valid_redirect_target(target, original_host, allowed_hosts):
+                    return {"capture_status": "redirect_rejected",
+                            "http_status": exc.code, "final_url": target,
+                            "error": "redirect_target_outside_authorized_https_hosts"}
+                allowed, robots_status = robots_allowed(target)
+                if not allowed:
+                    return {"capture_status": "redirect_robots_disallowed",
+                            "http_status": exc.code, "final_url": target,
+                            "robots_status": robots_status,
+                            "error": "redirect_target_disallowed_by_robots"}
+                current_url = target
+                continue
+            body = exc.read(MAX_RESPONSE_BYTES + 1)
+            return {
+                "capture_status": "http_error", "http_status": exc.code,
+                "final_url": exc.geturl(), "content_type": exc.headers.get("Content-Type", ""),
+                "body": body[:MAX_RESPONSE_BYTES], "error": f"HTTP {exc.code}",
+            }
+        except (URLError, TimeoutError, OSError) as exc:
+            return {"capture_status": "network_error", "http_status": None,
+                    "final_url": current_url, "content_type": None, "error": str(exc)}
+
+        if len(body) > MAX_RESPONSE_BYTES:
+            return {"capture_status": "response_too_large", "http_status": status,
+                    "final_url": final_url, "content_type": content_type,
+                    "error": f"response_exceeds_{MAX_RESPONSE_BYTES}_bytes"}
+        if status < 200 or status >= 300:
+            return {"capture_status": "http_error", "http_status": status,
+                    "final_url": final_url, "content_type": content_type,
+                    "body": body, "error": f"HTTP {status}"}
+        if "html" not in content_type.lower():
+            return {"capture_status": "unexpected_content_type", "http_status": status,
+                    "final_url": final_url, "content_type": content_type,
+                    "error": "expected_html"}
+        return {"capture_status": "captured", "http_status": status,
+                "final_url": final_url, "content_type": content_type, "body": body}
+
+    return {"capture_status": "redirect_limit_exceeded", "http_status": None,
+            "final_url": current_url, "error": "redirect_limit_exceeded"}
 
 
 def persist_capture(source: dict, result: dict, captured_at: str) -> dict:
@@ -190,7 +258,7 @@ def capture_all(registry_path: Path = REGISTRY, evidence_dir: Path = EVIDENCE) -
             result = {"capture_status": "robots_disallowed", "error": robots_status,
                       "robots_status": robots_status}
         else:
-            result = fetch_page(source["url"])
+            result = fetch_page(source["url"], source.get("allowed_redirect_hosts"))
             result["robots_status"] = robots_status
         records.append(persist_capture(source, result, captured_at))
         time.sleep(1.0)
