@@ -164,6 +164,6 @@ El modelo temporal de marcas, empresas responsables, establecimientos, relacione
 - [Guía del esquema SQLite](informes/guia-esquema-red-comercial.md).
 - [Variabilidad de la red comercial en España](informes/variabilidad-red-comercial-espana-2026-11-11.md).
 
-La captura reproducible está en fase piloto de desarrollo. El inventario `fuentes_red_comercial.json` define seis URLs públicas; `capturar_fuentes_red_comercial.py` consulta exclusivamente esas direcciones y compara hashes. La migración `migraciones/002_capturas_fuentes_red_comercial.sql` registra el resultado por fuente y captura. El proceso no rastrea enlaces, no conserva páginas completas y no infiere altas/bajas comerciales. Consulta la [guía de captura reproducible](informes/guia-captura-reproducible-red-comercial.md).
+La captura reproducible está en fase piloto de desarrollo. El inventario `fuentes_red_comercial.json` define seis URLs públicas; `capturar_fuentes_red_comercial.py` consulta exclusivamente esas direcciones y compara hashes. La migración `migraciones/002_capturas_fuentes.sql` registra el resultado por fuente y captura. El proceso no rastrea enlaces, no conserva páginas completas y no infiere altas/bajas comerciales. Consulta la [guía de captura reproducible](informes/guia-captura-reproducible-red-comercial.md).
 
 **Estado:** la captura técnica y sus pruebas están propuestas en una rama de trabajo. La programación periódica, el comparador semántico y la cola de revisión humana quedan pendientes de validación del piloto.
