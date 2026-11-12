@@ -83,8 +83,8 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
 
     def test_cambios_en_multiplicidad_aparecen_en_extractos(self):
         repeated = "Horario de atención de lunes a viernes."
-        old = "Directorio oficial de concesionarios. " * 3 + "\\n" + repeated + "\\n" + repeated
-        new = "Directorio oficial de concesionarios. " * 3 + "\\n" + repeated
+        old = "Directorio oficial de concesionarios. " * 3 + "\n" + repeated + "\n" + repeated
+        new = "Directorio oficial de concesionarios. " * 3 + "\n" + repeated
         result = compare_records([
             row("a", "2026-11-01T00:00:00Z", "h1", old),
             row("a", "2026-11-08T00:00:00Z", "h2", new),
