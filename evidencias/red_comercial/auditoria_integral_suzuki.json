@@ -5,17 +5,17 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 28,
-    "pending_entries": 48,
-    "reviewed_groups": 14,
-    "coverage": "Registro de control de auditoría; 28 de 76 entradas evaluadas individualmente. Las 48 entradas restantes continúan pendientes; no equivale a auditoría completa."
+    "individually_assessed_entries": 32,
+    "pending_entries": 44,
+    "reviewed_groups": 15,
+    "coverage": "Registro de control de auditoría; 32 de 76 entradas evaluadas individualmente. Las 44 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "pending_individual_review": 48,
+    "pending_individual_review": 44,
     "unresolved_address_or_operator": 8,
     "corroborated_operator_and_location": 10,
     "same_location_multiple_service_entries": 4,
-    "same_operator_multiple_locations": 6
+    "same_operator_multiple_locations": 10
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -26,7 +26,8 @@
     "No se asigna el estado verified por mera presencia en el localizador oficial ni por coincidencia de nombre/teléfono.",
     "La auditoría no incluye visitas físicas ni llamadas de comprobación.",
     "La revisión de Barcelona (12/11/2026) contrasta las ocho entradas con el localizador oficial Suzuki y páginas actuales de cada operador; las cuatro entradas Maquina Motors se agrupan bajo un mismo operador, pero corresponden a cuatro ubicaciones diferenciadas.",
-    "Las direcciones comerciales y los servicios se cuentan por ubicación física declarada por el operador; una ficha de taller o exposición no genera por sí sola una segunda ubicación."
+    "Las direcciones comerciales y los servicios se cuentan por ubicación física declarada por el operador; una ficha de taller o exposición no genera por sí sola una segunda ubicación.",
+    "La revisión de Cádiz (12/11/2026) contrasta las cuatro entradas El Motorista con el localizador oficial Suzuki y el directorio actual del operador; se agrupan bajo un único operador con cuatro ubicaciones diferenciadas. En Jerez, el taller técnico publicado en C. Amianto se distingue de la tienda Suzuki de Av. de Europa y no se suma como sede Suzuki independiente."
   ],
   "entries": [
     {
@@ -444,13 +445,16 @@
       "service_type": "Exposición",
       "directory_address": "Plaza de Madrid, 9, 11010, Cádiz",
       "directory_phone": "956 10 40 12",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-el-motorista-cadiz",
+      "operator_assessment": "Grupo El Motorista",
+      "counting_recommendation": "1 ubicación corroborada en Plaza de Madrid s/n, Estadio Carranza, Cádiz; la dirección comercial oficial coincide con la entrada del directorio Suzuki.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.elmotorista.es/tiendas"
+      ],
+      "limitation": "Localizador Suzuki y directorio oficial del operador consultados el 12/11/2026. La web del operador confirma tienda y servicio técnico; no incluye visita física, llamada de comprobación ni datos de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-025",
@@ -459,13 +463,16 @@
       "service_type": "Exposición",
       "directory_address": "Virgen del Carmen, 2, 11130, Chiclana",
       "directory_phone": "956 40 33 15",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-el-motorista-cadiz",
+      "operator_assessment": "Grupo El Motorista",
+      "counting_recommendation": "1 ubicación corroborada en C/ Virgen del Carmen, 2, Chiclana de la Frontera; tienda y servicio técnico constan en el directorio oficial del operador.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.elmotorista.es/tiendas"
+      ],
+      "limitation": "Localizador Suzuki y directorio oficial del operador consultados el 12/11/2026. La web del operador confirma tienda y servicio técnico; no incluye visita física, llamada de comprobación ni datos de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-026",
@@ -474,13 +481,16 @@
       "service_type": "Exposición",
       "directory_address": "Ctra. Málaga, km 108, 11205, Algeciras",
       "directory_phone": "956 66 30 02",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-el-motorista-cadiz",
+      "operator_assessment": "Grupo El Motorista",
+      "counting_recommendation": "1 ubicación corroborada en Carretera de Málaga km 108, Algeciras; tienda y servicio técnico constan en el directorio oficial del operador.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.elmotorista.es/tiendas"
+      ],
+      "limitation": "Localizador Suzuki y directorio oficial del operador consultados el 12/11/2026. La web del operador confirma tienda y servicio técnico; no incluye visita física, llamada de comprobación ni datos de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-027",
@@ -489,13 +499,16 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Avda. Europa, 13, 11405, Jerez de la frontera",
       "directory_phone": "956 35 85 32",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-el-motorista-cadiz",
+      "operator_assessment": "Grupo El Motorista",
+      "counting_recommendation": "1 ubicación corroborada en Av. de Europa, 13, Jerez de la Frontera; tienda Suzuki en esa dirección. El operador publica el taller técnico en C. Amianto, dirección distinta, que no se añade como otra sede Suzuki al no figurar como entrada independiente del localizador.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.elmotorista.es/tiendas"
+      ],
+      "limitation": "Localizador Suzuki y directorio oficial del operador consultados el 12/11/2026. El operador separa la tienda de Av. de Europa del taller de C. Amianto; no incluye visita física, llamada de comprobación ni datos de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-028",
