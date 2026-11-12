@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "registry_reviewed_at": "2026-11-12",
+  "default_capture_interval_days": 7,
+  "policy": {
+    "official_sources_only_for_primary_registry": true,
+    "absence_is_not_closure": true,
+    "manual_review_required_before_history_update": true,
+    "capture_user_agent": "ObservatorioRedComercial/1.0"
+  },
+  "brands": [
+    {"brand_id": "brand-suzuki", "canonical_name": "Suzuki", "market_status": "established"},
+    {"brand_id": "brand-zontes-es", "canonical_name": "Zontes", "market_status": "established"},
+    {"brand_id": "brand-zxmoto-es", "canonical_name": "ZXMOTO", "market_status": "recent_entry"}
+  ],
+  "sources": [
+    {
+      "source_id": "source-suzuki-es-moto-dealers",
+      "brand_id": "brand-suzuki",
+      "publisher": "Suzuki Moto España",
+      "source_type": "official_directory",
+      "url": "https://moto.suzuki.es/concesionarios",
+      "title": "Concesionarios oficiales Suzuki Moto España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": ["sales", "service", "exhibition"],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Directorio oficial con establecimientos agrupados por provincia; distingue exposición y taller."
+    },
+    {
+      "source_id": "source-zontes-es-dealers",
+      "brand_id": "brand-zontes-es",
+      "publisher": "Turbimot, S.L.U. / Zontes España",
+      "source_type": "official_directory",
+      "url": "https://zontesmotos.es/puntos-de-venta/",
+      "title": "Puntos de venta oficiales Zontes España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": ["sales", "service"],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página oficial enlazada como Puntos de venta. La vista textual expone buscador y mapa, pero no una lista completa; investigar carga JavaScript/API antes de extraer."
+    },
+    {
+      "source_id": "source-zxmoto-es-dealers",
+      "brand_id": "brand-zxmoto-es",
+      "publisher": "Desmotrón, S.L.U. / ZXMOTO España",
+      "source_type": "official_directory",
+      "url": "https://zxmoto.es/puntos-de-venta/",
+      "title": "Puntos de venta ZXMOTO España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": ["sales", "service"],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_no_entries_yet",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página oficial con texto Próximas aperturas y localizador, sin establecimientos identificables en la vista consultada. No inferir ausencia de red ni cierres."
+    }
+  ]
+}
