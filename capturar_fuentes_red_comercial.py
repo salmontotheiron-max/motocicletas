@@ -81,7 +81,7 @@ def robots_allowed(url: str) -> tuple[bool, str]:
     parser.set_url(robots_url)
     try:
         request = Request(robots_url, headers={"User-Agent": USER_AGENT})
-        with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+        with _open_without_redirects(request) as response:
             body = response.read(512_000).decode("utf-8", errors="replace")
         parser.parse(body.splitlines())
         return parser.can_fetch(USER_AGENT, url), "robots_txt"
