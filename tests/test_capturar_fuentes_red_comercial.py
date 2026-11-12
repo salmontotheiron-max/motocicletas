@@ -145,12 +145,24 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
         headers = Message()
         headers["Location"] = "https://www.example.test/dealers"
         redirect = HTTPError("https://example.test", 301, "Moved", headers, None)
+        class Response:
+            status = 200
+            headers = {"Content-Type": "text/html"}
+            def geturl(self):
+                return "https://www.example.test/dealers"
+            def read(self, size=-1):
+                return b"<html><body>Dealers</body></html>"
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
         with patch("capturar_fuentes_red_comercial._open_without_redirects",
-                   side_effect=redirect), \
+                   side_effect=[redirect, Response()]), \
              patch("capturar_fuentes_red_comercial.robots_allowed",
-                   return_value=(True, "robots_txt")):
+                   return_value=(True, "robots_txt")) as robots:
             result = fetch_page("https://example.test", ["www.example.test"])
-        self.assertEqual(result["capture_status"], "redirect_limit_exceeded") if result["capture_status"] == "redirect_limit_exceeded" else self.assertNotEqual(result["capture_status"], "redirect_rejected")
+        self.assertEqual(result["capture_status"], "captured")
+        robots.assert_called_once_with("https://www.example.test/dealers")
 
 
 if __name__ == "__main__":
