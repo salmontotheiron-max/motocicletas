@@ -186,13 +186,13 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
                    return_value=(False, "robots_unavailable")), \
              patch("capturar_fuentes_red_comercial.time.sleep"):
             records = capture_all(evidence_dir=Path(tmp))
-        self.assertEqual(records[0]["capture_status"], "robots_disallowed")
-        log = Path(tmp) / "capturas.jsonl"
-        summary = Path(tmp) / "ultima_captura.json"
-        self.assertTrue(log.exists())
-        self.assertTrue(summary.exists())
-        self.assertIn('"robots_disallowed"', log.read_text(encoding="utf-8"))
-        self.assertEqual(json.loads(summary.read_text(encoding="utf-8"))["failures"], 1)
+            self.assertEqual(records[0]["capture_status"], "robots_disallowed")
+            log = Path(tmp) / "capturas.jsonl"
+            summary = Path(tmp) / "ultima_captura.json"
+            self.assertTrue(log.exists())
+            self.assertTrue(summary.exists())
+            self.assertIn('"robots_disallowed"', log.read_text(encoding="utf-8"))
+            self.assertEqual(json.loads(summary.read_text(encoding="utf-8"))["failures"], 1)
 
 
 if __name__ == "__main__":
