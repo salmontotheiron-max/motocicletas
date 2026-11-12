@@ -5,17 +5,17 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 32,
-    "pending_entries": 44,
-    "reviewed_groups": 15,
-    "coverage": "Registro de control de auditoría; 32 de 76 entradas evaluadas individualmente. Las 44 entradas restantes continúan pendientes; no equivale a auditoría completa."
+    "individually_assessed_entries": 36,
+    "pending_entries": 40,
+    "reviewed_groups": 17,
+    "coverage": "Registro de control de auditoría; 36 de 76 entradas evaluadas individualmente. Las 40 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "pending_individual_review": 44,
-    "unresolved_address_or_operator": 8,
-    "corroborated_operator_and_location": 10,
+    "pending_individual_review": 40,
+    "unresolved_address_or_operator": 9,
+    "corroborated_operator_and_location": 12,
     "same_location_multiple_service_entries": 4,
-    "same_operator_multiple_locations": 10
+    "same_operator_multiple_locations": 11
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -27,7 +27,8 @@
     "La auditoría no incluye visitas físicas ni llamadas de comprobación.",
     "La revisión de Barcelona (12/11/2026) contrasta las ocho entradas con el localizador oficial Suzuki y páginas actuales de cada operador; las cuatro entradas Maquina Motors se agrupan bajo un mismo operador, pero corresponden a cuatro ubicaciones diferenciadas.",
     "Las direcciones comerciales y los servicios se cuentan por ubicación física declarada por el operador; una ficha de taller o exposición no genera por sí sola una segunda ubicación.",
-    "La revisión de Cádiz (12/11/2026) contrasta las cuatro entradas El Motorista con el localizador oficial Suzuki y el directorio actual del operador; se agrupan bajo un único operador con cuatro ubicaciones diferenciadas. En Jerez, el taller técnico publicado en C. Amianto se distingue de la tienda Suzuki de Av. de Europa y no se suma como sede Suzuki independiente."
+    "La revisión de Cádiz (12/11/2026) contrasta las cuatro entradas El Motorista con el localizador oficial Suzuki y el directorio actual del operador; se agrupan bajo un único operador con cuatro ubicaciones diferenciadas. En Jerez, el taller técnico publicado en C. Amianto se distingue de la tienda Suzuki de Av. de Europa y no se suma como sede Suzuki independiente.",
+    "La revisión de Santa Cruz de Tenerife (12/11/2026) contrasta cuatro entradas con el localizador Suzuki y páginas actuales de Fierro Motor y Femotor/Grupo Fedeauto. Fierro Motor se agrupa como un operador con tienda Suzuki en C/ Goya, 3 y taller oficial en C/ Islas Filipinas, 9; la entrada de La Palma mantiene discrepancia entre nº 31 del localizador y nº 32 publicado por el operador, sin atribuir autorización Suzuki específica a esa sede. Femotor confirma exposición y taller Suzuki en Av. de los Majuelos, 24, como una sola ubicación."
   ],
   "entries": [
     {
@@ -1016,12 +1017,16 @@
       "service_type": "Exposición",
       "directory_address": "Av. Marítima, 31, 38700, Santa Cruz de la Palma",
       "directory_phone": "922 41 19 99",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-fierro-canarias",
+      "operator_assessment": "Auto Repuestos Fierro S.L.",
+      "counting_recommendation": "Ubicación comercial de Fierro Motor en Av. Marítima, 32 (frente al nº 31 del directorio Suzuki); operador confirmado, pero número exacto y representación Suzuki específica de esta sede pendientes. No contar como concesionario Suzuki corroborado.",
+      "confidence": "medium_for_operator;low_for_exact_address_and_suzuki_authorization",
+      "evidence_urls": [
+        "https://www.fierromotor.com/contacto",
+        "https://www.fierromotor.com/presupuesto-recambios",
+        "https://moto.suzuki.es/concesionarios"
+      ],
       "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
     },
     {
@@ -1031,12 +1036,16 @@
       "service_type": "Exposición",
       "directory_address": "Calle de Goya, 3, 38007, Santa cruz de tenerife",
       "directory_phone": "922 20 09 10",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-fierro-canarias",
+      "operator_assessment": "Auto Repuestos Fierro S.L.",
+      "counting_recommendation": "1 ubicación comercial Suzuki corroborada en C/ Goya, 3, Santa Cruz de Tenerife; el operador identifica esta dirección como ventas Suzuki. El taller se registra por separado en C/ Islas Filipinas, 9 bajo el mismo operador.",
+      "confidence": "high_for_operator_location_and_suzuki_sales",
+      "evidence_urls": [
+        "https://www.fierromotor.com/contacto",
+        "https://www.fierromotor.com/aviso-legal",
+        "https://moto.suzuki.es/concesionarios"
+      ],
       "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
     },
     {
@@ -1046,12 +1055,16 @@
       "service_type": "Taller y Exposición",
       "directory_address": "AVDA DE LOS MAJUELOS, NÚM. 24, 38108, San cristobal de la laguna s.c. tenerife",
       "directory_phone": "922 62 55 68",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-femotor-tenerife",
+      "operator_assessment": "Femotor Tenerife / Grupo Fedeauto",
+      "counting_recommendation": "1 ubicación Suzuki corroborada en Av. de los Majuelos, 24, La Laguna; el operador confirma exposición y taller en la misma dirección. No duplicar por tipo de servicio.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://femotor.redsuzuki.es/",
+        "https://www.grupofedeauto.com/contacto",
+        "https://moto.suzuki.es/concesionarios"
+      ],
       "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
     },
     {
@@ -1061,12 +1074,16 @@
       "service_type": "Taller",
       "directory_address": "Calle Islas Filipinas, 9, 38009, Santa Cruz de Tenerife",
       "directory_phone": "922610002",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-fierro-canarias",
+      "operator_assessment": "Auto Repuestos Fierro S.L.",
+      "counting_recommendation": "Taller de Fierro Motor en C/ Islas Filipinas, 9, distinto de la tienda Suzuki de C/ Goya, 3; el operador declara servicio oficial Suzuki en el taller. Contar como ubicación técnica separada del mismo operador, no como concesionario de exposición.",
+      "confidence": "high_for_operator_location_and_suzuki_service",
+      "evidence_urls": [
+        "https://www.fierromotor.com/contacto",
+        "https://www.fierromotor.com/taller-motos",
+        "https://moto.suzuki.es/concesionarios"
+      ],
       "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
     },
     {
