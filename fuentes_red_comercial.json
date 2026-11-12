@@ -323,13 +323,13 @@
       "brand_id": "brand-ktm",
       "canonical_name": "KTM",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de KTM en España acreditada por la participación de concesionarios identificados en el KTM Test Tour 2026, organizado y publicado por KTM Sportmotorcycle GmbH, y por páginas vigentes de los operadores. La auditoría mínima de las cinco provincias prioritarias identifica ocho ubicaciones con oferta KTM en Barcelona, Málaga, Cádiz y Murcia: seis puntos participantes en el evento oficial del fabricante y dos sedes adicionales declaradas por Jade Motor. Se distinguen las confirmaciones del fabricante de las autodeclaraciones de operadores; no es un censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-kymco",
@@ -1444,6 +1444,145 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Directorio oficial individualiza establecimientos por nombre y dirección, con fichas y enlaces a web/solicitud de prueba. La auditoría territorial registra los siete puntos identificados en las cinco provincias prioritarias. Las funciones de taller se atribuyen solo donde la ficha o web del operador publica servicio técnico Royal Enfield; la inclusión en el directorio acredita pertenencia a la red publicada por el fabricante, no volumen de ventas."
+    },
+    {
+      "source_id": "source-ktm-es-test-tour-2026",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-ktm",
+      "publisher": "KTM Sportmotorcycle GmbH / KTM España",
+      "source_type": "official_statement",
+      "url": "https://www.ktm.com/es-es/ktm-world/news/ktm-test-tour-2026.html",
+      "title": "KTM Test Tour 2026 — relación oficial de concesionarios y sedes participantes",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "test_ride"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "KTM publica 25 paradas del Test Tour 2026, identifica concesionarios y enlaza páginas de eventos alojadas en events.ktm.com. Para la auditoría territorial se han contrastado las páginas individuales de Maquina Motors Mollet, Motovivo Sant Boi, Jade Motor Cartagena, Siebla Marbella, El Motorista Jerez e Italo Motor Barcelona. La participación en el evento confirma relación comercial/evento con KTM en 2026, pero no equivale por sí sola a un directorio exhaustivo ni acredita servicio técnico en cada sede."
+    },
+    {
+      "source_id": "source-ktm-maquina-motors",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MAQUINA MOTORS",
+      "source_type": "company_page",
+      "url": "https://www.ktmbarcelonamaquinamotors.com/es",
+      "title": "KTM Maquina Motors — concesionarios, ventas y postventa en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador se declara concesionario oficial KTM e identifica Manresa, Mollet y Terrassa con contactos comerciales y postventa. Para esta auditoría se incorpora Mollet, sede incluida además en el KTM Test Tour oficial; la web publica servicio técnico y venta en la misma sede."
+    },
+    {
+      "source_id": "source-ktm-motovivo",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "AUTOVIVO / MOTOVIVO",
+      "source_type": "company_page",
+      "url": "https://autovivo.es/concesionarios",
+      "title": "Motovivo y Grupo KTM — sede de Sant Boi de Llobregat",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "KTM identifica Motovivo como parada del Test Tour en Sant Boi; el operador publica Motovivo y Grupo KTM en Ctra. de la Santa Creu de Calafell 63, con ventas y taller. La ficha del evento del fabricante confirma la sede y dirección."
+    },
+    {
+      "source_id": "source-ktm-italomotor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "ITALO MOTOR",
+      "source_type": "company_page",
+      "url": "https://ktmitalomotor.com/es",
+      "title": "KTM Barcelona Italo Motor — concesionario, ventas y postventa",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador identifica KTM como marca de servicio oficial, publica asesoría comercial KTM, motos nuevas y taller. KTM incluyó Italo Motor en el Test Tour 2026 y su ficha de evento identifica Carrer d'Aragó 562."
+    },
+    {
+      "source_id": "source-ktm-jade-motor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "JADE MOTOR / FENIX MOTO PREMIUM S.L.",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/contacto",
+      "title": "Jade Motor — sedes KTM en Cartagena, Murcia y San Javier",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador declara expresamente ser concesionario oficial KTM y publica KTM en las sedes de Cartagena, Murcia y San Javier. Cartagena figura también en el KTM Test Tour oficial. La autorización de las otras dos sedes se conserva como autodeclaración del operador, no como ficha individual del fabricante."
+    },
+    {
+      "source_id": "source-ktm-siebla",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "GRUPO SIEBLA",
+      "source_type": "company_page",
+      "url": "https://old.siebla.com/",
+      "title": "Grupo Siebla — representación y oferta KTM en Marbella y Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador se declara concesionario oficial KTM, publica catálogo KTM y declara instalaciones en Málaga capital y Marbella. KTM identifica Siebla Marbella en el Test Tour 2026; el punto del evento se ubica en Avenida Gregorio Marañón 7, mientras que la web del operador publica su sede de ventas en C/ Ramón Gómez de la Serna 8, Marbella. Se usa esta última como dirección comercial del operador y se conserva la diferencia de direcciones."
+    },
+    {
+      "source_id": "source-ktm-el-motorista",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "EL MOTORISTA",
+      "source_type": "company_page",
+      "url": "https://www.elmotorista.es/tiendas",
+      "title": "El Motorista — tiendas y talleres en Cádiz",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "KTM identifica El Motorista en el Test Tour 2026 y su evento individual confirma Avenida de Europa 13, Jerez de la Frontera. El operador publica esa sede y otras tiendas/talleres en Cádiz; solo se incorpora la ubicación de Jerez como sede KTM identificada por el fabricante. El taller de Jerez aparece en dirección distinta y no se atribuye servicio KTM sin evidencia específica."
     }
   ]
 }
