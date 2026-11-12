@@ -287,13 +287,13 @@
       "brand_id": "brand-kawasaki",
       "canonical_name": "Kawasaki",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de Kawasaki en España acreditada por páginas públicas de operadores que ofrecen motocicletas Kawasaki y ubican puntos de venta en Barcelona, Málaga, Cádiz, Alicante y Murcia. Primera auditoría territorial: 12 direcciones físicas con oferta comercial declarada y cuatro ubicaciones que también publican servicio/taller. El localizador oficial Kawasaki existe, pero su contenido es dinámico y no expone entradas en la captura consultada; las autorizaciones de los operadores se mantienen como autodeclaradas o no confirmadas independientemente."
     },
     {
       "brand_id": "brand-keeway",
@@ -1282,6 +1282,126 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Localizador oficial con fichas individuales por establecimiento. Las fichas auditadas en Barcelona, Sant Quirze del Vallès, Málaga, Alicante, Murcia y Jerez de la Frontera enumeran venta de motocicletas y servicios. Inventario mínimo de cinco provincias prioritarias, no censo exhaustivo."
+    },
+    {
+      "source_id": "source-kawasaki-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-kawasaki",
+      "publisher": "Kawasaki Motors Europe N.V. / Kawasaki España",
+      "source_type": "official_directory",
+      "url": "https://www.kawasaki.es/es_es/tools/find_a_dealer.html",
+      "title": "Localizador oficial de concesionarios Kawasaki España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Kawasaki España enlaza este localizador desde su página oficial de enlaces de interés y declara que permite buscar concesionarios por ubicación y filtrar por tipo y servicios. La página de destino carga el buscador dinámicamente y la captura HTML consultada no expone fichas ni resultados. No se ha intentado acceder a endpoints privados ni inferir puntos de venta desde esta página."
+    },
+    {
+      "source_id": "source-kawasaki-maquina-motors",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MAQUINA MOTORS",
+      "source_type": "company_page",
+      "url": "https://www.kawasaki.maquinamotors.com/es",
+      "title": "Kawasaki Barcelona y Valencia — red de establecimientos Maquina Motors",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "La web específica Kawasaki de Maquina Motors identifica seis puntos con dirección en la provincia de Barcelona (Bruc, Consell de Cent, Mollet, Terrassa, Manresa y Sant Cugat), además de Valencia. Se incorpora solo la oferta comercial publicada por el operador; la autorización oficial de cada sede no se confirma de forma independiente."
+    },
+    {
+      "source_id": "source-kawasaki-motorider-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MÁLAGA MOTOR RIDER",
+      "source_type": "company_page",
+      "url": "https://kawasakimalaga.com/",
+      "title": "Kawasaki Málaga Motorider — concesionario y catálogo de motos",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador se presenta como concesionario Kawasaki en Málaga, publica modelos nuevos Kawasaki 2026, oferta comercial y dirección en C. Tucídides 24. La condición de oficial es autodeclarada y no se contrasta independientemente con el fabricante."
+    },
+    {
+      "source_id": "source-kawasaki-puntomotor-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "PUNTO MOTOR",
+      "source_type": "company_page",
+      "url": "https://puntomotor.es/",
+      "title": "Punto Motor — concesionario Kawasaki Cádiz y Sevilla",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador se declara concesionario oficial Kawasaki para Cádiz y Sevilla, identifica el punto de Cádiz en C. Villa de Rota y publica taller especializado Kawasaki. La autorización es autodeclarada y no se contrasta independientemente con el fabricante."
+    },
+    {
+      "source_id": "source-kawasaki-motos-medina-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MOTOS MEDINA",
+      "source_type": "company_page",
+      "url": "https://www.motosmedina.com/es",
+      "title": "Motos Medina — concesionario oficial Kawasaki Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Motos Medina se declara concesionario oficial Kawasaki para Alicante, publica venta de motocicletas y dirección Avda. de Dénia 13. La autorización es autodeclarada y no se contrasta independientemente con el fabricante."
+    },
+    {
+      "source_id": "source-kawasaki-jade-motor-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "JADE MOTOR / FENIX MOTO PREMIUM S.L.",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/",
+      "title": "Jade Motor — concesionario oficial Kawasaki en Región de Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Jade Motor se declara concesionario oficial Kawasaki en Murcia, Cartagena y San Javier, identifica sus sedes y distingue tienda y taller. La web declara expresamente punto de venta y taller en Cofenauto San Javier. La autorización es autodeclarada y no se contrasta independientemente con el fabricante."
     }
   ]
 }

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "La presencia comercial se acepta cuando el operador publica expresamente la marca Kawasaki y vincula su oferta a un establecimiento físico. La condición oficial se conserva como autodeclarada cuando el propio operador la afirma; no equivale a verificación independiente del fabricante. La web oficial de Kawasaki enlaza un localizador dinámico que no expone fichas en la captura consultada; no se sustituyen sus resultados por directorios agregadores.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Cuenta en cobertura comercial descriptiva cuando existe declaración pública del operador que identifica Kawasaki y un punto físico.",
+    "official_authorization": "self_declared_official refleja únicamente la declaración del operador; not_independently_confirmed significa que no se ha contrastado con el fabricante/importador."
+  },
+  "outlet_count": 12,
+  "counts": {
+    "by_province": {
+      "Barcelona": 6,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 3
+    },
+    "sales": 12,
+    "service": 4
+  },
+  "official_locator": {
+    "url": "https://www.kawasaki.es/es_es/tools/find_a_dealer.html",
+    "status": "dynamic_unextractable",
+    "notes": "Kawasaki España enlaza el localizador y explica sus filtros por ubicación y servicios. La página de destino no expone fichas/resultados en la captura HTML; no se accede a endpoints privados."
+  },
+  "outlets": [
+    {
+      "outlet_id": "kawasaki-barcelona-maquina-bruc",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Bruc",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Bruc, 127, 08037 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kawasaki.maquinamotors.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web específica Kawasaki del operador identifica el punto por nombre, dirección y teléfono; no publica una declaración explícita de autorización oficial individual."
+    },
+    {
+      "outlet_id": "kawasaki-barcelona-maquina-consell",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Consell de Cent",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ del Consell de Cent, 130-136, 08015 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kawasaki.maquinamotors.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web específica Kawasaki del operador identifica el punto por nombre, dirección y teléfono; no publica una declaración explícita de autorización oficial individual."
+    },
+    {
+      "outlet_id": "kawasaki-barcelona-maquina-mollet",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Mollet",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Mollet del Vallès",
+      "public_address": "Av. d'Antoni Gaudí, 73, 08100 Mollet del Vallès, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kawasaki.maquinamotors.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web específica Kawasaki del operador identifica el punto por nombre, dirección y teléfono; no publica una declaración explícita de autorización oficial individual."
+    },
+    {
+      "outlet_id": "kawasaki-barcelona-maquina-terrassa",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Terrassa",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Terrassa",
+      "public_address": "C/ de l'Anoia, 7, 08221 Terrassa, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kawasaki.maquinamotors.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web específica Kawasaki del operador identifica el punto por nombre, dirección y teléfono; no publica una declaración explícita de autorización oficial individual."
+    },
+    {
+      "outlet_id": "kawasaki-barcelona-maquina-manresa",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Manresa",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Sant Fruitós de Bages",
+      "public_address": "P.I. Riu d'Or, Carretera Manresa-Berga, km 1, 08272 Sant Fruitós de Bages, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kawasaki.maquinamotors.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web específica Kawasaki del operador identifica el punto por nombre, dirección y teléfono; no publica una declaración explícita de autorización oficial individual."
+    },
+    {
+      "outlet_id": "kawasaki-barcelona-maquina-sant-cugat",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Sant Cugat",
+      "operator": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "municipality": "Sant Cugat del Vallès",
+      "public_address": "C/ de Borrell, 9, 08172 Sant Cugat del Vallès, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kawasaki.maquinamotors.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web específica Kawasaki del operador identifica el punto por nombre, dirección y teléfono; no publica una declaración explícita de autorización oficial individual."
+    },
+    {
+      "outlet_id": "kawasaki-malaga-motorider",
+      "brand": "Kawasaki",
+      "trading_name": "Kawasaki Málaga Motorider",
+      "operator": "MÁLAGA MOTOR RIDER",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "C. Tucídides, 24, 29004 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://kawasakimalaga.com/",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador se presenta como concesionario oficial Kawasaki y publica catálogo de motocicletas nuevas, promoción vigente y datos de contacto del punto."
+    },
+    {
+      "outlet_id": "kawasaki-cadiz-puntomotor",
+      "brand": "Kawasaki",
+      "trading_name": "Punto Motor Cádiz",
+      "operator": "PUNTO MOTOR",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "C. Villa de Rota, 11011 Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://puntomotor.es/",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador se declara concesionario oficial Kawasaki y publica taller especializado Kawasaki para este establecimiento."
+    },
+    {
+      "outlet_id": "kawasaki-alicante-motos-medina",
+      "brand": "Kawasaki",
+      "trading_name": "Motos Medina",
+      "operator": "MOTOS MEDINA",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avda. de Dénia, 13, 03002 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosmedina.com/es",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador se declara concesionario oficial Kawasaki para la provincia de Alicante y publica venta de motocicletas."
+    },
+    {
+      "outlet_id": "kawasaki-murcia-jade-cartagena",
+      "brand": "Kawasaki",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "FENIX MOTO PREMIUM S.L.",
+      "province": "Murcia",
+      "municipality": "Cartagena",
+      "public_address": "Ctra. Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Jade Motor se declara concesionario oficial Kawasaki en la Región de Murcia y publica esta sede como tienda con recambio original y taller."
+    },
+    {
+      "outlet_id": "kawasaki-murcia-jade-tienda",
+      "brand": "Kawasaki",
+      "trading_name": "Jade Motor Murcia · Tienda",
+      "operator": "FENIX MOTO PREMIUM S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "C. Pintor Pedro Flores, 32, 30010 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web del operador identifica Kawasaki en esta sede y diferencia tienda y taller en la misma dirección física; se consolida en una única ficha con ambos roles."
+    },
+    {
+      "outlet_id": "kawasaki-murcia-cofenauto",
+      "brand": "Kawasaki",
+      "trading_name": "Cofenauto · San Javier",
+      "operator": "FENIX MOTO PREMIUM S.L.",
+      "province": "Murcia",
+      "municipality": "San Javier",
+      "public_address": "C/ Isla de Lobos, 1, 30730 San Javier, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/",
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web de Jade Motor identifica Kawasaki en esta sede y la describe como punto de venta y taller del grupo."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental de cinco provincias prioritarias; no es un censo nacional.",
+    "Las páginas de operadores acreditan oferta comercial declarada, no ventas realizadas ni matriculaciones.",
+    "Las autodeclaraciones de concesionario oficial no se han confirmado individualmente con Kawasaki Motors Europe.",
+    "Los seis puntos de Maquina Motors se incluyen como oferta Kawasaki del operador; la página no permite verificar autorización oficial individual de cada sede.",
+    "Los puntos de venta y servicio se distinguen según la información expresa publicada por cada operador; no se atribuyen servicios donde no se han acreditado.",
+    "No se infiere ausencia de red en provincias no auditadas."
+  ],
+  "methodology": "Revisión manual de la página oficial Kawasaki España y de páginas corporativas de operadores en las cinco provincias prioritarias. Se transcriben establecimientos vinculados expresamente a Kawasaki, se deduplica por dirección física y se asignan funciones solo cuando la fuente las publica. Fecha de consulta: 2026-11-12."
+}
