@@ -40,7 +40,8 @@
       "brand_id": "brand-suzuki",
       "canonical_name": "Suzuki",
       "manufacturer_id": null,
-      "market_status": "established"
+      "market_status": "established",
+      "notes": "Actividad comercial y red oficial listada en España acreditadas por el localizador Suzuki Moto. Primera auditoría de cinco provincias prioritarias: 17 direcciones con exposición/venta y 11 direcciones con taller, incluida una ubicación de servicio sin exposición; el inventario es un corte documental del localizador, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-zontes-es",
@@ -651,7 +652,7 @@
       "discovery_status": "directory_content_visible",
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
-      "notes": "Directorio oficial con establecimientos agrupados por provincia; distingue exposición y taller."
+      "notes": "Directorio oficial de Suzuki Moto con establecimientos agrupados por provincia. Las fichas/listados distinguen explícitamente Taller, Exposición y Taller y Exposición; la auditoría territorial transcribe cada dirección y función visible, deduplica por dirección física y no atribuye servicios a puntos rotulados solo como Exposición."
     },
     {
       "source_id": "source-zontes-es-dealers",
