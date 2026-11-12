@@ -28,8 +28,8 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
             try:
                 record = persist_capture(source, result, "2026-11-12T00:00:00+00:00")
                 self.assertEqual(record["sha256"], hashlib.sha256(body).hexdigest())
-                path = Path(tmp) / record["snapshot_path"].split("evidencias/red_comercial/")[-1]
-                # persist_capture uses the configured evidence root and returns a repo-relative path
+                path = Path(tmp) / "snapshots" / "source-test" / f'{record["sha256"]}.html.gz'
+                self.assertTrue(record["snapshot_path"].endswith(f'{record["sha256"]}.html.gz'))
                 self.assertTrue(path.exists())
                 with gzip.open(path, "rb") as stream:
                     self.assertEqual(stream.read(), body)
