@@ -1,38 +1,53 @@
-# Piaggio: primera auditoría de puntos de venta y asistencia
+# Piaggio: ampliación de red comercial oficial en Murcia
 
 **Fecha de revisión:** 12-11-2026  
 **Ámbito prioritario:** Barcelona, Málaga, Cádiz, Alicante y Murcia
 
-## Resultado
+## Resultado de la ampliación
 
-Se documentan **tres establecimientos** en Barcelona a partir de fichas individuales del localizador oficial Piaggio:
+Se incorpora una cuarta ficha individual del localizador oficial Piaggio: **AUTOMOCION JESANT, S.L.**, en Murcia. La marca pasa a contar con cuatro establecimientos documentados en el inventario, tres con rol de venta y cuatro con rol de servicio.
 
-| Establecimiento | Municipio | Clasificación oficial | Tratamiento |
-|---|---|---|---|
-| MOTOS BALART, C/ Córcega 201 | Barcelona | Distribuidor Oficial y Punto de Asistencia Oficial | Venta y servicio |
-| MOTOS BALART, Av. Isabel la Católica 4 | L’Hospitalet de Llobregat | Distribuidor Oficial y Punto de Asistencia Oficial | Venta y servicio |
-| TOTMOTO MOTOR, S.L., C/ Bruc 155 | Barcelona | Punto de Asistencia Autorizado | Solo servicio; excluido de ventas |
+| Provincia | Fichas oficiales | Venta | Servicio |
+|---|---:|---:|---:|
+| Barcelona | 3 | 2 | 3 |
+| Murcia | 1 | 1 | 1 |
+| Málaga | 0 | 0 | 0 |
+| Cádiz | 0 | 0 | 0 |
+| Alicante | 0 | 0 | 0 |
+| **Total** | **4** | **3** | **4** |
 
-Las dos sedes de Motos Balart se mantienen separadas por dirección, aunque comparten operador. Totmoto no se cuenta como distribuidor ni punto de venta porque la ficha oficial solo acredita asistencia autorizada.
+Los ceros indican únicamente que no se ha incorporado una ficha individual vigente en esta auditoría; no significan ausencia de red.
 
-## Cobertura provincial
+## Nueva ficha: Murcia
 
-- **Barcelona:** 2 puntos de venta y 3 puntos con rol de servicio, distribuidos en 3 fichas.
-- **Málaga, Cádiz, Alicante y Murcia:** sin nuevas incorporaciones en esta entrega. Esto significa que no se ha acreditado una ficha individual vigente durante esta revisión, no que la marca carezca de red en esas provincias.
+- **Establecimiento:** AUTOMOCION JESANT, S.L.
+- **Dirección:** Crta. Santa Catalina, 45, 30012 Murcia.
+- **Clasificación del localizador:** Distribuidor Oficial y Punto de Asistencia Oficial.
+- **Tratamiento:** venta y servicio.
+- **Fuente oficial:** [Ficha Piaggio — Automoción Jesant](https://commercial.piaggio.com/es_ES/dealer-locator/murcia/automocion-jesant-s-l/).
 
-## Criterio de evidencia
+La ficha individual del fabricante/importador identifica expresamente ambos roles. Por tanto, se incorpora como establecimiento oficial vigente y no como pista comercial de terceros.
 
-Se utiliza exclusivamente el localizador oficial Piaggio y sus fichas individuales. La etiqueta «Distribuidor Oficial» se trata como evidencia de venta; «Punto de Asistencia Oficial» y «Punto de Asistencia Autorizado» se registran como posventa, sin convertirlos en concesionarios comerciales.
+## Inventario acumulado
 
-No se utilizan listados promocionales antiguos para completar la red actual. Pueden servir como pistas históricas, pero requieren confirmación vigente antes de incorporarse.
+### Barcelona
+- MOTOS BALART, C/ Córcega, 201: distribuidor y asistencia oficiales.
+- MOTOS BALART, Av. Isabel la Católica, 4, L’Hospitalet de Llobregat: distribuidor y asistencia oficiales.
+- TOTMOTO MOTOR, S.L., C/ Bruc, 155: asistencia autorizada; no se cuenta como punto de venta.
 
-## Fuentes oficiales
+### Murcia
+- AUTOMOCION JESANT, S.L., Crta. Santa Catalina, 45: distribuidor y asistencia oficiales.
 
-- Localizador Piaggio: https://www.piaggio.com/es_ES/dealer-locator/
-- Motos Balart Barcelona: https://www.piaggio.com/es_ES/dealer-locator/barcelona/motos-balart/
-- Motos Balart L’Hospitalet: https://www.piaggio.com/es_ES/dealer-locator/hospitalet-de-llobregat/motos-balart/
-- Totmoto Motor Barcelona: https://www.piaggio.com/es_ES/dealer-locator/barcelona/totmoto-motor-s-l/
+## Criterio y límites
 
-## Próxima revisión
+Se mantiene el criterio de utilizar fichas individuales del localizador oficial Piaggio. «Distribuidor Oficial» acredita venta; «Punto de Asistencia Oficial/Autorizado» acredita posventa y no se transforma por sí solo en punto de venta.
 
-Completar la búsqueda de fichas vigentes de Piaggio en Málaga, Cádiz, Alicante y Murcia. Después, investigar por separado Vespa y Aprilia: compartir grupo industrial no permite inferir que todos los distribuidores Piaggio comercialicen esas marcas.
+Málaga, Cádiz y Alicante siguen pendientes de ficha individual vigente. Los listados promocionales históricos no se utilizan para confirmar vigencia actual. El inventario es un mínimo documental observado, no un censo exhaustivo de la red.
+
+## Fuentes
+
+- [Localizador oficial Piaggio](https://www.piaggio.com/es_ES/dealer-locator/)
+- [Motos Balart Barcelona](https://www.piaggio.com/es_ES/dealer-locator/barcelona/motos-balart/)
+- [Motos Balart L’Hospitalet](https://www.piaggio.com/es_ES/dealer-locator/hospitalet-de-llobregat/motos-balart/)
+- [Totmoto Motor Barcelona](https://www.piaggio.com/es_ES/dealer-locator/barcelona/totmoto-motor-s-l/)
+- [Automoción Jesant Murcia](https://commercial.piaggio.com/es_ES/dealer-locator/murcia/automocion-jesant-s-l/)
