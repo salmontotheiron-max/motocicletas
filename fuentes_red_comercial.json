@@ -95,13 +95,13 @@
       "brand_id": "brand-benelli",
       "canonical_name": "Benelli",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por comunicación oficial de Benelli sobre Keeway Group España (2025) y páginas vigentes de operadores que publican oferta Benelli en las cinco provincias prioritarias. Primera auditoría documental: siete ubicaciones de venta (Barcelona 1, Málaga 1, Cádiz 3, Alicante 1 y Murcia 1); tres sedes publican también taller/posventa. La fuente oficial de marca acredita actividad del grupo, pero no se ha extraído un directorio oficial individual de concesionarios; la condición de concesionario oficial de los siete puntos permanece como autodeclaración de los operadores. Inventario mínimo, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-beta",
@@ -1583,6 +1583,129 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "KTM identifica El Motorista en el Test Tour 2026 y su evento individual confirma Avenida de Europa 13, Jerez de la Frontera. El operador publica esa sede y otras tiendas/talleres en Cádiz; solo se incorpora la ubicación de Jerez como sede KTM identificada por el fabricante. El taller de Jerez aparece en dirección distinta y no se atribuye servicio KTM sin evidencia específica."
+    },
+    {
+      "source_id": "source-benelli-es-group-2025",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-benelli",
+      "publisher": "Benelli España",
+      "source_type": "official_statement",
+      "url": "https://www.benelli.com/es-es/news/20-aniversario-y-nuevas-instalaciones-de-keeway-group-en-espa-a",
+      "title": "20 aniversario y nuevas instalaciones de Keeway Group en España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "brand_group_presence",
+        "commercial_activity",
+        "after_sales"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "not_assessed",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Noticia publicada en el sitio oficial Benelli el 26-03-2025. Identifica la actividad de Keeway Group España y a Benelli entre sus cuatro marcas, afirma más de 100.000 motos vendidas por el grupo en veinte años y la prestación de posventa. Es evidencia de actividad del grupo, no un directorio ni un desglose de ventas o concesionarios por marca."
+    },
+    {
+      "source_id": "source-benelli-motissimo",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motissimo",
+      "source_type": "company_page",
+      "url": "https://motissimo.es/",
+      "title": "Motissimo — concesionario oficial Benelli en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Web corporativa vigente: se presenta como concesionario oficial Benelli, muestra modelos Benelli en su catálogo y publica la sede de Carrer del Comandant Benítez 23, Barcelona. Incluye acceso a taller, pero no se atribuye servicio Benelli específico sin evidencia expresa."
+    },
+    {
+      "source_id": "source-benelli-sk-motos",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "SK Motos, S.L.",
+      "source_type": "company_page",
+      "url": "https://www.benellimalaga-sk.es/",
+      "title": "SK Motos — web comercial Benelli Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Web específica de SK Motos para Benelli, con catálogo/contenido de modelos Benelli y aviso legal que identifica a SK MOTOS S.L. y domicilio en La Bohème 50, Málaga. El contenido de modelos incluye referencias antiguas; se conserva como autodeclaración comercial y no como confirmación independiente del fabricante."
+    },
+    {
+      "source_id": "source-benelli-castro-la-motocicleta",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/historia/",
+      "title": "Castro La Motocicleta — marcas oficiales y tres sedes en Cádiz",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara Benelli entre las marcas de las que es concesionario oficial en sus tres sedes y detalla direcciones separadas de ventas y taller para Cádiz, y ventas/taller en Jerez y Palmones. La autorización se registra como autodeclarada por el operador."
+    },
+    {
+      "source_id": "source-benelli-motosport-carreres",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motosport Carreres",
+      "source_type": "company_page",
+      "url": "https://www.mscarreres.com/web/category/on-road/",
+      "title": "Motosport Carreres — oferta Benelli en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa publica la llegada de la Benelli TRK 702 a su concesión de Alicante; la página de publicaciones del operador incluye una tarifa Benelli 2026. El perfil corporativo público identifica la sede de Alicante en Carrer Riu Turia 4 y se autodefine como concesionario oficial Benelli. No se presenta como confirmación independiente del fabricante."
+    },
+    {
+      "source_id": "source-benelli-jade-motor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Jade Motor / Fenix Moto Premium S.L.",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/",
+      "title": "Jade Motor — Benelli en Cartagena y Región de Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Web corporativa vigente: incluye Benelli en la oferta de motos nuevas y declara concesionario oficial en la Región de Murcia. Identifica la sede de Cartagena en Ctra. Nacional 301 km 431 como tienda, recambios y taller. La página de Murcia tienda/taller no incluye Benelli en la relación de marcas de esa sede, por lo que no se cuenta como punto Benelli."
     }
   ]
 }
