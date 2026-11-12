@@ -104,9 +104,15 @@ def fetch_page(url: str) -> dict:
         with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
             final_url = response.geturl()
             parsed_final = urlparse(final_url)
-            if parsed_final.scheme != "https":
+            parsed_original = urlparse(url)
+            original_host = (parsed_original.hostname or "").lower()
+            final_host = (parsed_final.hostname or "").lower()
+            same_site = (final_host == original_host
+                         or final_host.endswith("." + original_host)
+                         or original_host.endswith("." + final_host))
+            if parsed_final.scheme != "https" or not same_site:
                 return {"capture_status": "redirect_rejected", "http_status": response.status,
-                        "final_url": final_url, "error": "redirect_not_https"}
+                        "final_url": final_url, "error": "redirect_outside_https_source_domain"}
             content_type = response.headers.get("Content-Type", "")
             body = response.read(MAX_RESPONSE_BYTES + 1)
             status = response.status
@@ -157,7 +163,6 @@ def persist_capture(source: dict, result: dict, captured_at: str) -> dict:
     if body is not None and result["capture_status"] == "captured":
         digest = hashlib.sha256(body).hexdigest()
         record["sha256"] = digest
-        encoding = result.get("content_type", "").lower()
         html = body.decode("utf-8-sig", errors="replace")
         text = extract_visible_text(html)
         record["extracted_text"] = text
