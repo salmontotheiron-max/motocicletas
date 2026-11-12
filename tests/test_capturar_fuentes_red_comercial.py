@@ -50,7 +50,7 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
                 return self
             def __exit__(self, *args):
                 return False
-        with patch("capturar_fuentes_red_comercial.urlopen", return_value=Response()):
+        with patch("capturar_fuentes_red_comercial._open_without_redirects", return_value=Response()):
             result = fetch_page("https://example.test")
         self.assertEqual(result["capture_status"], "redirect_rejected")
 
@@ -67,7 +67,7 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
                 return self
             def __exit__(self, *args):
                 return False
-        with patch("capturar_fuentes_red_comercial.urlopen", return_value=Response()):
+        with patch("capturar_fuentes_red_comercial._open_without_redirects", return_value=Response()):
             result = fetch_page("https://example.test")
         self.assertEqual(result["capture_status"], "redirect_rejected")
 
@@ -77,6 +77,80 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
             allowed, status = robots_allowed("https://example.test/dealers")
         self.assertFalse(allowed)
         self.assertIn("robots_unavailable", status)
+
+
+    def test_redirect_se_rechaza_antes_de_solicitar_otro_dominio(self):
+        from urllib.error import HTTPError
+        from email.message import Message
+        headers = Message()
+        headers["Location"] = "https://external.example/dealers"
+        redirect = HTTPError("https://example.test", 302, "Found", headers, None)
+        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=redirect) as opener:
+            result = fetch_page("https://example.test")
+        self.assertEqual(result["capture_status"], "redirect_rejected")
+        self.assertEqual(opener.call_count, 1)
+
+    def test_redirect_a_subdominio_no_autorizado_se_rechaza(self):
+        from urllib.error import HTTPError
+        from email.message import Message
+        headers = Message()
+        headers["Location"] = "https://www.example.test/dealers"
+        redirect = HTTPError("https://example.test", 301, "Moved", headers, None)
+        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=redirect):
+            result = fetch_page("https://example.test")
+        self.assertEqual(result["capture_status"], "redirect_rejected")
+
+    def test_redirect_https_mismo_host_revalida_robots(self):
+        from urllib.error import HTTPError
+        from email.message import Message
+        headers = Message()
+        headers["Location"] = "/directorio"
+        redirect = HTTPError("https://example.test", 302, "Found", headers, None)
+        class Response:
+            status = 200
+            headers = {"Content-Type": "text/html"}
+            def geturl(self):
+                return "https://example.test/directorio"
+            def read(self, size=-1):
+                return b"<html><body>Directorio</body></html>"
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+        with patch("capturar_fuentes_red_comercial._open_without_redirects",
+                   side_effect=[redirect, Response()]), \
+             patch("capturar_fuentes_red_comercial.robots_allowed",
+                   return_value=(True, "robots_txt")) as robots:
+            result = fetch_page("https://example.test")
+        self.assertEqual(result["capture_status"], "captured")
+        robots.assert_called_once_with("https://example.test/directorio")
+
+    def test_redirect_bloqueada_por_robots_no_se_sigue(self):
+        from urllib.error import HTTPError
+        from email.message import Message
+        headers = Message()
+        headers["Location"] = "/directorio"
+        redirect = HTTPError("https://example.test", 302, "Found", headers, None)
+        with patch("capturar_fuentes_red_comercial._open_without_redirects",
+                   side_effect=redirect), \
+             patch("capturar_fuentes_red_comercial.robots_allowed",
+                   return_value=(False, "robots_disallowed")) as robots:
+            result = fetch_page("https://example.test")
+        self.assertEqual(result["capture_status"], "redirect_robots_disallowed")
+        robots.assert_called_once()
+
+    def test_host_alternativo_solo_se_acepta_si_se_autoriza_expresamente(self):
+        from urllib.error import HTTPError
+        from email.message import Message
+        headers = Message()
+        headers["Location"] = "https://www.example.test/dealers"
+        redirect = HTTPError("https://example.test", 301, "Moved", headers, None)
+        with patch("capturar_fuentes_red_comercial._open_without_redirects",
+                   side_effect=redirect), \
+             patch("capturar_fuentes_red_comercial.robots_allowed",
+                   return_value=(True, "robots_txt")):
+            result = fetch_page("https://example.test", ["www.example.test"])
+        self.assertEqual(result["capture_status"], "redirect_limit_exceeded") if result["capture_status"] == "redirect_limit_exceeded" else self.assertNotEqual(result["capture_status"], "redirect_rejected")
 
 
 if __name__ == "__main__":
