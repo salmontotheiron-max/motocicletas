@@ -8,8 +8,7 @@
     "individually_assessed_entries": 61,
     "pending_entries": 15,
     "reviewed_groups": 36,
-    "coverage": "Registro de control de auditoría; 61 de 76 entradas evaluadas individualmente. Las 15 entradas restantes continúan pendientes; no equivale a auditoría completa.",
-    "last_review_block": "Burgos, Cantabria, Ceuta, Girona, León y Lleida"
+    "coverage": "Registro de control de auditoría; 61 de 76 entradas evaluadas individualmente. Las 15 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
     "unresolved_address_or_operator": 23,
@@ -903,7 +902,7 @@
       "evidence_urls": [
         "https://moto.suzuki.es/concesionarios",
         "https://www.diariodeleon.es/leon/240619/1559636/serna-4x4-mejor-companero-motero.html",
-        "https://laser­na4x4.redsuzuki.es/"
+        "https://laserna4x4.redsuzuki.es/"
       ],
       "limitation": "La corroboración pública específica de motocicletas se apoya en el localizador Suzuki Moto y una publicación periodística de junio de 2024; no incluye visita física, llamada ni comprobación de ventas recientes."
     },
