@@ -1,0 +1,243 @@
+{
+  "schema_version": 2,
+  "country_scope": "ES",
+  "registry_reviewed_at": "2026-11-12",
+  "default_capture_interval_days": 7,
+  "market_scope": {
+    "coverage": "open_market",
+    "tracks": [
+      "manufacturer_entry",
+      "manufacturer_exit",
+      "brand_entry",
+      "brand_exit",
+      "importer_or_distributor_change",
+      "outlet_opening",
+      "outlet_closure",
+      "outlet_relocation",
+      "dealer_operator_change",
+      "brand_added_to_outlet",
+      "brand_removed_from_outlet",
+      "sales_or_service_scope_change"
+    ],
+    "discovery_is_continuous": true,
+    "unknown_brands_allowed": true,
+    "unknown_manufacturers_allowed": true
+  },
+  "policy": {
+    "official_sources_only_for_primary_registry": true,
+    "discovery_sources_may_be_secondary": true,
+    "absence_is_not_closure": true,
+    "announcement_is_not_operation": true,
+    "manual_review_required_before_history_update": true,
+    "capture_user_agent": "ObservatorioRedComercial/1.0"
+  },
+  "manufacturers": [],
+  "brands": [
+    {
+      "brand_id": "brand-suzuki",
+      "canonical_name": "Suzuki",
+      "manufacturer_id": null,
+      "market_status": "established"
+    },
+    {
+      "brand_id": "brand-zontes-es",
+      "canonical_name": "Zontes",
+      "manufacturer_id": null,
+      "market_status": "established"
+    },
+    {
+      "brand_id": "brand-zxmoto-es",
+      "canonical_name": "ZXMOTO",
+      "manufacturer_id": null,
+      "market_status": "recent_entry"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "source-suzuki-es-moto-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-suzuki",
+      "publisher": "Suzuki Moto España",
+      "source_type": "official_directory",
+      "url": "https://moto.suzuki.es/concesionarios",
+      "title": "Concesionarios oficiales Suzuki Moto España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "exhibition"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Directorio oficial con establecimientos agrupados por provincia; distingue exposición y taller."
+    },
+    {
+      "source_id": "source-zontes-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zontes-es",
+      "publisher": "Turbimot, S.L.U. / Zontes España",
+      "source_type": "official_directory",
+      "url": "https://zontesmotos.es/puntos-de-venta/",
+      "title": "Puntos de venta oficiales Zontes España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página oficial enlazada como Puntos de venta. La vista textual expone buscador y mapa, pero no una lista completa; investigar carga JavaScript/API antes de extraer."
+    },
+    {
+      "source_id": "source-zxmoto-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zxmoto-es",
+      "publisher": "Desmotrón, S.L.U. / ZXMOTO España",
+      "source_type": "official_directory",
+      "url": "https://zxmoto.es/puntos-de-venta/",
+      "title": "Puntos de venta ZXMOTO España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_no_entries_yet",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página oficial con texto Próximas aperturas y localizador, sin establecimientos identificables en la vista consultada. No inferir ausencia de red ni cierres."
+    },
+    {
+      "source_id": "source-anesdor-press-releases-es",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "ANESDOR",
+      "source_type": "press",
+      "url": "https://www.anesdor.com/category/notas-de-prensa/",
+      "title": "Notas de prensa de ANESDOR",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "industry"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Asociación sectorial que representa a fabricantes e importadores; fuente de contexto y pistas de implantación, no registro exhaustivo ni prueba única de actividad individual."
+    },
+    {
+      "source_id": "source-motociclismo-industry-es",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MOTOCICLISMO",
+      "source_type": "press",
+      "url": "https://www.motociclismo.es/industria",
+      "title": "Industria y tecnología - MOTOCICLISMO",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_distributor",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Sección sectorial con noticias de aperturas de concesionarios, cambios de distribución y entradas de fabricantes; cada noticia debe verificarse con fuentes primarias cuando sea posible."
+    },
+    {
+      "source_id": "source-posventa-moto-market-es",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Posventa.com",
+      "source_type": "press",
+      "url": "https://www.posventa.com/",
+      "title": "Posventa.com - información sectorial de posventa",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_distributor",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "not_assessed",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Fuente sectorial candidata para descubrir movimientos empresariales y de distribución; pendiente de evaluar sección específica, cobertura y condiciones de captura."
+    },
+    {
+      "source_id": "source-zontes-murcia-dealer-site",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Steel Center, S.L. / Zontes Murcia",
+      "source_type": "company_page",
+      "url": "https://zontesmurcia.com/",
+      "title": "Zontes Murcia - concesionario oficial",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Web propia del establecimiento; declara ser distribuidor y punto de venta oficial Zontes. Evidencia de negocio autodeclarada, pendiente de contraste con directorio oficial y entidad operadora."
+    },
+    {
+      "source_id": "source-zxmoto-asba-dealer-site",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Comercial Impala, S.A. / ZXMOTO ASBA Barcelona",
+      "source_type": "company_page",
+      "url": "https://zxmotoasba.com/dealership",
+      "title": "ZXMOTO ASBA Barcelona - concesionario",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página propia que declara franquicia ZXMOTO y vinculación con Comercial Impala, S.A.; indica Carrer de Calvet 51. Evidencia autodeclarada del establecimiento, pendiente de contraste oficial."
+    },
+    {
+      "source_id": "source-zontes-barcelona-dealer-site",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Zontes BCN",
+      "source_type": "company_page",
+      "url": "https://zontesbarcelona.com/",
+      "title": "Zontes BCN - distribuidor oficial",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Web propia que declara distribución y punto de venta oficial Zontes en Barcelona. Evidencia autodeclarada; falta contrastar establecimientos y operador con fuente primaria de marca."
+    }
+  ]
+}
