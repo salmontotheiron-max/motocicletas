@@ -1,293 +1,264 @@
-"""Captura conservadora de fuentes públicas de red comercial.
+"""Captura reproducible de un inventario explícito de fuentes públicas.
 
-Guarda observaciones técnicas, texto extraído y snapshots HTML comprimidos cuando
-cambia el contenido. No extrae entidades comerciales ni modifica el histórico.
+No rastrea enlaces ni extrae concesionarios. Consulta exclusivamente las URLs
+HTTPS declaradas en fuentes_red_comercial.json y registra resultado/hash en
+SQLite. Los cambios técnicos nunca se convierten automáticamente en eventos.
 """
 from __future__ import annotations
 
-import gzip
+import argparse
 import hashlib
 import json
-import re
-import sys
-import time
+import sqlite3
+import uuid
 from datetime import datetime, timezone
-from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse
-from urllib.robotparser import RobotFileParser
 from urllib.request import HTTPRedirectHandler, Request, build_opener, urlopen
 
+from validar_red_comercial import initialize_database
+
 ROOT = Path(__file__).resolve().parent
-REGISTRY = ROOT / "fuentes_red_comercial.json"
-EVIDENCE = ROOT / "evidencias" / "red_comercial"
-USER_AGENT = "ObservatorioRedComercial/1.0 (+https://github.com/salmontotheiron-max/motocicletas)"
-TIMEOUT_SECONDS = 25
-MAX_RESPONSE_BYTES = 5 * 1024 * 1024
-MAX_TEXT_CHARS = 250_000
+DEFAULT_SOURCES = ROOT / "fuentes_red_comercial.json"
+DEFAULT_MIGRATION = ROOT / "migraciones" / "002_capturas_fuentes.sql"
+USER_AGENT = "ObservatorioRedComercial/1.0"
+MAX_BYTES = 2_000_000
+EXCERPT_BYTES = 600
+ALLOWED_SOURCE_TYPES = {
+    "official_directory", "company_page", "official_statement",
+    "public_record", "press", "aggregator", "social", "other",
+}
+ALLOWED_RELIABILITY = {
+    "primary_official", "primary_business", "secondary_reputable",
+    "community", "unverified",
+}
 
 
-class VisibleTextParser(HTMLParser):
-    """Extrae texto visible básico sin ejecutar JavaScript ni CSS."""
-
-    HIDDEN = {"script", "style", "noscript", "svg", "template"}
-
-    def __init__(self) -> None:
-        super().__init__(convert_charrefs=True)
-        self.hidden_depth = 0
-        self.parts: list[str] = []
-
-    def handle_starttag(self, tag: str, attrs) -> None:
-        if tag.lower() in self.HIDDEN:
-            self.hidden_depth += 1
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag.lower() in self.HIDDEN and self.hidden_depth:
-            self.hidden_depth -= 1
-
-    def handle_data(self, data: str) -> None:
-        if not self.hidden_depth:
-            value = re.sub(r"\s+", " ", data).strip()
-            if value:
-                self.parts.append(value)
+class UnsafeRedirectError(Exception):
+    """Redirección que cambia el origen HTTPS declarado."""
 
 
-def extract_visible_text(html: str) -> str:
-    parser = VisibleTextParser()
-    parser.feed(html)
-    return "\n".join(parser.parts)[:MAX_TEXT_CHARS]
+class SameOriginRedirectHandler(HTTPRedirectHandler):
+    """Sigue solo redirecciones HTTPS que conservan esquema, host y puerto."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        target = urlparse(urljoin(req.full_url, newurl))
+        original = urlparse(req.full_url)
+        origin = (original.scheme.lower(), original.hostname, original.port)
+        destination = (target.scheme.lower(), target.hostname, target.port)
+        if destination != origin or target.scheme.lower() != "https":
+            raise UnsafeRedirectError("Redirección fuera del origen HTTPS original")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
-def load_sources(registry_path: Path = REGISTRY) -> list[dict]:
-    data = json.loads(registry_path.read_text(encoding="utf-8"))
-    sources = []
-    for source in data["sources"]:
-        if source.get("capture_mode") != "http_html":
-            continue
-        if source.get("source_role") not in {"primary_monitoring", "market_discovery"}:
-            continue
+def safe_urlopen(request: Request, timeout: int = 20):
+    """Abre una URL sin permitir que urllib siga redirecciones a otro origen."""
+    return build_opener(SameOriginRedirectHandler()).open(request, timeout=timeout)
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def load_sources(path: Path) -> list[dict]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    version_ok = data.get("schema_version") == 2 or data.get("version") == 1
+    sources = data.get("sources")
+    if not version_ok or not isinstance(sources, list) or not sources:
+        raise ValueError("Inventario de fuentes no reconocido o vacío")
+    seen: set[str] = set()
+    for source in sources:
+        required = ("source_id", "publisher", "source_type", "reliability_class", "title", "url")
+        if any(not isinstance(source.get(key), str) or not source[key].strip() for key in required):
+            raise ValueError("Cada fuente debe incluir los campos obligatorios no vacíos")
+        if source["source_id"] in seen:
+            raise ValueError(f"source_id duplicado: {source['source_id']}")
+        seen.add(source["source_id"])
+        if source["source_type"] not in ALLOWED_SOURCE_TYPES:
+            raise ValueError(f"source_type no admitido: {source['source_type']}")
+        if source["reliability_class"] not in ALLOWED_RELIABILITY:
+            raise ValueError(f"reliability_class no admitida: {source['reliability_class']}")
         parsed = urlparse(source["url"])
-        if parsed.scheme != "https" or not parsed.hostname:
-            raise ValueError(f"URL no permitida para {source.get('source_id')}")
-        sources.append(source)
+        if parsed.scheme.lower() != "https" or not parsed.hostname or parsed.username or parsed.password:
+            raise ValueError(f"Solo se admiten URLs HTTPS válidas: {source['source_id']}")
     return sources
 
 
-def robots_allowed(url: str) -> tuple[bool, str]:
-    parsed = urlparse(url)
-    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
-    parser = RobotFileParser()
-    parser.set_url(robots_url)
-    try:
-        request = Request(robots_url, headers={"User-Agent": USER_AGENT})
-        with _open_without_redirects(request) as response:
-            body = response.read(512_000).decode("utf-8", errors="replace")
-        parser.parse(body.splitlines())
-        return parser.can_fetch(USER_AGENT, url), "robots_txt"
-    except HTTPError as exc:
-        if exc.code in (401, 403):
-            return False, f"robots_http_{exc.code}"
-        # 404/410 or a transient robots error does not authorize bypassing
-        # explicit restrictions; on other errors, fail closed.
-        return (exc.code in (404, 410), f"robots_http_{exc.code}")
-    except (URLError, TimeoutError, OSError) as exc:
-        return False, f"robots_unavailable:{type(exc).__name__}"
+def classify_http(status: int) -> dict:
+    if status in (404, 410):
+        return {"result": "not_found", "http_status": status,
+                "error_category": "http_not_found", "error_message": f"HTTP {status}"}
+    if status in (408, 425, 429) or status >= 500:
+        return {"result": "unavailable", "http_status": status,
+                "error_category": "http_transient", "error_message": f"HTTP {status}"}
+    return {"result": "error", "http_status": status,
+            "error_category": "http_error", "error_message": f"HTTP {status}"}
 
 
-class _NoRedirectHandler(HTTPRedirectHandler):
-    """Devuelve las redirecciones al llamador para validarlas antes de seguirlas."""
-
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
-        return None
-
-
-def _open_without_redirects(request: Request):
-    return build_opener(_NoRedirectHandler).open(request, timeout=TIMEOUT_SECONDS)
-
-
-def _valid_redirect_target(target: str, original_host: str, allowed_hosts: set[str]) -> bool:
-    parsed = urlparse(target)
-    host = (parsed.hostname or "").lower().rstrip(".")
-    try:
-        port = parsed.port
-    except ValueError:
-        return False
-    return (
-        parsed.scheme == "https"
-        and bool(host)
-        and parsed.username is None
-        and parsed.password is None
-        and port in (None, 443)
-        and host in allowed_hosts
-        and original_host in allowed_hosts
-    )
-
-
-def fetch_page(url: str, allowed_redirect_hosts: list[str] | None = None) -> dict:
-    """Descarga HTML siguiendo solo redirecciones HTTPS previamente autorizadas.
-
-    Por defecto solo se permite el hostname exacto de la URL registrada.
-    Se pueden declarar hosts alternativos exactos en allowed_redirect_hosts.
-    Cada destino de redirección debe superar además su propia comprobación robots.txt.
-    """
-    parsed_original = urlparse(url)
-    original_host = (parsed_original.hostname or "").lower().rstrip(".")
-    allowed_hosts = {original_host}
-    allowed_hosts.update(
-        str(host).lower().rstrip(".") for host in (allowed_redirect_hosts or [])
-    )
-    if parsed_original.scheme != "https" or not original_host:
-        return {"capture_status": "invalid_source_url", "http_status": None,
-                "final_url": url, "error": "source_must_be_https"}
-
-    current_url = url
-    max_redirects = 5
-    redirect_codes = {301, 302, 303, 307, 308}
-    for redirect_count in range(max_redirects + 1):
-        request = Request(current_url, headers={
+def fetch_page(url: str, timeout: int = 20, opener=safe_urlopen) -> dict:
+    request = Request(
+        url,
+        headers={
             "User-Agent": USER_AGENT,
-            "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",
-        })
-        try:
-            with _open_without_redirects(request) as response:
-                final_url = response.geturl()
-                if not _valid_redirect_target(final_url, original_host, allowed_hosts):
-                    return {"capture_status": "redirect_rejected",
-                            "http_status": response.status, "final_url": final_url,
-                            "error": "final_url_outside_authorized_https_hosts"}
-                content_type = response.headers.get("Content-Type", "")
-                body = response.read(MAX_RESPONSE_BYTES + 1)
-                status = response.status
-        except HTTPError as exc:
-            if exc.code in redirect_codes:
-                location = exc.headers.get("Location")
-                if not location:
-                    return {"capture_status": "redirect_rejected", "http_status": exc.code,
-                            "final_url": exc.geturl(), "error": "redirect_without_location"}
-                target = urljoin(current_url, location)
-                if redirect_count >= max_redirects:
-                    return {"capture_status": "redirect_limit_exceeded",
-                            "http_status": exc.code, "final_url": target,
-                            "error": f"more_than_{max_redirects}_redirects"}
-                if not _valid_redirect_target(target, original_host, allowed_hosts):
-                    return {"capture_status": "redirect_rejected",
-                            "http_status": exc.code, "final_url": target,
-                            "error": "redirect_target_outside_authorized_https_hosts"}
-                allowed, robots_status = robots_allowed(target)
-                if not allowed:
-                    return {"capture_status": "redirect_robots_disallowed",
-                            "http_status": exc.code, "final_url": target,
-                            "robots_status": robots_status,
-                            "error": "redirect_target_disallowed_by_robots"}
-                current_url = target
-                continue
-            body = exc.read(MAX_RESPONSE_BYTES + 1)
-            return {
-                "capture_status": "http_error", "http_status": exc.code,
-                "final_url": exc.geturl(), "content_type": exc.headers.get("Content-Type", ""),
-                "body": body[:MAX_RESPONSE_BYTES], "error": f"HTTP {exc.code}",
-            }
-        except (URLError, TimeoutError, OSError) as exc:
-            return {"capture_status": "network_error", "http_status": None,
-                    "final_url": current_url, "content_type": None, "error": str(exc)}
-
-        if len(body) > MAX_RESPONSE_BYTES:
-            return {"capture_status": "response_too_large", "http_status": status,
-                    "final_url": final_url, "content_type": content_type,
-                    "error": f"response_exceeds_{MAX_RESPONSE_BYTES}_bytes"}
-        if status < 200 or status >= 300:
-            return {"capture_status": "http_error", "http_status": status,
-                    "final_url": final_url, "content_type": content_type,
-                    "body": body, "error": f"HTTP {status}"}
-        if "html" not in content_type.lower():
-            return {"capture_status": "unexpected_content_type", "http_status": status,
-                    "final_url": final_url, "content_type": content_type,
-                    "error": "expected_html"}
-        return {"capture_status": "captured", "http_status": status,
-                "final_url": final_url, "content_type": content_type, "body": body}
-
-    return {"capture_status": "redirect_limit_exceeded", "http_status": None,
-            "final_url": current_url, "error": "redirect_limit_exceeded"}
-
-
-def persist_capture(source: dict, result: dict, captured_at: str) -> dict:
-    record = {
-        "captured_at": captured_at,
-        "source_id": source["source_id"],
-        "source_role": source["source_role"],
-        "requested_url": source["url"],
-        "final_url": result.get("final_url"),
-        "http_status": result.get("http_status"),
-        "content_type": result.get("content_type"),
-        "capture_status": result["capture_status"],
-        "robots_status": result.get("robots_status"),
-        "error": result.get("error"),
-        "sha256": None,
-        "snapshot_path": None,
-        "extracted_text": None,
-    }
-    body = result.get("body")
-    if body is not None and result["capture_status"] == "captured":
-        digest = hashlib.sha256(body).hexdigest()
-        record["sha256"] = digest
-        html = body.decode("utf-8-sig", errors="replace")
-        text = extract_visible_text(html)
-        record["extracted_text"] = text
-        record["text_sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
-        record["content_bytes"] = len(body)
-        snapshot = EVIDENCE / "snapshots" / source["source_id"] / f"{digest}.html.gz"
-        snapshot.parent.mkdir(parents=True, exist_ok=True)
-        if not snapshot.exists():
-            with snapshot.open("wb") as raw:
-                with gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as compressed:
-                    compressed.write(body)
-        record["snapshot_path"] = (snapshot.relative_to(ROOT).as_posix()
-                                   if snapshot.is_relative_to(ROOT) else str(snapshot))
-    return record
-
-
-def capture_all(registry_path: Path = REGISTRY, evidence_dir: Path = EVIDENCE) -> list[dict]:
-    global EVIDENCE
-    EVIDENCE = evidence_dir
-    records = []
-    captured_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    for source in load_sources(registry_path):
-        allowed, robots_status = robots_allowed(source["url"])
-        if not allowed:
-            result = {"capture_status": "robots_disallowed", "error": robots_status,
-                      "robots_status": robots_status}
-        else:
-            result = fetch_page(source["url"], source.get("allowed_redirect_hosts"))
-            result["robots_status"] = robots_status
-        records.append(persist_capture(source, result, captured_at))
-        time.sleep(1.0)
-    evidence_dir.mkdir(parents=True, exist_ok=True)
-    log_path = evidence_dir / "capturas.jsonl"
-    with log_path.open("a", encoding="utf-8") as stream:
-        for record in records:
-            stream.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
-    summary = {
-        "captured_at": captured_at,
-        "total_sources": len(records),
-        "captured": sum(r["capture_status"] == "captured" for r in records),
-        "failures": sum(r["capture_status"] != "captured" for r in records),
-        "records": records,
-    }
-    (evidence_dir / "ultima_captura.json").write_text(
-        json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.8,*/*;q=0.1",
+        },
     )
-    return records
+    try:
+        with opener(request, timeout=timeout) as response:
+            final_url = response.geturl()
+            original = urlparse(url)
+            final = urlparse(final_url)
+            if (final.scheme.lower(), final.hostname, final.port) != (
+                original.scheme.lower(), original.hostname, original.port
+            ):
+                return {"result": "error", "error_category": "redirect",
+                        "error_message": "Redirección fuera del origen HTTPS original"}
+            status = response.getcode()
+            content_type = response.headers.get("Content-Type", "")
+            body = response.read(MAX_BYTES + 1)
+            if len(body) > MAX_BYTES:
+                return {"result": "error", "http_status": status, "final_url": final_url,
+                        "content_type": content_type, "error_category": "size_limit",
+                        "error_message": f"Respuesta superior al límite de {MAX_BYTES} bytes"}
+            if status < 200 or status >= 300:
+                return classify_http(status)
+            return {
+                "result": "success", "http_status": status, "final_url": final_url,
+                "content_type": content_type, "content_length": len(body),
+                "content_hash": hashlib.sha256(body).hexdigest(),
+                "excerpt": body[:EXCERPT_BYTES].decode("utf-8", errors="replace"),
+            }
+    except UnsafeRedirectError as exc:
+        return {"result": "error", "error_category": "redirect", "error_message": str(exc)}
+    except HTTPError as exc:
+        return classify_http(exc.code)
+    except (URLError, TimeoutError, OSError) as exc:
+        return {"result": "unavailable", "error_category": type(exc).__name__,
+                "error_message": str(exc)[:300]}
+
+
+def apply_migration(connection: sqlite3.Connection, migration_path: Path = DEFAULT_MIGRATION) -> None:
+    connection.executescript(migration_path.read_text(encoding="utf-8"))
+
+
+def ensure_sources(connection: sqlite3.Connection, sources: list[dict]) -> None:
+    fields = ("publisher", "source_type", "url", "title", "reliability_class")
+    for item in sources:
+        existing = connection.execute(
+            "SELECT publisher,source_type,url,title,reliability_class FROM source WHERE source_id=?",
+            (item["source_id"],),
+        ).fetchone()
+        values = tuple(item[key] for key in fields)
+        if existing is not None:
+            if tuple(existing) != values:
+                raise ValueError(
+                    f"El source_id {item['source_id']} ya existe con metadatos distintos; "
+                    "revisar el catálogo antes de capturar"
+                )
+            continue
+        connection.execute(
+            """INSERT INTO source
+               (source_id,publisher,source_type,url,title,reliability_class,notes)
+               VALUES (?,?,?,?,?,?,?)""",
+            (*values, item.get("notes")),
+        )
+
+
+def previous_hash(connection: sqlite3.Connection, source_id: str) -> str | None:
+    row = connection.execute(
+        """SELECT content_hash FROM source_capture
+           WHERE source_id=? AND result IN ('success','changed','unchanged')
+           ORDER BY observed_at DESC LIMIT 1""",
+        (source_id,),
+    ).fetchone()
+    return row[0] if row else None
+
+
+def run_capture(
+    database: str | Path,
+    sources_path: str | Path = DEFAULT_SOURCES,
+    timeout: int = 20,
+    opener=safe_urlopen,
+) -> tuple[str, dict[str, int]]:
+    if not 1 <= timeout <= 60:
+        raise ValueError("timeout debe estar entre 1 y 60 segundos")
+    sources = load_sources(Path(sources_path))
+    connection = initialize_database(database)
+    try:
+        apply_migration(connection)
+        ensure_sources(connection, sources)
+        capture_id = str(uuid.uuid4())
+        connection.execute(
+            "INSERT INTO capture(capture_id,started_at,status,notes) VALUES (?,?,?,?)",
+            (capture_id, utc_now(), "running",
+             "Captura explícita de inventario; sin rastreo de enlaces ni inferencia de eventos"),
+        )
+        counts: dict[str, int] = {}
+        for item in sources:
+            observed = utc_now()
+            result = fetch_page(item["url"], timeout=timeout, opener=opener)
+            outcome = result["result"]
+            if outcome == "success":
+                old_hash = previous_hash(connection, item["source_id"])
+                outcome = (
+                    "success" if old_hash is None else
+                    "unchanged" if old_hash == result["content_hash"] else "changed"
+                )
+            connection.execute(
+                """INSERT INTO source_capture
+                   (source_capture_id,capture_id,source_id,observed_at,result,http_status,
+                    final_url,content_type,content_length,content_hash,excerpt,error_category,error_message)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                (
+                    str(uuid.uuid4()), capture_id, item["source_id"], observed, outcome,
+                    result.get("http_status"), result.get("final_url"), result.get("content_type"),
+                    result.get("content_length"), result.get("content_hash"), result.get("excerpt"),
+                    result.get("error_category"), result.get("error_message"),
+                ),
+            )
+            if outcome in ("success", "changed"):
+                connection.execute(
+                    """INSERT INTO observation
+                       (observation_id,source_id,capture_id,observed_at,content_hash,
+                        evidence_excerpt,evidence_location,notes)
+                       VALUES (?,?,?,?,?,?,?,?)""",
+                    (
+                        str(uuid.uuid4()), item["source_id"], capture_id, observed,
+                        result["content_hash"], result.get("excerpt"), result.get("final_url"),
+                        "Hash SHA-256 de respuesta HTTP; extracto limitado a 600 bytes",
+                    ),
+                )
+            counts[outcome] = counts.get(outcome, 0) + 1
+        failures = counts.get("error", 0) + counts.get("unavailable", 0)
+        status = "failed" if failures == len(sources) else ("partial" if failures else "completed")
+        connection.execute(
+            "UPDATE capture SET finished_at=?,status=? WHERE capture_id=?",
+            (utc_now(), status, capture_id),
+        )
+        connection.commit()
+        return capture_id, counts
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        connection.close()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--db", default="red_comercial.sqlite")
+    parser.add_argument("--sources", default=str(DEFAULT_SOURCES))
+    parser.add_argument("--timeout", type=int, default=20)
+    args = parser.parse_args()
+    if not 1 <= args.timeout <= 60:
+        parser.error("--timeout debe estar entre 1 y 60 segundos")
+    capture_id, counts = run_capture(args.db, args.sources, args.timeout)
+    print(json.dumps(
+        {"capture_id": capture_id, "results": counts},
+        ensure_ascii=False, sort_keys=True,
+    ))
 
 
 if __name__ == "__main__":
-    try:
-        rows = capture_all()
-    except Exception as exc:
-        print(f"Error de captura: {exc}", file=sys.stderr)
-        raise SystemExit(1)
-    for row in rows:
-        print(f'{row["source_id"]}: {row["capture_status"]} '
-              f'HTTP={row["http_status"]} SHA256={row["sha256"]}')
-    if not rows or all(row["capture_status"] != "captured" for row in rows):
-        raise SystemExit("No se capturó correctamente ninguna fuente.")
+    main()

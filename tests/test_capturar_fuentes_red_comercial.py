@@ -1,198 +1,170 @@
-import gzip
-import hashlib
 import json
+import sqlite3
 import tempfile
 import unittest
+from io import BytesIO
 from pathlib import Path
-from unittest.mock import patch
+from urllib.error import URLError
+from urllib.request import Request
 
 from capturar_fuentes_red_comercial import (
-    capture_all, extract_visible_text, fetch_page, persist_capture, robots_allowed
+    SameOriginRedirectHandler,
+    apply_migration,
+    classify_http,
+    fetch_page,
+    load_sources,
+    run_capture,
 )
 
 
-class TestCapturaFuentesRedComercial(unittest.TestCase):
-    def test_extrae_texto_y_omite_scripts_estilos(self):
-        html = "<html><style>oculto</style><body><h1>Concesionarios</h1><script>token()</script><p>Madrid   Centro</p></body></html>"
-        self.assertEqual(extract_visible_text(html), "Concesionarios\nMadrid Centro")
-
-    def test_hash_sha256_y_snapshot_comprimido(self):
-        body = b"<html><body><h1>Red oficial</h1></body></html>"
-        source = {"source_id": "source-test", "source_role": "primary_monitoring", "url": "https://example.test"}
-        result = {"capture_status": "captured", "http_status": 200, "final_url": source["url"],
-                  "content_type": "text/html; charset=utf-8", "body": body}
-        with tempfile.TemporaryDirectory() as tmp:
-            import capturar_fuentes_red_comercial as module
-            previous = module.EVIDENCE
-            module.EVIDENCE = Path(tmp)
-            try:
-                record = persist_capture(source, result, "2026-11-12T00:00:00+00:00")
-                self.assertEqual(record["sha256"], hashlib.sha256(body).hexdigest())
-                path = Path(tmp) / "snapshots" / "source-test" / f'{record["sha256"]}.html.gz'
-                self.assertTrue(record["snapshot_path"].endswith(f'{record["sha256"]}.html.gz'))
-                self.assertTrue(path.exists())
-                with gzip.open(path, "rb") as stream:
-                    self.assertEqual(stream.read(), body)
-            finally:
-                module.EVIDENCE = previous
-
-    def test_fetch_rechaza_redireccion_no_https(self):
-        class Headers(dict):
-            pass
-        class Response:
-            status = 200
-            headers = Headers({"Content-Type": "text/html"})
-            def geturl(self):
-                return "http://downgrade.example/"
-            def read(self, size=-1):
-                return b"<html/>"
-            def __enter__(self):
-                return self
-            def __exit__(self, *args):
-                return False
-        with patch("capturar_fuentes_red_comercial._open_without_redirects", return_value=Response()):
-            result = fetch_page("https://example.test")
-        self.assertEqual(result["capture_status"], "redirect_rejected")
+class FakeHeaders(dict):
+    pass
 
 
-    def test_fetch_rechaza_redireccion_a_otro_dominio(self):
-        class Response:
-            status = 200
-            headers = {"Content-Type": "text/html"}
-            def geturl(self):
-                return "https://external.example/"
-            def read(self, size=-1):
-                return b"<html/>"
-            def __enter__(self):
-                return self
-            def __exit__(self, *args):
-                return False
-        with patch("capturar_fuentes_red_comercial._open_without_redirects", return_value=Response()):
-            result = fetch_page("https://example.test")
-        self.assertEqual(result["capture_status"], "redirect_rejected")
+class FakeResponse:
+    def __init__(self, body=b"<html>directorio</html>", status=200,
+                 url="https://example.org/listado"):
+        self.body = body
+        self.status = status
+        self.url = url
+        self.headers = FakeHeaders({"Content-Type": "text/html; charset=utf-8"})
 
-    def test_robots_fail_closed_si_no_se_puede_consultar(self):
-        from urllib.error import URLError
-        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=URLError("offline")):
-            allowed, status = robots_allowed("https://example.test/dealers")
-        self.assertFalse(allowed)
-        self.assertIn("robots_unavailable", status)
+    def __enter__(self):
+        return self
 
+    def __exit__(self, *args):
+        return False
 
-    def test_redirect_se_rechaza_antes_de_solicitar_otro_dominio(self):
-        from urllib.error import HTTPError
-        from email.message import Message
-        headers = Message()
-        headers["Location"] = "https://external.example/dealers"
-        redirect = HTTPError("https://example.test", 302, "Found", headers, None)
-        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=redirect) as opener:
-            result = fetch_page("https://example.test")
-        self.assertEqual(result["capture_status"], "redirect_rejected")
-        self.assertEqual(opener.call_count, 1)
+    def geturl(self):
+        return self.url
 
-    def test_redirect_a_subdominio_no_autorizado_se_rechaza(self):
-        from urllib.error import HTTPError
-        from email.message import Message
-        headers = Message()
-        headers["Location"] = "https://www.example.test/dealers"
-        redirect = HTTPError("https://example.test", 301, "Moved", headers, None)
-        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=redirect):
-            result = fetch_page("https://example.test")
-        self.assertEqual(result["capture_status"], "redirect_rejected")
+    def getcode(self):
+        return self.status
 
-    def test_redirect_https_mismo_host_revalida_robots(self):
-        from urllib.error import HTTPError
-        from email.message import Message
-        headers = Message()
-        headers["Location"] = "/directorio"
-        redirect = HTTPError("https://example.test", 302, "Found", headers, None)
-        class Response:
-            status = 200
-            headers = {"Content-Type": "text/html"}
-            def geturl(self):
-                return "https://example.test/directorio"
-            def read(self, size=-1):
-                return b"<html><body>Directorio</body></html>"
-            def __enter__(self):
-                return self
-            def __exit__(self, *args):
-                return False
-        with patch("capturar_fuentes_red_comercial._open_without_redirects",
-                   side_effect=[redirect, Response()]), \
-             patch("capturar_fuentes_red_comercial.robots_allowed",
-                   return_value=(True, "robots_txt")) as robots:
-            result = fetch_page("https://example.test")
-        self.assertEqual(result["capture_status"], "captured")
-        robots.assert_called_once_with("https://example.test/directorio")
-
-    def test_redirect_bloqueada_por_robots_no_se_sigue(self):
-        from urllib.error import HTTPError
-        from email.message import Message
-        headers = Message()
-        headers["Location"] = "/directorio"
-        redirect = HTTPError("https://example.test", 302, "Found", headers, None)
-        with patch("capturar_fuentes_red_comercial._open_without_redirects",
-                   side_effect=redirect), \
-             patch("capturar_fuentes_red_comercial.robots_allowed",
-                   return_value=(False, "robots_disallowed")) as robots:
-            result = fetch_page("https://example.test")
-        self.assertEqual(result["capture_status"], "redirect_robots_disallowed")
-        robots.assert_called_once()
-
-    def test_host_alternativo_solo_se_acepta_si_se_autoriza_expresamente(self):
-        from urllib.error import HTTPError
-        from email.message import Message
-        headers = Message()
-        headers["Location"] = "https://www.example.test/dealers"
-        redirect = HTTPError("https://example.test", 301, "Moved", headers, None)
-        class Response:
-            status = 200
-            headers = {"Content-Type": "text/html"}
-            def geturl(self):
-                return "https://www.example.test/dealers"
-            def read(self, size=-1):
-                return b"<html><body>Dealers</body></html>"
-            def __enter__(self):
-                return self
-            def __exit__(self, *args):
-                return False
-        with patch("capturar_fuentes_red_comercial._open_without_redirects",
-                   side_effect=[redirect, Response()]), \
-             patch("capturar_fuentes_red_comercial.robots_allowed",
-                   return_value=(True, "robots_txt")) as robots:
-            result = fetch_page("https://example.test", ["www.example.test"])
-        self.assertEqual(result["capture_status"], "captured")
-        robots.assert_called_once_with("https://www.example.test/dealers")
+    def read(self, limit=-1):
+        return self.body[:limit]
 
 
-    def test_robots_no_sigue_redireccion_automaticamente(self):
-        from urllib.error import HTTPError
-        from email.message import Message
-        headers = Message()
-        headers["Location"] = "https://external.example/robots.txt"
-        redirect = HTTPError("https://example.test/robots.txt", 302, "Found", headers, None)
-        with patch("capturar_fuentes_red_comercial._open_without_redirects", side_effect=redirect) as opener:
-            allowed, status = robots_allowed("https://example.test/dealers")
-        self.assertFalse(allowed)
-        self.assertIn("robots_http_302", status)
-        self.assertEqual(opener.call_count, 1)
+class CaptureTests(unittest.TestCase):
+    def test_current_main_inventory_schema_v2_is_supported(self):
+        sources = load_sources(Path(__file__).resolve().parents[1] / "fuentes_red_comercial.json")
+        self.assertGreaterEqual(len(sources), 15)
+        self.assertIn("source-honda-es-moto-dealers", {item["source_id"] for item in sources})
 
-    def test_registra_fallos_aunque_ninguna_fuente_se_capture(self):
-        source = {"source_id": "source-test", "source_role": "primary_monitoring",
-                  "url": "https://example.test", "capture_mode": "http_html"}
-        with tempfile.TemporaryDirectory() as tmp, \
-             patch("capturar_fuentes_red_comercial.load_sources", return_value=[source]), \
-             patch("capturar_fuentes_red_comercial.robots_allowed",
-                   return_value=(False, "robots_unavailable")), \
-             patch("capturar_fuentes_red_comercial.time.sleep"):
-            records = capture_all(evidence_dir=Path(tmp))
-            self.assertEqual(records[0]["capture_status"], "robots_disallowed")
-            log = Path(tmp) / "capturas.jsonl"
-            summary = Path(tmp) / "ultima_captura.json"
-            self.assertTrue(log.exists())
-            self.assertTrue(summary.exists())
-            self.assertIn('"robots_disallowed"', log.read_text(encoding="utf-8"))
-            self.assertEqual(json.loads(summary.read_text(encoding="utf-8"))["failures"], 1)
+    def test_classify_http_keeps_url_absence_separate_from_closure(self):
+        self.assertEqual(classify_http(404)["result"], "not_found")
+        self.assertEqual(classify_http(410)["result"], "not_found")
+        self.assertEqual(classify_http(503)["result"], "unavailable")
+        self.assertEqual(classify_http(403)["result"], "error")
+
+    def test_fetch_page_hashes_successful_response(self):
+        result = fetch_page(
+            "https://example.org/listado",
+            opener=lambda *a, **k: FakeResponse(),
+        )
+        self.assertEqual(result["result"], "success")
+        self.assertEqual(len(result["content_hash"]), 64)
+        self.assertGreater(result["content_length"], 0)
+
+    def test_fetch_page_rejects_cross_origin_final_url(self):
+        result = fetch_page(
+            "https://example.org/listado",
+            opener=lambda *a, **k: FakeResponse(url="https://other.example/listado"),
+        )
+        self.assertEqual(result["result"], "error")
+        self.assertEqual(result["error_category"], "redirect")
+
+    def test_redirect_handler_blocks_cross_host_before_following(self):
+        handler = SameOriginRedirectHandler()
+        request = Request("https://example.org/listado")
+        with self.assertRaisesRegex(Exception, "fuera del origen"):
+            handler.redirect_request(
+                request, BytesIO(b""), 302, "Found", {}, "https://other.example/listado"
+            )
+
+    def test_redirect_handler_allows_same_origin_https(self):
+        handler = SameOriginRedirectHandler()
+        request = Request("https://example.org/listado")
+        redirected = handler.redirect_request(
+            request, BytesIO(b""), 302, "Found", {}, "/directorio"
+        )
+        self.assertEqual(redirected.full_url, "https://example.org/directorio")
+
+    def test_fetch_page_classifies_network_error(self):
+        def fail(*args, **kwargs):
+            raise URLError("offline")
+        result = fetch_page("https://example.org/listado", opener=fail)
+        self.assertEqual(result["result"], "unavailable")
+
+    def test_fetch_page_enforces_response_size(self):
+        from capturar_fuentes_red_comercial import MAX_BYTES
+        result = fetch_page(
+            "https://example.org/listado",
+            opener=lambda *a, **k: FakeResponse(b"x" * (MAX_BYTES + 1)),
+        )
+        self.assertEqual(result["result"], "error")
+        self.assertEqual(result["error_category"], "size_limit")
+
+    def test_capture_marks_unchanged_and_changed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            inventory = root / "sources.json"
+            inventory.write_text(json.dumps({
+                "schema_version": 2,
+                "sources": [{
+                    "source_id": "test-source",
+                    "publisher": "Test",
+                    "source_type": "company_page",
+                    "reliability_class": "primary_business",
+                    "title": "Test page",
+                    "url": "https://example.org/listado",
+                }],
+            }), encoding="utf-8")
+            database = root / "test.sqlite"
+            first = run_capture(database, inventory, opener=lambda *a, **k: FakeResponse(b"version-1"))
+            second = run_capture(database, inventory, opener=lambda *a, **k: FakeResponse(b"version-1"))
+            third = run_capture(database, inventory, opener=lambda *a, **k: FakeResponse(b"version-2"))
+            connection = sqlite3.connect(database)
+            rows = connection.execute(
+                "SELECT result FROM source_capture ORDER BY rowid"
+            ).fetchall()
+            observations = connection.execute(
+                "SELECT COUNT(*) FROM observation"
+            ).fetchone()[0]
+            connection.close()
+            self.assertEqual(rows, [("success",), ("unchanged",), ("changed",)])
+            self.assertEqual(observations, 2)
+            self.assertNotEqual(first[0], second[0])
+            self.assertNotEqual(second[0], third[0])
+
+    def test_migration_is_idempotent(self):
+        from validar_red_comercial import initialize_database
+        with tempfile.TemporaryDirectory() as directory:
+            connection = initialize_database(Path(directory) / "schema.sqlite")
+            apply_migration(connection)
+            apply_migration(connection)
+            names = {row[0] for row in connection.execute(
+                "SELECT name FROM sqlite_master WHERE type='table'"
+            )}
+            self.assertIn("source_capture", names)
+            connection.close()
+
+    def test_inventory_rejects_non_https_urls(self):
+        with tempfile.TemporaryDirectory() as directory:
+            inventory = Path(directory) / "bad.json"
+            inventory.write_text(json.dumps({
+                "schema_version": 2,
+                "sources": [{
+                    "source_id": "bad",
+                    "publisher": "Test",
+                    "source_type": "company_page",
+                    "reliability_class": "primary_business",
+                    "title": "Bad",
+                    "url": "http://example.org",
+                }],
+            }), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "HTTPS"):
+                load_sources(inventory)
 
 
 if __name__ == "__main__":

@@ -172,3 +172,8 @@ La matriz clasifica la evidencia de las fuentes, no el tamaño ni la cobertura e
 - `pending`: no hay fuente primaria específica o la captura no permite evaluar el directorio.
 
 El recuento de establecimientos verificados se mantiene vacío hasta que haya comprobaciones individuales. La falta de fuente, un error HTTP, un localizador vacío o una web sin contenido extraíble no significan que la marca carezca de red comercial. Los cambios de texto de una página tampoco prueban aperturas, cierres ni cambios de operador.
+
+
+### Captura técnica reproducible de fuentes
+
+El script \`capturar_fuentes_red_comercial.py\` consulta exclusivamente las URLs HTTPS del inventario vigente y registra hashes SHA-256, extractos limitados y estados HTTP en SQLite. La migración \`migraciones/002_capturas_fuentes.sql\` añade el registro por fuente y captura. La guía \`informes/guia-captura-reproducible-red-comercial.md\` documenta ejecución, límites y salvaguardas. Esta fase no programa barridos periódicos ni transforma cambios de hash en aperturas, cierres o cambios de operador: cualquier interpretación comercial requiere revisión humana.
