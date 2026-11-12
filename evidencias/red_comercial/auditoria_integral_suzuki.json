@@ -5,15 +5,15 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 47,
-    "pending_entries": 29,
-    "reviewed_groups": 24,
-    "coverage": "Registro de control de auditoría; 47 de 76 entradas evaluadas individualmente. Las 29 entradas restantes continúan pendientes; no equivale a auditoría completa."
+    "individually_assessed_entries": 55,
+    "pending_entries": 21,
+    "reviewed_groups": 30,
+    "coverage": "Registro de control de auditoría; 55 de 76 entradas evaluadas individualmente. Las 21 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "pending_individual_review": 29,
-    "unresolved_address_or_operator": 15,
-    "corroborated_operator_and_location": 16,
+    "pending_individual_review": 21,
+    "unresolved_address_or_operator": 20,
+    "corroborated_operator_and_location": 19,
     "same_location_multiple_service_entries": 4,
     "same_operator_multiple_locations": 12
   },
@@ -30,7 +30,8 @@
     "La revisión de Cádiz (12/11/2026) contrasta las cuatro entradas El Motorista con el localizador oficial Suzuki y el directorio actual del operador; se agrupan bajo un único operador con cuatro ubicaciones diferenciadas. En Jerez, el taller técnico publicado en C. Amianto se distingue de la tienda Suzuki de Av. de Europa y no se suma como sede Suzuki independiente.",
     "La revisión de Santa Cruz de Tenerife (12/11/2026) contrasta cuatro entradas con el localizador Suzuki y páginas actuales de Fierro Motor y Femotor/Grupo Fedeauto. Fierro Motor se agrupa como un operador con tienda Suzuki en C/ Goya, 3 y taller oficial en C/ Islas Filipinas, 9; la entrada de La Palma mantiene discrepancia entre nº 31 del localizador y nº 32 publicado por el operador, sin atribuir autorización Suzuki específica a esa sede. Femotor confirma exposición y taller Suzuki en Av. de los Majuelos, 24, como una sola ubicación.",
     "La revisión de Las Palmas (12/11/2026) contrasta las tres entradas con el localizador Suzuki Moto, la web oficial de Fedeauto y fuentes sectoriales/comerciales de Pole Position. Fedeauto se mantiene sin corroborar como red de motocicletas porque su web acredita Suzuki automóvil, sin prueba específica de motos. Pole Position se confirma como operador Suzuki de motocicletas en Av. de Escaleritas, 70; su taller de C. Joaquín Blume, 21 se conserva como ubicación técnica del mismo operador, con autorización Suzuki específica no acreditada independientemente.",
-    "La revisión de Granada, Guadalajara, Guipúzcoa, Huelva, A Coruña y La Rioja (12/11/2026) contrasta ocho entradas del localizador Suzuki Moto. Gelsukar, Mantimotor y Agrisa se corroboran con fuentes actuales del operador y coincidencia con el localizador de motos. RCR Bikes permanece sin corroboración primaria actual; Motoblanco presenta discrepancia entre el localizador Suzuki Moto y la web actual del operador, que identifica Triumph. Motocicletas Groba se agrupa como un único operador candidato, pero queda sin resolver la diferencia entre los números 21 y 25 de Ingeniero Mariño."
+    "La revisión de Granada, Guadalajara, Guipúzcoa, Huelva, A Coruña y La Rioja (12/11/2026) contrasta ocho entradas del localizador Suzuki Moto. Gelsukar, Mantimotor y Agrisa se corroboran con fuentes actuales del operador y coincidencia con el localizador de motos. RCR Bikes permanece sin corroboración primaria actual; Motoblanco presenta discrepancia entre el localizador Suzuki Moto y la web actual del operador, que identifica Triumph. Motocicletas Groba se agrupa como un único operador candidato, pero queda sin resolver la diferencia entre los números 21 y 25 de Ingeniero Mariño.",
+    "La revisión de Álava, Alicante, Almería, Asturias y Baleares (12/11/2026) contrasta ocho entradas de seis operadores con el localizador Suzuki Moto y páginas actuales de los operadores. Motos Marín (Elche), Motocycles/Grupo Prim (Alicante) e Indalmar Motor (Viator) se corroboran. Lanfavi no acredita actividad Suzuki Moto en su web actual, centrada en automóviles. Motos Gijón mantiene discrepancia de direcciones y falta de fuente primaria actual. Proa Bikes/Proa Group publica otras marcas y no acredita Suzuki Moto; ambas entradas quedan sin corroborar."
   ],
   "entries": [
     {
