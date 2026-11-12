@@ -10,7 +10,7 @@ Genera:
 - `evidencias/red_comercial/candidatos_cambio.jsonl`: un candidato por transición textual distinta.
 - `evidencias/red_comercial/resumen_comparacion.json`: contadores del barrido.
 
-Cada candidato conserva fechas, hashes, rutas de snapshots, líneas añadidas/retiradas y extractos acotados. Su estado es `pending_manual_review` y su tipo es técnico (`source_content_changed`), no un evento comercial.
+Cada candidato conserva fechas, hashes, rutas de snapshots, líneas añadidas/retiradas y extractos acotados. Las diferencias de líneas respetan su multiplicidad: una segunda aparición añadida o retirada también queda reflejada. Su estado es `pending_manual_review` y su tipo es técnico (`source_content_changed`), no un evento comercial.
 
 ## Límites probatorios
 
@@ -23,4 +23,4 @@ Cada candidato conserva fechas, hashes, rutas de snapshots, líneas añadidas/re
 
 ## Validación pendiente
 
-La primera ejecución real permitirá medir ruido por cambios de diseño, banners y páginas dinámicas. Los umbrales y reglas deberán ajustarse con ejemplos observados, sin convertir automáticamente cambios de contenido en hechos de mercado.
+La prueba de integración con el esquema real del registro verifica el comportamiento esperado de la primera captura piloto: siete baselines, un registro ignorado por bloqueo robots y cero candidatos. Esta prueba usa un fixture compacto con la estructura de PR #21; no sustituye la ejecución del comparador sobre el fichero real. La primera ejecución real permitirá medir ruido por cambios de diseño, banners y páginas dinámicas. Los umbrales y reglas deberán ajustarse con ejemplos observados, sin convertir automáticamente cambios de contenido en hechos de mercado.
