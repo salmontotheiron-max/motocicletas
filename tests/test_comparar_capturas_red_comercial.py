@@ -139,5 +139,24 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
             self.assertEqual(json.loads(summary.read_text(encoding="utf-8"))["candidate_count"], 1)
 
 
+    def test_captura_piloto_real_del_repositorio(self):
+        # Ejecuta el comparador sobre evidencias reales incorporadas desde PR #21.
+        from comparar_capturas_red_comercial import CAPTURES
+        if not CAPTURES.exists():
+            self.skipTest("No hay captura piloto real en esta revisión")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            outcome = run_comparison(
+                CAPTURES,
+                root / "candidatos.jsonl",
+                root / "resumen.json",
+            )
+            self.assertEqual(outcome["total_records"], 8)
+            self.assertEqual(outcome["comparable_sources"], 7)
+            self.assertEqual(outcome["baseline_captures"], 7)
+            self.assertEqual(outcome["ignored_records"], 1)
+            self.assertEqual(outcome["candidate_count"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()
