@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: comparacion-red-comercial
+  group: capturas-red-comercial
   cancel-in-progress: false
 
 jobs:
