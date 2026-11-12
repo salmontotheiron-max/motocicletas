@@ -454,13 +454,13 @@
       "brand_id": "brand-piaggio",
       "canonical_name": "Piaggio",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por fichas del localizador oficial Piaggio. Primera revisión individual en Barcelona; la cobertura de las demás provincias prioritarias sigue pendiente."
     },
     {
       "brand_id": "brand-qjmotor",
@@ -1001,6 +1001,26 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Localizador oficial con búsqueda por código postal o provincia. El HTML visible expone filtros y controles, no el inventario completo de puntos. La marca distingue concesionarios oficiales de agentes GENIUS; no deben agregarse ambos como concesionarios ni inferir ventas de los agentes. La nota oficial de 01-09-2026 identifica nuevos concesionarios en Barcelona y otros mercados."
+    },
+    {
+      "source_id": "source-piaggio-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-piaggio",
+      "publisher": "Piaggio & C. SpA / Piaggio España",
+      "source_type": "official_directory",
+      "url": "https://www.piaggio.com/es_ES/dealer-locator/",
+      "title": "Localizador oficial de distribuidores y puntos de asistencia Piaggio España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El localizador ofrece fichas individuales con clasificación explícita de Distribuidor Oficial, Punto de Asistencia Oficial o Punto de Asistencia Autorizado. La incorporación al inventario requiere auditar cada ficha; los puntos solo de asistencia no se cuentan como ventas."
     }
   ]
 }
