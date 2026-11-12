@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se aceptan como puntos de venta los establecimientos individualizados en el localizador oficial Royal Enfield España. La inclusión en el directorio del fabricante determina manufacturer_listed. Se asigna el rol service únicamente cuando el operador publica expresamente taller o servicio técnico Royal Enfield; la reserva de prueba de conducción por sí sola no se interpreta como taller.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Establecimiento individualizado por Royal Enfield España en su localizador oficial.",
+    "official_authorization": "manufacturer_listed significa que el fabricante incluye el establecimiento en su directorio oficial; no implica auditoría independiente de la entidad jurídica ni medición de ventas."
+  },
+  "outlet_count": 7,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 1,
+      "Cádiz": 2,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 7,
+    "service": 5
+  },
+  "official_locator": {
+    "url": "https://locate-us.royalenfield.com/es/es/espana",
+    "status": "directory_content_visible",
+    "notes": "El localizador oficial muestra los siete puntos de las provincias prioritarias, con fichas individuales, dirección, web y opción de prueba de conducción."
+  },
+  "outlets": [
+    {
+      "outlet_id": "royal-enfield-barcelona-asba",
+      "brand": "Royal Enfield",
+      "trading_name": "Royal Enfield Barcelona ASBA",
+      "operator": "COMERCIAL IMPALA / ASBA",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Buenos Aires, 53, 08036 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/royal-enfield-barcelona-asba-334",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial enlaza el establecimiento. El operador publica gama Royal Enfield y servicio técnico oficial."
+    },
+    {
+      "outlet_id": "royal-enfield-barcelona-mitre",
+      "brand": "Royal Enfield",
+      "trading_name": "Royal Enfield Barcelona Mitre",
+      "operator": "ROYAL ENFIELD MITRE",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Ronda del General Mitre, 245, 08023 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/royal-enfield-barcelona-mitre-335",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial enlaza la ficha. La web del operador identifica concesionario y taller oficial Royal Enfield."
+    },
+    {
+      "outlet_id": "royal-enfield-malaga-go-racing",
+      "brand": "Royal Enfield",
+      "trading_name": "Go Racing Motos Málaga",
+      "operator": "GO RACING MOTOS",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de José Ortega y Gasset, 254, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/go-racing-motos-malaga-492",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial enlaza la tienda. El operador se identifica como concesionario oficial, vende motos nuevas y publica taller y mecánica Royal Enfield."
+    },
+    {
+      "outlet_id": "royal-enfield-cadiz-jerez",
+      "brand": "Royal Enfield",
+      "trading_name": "Coolmotorcycles Jerez",
+      "operator": "COOLMOTORCYCLES",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Platino, 21, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/coolmotorcycles-jerez-333",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial con dirección, web del operador y reserva de prueba de conducción. No se atribuye taller al punto por falta de evidencia específica revisada."
+    },
+    {
+      "outlet_id": "royal-enfield-cadiz-chiclana",
+      "brand": "Royal Enfield",
+      "trading_name": "Coolmotorcycles Chiclana",
+      "operator": "COOLMOTORCYCLES",
+      "province": "Cádiz",
+      "municipality": "Chiclana de la Frontera",
+      "public_address": "Calle Juan Sebastián Elcano, 10, 11130 Chiclana de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/coolmotorcycles-chiclana-490",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial con dirección, web del operador y reserva de prueba de conducción. Se cuenta como establecimiento físico distinto de Jerez; no se atribuye taller sin evidencia específica."
+    },
+    {
+      "outlet_id": "royal-enfield-alicante-alcycles",
+      "brand": "Royal Enfield",
+      "trading_name": "Royal Enfield Alicante | Alcycles",
+      "operator": "ALCYCLES",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle Río Júcar, 18, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/royal-enfield-alicante-alcycles-328",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial enlaza el punto. El operador publica oferta de motos Royal Enfield y taller oficial de la marca."
+    },
+    {
+      "outlet_id": "royal-enfield-murcia-intruder",
+      "brand": "Royal Enfield",
+      "trading_name": "Royal Enfield Murcia | Intruder",
+      "operator": "INTRUDER",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida de Alicante, 209, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://locate-us.royalenfield.com/es/es/espana/royal-enfield-murcia-intruder-343",
+      "evidence_type": "manufacturer_official_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial enlaza el punto. El operador se identifica como concesionario oficial Royal Enfield y publica servicio oficial, mantenimiento y reparación."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental de las cinco provincias prioritarias; no es un censo nacional ni exhaustivo.",
+    "La inclusión en el directorio oficial acredita pertenencia a la red publicada por Royal Enfield, no ventas realizadas ni matriculaciones.",
+    "Se registran dos puntos de venta en Cádiz: Jerez y Chiclana, con direcciones diferenciadas.",
+    "Jerez y Chiclana se contabilizan como venta por su inclusión en el directorio y la opción oficial de reservar prueba; no se infiere taller en esos puntos.",
+    "Los roles de servicio se derivan de la publicación expresa de taller o servicio técnico Royal Enfield por el operador; no se infieren volúmenes, capacidad ni disponibilidad.",
+    "No se infiere ausencia de red en provincias no auditadas."
+  ],
+  "methodology": "Consulta del localizador oficial Royal Enfield España y contraste de fichas individuales para los puntos de las cinco provincias prioritarias. Se deduplica por dirección física y se distinguen venta y servicio según la evidencia pública disponible. Fecha de consulta: 2026-11-12."
+}

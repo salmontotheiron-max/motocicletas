@@ -491,13 +491,13 @@
       "brand_id": "brand-royal-enfield",
       "canonical_name": "Royal Enfield",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España y red oficial acreditadas por el localizador oficial Royal Enfield, que individualiza siete establecimientos en las cinco provincias prioritarias: dos en Barcelona, dos en Cádiz y uno en Málaga, Alicante y Murcia. Cinco ubicaciones publican además taller o servicio técnico Royal Enfield; en Jerez y Chiclana se registra venta y prueba de conducción sin inferir servicio. El inventario es un corte documental del directorio oficial, no un censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-sherco",
@@ -1423,6 +1423,27 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Listado oficial extraíble con direcciones y enlaces a fichas individuales de concesionarios. Se auditan los puntos de las cinco provincias prioritarias y se conserva la especialización off-road de Motissimo Barcelona."
+    },
+    {
+      "source_id": "source-royal-enfield-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-royal-enfield",
+      "publisher": "Royal Enfield España",
+      "source_type": "official_directory",
+      "url": "https://locate-us.royalenfield.com/es/es/espana",
+      "title": "Localizador oficial de tiendas y distribuidores Royal Enfield España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "test_ride"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Directorio oficial individualiza establecimientos por nombre y dirección, con fichas y enlaces a web/solicitud de prueba. La auditoría territorial registra los siete puntos identificados en las cinco provincias prioritarias. Las funciones de taller se atribuyen solo donde la ficha o web del operador publica servicio técnico Royal Enfield; la inclusión en el directorio acredita pertenencia a la red publicada por el fabricante, no volumen de ventas."
     }
   ]
 }
