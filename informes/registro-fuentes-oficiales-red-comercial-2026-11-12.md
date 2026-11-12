@@ -72,3 +72,24 @@ El script capturar_fuentes_red_comercial.py realiza peticiones HTTPS de lectura 
 El workflow .github/workflows/capturar-red-comercial.yml permite ejecución manual y programa barridos semanales los lunes a las 06:40 UTC. Tras la integración en la rama predeterminada, persistirá snapshots y metadatos mediante commits versionados. Las fuentes con captura manual quedan fuera de la ejecución automática.
 
 La captura es una observación de fuente, no una extracción fiable de establecimientos. Los localizadores dinámicos pueden devolver una carcasa HTML sin sus registros; el resultado se marca y se mantiene como evidencia técnica, sin interpretar una lista vacía como cese. La comparación semántica y la generación de candidatos quedan para la siguiente fase.
+
+## Ampliación de cobertura oficial (12-11-2026)
+
+Se incorporan al registro tres marcas adicionales con fuentes primarias oficiales:
+
+| Marca | Fuente oficial | Estado de captura inicial |
+|---|---|---|
+| Honda | https://www.honda.es/motorcycles/concesionarios.html | Directorio textual visible; validar integridad del listado al capturar |
+| CFMOTO | https://cfmoto.es/concesionarios | Localizador con filtros; contenido parcialmente dinámico |
+| Voge | https://vogespain.es/puntos-de-venta-espana/ | Localizador cartográfico; HTML estático sin establecimientos |
+
+La selección se apoya en los directorios publicados por las propias marcas/importadores. Honda muestra nombres de concesionarios y localidades en el contenido indexado; CFMOTO publica su localizador oficial y parte de sus establecimientos; Voge identifica explícitamente sus puntos de venta y el responsable del canal en España. Las fuentes se registran como seguimiento primario, pero el estado de captura distingue entre contenido visible y localizadores dinámicos.
+
+Referencias consultadas:
+- Honda: https://www.honda.es/motorcycles/concesionarios.html
+- CFMOTO: https://cfmoto.es/concesionarios
+- Voge: https://vogespain.es/puntos-de-venta-espana/
+- ANESDOR, asociados: https://www.anesdor.com/asociados/
+
+La ampliación eleva el registro a seis marcas y doce fuentes. No equivale todavía a seis directorios operativos comparables: la captura automatizada y la validación de cobertura deben completarse antes de considerar estas redes como observables. No se extraen establecimientos ni se modifica el histórico de puntos de venta en esta fase.
+

@@ -50,6 +50,24 @@
       "canonical_name": "ZXMOTO",
       "manufacturer_id": null,
       "market_status": "recent_entry"
+    },
+    {
+      "brand_id": "brand-honda",
+      "canonical_name": "Honda",
+      "manufacturer_id": null,
+      "market_status": "established"
+    },
+    {
+      "brand_id": "brand-cfmoto",
+      "canonical_name": "CFMOTO",
+      "manufacturer_id": null,
+      "market_status": "established"
+    },
+    {
+      "brand_id": "brand-voge",
+      "canonical_name": "Voge",
+      "manufacturer_id": null,
+      "market_status": "established"
     }
   ],
   "sources": [
@@ -238,6 +256,67 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Web propia que declara distribución y punto de venta oficial Zontes en Barcelona. Evidencia autodeclarada; falta contrastar establecimientos y operador con fuente primaria de marca."
+    },
+    {
+      "source_id": "source-honda-es-moto-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-honda",
+      "publisher": "Honda Motor Europe Limited / Honda España",
+      "source_type": "official_directory",
+      "url": "https://www.honda.es/motorcycles/concesionarios.html",
+      "title": "Concesionarios oficiales Honda Moto España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "exhibition"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Directorio oficial de concesionarios Honda Moto España. El índice público muestra establecimientos y localidades; validar en captura automatizada la integridad del listado y si incluye servicios/talleres."
+    },
+    {
+      "source_id": "source-cfmoto-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-cfmoto",
+      "publisher": "Jets Marivent, S.L. / CFMOTO España",
+      "source_type": "official_directory",
+      "url": "https://cfmoto.es/concesionarios",
+      "title": "Concesionarios oficiales CFMOTO España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con selección por provincia y categoría; el HTML consultado expone nombres parciales y controles, pero no un listado nacional completo. Evaluar carga dinámica y endpoints públicos sin eludir controles."
+    },
+    {
+      "source_id": "source-voge-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-voge",
+      "publisher": "ONETRÓN, S.L.U. / Voge España",
+      "source_type": "official_directory",
+      "url": "https://vogespain.es/puntos-de-venta-espana/",
+      "title": "Puntos de venta oficiales Voge España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial basado en mapa y buscador por dirección; el HTML estático no incluye establecimientos. No inferir ausencia de red; investigar si existe API pública autorizada."
     }
   ]
 }
