@@ -13,7 +13,7 @@ Desde la raíz del repositorio:
 ```bash
 python -c "from validar_red_comercial import initialize_database; db=initialize_database('red_comercial.sqlite'); db.close()"
 python capturar_fuentes_red_comercial.py --db red_comercial.sqlite
-python -m unittest tests.test_capturar_fuentes_red_comercial -v
+python -m unittest discover -s tests -p 'test_capturar_fuentes_red_comercial.py' -v
 ```
 
 El proceso:
