@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se incorporan establecimientos cuando una fuente primaria del operador publica oferta Macbor y una dirección física concreta. La oficialidad autodeclarada se separa de la confirmación individual por el fabricante. Macbor es marca propia de Motos Bordoy S.A.; su canal propio se distingue de distribuidores externos. El localizador oficial distingue concesionarios y servicios oficiales, pero no expone fichas individuales en la vista textual consultada.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "El operador publica catálogo, modelos o una página comercial Macbor y una dirección física identificable.",
+    "official_authorization": "self_declared_official significa que el operador se autodenomina concesionario oficial; no equivale a confirmación individual por Macbor. manufacturer_individually_listed exige ficha individual visible en el localizador oficial.",
+    "direct_brand_owner_retail": "El punto pertenece al operador titular de la marca propia Macbor; se registra como canal propio, no como distribuidor externo ni como ficha individual del localizador."
+  },
+  "outlet_count": 7,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 7,
+    "service": 4,
+    "operator_self_declared_only": 5,
+    "brand_owner_direct_retail": 1,
+    "manufacturer_individually_listed": 0,
+    "commercial_offer_without_individual_manufacturer_confirmation": 6
+  },
+  "official_source": {
+    "url": "https://www.macbor.es/concesionarios?lang=es",
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial presenta buscador y categorías de concesionarios/servicios oficiales, pero no expone fichas individuales en la consulta textual. La FAQ oficial confirma la existencia de red oficial nacional, sin enumerar establecimientos."
+  },
+  "outlets": [
+    {
+      "outlet_id": "macbor-motos-bordoy-barcelona",
+      "brand": "Macbor",
+      "trading_name": "Motos Bordoy — Concesionario Balmes",
+      "operator": "Motos Bordoy S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Balmes, 186, 08006 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosbordoy.com/",
+      "supporting_urls": [
+        "https://www.motosbordoy.com/el-negocio-concesionarios/"
+      ],
+      "evidence_type": "brand_owner_retail",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "brand_owner_direct_retail",
+      "notes": "Motos Bordoy identifica Macbor como marca propia desde 1999 y publica tres puntos de venta en Barcelona. Se conserva una ubicación representativa, Balmes 186, sin atribuir individualmente Macbor a las otras dos tiendas ni servicio Macbor específico."
+    },
+    {
+      "outlet_id": "macbor-expomoto-malaga",
+      "brand": "Macbor",
+      "trading_name": "Expomoto Málaga",
+      "operator": "Expomoto Málaga",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de José Ortega y Gasset, 262, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://expomotomalaga.es/marcas/macbor/",
+      "supporting_urls": [
+        "https://expomotomalaga.es/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "Página específica Macbor con catálogo y dirección de tienda. El operador publica taller multimarca, pero no se atribuye servicio Macbor ni oficialidad."
+    },
+    {
+      "outlet_id": "macbor-castro-cadiz",
+      "brand": "Macbor",
+      "trading_name": "Castro La Motocicleta Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/macbor/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara concesionario oficial Macbor en todas sus instalaciones. La dirección publicada para ventas es Avenida de la Sanidad Pública 297; el taller se ubica en Calle García Quijano 2 y no se atribuye servicio a esta dirección de venta."
+    },
+    {
+      "outlet_id": "macbor-castro-jerez",
+      "brand": "Macbor",
+      "trading_name": "Castro La Motocicleta Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/macbor/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara concesionario oficial Macbor en todas sus instalaciones y publica ventas y taller en la misma dirección."
+    },
+    {
+      "outlet_id": "macbor-castro-palmones",
+      "brand": "Macbor",
+      "trading_name": "Castro La Motocicleta Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/macbor/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara concesionario oficial Macbor en todas sus instalaciones y publica ventas y taller en la misma dirección."
+    },
+    {
+      "outlet_id": "macbor-grupo-prim-alicante",
+      "brand": "Macbor",
+      "trading_name": "Motocicletas Prim Alicante",
+      "operator": "Grupo Prim",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carretera de Ocaña, 31, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motocicletas.grupoprim.com/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web del operador identifica Macbor como concesionario oficial en Alicante y publica ventas, taller y recambios en Carretera de Ocaña 31. Se registra oficialidad autodeclarada."
+    },
+    {
+      "outlet_id": "macbor-francisco-belmonte-murcia",
+      "brand": "Macbor",
+      "trading_name": "Francisco Belmonte",
+      "operator": "Francisco Belmonte S.A.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina, 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/macbor-murcia/",
+      "supporting_urls": [
+        "https://franciscobelmonte.com/sobre-nosotros/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página específica Macbor con venta, servicio técnico, mantenimiento y recambios. El operador se declara concesionario oficial y exclusivo Macbor para la Región de Murcia."
+    }
+  ]
+}
