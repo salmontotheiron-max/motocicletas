@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "QJMotor",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se incorpora oferta comercial cuando la página actual del propio operador identifica QJMotor y un establecimiento concreto. La autodeclaración de concesionario oficial se registra separadamente y no se convierte en autorización confirmada por el fabricante. El localizador oficial QJMotor se conserva como fuente primaria de seguimiento, pero la vista consultada no expone fichas; el comunicado oficial de 2023 se utiliza solo como antecedente histórico.",
+  "source": {
+    "source_type": "operator_business_pages_with_official_brand_context",
+    "publisher": "Operadores comerciales QJMotor en España; QJMotor España como fuente de contraste",
+    "url": "https://qjmotor.es/concesionarios/",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_business_with_primary_official_context",
+    "notes": "Se contrastan páginas actuales de Motos Bordoy, Expomoto Málaga, Castro La Motocicleta, Grupo Prim y Francisco Belmonte. El localizador oficial muestra cero tiendas en la vista HTML y no permite validar individualmente las altas."
+  },
+  "outlet_count": 9,
+  "counts": {
+    "by_province": {
+      "Barcelona": 3,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 9,
+    "service": 8,
+    "service_only": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "qjmotor-motos-bordoy-balmes",
+      "brand": "QJMotor",
+      "trading_name": "Motos Bordoy – Balmes",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Balmes, 186, 08006 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/quienes-somos",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/tiendas",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "observed_at": "2026-11-12",
+      "notes": "Motos Bordoy identifica QJ MOTOR entre sus marcas y se declara importador de QJ MOTOR en España. Sus páginas actuales identifican esta tienda física y los servicios de taller y recambios. No se presupone que las tres sedes sean tres concesiones independientes del fabricante."
+    },
+    {
+      "outlet_id": "qjmotor-motos-bordoy-valencia",
+      "brand": "QJMotor",
+      "trading_name": "Motos Bordoy – Valencia",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Valencia, 179, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/quienes-somos",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/tiendas",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "observed_at": "2026-11-12",
+      "notes": "Motos Bordoy identifica QJ MOTOR entre sus marcas y se declara importador de QJ MOTOR en España. Sus páginas actuales identifican esta tienda física y los servicios de taller y recambios. No se presupone que las tres sedes sean tres concesiones independientes del fabricante."
+    },
+    {
+      "outlet_id": "qjmotor-motos-bordoy-urgell",
+      "brand": "QJMotor",
+      "trading_name": "Motos Bordoy – Urgell",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Comte d'Urgell, 240, 08036 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/quienes-somos",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/tiendas",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "observed_at": "2026-11-12",
+      "notes": "Motos Bordoy identifica QJ MOTOR entre sus marcas y se declara importador de QJ MOTOR en España. Sus páginas actuales identifican esta tienda física y los servicios de taller y recambios. No se presupone que las tres sedes sean tres concesiones independientes del fabricante."
+    },
+    {
+      "outlet_id": "qjmotor-expomoto-malaga",
+      "brand": "QJMotor",
+      "trading_name": "Expomoto Málaga",
+      "operator": "Expomoto Málaga",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Av. de José Ortega y Gasset, 262, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://expomotomalaga.es/marcas/qjmotor/",
+      "supporting_urls": [
+        "https://expomotomalaga.es/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "observed_at": "2026-11-12",
+      "notes": "La página propia ofrece modelos QJMotor, anuncia prueba de unidades y venta en el establecimiento; la página general declara taller multimarca. No se presenta como concesionario oficial del fabricante en la evidencia consultada."
+    },
+    {
+      "outlet_id": "qjmotor-castro-cadiz",
+      "brand": "QJMotor",
+      "trading_name": "Castro La Motocicleta – Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Av. de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/qj-motor/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/qj-motor/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "observed_at": "2026-11-12",
+      "notes": "El operador se presenta como concesionario oficial QJMotor y declara venta y posventa en esta sede. Ventas en Av. de la Sanidad Pública 297 y taller en C. García Quijano 2. La autorización oficial queda autodeclarada, no verificada independientemente con QJMotor."
+    },
+    {
+      "outlet_id": "qjmotor-castro-jerez",
+      "brand": "QJMotor",
+      "trading_name": "Castro La Motocicleta – Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "C/ Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/qj-motor/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/qj-motor/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "observed_at": "2026-11-12",
+      "notes": "El operador se presenta como concesionario oficial QJMotor y declara venta y posventa en esta sede. Ventas y taller en la misma sede. La autorización oficial queda autodeclarada, no verificada independientemente con QJMotor."
+    },
+    {
+      "outlet_id": "qjmotor-castro-palmones",
+      "brand": "QJMotor",
+      "trading_name": "Castro La Motocicleta – Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "C/ Fragata, 11, Polígono Palmones, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/qj-motor/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/qj-motor/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "observed_at": "2026-11-12",
+      "notes": "El operador se presenta como concesionario oficial QJMotor y declara venta y posventa en esta sede. Ventas y taller en la misma sede. La autorización oficial queda autodeclarada, no verificada independientemente con QJMotor."
+    },
+    {
+      "outlet_id": "qjmotor-grupo-prim-alicante",
+      "brand": "QJMotor",
+      "trading_name": "Grupo Prim – motocicletas",
+      "operator": "Grupo Prim",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Ctra. de Ocaña, 29, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.grupoprim.com/",
+      "supporting_urls": [
+        "https://www.grupoprim.com/logo-moto/logo-qj.html",
+        "https://www.grupoprim.com/cita-de-taller-motos"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "observed_at": "2026-11-12",
+      "notes": "El operador incluye QJ en su oferta de motocicletas y en su página de cita de taller para la sede de Ctra. de Ocaña 29. Se acredita oferta comercial y servicio declarado, no autorización oficial independiente."
+    },
+    {
+      "outlet_id": "qjmotor-francisco-belmonte-murcia",
+      "brand": "QJMotor",
+      "trading_name": "Francisco Belmonte, S.A.",
+      "operator": "Francisco Belmonte, S.A.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "C/ Isla Cristina, 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/promociones-ofertas-de-motos/",
+      "supporting_urls": [
+        "https://franciscobelmonte.com/"
+      ],
+      "evidence_type": "operator_product_listing",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "observed_at": "2026-11-12",
+      "notes": "La página comercial publica una QJ SRK 800 con precio y condiciones de venta. No se añade servicio QJ porque la evidencia localizada no identifica expresamente un servicio posventa QJ en esta sede."
+    }
+  ],
+  "limitations": [
+    "El inventario recoge nueve ubicaciones con evidencia comercial propia, no un censo exhaustivo de la red QJMotor.",
+    "Barcelona: Motos Bordoy se identifica como importador español de QJMotor y publica tres tiendas físicas; se incluyen como presencia comercial del grupo, no como tres concesiones independientes confirmadas por el fabricante.",
+    "Málaga: Expomoto identifica QJMotor en su oferta y venta; la autorización oficial no está confirmada independientemente.",
+    "Cádiz: Castro declara condición de concesionario oficial y publica tres sedes con venta/posventa; la autorización se conserva como autodeclarada.",
+    "Alicante: Grupo Prim incluye QJ en su oferta y taller; no se ha encontrado ficha individual actual del localizador oficial.",
+    "Murcia: Francisco Belmonte publica oferta comercial actual QJ SRK 800; la evidencia no acredita taller específico ni autorización oficial.",
+    "El localizador oficial QJMotor devuelve Number Of Shops: 0 en la vista HTML consultada. No se interpreta como ausencia de red; puede depender de contenido dinámico.",
+    "El comunicado oficial de 05-12-2023 enumeraba concesionarios en Barcelona, Alicante y Murcia, pero su antigüedad impide usarlo como confirmación única de vigencia actual.",
+    "La ausencia de una ficha actual individual en una provincia no demuestra ausencia de oferta comercial."
+  ]
+}
