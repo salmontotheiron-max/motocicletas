@@ -960,6 +960,27 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Localizador oficial con fichas individuales; la página de actividad Motocicletas y Scooters permite identificar puntos de venta. La vista indexada puede mezclar categorías de otros productos Yamaha, por lo que solo se incorporan fichas marcadas expresamente como Motocicletas y Scooters."
+    },
+    {
+      "source_id": "source-sym-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-sym",
+      "publisher": "Motos Bordoy, S.A. / SYM España",
+      "source_type": "official_directory",
+      "url": "https://www.sym.com.es/concesionarios-scooter",
+      "title": "Concesionarios oficiales SYM España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "scooters_and_motorcycles"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con búsqueda por ciudad o código postal y radio de 100 km; el HTML público muestra el buscador y separa concesionarios oficiales de servicios oficiales, pero no expone establecimientos en la extracción estática. No inferir ausencia de red."
     }
   ]
 }
