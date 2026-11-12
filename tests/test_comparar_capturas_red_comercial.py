@@ -71,6 +71,16 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
         self.assertEqual(result["unchanged_comparisons"], 1)
         self.assertEqual(result["candidate_count"], 0)
 
+    def test_ignora_cambios_solo_de_mayusculas_y_cookies(self):
+        old = "DIRECTORIO OFICIAL DE CONCESIONARIOS. " * 4
+        new = "Directorio oficial de concesionarios. " * 4 + "\\nAceptar todas las cookies"
+        result = compare_records([
+            row("a", "2026-11-01T00:00:00Z", "h1", old),
+            row("a", "2026-11-08T00:00:00Z", "h2", new),
+        ])
+        self.assertEqual(result["unchanged_comparisons"], 1)
+        self.assertEqual(result["candidate_count"], 0)
+
     def test_run_escribe_jsonl_y_resumen(self):
         text = "Directorio oficial de concesionarios. " * 5
         with tempfile.TemporaryDirectory() as tmp:
