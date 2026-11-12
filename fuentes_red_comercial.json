@@ -939,6 +939,27 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Localizador oficial basado en mapa y buscador por dirección; el HTML estático no incluye establecimientos. No inferir ausencia de red; investigar si existe API pública autorizada."
+    },
+    {
+      "source_id": "source-yamaha-es-moto-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-yamaha",
+      "publisher": "Yamaha Motor Europe N.V., Sucursal en España",
+      "source_type": "official_directory",
+      "url": "https://concesionarios.yamaha-motor.es/",
+      "title": "Localizador oficial de concesionarios Yamaha España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "motorcycles_and_scooters"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con fichas individuales; la página de actividad Motocicletas y Scooters permite identificar puntos de venta. La vista indexada puede mezclar categorías de otros productos Yamaha, por lo que solo se incorporan fichas marcadas expresamente como Motocicletas y Scooters."
     }
   ]
 }
