@@ -30,6 +30,8 @@ jobs:
         run: python validar_fuentes_red_comercial.py
       - name: Ejecutar capturas
         run: python capturar_fuentes_red_comercial.py
+      - name: Generar matriz de cobertura por marca
+        run: python generar_auditoria_cobertura_red.py
       - name: Persistir evidencias versionadas
         if: always() && steps.checkout.outcome == 'success'
         run: |
