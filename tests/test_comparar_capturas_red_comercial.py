@@ -158,10 +158,13 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
                 root / "candidatos.jsonl",
                 root / "resumen.json",
             )
-            self.assertEqual(outcome["total_records"], 8)
+            # El repositorio contiene dos capturas completas de ocho registros.
+            # Cada una aporta siete fuentes comparables y un bloqueo por robots.
+            self.assertEqual(outcome["total_records"], 16)
             self.assertEqual(outcome["comparable_sources"], 7)
             self.assertEqual(outcome["baseline_captures"], 7)
-            self.assertEqual(outcome["ignored_records"], 1)
+            self.assertEqual(outcome["ignored_records"], 2)
+            self.assertEqual(outcome["unchanged_comparisons"], 7)
             self.assertEqual(outcome["candidate_count"], 0)
 
 
