@@ -10,29 +10,29 @@
     "Murcia"
   ],
   "brand": "KYMCO",
-  "source_policy": "Se incorporan puntos cuando la marca/importador los identifica como concesionarios y existe evidencia pública del operador sobre marca y ubicación. No se convierten agentes GENIUS ni talleres asociados en puntos de venta sin evidencia individual de venta.",
+  "source_policy": "Se incorporan puntos de venta cuando la marca/importador los identifica como concesionarios y existe evidencia pública del operador sobre marca y ubicación; también se admite autodeclaración comercial específica, separando autorización oficial. Agentes GENIUS y talleres asociados sin evidencia individual de venta no se cuentan como concesionarios ni puntos de venta.",
   "source": {
-    "source_type": "official_brand_dealer_announcement_plus_operator_page",
-    "publisher": "KYMCO España; Basolí Sabadell",
-    "url": "https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/",
+    "source_type": "official_brand_directory_plus_operator_pages",
+    "publisher": "KYMCO España y operadores",
+    "url": "https://www.kymco.es/encuentranos",
     "supporting_urls": [
-      "https://basolisabadell.com/kymco/",
-      "https://basolisabadell.com/"
+      "https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/"
     ],
     "retrieved_at": "2026-11-12",
     "reliability": "primary_official_and_primary_business",
-    "notes": "KYMCO identifica Basolí Sabadell como uno de los nuevos concesionarios incorporados en 2026. El operador publica gama KYMCO, recambios originales, tienda, taller y dirección."
+    "notes": "Se incorporan fichas de concesionarios oficiales y puntos con autodeclaración comercial específica. El localizador también muestra servicios oficiales GENIUS; estos se excluyen del recuento de ventas salvo evidencia individual de venta."
   },
-  "outlet_count": 1,
+  "outlet_count": 8,
   "counts": {
     "by_province": {
-      "Barcelona": 1
+      "Barcelona": 3,
+      "Alicante": 1,
+      "Málaga": 2,
+      "Cádiz": 1,
+      "Murcia": 1
     },
-    "by_municipality": {
-      "Sabadell": 1
-    },
-    "sales": 1,
-    "service": 1
+    "sales": 8,
+    "service": 3
   },
   "outlets": [
     {
@@ -56,7 +56,157 @@
       "verification_status": "accepted_commercial_presence",
       "official_authorization_status": "listed_by_official_brand",
       "observed_at": "2026-11-12",
-      "notes": "KYMCO España incluye expresamente Basolí Sabadell entre los nuevos concesionarios de 2026. Basolí ofrece vehículos KYMCO, recambios originales y publica tienda y taller en Cardona 56. Se registra una única sede; no se extrapola a otras sucursales del grupo."
+      "notes": "KYMCO España incluye expresamente Basolí Sabadell entre los nuevos concesionarios de 2026. Basolí ofrece vehículos KYMCO, recambios originales, tienda y taller en Cardona 56."
+    },
+    {
+      "outlet_id": "kymco-maquina-motors-numancia",
+      "brand": "KYMCO",
+      "trading_name": "Máquina Motors Numància",
+      "operator": "Máquina Motors",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Numància, 118, 08029 Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/",
+      "supporting_urls": [
+        "https://maquinamotors.com/blog/maquina-motors-numancia-nueva-tienda-en-barcelona/",
+        "https://maquinamotors.com/motos-de-ocasion/moto-ocasion-kymco-cv3-2026-83699.html"
+      ],
+      "evidence_type": "official_brand_announcement_plus_operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "KYMCO identifica Máquina Motors Barcelona como nuevo socio en 2026. El operador anuncia la incorporación de KYMCO a su oferta y sitúa la marca en Numància 118; publica además inventario KYMCO asociado a esa tienda. El centro ofrece servicio técnico, sin atribuirle un servicio técnico específico KYMCO más allá de la evidencia publicada."
+    },
+    {
+      "outlet_id": "kymco-balart-hospitalet",
+      "brand": "KYMCO",
+      "trading_name": "Motos Balart L’Hospitalet",
+      "operator": "Motos Balart / Grup Balart",
+      "province": "Barcelona",
+      "municipality": "L’Hospitalet de Llobregat",
+      "public_address": "Av. Isabel la Católica, 4, 08901 L’Hospitalet de Llobregat, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kymco.es/prensa/nota-de-prensa/kymco-red-concesionarios-posventa-espana/",
+      "supporting_urls": [
+        "https://balartmotos.com/",
+        "https://motos.coches.net/concesionario/vespabalartsl/"
+      ],
+      "evidence_type": "official_brand_announcement_plus_operator_self_declaration_and_stock_listing",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "KYMCO identifica Motos Balart Hospitalet como nuevo socio en 2026. El operador anuncia venta KYMCO y publica la sede de Hospitalet; el inventario público de Motos.net muestra unidades KYMCO asociadas a esa ficha. No se extrapola la oferta a las otras sedes Balart."
+    },
+    {
+      "outlet_id": "kymco-alicante-ocana",
+      "brand": "KYMCO",
+      "trading_name": "KYMCO Alicante",
+      "operator": "Grupo Prim (según página comercial del operador)",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Ctra. de Ocaña, 29, 03006 Alicante",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kymco.es/encuentranos/4397",
+      "supporting_urls": [
+        "https://kymcoalicante.grupoprim.com/"
+      ],
+      "evidence_type": "official_brand_dealer_page_plus_operator_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha oficial KYMCO clasifica el establecimiento como Concesionario Oficial y publica scooters y ATV. Grupo Prim publica venta, taller y recambios en la misma dirección."
+    },
+    {
+      "outlet_id": "kymco-yadea-malaga",
+      "brand": "KYMCO",
+      "trading_name": "KYMCO Yadea Málaga",
+      "operator": "No contrastado",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Av. de José Ortega y Gasset, 296, Polígono El Viso, 29006 Málaga",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kymco.es/encuentranos/4478",
+      "supporting_urls": [],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha oficial KYMCO clasifica el punto como Concesionario Oficial y publica scooters y ATV."
+    },
+    {
+      "outlet_id": "kymco-el-motorista-malaga",
+      "brand": "KYMCO",
+      "trading_name": "El Motorista Málaga",
+      "operator": "El Motorista",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "C/ Flores García, 5, 29006 Málaga",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kymco.es/encuentranos/3971",
+      "supporting_urls": [],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha oficial KYMCO clasifica el punto como Concesionario Oficial y publica scooters y ATV. No se fusiona con otros puntos del mismo operador sin verificar identidad y dirección."
+    },
+    {
+      "outlet_id": "kymco-el-motorista-algeciras",
+      "brand": "KYMCO",
+      "trading_name": "El Motorista Algeciras",
+      "operator": "El Motorista",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Ctra. de Málaga, km 108, 11205 Algeciras, Cádiz",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.kymco.es/encuentranos/4404",
+      "supporting_urls": [],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha oficial KYMCO clasifica el punto como Concesionario Oficial y publica scooters y ATV."
+    },
+    {
+      "outlet_id": "kymco-francisco-belmonte-murcia",
+      "brand": "KYMCO",
+      "trading_name": "Francisco Belmonte",
+      "operator": "Francisco Belmonte, S.A. (denominación societaria no contrastada)",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "C/ Isla Cristina, 12, 30007 Murcia",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/kymco-murcia/",
+      "supporting_urls": [],
+      "evidence_type": "operator_self_declaration",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official_not_independently_confirmed",
+      "observed_at": "2026-11-12",
+      "notes": "El operador ofrece toda la gama KYMCO y se presenta como concesionario oficial, con dirección, contacto, venta, taller y recambios. No se ha localizado en esta revisión una ficha individual del localizador KYMCO; se registra como oferta declarada, no como autorización contrastada por el importador."
     }
+  ],
+  "limitations": [
+    "El fichero representa un mínimo documental observado, no un censo exhaustivo de KYMCO ni de la red provincial.",
+    "Los concesionarios oficiales se distinguen de agentes GENIUS y talleres asociados; no se agregan estos últimos como puntos de venta sin evidencia individual.",
+    "Las sedes de un mismo grupo no se deduplican si son establecimientos físicos distintos; no se infiere que todas las sedes comercialicen la marca.",
+    "Motos Turó Terrassa permanece pendiente: la nota KYMCO lo identifica como socio, pero la web del operador consultada publicita KYMCO para Barcelona/Sant Cugat y no acredita oferta KYMCO en la sede de Terrassa.",
+    "La ausencia de una ficha encontrada en el localizador no demuestra ausencia de actividad comercial."
   ]
 }
