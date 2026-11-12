@@ -1,0 +1,299 @@
+{
+  "dataset": "suzuki_manual_crosscheck_sample",
+  "audit_date": "2026-11-12",
+  "source_dataset": "evidencias/red_comercial/establecimientos_suzuki_detectados.json",
+  "methodology": {
+    "purpose": "Contraste manual inicial de grupos de entradas del directorio oficial Suzuki con páginas de operadores y directorios de marca.",
+    "statuses": {
+      "corroborated_operator_and_location": "La ubicación y el operador aparecen en una fuente pública actual del propio operador o en una fuente primaria equivalente.",
+      "same_operator_multiple_locations": "El operador confirma más de una sede; cada dirección se conserva como ubicación independiente.",
+      "same_location_multiple_service_entries": "Dos entradas describen servicios distintos en una misma ubicación; no deben contarse como dos establecimientos.",
+      "unresolved_address_or_operator": "La evidencia no permite decidir si las entradas corresponden a una o varias sedes ni confirmar la dirección exacta."
+    },
+    "caveats": [
+      "La inclusión en el directorio oficial Suzuki acredita que Suzuki presenta la entrada como punto de su red, pero no demuestra por sí sola actividad presencial en la fecha de auditoría.",
+      "La presencia en una web comercial no equivale a inspección física ni acredita ventas recientes.",
+      "No se han consultado registros mercantiles de pago ni datos personales.",
+      "Los grupos revisados son una muestra dirigida a duplicidades y anomalías; no se ha contrastado individualmente la totalidad de las 76 entradas."
+    ]
+  },
+  "reviewed_groups": [
+    {
+      "group_id": "suzuki-import-cross-figueres",
+      "source_ids": [
+        "suzuki-dir-032",
+        "suzuki-dir-033"
+      ],
+      "operator": "Import Cross",
+      "province": "Girona",
+      "conclusion": "same_location_multiple_service_entries",
+      "recommended_counting": "1 ubicación; 2 entradas de servicio en el directorio.",
+      "rationale": "Ambas filas comparten Carrer d'Alemanya 28, Figueres, y teléfono 972 54 70 00; la diferencia de nombre IMPORT CROSS/IMPORTCROSS y el tipo de servicio no justifican contar dos establecimientos.",
+      "evidence": [
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Entradas del directorio Suzuki."
+        },
+        {
+          "url": "https://www.cylex.es/figueres/motos-import-cross-11261196.html",
+          "type": "directorio_secundario",
+          "supports": "Una ficha de Motos Import Cross en Carrer Alemanya 28, Figueres."
+        },
+        {
+          "url": "https://www.bike-parts-suz.es/contact",
+          "type": "distribuidor_piezas",
+          "supports": "Identifica Suzuki - Import Cross en C. Alemanya 28, Figueres."
+        }
+      ],
+      "confidence": "high_for_single_address_not_legal_operator"
+    },
+    {
+      "group_id": "suzuki-motodonia",
+      "source_ids": [
+        "suzuki-dir-029",
+        "suzuki-dir-067",
+        "suzuki-dir-068",
+        "suzuki-dir-069",
+        "suzuki-dir-070"
+      ],
+      "operator": "Motodonia",
+      "province": "Castellón; Valencia",
+      "conclusion": "corroborated_operator_and_location",
+      "recommended_counting": "4 ubicaciones confirmadas por el operador en Castellón, Valencia y Gandía; revisar discrepancia de número 20/21 en Tirso de Molina.",
+      "rationale": "La web del operador lista Av. Tirso de Molina 21 (Valencia), C/ San Rafael 43 (Gandía), C/ Reus 30 (Valencia) y Av. Casalduch 51 (Castellón). La ficha Suzuki asigna taller y exposición a números 20/21 en Tirso de Molina con el mismo teléfono; el operador publica el 21.",
+      "evidence": [
+        {
+          "url": "https://motodonia.com/concesionarios/",
+          "type": "operador",
+          "supports": "Confirma cuatro ubicaciones, teléfonos y direcciones."
+        },
+        {
+          "url": "https://motodonia.com/suzuki-valencia/",
+          "type": "operador",
+          "supports": "Declara concesionario oficial Suzuki en Valencia."
+        },
+        {
+          "url": "https://motodonia.com/suzuki-castellon/",
+          "type": "operador",
+          "supports": "Declara oferta Suzuki en Castellón."
+        },
+        {
+          "url": "https://motodonia.com/taller-suzuki-valencia/",
+          "type": "operador",
+          "supports": "Confirma servicio oficial Suzuki y dirección Av. Tirso de Molina 21."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Entradas de la red Suzuki para las ubicaciones capturadas."
+        }
+      ],
+      "confidence": "high_for_four_operator_locations;medium_for_suzuki_authorization_at_each_branch"
+    },
+    {
+      "group_id": "suzuki-center-madrid",
+      "source_ids": [
+        "suzuki-dir-051",
+        "suzuki-dir-052"
+      ],
+      "operator": "Suzuki Center / Jarama Motocicletas S.L.",
+      "province": "Madrid",
+      "conclusion": "same_operator_multiple_locations",
+      "recommended_counting": "2 ubicaciones, 1 operador.",
+      "rationale": "La web del operador confirma ambas direcciones y teléfonos. Su formulario legal identifica a Jarama Motocicletas S.L. como responsable del tratamiento.",
+      "evidence": [
+        {
+          "url": "https://www.suzukicenter.net/contacto/",
+          "type": "operador",
+          "supports": "Confirma Infanta Mercedes 41 y Los Naranjos 6, con teléfonos."
+        },
+        {
+          "url": "https://www.suzukicenter.net/cita-previa/",
+          "type": "operador",
+          "supports": "Identifica las dos sucursales y Jarama Motocicletas S.L."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios/suzukicenter",
+          "type": "fabricante",
+          "supports": "Confirma concesionario y servicio oficial Suzuki en las dos direcciones."
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "group_id": "suzuki-motocyl-zaratan",
+      "source_ids": [
+        "suzuki-dir-071",
+        "suzuki-dir-072"
+      ],
+      "operator": "Motocyl",
+      "province": "Valladolid",
+      "conclusion": "same_location_multiple_service_entries",
+      "recommended_counting": "1 ubicación; revisar la dirección anómala de la fila de taller.",
+      "rationale": "La web del operador publica una única sede en Av. de Gijón 37A, 47610 Zaratán. Las dos filas Suzuki comparten teléfono y localidad; una dirección parece duplicada o mal transcrita.",
+      "evidence": [
+        {
+          "url": "https://www.motocyl.es/contacto",
+          "type": "operador",
+          "supports": "Confirma una sede, teléfono y actividad comercial/taller."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Entradas Suzuki de exposición y taller."
+        }
+      ],
+      "confidence": "high_for_single_operator_site;medium_for_exact_taller_address"
+    },
+    {
+      "group_id": "suzuki-bimoto-ibiza",
+      "source_ids": [
+        "suzuki-dir-011",
+        "suzuki-dir-012"
+      ],
+      "operator": "Bimoto Ibiza S.L.",
+      "province": "Baleares",
+      "conclusion": "unresolved_address_or_operator",
+      "recommended_counting": "No consolidar aún; conservar 2 direcciones distintas con relación de operador pendiente.",
+      "rationale": "El operador confirma Avda. Ignacio Wallis 44. Un localizador oficial de otra marca sitúa Bimoto Ibiza S.L. como distribuidor y punto de asistencia en el número 55. Esto apoya una relación entre las dos direcciones, pero no confirma por sí solo la actividad Suzuki ni la distribución funcional actual de ambas sedes.",
+      "evidence": [
+        {
+          "url": "https://bimoto.es/contacto",
+          "type": "operador",
+          "supports": "Confirma dirección 44 y teléfono."
+        },
+        {
+          "url": "https://bimoto.es/table/legal/",
+          "type": "operador",
+          "supports": "Identifica Bimoto Ibiza S.L. y domicilio social en el número 44."
+        },
+        {
+          "url": "https://www.vespa.com/es_ES/dealer-locator/ibiza/bimoto-ibiza-s-l/",
+          "type": "fabricante_otra_marca",
+          "supports": "Sitúa Bimoto Ibiza S.L. como distribuidor y punto de asistencia en el número 55."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Lista exposición en 44 y taller en 55 para Suzuki."
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "group_id": "suzuki-moto-alba-albacete",
+      "source_ids": [
+        "suzuki-dir-002",
+        "suzuki-dir-003"
+      ],
+      "operator": "Moto-Alba Cortés S.L.",
+      "province": "Albacete",
+      "conclusion": "unresolved_address_or_operator",
+      "recommended_counting": "1 exposición confirmada; taller de Hernán Cortés 29 pendiente de confirmar como sede del mismo operador.",
+      "rationale": "Una ficha comercial identifica Moto-Alba Cortés S.L. como concesionario Suzuki en Juan Sebastián Elcano 41, con el mismo teléfono de la entrada Suzuki. No se ha obtenido confirmación primaria del taller en Hernán Cortés 29.",
+      "evidence": [
+        {
+          "url": "https://miconcesionario.es/concesionarios-de-coches/moto-alba-cortes-s-l/",
+          "type": "directorio_secundario",
+          "supports": "Confirma nombre, condición de concesionario Suzuki y dirección Elcano 41."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Lista exposición y taller en dos direcciones."
+        }
+      ],
+      "confidence": "medium_for_showroom;low_for_workshop"
+    },
+    {
+      "group_id": "suzuki-auto-recambios-moto-luis-badajoz",
+      "source_ids": [
+        "suzuki-dir-009",
+        "suzuki-dir-010"
+      ],
+      "operator": "Auto Recambios Moto Luis S.L.",
+      "province": "Badajoz",
+      "conclusion": "unresolved_address_or_operator",
+      "recommended_counting": "Mantener dos ubicaciones candidatas, una corroborada por localizador de marca y otra con discrepancia de teléfono.",
+      "rationale": "El localizador oficial de Kymco confirma Avda. María Auxiliadora 19 y teléfono 924 241 000; el directorio Suzuki muestra 924 24 27 15. Una ficha secundaria asocia Manuel Saldaña 12 con Auto Recambios Moto Luis, pero publica teléfono 924 24 10 00. No se ha podido confirmar que las dos direcciones estén operativas como sedes Suzuki ni resolver los teléfonos divergentes.",
+      "evidence": [
+        {
+          "url": "https://www.kymco.es/encuentranos/3316",
+          "type": "fabricante_otra_marca",
+          "supports": "Confirma concesionario Auto Recambios Moto Luis en Avda. María Auxiliadora 19."
+        },
+        {
+          "url": "https://www.cylex.es/badajoz/auto-recambios-moto-luis-sl-14294194.html",
+          "type": "directorio_secundario",
+          "supports": "Ficha de negocio en Manuel Saldaña 12."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Lista ambas entradas Suzuki."
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "group_id": "suzuki-motos-marin-murcia",
+      "source_ids": [
+        "suzuki-dir-056"
+      ],
+      "operator": "Motos Marín Murcia",
+      "province": "Murcia",
+      "conclusion": "corroborated_operator_and_location",
+      "recommended_counting": "1 ubicación corroborada; mantener como punto de red Suzuki pendiente de comprobación física.",
+      "rationale": "La dirección y el teléfono del directorio Suzuki coinciden con la ficha comercial de Motos Marín Murcia, que describe la actividad multimarca e incluye Suzuki.",
+      "evidence": [
+        {
+          "url": "https://motos.coches.net/concesionario/motosmarinmurciasuzuki/",
+          "type": "directorio_secundario",
+          "supports": "Confirma nombre comercial y dirección San Juan de la Cruz 18."
+        },
+        {
+          "url": "https://negocioscerca.es/empresa/motos-marin-murcia",
+          "type": "directorio_secundario",
+          "supports": "Describe actividad multimarca, incluye Suzuki, dirección y teléfono."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Lista el punto como taller y exposición Suzuki."
+        }
+      ],
+      "confidence": "medium_high"
+    },
+    {
+      "group_id": "suzuki-siebla-marbella",
+      "source_ids": [
+        "suzuki-dir-053",
+        "suzuki-dir-054"
+      ],
+      "operator": "Motos Siebla",
+      "province": "Málaga",
+      "conclusion": "unresolved_address_or_operator",
+      "recommended_counting": "No consolidar todavía; posible operador único con direcciones de taller y exposición diferentes y dirección del taller sin teléfono.",
+      "rationale": "La web de Siebla confirma Marbella en Gómez de la Serna, pero la dirección publicada difiere entre fuentes y no confirma la ubicación de C. Carbón 38. El directorio Suzuki muestra dos ubicaciones y solo una tiene teléfono.",
+      "evidence": [
+        {
+          "url": "https://www.polarissiebla.es/contactanos/",
+          "type": "operador",
+          "supports": "Confirma Motos Siebla en Marbella y teléfono."
+        },
+        {
+          "url": "https://old.siebla.com/servicio/",
+          "type": "operador",
+          "supports": "Confirma actividad de taller en Marbella, sin fijar en el texto extraído la dirección de C. Carbón 38."
+        },
+        {
+          "url": "https://moto.suzuki.es/concesionarios",
+          "type": "fabricante",
+          "supports": "Lista ambas entradas Suzuki."
+        }
+      ],
+      "confidence": "medium_for_operator;low_for_exact_two_locations"
+    }
+  ]
+}
