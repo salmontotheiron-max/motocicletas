@@ -108,13 +108,12 @@ def compare_records(records: list[dict]) -> dict:
                 continue
 
             old_record, old_text = previous
-            old_hash = old_record.get("text_sha256") or hashlib.sha256(
-                old_text.encode("utf-8")
-            ).hexdigest()
-            new_hash = current.get("text_sha256") or hashlib.sha256(
-                current_text.encode("utf-8")
-            ).hexdigest()
-            if old_hash == new_hash or old_text == current_text:
+            # Los hashes de captura pueden incluir banners, diferencias de
+            # formato o mayúsculas que la normalización considera irrelevantes.
+            # El hash comparable debe calcularse siempre sobre el texto normalizado.
+            old_hash = hashlib.sha256(old_text.encode("utf-8")).hexdigest()
+            new_hash = hashlib.sha256(current_text.encode("utf-8")).hexdigest()
+            if old_hash == new_hash:
                 unchanged += 1
                 previous = (current, current_text)
                 continue
