@@ -158,14 +158,28 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
                 root / "candidatos.jsonl",
                 root / "resumen.json",
             )
-            # El repositorio contiene dos capturas completas de ocho registros.
-            # Cada una aporta siete fuentes comparables y un bloqueo por robots.
-            self.assertEqual(outcome["total_records"], 16)
-            self.assertEqual(outcome["comparable_sources"], 7)
-            self.assertEqual(outcome["baseline_captures"], 7)
-            self.assertEqual(outcome["ignored_records"], 2)
-            self.assertEqual(outcome["unchanged_comparisons"], 7)
-            self.assertEqual(outcome["candidate_count"], 0)
+            # El histórico crece con cada ejecución: validar invariantes,
+            # no cantidades ligadas a un número fijo de capturas.
+            self.assertGreaterEqual(outcome["total_records"], 8)
+            self.assertGreaterEqual(outcome["comparable_sources"], 1)
+            self.assertEqual(
+                outcome["baseline_captures"], outcome["comparable_sources"]
+            )
+            self.assertGreaterEqual(outcome["ignored_records"], 1)
+            # Cada registro queda contabilizado como ignorado, baseline,
+            # contenido insuficiente o comparación (sin cambio / candidato).
+            self.assertEqual(
+                outcome["total_records"],
+                outcome["ignored_records"]
+                + outcome["baseline_captures"]
+                + outcome["insufficient_content_captures"]
+                + outcome["unchanged_comparisons"]
+                + outcome["candidate_count"],
+            )
+            self.assertTrue(all(
+                candidate["review_status"] == "pending_manual_review"
+                for candidate in outcome["candidates"]
+            ))
 
 
 if __name__ == "__main__":
