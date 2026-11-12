@@ -176,9 +176,15 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
                 + outcome["unchanged_comparisons"]
                 + outcome["candidate_count"],
             )
+            candidate_records = [
+                json.loads(line)
+                for line in (root / "candidatos.jsonl").read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+            self.assertEqual(len(candidate_records), outcome["candidate_count"])
             self.assertTrue(all(
                 candidate["review_status"] == "pending_manual_review"
-                for candidate in outcome["candidates"]
+                for candidate in candidate_records
             ))
 
 
