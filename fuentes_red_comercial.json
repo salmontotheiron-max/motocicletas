@@ -299,13 +299,13 @@
       "brand_id": "brand-keeway",
       "canonical_name": "Keeway",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por Keeway Group España y por páginas corporativas de operadores que publican oferta Keeway en las cinco provincias prioritarias. Primera auditoría documental: nueve ubicaciones de venta (Barcelona 2, Málaga 1, Cádiz 3, Alicante 2 y Murcia 1); cuatro sedes publican también taller/posventa en la misma ubicación. El localizador oficial existe, pero su vista textual no expone fichas individuales; ninguna ubicación se clasifica como manufacturer_listed. La oficialidad de cinco puntos es autodeclarada por operadores; las otras cuatro ubicaciones se cuentan solo como oferta comercial publicada. Inventario mínimo, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-kove",
@@ -1706,6 +1706,163 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 30,
       "notes": "Web corporativa vigente: incluye Benelli en la oferta de motos nuevas y declara concesionario oficial en la Región de Murcia. Identifica la sede de Cartagena en Ctra. Nacional 301 km 431 como tienda, recambios y taller. La página de Murcia tienda/taller no incluye Benelli en la relación de marcas de esa sede, por lo que no se cuenta como punto Benelli."
+    },
+    {
+      "source_id": "source-keeway-es-stores",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-keeway",
+      "publisher": "Keeway España",
+      "source_type": "official_directory",
+      "url": "https://www.keeway.com/es-es/stores",
+      "title": "Tiendas y localizador de Keeway España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial de tiendas. La vista textual consultada expone el título y el acceso a Tiendas, pero no fichas de establecimientos; no se infiere ausencia de red ni se asigna manufacturer_listed a ningún punto hasta verificar resultados individuales."
+    },
+    {
+      "source_id": "source-keeway-group-es-2025",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-keeway",
+      "publisher": "Keeway Group España",
+      "source_type": "official_statement",
+      "url": "https://www.keeway.com/es-es/news/20-aniversario-y-nuevas-instalaciones-de-keeway-group-en-espa-a",
+      "title": "20 aniversario y nuevas instalaciones de Keeway Group en España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Comunicación oficial de 26-03-2025: Keeway Group España declara más de 100.000 motocicletas vendidas en veinte años entre cuatro marcas y servicio posventa para sus usuarios; describe instalaciones de Polinyà para dar soporte a la red nacional. La cifra y el servicio son agregados del grupo, no específicos de Keeway ni un directorio de concesionarios."
+    },
+    {
+      "source_id": "source-keeway-motissimo",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motissimo",
+      "source_type": "company_page",
+      "url": "https://motissimo.es/keeway/",
+      "title": "Keeway Barcelona y taller de motos Keeway",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Página del operador que declara concesionario oficial Keeway y taller Keeway en Carrer del Comandant Benítez 23, Barcelona."
+    },
+    {
+      "source_id": "source-keeway-rtr-motor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "RTR Motor",
+      "source_type": "company_page",
+      "url": "https://rtrmotor.es/keeway/",
+      "title": "Gama Keeway en RTR Motor",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Página del operador con modelos Keeway y dirección de Sabadell; no se autodenomina concesionario oficial Keeway ni se atribuye taller específico de la marca."
+    },
+    {
+      "source_id": "source-keeway-moto-siles",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Moto Siles",
+      "source_type": "company_page",
+      "url": "https://motosiles.es/tienda/",
+      "title": "Catálogo de Moto Siles",
+      "reliability_class": "primary_business",
+      "scope": "Málaga",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "El catálogo corporativo publica diez referencias Keeway y la página de contacto identifica la tienda de Calle Emilio Thuillier 70, Málaga. No se atribuye condición de concesionario oficial ni servicio Keeway específico."
+    },
+    {
+      "source_id": "source-keeway-castro",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/keeway/",
+      "title": "Keeway en Cádiz, Jerez y el Campo de Gibraltar",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "El operador declara ser concesionario oficial Keeway en todas sus instalaciones y publica modelos, direcciones de ventas y posventa en Cádiz, Jerez y Palmones. En Cádiz capital, ventas y taller están en direcciones distintas."
+    },
+    {
+      "source_id": "source-keeway-motoland",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motoland",
+      "source_type": "company_page",
+      "url": "https://motoland.es/keeway/",
+      "title": "Gama Keeway y tiendas Motoland",
+      "reliability_class": "primary_business",
+      "scope": "Alicante",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa de gama Keeway con catálogo y dos tiendas físicas publicadas en El Campello y Alicante. No se autodenomina concesionario oficial ni se atribuye servicio Keeway específico."
+    },
+    {
+      "source_id": "source-keeway-jade-motor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Jade Motor / Fenix Moto Premium S.L.",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/motos-nuevas/keeway",
+      "title": "Motos Keeway nuevas en Murcia y Cartagena",
+      "reliability_class": "primary_business",
+      "scope": "Murcia",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "El operador declara ser concesionario oficial Keeway en la Región de Murcia y publica la gama, taller oficial y recambio original. La ficha de contacto vincula Keeway con la sede de Cartagena; las sedes de Murcia capital y San Javier no se incluyen porque la lista de marcas de esas sedes no incluye Keeway."
     }
   ]
 }

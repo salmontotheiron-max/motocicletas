@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se aceptan ubicaciones físicas cuando el operador publica una oferta Keeway y vincula una sede concreta. La oficialidad autodeclarada se registra por separado; la oferta publicada sin declaración de oficialidad se conserva como presencia comercial no confirmada por el fabricante. El localizador oficial de Keeway existe, pero no expone fichas individuales en la vista textual consultada.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "El operador publica catálogo, modelos o una página comercial Keeway y una dirección física identificable.",
+    "official_authorization": "self_declared_official significa que el operador se autodenomina concesionario oficial; no equivale a confirmación individual por Keeway o su importador. not_independently_confirmed no debe interpretarse como falta de autorización."
+  },
+  "outlet_count": 9,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 2,
+      "Murcia": 1
+    },
+    "sales": 9,
+    "service": 4,
+    "operator_self_declared_only": 5,
+    "manufacturer_individually_listed": 0,
+    "commercial_offer_without_individual_manufacturer_confirmation": 9
+  },
+  "official_source": {
+    "url": "https://www.keeway.com/es-es/stores",
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial de Keeway se encuentra publicado, pero la vista textual consultada solo muestra el enlace a Tiendas y no fichas individuales. La noticia oficial de Keeway Group España de 26-03-2025 acredita actividad del grupo y soporte a su red nacional, pero no identifica puntos de venta individuales ni desglosa actividad por marca."
+  },
+  "outlets": [
+    {
+      "outlet_id": "keeway-motissimo-barcelona",
+      "brand": "Keeway",
+      "trading_name": "Motissimo Barcelona",
+      "operator": "Motissimo",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Comandant Benítez, 23, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motissimo.es/keeway/",
+      "supporting_urls": [
+        "https://motissimo.es/tiendas/barcelona/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara expresamente concesionario oficial Keeway y taller Keeway en esta sede; la página de tiendas confirma la dirección física y la actividad comercial y de taller."
+    },
+    {
+      "outlet_id": "keeway-rtr-motor-sabadell",
+      "brand": "Keeway",
+      "trading_name": "RTR Motor Sabadell",
+      "operator": "RTR Motor",
+      "province": "Barcelona",
+      "municipality": "Sabadell",
+      "public_address": "Carretera de Molins de Rei, 219, 08205 Sabadell, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://rtrmotor.es/keeway/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web corporativa publica una página de modelos Keeway y dirección de contacto en Sabadell. No se atribuye oficialidad ni servicio técnico específico de Keeway."
+    },
+    {
+      "outlet_id": "keeway-moto-siles-malaga",
+      "brand": "Keeway",
+      "trading_name": "Moto Siles Málaga",
+      "operator": "Moto Siles",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Emilio Thuillier, 70, 29014 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosiles.es/tienda/",
+      "supporting_urls": [
+        "https://motosiles.es/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El catálogo web corporativo publica diez referencias Keeway; la web de contacto identifica la tienda de Calle Emilio Thuillier 70. No se atribuye condición de concesionario oficial ni servicio Keeway específico."
+    },
+    {
+      "outlet_id": "keeway-castro-cadiz",
+      "brand": "Keeway",
+      "trading_name": "Castro La Motocicleta Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/keeway/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/contacto/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara ser concesionario oficial Keeway en todas sus instalaciones. En Cádiz publica ventas en Avenida de la Sanidad Pública 297 y taller en Calle García Quijano 2; no se atribuye servicio a la dirección de ventas ni se cuenta el taller separado como punto de venta."
+    },
+    {
+      "outlet_id": "keeway-castro-jerez",
+      "brand": "Keeway",
+      "trading_name": "Castro La Motocicleta Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/keeway/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/contacto/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara oficialidad Keeway en todas sus instalaciones y publica ventas y taller en la misma dirección de Jerez."
+    },
+    {
+      "outlet_id": "keeway-castro-palmones",
+      "brand": "Keeway",
+      "trading_name": "Castro La Motocicleta Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios (Palmones)",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/keeway/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/contacto/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara oficialidad Keeway en todas sus instalaciones y publica ventas y taller en la misma dirección de Palmones."
+    },
+    {
+      "outlet_id": "keeway-motoland-el-campello",
+      "brand": "Keeway",
+      "trading_name": "Motoland El Campello",
+      "operator": "Motoland",
+      "province": "Alicante",
+      "municipality": "El Campello",
+      "public_address": "Carrer de Sant Ramon, 99, 03560 El Campello, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motoland.es/keeway/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El catálogo corporativo publica la gama Keeway y la misma página identifica esta tienda física. No se autodeclara concesionario oficial ni se atribuye servicio Keeway específico."
+    },
+    {
+      "outlet_id": "keeway-motoland-alicante",
+      "brand": "Keeway",
+      "trading_name": "Motoland Alicante",
+      "operator": "Motoland",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle Víctor de la Serna, 2, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motoland.es/keeway/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El catálogo corporativo publica la gama Keeway y la misma página identifica esta tienda física. No se autodeclara concesionario oficial ni se atribuye servicio Keeway específico."
+    },
+    {
+      "outlet_id": "keeway-jade-motor-cartagena",
+      "brand": "Keeway",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Fenix Moto Premium S.L. / Jade Motor",
+      "province": "Murcia",
+      "municipality": "Cartagena (Miranda)",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/motos-nuevas/keeway",
+      "supporting_urls": [
+        "https://jademotor.com/contacto/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Jade Motor declara ser concesionario oficial Keeway en la Región de Murcia, publica gama y taller oficial. La ficha de contacto vincula Keeway con Cartagena y sus servicios; la tienda/taller de Murcia capital y Cofenauto San Javier no se incluyen porque la relación de marcas publicada para esas sedes no incluye Keeway."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental de las cinco provincias prioritarias; no es un censo nacional ni exhaustivo.",
+    "El localizador oficial de Keeway no expone fichas individuales en la vista textual consultada; ninguna ubicación se clasifica como manufacturer_listed.",
+    "La noticia oficial de Keeway Group España describe actividad agregada del grupo (cuatro marcas) y no permite atribuir sus cifras de ventas o su servicio posventa exclusivamente a Keeway.",
+    "Cinco ubicaciones proceden de autodeclaraciones de oficialidad de Motissimo, Castro La Motocicleta y Jade Motor. RTR Motor, Moto Siles y Motoland publican oferta Keeway, pero no se ha confirmado individualmente su oficialidad.",
+    "Solo se atribuye servicio Keeway a Motissimo Barcelona, Castro Jerez, Castro Palmones y Jade Motor Cartagena, donde las páginas corporativas vinculan expresamente la marca con taller/posventa en la misma sede.",
+    "En Cádiz capital, el taller publicado está en Calle García Quijano 2, distinta de la dirección de ventas; no se atribuye servicio a la dirección de ventas ni se cuenta el taller separado como punto de venta.",
+    "Las sedes adicionales de Motoland y los puntos de venta de RTR Motor se cuentan por catálogo/página Keeway y dirección física del operador; no se infiere stock disponible ni volumen de ventas.",
+    "Las ubicaciones de Murcia capital y San Javier de Jade Motor no se incorporan porque la lista de marcas publicada para esas sedes no incluye Keeway.",
+    "No se infiere ausencia de red en otras provincias ni de ubicaciones adicionales no auditadas."
+  ],
+  "methodology": "Consulta de las páginas oficiales de Keeway y Keeway Group España, del localizador de tiendas y de páginas corporativas de operadores en las cinco provincias prioritarias. Se transcriben únicamente direcciones físicas publicadas, se deduplica por sede y se separan venta y servicio. Se conserva por separado la oficialidad autodeclarada y la oferta comercial no confirmada por el fabricante. Fecha de consulta: 2026-11-12."
+}
