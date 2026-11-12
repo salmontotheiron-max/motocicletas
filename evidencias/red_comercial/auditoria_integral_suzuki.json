@@ -5,17 +5,17 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 20,
-    "pending_entries": 56,
-    "reviewed_groups": 9,
-    "coverage": "Registro de control de auditoría; no equivale a auditoría completa de las entradas pendientes."
+    "individually_assessed_entries": 28,
+    "pending_entries": 48,
+    "reviewed_groups": 14,
+    "coverage": "Registro de control de auditoría; 28 de 76 entradas evaluadas individualmente. Las 48 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "pending_individual_review": 56,
+    "pending_individual_review": 48,
     "unresolved_address_or_operator": 8,
-    "corroborated_operator_and_location": 6,
+    "corroborated_operator_and_location": 10,
     "same_location_multiple_service_entries": 4,
-    "same_operator_multiple_locations": 2
+    "same_operator_multiple_locations": 6
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -24,7 +24,9 @@
     "Una entrada de taller y otra de exposición no se cuentan automáticamente como dos establecimientos.",
     "Solo fuentes primarias actuales del operador o fabricante pueden elevar la confianza; los directorios secundarios sirven como indicios y deben identificarse como tales.",
     "No se asigna el estado verified por mera presencia en el localizador oficial ni por coincidencia de nombre/teléfono.",
-    "La auditoría no incluye visitas físicas ni llamadas de comprobación."
+    "La auditoría no incluye visitas físicas ni llamadas de comprobación.",
+    "La revisión de Barcelona (12/11/2026) contrasta las ocho entradas con el localizador oficial Suzuki y páginas actuales de cada operador; las cuatro entradas Maquina Motors se agrupan bajo un mismo operador, pero corresponden a cuatro ubicaciones diferenciadas.",
+    "Las direcciones comerciales y los servicios se cuentan por ubicación física declarada por el operador; una ficha de taller o exposición no genera por sí sola una segunda ubicación."
   ],
   "entries": [
     {
@@ -268,13 +270,17 @@
       "service_type": "Taller y Exposición",
       "directory_address": "C. Sicilia, 210, 08013, Barcelona",
       "directory_phone": "932 31 05 25",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-box-sicilia-210",
+      "operator_assessment": "Box Sicilia 210",
+      "counting_recommendation": "1 ubicación corroborada en C/ Sicilia, 210; el operador declara venta de motocicletas Suzuki y servicios de taller.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://boxsicilia210.es/",
+        "https://boxsicilia210.es/contacto/"
+      ],
+      "limitation": "Fuentes digitales primarias del fabricante y operador consultadas el 12/11/2026; no incluye visita física, llamada de comprobación ni evidencia de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-016",
@@ -283,13 +289,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Brusi, 92, 08006, Barcelona",
       "directory_phone": "932 09 17 77",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-maquina-motors-barcelona",
+      "operator_assessment": "Grupo Maquina Motors S.A.U.",
+      "counting_recommendation": "1 ubicación Suzuki corroborada en C/ de Brusi, 92; forma parte de la red multitienda del operador, no debe duplicarse por servicios.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://maquinamotors.com/nuestras-tiendas",
+        "https://maquinamotors.com/nuestras-tiendas/index/ficha/?store=2",
+        "https://maquinamotors.com/acerca-de-maquina-motors"
+      ],
+      "limitation": "La sede y la representación de Suzuki constan en fuentes digitales primarias actuales; no hay inspección física ni datos de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-017",
@@ -298,13 +309,18 @@
       "service_type": "Exposición",
       "directory_address": "P.I. Riu D'or, Ctra, Ctra. de Berga, Km 1, 08272 Manresa, Barcelona, 08272, Sant fruitós de bages",
       "directory_phone": "938 77 08 62",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-maquina-motors-barcelona",
+      "operator_assessment": "Grupo Maquina Motors S.A.U.",
+      "counting_recommendation": "1 ubicación Suzuki corroborada en P.I. Riu d'Or, Carretera Manresa-Berga km 1, Sant Fruitós de Bages; no situar la sede en el núcleo urbano de Manresa.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://maquinamotors.com/nuestras-tiendas",
+        "https://maquinamotors.com/nuestras-tiendas/index/ficha/?store=7",
+        "https://maquinamotors.com/acerca-de-maquina-motors"
+      ],
+      "limitation": "El operador precisa la dirección como Sant Fruitós de Bages (08272), aunque la entrada del directorio la etiqueta Manresa; fuentes digitales, sin inspección física ni datos de ventas."
     },
     {
       "source_id": "suzuki-dir-018",
@@ -313,13 +329,18 @@
       "service_type": "Exposición",
       "directory_address": "Av. d'Antoni Gaudí, 73, 08100, Mollet del vallés",
       "directory_phone": "935 70 62 95",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-maquina-motors-barcelona",
+      "operator_assessment": "Grupo Maquina Motors S.A.U.",
+      "counting_recommendation": "1 ubicación Suzuki corroborada en Av. d'Antoni Gaudí, 73, Mollet del Vallès; una entrada de exposición no implica otra sede de taller.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://maquinamotors.com/nuestras-tiendas",
+        "https://maquinamotors.com/nuestras-tiendas/index/ficha/?store=4",
+        "https://maquinamotors.com/acerca-de-maquina-motors"
+      ],
+      "limitation": "La ficha del operador confirma tienda y Suzuki; el taller puede figurar en una dirección distinta en su directorio técnico, por lo que esta fila cuenta solo la ubicación de exposición indicada."
     },
     {
       "source_id": "suzuki-dir-019",
@@ -328,13 +349,18 @@
       "service_type": "Exposición",
       "directory_address": "C/ de I'Anoia, 7, 08221, Terrassa",
       "directory_phone": "937 80 03 10",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-maquina-motors-barcelona",
+      "operator_assessment": "Grupo Maquina Motors S.A.U.",
+      "counting_recommendation": "1 ubicación Suzuki corroborada en C/ de l'Anoia, 7, Terrassa; el operador mantiene tienda y servicio técnico en esa dirección.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://maquinamotors.com/nuestras-tiendas",
+        "https://maquinamotors.com/nuestras-tiendas/index/ficha/?store=15",
+        "https://maquinamotors.com/servicio-tecnico"
+      ],
+      "limitation": "La ficha comercial y el directorio técnico confirman la ubicación; no hay inspección física ni datos de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-020",
@@ -343,13 +369,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Pau Casals, 4, 08860, Castelldefels",
       "directory_phone": "936 65 25 79",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-moto-stop-carbo",
+      "operator_assessment": "Motos Carbó",
+      "counting_recommendation": "1 ubicación corroborada en C/ Pau Casals, 4, Castelldefels; el Ayuntamiento la identifica como concesionario oficial Suzuki y el operador mantiene datos de contacto coincidentes.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.motoscarbo.com/contact/",
+        "https://www.castelldefels.org/es/ciudad/guia-de-la-ciudad/directorio-equipamientos-y-entidades/7081",
+        "https://gremidelmotor.com/es/agremiados/moto-stop-carbo/"
+      ],
+      "limitation": "La actividad y condición de concesionario se apoyan en fuentes digitales del operador y del Ayuntamiento; no incluye visita física ni comprobación telefónica."
     },
     {
       "source_id": "suzuki-dir-021",
@@ -358,13 +389,19 @@
       "service_type": "Taller y Exposición",
       "directory_address": "C. El Torrent, 39-43, 08302, Mataro",
       "directory_phone": "93 757 90 06",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-motos-boquet",
+      "operator_assessment": "Motos Boquet",
+      "counting_recommendation": "1 ubicación corroborada en Carrer El Torrent, 39-43, Mataró; el operador declara concesionario y servicio técnico oficial Suzuki.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://motosboquet.com/",
+        "https://motosboquet.com/motos/",
+        "https://motosboquet.com/taller/",
+        "https://motosboquet.com/contacte/"
+      ],
+      "limitation": "La web del operador confirma dirección, venta y servicio técnico Suzuki; no incluye inspección física ni evidencia de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-022",
@@ -373,13 +410,17 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Rocafort, 89, 08015, Barcelona",
       "directory_phone": "934 25 08 89",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-oriol-motos",
+      "operator_assessment": "Oriol Motos S.L.",
+      "counting_recommendation": "1 ubicación corroborada en C/ Rocafort, 89, Barcelona; el operador declara concesionario oficial Suzuki y servicio de taller/recambios Suzuki.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://oriolmotos.com/",
+        "https://oriolmotos.com/contacto/"
+      ],
+      "limitation": "La web del operador confirma ubicación y actividad Suzuki; no incluye visita física ni evidencia de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-023",
