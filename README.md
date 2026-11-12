@@ -157,3 +157,18 @@ La generación se ejecuta en el workflow mensual después del agregado provincia
 El script `generar_informe_territorial_integrado.py` construye `informes/informe-territorial-integrado.md` a partir de los CSV y JSON generados en cada ejecución MATRABA. El diagnóstico de dispersión incorpora todas las provincias con más del 20% de domicilios externos, su persistencia mensual, concentración de destinos (principal destino, tres primeros, HHI y número efectivo de destinos) y una advertencia para muestras inferiores a 300 domicilios conocidos. Incluye la serie mensual, concentración provincial, intensidad respecto a población y parque, dispersión entre provincia de matriculación y domicilio del vehículo, balance de entradas/salidas, flujos origen-destino, persistencia y variabilidad mensual de corredores, comparación del flujo inverso y seguimiento de Segovia. El generador verifica que el total de motocicletas nuevas por códigos 50/51 coincide con el cruce provincial y que este ha superado la conciliación con el agregado independiente.
 
 En los barridos programados y en el modo manual `actualizar`, el informe se incorpora al commit junto con `public/data`. En modo `piloto`, se adjunta al artefacto y al GitHub Release, sin actualizar el informe publicado en la rama. La generación está cubierta por pruebas unitarias. Los umbrales se muestran como alertas de revisión, nunca como anomalías confirmadas.
+
+
+## Auditoría de cobertura de la red comercial por marca
+
+El script `generar_auditoria_cobertura_red.py` genera `evidencias/red_comercial/auditoria_cobertura.csv` y `auditoria_cobertura.json` a partir del inventario de marcas/fuentes y de la última captura. El workflow `capturar-red-comercial.yml` regenera ambos ficheros después de cada barrido.
+
+La matriz clasifica la evidencia de las fuentes, no el tamaño ni la cobertura exhaustiva de la red:
+
+- `verified`: reservado a verificaciones individuales documentadas manualmente; no se asigna por una captura automática.
+- `partial`: existe contenido de directorio visible, pero los establecimientos no se han auditado/deduplicado, o el localizador aún no muestra entradas.
+- `dynamic_unextractable`: existe un localizador cuyo contenido dinámico no puede auditarse con la captura HTML.
+- `not_found`: reservado a una búsqueda manual documentada con alcance, fecha y fuentes consultadas; nunca se infiere por ausencia de captura.
+- `pending`: no hay fuente primaria específica o la captura no permite evaluar el directorio.
+
+El recuento de establecimientos verificados se mantiene vacío hasta que haya comprobaciones individuales. La falta de fuente, un error HTTP, un localizador vacío o una web sin contenido extraíble no significan que la marca carezca de red comercial. Los cambios de texto de una página tampoco prueban aperturas, cierres ni cambios de operador.
