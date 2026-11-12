@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se aceptan como presencia comercial las ubicaciones físicas que los propios operadores vinculan públicamente con la oferta Benelli. Las declaraciones de concesionario oficial se conservan como autodeclaraciones del operador; ninguna de las ubicaciones se presenta como individualmente confirmada por un directorio oficial del fabricante. La evidencia oficial de Benelli acredita actividad del grupo en España, no una lista de concesionarios. Solo se asigna servicio cuando la fuente identifica expresamente taller/posventa en la misma sede.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "El operador identifica Benelli y una ubicación física con oferta comercial vigente o documentación comercial publicada.",
+    "official_authorization": "self_declared_official significa que el operador se autodenomina concesionario oficial; no equivale a confirmación individual por Benelli o su importador."
+  },
+  "outlet_count": 7,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 7,
+    "service": 3,
+    "operator_self_declared_only": 7,
+    "manufacturer_individually_listed": 0
+  },
+  "official_source": {
+    "url": "https://www.benelli.com/es-es/news/20-aniversario-y-nuevas-instalaciones-de-keeway-group-en-espa-a",
+    "status": "brand_activity_statement_visible",
+    "notes": "Benelli publicó el 26-03-2025 una noticia sobre Keeway Group España, que identifica Benelli entre las marcas del grupo y declara actividad comercial y posventa. La navegación oficial muestra una sección Tiendas, pero no se han extraído fichas individuales del localizador; no se atribuye manufacturer_listed a ningún punto."
+  },
+  "outlets": [
+    {
+      "outlet_id": "benelli-motissimo-barcelona",
+      "brand": "Benelli",
+      "trading_name": "Motissimo Barcelona",
+      "operator": "Motissimo",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Comandant Benítez, 23, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motissimo.es/",
+      "supporting_urls": [
+        "https://motissimo.es/benelli/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web vigente se presenta como concesionario oficial Benelli, muestra modelos Benelli en el catálogo y publica esta sede. Aunque dispone de una sección general de taller, no se atribuye servicio Benelli específico a la dirección sin evidencia expresa."
+    },
+    {
+      "outlet_id": "benelli-sk-motos-malaga",
+      "brand": "Benelli",
+      "trading_name": "SK Motos Málaga",
+      "operator": "SK Motos, S.L.",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle La Bohème, 50, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.benellimalaga-sk.es/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/tienda-sk-motos"
+      ],
+      "evidence_type": "operator_brand_site",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Web específica del operador para Benelli, con contenido de modelos y datos legales que vinculan SK Motos S.L. con La Bohème 50. El contenido comercial consultado conserva modelos antiguos; se cuenta como presencia declarada, no como ficha del fabricante ni prueba de volumen actual."
+    },
+    {
+      "outlet_id": "benelli-castro-cadiz",
+      "brand": "Benelli",
+      "trading_name": "Castro La Motocicleta Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/historia/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara Benelli entre las marcas oficiales de sus tres sedes. Para Cádiz publica ventas en Avenida de la Sanidad Pública 297 y taller en Calle García Quijano 2; al ser direcciones distintas, no se atribuye servicio a la dirección de ventas ni se cuenta el taller como punto de venta."
+    },
+    {
+      "outlet_id": "benelli-castro-jerez",
+      "brand": "Benelli",
+      "trading_name": "Castro La Motocicleta Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/historia/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara Benelli entre las marcas oficiales de sus tres sedes y publica en Jerez ventas y taller en esta misma dirección."
+    },
+    {
+      "outlet_id": "benelli-castro-palmones",
+      "brand": "Benelli",
+      "trading_name": "Castro La Motocicleta Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios (Palmones)",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/historia/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador declara Benelli entre las marcas oficiales de sus tres sedes y publica en Palmones ventas y taller en esta misma dirección."
+    },
+    {
+      "outlet_id": "benelli-motosport-carreres-alicante",
+      "brand": "Benelli",
+      "trading_name": "Motosport Carreres Alicante",
+      "operator": "Motosport Carreres",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carrer Riu Turia, 4, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.mscarreres.com/web/category/on-road/",
+      "supporting_urls": [
+        "https://www.mscarreres.com/web/author/mscarreres1/",
+        "https://www.mscarreres.com/web/wp-content/uploads/2024/05/TARIFA-KTM-OFFROAD-2025.pdf"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web del operador publica una Benelli TRK 702 en su concesión de Alicante y una tarifa Benelli 2026; la dirección se contrasta con los datos públicos de la sede de Alicante. El perfil corporativo se declara concesionario oficial Benelli. No se atribuye taller Benelli sin evidencia específica."
+    },
+    {
+      "outlet_id": "benelli-jade-motor-cartagena",
+      "brand": "Benelli",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Fenix Moto Premium S.L. / Jade Motor",
+      "province": "Murcia",
+      "municipality": "Cartagena (Miranda)",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/",
+      "supporting_urls": [
+        "https://jademotor.com/motos-nuevas/benelli",
+        "https://jademotor.com/contacto"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Jade Motor declara ser concesionario oficial Benelli en la Región de Murcia, publica gama Benelli y vincula la sede de Cartagena con tienda, recambios y taller. La tienda/taller de Murcia capital no se incorpora porque la relación de marcas publicada para esa sede no incluye Benelli."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental de las cinco provincias prioritarias; no es un censo nacional ni exhaustivo.",
+    "La noticia oficial de Benelli acredita actividad de Keeway Group España y posventa del grupo, pero no individualiza concesionarios ni desglosa ventas por marca.",
+    "Los siete puntos se basan en publicaciones de los operadores; la condición de concesionario oficial es autodeclarada y no se ha confirmado individualmente en un directorio del fabricante.",
+    "El contenido web de SK Motos y Motosport Carreres incluye publicaciones/modelos antiguos; se conserva la evidencia como oferta declarada y no como prueba de ventas, stock o disponibilidad actual.",
+    "En Cádiz capital, el taller publicado está en Calle García Quijano 2, distinta de la dirección de ventas; no se atribuye el rol de servicio a la dirección de ventas ni se cuenta el taller separado como punto de venta.",
+    "Solo se atribuye servicio a Jerez, Palmones y Jade Motor Cartagena, donde el operador publica ventas y taller/posventa en la misma sede.",
+    "No se infiere ausencia de red en otras provincias ni de ubicaciones adicionales no auditadas."
+  ],
+  "methodology": "Consulta de la noticia oficial de Benelli sobre Keeway Group España y contraste de páginas corporativas de operadores en las cinco provincias prioritarias. Se transcriben únicamente direcciones físicas publicadas, se deduplica por sede y se separan venta y servicio. Las declaraciones de oficialidad se conservan como autodeclaraciones. Fecha de consulta: 2026-11-12."
+}
