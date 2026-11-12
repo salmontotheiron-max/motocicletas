@@ -551,13 +551,13 @@
       "brand_id": "brand-triumph",
       "canonical_name": "Triumph",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual y red oficial acreditadas mediante el directorio público de Triumph España. Primera auditoría territorial: ocho establecimientos individualizados en las cinco provincias prioritarias (Barcelona 4, Málaga 1, Cádiz 1, Alicante 1 y Murcia 1), todos con oferta comercial publicada y servicios de posventa en sus fichas. Motissimo Barcelona se identifica como punto especializado en Triumph off-road. Inventario mínimo documental, no censo nacional ni evidencia de ventas realizadas."
     },
     {
       "brand_id": "brand-trs",
@@ -1402,6 +1402,27 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Jade Motor se declara concesionario oficial Kawasaki en Murcia, Cartagena y San Javier, identifica sus sedes y distingue tienda y taller. La web declara expresamente punto de venta y taller en Cofenauto San Javier. La autorización es autodeclarada y no se contrasta independientemente con el fabricante."
+    },
+    {
+      "source_id": "source-triumph-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-triumph",
+      "publisher": "Triumph Motorcycles España",
+      "source_type": "official_directory",
+      "url": "https://www.triumphmotorcycles.es/GetDealerList.aspx?market=32",
+      "title": "Directorio oficial de concesionarios Triumph España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "exhibition"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Listado oficial extraíble con direcciones y enlaces a fichas individuales de concesionarios. Se auditan los puntos de las cinco provincias prioritarias y se conserva la especialización off-road de Motissimo Barcelona."
     }
   ]
 }
