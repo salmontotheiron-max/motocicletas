@@ -6,6 +6,7 @@ histórico. Solo compara capturas HTML válidas con texto suficiente.
 from __future__ import annotations
 
 import hashlib
+from collections import Counter
 import json
 import re
 import unicodedata
@@ -120,10 +121,24 @@ def compare_records(records: list[dict]) -> dict:
 
             old_display = display_lines(old_record["extracted_text"])
             new_display = display_lines(current["extracted_text"])
-            old_lines = {line.casefold() for line in old_display}
-            new_lines = {line.casefold() for line in new_display}
-            added = [line for line in new_display if line.casefold() not in old_lines]
-            removed = [line for line in old_display if line.casefold() not in new_lines]
+            # Diferencia de multiconjuntos: conserva el orden original y refleja
+            # también altas/bajas de apariciones repetidas de una misma línea.
+            old_remaining = Counter(line.casefold() for line in old_display)
+            new_remaining = Counter(line.casefold() for line in new_display)
+            added = []
+            for line in new_display:
+                key = line.casefold()
+                if old_remaining[key]:
+                    old_remaining[key] -= 1
+                else:
+                    added.append(line)
+            removed = []
+            for line in old_display:
+                key = line.casefold()
+                if new_remaining[key]:
+                    new_remaining[key] -= 1
+                else:
+                    removed.append(line)
             candidate = {
                 "candidate_id": _candidate_id(source_id, old_record["sha256"], current["sha256"]),
                 "candidate_type": "source_content_changed",
