@@ -155,13 +155,13 @@
       "brand_id": "brand-cfmoto",
       "canonical_name": "CFMoto",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por el localizador público del distribuidor oficial Jets Marivent, que individualiza 19 puntos de venta en las cinco provincias prioritarias. La fuente no desglosa el servicio posventa por sede; el inventario es una captura de directorio, no evidencia de ventas efectivas ni censo exhaustivo."
     },
     {
       "brand_id": "brand-cyclone",
@@ -239,13 +239,13 @@
       "brand_id": "brand-honda",
       "canonical_name": "Honda",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual y red de distribución en España acreditadas mediante el directorio oficial Honda y 15 entradas en las cinco provincias prioritarias: 14 puntos con función de venta y una ubicación diferenciada de servicio en Málaga. El recuento no equivale a ventas realizadas ni a censo exhaustivo."
     },
     {
       "brand_id": "brand-husqvarna",
@@ -335,13 +335,13 @@
       "brand_id": "brand-kymco",
       "canonical_name": "Kymco",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual y red comercial acreditadas mediante el localizador y comunicaciones oficiales KYMCO, junto con evidencia individual de operadores. Primera auditoría: ocho puntos con oferta de venta en Barcelona, Málaga, Cádiz, Alicante y Murcia; tres ubicaciones publican también servicio. Una ubicación de Murcia se conserva como autodeclarada, sin confirmación independiente de autorización oficial. Inventario mínimo documental, no censo exhaustivo."
     },
     {
       "brand_id": "brand-lambretta",
@@ -539,13 +539,13 @@
       "brand_id": "brand-sym",
       "canonical_name": "SYM",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual acreditada mediante la declaración del importador español Motos Bordoy y sus páginas de tiendas/oferta SYM: tres puntos de venta en Barcelona, con servicio publicado en las tres sedes. La autorización se conserva como declaración del importador y operador; no se amplía a otras provincias ni se infiere una red nacional completa."
     },
     {
       "brand_id": "brand-triumph",
@@ -599,25 +599,25 @@
       "brand_id": "brand-voge",
       "canonical_name": "Voge",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Oferta comercial actual identificada en tres puntos publicados en el directorio vogospain.com en Barcelona, Málaga y Cádiz. Se clasifica como presencia comercial documentada, pero la correspondencia societaria del dominio con el importador oficial y la autorización individual de los puntos no están confirmadas independientemente. Inventario exploratorio, no censo de red oficial."
     },
     {
       "brand_id": "brand-yamaha",
       "canonical_name": "Yamaha",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual y red de distribución en España acreditadas mediante el localizador oficial Yamaha y cinco puntos de venta identificados en cuatro provincias prioritarias. No se incorporó una ficha individual verificable de venta de motocicletas en Murcia en esta revisión; ello no acredita ausencia de red en esa provincia."
     },
     {
       "brand_id": "brand-zero",
