@@ -1,0 +1,44 @@
+name: Capturar fuentes de red comercial
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "40 6 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capturas-red-comercial
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar repositorio
+        id: checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validar registro
+        run: python validar_fuentes_red_comercial.py
+      - name: Ejecutar capturas
+        run: python capturar_fuentes_red_comercial.py
+      - name: Persistir evidencias versionadas
+        if: always() && steps.checkout.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidencias/red_comercial
+          if git diff --cached --quiet; then
+            echo "No hay cambios de evidencia que persistir."
+          else
+            git commit -m "Capturar fuentes de red comercial"
+            git push
+          fi
