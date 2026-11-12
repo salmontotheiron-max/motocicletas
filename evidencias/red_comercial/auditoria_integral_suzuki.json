@@ -5,17 +5,17 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 61,
-    "pending_entries": 15,
-    "reviewed_groups": 36,
-    "coverage": "Registro de control de auditoría; 61 de 76 entradas evaluadas individualmente. Las 15 entradas restantes continúan pendientes; no equivale a auditoría completa."
+    "individually_assessed_entries": 68,
+    "pending_entries": 8,
+    "reviewed_groups": 42,
+    "coverage": "Registro de control de auditoría; 68 de 76 entradas evaluadas individualmente. Las 8 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "unresolved_address_or_operator": 23,
-    "corroborated_operator_and_location": 22,
-    "same_operator_multiple_locations": 12,
+    "unresolved_address_or_operator": 25,
+    "corroborated_operator_and_location": 25,
+    "same_operator_multiple_locations": 14,
     "same_location_multiple_service_entries": 4,
-    "pending_individual_review": 15
+    "pending_individual_review": 8
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -32,7 +32,8 @@
     "La revisión de Las Palmas (12/11/2026) contrasta las tres entradas con el localizador Suzuki Moto, la web oficial de Fedeauto y fuentes sectoriales/comerciales de Pole Position. Fedeauto se mantiene sin corroborar como red de motocicletas porque su web acredita Suzuki automóvil, sin prueba específica de motos. Pole Position se confirma como operador Suzuki de motocicletas en Av. de Escaleritas, 70; su taller de C. Joaquín Blume, 21 se conserva como ubicación técnica del mismo operador, con autorización Suzuki específica no acreditada independientemente.",
     "La revisión de Granada, Guadalajara, Guipúzcoa, Huelva, A Coruña y La Rioja (12/11/2026) contrasta ocho entradas del localizador Suzuki Moto. Gelsukar, Mantimotor y Agrisa se corroboran con fuentes actuales del operador y coincidencia con el localizador de motos. RCR Bikes permanece sin corroboración primaria actual; Motoblanco presenta discrepancia entre el localizador Suzuki Moto y la web actual del operador, que identifica Triumph. Motocicletas Groba se agrupa como un único operador candidato, pero queda sin resolver la diferencia entre los números 21 y 25 de Ingeniero Mariño.",
     "La revisión de Álava, Alicante, Almería, Asturias y Baleares (12/11/2026) contrasta ocho entradas de seis operadores con el localizador Suzuki Moto y páginas actuales de los operadores. Motos Marín (Elche), Motocycles/Grupo Prim (Alicante) e Indalmar Motor (Viator) se corroboran. Lanfavi no acredita actividad Suzuki Moto en su web actual, centrada en automóviles. Motos Gijón mantiene discrepancia de direcciones y falta de fuente primaria actual. Proa Bikes/Proa Group publica otras marcas y no acredita Suzuki Moto; ambas entradas quedan sin corroborar.",
-    "La revisión de Burgos, Cantabria, Ceuta, Girona, León y Lleida (12/11/2026) contrasta seis entradas con el localizador Suzuki Moto y fuentes públicas de operadores y directorios sectoriales. Esteve Blanch (Fornells), La Serna 4x4 (León) y Motos Grau (Lleida) se corroboran como ubicaciones Suzuki Moto. Julián Auto-Sport y Auto Palas quedan sin corroborar porque la evidencia disponible acredita Suzuki automóvil, no motocicletas. Factory Racing Ceuta acredita actividad general de motocicletas, pero no representación Suzuki Moto y presenta discrepancia de dirección."
+    "La revisión de Burgos, Cantabria, Ceuta, Girona, León y Lleida (12/11/2026) contrasta seis entradas con el localizador Suzuki Moto y fuentes públicas de operadores y directorios sectoriales. Esteve Blanch (Fornells), La Serna 4x4 (León) y Motos Grau (Lleida) se corroboran como ubicaciones Suzuki Moto. Julián Auto-Sport y Auto Palas quedan sin corroborar porque la evidencia disponible acredita Suzuki automóvil, no motocicletas. Factory Racing Ceuta acredita actividad general de motocicletas, pero no representación Suzuki Moto y presenta discrepancia de dirección.",
+    "La revisión de Lugo, Madrid, Málaga, Pontevedra y Salamanca (12/11/2026) contrasta siete entradas de seis grupos con el localizador Suzuki Moto, webs primarias de operadores y fuentes complementarias. Namura Bikes, SK Motos y Motos Ponte se corroboran; SS Motos se agrupa como un operador con dos ubicaciones, con confianza media para la sede técnica de Avellana. Pardo Automoción y Nanimotorbikes quedan sin corroboración primaria suficiente de actividad Suzuki Moto. No se infieren bajas ni cierres."
   ],
   "entries": [
     {
@@ -933,13 +934,19 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Polígono Industrial As Gándaras, Rúa A, Parcela 4.2, 27003, Lugo",
       "directory_phone": "982 25 62 42",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-pardo-automocion-lugo",
+      "operator_assessment": "Pardo Automoción S.L.; la web primaria acredita concesionario Suzuki de automóviles en As Gándaras, pero no oferta ni servicio Suzuki Moto. Un portal secundario muestra motocicletas Suzuki asociadas al establecimiento.",
+      "counting_recommendation": "Mantener como candidato no verificado; no contar como establecimiento Suzuki Moto corroborado hasta disponer de evidencia primaria del operador sobre venta o servicio de motocicletas.",
+      "confidence": "low_for_current_suzuki_motorcycle_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://auto.suzuki.es/concesionarios",
+        "https://www.pardoautomocion.com/contacto.html",
+        "https://www.pardoautomocion.com/aviso-legal.html",
+        "https://motos.coches.net/concesionario/suzukilugo/"
+      ],
+      "limitation": "El localizador Suzuki Moto incluye el punto, pero la web del operador describe marcas y servicios de automoción y no acredita motocicletas Suzuki. El inventario de un portal comercial es evidencia secundaria, no confirmación primaria de autorización o servicio actual. No inferir baja ni cierre."
     },
     {
       "source_id": "suzuki-dir-048",
@@ -948,13 +955,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "C. Cartagena 174, 28002, Madrid",
       "directory_phone": "915 63 50 52",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-namura-bikes-madrid",
+      "operator_assessment": "Namura Bikes; la web primaria actual declara concesionario oficial Suzuki, venta de motos y taller oficial en Calle Cartagena.",
+      "counting_recommendation": "Contar 1 ubicación Suzuki Moto en C/ Cartagena, 174-174C, Madrid. Ventas/boutique se publican en 174C y taller/recambios en 174; tratarlo como un mismo emplazamiento, no como dos sedes.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.namurabikes.es/concesionario-suzuki-motos-madrid/",
+        "https://www.namurabikes.es/",
+        "https://www.namurabikes.es/concesionario-oficial-ktm-suzuki-y-peugeot-estrena-instalaciones/"
+      ],
+      "limitation": "El localizador Suzuki registra Cartagena 174; el operador diferencia 174C para ventas y 174 para taller dentro del mismo emplazamiento. Revisión documental, sin visita física ni llamada de comprobación."
     },
     {
       "source_id": "suzuki-dir-049",
@@ -963,13 +975,17 @@
       "service_type": "Exposición",
       "directory_address": "C. José del Hierro, 54, 28027, Madrid",
       "directory_phone": "914 08 07 85",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-ss-motos-madrid",
+      "operator_assessment": "SS Motos; actividad de concesionario Suzuki corroborada en José del Hierro 54. El operador publica actividad comercial Suzuki en 2026.",
+      "counting_recommendation": "Contar como ubicación comercial de SS Motos en C/ José del Hierro, 54. Agrupar con el taller de C/ Avellana, 3 bajo el mismo operador; no duplicar por servicios.",
+      "confidence": "high_for_operator_and_showroom_activity;medium_for_second_site_linkage",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://moto.suzuki.es/novedades/suzuki-8s-test-days",
+        "https://www.autoyas.com/ES/Madrid/121802751197324/SS-MOTOS---Concesionario-Suzuki"
+      ],
+      "limitation": "La web del fabricante mantiene ambas entradas y su comunicación comercial de 2026 sitúa SS Motos en José del Hierro 54. La vinculación de la segunda dirección como taller del mismo operador se apoya en el localizador y directorios secundarios; no hay inspección física."
     },
     {
       "source_id": "suzuki-dir-050",
@@ -978,13 +994,17 @@
       "service_type": "Taller",
       "directory_address": "C. Avellana, Nº 3, 28027, Madrid",
       "directory_phone": "914 08 07 85",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "same_operator_multiple_locations",
+      "review_group_id": "suzuki-ss-motos-madrid",
+      "operator_assessment": "SS Motos; el localizador Suzuki Moto identifica un taller en C/ Avellana 3, con teléfono coincidente con la ficha del operador y directorios secundarios que lo identifican como taller Suzuki.",
+      "counting_recommendation": "Contar como ubicación técnica candidata de SS Motos en C/ Avellana, 3, agrupada con la exposición de C/ José del Hierro, 54. Mantener confianza media para la relación y actividad actual de esta segunda sede.",
+      "confidence": "medium_for_operator_linkage_and_workshop_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://miconcesionario.es/concesionarios-de-coches/concesionario-suzuki-motos-ss/",
+        "https://www.autoyas.com/ES/Madrid/121802751197324/SS-MOTOS---Concesionario-Suzuki"
+      ],
+      "limitation": "La entrada del localizador y un directorio secundario describen taller en Avellana 3; la evidencia pública reciente del operador se concentra en José del Hierro 54. No se confirma por fuente primaria independiente la continuidad de la actividad en la sede técnica."
     },
     {
       "source_id": "suzuki-dir-051",
@@ -1069,13 +1089,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "C. La Bohème, 50, 29006, Málaga",
       "directory_phone": "952 33 42 15",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-sk-motos-malaga",
+      "operator_assessment": "SK Motos S.L.; su web primaria publica actividad y contacto en La Bohème 48-50, coincidente con la entrada Suzuki. Suzuki incluyó SKMOTOS Málaga en sus jornadas oficiales de prueba.",
+      "counting_recommendation": "Contar 1 ubicación Suzuki Moto en C/ La Bohème, 48-50, Málaga; taller y exposición corresponden al mismo establecimiento.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://skmotos.es/subpaginas/contacto/contacto.html",
+        "https://moto.suzuki.es/novedades/suzuki-8s-test-days",
+        "https://www.boe.es/diario_borme/txt.php?id=BORME-A-2019-136-29"
+      ],
+      "limitation": "El contacto actual del operador publica los números 48-50 y el localizador Suzuki el nº 50. La noticia del fabricante que identifica SKMOTOS como participante en sus jornadas es de 2023; no se dispone de visita física ni comprobación telefónica."
     },
     {
       "source_id": "suzuki-dir-056",
@@ -1103,13 +1128,17 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Emilia Pardo Bazán, 144, 36204, Vigo",
       "directory_phone": "986 225 926",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-motos-ponte-vigo",
+      "operator_assessment": "Motos Ponte; la web primaria declara concesionario oficial exclusivo Suzuki para Pontevedra y sitúa las nuevas instalaciones en Rúa Emilia Pardo Bazán 144, Vigo.",
+      "counting_recommendation": "Contar 1 ubicación Suzuki Moto en Rúa Emilia Pardo Bazán, 144, Vigo; taller y exposición forman una única sede.",
+      "confidence": "high_for_operator_location_and_suzuki_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.motosponte.com/inicio/",
+        "https://vigocomercio.com/es/empresas_perfil.php?nar1=89"
+      ],
+      "limitation": "La web del operador confirma traslado a Emilia Pardo Bazán 144 en 2023 y mantiene su declaración de concesionario oficial Suzuki. Una ficha comercial secundaria conserva datos de contacto antiguos; se priorizan la dirección actual del operador y el localizador Suzuki. Revisión digital, sin visita física."
     },
     {
       "source_id": "suzuki-dir-058",
@@ -1118,13 +1147,16 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Calle primera, 25, 37188, Carbajosa de la Sagrada",
       "directory_phone": "676 92 17 30",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-nanimotorbikes-salamanca",
+      "operator_assessment": "Nanimotorbikes; el localizador Suzuki Moto mantiene la entrada en Carbajosa de la Sagrada, pero la web primaria actual del operador enumera otras marcas y no acredita venta ni servicio Suzuki.",
+      "counting_recommendation": "Mantener como candidato no verificado; no contar como establecimiento Suzuki Moto corroborado. La ausencia de Suzuki en la oferta visible no permite inferir baja o cierre.",
+      "confidence": "low_for_current_suzuki_motorcycle_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.nanimotorbikes.com/"
+      ],
+      "limitation": "La web actual de Nanimotorbikes presenta un catálogo de marcas y servicios oficiales que no menciona Suzuki, mientras el localizador del fabricante conserva el punto. No se ha localizado confirmación primaria de actividad Suzuki Moto; no inferir baja ni cierre."
     },
     {
       "source_id": "suzuki-dir-059",
