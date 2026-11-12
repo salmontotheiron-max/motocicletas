@@ -23,24 +23,32 @@ El registro declara cobertura abierta para:
 
 El catálogo inicial de tres marcas es solo un piloto. Se permiten marcas y fabricantes desconocidos y se mantiene una lista separada de fabricantes para no confundir marca comercial con entidad fabricante.
 
+## Fuentes primarias iniciales
+
+- Suzuki: https://moto.suzuki.es/concesionarios
+- Zontes: https://zontesmotos.es/puntos-de-venta/
+- ZXMOTO: https://zxmoto.es/puntos-de-venta/
+
+## Fuentes de descubrimiento iniciales
+
+| Fuente | URL | Utilidad | Limitación |
+|---|---|---|---|
+| ANESDOR - notas de prensa | https://www.anesdor.com/category/notas-de-prensa/ | Contexto sectorial, fabricantes e importadores, evolución del mercado | Representa a empresas asociadas; no es un censo completo ni prueba única de actividad individual |
+| MOTOCICLISMO - industria | https://www.motociclismo.es/industria | Entradas de marcas, cambios de distribución y aperturas de concesionarios | Fuente periodística; contrastar con fuentes primarias |
+| Posventa.com | https://www.posventa.com/ | Pista para movimientos empresariales y de distribución | Fuente candidata; sección y cobertura específica pendientes de evaluación |
+
+Estas fuentes se registran con rol market_discovery, sin exigir una marca previamente conocida. Se clasifican como evidencia secundaria reputada y no sustituyen los directorios oficiales. La fuente de Posventa.com queda en estado not_assessed y con captura manual hasta completar su evaluación.
+
 ## Estados y regla probatoria
 
 Los estados de marca distinguen anuncio, entrada reciente, actividad establecida, revisión, cese confirmado, inactividad no verificada y situación desconocida.
 
 Un anuncio de lanzamiento no prueba actividad comercial efectiva. La ausencia de una marca en un directorio no prueba su retirada. Los errores de captura y los cambios de web son incidencias técnicas. Los candidatos se someten a revisión antes de actualizar el histórico.
 
-## Fuentes iniciales
-
-Se mantienen las tres fuentes oficiales del piloto:
-- Suzuki: https://moto.suzuki.es/concesionarios
-- Zontes: https://zontesmotos.es/puntos-de-venta/
-- ZXMOTO: https://zxmoto.es/puntos-de-venta/
-
-No se añaden todavía fuentes secundarias concretas de descubrimiento sin completar su evaluación y documentación. El esquema ya permite incorporarlas con rol market_discovery, sin obligarlas a referir una marca conocida.
-
 ## Próximos pasos
 
-1. Evaluar y registrar fuentes sectoriales y oficiales de descubrimiento de fabricantes/marcas.
+1. Evaluar cobertura, términos y estabilidad de cada fuente de descubrimiento.
 2. Investigar carga dinámica de los localizadores Zontes y ZXMOTO.
 3. Implementar capturas con fecha, URL final, estado HTTP, tipo de contenido, hash y evidencia.
 4. Comparar capturas y generar candidatos, sin actualización automática del histórico.
+5. Incorporar marcas y fabricantes nuevos conforme se descubran y verifiquen.
