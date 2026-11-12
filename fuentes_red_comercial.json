@@ -178,13 +178,13 @@
       "brand_id": "brand-ducati",
       "canonical_name": "Ducati",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España y red oficial acreditadas mediante fichas individuales del localizador Ducati. Primera auditoría en las cinco provincias prioritarias: seis establecimientos con venta y servicio, dos en Barcelona y uno en cada una de Málaga, Cádiz, Alicante y Murcia. El inventario es mínimo documental, no censo exhaustivo."
     },
     {
       "brand_id": "brand-fantic",
@@ -1261,6 +1261,26 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Mapa oficial de la red BMW Motorrad. Las fichas individuales del dominio bmw-motorrad.es confirman denominación, dirección, venta de vehículo nuevo y taller autorizado de los establecimientos incluidos en esta primera auditoría."
+    },
+    {
+      "source_id": "source-ducati-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-ducati",
+      "publisher": "Ducati Motor Holding S.p.A. / Ducati España",
+      "source_type": "official_directory",
+      "url": "https://www.ducati.com/es/es/dealers",
+      "title": "Localizador oficial de concesionarios Ducati España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con fichas individuales por establecimiento. Las fichas auditadas en Barcelona, Sant Quirze del Vallès, Málaga, Alicante, Murcia y Jerez de la Frontera enumeran venta de motocicletas y servicios. Inventario mínimo de cinco provincias prioritarias, no censo exhaustivo."
     }
   ]
 }

@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "Ducati",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Solo se incorporan fichas individuales del localizador oficial Ducati que identifican establecimientos y enumeran venta de motocicletas y servicios. La inclusión acredita listado oficial y funciones declaradas en la ficha; no implica auditoría de capacidad, volumen o actividad efectiva diaria.",
+  "source": {
+    "source_type": "official_brand_directory",
+    "publisher": "Ducati Motor Holding S.p.A. / Ducati España",
+    "url": "https://www.ducati.com/es/es/dealers",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "Localizador oficial Ducati. Se contrastan fichas individuales por establecimiento; cada ficha enumera venta de motocicletas y servicios."
+  },
+  "outlet_count": 6,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 6,
+    "service": 6,
+    "service_only": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "ducati-barcelona-mallorca",
+      "trading_name": "Ducati Barcelona",
+      "operator": "QUADIS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer Mallorca, 499-503, esquina Dos de Maig 150, 08013 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.ducati.com/es/es/dealers/barcelona/ducati-barcelona",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha individual del localizador oficial Ducati. Enumera venta de motocicletas y servicios; sede de exposición y venta."
+    },
+    {
+      "outlet_id": "ducati-barcelona-sant-quirze",
+      "trading_name": "Ducati Barcelona (Sant Quirze del Vallès)",
+      "operator": "QUADIS",
+      "province": "Barcelona",
+      "municipality": "Sant Quirze del Vallès",
+      "public_address": "Carrer de Rossend Carrasco i Formiguera, 6, 08192 Sant Quirze del Vallès, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.ducati.com/es/es/dealers/sant-quirz-del-valles/ducati-barcelona-2",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha individual distinta en el localizador oficial Ducati; enumera venta de motocicletas y servicios. Se cuenta como establecimiento físico separado."
+    },
+    {
+      "outlet_id": "ducati-malaga-churriana",
+      "trading_name": "Ducati Málaga",
+      "operator": "Moto 1000",
+      "province": "Málaga",
+      "municipality": "Churriana (Málaga)",
+      "public_address": "Ctra. Cohín, Nave 32, 3, 29140 Churriana, Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.ducati.com/es/es/dealers/churriana/ducati-mlaga",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha individual del localizador oficial Ducati. Enumera venta de motocicletas y servicios autorizados."
+    },
+    {
+      "outlet_id": "ducati-ducatalia-alicante",
+      "trading_name": "Ducatalia",
+      "operator": "Motos Medina",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Dénia, 15, 03002 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.ducati.com/ww/en/dealers/alicante/ducatalia",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha individual del localizador oficial Ducati; identifica venta de motos y servicio autorizado. La ficha española del operador confirma denominación y dirección."
+    },
+    {
+      "outlet_id": "ducati-murcia-cyb-motos",
+      "trading_name": "Ducati Murcia",
+      "operator": "CYB Motos",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida Alejandro Valverde, 175, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.ducati.com/es/es/dealers/murcia/cyb-motos",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha individual del localizador oficial Ducati. Enumera venta de motocicletas y servicios."
+    },
+    {
+      "outlet_id": "ducati-mercabox-jerez",
+      "trading_name": "Mercabox Motor, S.L.",
+      "operator": "Mercabox Motor, S.L.",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle de Bonanza, 1, 11408 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.ducati.com/ar/es/dealers/jerez-de-la-frontera/mercabox-motor-sl",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha individual del localizador oficial Ducati; enumera venta de motocicletas y servicios autorizados."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental de las cinco provincias prioritarias, no censo exhaustivo de la red Ducati en España.",
+    "Los establecimientos se cuentan por dirección física individual; dos sedes de un mismo operador no se agregan.",
+    "La ficha del localizador acredita inclusión en la red oficial y enumera funciones, pero no acredita ventas, matriculaciones ni cuota comercial del establecimiento.",
+    "No se infiere ausencia de red en provincias no auditadas.",
+    "La dirección de Sant Quirze del Vallès se transcribe desde la ficha individual del localizador Ducati."
+  ],
+  "methodology": "Consulta manual del localizador oficial Ducati y de las fichas individuales enlazadas. Se registra como punto de venta cuando la ficha enumera Venta de motocicletas y como servicio cuando enumera Servicios. Se deduplican por dirección física, no por razón social o grupo operador."
+}
