@@ -81,6 +81,47 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
         self.assertEqual(result["unchanged_comparisons"], 1)
         self.assertEqual(result["candidate_count"], 0)
 
+    def test_cambios_en_multiplicidad_aparecen_en_extractos(self):
+        repeated = "Horario de atención de lunes a viernes."
+        old = "Directorio oficial de concesionarios. " * 3 + "\\n" + repeated + "\\n" + repeated
+        new = "Directorio oficial de concesionarios. " * 3 + "\\n" + repeated
+        result = compare_records([
+            row("a", "2026-11-01T00:00:00Z", "h1", old),
+            row("a", "2026-11-08T00:00:00Z", "h2", new),
+        ])
+        self.assertEqual(result["candidate_count"], 1)
+        self.assertEqual(result["candidates"][0]["removed_lines"], [repeated])
+
+    def test_formato_registro_real_primera_captura(self):
+        # Fixture compacto con el esquema de capturas.jsonl de PR #21:
+        # siete fuentes HTTP 200 y una fuente bloqueada por robots.
+        records = []
+        for index in range(7):
+            records.append({
+                "capture_status": "captured",
+                "captured_at": "2026-11-12T09:25:53+00:00",
+                "http_status": 200,
+                "source_id": f"source-{index}",
+                "sha256": f"digest-{index}",
+                "snapshot_path": f"evidencias/red_comercial/snapshots/{index}.html.gz",
+                "extracted_text": "Directorio oficial de concesionarios y puntos de venta. " * 3,
+            })
+        records.append({
+            "capture_status": "robots_disallowed",
+            "captured_at": "2026-11-12T09:25:53+00:00",
+            "http_status": 403,
+            "source_id": "source-blocked",
+            "sha256": None,
+            "snapshot_path": None,
+            "extracted_text": "",
+        })
+        result = compare_records(records)
+        self.assertEqual(result["total_records"], 8)
+        self.assertEqual(result["comparable_sources"], 7)
+        self.assertEqual(result["baseline_captures"], 7)
+        self.assertEqual(result["ignored_records"], 1)
+        self.assertEqual(result["candidate_count"], 0)
+
     def test_run_escribe_jsonl_y_resumen(self):
         text = "Directorio oficial de concesionarios. " * 5
         with tempfile.TemporaryDirectory() as tmp:
