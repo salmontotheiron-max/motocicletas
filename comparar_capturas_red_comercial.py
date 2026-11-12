@@ -28,15 +28,21 @@ COOKIE_PATTERNS = (
 )
 
 
-def normalize_text(value: str) -> str:
+def display_lines(value: str) -> list[str]:
+    """Normaliza espacios y Unicode conservando mayúsculas para la evidencia."""
     value = unicodedata.normalize("NFKC", value or "")
     lines = []
     for raw in value.splitlines():
         line = re.sub(r"\s+", " ", raw).strip()
         if not line or any(pattern.search(line) for pattern in COOKIE_PATTERNS):
             continue
-        lines.append(line.casefold())
-    return "\n".join(lines)
+        lines.append(line)
+    return lines
+
+
+def normalize_text(value: str) -> str:
+    """Representación comparable, insensible a mayúsculas."""
+    return "\n".join(line.casefold() for line in display_lines(value))
 
 
 def load_capture_log(path: Path = CAPTURES) -> list[dict]:
@@ -113,10 +119,12 @@ def compare_records(records: list[dict]) -> dict:
                 previous = (current, current_text)
                 continue
 
-            old_lines = set(old_text.splitlines())
-            new_lines = set(current_text.splitlines())
-            added = [line for line in current_text.splitlines() if line not in old_lines]
-            removed = [line for line in old_text.splitlines() if line not in new_lines]
+            old_display = display_lines(old_record["extracted_text"])
+            new_display = display_lines(current["extracted_text"])
+            old_lines = {line.casefold() for line in old_display}
+            new_lines = {line.casefold() for line in new_display}
+            added = [line for line in new_display if line.casefold() not in old_lines]
+            removed = [line for line in old_display if line.casefold() not in new_lines]
             candidate = {
                 "candidate_id": _candidate_id(source_id, old_record["sha256"], current["sha256"]),
                 "candidate_type": "source_content_changed",
