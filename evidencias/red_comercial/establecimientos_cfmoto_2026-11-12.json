@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "brand": "CFMOTO",
+  "source_policy": "Se incluyen establecimientos que figuran individualmente en el localizador público del distribuidor oficial español de CFMOTO. La inclusión acredita que el localizador del distribuidor los publica como puntos de venta; no acredita por sí sola que cada sede preste servicio posventa. Las direcciones incompletas se conservan sin completar por inferencia.",
+  "source": {
+    "source_type": "official_distributor_dealer_directory",
+    "publisher": "Jets Marivent, S.L. (CFMOTO Spain; el pie del localizador identifica al distribuidor oficial Jets Marivent)",
+    "url": "https://cfmoto.es/concesionarios",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "El localizador publica establecimientos agrupados por provincia y dirección. El contenido está parcialmente renderizado de forma dinámica; el listado se contrastó con el contenido público indexado de la misma página."
+  },
+  "outlet_count": 19,
+  "counts": {
+    "by_province": {
+      "Alicante": 4,
+      "Barcelona": 9,
+      "Cádiz": 2,
+      "Málaga": 2,
+      "Murcia": 2
+    },
+    "by_municipality": {
+      "Alicante": 2,
+      "Crevillent": 1,
+      "Aspe": 1,
+      "Cornellà de Llobregat": 1,
+      "Barcelona": 2,
+      "Mataró": 1,
+      "Sant Boi de Llobregat": 1,
+      "Terrassa": 1,
+      "Mollet del Vallès": 1,
+      "Manresa": 1,
+      "Barbate": 1,
+      "Jerez de la Frontera": 1,
+      "Marbella": 1,
+      "Málaga": 1,
+      "Murcia": 1,
+      "Miranda (Cartagena)": 1
+    },
+    "sales_directory_listings": 19
+  },
+  "outlets": [
+    {
+      "outlet_id": "cfmoto-grupo-chorro-alicante",
+      "brand": "CFMOTO",
+      "trading_name": "GRUPO CHORRO",
+      "operator": "GRUPO CHORRO",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Av. Orihuela, 148, 03006 Alicante, Alicante",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-motosport-carreres-alicante",
+      "brand": "CFMOTO",
+      "trading_name": "MOTOSPORT CARRERES ALICANTE",
+      "operator": "MOTOSPORT CARRERES ALICANTE",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carrer Riu Túria, 2, 03006 Alicante, Alicante",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-motosport-carreres-crevillent",
+      "brand": "CFMOTO",
+      "trading_name": "MOTOSPORT CARRERES",
+      "operator": "MOTOSPORT CARRERES",
+      "province": "Alicante",
+      "municipality": "Crevillent",
+      "public_address": "Polígono Industrial I-4, Carretera Estación Ferrocarril, 2, 03330 Crevillent, Alicante",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-doctor-motos-aspe",
+      "brand": "CFMOTO",
+      "trading_name": "DOCTOR MOTOS",
+      "operator": "DOCTOR MOTOS",
+      "province": "Alicante",
+      "municipality": "Aspe",
+      "public_address": "Av. de Elche, 67, 03680 Aspe, Alicante",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-urban-extreme-cornella",
+      "brand": "CFMOTO",
+      "trading_name": "URBAN EXTREME MOTOS UXM",
+      "operator": "URBAN EXTREME MOTOS UXM",
+      "province": "Barcelona",
+      "municipality": "Cornellà de Llobregat",
+      "public_address": "Carretera d'Esplugues, 149, 08940 Cornellà de Llobregat, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-oriol-motos-barcelona",
+      "brand": "CFMOTO",
+      "trading_name": "ORIOL MOTOS",
+      "operator": "ORIOL MOTOS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Rocafort, 89, 08015 Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-omega-bikes-mataro",
+      "brand": "CFMOTO",
+      "trading_name": "OMEGA BIKES",
+      "operator": "OMEGA BIKES",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Ronda de Sant Oleguer, Mataró, 08304 Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-motovivo-sant-boi",
+      "brand": "CFMOTO",
+      "trading_name": "MOTOVIVO",
+      "operator": "MOTOVIVO",
+      "province": "Barcelona",
+      "municipality": "Sant Boi de Llobregat",
+      "public_address": "Carretera de la Santa Creu de Calafell, 63, 08830 Sant Boi de Llobregat, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-maquina-motors-terrassa",
+      "brand": "CFMOTO",
+      "trading_name": "MAQUINA MOTORS TERRASSA",
+      "operator": "MAQUINA MOTORS TERRASSA",
+      "province": "Barcelona",
+      "municipality": "Terrassa",
+      "public_address": "Carrer de l'Anoia, 7, 08223 Terrassa, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-maquina-motors-mollet",
+      "brand": "CFMOTO",
+      "trading_name": "MAQUINA MOTORS MOLLET",
+      "operator": "MAQUINA MOTORS MOLLET",
+      "province": "Barcelona",
+      "municipality": "Mollet del Vallès",
+      "public_address": "Avinguda d'Antoni Gaudí, 73, 08100 Mollet del Vallès, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-maquina-motors-manresa",
+      "brand": "CFMOTO",
+      "trading_name": "MAQUINA MOTORS MANRESA",
+      "operator": "MAQUINA MOTORS MANRESA",
+      "province": "Barcelona",
+      "municipality": "Manresa",
+      "public_address": "Polígon Industrial Riu d'Or, Carretera de Berga, km 1, 08272 Manresa, Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-maquina-motors-barcelona",
+      "brand": "CFMOTO",
+      "trading_name": "MAQUINA MOTORS BARCELONA",
+      "operator": "MAQUINA MOTORS BARCELONA",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Brusi, 92, 08006 Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-italo-motor-barcelona",
+      "brand": "CFMOTO",
+      "trading_name": "ITALO MOTOR",
+      "operator": "ITALO MOTOR",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer d'Aragó, 562, 08026 Barcelona",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-motodest-barbate",
+      "brand": "CFMOTO",
+      "trading_name": "MOTODEST",
+      "operator": "MOTODEST",
+      "province": "Cádiz",
+      "municipality": "Barbate",
+      "public_address": "Av. de la Mar, 114, 11160 Barbate, Cádiz",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-el-motorista-jerez",
+      "brand": "CFMOTO",
+      "trading_name": "EL MOTORISTA JEREZ",
+      "operator": "EL MOTORISTA JEREZ",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avenida de Europa, 13, 11405 Jerez de la Frontera, Cádiz",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-demoto-marbella",
+      "brand": "CFMOTO",
+      "trading_name": "CFMOTO MARBELLA (GRUPO DEMOTO)",
+      "operator": "CFMOTO MARBELLA (GRUPO DEMOTO)",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "Av. Arias de Velasco, 38A, 29601 Marbella, Málaga",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-demoto-malaga",
+      "brand": "CFMOTO",
+      "trading_name": "DEMOTO",
+      "operator": "DEMOTO",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle de Alfredo Corrochano, 57 y 65, 29006 Málaga",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-remoto-murcia",
+      "brand": "CFMOTO",
+      "trading_name": "REMOTO",
+      "operator": "REMOTO",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Carril del Garre, 35, 30012 Murcia",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    },
+    {
+      "outlet_id": "cfmoto-jade-motor-miranda",
+      "brand": "CFMOTO",
+      "trading_name": "JADE MOTOR",
+      "operator": "JADE MOTOR",
+      "province": "Murcia",
+      "municipality": "Miranda (Cartagena)",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Miranda, Murcia",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://cfmoto.es/concesionarios",
+      "evidence_type": "official_distributor_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "listed_by_official_distributor",
+      "notes": "Punto de venta individualizado en el localizador público del distribuidor oficial español CFMOTO. El listado no especifica por separado el alcance de posventa."
+    }
+  ]
+}
