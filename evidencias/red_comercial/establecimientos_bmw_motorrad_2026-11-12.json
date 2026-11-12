@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "BMW Motorrad",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Solo se incorporan fichas individuales del dominio oficial BMW Motorrad España. Se exige que la ficha identifique el establecimiento como concesionario oficial y enumere venta de vehículo nuevo y taller autorizado.",
+  "source": {
+    "source_type": "official_brand_directory",
+    "publisher": "BMW Motorrad España",
+    "url": "https://www.bmw-motorrad.es/es/experiencias/newsletter/mapa-concesionarios.html",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "Mapa oficial de concesionarios complementado por fichas individuales del dominio BMW Motorrad."
+  },
+  "outlet_count": 8,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 2,
+      "Cádiz": 1,
+      "Alicante": 2,
+      "Murcia": 1
+    },
+    "sales": 8,
+    "service": 8,
+    "service_only": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "bmw-control94-barcelona",
+      "trading_name": "Control 94 BCN S.L.",
+      "operator": "Control 94",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Avinguda de Roma, 159, 08011 Barcelona, España",
+      "evidence_url": "https://www.bmw-motorrad.es/control94-barcelonaroma/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-barcelona-premium-ronda-litoral",
+      "trading_name": "Barcelona Premium Ronda Litoral",
+      "operator": "Caetano Barcelona",
+      "province": "Barcelona",
+      "municipality": "Sant Adrià de Besòs",
+      "public_address": "Juan de Austria, 1, Ronda Litoral (Salida 30), 08930 Sant Adrià de Besòs, Barcelona, España",
+      "evidence_url": "https://www.bmw-motorrad.es/barcelonapremium-litoral/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-automotor-velazquez-malaga",
+      "trading_name": "Automotor Premium Málaga Velázquez",
+      "operator": "Automotor Premium",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avda. de Velázquez, 184, 29004 Málaga, España",
+      "evidence_url": "https://www.bmw-motorrad.es/automotor-malagavelazquez/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-automotor-el-viso-malaga",
+      "trading_name": "Automotor Premium Málaga El Viso",
+      "operator": "Automotor Premium",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avda. Ortega y Gasset, 339, 29006 Málaga, España",
+      "evidence_url": "https://www.bmw-motorrad.es/automotor-malagaelviso/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-boxer-motorrad-jerez",
+      "trading_name": "BOXER MOTORRAD Jerez",
+      "operator": "Boxer Motorrad",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avda. Tío Pepe, 8, 11407 Jerez de la Frontera, Cádiz, España",
+      "evidence_url": "https://www.bmw-motorrad.es/boxerjerez-jerez/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-benigar-alicante",
+      "trading_name": "Benigar Alicante",
+      "operator": "Benigar",
+      "province": "Alicante",
+      "municipality": "Sant Joan d'Alacant",
+      "public_address": "Ctra. Alicante-Valencia, Km 87,3, 03550 Sant Joan d'Alacant, Alicante, España",
+      "evidence_url": "https://www.bmw-motorrad.es/benigar-alicante/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-benigar-elche",
+      "trading_name": "Benigar Elche",
+      "operator": "Benigar",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "C/ Monòver, esquina Ronda Norte Vall d'Uxó, Pol. Ind. Carrús, 03206 Elche, Alicante, España",
+      "evidence_url": "https://www.bmw-motorrad.es/benigar-elche/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    },
+    {
+      "outlet_id": "bmw-belmoto-murcia",
+      "trading_name": "Belmoto, S.L.",
+      "operator": "Grupo Belmonte",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "C/ Isla Cristina, 12, 30007 Murcia, España",
+      "evidence_url": "https://www.bmw-motorrad.es/belmoto-murcia/es/home.html",
+      "brand": "BMW Motorrad",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual del dominio oficial BMW Motorrad identifica el establecimiento como concesionario oficial e indica venta de vehículo nuevo y taller autorizado."
+    }
+  ],
+  "limitations": [
+    "Primera auditoría territorial, no censo exhaustivo de la red BMW Motorrad.",
+    "Solo se incluyen fichas individuales del dominio oficial BMW Motorrad que identifican concesionario oficial, venta de vehículo nuevo y taller autorizado.",
+    "Los centros de un mismo operador se mantienen como establecimientos distintos cuando tienen direcciones físicas diferentes; se conserva el operador para deduplicar grupos.",
+    "No se han incorporado establecimientos BMW de automoción general ni centros de ocasión que no tengan evidencia individual específica de BMW Motorrad.",
+    "La ausencia de otros puntos en este fichero no demuestra ausencia de red en la provincia."
+  ]
+}
