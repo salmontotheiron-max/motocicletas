@@ -1,0 +1,10 @@
+{
+  "total_records": 32,
+  "comparable_sources": 7,
+  "baseline_captures": 7,
+  "unchanged_comparisons": 21,
+  "insufficient_content_captures": 0,
+  "ignored_records": 4,
+  "candidate_count": 0,
+  "candidate_file": "/home/runner/work/motocicletas/motocicletas/evidencias/red_comercial/candidatos_cambio.jsonl"
+}
