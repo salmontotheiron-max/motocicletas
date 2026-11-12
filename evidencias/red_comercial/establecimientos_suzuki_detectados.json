@@ -1,0 +1,793 @@
+{
+  "dataset": "suzuki_official_directory_detected_entries",
+  "brand": "Suzuki",
+  "source": {
+    "source_id": "source-suzuki-es-moto-dealers",
+    "url": "https://moto.suzuki.es/concesionarios",
+    "publisher": "Suzuki Moto España",
+    "captured_at": "2026-11-12T11:03:44+00:00",
+    "http_status": 200,
+    "sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
+    "snapshot_path": "evidencias/red_comercial/snapshots/source-suzuki-es-moto-dealers/52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662.html.gz"
+  },
+  "extraction": {
+    "method": "Parseo del texto extraído de la captura; agrupación por provincia y lectura secuencial de nombre, tipo de servicio, dirección y teléfono cuando está disponible.",
+    "records": 76,
+    "distinct_normalized_addresses": 76,
+    "provinces": 37
+  },
+  "interpretation": {
+    "status": "detected_not_verified",
+    "counts_as_verified_outlets": false,
+    "notes": [
+      "Cada fila representa una entrada de servicio visible en el directorio oficial capturado, no necesariamente un establecimiento comercial independiente.",
+      "No se han fusionado posibles duplicados ni separado razones sociales de nombres comerciales.",
+      "Taller y exposición pueden compartir operador y dirección; las filas se conservan tal como aparecen.",
+      "Teléfonos y direcciones se transcriben sin corregir; los campos dudosos requieren revisión manual.",
+      "La ausencia de teléfono no elimina una entrada visible.",
+      "No es un censo exhaustivo ni prueba de que todos los puntos estén operativos en la fecha actual."
+    ]
+  },
+  "records": [
+    {
+      "id": "suzuki-dir-001",
+      "brand": "Suzuki",
+      "business_name": "LANFAVI",
+      "province": "Alava",
+      "service_type": "Taller y Exposición",
+      "address": "Portal de Gamarra 60, 01013, Vitoria",
+      "phone": "945 27 65 44",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-002",
+      "brand": "Suzuki",
+      "business_name": "MOTO ALBA",
+      "province": "Albacete",
+      "service_type": "Exposición",
+      "address": "C. Juan Sebastián Elcano, 41, 02005 Albacete, 02005, Albacete",
+      "phone": "967 22 23 82",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-003",
+      "brand": "Suzuki",
+      "business_name": "MOTO ALBA",
+      "province": "Albacete",
+      "service_type": "Taller",
+      "address": "C. Hernán Cortés, 29, 02005 Albacete, 02005, Albacete",
+      "phone": "967 50 06 00",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-004",
+      "brand": "Suzuki",
+      "business_name": "MOTOCICLETAS MARÍN",
+      "province": "Alicante",
+      "service_type": "Taller y Exposición",
+      "address": "Avda. de Alicante,96, 03203, Elche",
+      "phone": "96 610 75 11",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-005",
+      "brand": "Suzuki",
+      "business_name": "MOTOCICLETAS PRIM ALICANTE",
+      "province": "Alicante",
+      "service_type": "Taller y Exposición",
+      "address": "Carretera de Ocaña, 31, 03007, Alicante",
+      "phone": "965 92 58 72",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-006",
+      "brand": "Suzuki",
+      "business_name": "INDALMAR MOTOR",
+      "province": "Almería",
+      "service_type": "Taller y Exposición",
+      "address": "SIERRA DE CAZORLA, 47 , 4240, Viator",
+      "phone": "610 176 582",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-007",
+      "brand": "Suzuki",
+      "business_name": "MOTOS GIJÓN",
+      "province": "Asturias",
+      "service_type": "Taller",
+      "address": "Av. Constitucion 15, 33207, Gijón",
+      "phone": "985 33 10 05",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-008",
+      "brand": "Suzuki",
+      "business_name": "MOTOS GIJÓN",
+      "province": "Asturias",
+      "service_type": "Exposición",
+      "address": "Av. Constitucion 2, 33207, Gijón",
+      "phone": "985 38 94 16",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-009",
+      "brand": "Suzuki",
+      "business_name": "AUTO RECAMBIOS MOTO LUIS",
+      "province": "Badajoz",
+      "service_type": "Exposición",
+      "address": "Avda. María Auxiliadora, 19, 06011, Badajoz",
+      "phone": "924 24 27 15",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-010",
+      "brand": "Suzuki",
+      "business_name": "AUTO RECAMBIOS MOTO LUIS",
+      "province": "Badajoz",
+      "service_type": "Taller",
+      "address": "Manuel Saldaña 12, 06011, Badajoz",
+      "phone": "924 24 27 15",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-011",
+      "brand": "Suzuki",
+      "business_name": "BIMOTO",
+      "province": "Baleares",
+      "service_type": "Exposición",
+      "address": "Avda. Ignacio Wallis,44, 07800, Ibiza",
+      "phone": "971 31 16 86",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-012",
+      "brand": "Suzuki",
+      "business_name": "BIMOTO",
+      "province": "Baleares",
+      "service_type": "Taller",
+      "address": "Avda. Ignacio Wallis,55, 07800, Ibiza",
+      "phone": "971 31 16 86",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-013",
+      "brand": "Suzuki",
+      "business_name": "PROA BIKES TWO",
+      "province": "Baleares",
+      "service_type": "Exposición",
+      "address": "Gran Vía Asima 22, 07009, Mallorca",
+      "phone": "871750314",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-014",
+      "brand": "Suzuki",
+      "business_name": "PROA BIKES TWO",
+      "province": "Baleares",
+      "service_type": "Taller",
+      "address": "Gran Vía Asima 19, 07009, Mallorca",
+      "phone": "871750314",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-015",
+      "brand": "Suzuki",
+      "business_name": "BOX SICILIA 210",
+      "province": "Barcelona",
+      "service_type": "Taller y Exposición",
+      "address": "C. Sicilia, 210, 08013, Barcelona",
+      "phone": "932 31 05 25",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-016",
+      "brand": "Suzuki",
+      "business_name": "MAQUINA MOTORS",
+      "province": "Barcelona",
+      "service_type": "Taller y Exposición",
+      "address": "Brusi, 92, 08006, Barcelona",
+      "phone": "932 09 17 77",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-017",
+      "brand": "Suzuki",
+      "business_name": "MAQUINA MOTORS MANRESA",
+      "province": "Barcelona",
+      "service_type": "Exposición",
+      "address": "P.I. Riu D'or, Ctra, Ctra. de Berga, Km 1, 08272 Manresa, Barcelona, 08272, Sant fruitós de bages",
+      "phone": "938 77 08 62",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-018",
+      "brand": "Suzuki",
+      "business_name": "MAQUINA MOTORS MOLLET",
+      "province": "Barcelona",
+      "service_type": "Exposición",
+      "address": "Av. d'Antoni Gaudí, 73, 08100, Mollet del vallés",
+      "phone": "935 70 62 95",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-019",
+      "brand": "Suzuki",
+      "business_name": "MAQUINA MOTORS TERRASSA",
+      "province": "Barcelona",
+      "service_type": "Exposición",
+      "address": "C/ de I'Anoia, 7, 08221, Terrassa",
+      "phone": "937 80 03 10",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-020",
+      "brand": "Suzuki",
+      "business_name": "MOTO STOP CARBÓ",
+      "province": "Barcelona",
+      "service_type": "Taller y Exposición",
+      "address": "Pau Casals, 4, 08860, Castelldefels",
+      "phone": "936 65 25 79",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-021",
+      "brand": "Suzuki",
+      "business_name": "MOTOS BOQUET",
+      "province": "Barcelona",
+      "service_type": "Taller y Exposición",
+      "address": "C. El Torrent, 39-43, 08302, Mataro",
+      "phone": "93 757 90 06",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-022",
+      "brand": "Suzuki",
+      "business_name": "ORIOL MOTOS",
+      "province": "Barcelona",
+      "service_type": "Taller y Exposición",
+      "address": "Rocafort, 89, 08015, Barcelona",
+      "phone": "934 25 08 89",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-023",
+      "brand": "Suzuki",
+      "business_name": "JULIAN AUTO SPORT",
+      "province": "Burgos",
+      "service_type": "Taller y Exposición",
+      "address": "Av. Pedernales 16, 09195, Villagonzalo",
+      "phone": "645 038 369",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-024",
+      "brand": "Suzuki",
+      "business_name": "EL MOTORISTA",
+      "province": "Cádiz",
+      "service_type": "Exposición",
+      "address": "Plaza de Madrid, 9, 11010, Cádiz",
+      "phone": "956 10 40 12",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-025",
+      "brand": "Suzuki",
+      "business_name": "EL MOTORISTA",
+      "province": "Cádiz",
+      "service_type": "Exposición",
+      "address": "Virgen del Carmen, 2, 11130, Chiclana",
+      "phone": "956 40 33 15",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-026",
+      "brand": "Suzuki",
+      "business_name": "EL MOTORISTA",
+      "province": "Cádiz",
+      "service_type": "Exposición",
+      "address": "Ctra. Málaga, km 108, 11205, Algeciras",
+      "phone": "956 66 30 02",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-027",
+      "brand": "Suzuki",
+      "business_name": "EL MOTORISTA",
+      "province": "Cádiz",
+      "service_type": "Taller y Exposición",
+      "address": "Avda. Europa, 13, 11405, Jerez de la frontera",
+      "phone": "956 35 85 32",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-028",
+      "brand": "Suzuki",
+      "business_name": "AUTO PALAS",
+      "province": "Cantabria",
+      "service_type": "Exposición",
+      "address": "Av. Parayas 34, 39011, Santander",
+      "phone": "942214800",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-029",
+      "brand": "Suzuki",
+      "business_name": "MOTODONIA",
+      "province": "Castellón",
+      "service_type": "Taller y Exposición",
+      "address": "Avda. Casalduch, 51, 12005, Castellón",
+      "phone": "964 25 69 29",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-030",
+      "brand": "Suzuki",
+      "business_name": "FACTORY RACING CEUTA",
+      "province": "Ceuta",
+      "service_type": "Taller y Exposición",
+      "address": "Muelle de la Puntilla, 1 Ceuta, 51001, Ceuta",
+      "phone": "856 20 65 14",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-031",
+      "brand": "Suzuki",
+      "business_name": "ESTEVE BLANCH",
+      "province": "Girona",
+      "service_type": "Taller y Exposición",
+      "address": "Ctra N-II KM 710,5, 15458, Fornells de la selva",
+      "phone": "972 47 62 00",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-032",
+      "brand": "Suzuki",
+      "business_name": "IMPORT CROSS",
+      "province": "Girona",
+      "service_type": "Taller y Exposición",
+      "address": "Carrer d'Alemanya, 28, 17600 Figueres, Girona, 17600, Figueres",
+      "phone": "972 54 70 00",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-033",
+      "brand": "Suzuki",
+      "business_name": "IMPORTCROSS",
+      "province": "Girona",
+      "service_type": "Exposición",
+      "address": "Alemanya, 28, 17600, Figueres",
+      "phone": "972 547 000",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-034",
+      "brand": "Suzuki",
+      "business_name": "RCR BIKES",
+      "province": "Granada",
+      "service_type": "Exposición",
+      "address": "C. Virgen Blanca, 3, 18004, Granada",
+      "phone": "958 25 64 66",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-035",
+      "brand": "Suzuki",
+      "business_name": "RCR BIKES",
+      "province": "Granada",
+      "service_type": "Taller",
+      "address": "C. Santa Fe, 10, 18004, Granada",
+      "phone": "958 28 42 68",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-036",
+      "brand": "Suzuki",
+      "business_name": "MOTOCICLETAS GROBA",
+      "province": "Guadalajara",
+      "service_type": "Exposición",
+      "address": "Ingeniero Mariño, 25, 19001, Guadalajara",
+      "phone": "949 21 28 13",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-037",
+      "brand": "Suzuki",
+      "business_name": "MOTOCICLETAS GROBA",
+      "province": "Guadalajara",
+      "service_type": "Taller",
+      "address": "Ingeniero Mariño, 21, 19001, Guadalajara",
+      "phone": "949 21 28 13",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-038",
+      "brand": "Suzuki",
+      "business_name": "GELSUKAR",
+      "province": "Guipuzcoa",
+      "service_type": "Taller y Exposición",
+      "address": "Donostia Ibilbidea, 88, 20115, Astigarraga",
+      "phone": "670 741 632",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-039",
+      "brand": "Suzuki",
+      "business_name": "MOTOBLANCO",
+      "province": "Huelva",
+      "service_type": "Taller y Exposición",
+      "address": "Av. Guatemala, 46, 21003, Huelva",
+      "phone": "959 23 03 19",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-040",
+      "brand": "Suzuki",
+      "business_name": "MANTIMOTOR",
+      "province": "La Coruña",
+      "service_type": "Taller y Exposición",
+      "address": "C. Jose Baldomir, 6, 15010, A coruña",
+      "phone": "981 91 74 84",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-041",
+      "brand": "Suzuki",
+      "business_name": "AGRISA",
+      "province": "La Rioja",
+      "service_type": "Taller y Exposición",
+      "address": "Av. de Mendavia, 26, 26006, La Rioja",
+      "phone": "941 23 10 00",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-042",
+      "brand": "Suzuki",
+      "business_name": "FEDEAUTO",
+      "province": "Las Palmas",
+      "service_type": "Taller y Exposición",
+      "address": "C/ Diego Vega Sarmiento 54, 35014, Las Palmas de Gran Canaria",
+      "phone": "928 475 080",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-043",
+      "brand": "Suzuki",
+      "business_name": "POLE POSITION MOTO SPORT",
+      "province": "Las Palmas",
+      "service_type": "Exposición",
+      "address": "Avenida Escaleritas número 70, 35011, Las Palmas de Gran Canaria",
+      "phone": "928 48 50 92",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-044",
+      "brand": "Suzuki",
+      "business_name": "POLE POSITION MOTO SPORT",
+      "province": "Las Palmas",
+      "service_type": "Taller",
+      "address": "C. Joaquín Blume, 21 - Escaleritas, 35011, Las palmas",
+      "phone": "928 48 50 92",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-045",
+      "brand": "Suzuki",
+      "business_name": "LA SERNA MOTO",
+      "province": "León",
+      "service_type": "Taller y Exposición",
+      "address": "Calle de la Serna 26 , 24007, Leon",
+      "phone": "987 24 59 90",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-046",
+      "brand": "Suzuki",
+      "business_name": "MOTOS GRAU",
+      "province": "Lleida",
+      "service_type": "Taller y Exposición",
+      "address": "Carrer dels Comtes d'Urgell, 35, 25004, Lleida",
+      "phone": "973 23 32 30",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-047",
+      "brand": "Suzuki",
+      "business_name": "PARDO AUTOMOCIÓN",
+      "province": "Lugo",
+      "service_type": "Taller y Exposición",
+      "address": "Polígono Industrial As Gándaras, Rúa A, Parcela 4.2, 27003, Lugo",
+      "phone": "982 25 62 42",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-048",
+      "brand": "Suzuki",
+      "business_name": "NAMURA BIKES",
+      "province": "Madrid",
+      "service_type": "Taller y Exposición",
+      "address": "C. Cartagena 174, 28002, Madrid",
+      "phone": "915 63 50 52",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-049",
+      "brand": "Suzuki",
+      "business_name": "SS MOTOS",
+      "province": "Madrid",
+      "service_type": "Exposición",
+      "address": "C. José del Hierro, 54, 28027, Madrid",
+      "phone": "914 08 07 85",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-050",
+      "brand": "Suzuki",
+      "business_name": "SS MOTOS",
+      "province": "Madrid",
+      "service_type": "Taller",
+      "address": "C. Avellana, Nº 3, 28027, Madrid",
+      "phone": "914 08 07 85",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-051",
+      "brand": "Suzuki",
+      "business_name": "SUZUKI CENTER",
+      "province": "Madrid",
+      "service_type": "Taller y Exposición",
+      "address": "C. de la Infanta Mercedes, 41, 28020, Madrid",
+      "phone": "915 704 123",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-052",
+      "brand": "Suzuki",
+      "business_name": "SUZUKI CENTER",
+      "province": "Madrid",
+      "service_type": "Taller y Exposición",
+      "address": "C. de los Naranjos, 6, 28709, S.s de los reyes",
+      "phone": "916 52 39 05",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-053",
+      "brand": "Suzuki",
+      "business_name": "SIEBLA",
+      "province": "Malaga",
+      "service_type": "Taller",
+      "address": "C. Carbón, 38, 29603 Marbella, Málaga, 29600, Marbella",
+      "phone": "",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-054",
+      "brand": "Suzuki",
+      "business_name": "SIEBLA",
+      "province": "Malaga",
+      "service_type": "Exposición",
+      "address": "Calle Ramón Gomez de la Serna 17, 29600, Marbella",
+      "phone": "952 77 42 86",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-055",
+      "brand": "Suzuki",
+      "business_name": "SK MOTOS",
+      "province": "Malaga",
+      "service_type": "Taller y Exposición",
+      "address": "C. La Bohème, 50, 29006, Málaga",
+      "phone": "952 33 42 15",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-056",
+      "brand": "Suzuki",
+      "business_name": "MOTOS MARIN MURCIA",
+      "province": "Murcia",
+      "service_type": "Taller y Exposición",
+      "address": "Av. San Juan de la Cruz, 18, 30011, Murcia",
+      "phone": "968 93 66 33",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-057",
+      "brand": "Suzuki",
+      "business_name": "MOTOS PONTE",
+      "province": "Pontevedra",
+      "service_type": "Taller y Exposición",
+      "address": "Emilia Pardo Bazán, 144, 36204, Vigo",
+      "phone": "986 225 926",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-058",
+      "brand": "Suzuki",
+      "business_name": "NANIMOTORBIKES",
+      "province": "Salamanca",
+      "service_type": "Taller y Exposición",
+      "address": "Calle primera, 25, 37188, Carbajosa de la Sagrada",
+      "phone": "676 92 17 30",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-059",
+      "brand": "Suzuki",
+      "business_name": "AUTO REPUESTOS FIERRO",
+      "province": "Santa Cruz de Tenerife",
+      "service_type": "Exposición",
+      "address": "Av. Marítima, 31, 38700, Santa Cruz de la Palma",
+      "phone": "922 41 19 99",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-060",
+      "brand": "Suzuki",
+      "business_name": "AUTO REPUESTOS FIERRO TENERIFE",
+      "province": "Santa Cruz de Tenerife",
+      "service_type": "Exposición",
+      "address": "Calle de Goya, 3, 38007, Santa cruz de tenerife",
+      "phone": "922 20 09 10",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-061",
+      "brand": "Suzuki",
+      "business_name": "FEMOTOR TENERIFE",
+      "province": "Santa Cruz de Tenerife",
+      "service_type": "Taller y Exposición",
+      "address": "AVDA DE LOS MAJUELOS, NÚM. 24, 38108, San cristobal de la laguna s.c. tenerife",
+      "phone": "922 62 55 68",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-062",
+      "brand": "Suzuki",
+      "business_name": "AUTO REPUESTOS FIERRO TENERIFE",
+      "province": "Santa Cruz de Tenerife",
+      "service_type": "Taller",
+      "address": "Calle Islas Filipinas, 9, 38009, Santa Cruz de Tenerife",
+      "phone": "922610002",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-063",
+      "brand": "Suzuki",
+      "business_name": "RETALBIKES",
+      "province": "Sevilla",
+      "service_type": "Taller y Exposición",
+      "address": "Av. de Hytasa, 38, 41006, Sevilla",
+      "phone": "955 29 26 74",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-064",
+      "brand": "Suzuki",
+      "business_name": "WILLY MOTOR",
+      "province": "Sevilla",
+      "service_type": "Taller y Exposición",
+      "address": "Calle Aviación 51, 41007, Sevilla",
+      "phone": "954511586",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-065",
+      "brand": "Suzuki",
+      "business_name": "BAYMOTO",
+      "province": "Tarragona",
+      "service_type": "Exposición",
+      "address": "Passeig de Prim, 12, 43202, Reus",
+      "phone": "977 33 34 62",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-066",
+      "brand": "Suzuki",
+      "business_name": "BAYMOTO",
+      "province": "Tarragona",
+      "service_type": "Taller",
+      "address": "Pau Font de Rubinat, 12, 43202, Reus",
+      "phone": "977 33 34 62",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-067",
+      "brand": "Suzuki",
+      "business_name": "MOTODONIA",
+      "province": "Valencia",
+      "service_type": "Exposición",
+      "address": "Avda. Tirso de Molina, 21, 46015, Valencia",
+      "phone": "963 38 58 71",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-068",
+      "brand": "Suzuki",
+      "business_name": "MOTODONIA",
+      "province": "Valencia",
+      "service_type": "Taller",
+      "address": "Avda. Tirso de Molina, 20, 46015, Valencia",
+      "phone": "963 38 58 71",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-069",
+      "brand": "Suzuki",
+      "business_name": "MOTODONIA",
+      "province": "Valencia",
+      "service_type": "Exposición",
+      "address": "Calle Reus 30, 46009, Valencia",
+      "phone": "963 47 05 92",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-070",
+      "brand": "Suzuki",
+      "business_name": "MOTODONIA",
+      "province": "Valencia",
+      "service_type": "Exposición",
+      "address": "Carrer de Sant Rafel 43, 46701, Gandía",
+      "phone": "962 87 32 21",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-071",
+      "brand": "Suzuki",
+      "business_name": "MOTOCYL",
+      "province": "Valladolid",
+      "service_type": "Exposición",
+      "address": "Avenida Gijón 37, 47640 Zaratán ( Valladolid ), 47610, Zaratán",
+      "phone": "983 02 90 50",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-072",
+      "brand": "Suzuki",
+      "business_name": "MOTOCYL",
+      "province": "Valladolid",
+      "service_type": "Taller",
+      "address": "Av. de Gijón, km 194, 700 47610 Zaratán, Valladolid, 47610, Zaratán",
+      "phone": "983 02 90 50",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-073",
+      "brand": "Suzuki",
+      "business_name": "GARCIA MOTOS",
+      "province": "Vizcaya",
+      "service_type": "Exposición",
+      "address": "C. Calixto Diez, 8, 48012, Bilbao",
+      "phone": "944 44 16 16",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-074",
+      "brand": "Suzuki",
+      "business_name": "GARCIA MOTOS",
+      "province": "Vizcaya",
+      "service_type": "Taller",
+      "address": "C. Labayru, 34, 48012 Bilbao, Vizcaya, 48012, Bilbao",
+      "phone": "944 44 16 16",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-075",
+      "brand": "Suzuki",
+      "business_name": "MOTOS ESTEBAN",
+      "province": "Zamora",
+      "service_type": "Taller y Exposición",
+      "address": "Avda. del ferial, 112, 49600, Benavente",
+      "phone": "980 63 09 23",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    },
+    {
+      "id": "suzuki-dir-076",
+      "brand": "Suzuki",
+      "business_name": "SUZUKI MUR",
+      "province": "Zaragoza",
+      "service_type": "Taller y Exposición",
+      "address": "Graus, 18, 50010, Zaragoza",
+      "phone": "976 33 18 54",
+      "evidence_status": "detected_official_directory_not_individually_verified"
+    }
+  ]
+}
