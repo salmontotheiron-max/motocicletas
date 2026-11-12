@@ -42,5 +42,5 @@ Los tres puntos aparecen en el directorio publicado en `vogospain.com/es/tiendas
 
 - Altas de esta entrega: 9.
 - Zontes: 3; SYM: 3; Voge: 3.
-- Barcelona: 5; Murcia: 1; Cádiz: 1; Málaga: 1. (La distribución por municipio/provincia se calcula sobre las nueve altas.)
+- Barcelona: 6; Murcia: 1; Cádiz: 1; Málaga: 1. (La distribución por municipio/provincia se calcula sobre las nueve altas.)
 - Estos registros se mantienen en un fichero complementario y no alteran retrospectivamente la matriz inicial Honda/Yamaha ni sus criterios de auditoría.
