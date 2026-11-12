@@ -21,7 +21,10 @@
     ],
     "discovery_is_continuous": true,
     "unknown_brands_allowed": true,
-    "unknown_manufacturers_allowed": true
+    "unknown_manufacturers_allowed": true,
+    "brand_universe_policy": "Dynamic union of official DGT motorcycle/moped registration makes, ANESDOR member brands, and reputable market discovery sources; each brand remains under review until current Spanish commercial activity and official importer/dealer evidence are verified.",
+    "brand_coverage_target": "All brands with current or recent commercial presence in Spain, plus historical/inactive brands retained with explicit status; no fixed closed catalogue.",
+    "initial_candidate_baseline": "50-brand 2026 market guide plus existing ZXMOTO pilot; candidates are not automatically treated as active."
   },
   "policy": {
     "official_sources_only_for_primary_registry": true,
@@ -50,6 +53,582 @@
       "canonical_name": "ZXMOTO",
       "manufacturer_id": null,
       "market_status": "recent_entry"
+    },
+    {
+      "brand_id": "brand-aprilia",
+      "canonical_name": "Aprilia",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-bajaj",
+      "canonical_name": "Bajaj",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-benda",
+      "canonical_name": "Benda",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-benelli",
+      "canonical_name": "Benelli",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-beta",
+      "canonical_name": "Beta",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-bmw-motorrad",
+      "canonical_name": "BMW Motorrad",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-brixton",
+      "canonical_name": "Brixton",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-bsa",
+      "canonical_name": "BSA",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-cfmoto",
+      "canonical_name": "CFMoto",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-cyclone",
+      "canonical_name": "Cyclone",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-ducati",
+      "canonical_name": "Ducati",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-fantic",
+      "canonical_name": "Fantic",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-gasgas",
+      "canonical_name": "GasGas",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-harley-davidson",
+      "canonical_name": "Harley-Davidson",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-hero",
+      "canonical_name": "Hero",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-honda",
+      "canonical_name": "Honda",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-husqvarna",
+      "canonical_name": "Husqvarna",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-indian",
+      "canonical_name": "Indian",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-italjet",
+      "canonical_name": "Italjet",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-kawasaki",
+      "canonical_name": "Kawasaki",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-keeway",
+      "canonical_name": "Keeway",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-kove",
+      "canonical_name": "Kove",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-ktm",
+      "canonical_name": "KTM",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-kymco",
+      "canonical_name": "Kymco",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-lambretta",
+      "canonical_name": "Lambretta",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-macbor",
+      "canonical_name": "Macbor",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-mh",
+      "canonical_name": "MH",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-morbidelli",
+      "canonical_name": "Morbidelli",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-moto-guzzi",
+      "canonical_name": "Moto Guzzi",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-moto-morini",
+      "canonical_name": "Moto Morini",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-mv-agusta",
+      "canonical_name": "MV Agusta",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-niu",
+      "canonical_name": "NIU",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-peugeot-motocycles",
+      "canonical_name": "Peugeot Motocycles",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-piaggio",
+      "canonical_name": "Piaggio",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-qjmotor",
+      "canonical_name": "QJMotor",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-rieju",
+      "canonical_name": "Rieju",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-royal-enfield",
+      "canonical_name": "Royal Enfield",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-sherco",
+      "canonical_name": "Sherco",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-silence",
+      "canonical_name": "Silence",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-super-soco",
+      "canonical_name": "Super Soco",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-sym",
+      "canonical_name": "SYM",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-triumph",
+      "canonical_name": "Triumph",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-trs",
+      "canonical_name": "TRS",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-vespa",
+      "canonical_name": "Vespa",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-vmoto",
+      "canonical_name": "Vmoto",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-voge",
+      "canonical_name": "Voge",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-yamaha",
+      "canonical_name": "Yamaha",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+    },
+    {
+      "brand_id": "brand-zero",
+      "canonical_name": "Zero",
+      "manufacturer_id": null,
+      "market_status": "under_review",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026"
+      ],
+      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
     }
   ],
   "sources": [
@@ -238,6 +817,67 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Web propia que declara distribución y punto de venta oficial Zontes en Barcelona. Evidencia autodeclarada; falta contrastar establecimientos y operador con fuente primaria de marca."
+    },
+    {
+      "source_id": "source-dgt-monthly-motorcycle-registrations",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Dirección General de Tráfico (DGT)",
+      "source_type": "public_record",
+      "url": "https://www.dgt.es/menusecundario/dgt-en-cifras/dgt-en-cifras-resultados/dgt-en-cifras-detalle/Microdatos-de-Matriculaciones-de-Vehiculos-mensual/",
+      "title": "Microdatos mensuales oficiales de matriculaciones de vehículos",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "brand_market",
+        "manufacturer_market",
+        "vehicle_registrations"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "not_assessed",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Fuente oficial de referencia para detectar marcas observadas en matriculaciones nuevas. Los registros históricos o aislados no prueban por sí solos comercialización vigente ni red activa."
+    },
+    {
+      "source_id": "source-anesdor-members",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "ANESDOR",
+      "source_type": "official_statement",
+      "url": "https://www.anesdor.com/asociados/",
+      "title": "Relación de asociados de ANESDOR",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_distributor"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "not_assessed",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Relación de asociados y marcas representadas. ANESDOR declara representar más del 95% del mercado nacional; no es un censo legal exhaustivo ni todos sus asociados son fabricantes de vehículos."
+    },
+    {
+      "source_id": "source-carwow-50-brands-2026",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Carwow España",
+      "source_type": "press",
+      "url": "https://www.carwow.es/editorial/motos/guias/logos-marcas-motos",
+      "title": "Guía de 50 marcas de motos comercializadas en España (2026)",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "brand_market"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Universo secundario de contraste publicado el 29-09-2026, basado según el editor en microdatos DGT 2026 hasta septiembre. Sirve para sembrar candidatos, no para certificar por sí solo presencia comercial o red activa."
     }
   ]
 }
