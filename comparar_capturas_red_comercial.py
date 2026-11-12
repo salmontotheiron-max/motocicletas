@@ -47,8 +47,8 @@ def normalize_text(value: str) -> str:
 
 
 def load_capture_log(path: Path = CAPTURES) -> list[dict]:
-    if not path.exists():
-        return []
+    if not path.is_file():
+        raise FileNotFoundError(f"No existe el registro de capturas: {path}")
     records = []
     for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
