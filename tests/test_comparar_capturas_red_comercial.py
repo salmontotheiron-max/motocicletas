@@ -122,6 +122,13 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
         self.assertEqual(result["ignored_records"], 1)
         self.assertEqual(result["candidate_count"], 0)
 
+    def test_falla_si_no_existe_el_registro_de_capturas(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            missing = Path(tmp) / "capturas.jsonl"
+            with self.assertRaises(FileNotFoundError):
+                from comparar_capturas_red_comercial import load_capture_log
+                load_capture_log(missing)
+
     def test_run_escribe_jsonl_y_resumen(self):
         text = "Directorio oficial de concesionarios. " * 5
         with tempfile.TemporaryDirectory() as tmp:
