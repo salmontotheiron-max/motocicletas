@@ -11,11 +11,12 @@
     "coverage": "Registro de control de auditoría; 76 de 76 entradas evaluadas individualmente. La revisión es documental y no equivale a verificación física de todos los establecimientos."
   },
   "status_counts": {
-    "corroborated_operator_and_location": 30,
-    "same_operator_multiple_locations": 15,
+    "corroborated_operator_and_location": 32,
+    "same_operator_multiple_locations": 16,
     "same_location_multiple_service_entries": 4,
-    "unresolved_address_or_operator": 27,
-    "pending_individual_review": 0
+    "unresolved_address_or_operator": 24,
+    "pending_individual_review": 0,
+    "total": 76
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -195,17 +196,19 @@
       "service_type": "Exposición",
       "directory_address": "Avda. María Auxiliadora, 19, 06011, Badajoz",
       "directory_phone": "924 24 27 15",
-      "review_status": "unresolved_address_or_operator",
+      "review_status": "corroborated_operator_and_location",
       "review_group_id": "suzuki-auto-recambios-moto-luis-badajoz",
-      "operator_assessment": "Auto Recambios Moto Luis S.L.",
-      "counting_recommendation": "Mantener dos ubicaciones candidatas, una corroborada por localizador de marca y otra con discrepancia de teléfono.",
-      "confidence": "medium",
+      "operator_assessment": "Moto Luis; la web primaria del operador declara concesionario y taller oficial Suzuki Moto en Badajoz y publica la tienda en Av. María Auxiliadora 19.",
+      "counting_recommendation": "Contar una ubicación Suzuki Moto corroborada en Av. María Auxiliadora 19. El catálogo oficial del operador muestra oferta Suzuki actual; no duplicar por servicios prestados en la misma tienda.",
+      "confidence": "high_for_operator_location_and_current_suzuki_motorcycle_sales",
       "evidence_urls": [
-        "https://www.kymco.es/encuentranos/3316",
-        "https://www.cylex.es/badajoz/auto-recambios-moto-luis-sl-14294194.html",
-        "https://moto.suzuki.es/concesionarios"
+        "https://moto.suzuki.es/concesionarios",
+        "https://moto-luis.com/quien-somos/",
+        "https://moto-luis.com/motos/suzuki/provincia-badajoz",
+        "https://www.moto-luis.com/tiendas",
+        "https://www.moto-luis.com/tiendas/extremadura/badajoz/motoluis"
       ],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "limitation": "La web del operador publica el teléfono 924 241 000, distinto del 924 24 27 15 del localizador Suzuki; la dirección coincide. Revisión documental, sin visita física ni llamada de comprobación."
     },
     {
       "source_id": "suzuki-dir-010",
@@ -214,17 +217,18 @@
       "service_type": "Taller",
       "directory_address": "Manuel Saldaña 12, 06011, Badajoz",
       "directory_phone": "924 24 27 15",
-      "review_status": "unresolved_address_or_operator",
+      "review_status": "same_operator_multiple_locations",
       "review_group_id": "suzuki-auto-recambios-moto-luis-badajoz",
-      "operator_assessment": "Auto Recambios Moto Luis S.L.",
-      "counting_recommendation": "Mantener dos ubicaciones candidatas, una corroborada por localizador de marca y otra con discrepancia de teléfono.",
-      "confidence": "medium",
+      "operator_assessment": "Moto Luis; la web primaria del operador identifica Manuel Saldaña 12 como Servicio Técnico-Taller y Av. María Auxiliadora 19 como tienda del mismo negocio.",
+      "counting_recommendation": "Registrar Manuel Saldaña 12 como ubicación técnica secundaria del mismo operador; no contarla como segunda tienda Suzuki independiente. La web acredita taller, pero no desglosa las marcas atendidas específicamente en esta sede.",
+      "confidence": "medium_for_same_operator_and_workshop_location",
       "evidence_urls": [
-        "https://www.kymco.es/encuentranos/3316",
-        "https://www.cylex.es/badajoz/auto-recambios-moto-luis-sl-14294194.html",
+        "https://www.moto-luis.com/tiendas",
+        "https://www.moto-luis.com/tiendas/extremadura/badajoz/motoluis",
+        "https://moto-luis.com/quien-somos/",
         "https://moto.suzuki.es/concesionarios"
       ],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "limitation": "El operador confirma un taller en Manuel Saldaña 12 y una tienda en María Auxiliadora 19; no se ha encontrado evidencia primaria que asigne explícitamente el servicio técnico Suzuki a la sede de Manuel Saldaña. No contarla como concesionario de venta independiente."
     },
     {
       "source_id": "suzuki-dir-011",
@@ -233,18 +237,18 @@
       "service_type": "Exposición",
       "directory_address": "Avda. Ignacio Wallis,44, 07800, Ibiza",
       "directory_phone": "971 31 16 86",
-      "review_status": "unresolved_address_or_operator",
+      "review_status": "corroborated_operator_and_location",
       "review_group_id": "suzuki-bimoto-ibiza",
-      "operator_assessment": "Bimoto Ibiza S.L.",
-      "counting_recommendation": "No consolidar aún; conservar 2 direcciones distintas con relación de operador pendiente.",
-      "confidence": "medium",
+      "operator_assessment": "Bimoto Ibiza; el localizador actual de Suzuki Moto incluye exposición en Avda. Ignacio Wallis 44 y la web primaria de Bimoto confirma en esa misma dirección su establecimiento y datos de contacto.",
+      "counting_recommendation": "Contar una ubicación Suzuki Moto corroborada en Avda. Ignacio Wallis 44. Mantener Avda. Ignacio Wallis 55 como entrada técnica pendiente; no consolidarla como segunda sede confirmada.",
+      "confidence": "high_for_operator_location_and_brand_directory_match",
       "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
         "https://bimoto.es/contacto",
-        "https://bimoto.es/table/legal/",
-        "https://www.vespa.com/es_ES/dealer-locator/ibiza/bimoto-ibiza-s-l/",
-        "https://moto.suzuki.es/concesionarios"
+        "https://moto.suzuki.es/novedades/suzuki-8s-test-days",
+        "https://bimoto.es/table/legal/"
       ],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "limitation": "La web actual de Bimoto confirma la dirección 44, pero no publica una segunda sede en el nº 55 ni desglosa el servicio Suzuki allí. El directorio del fabricante se considera evidencia de red, no inspección física."
     },
     {
       "source_id": "suzuki-dir-012",
