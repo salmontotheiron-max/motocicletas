@@ -21,6 +21,8 @@ Cada candidato conserva fechas, hashes, rutas de snapshots, líneas añadidas/re
 - El comparador no crea entidades, claims ni change_event y no actualiza el histórico SQLite.
 - Los extractos son pistas para revisión; la validación exige abrir los snapshots y contrastar fuentes.
 
-## Validación pendiente
+## Validación inicial
 
-La prueba de integración con el esquema real del registro verifica el comportamiento esperado de la primera captura piloto: siete baselines, un registro ignorado por bloqueo robots y cero candidatos. Esta prueba usa un fixture compacto con la estructura de PR #21; no sustituye la ejecución del comparador sobre el fichero real. La primera ejecución real permitirá medir ruido por cambios de diseño, banners y páginas dinámicas. Los umbrales y reglas deberán ajustarse con ejemplos observados, sin convertir automáticamente cambios de contenido en hechos de mercado.
+La suite automatizada incluye dos comprobaciones complementarias: un fixture compacto para validar el esquema y una prueba de integración que ejecuta `run_comparison` directamente sobre `evidencias/red_comercial/capturas.jsonl` incorporado desde PR #21. En la captura piloto real se verifican ocho registros, siete fuentes con baseline suficiente, un registro ignorado por bloqueo robots y cero candidatos (solo existe una captura por fuente).
+
+Esta primera ejecución confirma la lectura y el tratamiento del registro real, pero no calibra todavía el ruido entre versiones. La segunda captura periódica permitirá evaluar cambios de diseño, banners y páginas dinámicas. Los umbrales y reglas deberán ajustarse con ejemplos observados, sin convertir automáticamente cambios de contenido en hechos de mercado.
