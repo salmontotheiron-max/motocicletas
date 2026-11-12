@@ -54,6 +54,23 @@ class TestCapturaFuentesRedComercial(unittest.TestCase):
             result = fetch_page("https://example.test")
         self.assertEqual(result["capture_status"], "redirect_rejected")
 
+
+    def test_fetch_rechaza_redireccion_a_otro_dominio(self):
+        class Response:
+            status = 200
+            headers = {"Content-Type": "text/html"}
+            def geturl(self):
+                return "https://external.example/"
+            def read(self, size=-1):
+                return b"<html/>"
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+        with patch("capturar_fuentes_red_comercial.urlopen", return_value=Response()):
+            result = fetch_page("https://example.test")
+        self.assertEqual(result["capture_status"], "redirect_rejected")
+
     def test_robots_fail_closed_si_no_se_puede_consultar(self):
         from urllib.error import URLError
         with patch("capturar_fuentes_red_comercial.urlopen", side_effect=URLError("offline")):
