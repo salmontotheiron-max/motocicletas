@@ -574,13 +574,13 @@
       "brand_id": "brand-vespa",
       "canonical_name": "Vespa",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Red comercial y de asistencia actual en España acreditada mediante fichas individuales del localizador oficial Vespa. Primera auditoría documenta puntos de venta y asistencia en Barcelona, Alicante, Málaga y Cádiz; Murcia sigue pendiente de fichas actuales individualizadas. La evidencia de Vespa se mantiene separada de Piaggio y Aprilia."
     },
     {
       "brand_id": "brand-vmoto",
@@ -1061,6 +1061,26 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 30,
       "notes": "La comunicación oficial identifica Ciao Moto como concesionario oficial del Grupo Piaggio y declara expresamente que el showroom de Avenida de Orihuela 99 expone modelos de Aprilia, Piaggio, Vespa y Moto Guzzi, además de disponer de taller técnico. Evidencia directa de comercialización Aprilia en ese establecimiento."
+    },
+    {
+      "source_id": "source-vespa-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-vespa",
+      "publisher": "Piaggio & C. SpA / Vespa España",
+      "source_type": "official_directory",
+      "url": "https://www.vespa.com/es_ES/dealer-locator/",
+      "title": "Localizador oficial de distribuidores y puntos de asistencia Vespa España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El localizador oficial publica fichas individuales y distingue Distribuidor Oficial, Punto de Asistencia Oficial y Punto de Asistencia Autorizado. Solo los establecimientos identificados como Distribuidor Oficial se computan como puntos de venta; los puntos de asistencia se registran por separado."
     }
   ]
 }
