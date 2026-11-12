@@ -178,6 +178,66 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Fuente sectorial candidata para descubrir movimientos empresariales y de distribución; pendiente de evaluar sección específica, cobertura y condiciones de captura."
+    },
+    {
+      "source_id": "source-zontes-murcia-dealer-site",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Steel Center, S.L. / Zontes Murcia",
+      "source_type": "company_page",
+      "url": "https://zontesmurcia.com/",
+      "title": "Zontes Murcia - concesionario oficial",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Web propia del establecimiento; declara ser distribuidor y punto de venta oficial Zontes. Evidencia de negocio autodeclarada, pendiente de contraste con directorio oficial y entidad operadora."
+    },
+    {
+      "source_id": "source-zxmoto-asba-dealer-site",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Comercial Impala, S.A. / ZXMOTO ASBA Barcelona",
+      "source_type": "company_page",
+      "url": "https://zxmotoasba.com/dealership",
+      "title": "ZXMOTO ASBA Barcelona - concesionario",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página propia que declara franquicia ZXMOTO y vinculación con Comercial Impala, S.A.; indica Carrer de Calvet 51. Evidencia autodeclarada del establecimiento, pendiente de contraste oficial."
+    },
+    {
+      "source_id": "source-zontes-barcelona-dealer-site",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Zontes BCN",
+      "source_type": "company_page",
+      "url": "https://zontesbarcelona.com/",
+      "title": "Zontes BCN - distribuidor oficial",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Web propia que declara distribución y punto de venta oficial Zontes en Barcelona. Evidencia autodeclarada; falta contrastar establecimientos y operador con fuente primaria de marca."
     }
   ]
 }
