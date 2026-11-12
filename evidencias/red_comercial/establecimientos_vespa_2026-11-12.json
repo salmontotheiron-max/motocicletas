@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "Vespa",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Solo se incorporan fichas individualizadas del localizador oficial Vespa. Las fichas que muestran Distribuidor Oficial se cuentan como venta; Punto de Asistencia Oficial o Punto de Asistencia Autorizado se registran como servicio, nunca como venta. Las categorías se aplican literalmente y no se extrapolan entre marcas del Grupo Piaggio.",
+  "source": {
+    "source_type": "official_directory",
+    "publisher": "Piaggio & C. SpA / Vespa España",
+    "url": "https://www.vespa.com/es_ES/dealer-locator/",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "Fichas oficiales individuales de la red Vespa con categoría visible de distribuidor o asistencia."
+  },
+  "outlet_count": 9,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Alicante": 1,
+      "Málaga": 2,
+      "Cádiz": 4
+    },
+    "sales": 5,
+    "service": 8,
+    "service_only": 3,
+    "sales_only": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "vespa-motos-balart-barcelona",
+      "brand": "Vespa",
+      "trading_name": "MOTOS BALART",
+      "operator": "MOTOS BALART",
+      "municipality": "Barcelona",
+      "province": "Barcelona",
+      "public_address": "c/ Córcega, 201, 08036 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/barcelona/motos-balart/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "official_distributor_and_service",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra la categoría Distribuidor Oficial. Se registra venta; el servicio solo se añade cuando la misma ficha lo indica expresamente."
+    },
+    {
+      "outlet_id": "vespa-via-scooter-barcelona",
+      "brand": "Vespa",
+      "trading_name": "Via Scooter",
+      "operator": "Via Scooter",
+      "municipality": "Barcelona",
+      "province": "Barcelona",
+      "public_address": "Avda. Vallcarca 65, 08023 Barcelona, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/barcelona/via-scooter/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "authorized_service_only",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra únicamente una categoría de asistencia. No se contabiliza como punto de venta."
+    },
+    {
+      "outlet_id": "vespa-ciao-moto-alicante",
+      "brand": "Vespa",
+      "trading_name": "CIAO MOTO, S.L.",
+      "operator": "CIAO MOTO, S.L.",
+      "municipality": "Alicante",
+      "province": "Alicante",
+      "public_address": "Avda. de Orihuela 99, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/alicante/ciao-moto-s-l/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "official_distributor_and_service",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra la categoría Distribuidor Oficial. Se registra venta; el servicio solo se añade cuando la misma ficha lo indica expresamente."
+    },
+    {
+      "outlet_id": "vespa-malaga-sa",
+      "brand": "Vespa",
+      "trading_name": "VESPA MALAGA S.A.",
+      "operator": "VESPA MALAGA S.A.",
+      "municipality": "Málaga",
+      "province": "Málaga",
+      "public_address": "Avda. José Ortega y Gasset, 296, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/m%C3%A1laga/vespa-malaga-s-a/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "official_distributor_and_service",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra la categoría Distribuidor Oficial. Se registra venta; el servicio solo se añade cuando la misma ficha lo indica expresamente."
+    },
+    {
+      "outlet_id": "vespa-motomercado-fuengirola",
+      "brand": "Vespa",
+      "trading_name": "MOTOMERCADO",
+      "operator": "MOTOMERCADO",
+      "municipality": "Fuengirola",
+      "province": "Málaga",
+      "public_address": "Avda. Nuestro Padre Jesús Cautivo 46, 29640 Fuengirola, Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/fuengirola/motomercado/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "official_distributor_and_service",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra la categoría Distribuidor Oficial. Se registra venta; el servicio solo se añade cuando la misma ficha lo indica expresamente."
+    },
+    {
+      "outlet_id": "vespa-el-motorista-cadiz",
+      "brand": "Vespa",
+      "trading_name": "EL MOTORISTA CÁDIZ",
+      "operator": "EL MOTORISTA CÁDIZ",
+      "municipality": "Cádiz",
+      "province": "Cádiz",
+      "public_address": "Plaza de Madrid, Estadio Carranza, local bajo, Fondo Norte, 11010 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/c%C3%A1diz/el-motorista-c%C3%A1diz/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "official_distributor_sales",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra la categoría Distribuidor Oficial. Se registra venta; el servicio solo se añade cuando la misma ficha lo indica expresamente."
+    },
+    {
+      "outlet_id": "vespa-el-motorista-algeciras",
+      "brand": "Vespa",
+      "trading_name": "EL MOTORISTA ALGECIRAS",
+      "operator": "EL MOTORISTA ALGECIRAS",
+      "municipality": "Algeciras",
+      "province": "Cádiz",
+      "public_address": "Carretera de Málaga km 108, 11205 Algeciras, Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/algeciras/el-motorista-algeciras/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "authorized_service_only",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra únicamente una categoría de asistencia. No se contabiliza como punto de venta."
+    },
+    {
+      "outlet_id": "vespa-motos-ruiz-herrera-puerto",
+      "brand": "Vespa",
+      "trading_name": "MOTOS RUIZ-HERRERA",
+      "operator": "MOTOS RUIZ-HERRERA",
+      "municipality": "El Puerto de Santa María",
+      "province": "Cádiz",
+      "public_address": "C/ Luis Mazzantini 8, 11500 El Puerto de Santa María, Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/el-puerto-de-santa-maria/motos-ruiz-herrera/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "authorized_service_only",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra únicamente una categoría de asistencia. No se contabiliza como punto de venta."
+    },
+    {
+      "outlet_id": "vespa-motos-manolin-sanlucar",
+      "brand": "Vespa",
+      "trading_name": "MOTOS MANOLIN",
+      "operator": "MOTOS MANOLIN",
+      "municipality": "Sanlúcar de Barrameda",
+      "province": "Cádiz",
+      "public_address": "C/ Sargenta 21, 11540 Sanlúcar de Barrameda, Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/dealer-locator/sanlucar-de-barrameda/motos-manolin/",
+      "evidence_type": "official_vespa_dealer_locator_individual_listing",
+      "verification_status": "verified",
+      "official_authorization_status": "authorized_service_only",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha individual oficial muestra únicamente una categoría de asistencia. No se contabiliza como punto de venta."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo de fichas oficiales localizadas en la fecha de corte, no censo exhaustivo de toda la red nacional.",
+    "Barcelona: una ficha de Distribuidor Oficial y una ficha de Punto de Asistencia Autorizado.",
+    "Alicante: Ciao Moto, Distribuidor Oficial y Punto de Asistencia Oficial.",
+    "Málaga: dos Distribuidores Oficiales con asistencia oficial.",
+    "Cádiz: un Distribuidor Oficial y tres puntos de asistencia autorizados; las fichas de asistencia no se cuentan como ventas.",
+    "Murcia: no se incorpora ningún establecimiento por falta de ficha actual individualizada en esta revisión. Un PDF oficial promocional de 2018 que incluía Motos Emilio en Cartagena se excluye como evidencia vigente; no inferir ausencia de red.",
+    "No se transfieren altas Piaggio ni Aprilia a Vespa: cada registro procede de ficha oficial Vespa específica."
+  ]
+}
