@@ -33,9 +33,24 @@
   },
   "manufacturers": [],
   "brands": [
-    {"brand_id": "brand-suzuki", "canonical_name": "Suzuki", "manufacturer_id": null, "market_status": "established"},
-    {"brand_id": "brand-zontes-es", "canonical_name": "Zontes", "manufacturer_id": null, "market_status": "established"},
-    {"brand_id": "brand-zxmoto-es", "canonical_name": "ZXMOTO", "manufacturer_id": null, "market_status": "recent_entry"}
+    {
+      "brand_id": "brand-suzuki",
+      "canonical_name": "Suzuki",
+      "manufacturer_id": null,
+      "market_status": "established"
+    },
+    {
+      "brand_id": "brand-zontes-es",
+      "canonical_name": "Zontes",
+      "manufacturer_id": null,
+      "market_status": "established"
+    },
+    {
+      "brand_id": "brand-zxmoto-es",
+      "canonical_name": "ZXMOTO",
+      "manufacturer_id": null,
+      "market_status": "recent_entry"
+    }
   ],
   "sources": [
     {
@@ -48,7 +63,11 @@
       "title": "Concesionarios oficiales Suzuki Moto España",
       "reliability_class": "primary_official",
       "scope": "Spain",
-      "directory_scope": ["sales", "service", "exhibition"],
+      "directory_scope": [
+        "sales",
+        "service",
+        "exhibition"
+      ],
       "capture_mode": "http_html",
       "discovery_status": "directory_content_visible",
       "last_verified_at": "2026-11-12",
@@ -65,7 +84,10 @@
       "title": "Puntos de venta oficiales Zontes España",
       "reliability_class": "primary_official",
       "scope": "Spain",
-      "directory_scope": ["sales", "service"],
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
       "capture_mode": "http_html",
       "discovery_status": "locator_present_dynamic_content",
       "last_verified_at": "2026-11-12",
@@ -82,12 +104,80 @@
       "title": "Puntos de venta ZXMOTO España",
       "reliability_class": "primary_official",
       "scope": "Spain",
-      "directory_scope": ["sales", "service"],
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
       "capture_mode": "http_html",
       "discovery_status": "locator_present_no_entries_yet",
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Página oficial con texto Próximas aperturas y localizador, sin establecimientos identificables en la vista consultada. No inferir ausencia de red ni cierres."
+    },
+    {
+      "source_id": "source-anesdor-press-releases-es",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "ANESDOR",
+      "source_type": "press",
+      "url": "https://www.anesdor.com/category/notas-de-prensa/",
+      "title": "Notas de prensa de ANESDOR",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "industry"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Asociación sectorial que representa a fabricantes e importadores; fuente de contexto y pistas de implantación, no registro exhaustivo ni prueba única de actividad individual."
+    },
+    {
+      "source_id": "source-motociclismo-industry-es",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MOTOCICLISMO",
+      "source_type": "press",
+      "url": "https://www.motociclismo.es/industria",
+      "title": "Industria y tecnología - MOTOCICLISMO",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_distributor",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Sección sectorial con noticias de aperturas de concesionarios, cambios de distribución y entradas de fabricantes; cada noticia debe verificarse con fuentes primarias cuando sea posible."
+    },
+    {
+      "source_id": "source-posventa-moto-market-es",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Posventa.com",
+      "source_type": "press",
+      "url": "https://www.posventa.com/",
+      "title": "Posventa.com - información sectorial de posventa",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_distributor",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "not_assessed",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Fuente sectorial candidata para descubrir movimientos empresariales y de distribución; pendiente de evaluar sección específica, cobertura y condiciones de captura."
     }
   ]
 }
