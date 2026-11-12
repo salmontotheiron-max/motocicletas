@@ -466,13 +466,13 @@
       "brand_id": "brand-qjmotor",
       "canonical_name": "QJMotor",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por páginas y ofertas propias de operadores que identifican expresamente QJMotor y establecimientos en Barcelona, Málaga, Cádiz, Alicante y Murcia. Motos Bordoy se identifica además como importador español de QJMotor. El localizador oficial existe, pero la vista consultada no expone establecimientos; las altas de esta entrega se clasifican como oferta comercial declarada y no como autorización oficial verificada de forma independiente."
     },
     {
       "brand_id": "brand-rieju",
@@ -1081,6 +1081,146 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "El localizador oficial publica fichas individuales y distingue Distribuidor Oficial, Punto de Asistencia Oficial y Punto de Asistencia Autorizado. Solo los establecimientos identificados como Distribuidor Oficial se computan como puntos de venta; los puntos de asistencia se registran por separado."
+    },
+    {
+      "source_id": "source-qjmotor-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-qjmotor",
+      "publisher": "QJMotor España",
+      "source_type": "official_directory",
+      "url": "https://qjmotor.es/concesionarios/",
+      "title": "Localizador oficial de concesionarios QJMotor España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El localizador oficial distingue Concesionarios Oficiales QJ y Servicios Oficiales QJ, pero la vista HTML consultada muestra Number Of Shops: 0 y no expone fichas. No se interpreta como ausencia de red ni se intentan extraer endpoints privados."
+    },
+    {
+      "source_id": "source-qjmotor-es-network-announcement-2023",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-qjmotor",
+      "publisher": "QJMotor España",
+      "source_type": "official_statement",
+      "url": "https://qjmotor.es/qj-motor-establece-una-amplia-red-de-concesionarios-en-espana/",
+      "title": "QJ Motor establece una amplia red de concesionarios en España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 30,
+      "notes": "Comunicado oficial publicado el 05-12-2023 que identificó 24 concesionarios, incluidos Motos Bordoy Barcelona, Motocicletas Prim Alicante y Francisco Belmonte Murcia. Se conserva como antecedente histórico; no se utiliza por sí solo para afirmar vigencia actual de cada sede."
+    },
+    {
+      "source_id": "source-qjmotor-motos-bordoy-business",
+      "source_role": "market_discovery",
+      "brand_id": "brand-qjmotor",
+      "publisher": "Motos Bordoy, S.A.",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoybarcelona.com/es/quienes-somos",
+      "title": "Motos Bordoy Barcelona: marcas y establecimientos",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "importer_distributor"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "El operador identifica QJ MOTOR entre sus marcas, y el grupo declara ser importador español de QJ MOTOR. Su página de tiendas identifica tres concesionarios físicos en Barcelona. Evidencia empresarial actual, no ficha individual del directorio QJ."
+    },
+    {
+      "source_id": "source-qjmotor-expomoto-malaga-business",
+      "source_role": "market_discovery",
+      "brand_id": "brand-qjmotor",
+      "publisher": "Expomoto Málaga",
+      "source_type": "company_page",
+      "url": "https://expomotomalaga.es/marcas/qjmotor/",
+      "title": "QJMotor Málaga - Expomoto",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página propia que ofrece gama QJMotor, prueba de unidades y venta en Expomoto Málaga. La página general identifica actividad de distribución multimarca y taller; no se certifica autorización oficial independiente."
+    },
+    {
+      "source_id": "source-qjmotor-castro-cadiz-business",
+      "source_role": "market_discovery",
+      "brand_id": "brand-qjmotor",
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/qj-motor/",
+      "title": "Concesionario QJMotor en Cádiz, Jerez y Campo de Gibraltar",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Página propia que se presenta como concesionario oficial QJMotor y detalla sedes de ventas y posventa en Cádiz, Jerez y Palmones. La condición oficial se registra como autodeclarada, no contrastada independientemente con el fabricante."
+    },
+    {
+      "source_id": "source-qjmotor-grupo-prim-alicante-business",
+      "source_role": "market_discovery",
+      "brand_id": "brand-qjmotor",
+      "publisher": "Grupo Prim",
+      "source_type": "company_page",
+      "url": "https://www.grupoprim.com/",
+      "title": "Grupo Prim: oferta de motocicletas QJ en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "La página corporativa incluye QJ en la oferta de motocicletas y ubica la actividad del grupo en Ctra. de Ocaña 29, Alicante; su página de cita de taller incluye expresamente QJ. No se certifica autorización oficial independiente."
+    },
+    {
+      "source_id": "source-qjmotor-francisco-belmonte-murcia-business",
+      "source_role": "market_discovery",
+      "brand_id": "brand-qjmotor",
+      "publisher": "Francisco Belmonte, S.A.",
+      "source_type": "company_page",
+      "url": "https://franciscobelmonte.com/promociones-ofertas-de-motos/",
+      "title": "Oferta QJMotor SRK 800 - Francisco Belmonte Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "La página de ofertas del operador publica una QJ SRK 800 con precio y condiciones comerciales actuales, e identifica la dirección del establecimiento en Murcia. La página corporativa no incluye QJ en su lista de concesiones oficiales, por lo que solo se acredita oferta comercial, no autorización oficial."
     }
   ]
 }
