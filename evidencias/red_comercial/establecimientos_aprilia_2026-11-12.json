@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "Aprilia",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Solo se incorporan establecimientos con evidencia oficial que identifique expresamente Aprilia como marca comercializada o punto de venta Aprilia. La pertenencia al Grupo Piaggio no permite inferir que todos los concesionarios Piaggio vendan Aprilia. Los puntos solo de asistencia no se cuentan como ventas.",
+  "source": {
+    "source_type": "official_brand_announcement",
+    "publisher": "Piaggio & C. SpA / Aprilia España",
+    "url": "https://www.aprilia.com/es_ES/aprilia-world/dealer/nuevo-concesionario-en-alicante/",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "Comunicación oficial de apertura de Ciao Moto Alicante; especifica marcas del showroom, incluida Aprilia, dirección y existencia de taller técnico. El localizador oficial Aprilia existe, pero su inventario se carga dinámicamente."
+  },
+  "outlet_count": 1,
+  "counts": {
+    "by_province": {
+      "Alicante": 1
+    },
+    "sales": 1,
+    "service": 1,
+    "service_only": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "aprilia-ciao-moto-alicante",
+      "brand": "Aprilia",
+      "trading_name": "CIAO MOTO",
+      "operator": "Ciao Moto",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Av. de Orihuela, 99, Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.aprilia.com/es_ES/aprilia-world/dealer/nuevo-concesionario-en-alicante/",
+      "evidence_type": "official_group_dealer_announcement_brand_named",
+      "verification_status": "verified",
+      "official_authorization_status": "official_group_dealer_brand_sales_announced",
+      "observed_at": "2026-11-12",
+      "notes": "La comunicación oficial lo identifica como concesionario oficial del Grupo Piaggio y declara que el showroom expone expresamente modelos Aprilia; también confirma taller técnico. No se infiere la condición de concesionario exclusivo Aprilia ni se extiende esta evidencia a otras sedes de Ciao Moto."
+    }
+  ],
+  "limitations": [
+    "Inventario mínimo documental observado, no censo exhaustivo de la red Aprilia.",
+    "La única alta de esta entrega es Ciao Moto Alicante, respaldada por comunicación oficial del Grupo Piaggio que nombra expresamente Aprilia.",
+    "Barcelona, Málaga, Cádiz y Murcia quedan pendientes de fichas oficiales individualizadas o comunicaciones oficiales equivalentes.",
+    "El localizador oficial Aprilia utiliza contenido dinámico en iframe; la extracción HTML consultada no expuso establecimientos ni permitió auditar el inventario nacional.",
+    "No se trasladan automáticamente a Aprilia las altas Piaggio: cada marca requiere evidencia propia."
+  ]
+}
