@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "brand": "Piaggio",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Solo se incorporan fichas individuales del localizador oficial Piaggio. Distribuidor Oficial acredita punto de venta; Punto de Asistencia Oficial/Autorizado acredita servicio y no se cuenta como venta. Las fichas antiguas o directorios de terceros se conservan como pistas, no como evidencia vigente.",
+  "source": {
+    "source_type": "official_brand_directory",
+    "publisher": "Piaggio & C. SpA / Piaggio España",
+    "url": "https://www.piaggio.com/es_ES/dealer-locator/",
+    "retrieved_at": "2026-11-12",
+    "reliability": "primary_official",
+    "notes": "Las fichas individuales distinguen expresamente Distribuidor Oficial y Punto de Asistencia Oficial/Autorizado."
+  },
+  "outlet_count": 3,
+  "counts": {
+    "by_province": {
+      "Barcelona": 3
+    },
+    "sales": 2,
+    "service": 3,
+    "service_only": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "piaggio-motos-balart-barcelona",
+      "brand": "Piaggio",
+      "trading_name": "MOTOS BALART",
+      "operator": "Grup Balart",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Córcega, 201, 08036 Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.piaggio.com/es_ES/dealer-locator/barcelona/motos-balart/",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "operator_group_id": "grup-balart",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha oficial clasifica el establecimiento como Distribuidor Oficial y Punto de Asistencia Oficial."
+    },
+    {
+      "outlet_id": "piaggio-motos-balart-hospitalet",
+      "brand": "Piaggio",
+      "trading_name": "MOTOS BALART",
+      "operator": "Grup Balart",
+      "province": "Barcelona",
+      "municipality": "L’Hospitalet de Llobregat",
+      "public_address": "Av. Isabel la Católica, 4, 08901 L’Hospitalet de Llobregat, Barcelona",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.piaggio.com/es_ES/dealer-locator/hospitalet-de-llobregat/motos-balart/",
+      "evidence_type": "official_brand_dealer_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "operator_group_id": "grup-balart",
+      "observed_at": "2026-11-12",
+      "notes": "Ficha oficial distinta de la sede de C/ Córcega; clasificada como Distribuidor Oficial y Punto de Asistencia Oficial. Se registra como establecimiento físico separado."
+    },
+    {
+      "outlet_id": "piaggio-totmoto-barcelona-service",
+      "brand": "Piaggio",
+      "trading_name": "TOTMOTO MOTOR, S.L.",
+      "operator": "Totmoto Motor, S.L.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Bruc, 155, 08037 Barcelona",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.piaggio.com/es_ES/dealer-locator/barcelona/totmoto-motor-s-l/",
+      "evidence_type": "official_brand_service_page",
+      "verification_status": "verified",
+      "official_authorization_status": "listed_by_official_brand",
+      "observed_at": "2026-11-12",
+      "notes": "La ficha oficial lo clasifica como Punto de Asistencia Autorizado, no como Distribuidor Oficial. No se cuenta como punto de venta."
+    }
+  ],
+  "limitations": [
+    "El inventario es un mínimo documental observado, no un censo exhaustivo de la red Piaggio.",
+    "La cobertura comprobada en esta entrega se limita a tres fichas de Barcelona: dos distribuidores oficiales y un punto de asistencia autorizado.",
+    "No se incorporan puntos de Málaga, Cádiz, Alicante o Murcia sin una ficha oficial vigente individualizada.",
+    "Un listado promocional antiguo de concesionarios no se utiliza para acreditar la red actual ni para completar provincias sin evidencia vigente.",
+    "Las sedes de un mismo operador se mantienen separadas cuando corresponden a establecimientos físicos distintos."
+  ]
+}
