@@ -5,17 +5,17 @@
   "source_snapshot_sha256": "52cce55e8cb4acd9bba33997634bd44e6beaabee62760aeb51f3adf3163bc662",
   "scope": {
     "directory_entries": 76,
-    "individually_assessed_entries": 55,
-    "pending_entries": 21,
-    "reviewed_groups": 30,
-    "coverage": "Registro de control de auditoría; 55 de 76 entradas evaluadas individualmente. Las 21 entradas restantes continúan pendientes; no equivale a auditoría completa."
+    "individually_assessed_entries": 61,
+    "pending_entries": 15,
+    "reviewed_groups": 36,
+    "coverage": "Registro de control de auditoría; 61 de 76 entradas evaluadas individualmente. Las 15 entradas restantes continúan pendientes; no equivale a auditoría completa."
   },
   "status_counts": {
-    "pending_individual_review": 21,
-    "unresolved_address_or_operator": 20,
-    "corroborated_operator_and_location": 19,
+    "unresolved_address_or_operator": 23,
+    "corroborated_operator_and_location": 22,
+    "same_operator_multiple_locations": 12,
     "same_location_multiple_service_entries": 4,
-    "same_operator_multiple_locations": 12
+    "pending_individual_review": 15
   },
   "methodology": [
     "Se conserva cada entrada original y su identificador de origen.",
@@ -31,7 +31,8 @@
     "La revisión de Santa Cruz de Tenerife (12/11/2026) contrasta cuatro entradas con el localizador Suzuki y páginas actuales de Fierro Motor y Femotor/Grupo Fedeauto. Fierro Motor se agrupa como un operador con tienda Suzuki en C/ Goya, 3 y taller oficial en C/ Islas Filipinas, 9; la entrada de La Palma mantiene discrepancia entre nº 31 del localizador y nº 32 publicado por el operador, sin atribuir autorización Suzuki específica a esa sede. Femotor confirma exposición y taller Suzuki en Av. de los Majuelos, 24, como una sola ubicación.",
     "La revisión de Las Palmas (12/11/2026) contrasta las tres entradas con el localizador Suzuki Moto, la web oficial de Fedeauto y fuentes sectoriales/comerciales de Pole Position. Fedeauto se mantiene sin corroborar como red de motocicletas porque su web acredita Suzuki automóvil, sin prueba específica de motos. Pole Position se confirma como operador Suzuki de motocicletas en Av. de Escaleritas, 70; su taller de C. Joaquín Blume, 21 se conserva como ubicación técnica del mismo operador, con autorización Suzuki específica no acreditada independientemente.",
     "La revisión de Granada, Guadalajara, Guipúzcoa, Huelva, A Coruña y La Rioja (12/11/2026) contrasta ocho entradas del localizador Suzuki Moto. Gelsukar, Mantimotor y Agrisa se corroboran con fuentes actuales del operador y coincidencia con el localizador de motos. RCR Bikes permanece sin corroboración primaria actual; Motoblanco presenta discrepancia entre el localizador Suzuki Moto y la web actual del operador, que identifica Triumph. Motocicletas Groba se agrupa como un único operador candidato, pero queda sin resolver la diferencia entre los números 21 y 25 de Ingeniero Mariño.",
-    "La revisión de Álava, Alicante, Almería, Asturias y Baleares (12/11/2026) contrasta ocho entradas de seis operadores con el localizador Suzuki Moto y páginas actuales de los operadores. Motos Marín (Elche), Motocycles/Grupo Prim (Alicante) e Indalmar Motor (Viator) se corroboran. Lanfavi no acredita actividad Suzuki Moto en su web actual, centrada en automóviles. Motos Gijón mantiene discrepancia de direcciones y falta de fuente primaria actual. Proa Bikes/Proa Group publica otras marcas y no acredita Suzuki Moto; ambas entradas quedan sin corroborar."
+    "La revisión de Álava, Alicante, Almería, Asturias y Baleares (12/11/2026) contrasta ocho entradas de seis operadores con el localizador Suzuki Moto y páginas actuales de los operadores. Motos Marín (Elche), Motocycles/Grupo Prim (Alicante) e Indalmar Motor (Viator) se corroboran. Lanfavi no acredita actividad Suzuki Moto en su web actual, centrada en automóviles. Motos Gijón mantiene discrepancia de direcciones y falta de fuente primaria actual. Proa Bikes/Proa Group publica otras marcas y no acredita Suzuki Moto; ambas entradas quedan sin corroborar.",
+    "La revisión de Burgos, Cantabria, Ceuta, Girona, León y Lleida (12/11/2026) contrasta seis entradas con el localizador Suzuki Moto y fuentes públicas de operadores y directorios sectoriales. Esteve Blanch (Fornells), La Serna 4x4 (León) y Motos Grau (Lleida) se corroboran como ubicaciones Suzuki Moto. Julián Auto-Sport y Auto Palas quedan sin corroborar porque la evidencia disponible acredita Suzuki automóvil, no motocicletas. Factory Racing Ceuta acredita actividad general de motocicletas, pero no representación Suzuki Moto y presenta discrepancia de dirección."
   ],
   "entries": [
     {
@@ -467,13 +468,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Av. Pedernales 16, 09195, Villagonzalo",
       "directory_phone": "645 038 369",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-julian-auto-sport-burgos",
+      "operator_assessment": "Julián Auto-Sport S.L.; la evidencia localizada acredita su vinculación con Suzuki automóvil, pero no actividad Suzuki Moto en la dirección de Av. Pedernales 16.",
+      "counting_recommendation": "Mantener como candidato no verificado; no contar como establecimiento Suzuki Moto corroborado. El localizador Suzuki Moto publica Av. Pedernales 16 (Villagonzalo), mientras el localizador Suzuki automóvil sitúa Julián Auto-Sport en Ctra. Madrid-Irún km 234 (Burgos); no se ha acreditado representación de motocicletas.",
+      "confidence": "low_for_current_suzuki_motorcycle_activity_and_exact_location",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://auto.suzuki.es/concesionarios",
+        "https://burgos.es/empresas/julian-auto-sport-sl",
+        "https://boe.es/diario_borme/txt.php?id=BORME-A-2026-179-09"
+      ],
+      "limitation": "La evidencia pública vincula al operador con automoción/Suzuki automóvil, pero no acredita venta ni servicio técnico de motocicletas Suzuki. Además, difieren las direcciones del localizador de motos y del localizador de automóviles; no inferir que sean la misma instalación."
     },
     {
       "source_id": "suzuki-dir-024",
@@ -554,13 +560,18 @@
       "service_type": "Exposición",
       "directory_address": "Av. Parayas 34, 39011, Santander",
       "directory_phone": "942214800",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-auto-palas-santander",
+      "operator_assessment": "Auto Palas S.A.; operador Suzuki automóvil en Cantabria. No se ha encontrado evidencia primaria que acredite representación Suzuki Moto.",
+      "counting_recommendation": "Mantener como candidato no verificado; no contar como establecimiento Suzuki Moto corroborado. La web del operador acredita exposición y taller Suzuki de automóviles en Av. Parayas 34, pero no actividad comercial o técnica de motocicletas.",
+      "confidence": "low_for_current_suzuki_motorcycle_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://auto.suzuki.es/concesionarios",
+        "https://autopalas.redsuzuki.es/",
+        "https://www.tallerchapa.com/autopalas.html"
+      ],
+      "limitation": "La web oficial del operador enumera modelos Suzuki de automóviles y servicio oficial de automoción. La entrada del localizador Suzuki Moto no queda corroborada por oferta, venta o servicio actual de motocicletas; no inferir baja ni cierre."
     },
     {
       "source_id": "suzuki-dir-029",
@@ -590,13 +601,19 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Muelle de la Puntilla, 1 Ceuta, 51001, Ceuta",
       "directory_phone": "856 20 65 14",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "unresolved_address_or_operator",
+      "review_group_id": "suzuki-factory-racing-ceuta",
+      "operator_assessment": "Factory Racing Ceuta S.L.; actividad comercial y técnica de motocicletas corroborada, pero no la representación Suzuki Moto ni la dirección exacta del localizador.",
+      "counting_recommendation": "Mantener como candidato no verificado; no contar como establecimiento Suzuki Moto corroborado. La web del operador confirma venta y taller de motocicletas, pero no identifica Suzuki entre las marcas actuales; además, publica Muelle de Poniente 5-6 frente a Muelle de la Puntilla 1 del localizador Suzuki Moto.",
+      "confidence": "medium_for_motorcycle_operator;low_for_suzuki_authorization_and_exact_address",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.factoryracingceuta.es/",
+        "https://www.factoryracingceuta.es/motos-y-mucho-m%C3%A1s/",
+        "https://www.factoryracingceuta.es/motos-y-mucho-m%C3%A1s/motos/",
+        "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2019-34988&lang=es"
+      ],
+      "limitation": "La web del operador acredita actividad general de motocicletas, pero no venta o servicio Suzuki Moto. La dirección publicada por el operador no coincide literalmente con la del localizador; la concesión portuaria de 2019 no acredita autorización Suzuki actual."
     },
     {
       "source_id": "suzuki-dir-031",
@@ -605,13 +622,19 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Ctra N-II KM 710,5, 15458, Fornells de la selva",
       "directory_phone": "972 47 62 00",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-esteve-blanch-fornells",
+      "operator_assessment": "Esteve Blanch S.A.; operador con actividad Suzuki Moto acreditada en Fornells de la Selva.",
+      "counting_recommendation": "1 ubicación Suzuki Moto corroborada en Ctra. N-II, km 710,5, Fornells de la Selva. El localizador Suzuki Moto, anuncios profesionales recientes de motocicletas Suzuki y fuentes comerciales sectoriales coinciden en operador, ubicación y teléfono. No sumar Figueres como sede Suzuki Moto a partir del localizador de automóviles.",
+      "confidence": "high_for_operator_and_suzuki_motorcycle_activity;medium_for_postcode_normalization",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.swmmotors.es/red-de-concesionarios/",
+        "https://www.paginasamarillas.es/f/fornells-de-la-selva/esteve-blanch-suzuki_012176160_000000001.html",
+        "https://www.milanuncios.com/motos-de-carretera/suzuki-gsx-8r-version-2024-609634136.htm",
+        "https://auto.suzuki.es/concesionarios"
+      ],
+      "limitation": "El localizador Suzuki Moto indica Fornells pero muestra el código postal 15458; fuentes sectoriales sitúan la instalación en 17458. El localizador Suzuki automóvil publica otra ubicación del operador en Figueres; no se ha contado como una segunda sede Suzuki Moto."
     },
     {
       "source_id": "suzuki-dir-032",
@@ -871,13 +894,17 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Calle de la Serna 26 , 24007, Leon",
       "directory_phone": "987 24 59 90",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-la-serna-4x4-leon",
+      "operator_assessment": "La Serna 4x4; actividad de concesionario Suzuki de motocicletas corroborada en C/ de la Serna 26, León.",
+      "counting_recommendation": "1 ubicación Suzuki Moto corroborada en C/ de la Serna, 26, León. El localizador Suzuki Moto coincide con el artículo de Diario de León de 19/06/2024, que identifica expresamente a Suzuki como marca de motocicletas del establecimiento y describe venta y posventa.",
+      "confidence": "high_for_operator_location_and_suzuki_motorcycle_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://www.diariodeleon.es/leon/240619/1559636/serna-4x4-mejor-companero-motero.html",
+        "https://laserna4x4.redsuzuki.es/"
+      ],
+      "limitation": "La corroboración pública específica de motocicletas se apoya en el localizador Suzuki Moto y una publicación periodística de junio de 2024; no incluye visita física, llamada ni comprobación de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-046",
@@ -886,13 +913,18 @@
       "service_type": "Taller y Exposición",
       "directory_address": "Carrer dels Comtes d'Urgell, 35, 25004, Lleida",
       "directory_phone": "973 23 32 30",
-      "review_status": "pending_individual_review",
-      "review_group_id": "",
-      "operator_assessment": "",
-      "counting_recommendation": "No contar como establecimiento verificado; requiere contraste con fuente primaria del operador/fabricante.",
-      "confidence": "not_assessed",
-      "evidence_urls": [],
-      "limitation": "La inclusión en el directorio Suzuki no acredita por sí sola actividad presencial actual ni constituye prueba de inspección física."
+      "review_status": "corroborated_operator_and_location",
+      "review_group_id": "suzuki-motos-grau-lleida",
+      "operator_assessment": "Motos Grau; concesionario y taller multimarca con representación Suzuki Moto en Carrer dels Comtes d'Urgell 35, Lleida.",
+      "counting_recommendation": "1 ubicación Suzuki Moto corroborada en Carrer dels Comtes d'Urgell, 35, Lleida. Coinciden el localizador Suzuki Moto y el directorio sectorial Moturisme, que identifica expresamente a Motos Grau como concesionario oficial Suzuki en esa dirección y publica el mismo teléfono.",
+      "confidence": "high_for_operator_location_and_suzuki_motorcycle_activity",
+      "evidence_urls": [
+        "https://moto.suzuki.es/concesionarios",
+        "https://moturisme.com/ca/concessionaris-de-motos-moturisme.html",
+        "https://concesionariosdemotos.com/tienda-motos-grau",
+        "https://motos.coches.net/noticias/suzuki-rm_z450-suzuki-rm_z250"
+      ],
+      "limitation": "La corroboración combina el localizador del fabricante con un directorio sectorial actualizado y referencias comerciales; no incluye visita física, llamada ni comprobación de ventas recientes."
     },
     {
       "source_id": "suzuki-dir-047",
