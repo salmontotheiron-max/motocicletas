@@ -169,7 +169,8 @@ def persist_capture(source: dict, result: dict, captured_at: str) -> dict:
             with snapshot.open("wb") as raw:
                 with gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as compressed:
                     compressed.write(body)
-        record["snapshot_path"] = str(snapshot.relative_to(ROOT))
+        record["snapshot_path"] = (snapshot.relative_to(ROOT).as_posix()
+                                   if snapshot.is_relative_to(ROOT) else str(snapshot))
     return record
 
 
