@@ -981,6 +981,26 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 7,
       "notes": "Localizador oficial con búsqueda por ciudad o código postal y radio de 100 km; el HTML público muestra el buscador y separa concesionarios oficiales de servicios oficiales, pero no expone establecimientos en la extracción estática. No inferir ausencia de red."
+    },
+    {
+      "source_id": "source-kymco-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-kymco",
+      "publisher": "KYMCO España",
+      "source_type": "official_directory",
+      "url": "https://www.kymco.es/encuentranos",
+      "title": "Localizador oficial de puntos de venta KYMCO España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-12",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con búsqueda por código postal o provincia. El HTML visible expone filtros y controles, no el inventario completo de puntos. La marca distingue concesionarios oficiales de agentes GENIUS; no deben agregarse ambos como concesionarios ni inferir ventas de los agentes. La nota oficial de 01-09-2026 identifica nuevos concesionarios en Barcelona y otros mercados."
     }
   ]
 }
