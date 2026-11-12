@@ -1,11 +1,11 @@
 {
-  "captured_at": "2026-11-12T09:25:53+00:00",
+  "captured_at": "2026-11-12T10:04:08+00:00",
   "total_sources": 8,
   "captured": 7,
   "failures": 1,
   "records": [
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-suzuki-es-moto-dealers",
       "source_role": "primary_monitoring",
       "requested_url": "https://moto.suzuki.es/concesionarios",
@@ -15,14 +15,14 @@
       "capture_status": "captured",
       "robots_status": "robots_txt",
       "error": null,
-      "sha256": "22853de5a5fea84b8dbf702a2749c280c8f15889560fb7c185ecaeb484ff5032",
-      "snapshot_path": "evidencias/red_comercial/snapshots/source-suzuki-es-moto-dealers/22853de5a5fea84b8dbf702a2749c280c8f15889560fb7c185ecaeb484ff5032.html.gz",
+      "sha256": "b256fad1f05049808f3a20767a3261dbddc99839c22ede566bb25eabe8c2c5ce",
+      "snapshot_path": "evidencias/red_comercial/snapshots/source-suzuki-es-moto-dealers/b256fad1f05049808f3a20767a3261dbddc99839c22ede566bb25eabe8c2c5ce.html.gz",
       "extracted_text": "Suzuki Moto | Concesionarios\nModelos\nPromociones\nConcesionarios\nAccesorios\nCollection\nActualidad\nMoto Club\nÁrea Clientes\nPortal Técnico\nSala de prensa\nContacto\nSOLICITAR INFORMACIÓN\nENCUENTRA EL CONCESIONARIO MÁS CERCANO A TI\nBuscar\nUsar mi ubicación actual\nx Cerrar\nVer listado completo concesionarios\nAlava\nLANFAVI\nTaller y Exposición\nPortal de Gamarra 60, 01013, Vitoria\n945 27 65 44\nAlbacete\nMOTO ALBA\nExposición\nC. Juan Sebastián Elcano, 41, 02005 Albacete, 02005, Albacete\n967 22 23 82\nMOTO ALBA\nTaller\nC. Hernán Cortés, 29, 02005 Albacete, 02005, Albacete\n967 50 06 00\nAlicante\nMOTOCICLETAS MARÍN\nTaller y Exposición\nAvda. de Alicante,96, 03203, Elche\n96 610 75 11\nMOTOCICLETAS PRIM ALICANTE\nTaller y Exposición\nCarretera de Ocaña, 31, 03007, Alicante\n965 92 58 72\nAlmería\nINDALMAR MOTOR\nTaller y Exposición\nSIERRA DE CAZORLA, 47 , 4240, Viator\n610 176 582\nAsturias\nMOTOS GIJÓN\nTaller\nAv. Constitucion 15, 33207, Gijón\n985 33 10 05\nMOTOS GIJÓN\nExposición\nAv. Constitucion 2, 33207, Gijón\n985 38 94 16\nBadajoz\nAUTO RECAMBIOS MOTO LUIS\nExposición\nAvda. María Auxiliadora, 19, 06011, Badajoz\n924 24 27 15\nAUTO RECAMBIOS MOTO LUIS\nTaller\nManuel Saldaña 12, 06011, Badajoz\n924 24 27 15\nBaleares\nBIMOTO\nExposición\nAvda. Ignacio Wallis,44, 07800, Ibiza\n971 31 16 86\nBIMOTO\nTaller\nAvda. Ignacio Wallis,55, 07800, Ibiza\n971 31 16 86\nPROA BIKES TWO\nExposición\nGran Vía Asima 22, 07009, Mallorca\n871750314\nPROA BIKES TWO\nTaller\nGran Vía Asima 19, 07009, Mallorca\n871750314\nBarcelona\nBOX SICILIA 210\nTaller y Exposición\nC. Sicilia, 210, 08013, Barcelona\n932 31 05 25\nMAQUINA MOTORS\nTaller y Exposición\nBrusi, 92, 08006, Barcelona\n932 09 17 77\nMAQUINA MOTORS MANRESA\nExposición\nP.I. Riu D'or, Ctra, Ctra. de Berga, Km 1, 08272 Manresa, Barcelona, 08272, Sant fruitós de bages\n938 77 08 62\nMAQUINA MOTORS MOLLET\nExposición\nAv. d'Antoni Gaudí, 73, 08100, Mollet del vallés\n935 70 62 95\nMAQUINA MOTORS TERRASSA\nExposición\nC/ de I'Anoia, 7, 08221, Terrassa\n937 80 03 10\nMOTO STOP CARBÓ\nTaller y Exposición\nPau Casals, 4, 08860, Castelldefels\n936 65 25 79\nMOTOS BOQUET\nTaller y Exposición\nC. El Torrent, 39-43, 08302, Mataro\n93 757 90 06\nORIOL MOTOS\nTaller y Exposición\nRocafort, 89, 08015, Barcelona\n934 25 08 89\nBurgos\nJULIAN AUTO SPORT\nTaller y Exposición\nAv. Pedernales 16, 09195, Villagonzalo\n645 038 369\nCádiz\nEL MOTORISTA\nExposición\nPlaza de Madrid, 9, 11010, Cádiz\n956 10 40 12\nEL MOTORISTA\nExposición\nVirgen del Carmen, 2, 11130, Chiclana\n956 40 33 15\nEL MOTORISTA\nExposición\nCtra. Málaga, km 108, 11205, Algeciras\n956 66 30 02\nEL MOTORISTA\nTaller y Exposición\nAvda. Europa, 13, 11405, Jerez de la frontera\n956 35 85 32\nCantabria\nAUTO PALAS\nExposición\nAv. Parayas 34, 39011, Santander\n942214800\nCastellón\nMOTODONIA\nTaller y Exposición\nAvda. Casalduch, 51, 12005, Castellón\n964 25 69 29\nCeuta\nFACTORY RACING CEUTA\nTaller y Exposición\nMuelle de la Puntilla, 1 Ceuta, 51001, Ceuta\n856 20 65 14\nGirona\nESTEVE BLANCH\nTaller y Exposición\nCtra N-II KM 710,5, 15458, Fornells de la selva\n972 47 62 00\nIMPORT CROSS\nTaller y Exposición\nCarrer d'Alemanya, 28, 17600 Figueres, Girona, 17600, Figueres\n972 54 70 00\nIMPORTCROSS\nExposición\nAlemanya, 28, 17600, Figueres\n972 547 000\nGranada\nRCR BIKES\nExposición\nC. Virgen Blanca, 3, 18004, Granada\n958 25 64 66\nRCR BIKES\nTaller\nC. Santa Fe, 10, 18004, Granada\n958 28 42 68\nGuadalajara\nMOTOCICLETAS GROBA\nExposición\nIngeniero Mariño, 25, 19001, Guadalajara\n949 21 28 13\nMOTOCICLETAS GROBA\nTaller\nIngeniero Mariño, 21, 19001, Guadalajara\n949 21 28 13\nGuipuzcoa\nGELSUKAR\nTaller y Exposición\nDonostia Ibilbidea, 88, 20115, Astigarraga\n670 741 632\nHuelva\nMOTOBLANCO\nTaller y Exposición\nAv. Guatemala, 46, 21003, Huelva\n959 23 03 19\nLa Coruña\nMANTIMOTOR\nTaller y Exposición\nC. Jose Baldomir, 6, 15010, A coruña\n981 91 74 84\nLa Rioja\nAGRISA\nTaller y Exposición\nAv. de Mendavia, 26, 26006, La Rioja\n941 23 10 00\nLas Palmas\nFEDEAUTO\nTaller y Exposición\nC/ Diego Vega Sarmiento 54, 35014, Las Palmas de Gran Canaria\n928 475 080\nPOLE POSITION MOTO SPORT\nExposición\nAvenida Escaleritas número 70, 35011, Las Palmas de Gran Canaria\n928 48 50 92\nPOLE POSITION MOTO SPORT\nTaller\nC. Joaquín Blume, 21 - Escaleritas, 35011, Las palmas\n928 48 50 92\nLeón\nLA SERNA MOTO\nTaller y Exposición\nCalle de la Serna 26 , 24007, Leon\n987 24 59 90\nLleida\nMOTOS GRAU\nTaller y Exposición\nCarrer dels Comtes d'Urgell, 35, 25004, Lleida\n973 23 32 30\nLugo\nPARDO AUTOMOCIÓN\nTaller y Exposición\nPolígono Industrial As Gándaras, Rúa A, Parcela 4.2, 27003, Lugo\n982 25 62 42\nMadrid\nNAMURA BIKES\nTaller y Exposición\nC. Cartagena 174, 28002, Madrid\n915 63 50 52\nSS MOTOS\nExposición\nC. José del Hierro, 54, 28027, Madrid\n914 08 07 85\nSS MOTOS\nTaller\nC. Avellana, Nº 3, 28027, Madrid\n914 08 07 85\nSUZUKI CENTER\nTaller y Exposición\nC. de la Infanta Mercedes, 41, 28020, Madrid\n915 704 123\nSUZUKI CENTER\nTaller y Exposición\nC. de los Naranjos, 6, 28709, S.s de los reyes\n916 52 39 05\nMalaga\nSIEBLA\nTaller\nC. Carbón, 38, 29603 Marbella, Málaga, 29600, Marbella\nSIEBLA\nExposición\nCalle Ramón Gomez de la Serna 17, 29600, Marbella\n952 77 42 86\nSK MOTOS\nTaller y Exposición\nC. La Bohème, 50, 29006, Málaga\n952 33 42 15\nMurcia\nMOTOS MARIN MURCIA\nTaller y Exposición\nAv. San Juan de la Cruz, 18, 30011, Murcia\n968 93 66 33\nPontevedra\nMOTOS PONTE\nTaller y Exposición\nEmilia Pardo Bazán, 144, 36204, Vigo\n986 225 926\nSalamanca\nNANIMOTORBIKES\nTaller y Exposición\nCalle primera, 25, 37188, Carbajosa de la Sagrada\n676 92 17 30\nSanta Cruz de Tenerife\nAUTO REPUESTOS FIERRO\nExposición\nAv. Marítima, 31, 38700, Santa Cruz de la Palma\n922 41 19 99\nAUTO REPUESTOS FIERRO TENERIFE\nExposición\nCalle de Goya, 3, 38007, Santa cruz de tenerife\n922 20 09 10\nFEMOTOR TENERIFE\nTaller y Exposición\nAVDA DE LOS MAJUELOS, NÚM. 24, 38108, San cristobal de la laguna s.c. tenerife\n922 62 55 68\nAUTO REPUESTOS FIERRO TENERIFE\nTaller\nCalle Islas Filipinas, 9, 38009, Santa Cruz de Tenerife\n922610002\nSevilla\nRETALBIKES\nTaller y Exposición\nAv. de Hytasa, 38, 41006, Sevilla\n955 29 26 74\nWILLY MOTOR\nTaller y Exposición\nCalle Aviación 51, 41007, Sevilla\n954511586\nTarragona\nBAYMOTO\nExposición\nPasseig de Prim, 12, 43202, Reus\n977 33 34 62\nBAYMOTO\nTaller\nPau Font de Rubinat, 12, 43202, Reus\n977 33 34 62\nValencia\nMOTODONIA\nExposición\nAvda. Tirso de Molina, 21, 46015, Valencia\n963 38 58 71\nMOTODONIA\nTaller\nAvda. Tirso de Molina, 20, 46015, Valencia\n963 38 58 71\nMOTODONIA\nExposición\nCalle Reus 30, 46009, Valencia\n963 47 05 92\nMOTODONIA\nExposición\nCarrer de Sant Rafel 43, 46701, Gandía\n962 87 32 21\nValladolid\nMOTOCYL\nExposición\nAvenida Gijón 37, 47640 Zaratán ( Valladolid ), 47610, Zaratán\n983 02 90 50\nMOTOCYL\nTaller\nAv. de Gijón, km 194, 700 47610 Zaratán, Valladolid, 47610, Zaratán\n983 02 90 50\nVizcaya\nGARCIA MOTOS\nExposición\nC. Calixto Diez, 8, 48012, Bilbao\n944 44 16 16\nGARCIA MOTOS\nTaller\nC. Labayru, 34, 48012 Bilbao, Vizcaya, 48012, Bilbao\n944 44 16 16\nZamora\nMOTOS ESTEBAN\nTaller y Exposición\nAvda. del ferial, 112, 49600, Benavente\n980 63 09 23\nZaragoza\nSUZUKI MUR\nTaller y Exposición\nGraus, 18, 50010, Zaragoza\n976 33 18 54\nInformación\nPara dar un servicio a la altura de nuestros clientes, profesional y con un servicio/mantenimiento de alta calidad, Suzuki Motor Corporation (SMC) establece un estándar global unificado: el Sistema de Calificación de Servicio Suzuki, SSQS.\nEl Sistema de Calificación de Servicio Suzuki (SSQS) es un sistema de capacitación que consta de un examen práctico y un examen escrito. En el examen práctico, se evalúa el conocimiento técnico, así como la alta calidad del trabajo, mediante la realización de servicios reales en vehículos equipados con la tecnología más avanzada de Suzuki. En el examen escrito, se evalúa el conocimiento de la estructura, tecnología y el funcionamiento del vehículo, esenciales para brindar un servicio de alta calidad.\nPara la obtención de los diferentes títulos de capacitación, Bronce, Plata y Oro, se requiere una correcta utilización y comprensión del manual de servicio, así como haber superado previamente la extensa formación específica del plan formativo Suzuki. También es necesario la actualización de dicha formación, especialmente enfocada en nuevos modelos y tecnologías.\nEl SSQS, la más alta acreditación en el plan de formación Suzuki, certifica y acredita las capacidades y habilidades según el estándar global unificado a nivel mundial de Suzuki\nCerrar\nGAMA SUZUKI\nModelos\nPromociones\nAccesorios\nVideos\nCOLABORADORES\nSala de prensa\nSERVICIOS\nServicio y manuales\nCalidad\nConcesionarios\nÁrea cliente\nPortal técnico\nR.A.P. de VFVUs\nReciclado de baterías\nSUZUKI\nActualidad\nContacto\nSuzuki global\nInforme país por país - ISPxP\nAVISO LEGAL\nAviso legal\nCanal de denuncias\nREDES SOCIALES\n© 2026 Suzuki Ibérica\nUSO DE COOKIES.\nUtilizamos cookies, incluidas cookies de terceros, para fines analíticos y para mostrarle publicidad personalizada en base a un perfil elaborado a partir de sus hábitos de navegación. Al hacer clic en el botón “Aceptar todas\", acepta el uso de estas cookies. Puede retirar su consentimiento en cualquier momento, cambiar sus preferencias y obtener información detallada sobre nuestro uso de cookies haciendo clic en \"Personalizar/rechazar\".\nAceptar todas\nPersonalizar / Rechazar\nHablemos\nSolicitar Información\nConcesionarios\nEnviando solicitud...",
       "text_sha256": "6b777de30c007a5931529b553f2f35480aa7cb36ae540e1beb5e6dcbc9735c5c",
       "content_bytes": 671428
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-zontes-es-dealers",
       "source_role": "primary_monitoring",
       "requested_url": "https://zontesmotos.es/puntos-de-venta/",
@@ -37,7 +37,7 @@
       "extracted_text": null
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-zxmoto-es-dealers",
       "source_role": "primary_monitoring",
       "requested_url": "https://zxmoto.es/puntos-de-venta/",
@@ -54,7 +54,7 @@
       "content_bytes": 114583
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-anesdor-press-releases-es",
       "source_role": "market_discovery",
       "requested_url": "https://www.anesdor.com/category/notas-de-prensa/",
@@ -71,7 +71,7 @@
       "content_bytes": 224469
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-motociclismo-industry-es",
       "source_role": "market_discovery",
       "requested_url": "https://www.motociclismo.es/industria",
@@ -88,7 +88,7 @@
       "content_bytes": 239938
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-zontes-murcia-dealer-site",
       "source_role": "market_discovery",
       "requested_url": "https://zontesmurcia.com/",
@@ -98,14 +98,14 @@
       "capture_status": "captured",
       "robots_status": "robots_txt",
       "error": null,
-      "sha256": "141448633e260fe0c9aa06644e68dfbf2169c85d07a01c89b4b3f607255cc6f3",
-      "snapshot_path": "evidencias/red_comercial/snapshots/source-zontes-murcia-dealer-site/141448633e260fe0c9aa06644e68dfbf2169c85d07a01c89b4b3f607255cc6f3.html.gz",
+      "sha256": "1957cb5a6df0150fdbf35c4585af1d400cbe43c30e35914fede652ac0ecc5879",
+      "snapshot_path": "evidencias/red_comercial/snapshots/source-zontes-murcia-dealer-site/1957cb5a6df0150fdbf35c4585af1d400cbe43c30e35914fede652ac0ecc5879.html.gz",
       "extracted_text": "ZONTES Murcia – Concesionario Oficial ZONTES en Murcia\nSkip to content\nSkip to footer\nINICIO\nMODELOS\nSCOOTER\nTRAIL\nSCRAMBLER\nNAKED\nSPORT TOURING\nCUSTOM\nSUPER SPORT\nSCOOTER\n125X\n125V\n125D\n125M\n125E\n368E\n368K\n368M\n368D\n368E ETC\n368K ETC\n368M ETC\n368D ETC\n368G ETC\nTRAIL\n125UI\n350T\n350T X\n703F 21″\n703F 19″\nSCRAMBLER\nG1 125\nG1 125X\nGK 125\nGK 125X\nNAKED\n125U\n125Z2\n350R\n703R ETC\nTRAIL\nSPORT TOURING\n350X\n703T ETC\nCUSTOM\n125C\n125C2\n350V\n350S\nSUPER SPORT\n703RR ETC\nEL CONCESIONARIO\nCITA TALLER\nCONTACTO\nVENTAS\nTALLER Y RECAMBIOS\nClose\nINICIO\nMODELOS\nSCOOTER\nTRAIL\nSCRAMBLER\nNAKED\nSPORT TOURING\nCUSTOM\nSUPER SPORT\nSCOOTER\n125X\n125V\n125D\n125M\n125E\n368E\n368K\n368M\n368D\n368E ETC\n368K ETC\n368M ETC\n368D ETC\n368G ETC\nTRAIL\n125UI\n350T\n350T X\n703F 21″\n703F 19″\nSCRAMBLER\nG1 125\nG1 125X\nGK 125\nGK 125X\nNAKED\n125U\n125Z2\n350R\n703R ETC\nTRAIL\nSPORT TOURING\n350X\n703T ETC\nCUSTOM\n125C\n125C2\n350V\n350S\nSUPER SPORT\n703RR ETC\nEL CONCESIONARIO\nCITA TALLER\nCONTACTO\nVENTAS\nTALLER Y RECAMBIOS\nHave a Project?\ninfo@website.com\nWant to Work with Us?\nSend Brief\nWant to Buy a Car?\nView Options\nRegístrate y reserva tu plaza\nPresentación\n703R ETC\nLA NUEVA ZONTES 703R ETC YA ESTÁ AQUÍ\nLa revolución naked tiene nombre propio. Y queremos que seas de los primeros en descubrirla.\nViernes 13 de Noviembre\n19:00\nSteel Center Murcia\n95 CV Potencia máxima\n699 CC Motor tricilíndrico\n74,5 NM Par máximo\n5 modos de conducción\nABS Cornering\nTFT de 6,75”\nSuspensiones Marzocchi\nIMU de 6 ejes\nQuickshifter\nRide by Wire\nFrenos Nissin\nNO TE CONFORMES CON VERLA EN PANTALLA\nNo te pierdas la presentación oficial de la nueva Zontes 703R ETC. Completa el formulario y acompáñanos en una tarde donde la pasión por las dos ruedas será la protagonista.\nEntrada gratuita\nCóctel de bienvenida\nEl mejor ambiente motero\nCamiseta de regalo a los primeros\nHe leído y acepto la Política de Privacidad\nInformación básica sobre protección de datos Responsable: STEEL CENTER, S.L. Finalidades: Ponernos en contacto contigo con el objetivo de concertar una cita para que puedas realizar una prueba de los vehículos que ponemos a tu disposición en nuestro concesionario, así como, en su caso, remitirte información sobre nuestros productos y servicios, que pueda ser de tu interés. Derechos: Puedes acceder, rectificar, suprimir o solicitar la portabilidad de tus datos personales, así como oponerte o limitar el tratamiento de los mismos dirigiéndote a info@steelcenter.es. Info. Adicional: Puede consultar nuestra Política de Privacidad completa\naquí\n.\nModelos\ndestacados\nVER MÁS MODELOS\n703T ETC\n◉\n◉\n◉\n◉\n7.288€\n368G ETC\n◉\n◉\n◉\n◉\n◉\n◉\n◉\n◉\n5.592€\n125X\n◉\n◉\n◉\n◉\n◉\n◉\n2.688€\n125V\n◉\n◉\n◉\n◉\n◉\n◉\n2.688€\nCONCESIONARIO OFICIAL\nZONTES MURCIA\nEn ZONTES Murcia somos distribuidores y punto de venta oficial de la marca y donde podrás encontrar todos los modelos disponibles en España con una atención comercial y técnica, al mayor nivel.\nVisita nuestras instalaciones y conoce toda la amplia gama de modelos de motos y scooters de ZONTES.\nCITA TALLER\nMOTOS ZONTES\nSCOOTERS\nMOVILIDAD CON ESTILO\nTRAIL\nAVENTURA SIN LÍMITES\nSCRAMBLER\nMOVILIDAD CON ESTILO\nCUSTOM\nESPÍRITU REBELDE\nSUPERSPORT\nFUERZA IMPARABLE\nNAKED\nEMOCIÓN INDOMABLE\nSPORT TOURING\nDEPORTIVIDAD EN RUTA\nDÓNDE ESTAMOS\nVEN A PROBAR TU PRÓXIMA MOTO\nConcesionario Zontes Murcia\nAv. del Progreso, 232, B, 30012\nMurcia\n968 25 45 88\ninfo@zontesmurcia.com\nNovedades 2026\nNUESTRO CATÁLOGO\nConoce toda nuestra amplia gama de modelos en nuestro catálogo.\nVER MÁS MODELOS\nAv. del Progreso, 232, B,\n30012\nMurcia\n968 25 45 88\ninfo@zontesmurcia.com\nGAMA 125\n125X\n125V\n125D\n125M\n125E\n125U\n125U1\n125C\n125C2\nG1-125\nG1-125X\nGK-125\nGK-125X\nGAMA 350\n350X\n350V\n350S\n350R\n350T\n350TX\nGAMA 368\n368G\n368D\n368M\n368E\n368K\nGAMA 703\n703F 19\"\n703F 21\"\n703T\n703R\n703RR\nZONTES MURCIA\nCATÁLOGO\nEL CONCESIONARIO\nTALLER ZONTES\nCONTACTO\nAVISO LEGAL\nPOLÍTICA DE PRIVACIDAD\nPOLÍTICA DE COOKIES\n© 2026 STEEL CENTER\nWhatsApp",
       "text_sha256": "97b37d0dc94822d053d26bc00850267fbb31c2bb23e9d6f586f9f84db492dabe",
-      "content_bytes": 551199
+      "content_bytes": 551557
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-zxmoto-asba-dealer-site",
       "source_role": "market_discovery",
       "requested_url": "https://zxmotoasba.com/dealership",
@@ -122,7 +122,7 @@
       "content_bytes": 310044
     },
     {
-      "captured_at": "2026-11-12T09:25:53+00:00",
+      "captured_at": "2026-11-12T10:04:08+00:00",
       "source_id": "source-zontes-barcelona-dealer-site",
       "source_role": "market_discovery",
       "requested_url": "https://zontesbarcelona.com/",
