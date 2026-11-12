@@ -73,7 +73,7 @@ class TestCompararCapturasRedComercial(unittest.TestCase):
 
     def test_ignora_cambios_solo_de_mayusculas_y_cookies(self):
         old = "DIRECTORIO OFICIAL DE CONCESIONARIOS. " * 4
-        new = "Directorio oficial de concesionarios. " * 4 + "\\nAceptar todas las cookies"
+        new = "Directorio oficial de concesionarios. " * 4 + "\nAceptar todas las cookies"
         result = compare_records([
             row("a", "2026-11-01T00:00:00Z", "h1", old),
             row("a", "2026-11-08T00:00:00Z", "h2", new),
