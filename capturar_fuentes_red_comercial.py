@@ -49,7 +49,7 @@ class SameOriginRedirectHandler(HTTPRedirectHandler):
         destination = (target.scheme.lower(), target.hostname, target.port)
         if destination != origin or target.scheme.lower() != "https":
             raise UnsafeRedirectError("Redirección fuera del origen HTTPS original")
-        return super().redirect_request(req, fp, code, msg, headers, newurl)
+        return super().redirect_request(req, fp, code, msg, headers, target.geturl())
 
 
 def safe_urlopen(request: Request, timeout: int = 20):
@@ -161,7 +161,7 @@ def ensure_sources(connection: sqlite3.Connection, sources: list[dict]) -> None:
             """INSERT INTO source
                (source_id,publisher,source_type,url,title,reliability_class,notes)
                VALUES (?,?,?,?,?,?,?)""",
-            (*values, item.get("notes")),
+            (item["source_id"], *values, item.get("notes")),
         )
 
 
