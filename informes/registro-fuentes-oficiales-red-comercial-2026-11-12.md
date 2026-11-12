@@ -1,43 +1,46 @@
-# Registro inicial de fuentes oficiales de red comercial
+# Registro abierto de fuentes y alcance de vigilancia del mercado motociclista
 
-**Corte de revisión:** 12-11-2026  
+**Corte:** 12-11-2026  
 **Ámbito:** España  
-**Estado:** primera versión operativa del registro; no es un censo de establecimientos.
+**Estado:** diseño de registro ampliado; la PR sigue en borrador y no se ha fusionado.
 
-## Objetivo y criterio
+## Objetivo
 
-El registro identifica las páginas oficiales que se utilizarán como fuentes primarias para observar cambios en las redes de distribución, venta y posventa. Se conserva una fuente por marca y función documental; las URL no se consideran permanentes y deberán revisarse cuando la marca cambie su web o su operador en España.
+El registro no representa un censo cerrado de marcas. Define fuentes para vigilar la red comercial conocida y mecanismos para descubrir fabricantes, marcas y establecimientos aún no registrados.
 
-Una fuente oficial puede contener un directorio completo, un localizador dinámico o únicamente una página de próximas aperturas. Estos estados no son equivalentes. Que una página no muestre establecimientos en el HTML o en una captura no demuestra que no existan puntos de venta.
+Se separan dos funciones:
+- **Seguimiento primario:** fuentes oficiales de una marca para observar sus puntos de venta, posventa, operadores e implantación.
+- **Descubrimiento de mercado:** fuentes que pueden revelar marcas, fabricantes, importadores, distribuidores o establecimientos nuevos. Pueden ser secundarias y generan pistas, no hechos históricos automáticos.
 
-## Fuentes registradas
+## Cobertura de acontecimientos
 
-| Marca | Fuente oficial | URL | Estado observado el 12-11-2026 |
-|---|---|---|---|
-| Suzuki | Directorio de concesionarios Suzuki Moto España | https://moto.suzuki.es/concesionarios | Contenido visible, agrupado por provincia; distingue exposición y taller. |
-| Zontes | Puntos de venta Zontes España | https://zontesmotos.es/puntos-de-venta/ | Existe localizador; la página textual muestra buscador/mapa, sin lista completa extraíble en la vista consultada. |
-| ZXMOTO | Puntos de venta ZXMOTO España | https://zxmoto.es/puntos-de-venta/ | Existe localizador; la página muestra «Próximas aperturas» y no expone todavía establecimientos identificables en la vista consultada. |
+El registro declara cobertura abierta para:
+- entrada y salida de fabricantes y marcas en España;
+- apertura, cierre y traslado de puntos de venta;
+- cambio de operador, importador o distribuidor;
+- incorporación o retirada de marcas en establecimientos;
+- cambios de alcance de venta y servicio posventa.
 
-La página de Suzuki identifica expresamente su red oficial y publica establecimientos por provincia, con funciones de exposición y taller.
+El catálogo inicial de tres marcas es solo un piloto. Se permiten marcas y fabricantes desconocidos y se mantiene una lista separada de fabricantes para no confundir marca comercial con entidad fabricante.
 
-La página de Zontes está enlazada desde la web oficial como «Puntos de venta». El aviso legal identifica a TURBIMOT, S.L.U. como titular del sitio español.
+## Estados y regla probatoria
 
-La página de ZXMOTO está enlazada desde la web oficial como «Puntos de venta». Su aviso legal identifica a DESMOTRÓN, S.L.U. como titular del sitio español.
+Los estados de marca distinguen anuncio, entrada reciente, actividad establecida, revisión, cese confirmado, inactividad no verificada y situación desconocida.
 
-## Registro estructurado
+Un anuncio de lanzamiento no prueba actividad comercial efectiva. La ausencia de una marca en un directorio no prueba su retirada. Los errores de captura y los cambios de web son incidencias técnicas. Los candidatos se someten a revisión antes de actualizar el histórico.
 
-El fichero fuentes_red_comercial.json es el registro maestro de fuentes y marcas. Cada fuente tiene identificador estable, marca asociada, editor, URL, tipo, clase de fiabilidad, alcance territorial, funciones cubiertas, modo de captura, estado de descubrimiento, fecha de verificación y periodicidad prevista.
+## Fuentes iniciales
 
-La periodicidad inicial es semanal. Es una frecuencia de vigilancia, no una afirmación de que las marcas actualicen sus directorios semanalmente. Podrá ajustarse por fuente según su volatilidad y el coste/estabilidad de captura.
+Se mantienen las tres fuentes oficiales del piloto:
+- Suzuki: https://moto.suzuki.es/concesionarios
+- Zontes: https://zontesmotos.es/puntos-de-venta/
+- ZXMOTO: https://zxmoto.es/puntos-de-venta/
 
-## Límites de esta primera versión
+No se añaden todavía fuentes secundarias concretas de descubrimiento sin completar su evaluación y documentación. El esquema ya permite incorporarlas con rol market_discovery, sin obligarlas a referir una marca conocida.
 
-- Se han registrado inicialmente las tres marcas del piloto histórico: Suzuki, Zontes y ZXMOTO. La cobertura se ampliará marca a marca; no se presenta como un registro exhaustivo del mercado español.
-- El registro no incorpora todavía concesionarios individuales extraídos de las páginas.
-- Zontes y ZXMOTO utilizan páginas de localización que pueden cargar datos mediante JavaScript o servicios externos. Antes de automatizar extracción estructurada se debe identificar la fuente de datos y verificar que su acceso es público y estable.
-- No se usarán directorios comunitarios, agregadores ni páginas de concesionarios como si fueran fuentes primarias oficiales. Podrán incorporarse después como evidencia secundaria separada.
-- No se ejecutan aún capturas periódicas ni se generan candidatos. Esas son las fases siguientes.
+## Próximos pasos
 
-## Regla de no inferencia
-
-Una desaparición en un directorio, un error HTTP, un cambio de URL, una página vacía o una modificación del buscador se registra como incidencia/observación de la fuente. No se convierte automáticamente en dealer_removed, outlet_closed ni baja histórica. Para actualizar el histórico se exigirá revisar evidencia, distinguir venta de posventa y conservar fecha efectiva solo cuando esté respaldada.
+1. Evaluar y registrar fuentes sectoriales y oficiales de descubrimiento de fabricantes/marcas.
+2. Investigar carga dinámica de los localizadores Zontes y ZXMOTO.
+3. Implementar capturas con fecha, URL final, estado HTTP, tipo de contenido, hash y evidencia.
+4. Comparar capturas y generar candidatos, sin actualización automática del histórico.
