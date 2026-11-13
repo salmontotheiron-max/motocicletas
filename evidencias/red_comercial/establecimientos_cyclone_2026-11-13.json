@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan ubicaciones cuando una fuente primaria del propio operador publica catálogo/oferta Cyclone y permite asociarla a una dirección física, o cuando el operador se autodeclara distribuidor/concesionario Cyclone y publica su sede. Las autodeclaraciones de oficialidad o exclusividad no equivalen a confirmación individual del fabricante. Los agregadores se utilizan para descubrir candidatos, no para sumarlos.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Página corporativa actual publica modelos u oferta Cyclone y permite asociarla a una sede física.",
+    "self_declared_official": "El operador se autodenomina concesionario, distribuidor, servicio oficial o exclusivo Cyclone; no equivale a confirmación independiente del fabricante.",
+    "manufacturer_individually_listed": "El localizador oficial individualiza la dirección del establecimiento.",
+    "secondary_candidate": "Un agregador atribuye Cyclone al operador, pero no hay confirmación primaria actual suficiente; no se cuenta."
+  },
+  "outlet_count": 5,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 2,
+      "Cádiz": 1,
+      "Alicante": 0,
+      "Murcia": 1
+    },
+    "sales": 5,
+    "service_locations": 1,
+    "same_site_sales_and_service": 1,
+    "service_only_locations": 0,
+    "manufacturer_individually_listed": 0,
+    "operator_self_declared_official_sales": 2,
+    "accepted_commercial_presence_sales": 3,
+    "secondary_only_candidates": 10
+  },
+  "official_source": {
+    "urls": [
+      "https://cyclone-motor.eu/es/",
+      "https://cyclone-motor.eu/es/concesionarios/"
+    ],
+    "status": "locator_present_dynamic_content",
+    "notes": "Cyclone Motor Ibérica mantiene catálogo actual y localizador oficial de concesionarios. La extracción textual del localizador muestra controles de búsqueda, pero cero fichas individualizadas; no se clasifica ningún punto como manufacturer_individually_listed."
+  },
+  "distribution": {
+    "manufacturer": "Zongshen (grupo)",
+    "spanish_distributor": "Grupo Multimoto / Multimoto Motor España, S.L.",
+    "evidence_url": "https://multimotoespana.es/vehiculos/2025/07/01/cyclone-lanza-seis-nuevos-modelos-en-espana-y-portugal-una-nueva-generacion-ya-disponible/",
+    "notes": "La publicación corporativa de Grupo Multimoto, fechada 01-07-2025, identifica a la empresa como distribuidor exclusivo de Cyclone en España y Portugal y afirma que seis modelos ya estaban disponibles en concesionarios. Se registra como declaración primaria del distribuidor; no se infiere fabricante legal español."
+  },
+  "outlets": [
+    {
+      "outlet_id": "cyclone-asba-barcelona",
+      "brand": "Cyclone",
+      "trading_name": "ASBA Cyclone Barcelona",
+      "operator": "Comercial Impala S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Buenos Aires, 55, 08036 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.asbacyclonebarcelona.com/",
+      "supporting_urls": [
+        "https://cyclone-motor.eu/es/concesionarios/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "self_declared_official",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador se autodenomina concesionario, distribuidor y servicio oficial Cyclone; publica catálogo con precios de modelos actuales. No hay ficha individual extraída del localizador del fabricante."
+    },
+    {
+      "outlet_id": "cyclone-motosiles-malaga",
+      "brand": "Cyclone",
+      "trading_name": "Moto Siles Málaga",
+      "operator": "Moto Siles",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Emilio Thuillier, 70, 29014 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosiles.es/tienda/?filter_marca=cyclone",
+      "supporting_urls": [
+        "https://motosiles.es/tienda/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El catálogo corporativo publica cuatro modelos Cyclone y un recambio y facilita la dirección de la tienda de Málaga. No se asigna automáticamente la oferta a la sede de Alhaurín de la Torre."
+    },
+    {
+      "outlet_id": "cyclone-recambioslopez-mijas",
+      "brand": "Cyclone",
+      "trading_name": "Recambios López",
+      "operator": "Recambios López",
+      "province": "Málaga",
+      "municipality": "Las Lagunas de Mijas",
+      "public_address": "Calle Poseidón, 4, 29651 Las Lagunas de Mijas, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://recambioslopez.com/categoria-producto/motocicletas/cyclone/",
+      "supporting_urls": [
+        "https://recambioslopez.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web corporativa publica nueve motocicletas Cyclone y la dirección de Las Lagunas de Mijas. La segunda dirección de Marbella no se cuenta porque no se vincula individualmente al catálogo."
+    },
+    {
+      "outlet_id": "cyclone-mercabox-cadiz",
+      "brand": "Cyclone",
+      "trading_name": "Mercabox Cádiz Capital",
+      "operator": "Mercabox Motor",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de Andalucía, 86, 11008 Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://mercabox.com/",
+      "supporting_urls": [
+        "https://mercabox.com/cyclone/",
+        "https://mercabox.com/puntos-de-venta/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web corporativa incluye Cyclone entre las marcas ofrecidas, identifica la sede de Cádiz capital y describe concesionario, tienda y taller. No se atribuye servicio Cyclone específico ni se extrapola el catálogo a otras sedes listadas."
+    },
+    {
+      "outlet_id": "cyclone-motosport-murcia",
+      "brand": "Cyclone",
+      "trading_name": "Motosport Murcia",
+      "operator": "Motosport Murcia",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Pío XII, 43, 30012 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosportmurcia.com/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/tienda-motosport"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "self_declared_official",
+      "official_authorization_status": "self_declared_exclusive",
+      "notes": "La web corporativa declara que Motosport tiene la exclusividad Cyclone y se presenta como concesionario oficial. La dirección se contrasta con un perfil secundario; no se dispone de ficha individual del localizador oficial ni de confirmación independiente de autorización."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "cyclone-motauto-alicante",
+      "province": "Alicante",
+      "trading_name": "Motauto Alicante",
+      "public_address": "Calle Azorín, 50, 03007 Alicante, España",
+      "source_url": "https://concesionariosdemotos.com/cyclone",
+      "reason": "Aparece en agregadores de concesionarios y anuncios de motos Cyclone, pero no se localizó página corporativa primaria actual que publique oferta Cyclone."
+    },
+    {
+      "candidate_id": "cyclone-motoquadnatura-alicante",
+      "province": "Alicante",
+      "trading_name": "Motoquad Natura",
+      "public_address": "Avenida Carmen, 120, 03350 Cox, Alicante, España",
+      "source_url": "https://concesionariosdemotos.com/cyclone",
+      "reason": "Atribución por agregador, sin confirmación primaria actual de oferta."
+    },
+    {
+      "candidate_id": "cyclone-zontesmurcia-secondary",
+      "province": "Murcia",
+      "trading_name": "Zontes Murcia",
+      "public_address": "Avenida del Progreso, 232 B, 30012 Murcia, España",
+      "source_url": "https://concesionariosdemotos.com/cyclone",
+      "reason": "Atribución por agregador; no se ha localizado oferta Cyclone en página corporativa primaria actual."
+    },
+    {
+      "candidate_id": "cyclone-motos-emilio-secondary",
+      "province": "Murcia",
+      "trading_name": "Motos Emilio",
+      "public_address": "Avenida de Colón, 41, 30205 Cartagena, Murcia, España",
+      "source_url": "https://concesionariosdemotos.com/cyclone",
+      "reason": "Atribución por agregador sin confirmación primaria actual de oferta."
+    },
+    {
+      "candidate_id": "cyclone-motomark-marbella-secondary",
+      "province": "Málaga",
+      "trading_name": "Motomark / Recambios López",
+      "public_address": "Avenida Arias de Velasco, 10, 29601 Marbella, Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/cyclone",
+      "reason": "El agregador atribuye Cyclone al punto, pero la página corporativa de catálogo Cyclone no asocia oferta a esta sede."
+    }
+  ],
+  "outside_scope": [],
+  "limitations": [
+    "Se documentan cinco ubicaciones de venta en las cinco provincias prioritarias: Barcelona (1), Málaga (2), Cádiz (1) y Murcia (1).",
+    "No se confirma venta actual con fuente primaria en Alicante. Los candidatos respaldados solo por agregadores permanecen fuera del recuento.",
+    "ASBA Barcelona se autodeclara concesionario, distribuidor y servicio oficial Cyclone; Motosport Murcia se autodeclara concesionario oficial/exclusivo. No se ha obtenido confirmación individual del fabricante para ninguno.",
+    "Se cuenta una ubicación de servicio explícito en Barcelona por la autodeclaración de ASBA; no se atribuye servicio Cyclone específico a otros operadores por el mero hecho de ofrecer taller multimarca.",
+    "El localizador oficial Cyclone es dinámico y no expone fichas individualizadas en la captura; no se clasifica ningún punto como manufacturer_individually_listed.",
+    "El recuento es inventario mínimo documental, no censo nacional, stock disponible, ventas realizadas, matriculaciones ni cuota."
+  ],
+  "methodology": [
+    "Se ha consultado el catálogo oficial Cyclone Motor Ibérica, el localizador de concesionarios y la página de contacto que identifica a Multimoto Motor España, S.L. como responsable.",
+    "Se ha contrastado la distribución española y portuguesa con la publicación corporativa de Grupo Multimoto, que se identifica como distribuidor exclusivo.",
+    "Se han utilizado páginas corporativas de los operadores para confirmar oferta de modelos Cyclone y direcciones físicas; se separan oferta comercial y autodeclaración de oficialidad.",
+    "Los candidatos respaldados solo por agregadores no se suman; las sucursales no se cuentan si la oferta de marca no puede asociarse individualmente.",
+    "Fecha de corte documental: 13 de noviembre de 2026."
+  ]
+}
