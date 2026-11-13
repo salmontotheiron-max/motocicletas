@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Extracción individual de las entradas Yamaha del snapshot agregado de prioridades, sin modificar sus datos probatorios. Se incluyen las ubicaciones identificadas en la categoría oficial Motocicletas y Scooters. Las menciones de taller en una ficha de venta se conservan en notas y no se convierten en establecimientos de servicio independientes. Corte documental, no censo exhaustivo.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "Yamaha Motor Europe N.V., Sucursal en España",
+    "country_of_origin": "Japón",
+    "notes": "Denominación tomada del registro de fuentes primarias de la marca."
+  },
+  "manufacturer_locator": {
+    "url": "https://concesionarios.yamaha-motor.es/",
+    "status": "official_directory",
+    "classification": "Localizador oficial Yamaha España; el registro de fuentes advierte que pueden mezclarse categorías de otros productos Yamaha, por lo que el snapshot solo incluye fichas marcadas como Motocicletas y Scooters."
+  },
+  "counts": {
+    "physical_outlets_documented": 5,
+    "sales_points": 5,
+    "service_only_points": 0,
+    "sales_locations_also_listing_service": 2,
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Alicante": 1
+    },
+    "operator_groups": 5
+  },
+  "outlets": [
+    {
+      "outlet_id": "yamaha-motor-center-barcelona",
+      "trading_name": "Motor Center Barcelona",
+      "operator": "Motor Center / Comercial Skualo",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Còrsega, 521-523, 08024 Barcelona",
+      "outlet_role": "sales",
+      "evidence_url": "https://concesionarios.yamaha-motor.es/motor-center-barcelona/",
+      "evidence_type": "official_brand_dealer_page",
+      "observed_at": "2026-11-12",
+      "verification_status": "verified",
+      "operator_group_id": "motor-center",
+      "notes": "Página oficial Yamaha declara concesionario oficial exclusivo; venta y taller Yamaha en la misma ubicación."
+    },
+    {
+      "outlet_id": "yamaha-zona-cero-gava",
+      "trading_name": "Zona Cero",
+      "operator": "Zona Cero",
+      "province": "Barcelona",
+      "municipality": "Gavà",
+      "public_address": "Ctra. de Santa Creu de Calafell, 121, 08850 Gavà",
+      "outlet_role": "sales",
+      "evidence_url": "https://concesionarios.yamaha-motor.es/zona-cero-gava/?lang=es_ES",
+      "evidence_type": "official_brand_dealer_page",
+      "observed_at": "2026-11-12",
+      "verification_status": "verified",
+      "operator_group_id": "zona-cero",
+      "notes": "Página oficial Yamaha declara concesionario oficial; venta y taller."
+    },
+    {
+      "outlet_id": "yamaha-malaga-motocenter",
+      "trading_name": "Málaga MotoCenter",
+      "operator": "Málaga MotoCenter",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "C/ Cuevas Bajas, 35, 29004 Málaga",
+      "outlet_role": "sales",
+      "evidence_url": "https://concesionarios.yamaha-motor.es/rental-points/directorio/listing/malaga-motocenter/",
+      "evidence_type": "official_brand_locator_listing",
+      "observed_at": "2026-11-12",
+      "verification_status": "verified",
+      "operator_group_id": "malaga-motocenter",
+      "notes": "Listado oficial Yamaha en categoría Motocicletas y Scooters."
+    },
+    {
+      "outlet_id": "yamaha-motos-payan-cadiz",
+      "trading_name": "Motos Payan",
+      "operator": "Motos Payan",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "C/ Jimena de la Frontera, 4, 11011 Cádiz",
+      "outlet_role": "sales",
+      "evidence_url": "https://concesionarios.yamaha-motor.es/rental-points/directorio/listing/motos-payan/",
+      "evidence_type": "official_brand_locator_listing",
+      "observed_at": "2026-11-12",
+      "verification_status": "verified",
+      "operator_group_id": "motos-payan",
+      "notes": "Listado oficial Yamaha en categoría Motocicletas y Scooters."
+    },
+    {
+      "outlet_id": "yamaha-alicante-motor",
+      "trading_name": "Alicante Motor",
+      "operator": "Alicante Motor",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avda. Benito Pérez Galdós, 64, 03005 Alicante",
+      "outlet_role": "sales",
+      "evidence_url": "https://concesionarios.yamaha-motor.es/rental-points/directorio/listing/alicante-motor/",
+      "evidence_type": "official_brand_locator_listing",
+      "observed_at": "2026-11-12",
+      "verification_status": "verified",
+      "operator_group_id": "alicante-motor",
+      "notes": "Listado oficial Yamaha en categoría Motocicletas y Scooters; el localizador también lista eBike."
+    }
+  ],
+  "limitations": [
+    "Inventario extraído del snapshot agregado con fecha 2026-11-12; no constituye una nueva consulta en tiempo real del localizador.",
+    "El ámbito se limita a Barcelona, Málaga, Cádiz, Alicante y Murcia.",
+    "La ausencia de entradas en Murcia en este snapshot no demuestra ausencia de red comercial Yamaha.",
+    "Las menciones de taller en fichas de venta describen servicios en la misma ubicación y no se cuentan como puntos físicos independientes.",
+    "La selección se limita a fichas clasificadas como Motocicletas y Scooters; no se incorporan puntos de otras categorías de producto Yamaha.",
+    "El inventario no es un censo nacional exhaustivo ni acredita ventas efectivas."
+  ]
+}
