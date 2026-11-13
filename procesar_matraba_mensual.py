@@ -105,7 +105,7 @@ def select_latest_archives(input_dir, inventory_path=None):
 
 
 def transfer_period_from_name(path):
-    match = re.fullmatch(r"export_mensual_trf_(\\d{4})(\\d{2})_([0-9a-f]{64})\\.zip", path.name)
+    match = re.fullmatch(r"export_mensual_trf_(\d{4})(\\d{2})_([0-9a-f]{64})\.zip", path.name)
     if not match:
         return None
     return f"{match.group(1)}-{match.group(2)}"
