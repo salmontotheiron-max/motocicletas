@@ -116,6 +116,7 @@ def process_archive(path, period):
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
+    model_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     process_dates = []
@@ -138,6 +139,8 @@ def process_archive(path, period):
         vehicle_type = values[7]
         province_vehicle = values[19]
         province_registration = values[20]
+        brand_itv = values[3] or "(sin marca)"
+        model_itv = values[4] or "(sin modelo)"
 
         if vehicle_type not in TARGET_TYPE_CODES:
             excluded[vehicle_type or "(vacío)"] += 1
@@ -218,8 +221,24 @@ def process_archive(path, period):
                         reference_period, province_registration or "(vacío)",
                         province_vehicle or "(vacío)", vehicle_type
                     )] += 1
+                province_scope, province_code = (
+                    ("matriculacion", province_registration) if new_used == "N"
+                    else ("domicilio_vehiculo", province_vehicle)
+                )
+                model_counts[(
+                    reference_period, brand_itv, model_itv, vehicle_type,
+                    new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
+                    province_scope, province_code or "(vacío)"
+                )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
+            if operation == "2":
+                # COD_PROVINCIA_VEH es el domicilio registral, no la provincia de venta.
+                model_counts[(
+                    transaction_date.strftime("%Y-%m"), brand_itv, model_itv,
+                    vehicle_type, new_used or "(vacío)", "transferencia",
+                    "domicilio_vehiculo", province_vehicle or "(vacío)"
+                )] += 1
 
     digest = hashlib.sha256(payload).hexdigest()
     expected_digest = path.stem.rsplit("_", 1)[-1]
@@ -233,7 +252,7 @@ def process_archive(path, period):
         "registros": record_count,
         "fec_proceso_min": min(process_dates) if process_dates else None,
         "fec_proceso_max": max(process_dates) if process_dates else None,
-    }, counts, provincial_counts, provincial_cross_counts, opcounts, excluded, audit_rows
+    }, counts, provincial_counts, provincial_cross_counts, model_counts, opcounts, excluded, audit_rows
 
 
 def main():
@@ -250,16 +269,18 @@ def main():
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
+    model_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     manifest = []
     audit_rows = []
     for period, archive in selected.items():
-        info, month_counts, month_provincial, month_cross, month_ops, month_excluded, month_audit = process_archive(archive, period)
+        info, month_counts, month_provincial, month_cross, month_models, month_ops, month_excluded, month_audit = process_archive(archive, period)
         manifest.append(info)
         counts.update(month_counts)
         provincial_counts.update(month_provincial)
         provincial_cross_counts.update(month_cross)
+        model_counts.update(month_models)
         opcounts.update(month_ops)
         excluded.update(month_excluded)
         audit_rows.extend(month_audit)
@@ -295,6 +316,22 @@ def main():
                 vehicle_code,
                 PROVINCES.get(vehicle_code, "Código no catalogado") if vehicle_code != "(vacío)" else "Código vacío",
                 vehicle_type, value,
+            ])
+
+    with (output / "matriculaciones_marca_modelo_segmento.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow([
+            "periodo", "marca", "modelo", "COD_TIPO", "nuevo_usado",
+            "tipo_registro", "ambito_provincial", "COD_PROVINCIA", "provincia",
+            "recuento",
+        ])
+        for key, value in sorted(model_counts.items()):
+            period, brand, model, vehicle_type, new_used, record_type, scope, province_code = key
+            writer.writerow([
+                period, brand, model, vehicle_type, new_used, record_type,
+                scope, province_code,
+                PROVINCES.get(province_code, "Código no catalogado") if province_code != "(vacío)" else "Código vacío",
+                value,
             ])
 
     with (output / "tipo_operacion.csv").open("w", newline="", encoding="utf-8-sig") as handle:
@@ -361,6 +398,8 @@ def main():
         "periodos_procesados": len(selected),
         "registros_matriculaciones": sum(counts.values()),
         "registros_operaciones": sum(opcounts.values()),
+        "registros_desglose_marca_modelo": sum(model_counts.values()),
+        "modelos_observados": len({(key[1], key[2]) for key in model_counts}),
         "filtro_cod_tipo": sorted(TARGET_TYPE_CODES),
         "registros_excluidos_por_cod_tipo": sum(excluded.values()),
         "exclusiones_por_codigo": dict(sorted(excluded.items())),
