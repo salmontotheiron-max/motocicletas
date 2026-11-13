@@ -62,7 +62,18 @@
       "brand_id": "brand-zxmoto-es",
       "canonical_name": "ZXMOTO",
       "manufacturer_id": null,
-      "market_status": "recent_entry"
+      "market_status": "established",
+      "discovery_basis": [
+        "source-zxmoto-es-dealers",
+        "source-zxmoto-es-legal",
+        "source-zxmoto-es-company",
+        "source-zxmoto-global-about",
+        "source-zxmoto-asba-dealer-site",
+        "source-zxmoto-motos-garrido-products",
+        "source-zxmoto-motos-garrido-official-appointment",
+        "source-zxmoto-motosan-expansion"
+      ],
+      "notes": "Actividad comercial actual en España acreditada por la web oficial ZXMOTO, el distribuidor designado DESMOTRÓN, S.L.U. y la comercialización efectiva de modelos. La auditoría documental de cinco provincias prioritarias identifica dos puntos físicos de venta: ZXMOTO ASBA en Barcelona y Motos Garrido en Alhaurín de la Torre (Málaga). ASBA se autodeclara franquicia oficial y publica prueba, reserva y mantenimiento; Motos Garrido comercializa la 500RR y fue identificado como concesionario oficial por prensa local. No se ha podido contrastar individualmente ninguno de los dos puntos con una ficha estática del localizador del fabricante, que sigue mostrando «Próximas aperturas». Las aperturas anunciadas para Cádiz y Alicante carecen de operador/dirección individual verificable y no se computan. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-aprilia",
@@ -919,7 +930,7 @@
       "source_id": "source-zxmoto-es-dealers",
       "source_role": "primary_monitoring",
       "brand_id": "brand-zxmoto-es",
-      "publisher": "Desmotrón, S.L.U. / ZXMOTO España",
+      "publisher": "DESMOTRÓN, S.L.U. / ZXMOTO España",
       "source_type": "official_directory",
       "url": "https://zxmoto.es/puntos-de-venta/",
       "title": "Puntos de venta ZXMOTO España",
@@ -931,9 +942,9 @@
       ],
       "capture_mode": "http_html",
       "discovery_status": "locator_present_no_entries_yet",
-      "last_verified_at": "2026-11-12",
+      "last_verified_at": "2026-11-13",
       "capture_interval_days": 7,
-      "notes": "Página oficial con texto Próximas aperturas y localizador, sin establecimientos identificables en la vista consultada. No inferir ausencia de red ni cierres."
+      "notes": "El localizador oficial presenta el encabezado «Próximas aperturas», buscador/mapa y controles de ubicación, pero no expone fichas de establecimientos en la captura HTML. No se interpreta como directorio vacío ni como ausencia de red."
     },
     {
       "source_id": "source-anesdor-press-releases-es",
@@ -1036,9 +1047,9 @@
       ],
       "capture_mode": "http_html",
       "discovery_status": "directory_content_visible",
-      "last_verified_at": "2026-11-12",
+      "last_verified_at": "2026-11-13",
       "capture_interval_days": 7,
-      "notes": "Página propia que declara franquicia ZXMOTO y vinculación con Comercial Impala, S.A.; indica Carrer de Calvet 51. Evidencia autodeclarada del establecimiento, pendiente de contraste oficial."
+      "notes": "Página propia declara que ZXMOTO ASBA Barcelona es la franquicia de la marca en la ciudad, identifica a Comercial Impala, S.A. y confirma Carrer de Calvet 51. Declara exposición, prueba y mantenimiento; no se ha contrastado la ficha individual con el localizador del fabricante."
     },
     {
       "source_id": "source-zontes-barcelona-dealer-site",
@@ -8545,6 +8556,135 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Noticia sectorial del 29-10-2026 informa de disponibilidad de unidades 703T en las instalaciones de Jerez y Chiclana. Se utiliza como corroboración secundaria de oferta, no como prueba de autorización contractual."
+    },
+    {
+      "source_id": "source-zxmoto-es-legal",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zxmoto-es",
+      "publisher": "DESMOTRÓN, S.L.U. / ZXMOTO España",
+      "source_type": "company_page",
+      "url": "https://zxmoto.es/aviso-legal/",
+      "title": "Aviso legal ZXMOTO España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El aviso legal identifica a DESMOTRÓN, S.L.U., NIF B96701933, como titular de zxmoto.es y facilita domicilio en Calle Noria 11, Albuixech (Valencia)."
+    },
+    {
+      "source_id": "source-zxmoto-es-company",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zxmoto-es",
+      "publisher": "ZXMOTO España / DESMOTRÓN, S.L.U.",
+      "source_type": "company_page",
+      "url": "https://zxmoto.es/sobre-zxmoto/",
+      "title": "Sobre ZXMOTO y su implantación en España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa oficial que identifica a Zhang Xue como fundador de ZXMOTO y describe el papel de DESMOTRÓN y su trayectoria en la distribución de Ducati en España entre 1998 y 2023."
+    },
+    {
+      "source_id": "source-zxmoto-global-about",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zxmoto-es",
+      "publisher": "ZXMOTO",
+      "source_type": "company_page",
+      "url": "https://zxmoto.me/pages/about",
+      "title": "About ZXMOTO - sitio corporativo internacional",
+      "reliability_class": "primary_official",
+      "scope": "Global",
+      "directory_scope": [],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Sitio corporativo internacional identifica a Zhang Xue como fundador y sitúa la fundación de ZXMOTO en 2024. No se extrae de esta página una denominación societaria registral completa."
+    },
+    {
+      "source_id": "source-zxmoto-motos-garrido-products",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MOTOS GARRIDO, S.L.",
+      "source_type": "product_catalog",
+      "url": "https://www.motosgarrido.com/nl/19027-500rr",
+      "title": "Catálogo de ZXMOTO 500RR - Motos Garrido",
+      "reliability_class": "primary_business",
+      "scope": "Alhaurín de la Torre, Málaga, Spain",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Catálogo propio del operador publica unidades nuevas ZXMOTO 500RR con precio de 6.592 euros y recoge la dirección de la tienda en Calle Reserva 51, Alhaurín de la Torre."
+    },
+    {
+      "source_id": "source-zxmoto-motos-garrido-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MOTOS GARRIDO, S.L.",
+      "source_type": "company_page",
+      "url": "https://www.motosgarrido.com/content/13-nuestras-tiendas-y-horarios",
+      "title": "Tiendas y horarios - Motos Garrido",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página propia identifica la tienda y taller de Alhaurín de la Torre y distingue sus instalaciones de otras ubicaciones del operador. Se usa para corroborar dirección y actividad general, no para atribuir servicio ZXMOTO autorizado."
+    },
+    {
+      "source_id": "source-zxmoto-motos-garrido-official-appointment",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "EL ESPAÑOL - Málaga Hoy",
+      "source_type": "press",
+      "url": "https://www.elespanol.com/malaga/economia/motor/20260921/motos-garrido-distribuira-nueva-marca-zxmoto/1003744390603_0.html",
+      "title": "Motos Garrido distribuirá la nueva marca ZXMOTO",
+      "reliability_class": "secondary_reputable",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Noticia local publicada el 21-09-2026 que identifica a Motos Garrido como concesionario oficial ZXMOTO y documenta el nombramiento. Se conserva como evidencia secundaria; no sustituye una ficha del localizador oficial."
+    },
+    {
+      "source_id": "source-zxmoto-motosan-expansion",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MOTOSAN",
+      "source_type": "press",
+      "url": "https://www.motosan.es/motos/zxmoto-espana-precios-modelos/",
+      "title": "ZXMoto revela precios y primeras ubicaciones de su red en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Artículo del 30-06-2026 anuncia ciudades de primera implantación y aperturas en Málaga, Cádiz y Alicante. No aporta nombres ni direcciones individualizadas para Cádiz o Alicante; se usa como pista de mercado, no como prueba de establecimientos operativos."
     }
   ]
 }
