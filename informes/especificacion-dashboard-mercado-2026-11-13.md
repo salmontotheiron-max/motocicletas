@@ -84,3 +84,22 @@ No mezclar motocicletas y ciclomotores en rankings sin etiqueta.
 3. Mantener explícita la limitación del usado: transferencia no equivale automáticamente a venta localizada.
 4. Definir la siguiente extracción de microdatos para marca/modelo y segmentación provincial, sin publicar resultados hasta validar los campos.
 5. Mantener histórico y trazabilidad; no borrar auditorías de establecimientos ya realizadas.
+
+
+## Desglose por modelo: extracción técnica incorporada
+
+El diseño oficial de MATRABA identifica `MARCA_ITV` (campo 4, CHAR(30)) y `MODELO_ITV` (campo 5, CHAR(22)). El procesador mensual extrae ambos campos y genera `matriculaciones_marca_modelo_segmento.csv`, agregado por periodo, marca, modelo, código de tipo, tipo de registro y provincia de referencia. No se exportan bastidores ni identificadores de vehículo.
+
+Tipos de registro separados:
+- `matriculacion_nueva`: CLAVE_TRAMITE=1, IND_NUEVO_USADO=N; provincia de matriculación.
+- `matriculacion_usada`: CLAVE_TRAMITE=1, IND_NUEVO_USADO=U; domicilio registral del vehículo.
+- `transferencia`: CLAVE_TRAMITE=2; domicilio registral del vehículo.
+
+El agregado de transferencias mide cambios de titularidad, no compraventas verificadas. En el diseño oficial de transferencias se documentan COD_PROVINCIA_VEH (provincia donde está domiciliado el vehículo) y COD_PROVINCIA_MAT (provincia donde fue matriculado originalmente), pero no una variable que identifique la provincia física de venta o la ubicación del vendedor. Por tanto, la provincia de venta no puede derivarse de esos campos. El domicilio posterior puede usarse como proxy del destino registral, nunca como provincia de compraventa.
+
+Fuentes de diseño:
+- DGT, [Diseño de registro de Matriculaciones MATRABA](https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/matraba/MATRICULACIONES_MATRABA.pdf).
+- DGT, [Diseño de registro de Transferencias MATRABA](https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/matraba/TRANSFERENCIAS_MATRABA.pdf).
+- DGT, [Microdatos mensuales de Transferencias](https://www.dgt.es/menusecundario/dgt-en-cifras/dgt-en-cifras-resultados/dgt-en-cifras-detalle/Microdatos-de-Transferencias-de-Vehiculos-mensual/).
+
+El dashboard separa por tanto el volumen de matriculaciones nuevas, matriculaciones usadas y transferencias; no suma los tres como si fueran ventas. Los modelos se presentan con la denominación literal declarada en MATRABA, sin fusionar variantes de escritura automáticamente.
