@@ -62,6 +62,12 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Volumen</th><th>Peso</th><th>Segmentos</th></tr></thead><tbody id="brandRanking"></tbody></table></div>
     <p class="note">El volumen procede de matriculaciones nuevas (operación 1), no de facturación ni ventas netas del fabricante. Las marcas candidatas sin conciliación con el inventario se mantienen identificadas como pendientes de revisión. El detalle por modelo todavía no está publicado en los agregados.</p>
   </section>
+  <section class="panel">
+    <h2>Matriculación nueva → domicilio registral del vehículo</h2>
+    <p class="small">Cruce DGT por provincia de matriculación y provincia del domicilio registrado del vehículo. Se utiliza como proxy territorial de circulación, no como geolocalización del uso habitual.</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Provincia de matriculación</th><th>Mismo domicilio</th><th>Otro domicilio</th><th>Domicilios conocidos</th><th>Ratio mismo</th><th>Ratio distinto</th></tr></thead><tbody id="flowTable"></tbody></table></div>
+    <p class="note">Ratios calculados sobre registros con provincia de domicilio informada. Los domicilios no informados quedan fuera del denominador.</p>
+  </section>
   <section class="grid">
     <article class="panel">
       <h2>Evolución mensual</h2>
@@ -105,13 +111,14 @@ const FILES = {
   periods: "periodos.json",
   monthly: "matriculaciones_nuevos_usados_por_tipo.csv",
   brands: "marcas_candidatas_revision.json",
+  cross: "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
   provincial: "matriculaciones_motocicletas_por_provincia.csv",
   ranking: "ranking_motocicletas_provincia.csv",
   intensity: "indicadores_intensidad_territorial.csv"
 };
 const fmt = n => new Intl.NumberFormat("es-ES").format(n);
 const dec = (n,d=2) => Number(n).toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
-const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[]};
+const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[], cross:[]};
 const el = id => document.getElementById(id);
 function parseCSV(text){
   const rows=[];let row=[],field="",quoted=false;
@@ -135,12 +142,12 @@ async function loadText(path){
 }
 async function loadJSON(path){return JSON.parse(await loadText(path));}
 async function loadData(){
-  const [manifest,periods,monthly,provincial,ranking,intensity,brands]=await Promise.all([
-    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity),loadJSON("marcas_candidatas_revision.json")
+  const [manifest,periods,monthly,provincial,ranking,intensity,brands,cross]=await Promise.all([
+    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity),loadJSON(FILES.brands),loadText(FILES.cross)
   ]);
   state.manifest=manifest;state.periods=periods.periodos_disponibles||[];
   state.monthly=parseCSV(monthly);state.provincial=parseCSV(provincial);
-  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];
+  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];state.cross=parseCSV(cross);
   if(!state.periods.length) throw new Error("El inventario no contiene periodos disponibles.");
   populateFilters();render();renderBrands();
   const files=(manifest.archivos||[]).length;
@@ -177,7 +184,7 @@ function render(){
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);
+  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
@@ -226,6 +233,27 @@ function renderIntensity(f){
   el("intensity").innerHTML=rows.map(r=>'<tr><td>'+r.provincia+'</td><td>'+fmt(Number(r.matriculaciones_nuevas))+'</td><td>'+dec(Number(r.matriculaciones_por_1000_habitantes),2)+'</td><td>'+dec(Number(r.matriculaciones_sobre_parque_pct),2)+'%</td></tr>').join("")||'<tr><td colspan="4">Sin datos</td></tr>';
   const months=state.intensity[0]?.periodos?.split("|")||[];
   el("intensityNote").textContent="Indicadores fijos del acumulado "+(months[0]||"")+" a "+(months[months.length-1]||"")+". No cambian al seleccionar un mes ni se recalculan por tipo 50/51.";
+}
+function renderFlows(f){
+  const groups=new Map();
+  state.cross.filter(r=>(f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
+    (f.province==="all"||r.provincia_matriculacion===f.province)&&
+    r.provincia_matriculacion&&r.provincia_domicilio_vehiculo&&
+    r.provincia_matriculacion!=="(vacío)"&&r.provincia_domicilio_vehiculo!=="(vacío)")
+  .forEach(r=>{
+    const origin=r.provincia_matriculacion;
+    const g=groups.get(origin)||{same:0,other:0,known:0};
+    const n=Number(r.recuento)||0;
+    g.known+=n;
+    if(r.provincia_matriculacion===r.provincia_domicilio_vehiculo)g.same+=n;
+    else g.other+=n;
+    groups.set(origin,g);
+  });
+  const rows=[...groups].map(([province,g])=>({province,...g})).sort((a,b)=>b.known-a.known);
+  el("flowTable").innerHTML=rows.map(r=>{
+    const local=r.known?r.same/r.known*100:0,external=r.known?r.other/r.known*100:0;
+    return "<tr><td>"+escapeHTML(r.province)+"</td><td>"+fmt(r.same)+"</td><td>"+fmt(r.other)+"</td><td>"+fmt(r.known)+"</td><td>"+dec(local,2)+"%</td><td>"+dec(external,2)+"%</td></tr>";
+  }).join("")||"<tr><td colspan='6'>Sin registros con provincias de origen y domicilio conocidas.</td></tr>";
 }
 function renderBrands(){
   const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
