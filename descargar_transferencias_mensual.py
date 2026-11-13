@@ -33,6 +33,21 @@ def initial_months(today=None):
     return months
 
 
+def months_to_check(inventory_path, today=None):
+    today = today or datetime.now(ZoneInfo("Europe/Madrid")).date()
+    if not Path(inventory_path).exists():
+        return initial_months(today)
+    data = json.loads(Path(inventory_path).read_text(encoding="utf-8"))
+    validated = {
+        item.get("periodo")
+        for execution in data.get("ejecuciones", [])
+        for item in execution.get("capturas", [])
+        if item.get("estado") == "descargado_validado"
+    }
+    pending = [month for month in initial_months(today) if month not in validated]
+    return sorted(set(pending + month_pair(today)))
+
+
 def download_month(month, output_dir, opener=urlopen, retries=2, pause=1):
     url = transfer_url(month)
     target_dir = Path(output_dir) / month
@@ -82,12 +97,7 @@ def main():
     parser.add_argument("--inventory-file", default="public/data/capturas_transferencias_mensuales.json")
     args = parser.parse_args()
     inventory_path = Path(args.inventory_file)
-    if args.month:
-        months = args.month
-    elif inventory_path.exists():
-        months = month_pair()
-    else:
-        months = initial_months()
+    months = args.month or months_to_check(inventory_path)
     results = [download_month(month, args.output_dir) for month in months]
     inventory_path.parent.mkdir(parents=True, exist_ok=True)
     captured_at = datetime.now(timezone.utc).isoformat()
