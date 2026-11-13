@@ -48,7 +48,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   </section>
   <section class="cards" aria-label="Indicadores principales">
     <article class="card"><div class="label">Matriculaciones nuevas</div><div class="value" id="newTotal">—</div><div class="sub" id="newScope">Provincia de matriculación</div></article>
-    <article class="card"><div class="label">Cambios de titularidad usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
+    <article class="card"><div class="label">Matriculaciones de usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
     <article class="card"><div class="label">Peso de la provincia</div><div class="value" id="provinceShare">—</div><div class="sub">Sobre las matriculaciones nuevas nacionales</div></article>
     <article class="card"><div class="label">Periodos con datos</div><div class="value" id="periodCount">—</div><div class="sub" id="cutoff">Según inventario publicado</div></article>
   </section>
@@ -96,7 +96,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="panel">
     <h2>Datos, fuente y metodología</h2>
     <p><strong>Fuente primaria:</strong> microdatos mensuales DGT MATRABA, archivados y procesados en el <a href="https://github.com/salmontotheiron-max/motocicletas" target="_blank" rel="noopener">repositorio del observatorio</a>. Los datos mostrados proceden exclusivamente de los agregados publicados en <code>public/data</code>.</p>
-    <p><strong>Universo:</strong> códigos DGT 50 (motocicleta de dos ruedas sin sidecar) y 51 (motocicleta con sidecar). La serie de usados representa registros de cambio de titularidad, no todas las compraventas.</p>
+    <p><strong>Universo:</strong> códigos DGT 50 (motocicleta de dos ruedas sin sidecar) y 51 (motocicleta con sidecar). La serie de usados representa matriculaciones de vehículos clasificados como usados (NUEVO_USADO=U) en la operación de matriculación; no representa transferencias ni todas las compraventas.</p>
     <p><strong>Geografía:</strong> las nuevas se atribuyen a la provincia de matriculación. Los cambios de titularidad usados se atribuyen a la provincia del domicilio registral del vehículo. No son magnitudes territorialmente equivalentes.</p>
     <p><strong>Interpretación:</strong> el domicilio registral no demuestra residencia efectiva, lugar de compra, concesionario, entrega ni uso habitual. Las intensidades por población y parque son indicadores descriptivos; no son cuotas comerciales ni tasas de compra de residentes.</p>
     <p class="small" id="manifestInfo">El manifiesto de publicación identifica las capturas fuente y sus hashes SHA-256.</p>
