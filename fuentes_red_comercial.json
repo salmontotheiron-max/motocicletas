@@ -462,13 +462,22 @@
       "brand_id": "brand-mh",
       "canonical_name": "MH",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-mh-official-site",
+        "source-mh-official-locator",
+        "source-mh-renania-barcelona",
+        "source-mh-motoline-jerez",
+        "source-mh-motosprint-cadiz",
+        "source-mh-jjchorro-alicante",
+        "source-mh-belmonte-murcia",
+        "source-mh-indalmar-service-malaga",
+        "source-mh-dealer-aggregator"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de MH Motorhispania acreditada por la web corporativa de la marca, su gama actual y operadores con oferta publicada en Barcelona, Cádiz, Alicante y Murcia. La auditoría de las cinco provincias prioritarias confirma cinco ubicaciones de venta: Barcelona (1), Cádiz (2), Alicante (1) y Murcia (1). Se identifica además un punto de servicio/taller MH Motorcycles en Málaga, sin computarlo como venta. El localizador oficial existe, pero su contenido es dinámico y la captura consultada no individualiza establecimientos; por ello no se afirma que los puntos comerciales estén listados individualmente por el fabricante. La oficialidad se mantiene como autodeclaración de los operadores cuando así se declara. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-morbidelli",
@@ -5093,6 +5102,188 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 180,
       "notes": "Reportaje de julio de 2024 sobre el inicio de la actividad de Moteo Motor España para importación, distribución y posventa de Lambretta y FB Mondial. Se usa como contexto secundario, no para atribuir una razón social exacta."
+    },
+    {
+      "source_id": "source-mh-official-site",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-mh",
+      "publisher": "MH Motorhispania",
+      "source_type": "company_page",
+      "url": "https://www.mhmotorcycles.com/",
+      "title": "MH Motorhispania — gama actual de motocicletas y scooters",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "brand_activity",
+        "current_model_range"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Web corporativa de la marca española con gama vigente de scooters y motocicletas, catálogo y enlace al localizador de distribuidores. Publica modelos como VR10, VRT, VIRO 350, TRAY, DUXTER, XRT y RYX."
+    },
+    {
+      "source_id": "source-mh-official-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-mh",
+      "publisher": "MH Motorhispania",
+      "source_type": "official_directory",
+      "url": "https://www.mhmotorcycles.com/localizar-distribuidores/",
+      "title": "MH Motorhispania — localizador oficial de puntos de venta y proveedores de servicio",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página oficial presenta búsqueda por localidad/dirección/código postal y un módulo separado para proveedores de servicio. La captura estática no devuelve establecimientos (contador inicial 0); no se interpreta como ausencia de red. El localizador requiere interacción/ubicación para recuperar resultados."
+    },
+    {
+      "source_id": "source-mh-renania-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Renania Trust, S.L.",
+      "source_type": "company_page",
+      "url": "https://www.renaniatrustsl.com/",
+      "title": "Renania Trust — catálogo de marcas, incluido MH Motorhispania, y taller en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Sant Cugat del Vallès, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa incluye MH Motorhispania entre las marcas de su catálogo, declara venta de motocicletas, recambios originales y taller. Publica Pol. Ind. Can Calopa, C/ Segre 2, nave 12, 08174 Sant Cugat del Vallès."
+    },
+    {
+      "source_id": "source-mh-motoline-jerez",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motoline Jerez",
+      "source_type": "company_page",
+      "url": "https://www.motolinejerez.com/",
+      "title": "Motoline Jerez — catálogo actual de modelos MH Motorhispania 2026",
+      "reliability_class": "primary_business",
+      "scope": "Jerez de la Frontera, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web del operador publica como motos nuevas modelos MH XRT y TRAY año 2026 y MH Raptor 50, además de tienda y taller. La dirección C/ Platino 17, 11405 Jerez aparece en el directorio secundario; se mantiene pendiente de confirmación en la página corporativa consultada."
+    },
+    {
+      "source_id": "source-mh-motosprint-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motosprint",
+      "source_type": "company_page",
+      "url": "https://motosprint.net/",
+      "title": "Motosprint — concesionario oficial Motor Hispania en San Fernando",
+      "reliability_class": "primary_business",
+      "scope": "San Fernando, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web del operador se declara concesionario oficial Motor Hispania, publica modelos de la marca y el nuevo modelo TRAY, y ofrece tienda multimarca/taller. Dirección: Paseo Joly Velasco 5, 11100 San Fernando."
+    },
+    {
+      "source_id": "source-mh-jjchorro-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "JJ Chorro",
+      "source_type": "company_page",
+      "url": "https://jjchorro.com/",
+      "title": "JJ Chorro — concesionario oficial MH y gama actual en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa se declara concesionario oficial MH y muestra modelos MH XRT, Raptor y Tray Touring. Identifica exposición/ventas en C/ Perseo 6, 03007 Alicante y servicio técnico/taller en C/ La Vega 4, 03007 Alicante. La oficialidad se registra como autodeclaración del operador."
+    },
+    {
+      "source_id": "source-mh-belmonte-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Francisco Belmonte, S.A.",
+      "source_type": "company_page",
+      "url": "https://franciscobelmonte.com/quienes-somos/",
+      "title": "Francisco Belmonte — MotorHispania en cartera oficial y taller en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La empresa se autodeclara concesionario oficial y exclusivo de MotorHispania para la Región de Murcia y publica taller especializado, recambios y revisiones. Dirección: C/ Isla Cristina 12, 30007 Murcia. No se ha contrastado autorización individual con el fabricante."
+    },
+    {
+      "source_id": "source-mh-indalmar-service-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Playcar / Indalmar Motor",
+      "source_type": "company_page",
+      "url": "https://www.automovilesplaycar.com/contacto",
+      "title": "Indalmar Motor Málaga — servicio oficial MH Motorcycles",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa de Grupo Playcar identifica una ubicación separada de Indalmar Motor como taller/servicio oficial de MH Motorcycles en Av. José Ortega y Gasset 192, Málaga. No se atribuye venta de motocicletas MH a esta dirección."
+    },
+    {
+      "source_id": "source-mh-dealer-aggregator",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/motor-hispania",
+      "title": "Directorio secundario de establecimientos MH Motor Hispania por provincias",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador lista 80 entradas nacionales y candidatos en las cinco provincias prioritarias. Se usa para descubrir y contrastar operadores; no sustituye fuentes corporativas ni acredita por sí solo actividad actual o autorización contractual."
     }
   ]
 }
