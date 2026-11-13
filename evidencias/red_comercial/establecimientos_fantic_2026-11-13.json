@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan establecimientos cuando una ficha individual del directorio oficial de Fantic identifica el operador y su dirección en España. Se contrasta la actividad comercial actual mediante páginas corporativas de los operadores. Las categorías de motocicletas del directorio no se interpretan como evidencia de taller o servicio técnico.",
+  "verification_status_policy": {
+    "manufacturer_individually_listed": "La ficha individual del dominio oficial Fantic identifica el operador, dirección y categoría motocicletas.",
+    "accepted_commercial_presence": "Página corporativa actual del operador publica catálogo/oferta Fantic y permite asociarla a la sede.",
+    "secondary_candidate": "Un agregador atribuye Fantic al operador, pero no se dispone de ficha oficial individual o evidencia primaria suficiente; no se cuenta."
+  },
+  "outlet_count": 6,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 6,
+    "service_locations": 0,
+    "same_site_sales_and_service": 0,
+    "service_only_locations": 0,
+    "manufacturer_individually_listed": 6,
+    "operator_self_declared_official_sales": 0,
+    "accepted_commercial_presence_sales": 0,
+    "secondary_only_candidates": 3
+  },
+  "manufacturer": {
+    "legal_name": "Fantic Motor S.p.A.",
+    "registered_office": "Via Tarantelli, 7, 31030 Dosson di Casier (TV), Italia",
+    "operational_headquarters": "Via Leonardo da Vinci 11, Santa Maria di Sala (VE), Italia",
+    "evidence_url": "https://www.fantic.com/contatti/Dealer-Locator.cshtml?lang=ES",
+    "notes": "La web corporativa identifica a Fantic Motor S.p.A. y sus sedes italianas. No se ha identificado una entidad importadora española separada. El localizador oficial distingue visualmente concesionario e importador, pero no se ha documentado una ficha española individual de importador."
+  },
+  "official_source": {
+    "urls": [
+      "https://www.fantic.com/Dealer-Locator.cshtml?lang=ES",
+      "https://www.fantic.com/contatti/Dealer-Locator.cshtml?lang=ES"
+    ],
+    "status": "directory_content_visible",
+    "notes": "El localizador oficial permite seleccionar país y categorías de concesionario/importador. Las seis fichas individuales verificadas se citan por separado; todas identifican la categoría motocicletas."
+  },
+  "outlets": [
+    {
+      "outlet_id": "fantic-motissimo-barcelona",
+      "brand": "Fantic",
+      "trading_name": "Motissimo Team, S.L.",
+      "operator": "Motissimo Team, S.L.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Comandant Benítez, 23, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.fantic.com/DettaglioDealer.cshtml?country=55&id=11909&lang=ES",
+      "supporting_urls": [
+        "https://motissimo.es/motos-fantic/"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual Fantic Motor identifica al operador, dirección y categoría Motos. La web del operador publica catálogo actual con precios y se autodenomina concesionario oficial."
+    },
+    {
+      "outlet_id": "fantic-motissimo-vilanova",
+      "brand": "Fantic",
+      "trading_name": "Motissimo Team, S.L. Vilanova",
+      "operator": "Motissimo Team, S.L.",
+      "province": "Barcelona",
+      "municipality": "Vilanova i la Geltrú",
+      "public_address": "Rambla de l’Exposició, 51, 08800 Vilanova i la Geltrú, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.fantic.com/DettaglioDealer.cshtml?country=55&id=12010&lang=ES",
+      "supporting_urls": [
+        "https://motissimo.es/motos-fantic/"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual del fabricante con categoría Motos. Se cuenta como ubicación física separada de Barcelona capital."
+    },
+    {
+      "outlet_id": "fantic-demoto-malaga",
+      "brand": "Fantic",
+      "trading_name": "Repuestos y Suministros Juan José Escamilla (Demoto)",
+      "operator": "Repuestos y Suministros Juan José Escamilla",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Alfredo Corrochano, 57, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.fantic.com/DettaglioDealer.cshtml?country=40&id=12013&lang=ES",
+      "supporting_urls": [
+        "https://demoto.es/fantic.html"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial Fantic con categoría Motos; catálogo corporativo actual publica modelos y precios Fantic y describe a Demoto como concesionario oficial de la provincia de Málaga. La web corporativa indica números 57 y 65; el fabricante registra el 57."
+    },
+    {
+      "outlet_id": "fantic-motodest-barbate",
+      "brand": "Fantic",
+      "trading_name": "Motodest",
+      "operator": "Motodest",
+      "province": "Cádiz",
+      "municipality": "Barbate",
+      "public_address": "Avenida del Mar, 114, 11160 Barbate, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.fantic.com/DettaglioDealer.cshtml?country=40&id=12039&lang=ES",
+      "supporting_urls": [
+        "https://motodest.es/concesionario-oficial-fantic/"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial Fantic con categoría Motos y Moto Offroad Racing; página corporativa dedicada a Fantic y dirección coincidente."
+    },
+    {
+      "outlet_id": "fantic-alvaro-lozano-petrer",
+      "brand": "Fantic",
+      "trading_name": "Álvaro Lozano Rico / Lozano MX Center",
+      "operator": "Álvaro Lozano Rico",
+      "province": "Alicante",
+      "municipality": "Petrer",
+      "public_address": "Carrer Mestre Albéniz, 6, 03610 Petrer, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.fantic.com/DettaglioDealer.cshtml?country=10&id=11110&lang=ES",
+      "supporting_urls": [
+        "https://lozanomxcenter.es/ecommerce/catalogue/categories/fantic-caballero",
+        "https://lozanomxcenter.es/"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial Fantic registra C/ Mestre Albéniz 6. El operador mantiene catálogo actual Fantic y se autodenomina concesionario oficial, pero su web de 2026 publica otra dirección: C/ Norte 15 Bajo Iz, Petrer. No se cuenta una segunda sede; la discrepancia queda pendiente de aclaración."
+    },
+    {
+      "outlet_id": "fantic-francisco-belmonte-murcia",
+      "brand": "Fantic",
+      "trading_name": "Francisco Belmonte, S.A.",
+      "operator": "Francisco Belmonte, S.A.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina, 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://fantic.com/es-es/rivenditore/fantic-motor/francisco-belmonte-s-a-_12682?country=211&lang=ES&sl=ES",
+      "supporting_urls": [
+        "https://profesional.franciscobelmonte.com/fantic-murcia/"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial Fantic con categoría Motos, Moto Offroad Racing y eMobility; catálogo corporativo actual publica numerosos modelos Fantic y dirección C/ Isla Cristina 12, 30007 Murcia. La ficha oficial muestra 3007, aparentemente con un cero omitido."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "fantic-moto-chiclana-gp",
+      "province": "Cádiz",
+      "trading_name": "Moto Chiclana GP MX, S.L.",
+      "public_address": "Avenida de los Descubrimientos, 43, 11130 Chiclana de la Frontera, Cádiz, España",
+      "source_url": "https://concesionariosdemotos.com/fantic",
+      "reason": "Agregador lo identifica con Fantic, pero no se localizó ficha individual del fabricante ni página primaria actual del operador que confirme oferta Fantic."
+    },
+    {
+      "candidate_id": "fantic-mx-zambrana",
+      "province": "Málaga",
+      "trading_name": "MX Zambrana",
+      "public_address": "Polígono Industrial La Fuente, Calle Los Olivos, Nave 11, 29532 Mollina, Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/fantic",
+      "reason": "Aparece en agregador con Fantic, pero no se localizó ficha individual oficial ni oferta primaria actual."
+    },
+    {
+      "candidate_id": "fantic-corbalan-racing",
+      "province": "Murcia",
+      "trading_name": "Corbalán Racing",
+      "public_address": "Calle Cuesta del Olivar, 60, 30430 Cehegín, Murcia, España",
+      "source_url": "https://concesionariosdemotos.com/fantic",
+      "reason": "Aparece en agregador con Fantic, sin ficha individual del fabricante o catálogo primario actual verificado."
+    }
+  ],
+  "limitations": [
+    "El recuento es de seis ubicaciones de venta con ficha individual en el directorio oficial Fantic, no un censo nacional exhaustivo.",
+    "El localizador oficial distingue concesionarios e importadores, pero la captura disponible no permite identificar una sociedad importadora española separada. Fantic Motor S.p.A. figura como entidad corporativa fabricante con sede en Italia.",
+    "Las fichas individuales consultadas enumeran categorías de producto, no un servicio de taller por establecimiento; por eso no se contabilizan puntos de servicio.",
+    "En Petrer, la ficha oficial Fantic indica C/ Mestre Albéniz 6 y la web actual del operador indica C/ Norte 15 Bajo Iz. Se cuenta un solo establecimiento y se registra la discrepancia.",
+    "En Murcia, la ficha Fantic muestra el código postal 3007, mientras que la web del operador publica 30007; se conserva la dirección del operador corregida por contraste.",
+    "Los candidatos de agregadores no se cuentan sin ficha oficial o evidencia primaria actual.",
+    "La clasificación established acredita presencia comercial y distribución autorizada documentada, no cuota de mercado, matriculaciones ni stock efectivo."
+  ],
+  "methodology": [
+    "Consulta del localizador oficial Fantic y de las fichas individuales de seis establecimientos.",
+    "Contraste de la oferta vigente con catálogos y páginas corporativas de Motissimo, Demoto, Motodest, Lozano MX Center y Francisco Belmonte.",
+    "Separación de venta y posventa; no se infiere servicio técnico de la mera condición de concesionario.",
+    "Los agregadores se usan exclusivamente como fuentes de descubrimiento de candidatos.",
+    "Fecha de corte documental: 13 de noviembre de 2026."
+  ]
+}
