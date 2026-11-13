@@ -87,13 +87,17 @@
       "brand_id": "brand-benda",
       "canonical_name": "Benda",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-benda-es-dealers",
+        "source-benda-global-distributors",
+        "source-benda-keeway-es-2024",
+        "source-benda-spain-dealer-event-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por el directorio global oficial de Benda, que identifica a Keeway Group como distribuidor para España, y por el acuerdo estratégico de 2024 entre Benda y la red Keeway. La primera auditoría documental de cinco provincias identifica ocho ubicaciones de venta en Barcelona (1), Málaga (2), Cádiz (3), Alicante (1) y Murcia (1). Cuatro de esas sedes publican también servicio/taller Benda (Barcelona, dos sedes de Cádiz y Cartagena); Castro publica además un taller separado de la dirección de ventas en Cádiz capital. Los operadores se autodeclaran oficiales en varios casos, pero ninguna ficha individual se ha podido verificar en el localizador dinámico del fabricante. Dos candidatos secundarios de Alicante y Málaga quedan pendientes de confirmación primaria. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-benelli",
@@ -2176,6 +2180,229 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "El agregador atribuye venta y taller Bajaj a la sede de Avenida de José Ortega y Gasset 198. La página corporativa actual de Indalmar separa la sede de venta multimarca de la sede de taller con servicio oficial Bajaj en el número 192; se prioriza la fuente primaria y no se contabiliza venta Bajaj en Málaga."
+    },
+    {
+      "source_id": "source-benda-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-benda",
+      "publisher": "Benda Motor / BendaKeeway",
+      "source_type": "official_directory",
+      "url": "https://www.bendakeeway.com/es-es/stores",
+      "title": "Tiendas y servicios Benda",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial Benda con filtros de Tienda y Servicio; la extracción textual consultada solo expone controles y no devuelve fichas individualizadas. No se asigna manufacturer_listed a operadores concretos ni se interpreta la falta de resultados como ausencia de red."
+    },
+    {
+      "source_id": "source-benda-global-distributors",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-benda",
+      "publisher": "Benda Motor",
+      "source_type": "official_statement",
+      "url": "https://bendamoto.com/global-distributor/",
+      "title": "Benda Global Distributors — Keeway Group para España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "distribution",
+        "brand_activity"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El directorio global oficial de Benda incluye España entre los países atendidos por Keeway Group y enlaza bendakeeway.com como contacto del distribuidor. Acredita canal nacional, no individualiza concesionarios."
+    },
+    {
+      "source_id": "source-benda-keeway-es-2024",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "BendaKeeway / Keeway Group",
+      "source_type": "official_statement",
+      "url": "https://www.bendakeeway.com/es-es/about-us",
+      "title": "Bienvenido Benda a la red internacional del Grupo Keeway",
+      "reliability_class": "primary_official",
+      "scope": "España y mercados internacionales",
+      "directory_scope": [
+        "distribution",
+        "brand_activity"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa explica que, mediante acuerdo de 2024, Keeway Group y su red de distribuidores y concesionarios en España y otros países son socios estratégicos para introducir Benda."
+    },
+    {
+      "source_id": "source-benda-spain-dealer-event-2026",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Benda Motor",
+      "source_type": "official_statement",
+      "url": "https://bendamoto.com/blog/2026/04/23/benda-spain-dealer-meeting-2026/",
+      "title": "BENDA Strengthens Its Presence in Spain with New Model Lineup and Growing Dealer Network",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "dealer_network",
+        "brand_activity"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Comunicado oficial del fabricante de 23-04-2026 sobre presentación de modelos y encuentro con distribuidores y medios españoles; declara expansión de red y apoyo local de ventas y posventa, sin publicar un listado de establecimientos."
+    },
+    {
+      "source_id": "source-benda-motissimo-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motissimo",
+      "source_type": "company_page",
+      "url": "https://motissimo.es/benda/",
+      "title": "Benda en Barcelona — concesionario oficial y gama",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página comercial específica con modelos y precios Benda; el operador se autodenomina concesionario oficial y taller Benda. Dirección publicada: Carrer del Comandant Benítez 23, 08028 Barcelona. No equivale a confirmación individual del fabricante."
+    },
+    {
+      "source_id": "source-benda-castro-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/benda/",
+      "title": "Concesionario Oficial BENDA en Cádiz, Jerez y Campo de Gibraltar",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica de Benda que declara concesionario oficial y publica ventas en Cádiz, Jerez y Palmones. En Cádiz capital separa ventas (Avenida de la Sanidad Pública 297) y taller (Calle García Quijano 2); Jerez y Palmones publican ventas y taller en la misma dirección."
+    },
+    {
+      "source_id": "source-benda-mototeam-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Moto Team",
+      "source_type": "company_page",
+      "url": "https://www.mototeam.es/site/contact",
+      "title": "Moto Team — concesionario oficial Benda en Torrevieja",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa se autodenomina concesionario oficial Benda y publica sede en Avenida Ricardo La Fuente Aguado 33, 03183 Torrevieja. Se contabiliza como oferta comercial autodeclarada; no hay ficha individual del localizador oficial en la captura."
+    },
+    {
+      "source_id": "source-benda-jade-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Jade Motor",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/motos-nuevas/benda",
+      "title": "Motos Benda nuevas en Murcia y Cartagena — Jade Motor",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página comercial específica que se autodenomina concesionario oficial Benda en la Región de Murcia y anuncia taller oficial y recambio original. La ubicación de Cartagena se identifica en la página corporativa de sedes como Ctra. Nacional 301 km 431, 30319 Miranda; no se extiende la oferta Benda a las sedes de Murcia capital o San Javier, cuyas listas de marcas no la incluyen."
+    },
+    {
+      "source_id": "source-benda-recambioslopez-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Recambios López",
+      "source_type": "company_page",
+      "url": "https://recambioslopez.com/cilindradas/500-cc/",
+      "title": "Gama 500 cc Benda y centros de venta de Recambios López",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa muestra productos Benda (Chinchilla 500 y Napoleon 500) y publica dos centros/contactos de ventas: C/ Poseidón 4, 29651 Las Lagunas de Mijas, y Avenida Arias de Velasco 8, 29601 Marbella. No se autodenomina concesionario oficial Benda ni se atribuye servicio oficial de marca."
+    },
+    {
+      "source_id": "source-benda-motoland-alicante-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/tienda-motoland-alicante-alacant",
+      "title": "Motoland Alicante — ficha agregada Benda",
+      "reliability_class": "secondary_reputable",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye Benda a Motoland en C. Víctor de la Serna 2, Alicante. La web corporativa de Motoland consultada confirma direcciones y tiendas, pero no se encontró una página primaria específica que confirme oferta Benda; se conserva como candidato secundario y no se contabiliza."
+    },
+    {
+      "source_id": "source-benda-skmotos-malaga-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/tienda-sk-motos",
+      "title": "SK Motos — ficha agregada Benda en Málaga",
+      "reliability_class": "secondary_reputable",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye Benda a SK Motos en C/ La Bohème 50, Málaga. La web propia consultada confirma dirección y actividad de SK Motos, pero no se localizó una página primaria específica de Benda; se conserva como candidato secundario y no se contabiliza."
     }
   ]
 }
