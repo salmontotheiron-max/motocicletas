@@ -27,7 +27,7 @@
     },
     "sales": 6,
     "service_locations": 5,
-    "same_site_sales_and_service": 4,
+    "same_site_sales_and_service": 3,
     "service_only_locations": 1,
     "sales_only_locations": 2,
     "manufacturer_individually_listed": 0,
