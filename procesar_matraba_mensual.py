@@ -163,6 +163,7 @@ def process_archive(path, period, include_transfers=False):
         province_registration = values[20]
         brand_itv = values[3] or "(sin marca)"
         model_itv = values[4] or "(sin modelo)"
+        possession_code = values[36]
 
         if vehicle_type not in TARGET_TYPE_CODES:
             excluded[vehicle_type or "(vacío)"] += 1
@@ -255,10 +256,15 @@ def process_archive(path, period, include_transfers=False):
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
             if include_transfers and operation == "2":
-                # COD_PROVINCIA_VEH es el domicilio registral, no la provincia de venta.
+                # COD_POSESION: V=venta, S=subasta. No identifica provincia física de venta.
+                transfer_type = (
+                    "venta" if possession_code == "V"
+                    else "subasta" if possession_code == "S"
+                    else "transferencia_sin_clasificar"
+                )
                 model_counts[(
                     transaction_date.strftime("%Y-%m"), brand_itv, model_itv,
-                    vehicle_type, new_used or "(vacío)", "transferencia",
+                    vehicle_type, new_used or "(vacío)", transfer_type,
                     "domicilio_vehiculo", province_vehicle or "(vacío)"
                 )] += 1
 
@@ -438,7 +444,9 @@ def main():
         "registros_matriculaciones": sum(counts.values()),
         "registros_operaciones": sum(opcounts.values()),
         "registros_desglose_marca_modelo": sum(model_counts.values()),
-        "registros_transferencias": sum(value for key, value in model_counts.items() if key[5] == "transferencia"),
+        "registros_transferencias": sum(value for key, value in model_counts.items() if key[5] in {"venta", "subasta", "transferencia_sin_clasificar"}),
+        "transferencias_cod_posesion_venta": sum(value for key, value in model_counts.items() if key[5] == "venta"),
+        "transferencias_cod_posesion_subasta": sum(value for key, value in model_counts.items() if key[5] == "subasta"),
         "modelos_observados": len({(key[1], key[2]) for key in model_counts}),
         "filtro_cod_tipo": sorted(TARGET_TYPE_CODES),
         "registros_excluidos_por_cod_tipo": sum(excluded.values()),
