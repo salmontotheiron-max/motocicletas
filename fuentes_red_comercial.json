@@ -794,13 +794,23 @@
       "brand_id": "brand-vmoto",
       "canonical_name": "Vmoto",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-super-soco-vmoto-rebranding",
+        "source-super-soco-spain-legal-distributor",
+        "source-super-soco-vmoto-warranty",
+        "source-super-soco-vmoto-locator",
+        "source-vmoto-company-annual-report",
+        "source-vmoto-model-range-official",
+        "source-vmoto-eletamendi-catalog",
+        "source-vmoto-amper-catalog",
+        "source-vmoto-scoomart-catalog",
+        "source-vmoto-coolmotorcycles-stock"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de Vmoto en España acreditada por la web oficial, catálogo vigente y Nuuk Mobility Solutions, S.L. como distribuidor exclusivo B2C nacional. Primera auditoría de cinco provincias prioritarias: cuatro puntos físicos con oferta actual o stock de un modelo vigente rebautizado (Barcelona 1, Málaga 1, Cádiz 1 y Alicante 1); Murcia sin punto actual corroborado. Eletamendi se autodeclara distribuidor oficial de 11 marcas e incluye Vmoto; la autorización individual de los demás operadores no está verificada. El localizador oficial no expone resultados en captura HTML. Emisiones00 mantiene modelos E-Max/Vmoto antiguos en catálogo electrónico, sin stock actual demostrable, y no se contabiliza. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-voge",
@@ -7607,6 +7617,262 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 60,
       "notes": "Fuente secundaria de descubrimiento de oferta; las pruebas de establecimiento y catálogo se apoyan directamente en la web del operador y se mantienen separadas de la autorización oficial."
+    },
+    {
+      "source_id": "source-vmoto-company-annual-report",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-vmoto",
+      "publisher": "Vmoto Limited",
+      "source_type": "official_statement",
+      "url": "https://announcements.asx.com.au/asxpdf/20260331/pdf/06y0x0p3g34wlw.pdf",
+      "title": "Vmoto Limited — Annual Report 2025",
+      "reliability_class": "primary_official",
+      "scope": "Australia, China y mercados internacionales; ejercicio cerrado 31-12-2025",
+      "directory_scope": [
+        "manufacturer_identity",
+        "corporate_group",
+        "manufacturing",
+        "electric_motorcycles"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "Informe anual oficial de Vmoto Limited (ABN 36 098 455 460), sociedad australiana cotizada ASX:VMT. Describe actividad de diseño, fabricación, comercialización y distribución de vehículos eléctricos de dos ruedas; identifica operaciones de fabricación en Nanjing, China."
+    },
+    {
+      "source_id": "source-vmoto-model-range-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-vmoto",
+      "publisher": "VMoto España / VMoto Italy SRL",
+      "source_type": "product_catalog",
+      "url": "https://vmoto.com/es",
+      "title": "VMoto España — catálogo oficial y gama vigente",
+      "reliability_class": "primary_official",
+      "scope": "España; catálogo consultado 13-11-2026",
+      "directory_scope": [
+        "product_catalog",
+        "motorcycles",
+        "electric_scooters",
+        "brand_activity"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web oficial española publica Stash, TC, TC Max, TSX, CITI, CPX, CPX Explorer y CU; novedades oficiales de 2026 y promoción Auto+ agosto 2026. El comunicado de rebranding de abril de 2024 confirma la unificación bajo Vmoto y el cese de comercialización de nuevos productos bajo Super Soco y E-Max."
+    },
+    {
+      "source_id": "source-vmoto-official-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-vmoto",
+      "publisher": "VMoto España",
+      "source_type": "official_directory",
+      "url": "https://vmoto.com/es/store-locator",
+      "title": "VMoto — localizador oficial de concesionarios en España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "dealer_network",
+        "sales",
+        "service"
+      ],
+      "capture_mode": "dynamic_unextractable",
+      "discovery_status": "dynamic_unextractable",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El localizador ofrece búsqueda por ubicación, pero la captura estática no devuelve establecimientos y el mapa no carga (mensaje de búsqueda vacía). No se interpreta como ausencia de red; pendiente de consulta interactiva/manual."
+    },
+    {
+      "source_id": "source-vmoto-eletamendi-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Eletamendi / Grupo Letamendi",
+      "source_type": "product_catalog",
+      "url": "https://eletamendi.com/comprar-motos-electricas/vmoto/",
+      "title": "Eletamendi — catálogo VMoto en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Carrer de València 171, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "new_stock",
+        "product_catalog"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Catálogo propio de ocho modelos Vmoto con precios y opciones de reserva/prueba: CU, CPx, Citi, CPx Explorer, TC Max, TSX, TC y Stash. Publica venta en tienda de Barcelona."
+    },
+    {
+      "source_id": "source-vmoto-eletamendi-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Eletamendi / Grupo Letamendi",
+      "source_type": "company_page",
+      "url": "https://eletamendi.com/quienes-somos/",
+      "title": "Eletamendi — tienda, taller y declaración de distribución Vmoto",
+      "reliability_class": "primary_business",
+      "scope": "Carrer de València 171, 08011 Barcelona, España",
+      "directory_scope": [
+        "retail_location",
+        "dealer_self_declaration",
+        "workshop",
+        "brand_presence"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "La empresa identifica la tienda física y taller en Barcelona, declara ser distribuidor oficial de 11 marcas y enumera Vmoto entre ellas. Repara y mantiene motos eléctricas de todas las marcas, pero solo se autodeclara servicio oficial de Silence y SEAT MÓ; no se presume servicio oficial Vmoto."
+    },
+    {
+      "source_id": "source-vmoto-amper-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Amper Bikes",
+      "source_type": "product_catalog",
+      "url": "https://www.amperbikes.es/categoria-producto/vmoto/",
+      "title": "Amper Bikes — catálogo actual Vmoto",
+      "reliability_class": "primary_business",
+      "scope": "Av. de la Aurora 51, 29006 Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "new_stock",
+        "product_catalog"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La categoría Vmoto lista ocho modelos con precio y opción Añadir al carrito: Stash (7.200 €), TC Max (3.950 €), VS2 Citi (2.995 €), CPX (4.095 €), CPX Explorer (5.475 €), TC (2.995 €), CU (1.795 €) y TSX (2.995 €)."
+    },
+    {
+      "source_id": "source-vmoto-amper-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Amper Bikes",
+      "source_type": "company_page",
+      "url": "https://www.amperbikes.es/contacto/",
+      "title": "Amper Bikes — tienda física y servicio técnico en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Av. de la Aurora 51, 29006 Málaga, España",
+      "directory_scope": [
+        "retail_location",
+        "sales",
+        "workshop"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "La web propia identifica Amper Bikes Aurora en Av. de la Aurora 51, Málaga, y otras sedes del operador. Se cuenta solo Aurora por ser la dirección vinculada al catálogo actual Vmoto. El servicio técnico de Amper no se atribuye como servicio oficial autorizado por Vmoto."
+    },
+    {
+      "source_id": "source-vmoto-scoomart-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Scoomart Motos Eléctricas, S.L.",
+      "source_type": "product_catalog",
+      "url": "https://scoomart.com/motos-electricas-alicante/moto-electrica-super-soco-tc-max/",
+      "title": "Scoomart — Vmoto TC Max en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "new_stock",
+        "product_catalog"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página propia ofrece expresamente Vmoto TC Max 125cc por 4.199 €, con ficha técnica, garantía de tres años y formulario de prueba/consulta. El catálogo antiguo de Super Soco del mismo operador incluye además modelos renombrados; se prioriza esta ficha con marca Vmoto."
+    },
+    {
+      "source_id": "source-vmoto-scoomart-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Scoomart Motos Eléctricas, S.L.",
+      "source_type": "company_page",
+      "url": "https://scoomart.com/contacto/",
+      "title": "Scoomart — concesionario y dirección física en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Avda. Conde de Casas Rojas 1A, local 1, 03006 Alicante, España",
+      "directory_scope": [
+        "retail_location",
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "La web propia identifica un concesionario físico de motos eléctricas en Alicante, con dirección, teléfono y horario. La publicación propia de 2020 sobre el nombramiento como distribuidor Super Soco es histórica; no acredita por sí sola autorización contractual vigente de Vmoto."
+    },
+    {
+      "source_id": "source-vmoto-coolmotorcycles-stock",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos.net / Coolmotorcycles",
+      "source_type": "aggregator",
+      "url": "https://motos.coches.net/nuevas/super_soco/stash/version_2025-2025-en-cadiz-8889547.htm",
+      "title": "Coolmotorcycles — Vmoto Stash 2025 nuevo en Jerez (Cádiz)",
+      "reliability_class": "secondary_aggregator",
+      "scope": "Calle Platino 21, 11405 Jerez de la Frontera, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "new_stock",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Anuncio activo modificado recientemente ofrece una Stash 2025 eléctrica nueva, 1 km, con garantía de tres años y entrega según disponibilidad por 5.450 €. El anuncio la etiqueta Super Soco, pero el modelo Stash figura actualmente en la gama oficial Vmoto tras la unificación de marca; se cuenta como stock comercial de modelo Vmoto, no como distribución oficial verificada."
+    },
+    {
+      "source_id": "source-vmoto-coolmotorcycles-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Coolmotorcycles",
+      "source_type": "company_page",
+      "url": "https://www.coolmotorcycles.es/contacto/",
+      "title": "Coolmotorcycles — puntos físicos Jerez y Chiclana",
+      "reliability_class": "primary_business",
+      "scope": "Jerez de la Frontera y Chiclana de la Frontera, Cádiz, España",
+      "directory_scope": [
+        "retail_location",
+        "sales",
+        "workshop"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "La web propia confirma tienda en C/ Platino 21, Jerez, y un segundo punto en C/ Juan Sebastián Elcano 10, Chiclana. El stock Vmoto Stash citado está anunciado por el punto de Jerez; no se extiende a Chiclana ni se atribuye servicio oficial Vmoto."
+    },
+    {
+      "source_id": "source-vmoto-emisiones00-legacy",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Emisiones00",
+      "source_type": "product_catalog",
+      "url": "https://emisiones00.com/shop/index.php?cPath=22_79",
+      "title": "Emisiones00 — catálogo histórico E-Max / Vmoto en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Av. Primero de Mayo 1, Murcia, España",
+      "directory_scope": [
+        "legacy_product_catalog",
+        "sales_candidate"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La tienda online aún muestra E-Max/Vmoto 110S, 120S, 120SD y 90S con botones de cesta, pero las fichas técnicas remontan a productos de hace unos 15 años y no se acredita stock real, vigencia comercial ni correspondencia con la gama Vmoto actual. Se conserva como candidato histórico y no se contabiliza como punto de venta actual de la gama vigente."
     }
   ]
 }
