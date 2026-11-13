@@ -4,13 +4,15 @@ import argparse
 import hashlib
 import json
 import time
+import zipfile
 from datetime import date, datetime, timezone
+from io import BytesIO
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from descargar_matraba_mensual import inspect_zip, month_pair, validate_month
+from descargar_matraba_mensual import WIDTH, month_pair, validate_month
 
 BASE_URL = (
     "https://www.dgt.es/microdatos/salida/{year}/{month}/vehiculos/"
@@ -48,6 +50,44 @@ def months_to_check(inventory_path, today=None):
     return sorted(set(pending + month_pair(today)))
 
 
+def inspect_transfer_zip(payload):
+    """Valida ZIP de transferencias: TXT de registros fijos de 714 bytes, sin cabecera."""
+    try:
+        with zipfile.ZipFile(BytesIO(payload)) as archive:
+            bad_member = archive.testzip()
+            if bad_member is not None:
+                return None, "zip_crc_invalido:" + bad_member, 0
+            txt_names = [
+                name for name in archive.namelist()
+                if name.lower().endswith(".txt") and not name.endswith("/")
+            ]
+            if len(txt_names) != 1:
+                return None, f"numero_txt_inesperado:{len(txt_names)}", 0
+            data = archive.read(txt_names[0])
+    except (zipfile.BadZipFile, OSError, RuntimeError, EOFError):
+        return None, "zip_corrupto", 0
+
+    normalized = data.replace(b"\r\n", b"\n")
+    lines = normalized.split(b"\n")
+    if lines and lines[-1] == b"":
+        lines.pop()
+    if not lines:
+        return None, "txt_vacio", 0
+
+    invalid = sorted({len(line) for line in lines if len(line) != WIDTH})
+    if invalid:
+        return None, f"longitudes_registro_invalidas:{invalid[:10]}", len(lines)
+
+    for number, record in enumerate(lines, 1):
+        try:
+            raw_date = record[706:714].decode("ascii").strip()
+            datetime.strptime(raw_date, "%d%m%Y")
+        except (UnicodeDecodeError, ValueError):
+            return None, f"fec_proceso_invalida_registro:{number}", len(lines)
+
+    return data, None, len(lines)
+
+
 def download_month(month, output_dir, opener=urlopen, retries=2, pause=1):
     url = transfer_url(month)
     target_dir = Path(output_dir) / month
@@ -63,7 +103,7 @@ def download_month(month, output_dir, opener=urlopen, retries=2, pause=1):
                 return {"periodo": month, "estado": "no_disponible_en_barrido", "url": url}
             if status != 200:
                 return {"periodo": month, "estado": "error_http", "http_status": status, "url": url}
-            txt, error, records = inspect_zip(payload)
+            txt, error, records = inspect_transfer_zip(payload)
             if error:
                 return {
                     "periodo": month, "estado": "fichero_invalido",
