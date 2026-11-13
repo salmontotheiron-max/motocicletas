@@ -296,13 +296,24 @@
       "brand_id": "brand-husqvarna",
       "canonical_name": "Husqvarna",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-husqvarna-motorcycles-dealer-search",
+        "source-husqvarna-anesdor-ktm",
+        "source-husqvarna-ktm-spain-contact",
+        "source-husqvarna-motos-bordoy",
+        "source-husqvarna-motos-bordoy-locations",
+        "source-husqvarna-motovivo",
+        "source-husqvarna-motorgas",
+        "source-husqvarna-zambrana",
+        "source-husqvarna-jade",
+        "source-husqvarna-secondary-dealers",
+        "source-husqvarna-bmw-historical"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de Husqvarna Motorcycles acreditada en ocho ubicaciones de venta de tres provincias prioritarias: Barcelona (5), Málaga (1) y Murcia (2). Se documentan tres ubicaciones con servicio posventa/taller asociado a la marca. La red se acredita mediante páginas corporativas de operadores; el localizador oficial de Husqvarna Motorcycles es dinámico y no expone fichas individuales en la captura. No se confunde Husqvarna Motorcycles con la división de maquinaria/jardín de Husqvarna AB. No es censo nacional."
     },
     {
       "brand_id": "brand-indian",
@@ -4085,6 +4096,238 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Artículo sectorial de 11-09-2026 atribuye a Hero una red de 62 concesionarios oficiales de venta y servicio gracias a Noria Motos. Se conserva como cifra secundaria publicada, no como censo verificado ni como recuento de las cinco provincias."
+    },
+    {
+      "source_id": "source-husqvarna-motorcycles-dealer-search",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-husqvarna",
+      "publisher": "Husqvarna Motorcycles",
+      "source_type": "official_directory",
+      "url": "https://www.husqvarna-motorcycles.com/es-es/dealer-search.html",
+      "title": "Husqvarna Motorcycles España — localizador de distribuidores",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El localizador oficial de Husqvarna Motorcycles está publicado para España, pero la captura textual consultada no expone resultados ni fichas individualizadas. No se asignan establecimientos concretos como manufacturer_listed."
+    },
+    {
+      "source_id": "source-husqvarna-anesdor-ktm",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-husqvarna",
+      "publisher": "ANESDOR",
+      "source_type": "official_statement",
+      "url": "https://www.anesdor.com/asociados/",
+      "title": "ANESDOR — KTM Sportmotorcycle España representa KTM, Husqvarna y GasGas",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_group",
+        "brand_market"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página de asociados de ANESDOR identifica a KTM Sportmotorcycle España y enumera expresamente KTM, Husqvarna, GasGas y ZEEHO bajo su representación. Se usa como evidencia del perímetro empresarial y no como prueba de contrato de importación ni de establecimientos."
+    },
+    {
+      "source_id": "source-husqvarna-ktm-spain-contact",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-husqvarna",
+      "publisher": "KTM Sportmotorcycle España, S.L.",
+      "source_type": "company_page",
+      "url": "https://www.ktm.com/es-es/contact.html",
+      "title": "KTM España — contacto corporativo y dirección de KTM Sportmotorcycle España, S.L.",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_group",
+        "spanish_contact"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa publica KTM Sportmotorcycle España, S.L. y dirección Cinca 8-10, Pol. Ind. Santa Margarida, 08223 Terrassa (Barcelona). En combinación con ANESDOR, identifica el contacto corporativo español del grupo; no se afirma que sea importador contractual exclusivo."
+    },
+    {
+      "source_id": "source-husqvarna-motos-bordoy",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Bordoy, S.A.",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoy.com/",
+      "title": "Motos Bordoy — concesionario exclusivo Husqvarna Motorcycles en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara que en Barcelona es concesionario exclusivo de Husqvarna Motorcycles y que dispone de tres puntos de venta. La página de concesionarios publica las tres direcciones: Balmes 186, Valencia 179 y Urgell 240. Se cuentan las tres sedes como puntos de venta; los horarios de taller son visibles, pero no se atribuye servicio específico Husqvarna por sede sin una declaración de marca."
+    },
+    {
+      "source_id": "source-husqvarna-motos-bordoy-locations",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Bordoy, S.A.",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoy.com/el-negocio-concesionarios/",
+      "title": "Motos Bordoy — direcciones y horarios de tres concesionarios y talleres",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "workshop",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa identifica las sedes Balmes 186 (08006), Valencia 179 (08011) y Urgell 240 (08036), todas en Barcelona, con horarios diferenciados de tienda y taller. Complementa la declaración de exclusividad Husqvarna en la página corporativa principal."
+    },
+    {
+      "source_id": "source-husqvarna-motovivo",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motovivo / FRANDOR GESTION, S.L. (Autovivo Grup)",
+      "source_type": "company_page",
+      "url": "https://autovivo.net/concesiones/",
+      "title": "Autovivo Grup — Motovivo concesionario del grupo KTM y Husqvarna en Sant Boi",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa del grupo identifica Motovivo como concesionario oficial del grupo KTM, Husqvarna, GasGas y CF Moto. El sitio propio de Motovivo muestra una Husqvarna Norden 901 de ocasión. La dirección actual de Motovivo se confirma en el sitio de citas de taller: Ctra. Santa Creu de Calafell 63, Sant Boi de Llobregat. Se cuenta como una ubicación de oferta comercial, sin atribuir taller específico Husqvarna."
+    },
+    {
+      "source_id": "source-husqvarna-motorgas",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motor Gas Motos, S.A.",
+      "source_type": "company_page",
+      "url": "https://www.motorgas.com/p/quienes-somos/",
+      "title": "Motor Gas Motos — concesionario oficial Husqvarna Motorcycles en Manresa",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa se declara concesionario oficial Husqvarna Motorcycles, ofrece venta de motocicletas nuevas y servicio posventa. La dirección y entidad se contrastan con sus condiciones legales: Carrer de la Pau 8, 08243 Manresa; Motor Gas Motos, S.A. Se cuenta una sede de venta y servicio."
+    },
+    {
+      "source_id": "source-husqvarna-zambrana",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Zambrana Motos, S.L.U. (MX Zambrana)",
+      "source_type": "company_page",
+      "url": "https://mxzambrana.com/contactenos",
+      "title": "MX Zambrana — concesionario oficial Husqvarna en Mollina",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara ser concesionario oficial Husqvarna y anuncia venta de motos nuevas de motocross, enduro y supermotard. Dirección publicada: Polígono Industrial La Fuente, Calle Los Olivos, Nave 11, 29532 Mollina (Málaga). No se atribuye taller específico Husqvarna porque la fuente no identifica servicio técnico de la marca."
+    },
+    {
+      "source_id": "source-husqvarna-jade",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Fenix Moto Premium, S.L. — Jade Motor",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/motos-nuevas/husqvarna",
+      "title": "Jade Motor — concesionario oficial Husqvarna en Cartagena y Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página de gama declara concesionario oficial Husqvarna en la Región de Murcia, ofrece motos nuevas, recambio y taller oficial. La página de contacto individualiza Jade Motor Cartagena (Ctra. Nacional 301 km 431, 30319) y Jade Motor Murcia (C. Pintor Pedro Flores 32, 30010), ambas con Husqvarna en el catálogo de marcas y taller. Se cuentan dos sedes de venta y dos ubicaciones de servicio."
+    },
+    {
+      "source_id": "source-husqvarna-secondary-dealers",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/husqvarna",
+      "title": "Directorio secundario de concesionarios Husqvarna Motorcycles en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "brand_discovery",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Agregador utilizado solo para descubrir candidatos: lista, entre otros, Motos Siebla Málaga y Sixlyon Sitges. La mención de Siebla no se ha corroborado en una página corporativa primaria actual; Sixlyon no se cuenta por falta de evidencia primaria localizada en esta auditoría. No se eleva el agregador a prueba de autorización oficial."
+    },
+    {
+      "source_id": "source-husqvarna-bmw-historical",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "BMW Group España",
+      "source_type": "press",
+      "url": "https://www.press.bmwgroup.com/spain/article/detail/T0085747ES/bmw-ib%C3%A9rica-s-a-responsable-de-la-gesti%C3%B3n-de-husqvarna-en-espa%C3%B1a?language=es",
+      "title": "BMW Group — gestión histórica de Husqvarna en España (2010)",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "brand_history",
+        "importer_history"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Fuente histórica: comunicado de 28-09-2010 sobre el fin del contrato de importación de Motos Bordoy y la gestión temporal por BMW Ibérica. No se usa para describir la estructura empresarial ni distribución actuales."
     }
   ]
 }
