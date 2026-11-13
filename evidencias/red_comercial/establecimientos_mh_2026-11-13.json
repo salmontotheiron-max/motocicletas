@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se computan como venta únicamente operadores cuya web corporativa publica MH Motorhispania y oferta de motocicletas/modelos actuales. Se separan las ubicaciones de servicio sin evidencia de venta. La oficialidad declarada por un operador no equivale a autorización contractual verificada por el fabricante. El localizador oficial es dinámico; que la captura no muestre establecimientos no significa ausencia de red. Los agregadores sirven para descubrimiento, no para confirmar puntos de venta. No se infiere ausencia por falta de evidencia.",
+  "verification_status_policy": {
+    "operator_current_brand_offer": "La web corporativa del operador publica MH Motorhispania entre las marcas o modelos ofrecidos.",
+    "operator_self_declared_official": "El operador se autodenomina concesionario oficial; no equivale a verificación contractual independiente.",
+    "service_only": "El operador publica servicio/taller MH, sin evidencia suficiente de venta en esa ubicación.",
+    "secondary_candidate": "Referencia secundaria sin corroboración primaria actual; no se computa como establecimiento confirmado."
+  },
+  "outlet_count": 5,
+  "counts": {
+    "sales_corroborated": 5,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 0,
+      "Cádiz": 2,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "service_only_locations": 2,
+    "operator_self_declared_official_sales": 3,
+    "manufacturer_individual_directory_entries_recovered": 0,
+    "contractual_authorization_independently_verified": 0
+  },
+  "manufacturer": {
+    "brand": "MH Motorhispania",
+    "website": "https://www.mhmotorcycles.com/",
+    "current_range": "La web oficial presenta scooters y motocicletas, incluidos VR10, VRT, VIRO 350, Raptor, Sense, TRAY, DUXTER, XRT, RYX y TRAY Touring.",
+    "locator_url": "https://www.mhmotorcycles.com/localizar-distribuidores/",
+    "locator_status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial permite búsqueda por localidad/dirección/código postal y separa proveedores de servicio. La captura estática muestra 0 tiendas antes de introducir una ubicación; no es una búsqueda exhaustiva y no acredita ausencia de red."
+  },
+  "outlets": [
+    {
+      "outlet_id": "mh-renania-trust-barcelona",
+      "brand": "MH Motorhispania",
+      "trading_name": "Renania Trust, S.L.",
+      "operator": "Renania Trust, S.L.",
+      "province": "Barcelona",
+      "municipality": "Sant Cugat del Vallès",
+      "public_address": "Polígon Industrial Can Calopa, Carrer del Segre 2, nave 12, 08174 Sant Cugat del Vallès, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.renaniatrustsl.com/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/motor-hispania"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_brand_offer_not_manufacturer_verified",
+      "notes": "La web corporativa incluye MH Motorhispania en su cartera de marcas, publica vehículos, recambios originales y taller de reparación."
+    },
+    {
+      "outlet_id": "mh-motoline-jerez-cadiz",
+      "brand": "MH Motorhispania",
+      "trading_name": "Motoline Jerez",
+      "operator": "Motoline Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Platino 17, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.motolinejerez.com/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/motor-hispania"
+      ],
+      "evidence_type": "operator_current_catalog",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_or_aggregator_label_not_independently_verified",
+      "notes": "La web del operador ofrece MH XRT y TRAY año 2026 y MH Raptor 50 como motos nuevas, además de tienda y taller. La dirección se contrasta con el directorio secundario; la web consultada no expone dirección en el texto indexado."
+    },
+    {
+      "outlet_id": "mh-motosprint-san-fernando-cadiz",
+      "brand": "MH Motorhispania",
+      "trading_name": "Motosprint",
+      "operator": "Motosprint",
+      "province": "Cádiz",
+      "municipality": "San Fernando",
+      "public_address": "Paseo Joly Velasco 5, 11100 San Fernando, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motosprint.net/",
+      "supporting_urls": [
+        "https://motosprint.net/contacto/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web se declara concesionario oficial Motor Hispania, publica modelos de la marca y el nuevo modelo TRAY, y facilita dirección y contacto del establecimiento."
+    },
+    {
+      "outlet_id": "mh-jj-chorro-alicante",
+      "brand": "MH Motorhispania",
+      "trading_name": "JJ Chorro",
+      "operator": "JJ Chorro",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle Perseo 6, 03007 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://jjchorro.com/",
+      "supporting_urls": [
+        "https://jjchorro.com/nosotros/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web se declara concesionario oficial MH y publica modelos MH XRT, Raptor y Tray Touring. La página de empresa separa el taller en C/ La Vega 4; se registra como ubicación de servicio independiente."
+    },
+    {
+      "outlet_id": "mh-francisco-belmonte-murcia",
+      "brand": "MH Motorhispania",
+      "trading_name": "Francisco Belmonte, S.A.",
+      "operator": "Francisco Belmonte, S.A.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/quienes-somos/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/motor-hispania"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La empresa se autodeclara concesionario oficial y exclusivo de MotorHispania para Murcia y publica instalaciones, venta, taller y recambios."
+    }
+  ],
+  "service_only_locations": [
+    {
+      "outlet_id": "mh-indalmar-malaga-service",
+      "brand": "MH Motorhispania",
+      "trading_name": "Indalmar Motor — taller Málaga",
+      "operator": "Grupo Playcar / Indalmar Motor",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset 192, Málaga, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.automovilesplaycar.com/contacto",
+      "evidence_type": "operator_service_page",
+      "verification_status": "service_only",
+      "official_authorization_status": "operator_self_declared_service",
+      "notes": "Grupo Playcar identifica expresamente MH Motorcycles entre las marcas con servicio oficial en el taller de esta dirección. No se ha encontrado oferta de venta MH para esta sede."
+    },
+    {
+      "outlet_id": "mh-jj-chorro-alicante-service",
+      "brand": "MH Motorhispania",
+      "trading_name": "JJ Chorro — taller",
+      "operator": "JJ Chorro",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle La Vega 4, 03007 Alicante, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://jjchorro.com/nosotros/",
+      "evidence_type": "operator_service_page",
+      "verification_status": "service_only",
+      "official_authorization_status": "operator_self_declared_official_brand_dealer_with_workshop",
+      "notes": "La web corporativa separa el servicio técnico/taller de la exposición de ventas situada en C/ Perseo 6."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "trading_name": "Motos Boquet",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "El Torrent 39, 08302 Mataró, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/motor-hispania",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador como MH; no se localizó página corporativa actual que confirme oferta MH."
+    },
+    {
+      "trading_name": "Motos Garrido",
+      "province": "Málaga",
+      "municipality": "Alhaurín de la Torre",
+      "public_address": "Calle Reserva 51, 29130 Alhaurín de la Torre, Málaga, España",
+      "evidence_url": "https://concesionariosdemotos.com/motor-hispania",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador como MH; la web corporativa consultada confirma tienda y taller, pero no se recuperó catálogo MH actual."
+    },
+    {
+      "trading_name": "KCG",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Francisco de Goya y Lucientes, Los Barrios, Cádiz, España",
+      "evidence_url": "https://concesionariosdemotos.com/motor-hispania",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador; no se encontró corroboración primaria actual de oferta MH."
+    },
+    {
+      "trading_name": "Motos Pernía",
+      "province": "Cádiz",
+      "municipality": "Olvera",
+      "public_address": "Avenida Julián Besteiro 65, 11690 Olvera, Cádiz, España",
+      "evidence_url": "https://concesionariosdemotos.com/motor-hispania",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador; no se encontró corroboración primaria actual de oferta MH."
+    },
+    {
+      "trading_name": "Motocicletas Rafa",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avinguda en Joan Carles I 55, 03202 Elche, Alicante, España",
+      "evidence_url": "https://concesionariosdemotos.com/motor-hispania",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador; no se encontró corroboración primaria actual de oferta MH."
+    },
+    {
+      "trading_name": "RSI Motos",
+      "province": "Alicante",
+      "municipality": "Villajoyosa",
+      "public_address": "Carrer Ensenyants de la Vila 2, local 2, 03570 Villajoyosa, Alicante, España",
+      "evidence_url": "https://concesionariosdemotos.com/motor-hispania",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador; no se encontró corroboración primaria actual de oferta MH."
+    }
+  ],
+  "notes": [
+    "La clasificación established acredita actividad comercial actual de la marca y no exhaustividad nacional.",
+    "La cobertura de ventas corroboradas en las provincias prioritarias no incluye Málaga; sí se ha identificado servicio MH Motorcycles en Indalmar Motor Málaga, sin computarlo como punto de venta.",
+    "No se ha identificado mediante fuente corporativa primaria la razón social exacta de la entidad fabricante/importadora actual; no se atribuye Jovicelect, S.L. como importador legal sin confirmación primaria.",
+    "No se ha verificado independientemente la autorización contractual de ningún punto individual con el fabricante.",
+    "La ausencia de evidencia primaria en candidatos no se interpreta como cierre ni como ausencia de red."
+  ]
+}
