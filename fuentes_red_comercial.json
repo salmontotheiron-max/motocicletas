@@ -525,13 +525,23 @@
       "brand_id": "brand-moto-morini",
       "canonical_name": "Moto Morini",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-motomorini-official-dealer-locator",
+        "source-motomorini-multimoto-distribution",
+        "source-motomorini-multimoto-prereservas",
+        "source-motomorini-oriol-barcelona",
+        "source-motomorini-siebla-malaga",
+        "source-motomorini-castro-cadiz",
+        "source-motomorini-fatherson-elche",
+        "source-motomorini-ciaomoto-alicante",
+        "source-motomorini-steelcenter-murcia",
+        "source-motomorini-secondary-aggregator"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por Grupo Multimoto, que anunció asumir la distribución oficial nacional en enero de 2026 y abrió reservas para nuevos modelos a través de su red oficial. El localizador oficial de Moto Morini es dinámico y no expuso fichas individuales en la captura. Primera auditoría de cinco provincias prioritarias: ocho ubicaciones de venta corroboradas en Barcelona (1), Málaga (1), Cádiz (3), Alicante (2) y Murcia (1). Tres sedes de Castro publican venta; dos también taller, con una dirección de servicio separada en Cádiz. Se distinguen oferta actual, autodeclaraciones de oficialidad y autorización contractual independiente. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-mv-agusta",
@@ -5665,6 +5675,210 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "La web corporativa declara distribución y servicio técnico oficial Moto Guzzi en Jerez y Sevilla; publica gama del Grupo Piaggio, incluida Moto Guzzi, y dirección de tienda/taller en PI Bertola, cruce Ctra. Sanlúcar s/n, Jerez."
+    },
+    {
+      "source_id": "source-motomorini-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-moto-morini",
+      "publisher": "Moto Morini",
+      "source_type": "official_directory",
+      "url": "https://motomorini.eu/es/concesionarios/",
+      "title": "Moto Morini — localizador oficial de concesionarios",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial de concesionarios; la captura textual expone buscador y formulario de contacto, pero no individualiza fichas. No se interpreta la ausencia de resultados extraídos como ausencia de red."
+    },
+    {
+      "source_id": "source-motomorini-multimoto-distribution",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-moto-morini",
+      "publisher": "Grupo Multimoto / Multimoto Motor España, S.L.",
+      "source_type": "official_statement",
+      "url": "https://multimotoespana.es/vehiculos/2026/01/09/grupo-multimoto-asume-la-distribucion-oficial-de-moto-morini-en-espana/",
+      "title": "Grupo Multimoto asume la distribución oficial de Moto Morini en España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "import_distribution",
+        "brand_portfolio",
+        "after_sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Comunicado corporativo de 9 de enero de 2026: Grupo Multimoto anuncia que asume la distribución oficial de Moto Morini en España. La web de Multimoto identifica a Multimoto Motor España, S.L. y su sede en Calle Loeches 49, 28925 Alcorcón."
+    },
+    {
+      "source_id": "source-motomorini-multimoto-prereservas",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-moto-morini",
+      "publisher": "Grupo Multimoto",
+      "source_type": "company_page",
+      "url": "https://multimotoespana.es/vehiculos/2026/02/13/ya-abiertas-las-pre-reservas-de-la-moto-morini-alltrhike-450-y-x-cape-1200/",
+      "title": "Multimoto — pre-reservas Moto Morini Alltrhike 450 y X-CAPE 1200",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El distribuidor anuncia pre-reservas nacionales y disponibilidad de nuevos modelos en su red oficial de concesionarios."
+    },
+    {
+      "source_id": "source-motomorini-oriol-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Oriol Motos",
+      "source_type": "company_page",
+      "url": "https://oriolmotos.com/moto-morini/",
+      "title": "Oriol Motos — catálogo Moto Morini y concesionario oficial en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página de marca con catálogo de modelos actuales; la web corporativa se declara concesionario oficial Moto Morini y la página de contacto identifica la sede de Carrer de Rocafort 89, Barcelona."
+    },
+    {
+      "source_id": "source-motomorini-siebla-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Siebla / Motos Siebla",
+      "source_type": "company_page",
+      "url": "https://old.siebla.com/",
+      "title": "Grupo Siebla — concesionario oficial Moto Morini en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara a Grupo Siebla concesionario oficial Moto Morini y enumera sus instalaciones en Málaga capital y Marbella. La oferta actual con dirección individualizada se corrobora en anuncio de Motos.net de la sede Málaga, Calle Martínez de la Rosa 109."
+    },
+    {
+      "source_id": "source-motomorini-castro-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/motomorini/",
+      "title": "Castro La Motocicleta — concesionario oficial Moto Morini en Cádiz, Jerez y Palmones",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica de marca con modelos y compra Moto Morini; identifica tres sedes de ventas, y taller/posventa en Jerez y Palmones, además de taller separado en Cádiz capital. La empresa declara oficialidad en todas sus instalaciones."
+    },
+    {
+      "source_id": "source-motomorini-fatherson-elche",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Fatherson Motorcycles / Moto Morini Alicante",
+      "source_type": "company_page",
+      "url": "https://www.motomorinielche.es/",
+      "title": "Moto Morini Elche — concesionario oficial para Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Elche, Alicante, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica Moto Morini declara concesionario oficial para Elche y provincia de Alicante, publica gama actual y dirección Carrer Sabadell 6. La página de contacto de Fatherson Motorcycles confirma misma dirección y teléfono."
+    },
+    {
+      "source_id": "source-motomorini-ciaomoto-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Ciao Moto Alicante (anunciante profesional)",
+      "source_type": "aggregator",
+      "url": "https://www.milanuncios.com/tiendas-profesionales/ciao-moto-alicante-550693",
+      "title": "Ciao Moto Alicante — oferta nueva Moto Morini Alltrhike 450",
+      "reliability_class": "secondary_reputable",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "candidate_discovery",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Perfil profesional del operador publica una Moto Morini Alltrhike 450 nueva y se autodeclara distribuidor oficial en Alicante y Murcia. La dirección del operador coincide con Ciao Moto, Av. de Orihuela 99, Alicante. Se registra como oferta actual atribuida al anunciante, no como ficha del localizador del fabricante."
+    },
+    {
+      "source_id": "source-motomorini-steelcenter-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Steelcenter Motorbike S.L. (anunciante profesional)",
+      "source_type": "aggregator",
+      "url": "https://motos.coches.net/ocasion/moto-morini/x-cape-1200/version-2025-2026-en-murcia-10175207.htm",
+      "title": "Steel Center — oferta Moto Morini X-CAPE 1200 en Murcia",
+      "reliability_class": "secondary_reputable",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "candidate_discovery",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Anuncio profesional de Steelcenter Motorbike S.L. con Moto Morini X-CAPE 1200, dirección Av. del Progreso 232, Murcia, y autodeclaración de concesionario oficial provincial. Otros anuncios recientes del mismo perfil muestran Alltrhike y Calibro."
+    },
+    {
+      "source_id": "source-motomorini-secondary-aggregator",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/moto-morini",
+      "title": "Directorio secundario de establecimientos Moto Morini en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Lista 57 establecimientos nacionales y candidatos en provincias prioritarias. Se usa para descubrir y contrastar; no sustituye páginas corporativas ni acredita por sí solo venta actual o autorización contractual."
     }
   ]
 }
