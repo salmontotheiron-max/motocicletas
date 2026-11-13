@@ -41,7 +41,7 @@
     },
     "current_offer_or_official_dealer_catalogue": 12,
     "used_stock_corroborated": 1,
-    "operator_self_declared_official_points": 11,
+    "operator_self_declared_official_points": 10,
     "official_dealer_agreements_independently_corroborated_in_priority_provinces": 0,
     "brand_specific_service_points_corroborated": 3,
     "official_locator_static_entries": 0,
@@ -183,8 +183,8 @@
       "evidence_url": "https://www.coolmotorcycles.es/zontes/",
       "evidence_type": "operator_brand_catalog_and_current_model_offer",
       "verification_status": "accepted_commercial_presence",
-      "official_authorization_status": "operator_self_declared_official",
-      "notes": "El catálogo propio publica numerosos modelos Zontes. La ubicación de exposición Zontes en Platino 1 se distingue de la dirección corporativa/taller en Platino 21, que aparece en el contacto y en el localizador de Royal Enfield. Una noticia sectorial de 29-10-2026 informa de disponibilidad de la 703T en Jerez y Chiclana."
+      "official_authorization_status": "not_verified",
+      "notes": "El catálogo propio publica numerosos modelos Zontes. La ubicación de exposición Zontes en Platino 1 se distingue de la dirección corporativa/taller en Platino 21, que aparece en el contacto y en el localizador de Royal Enfield. Una noticia sectorial de 29-10-2026 informa de disponibilidad de la 703T en Jerez y Chiclana y describe a Cool Motorcycles como concesionario oficial en la provincia; no se ha localizado autodeclaración inequívoca del operador para la sede de Jerez, por lo que su autorización individual queda sin verificar."
     },
     {
       "outlet_id": "zontes-cadiz-coolmotorcycles-chiclana",
