@@ -138,7 +138,7 @@ def process_archive(path, period, include_transfers=False):
     lines = txt.replace(b"\r\n", b"\n").split(b"\n")
     if lines and lines[-1] == b"":
         lines.pop()
-    rows = [line.decode("cp1252") for line in (lines if include_transfers else lines[1:])]
+    has_header = len(lines[0]) == 79\n    data_lines = lines[1:] if (not include_transfers or has_header) else lines\n    rows = [line.decode("cp1252") for line in data_lines]
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
