@@ -8,6 +8,7 @@ import zipfile
 
 import procesar_matraba_mensual as p
 import descargar_matraba_mensual as d
+import descargar_transferencias_mensual as dt
 
 
 def make_record(**fields):
@@ -27,6 +28,17 @@ def make_zip(record):
 
 
 class MonthlyProcessorTests(unittest.TestCase):
+    def test_transfer_url_uses_the_official_monthly_export_pattern(self):
+        self.assertEqual(
+            dt.transfer_url("2026-09"),
+            "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/transferencias/export_mensual_trf_202609.zip",
+        )
+
+    def test_transfer_backfill_starts_in_january_2026(self):
+        from datetime import date
+        months = dt.initial_months(today=date(2026, 3, 13))
+        self.assertEqual(months, ["2026-01", "2026-02", "2026-03"])
+
     def test_selects_latest_capture_for_each_month(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
