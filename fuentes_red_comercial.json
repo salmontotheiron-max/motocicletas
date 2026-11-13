@@ -592,13 +592,18 @@
       "brand_id": "brand-peugeot-motocycles",
       "canonical_name": "Peugeot Motocycles",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-peugeot-official-dealer-locator",
+        "source-peugeot-global-subsidiaries",
+        "source-peugeot-spain-contact",
+        "source-peugeot-navarro-network",
+        "source-peugeot-secondary-directory"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual acreditada por la filial española de Peugeot Motocycles y por el localizador oficial de puntos de venta. El localizador publica 60 fichas en España; 11 corresponden a las cinco provincias prioritarias y están rotuladas «Experto Peugeot Motocycles». Se excluyen fichas «Experto KISBEE» para no confundir una categoría/modelo con la red Peugeot Motocycles completa. La ficha oficial acredita inclusión en red, no por sí sola inventario actual, venta efectiva o alcance de servicio de cada local. La oferta actual del operador se contrasta por separado cuando existe evidencia propia. No se imputa a Peugeot Motocycles la red de automoción Peugeot."
     },
     {
       "brand_id": "brand-piaggio",
@@ -6330,6 +6335,109 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "El directorio secundario enumera 23 puntos y candidatos en provincias prioritarias; Motos.net muestra establecimientos con vehículos NIU anunciados. Se utiliza para descubrimiento y contraste, nunca como prueba única de venta actual ni autorización oficial."
+    },
+    {
+      "source_id": "source-peugeot-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-peugeot-motocycles",
+      "publisher": "Peugeot Motocycles España",
+      "source_type": "official_directory",
+      "url": "https://www.peugeot-motocycles.es/dealers",
+      "title": "Localizador oficial de puntos de venta Peugeot Motocycles España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Directorio oficial recuperable con 60 entradas nominales. Cada entrada está clasificada como «Experto Peugeot Motocycles» o «Experto KISBEE». La auditoría territorial contabiliza solo las fichas Peugeot Motocycles y mantiene KISBEE separado. La ficha del localizador acredita manufacturer_listed; no implica por sí sola inventario, transacciones ni servicios posventa."
+    },
+    {
+      "source_id": "source-peugeot-global-subsidiaries",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-peugeot-motocycles",
+      "publisher": "Peugeot Motocycles",
+      "source_type": "official_statement",
+      "url": "https://peugeot-motocycles.com/en/websites/",
+      "title": "Peugeot Motocycles — presencia corporativa y filial en España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "corporate_presence",
+        "subsidiary",
+        "distribution"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La web corporativa internacional identifica Peugeot Motocycles en España como su filial (subsidiary) y enlaza el sitio español como escaparate de modelos comercializados, servicios y contacto. No se confunde con la red de concesionarios de automóviles Peugeot."
+    },
+    {
+      "source_id": "source-peugeot-spain-contact",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-peugeot-motocycles",
+      "publisher": "Peugeot Motocycles España",
+      "source_type": "company_page",
+      "url": "https://mipeugeotmotocycles.es/pages/contacto",
+      "title": "Peugeot Motocycles España — contacto y entidad responsable",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "corporate_presence",
+        "customer_service",
+        "after_sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La página identifica a Peugeot Motocycles S.A. como responsable del servicio y publica dirección corporativa en C/ Eduardo Barreiros 110, Madrid, teléfono y correo de atención. Se registra como contacto corporativo; no se infiere que sea la entidad legal exacta de la filial española sin comprobar datos registrales."
+    },
+    {
+      "source_id": "source-peugeot-navarro-network",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Auto Moto Navarro Hermanos",
+      "source_type": "company_page",
+      "url": "https://peugeot.navarrohermanos.es/contacta-con-nosotros/",
+      "title": "Portal Peugeot Motocycles de Navarro Hermanos — tiendas y talleres",
+      "reliability_class": "primary_business",
+      "scope": "Andalucía, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Portal específico Peugeot Motocycles de Navarro Hermanos. Identifica puntos de venta y talleres en Málaga, Vélez-Málaga, Jerez y Algeciras, además de tiendas generales de la empresa. El localizador oficial confirma las fichas de Málaga, Vélez, Jerez y Algeciras como «Experto Peugeot Motocycles»; no se extrapola la marca a las demás tiendas del grupo."
+    },
+    {
+      "source_id": "source-peugeot-secondary-directory",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/peugeot-motocycles",
+      "title": "Directorio secundario de Peugeot Motocycles en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador declara 57 establecimientos oficiales y muestra agrupación provincial y operadores. Se utiliza solo como contraste secundario; la base de la clasificación es el localizador oficial del fabricante."
     }
   ]
 }

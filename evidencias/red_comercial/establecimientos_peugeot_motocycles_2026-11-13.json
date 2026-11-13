@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Se usa el localizador oficial Peugeot Motocycles España como fuente primaria de inclusión en red. Se transcriben solo entradas rotuladas «Experto Peugeot Motocycles»; se excluyen «Experto KISBEE» para no mezclar la red específica Kisbee con los puntos Peugeot Motocycles. La lista oficial tiene 60 fichas en España. La pertenencia al localizador se clasifica manufacturer_listed, no como prueba automática de inventario, ventas efectivas o servicios posventa en cada local. Se contrasta oferta actual y servicio con webs de operador cuando hay evidencia recuperable. Se excluye por completo la red de concesionarios de automóviles Peugeot.",
+  "brand_status": "established",
+  "manufacturer": {
+    "corporate_presence": "Subsidiary in Spain identified by Peugeot Motocycles global corporate site.",
+    "spanish_contact_entity": "Peugeot Motocycles S.A. is named as responsible party on the Spanish customer service page; registered corporate structure not independently checked.",
+    "official_spanish_site": "https://www.peugeot-motocycles.es/"
+  },
+  "manufacturer_locator": {
+    "url": "https://www.peugeot-motocycles.es/dealers",
+    "status": "directory_content_visible",
+    "total_entries": 60,
+    "classification": "Entries explicitly distinguish «Experto Peugeot Motocycles» and «Experto KISBEE»."
+  },
+  "counts": {
+    "manufacturer_listed_priority_province_outlets": 11,
+    "by_province": {
+      "Barcelona": 4,
+      "Málaga": 2,
+      "Cádiz": 2,
+      "Alicante": 1,
+      "Murcia": 2
+    },
+    "operator_current_offer_corroborated": 6,
+    "manufacturer_listed_only": 4,
+    "service_brand_specific_corroborated": 2,
+    "contractual_authorization_independently_verified": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "peugeot-box34-barcelona",
+      "trading_name": "BOX34",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Joan Güell 87, 08028 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_partly_corroborated",
+      "evidence_url": "https://concesionariobox34.com/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El localizador oficial lo clasifica Experto Peugeot Motocycles. El operador confirma taller oficial Peugeot Motocycles y servicio de mantenimiento/reparación; la página recuperada no permite confirmar catálogo/inventario actual."
+    },
+    {
+      "outlet_id": "peugeot-buzzmotos-barcelona",
+      "trading_name": "BUZZMOTOS",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Lepant 200, 08013 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://www.peugeot-motocycles.es/dealers",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Incluido en el localizador oficial como Experto Peugeot Motocycles. No se recuperó evidencia propia actual adicional de catálogo o inventario."
+    },
+    {
+      "outlet_id": "peugeot-mavisa-sabadell",
+      "trading_name": "MAVISA SABADELL",
+      "province": "Barcelona",
+      "municipality": "Sabadell",
+      "public_address": "Carretera de Terrassa 183, 08205 Sabadell, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://www.peugeot-motocycles.es/dealers",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Incluido en el localizador oficial como Experto Peugeot Motocycles. No se confunde con la red de automóviles Peugeot ni se atribuyen los servicios de su concesión de coches al negocio de motocicletas."
+    },
+    {
+      "outlet_id": "peugeot-motos-salarich-barcelona",
+      "trading_name": "MOTOS SALARICH",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de la Indústria 217, 08041 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://www.peugeot-motocycles.es/dealers",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Incluido en el localizador oficial como Experto Peugeot Motocycles. La web actual del operador publica otras marcas y no muestra Peugeot en la relación de marcas nuevas recuperada; se conserva como manufacturer_listed, sin afirmar oferta actual propia."
+    },
+    {
+      "outlet_id": "peugeot-navarro-malaga",
+      "trading_name": "AUTO MOTO NAVARRO Hnos. (MÁLAGA)",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle La Orotava 4, 29006 Málaga, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://peugeot.navarrohermanos.es/contacta-con-nosotros/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Portal específico Peugeot Motocycles del operador y ficha oficial del localizador. La dirección coincide en ambas fuentes."
+    },
+    {
+      "outlet_id": "peugeot-navarro-velez",
+      "trading_name": "AUTO MOTO NAVARRO Hnos. (VÉLEZ)",
+      "province": "Málaga",
+      "municipality": "Vélez-Málaga",
+      "public_address": "Calle Molino de Velasco 13, 29700 Vélez-Málaga, Málaga, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://peugeot.navarrohermanos.es/contacta-con-nosotros/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Portal específico Peugeot Motocycles del operador y ficha oficial del localizador. La dirección coincide en ambas fuentes."
+    },
+    {
+      "outlet_id": "peugeot-navarro-jerez",
+      "trading_name": "AUTO MOTO NAVARRO Hnos. (JEREZ)",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avenida Blas Infante 12, 11401 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://peugeot.navarrohermanos.es/contacta-con-nosotros/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Portal específico Peugeot Motocycles del operador y ficha oficial del localizador. La dirección coincide en ambas fuentes."
+    },
+    {
+      "outlet_id": "peugeot-navarro-algeciras",
+      "trading_name": "AUTO MOTO NAVARRO Hnos. (ALGECIRAS)",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Carretera Nacional Cádiz-Málaga, Edificio Lepanto, 11204 Algeciras, Cádiz, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://peugeot.navarrohermanos.es/contacta-con-nosotros/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Portal específico Peugeot Motocycles del operador y ficha oficial del localizador. La ficha del operador especifica Avenida de la Guardia Civil, frente al Parque Ferial, Edificio Lepanto, local 3."
+    },
+    {
+      "outlet_id": "peugeot-motos-medina-alicante",
+      "trading_name": "MOTOS MEDINA",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Denia 13, 03002 Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://www.peugeot-motocycles.es/dealers",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Incluido en el localizador oficial como Experto Peugeot Motocycles. No se recuperó página propia actual de catálogo o inventario."
+    },
+    {
+      "outlet_id": "peugeot-motos-marin-murcia",
+      "trading_name": "MOTOS MARIN MURCIA, S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida San Juan de la Cruz 18A, 30011 Murcia, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://motosmarin.com/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El operador se declara concesionario oficial Peugeot y publica el modelo Peugeot Pulsion Evo Urban. La página corporativa identifica tienda física y taller en Murcia."
+    },
+    {
+      "outlet_id": "peugeot-motos-ricardo-cartagena",
+      "trading_name": "MOTOS RICARDO E HIJOS",
+      "province": "Murcia",
+      "municipality": "Cartagena",
+      "public_address": "Calle Séneca 2, 30392 Cartagena, Murcia, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://motos.coches.net/concesionario/motosricardo/",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Incluido en el localizador oficial. El operador se presenta como concesionario y servicio técnico oficial Peugeot Motocycles; el escaparate publica modelos Peugeot Tweet, Django y PM-03."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "MATARO BIKES, Mataró",
+      "reason": "The official locator labels it «Experto KISBEE», not «Experto Peugeot Motocycles»; excluded from Peugeot Motocycles core-network count and retained as a separate Kisbee specialist."
+    },
+    {
+      "candidate": "RECAMBIOS LOPEZ, Mijas Costa",
+      "reason": "The official locator labels it «Experto KISBEE»; excluded from the Peugeot Motocycles core-network count."
+    },
+    {
+      "candidate": "MOTOMARK - RECAMBIOS LÓPEZ, Marbella",
+      "reason": "The official locator labels it «Experto KISBEE»; excluded from the Peugeot Motocycles core-network count."
+    },
+    {
+      "candidate": "Other automobile Peugeot dealerships",
+      "reason": "Excluded: Peugeot passenger-car dealer locator is a different business network and cannot establish Peugeot Motocycles distribution."
+    }
+  ],
+  "limitations": [
+    "The 11 are official manufacturer-listed points in the five priority provinces, not an independently completed census or evidence of transactions.",
+    "Four locations have no operator-owned current Peugeot Motocycles offer independently recovered in this audit; they remain manufacturer_listed_only.",
+    "The manufacturer directory is a live web page and can change; this snapshot is dated 2026-11-13.",
+    "The official network listing is evidence of manufacturer-listed status; no individual distribution contracts were inspected.",
+    "The locator uses the label «Experto Peugeot Motocycles», but this does not specify each outlet's current stock or whether all service functions are available."
+  ],
+  "sources": [
+    "https://www.peugeot-motocycles.es/dealers",
+    "https://peugeot-motocycles.com/en/websites/",
+    "https://mipeugeotmotocycles.es/pages/contacto",
+    "https://peugeot.navarrohermanos.es/contacta-con-nosotros/",
+    "https://motosmarin.com/",
+    "https://motos.coches.net/concesionario/motosricardo/",
+    "https://concesionariosdemotos.com/peugeot-motocycles"
+  ]
+}
