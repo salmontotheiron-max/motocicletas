@@ -26,11 +26,11 @@ USER_AGENT = "ObservatorioRedComercial/1.0"
 MAX_BYTES = 2_000_000
 EXCERPT_BYTES = 600
 ALLOWED_SOURCE_TYPES = {
-    "official_directory", "company_page", "official_statement",
+    "official_directory", "company_page", "product_catalog", "secondary_directory", "official_statement",
     "public_record", "press", "aggregator", "social", "other",
 }
 ALLOWED_RELIABILITY = {
-    "primary_official", "primary_business", "secondary_reputable",
+    "primary_official", "primary_business", "secondary_reputable", "secondary_aggregator",
     "community", "unverified",
 }
 
