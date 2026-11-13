@@ -4,7 +4,8 @@ import argparse
 import hashlib
 import json
 import time
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -20,6 +21,16 @@ BASE_URL = (
 def transfer_url(month):
     year, mm = month.split("-")
     return BASE_URL.format(year=year, month=str(int(mm)), stamp=year + mm)
+
+
+def initial_months(today=None):
+    today = today or datetime.now(ZoneInfo("Europe/Madrid")).date()
+    current = date(2026, 1, 1)
+    months = []
+    while current <= today.replace(day=1):
+        months.append(current.strftime("%Y-%m"))
+        current = date(current.year + (current.month == 12), 1 if current.month == 12 else current.month + 1, 1)
+    return months
 
 
 def download_month(month, output_dir, opener=urlopen, retries=2, pause=1):
@@ -70,9 +81,14 @@ def main():
     parser.add_argument("--output-dir", default="datos/matraba_mensual/transferencias")
     parser.add_argument("--inventory-file", default="public/data/capturas_transferencias_mensuales.json")
     args = parser.parse_args()
-    months = args.month or month_pair()
-    results = [download_month(month, args.output_dir) for month in months]
     inventory_path = Path(args.inventory_file)
+    if args.month:
+        months = args.month
+    elif inventory_path.exists():
+        months = month_pair()
+    else:
+        months = initial_months()
+    results = [download_month(month, args.output_dir) for month in months]
     inventory_path.parent.mkdir(parents=True, exist_ok=True)
     captured_at = datetime.now(timezone.utc).isoformat()
     previous = {"ejecuciones": []}
