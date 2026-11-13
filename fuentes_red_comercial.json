@@ -505,13 +505,21 @@
       "brand_id": "brand-moto-guzzi",
       "canonical_name": "Moto Guzzi",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-motoguzzi-official-dealer-locator",
+        "source-motoguzzi-motovivo-santboi",
+        "source-motoguzzi-motomercado-fuengirola",
+        "source-motoguzzi-vespamalaga-gruponieto",
+        "source-motoguzzi-ciaomoto-alicante-piaggio",
+        "source-motoguzzi-ciaomoto-murcia-inventory",
+        "source-motoguzzi-secondary-candidates-2026",
+        "source-motoguzzi-dosruedas-jerez"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual corroborada en seis ubicaciones de venta en provincias prioritarias: Barcelona (1), Málaga (2), Cádiz (1), Alicante (1) y Murcia (1). El localizador oficial es dinámico; recuento mínimo documental, no censo nacional exhaustivo."
     },
     {
       "brand_id": "brand-moto-morini",
@@ -5495,6 +5503,168 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Agregador que lista 78 concesionarios nacionales y candidatos por provincia. Se usa para descubrimiento y contraste, no como prueba suficiente de venta actual o autorización del fabricante."
+    },
+    {
+      "source_id": "source-motoguzzi-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-moto-guzzi",
+      "publisher": "Moto Guzzi / Piaggio & C. S.p.A.",
+      "source_type": "official_directory",
+      "url": "https://www.motoguzzi.com/es_ES/dealer-locator/",
+      "title": "Localizador oficial de distribuidores y puntos de servicio Moto Guzzi España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con iframe dinámico; la extracción HTML no individualiza establecimientos."
+    },
+    {
+      "source_id": "source-motoguzzi-motovivo-santboi",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motovivo / Autovivo Grup",
+      "source_type": "company_page",
+      "url": "https://motovivo.es/",
+      "title": "Motovivo — oferta y stock Moto Guzzi en Sant Boi",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Web corporativa con sección Moto Guzzi y V85 TT en stock; ficha de instalación identifica sede y taller."
+    },
+    {
+      "source_id": "source-motoguzzi-motomercado-fuengirola",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "MotoMercado / Comercial Mountain Bikes S.L.",
+      "source_type": "company_page",
+      "url": "https://motomercadomalaga.es/",
+      "title": "MotoMercado — Moto Guzzi V85 TT y sede Fuengirola",
+      "reliability_class": "primary_business",
+      "scope": "Fuengirola, Málaga, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Web corporativa publica Moto Guzzi V85 TT, comercialización y reparación oficial del Grupo Piaggio y sede en Avda. Jesús Cautivo 46."
+    },
+    {
+      "source_id": "source-motoguzzi-vespamalaga-gruponieto",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Nieto / Vespamálaga",
+      "source_type": "company_page",
+      "url": "https://gruponieto.es/centros/vespamalaga/",
+      "title": "Vespamálaga — concesionario oficial Moto Guzzi en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Grupo Nieto declara concesionario oficial Moto Guzzi con ventas y taller; dirección Av. José Ortega y Gasset 296."
+    },
+    {
+      "source_id": "source-motoguzzi-ciaomoto-alicante-piaggio",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Piaggio / Vespa España",
+      "source_type": "official_statement",
+      "url": "https://www.vespa.com/es_ES/mundo-vespa/dealer/nuevo-concesionario-en-alicante/",
+      "title": "Ciao Moto — concesionario Grupo Piaggio con Moto Guzzi en Alicante",
+      "reliability_class": "primary_official",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "exhibition"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Publicación corporativa identifica showroom Ciao Moto de Av. de Orihuela 99, exposición Moto Guzzi y taller técnico."
+    },
+    {
+      "source_id": "source-motoguzzi-ciaomoto-murcia-inventory",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Ciao Moto / Motos.net / Cylex",
+      "source_type": "aggregator",
+      "url": "https://motos.coches.net/concesionario/ciaomoto/",
+      "title": "Ciao Moto Murcia — inventario Moto Guzzi V85 TT Travel",
+      "reliability_class": "secondary_reputable",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "candidate_discovery"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Motos.net publica unidad nueva Moto Guzzi V85 TT Travel atribuida a Ciao Moto, Av. del Rocío 8; directorios reproducen autodeclaración oficial."
+    },
+    {
+      "source_id": "source-motoguzzi-secondary-candidates-2026",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/moto-guzzi",
+      "title": "Directorio secundario de establecimientos Moto Guzzi en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Usado para descubrir candidatos; entradas sin corroboración primaria no se computan."
+    },
+    {
+      "source_id": "source-motoguzzi-dosruedas-jerez",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Dos Ruedas",
+      "source_type": "company_page",
+      "url": "https://2ruedas.es/",
+      "title": "Dos Ruedas — distribuidor y servicio técnico oficial Moto Guzzi en Jerez",
+      "reliability_class": "primary_business",
+      "scope": "Jerez de la Frontera, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara distribución y servicio técnico oficial Moto Guzzi en Jerez y Sevilla; publica gama del Grupo Piaggio, incluida Moto Guzzi, y dirección de tienda/taller en PI Bertola, cruce Ctra. Sanlúcar s/n, Jerez."
     }
   ]
 }
