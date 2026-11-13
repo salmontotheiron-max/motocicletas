@@ -14,7 +14,7 @@ import descargar_transferencias_mensual as dt
 def make_record(**fields):
     values = [""] * 69
     indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 22, "MARCA_ITV": 3, "MODELO_ITV": 4, "COD_TIPO": 7,
-               "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "COD_PROVINCIA_VEH": 19, "COD_PROVINCIA_MAT": 20, "FEC_PROCESO": 68}
+               "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "COD_POSESION": 36, "COD_PROVINCIA_VEH": 19, "COD_PROVINCIA_MAT": 20, "FEC_PROCESO": 68}
     for name, value in fields.items():
         values[indexes[name]] = value
     return "".join(value.ljust(width)[:width] for value, width in zip(values, p.WIDTHS)).encode("cp1252")
@@ -157,7 +157,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             used_row = make_record(
                 FEC_MATRICULA="15072026", FEC_TRAMITACION="15082026",
                 COD_TIPO="50", CLAVE_TRAMITE="1", NUEVO_USADO="U",
-                COD_PROVINCIA_VEH="MU", COD_PROVINCIA_MAT="A",
+                COD_POSESION="V", COD_PROVINCIA_VEH="MU", COD_PROVINCIA_MAT="A",
                 FEC_PROCESO="31082026",
             )
             payload = make_zip(new_row + b"\n" + used_row)
@@ -200,7 +200,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-08", include_transfers=True)
             key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
-                   "transferencia", "domicilio_vehiculo", "MU")
+                   "venta", "domicilio_vehiculo", "MU")
             self.assertEqual(models[key], 1)
 
     def test_duplicate_rows_are_not_silently_removed(self):
