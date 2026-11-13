@@ -759,13 +759,24 @@
       "brand_id": "brand-trs",
       "canonical_name": "TRS",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-trs-company-official",
+        "source-trs-model-range-official",
+        "source-trs-news-2026",
+        "source-trs-official-dealer-locator",
+        "source-trs-official-online-store",
+        "source-trs-nonstop-catalog",
+        "source-trs-nonstop-contact",
+        "source-trs-trialworld-madrid",
+        "source-trs-onlytrial-catalog",
+        "source-trs-company-record",
+        "source-trs-secondary-motostore"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Fabricante español activo y especializado en trial, con catálogo vigente TRRS 2026/2027, sede corporativa en Barcelona y producción/I+D+i en la provincia de Barcelona. La marca aparece como TRS Motorcycles a nivel corporativo y TRRS en modelos y comunicación comercial. En las cinco provincias prioritarias se documenta un punto físico con oferta actual: NonStop Bikes, Tona (Barcelona), que publica varios modelos TRS/TRRS 2026 y unidades de ocasión/demostración; no se ha encontrado prueba pública de que sea concesionario autorizado oficial. El localizador oficial existe, pero su formulario no expone resultados en HTML estático, por lo que la cobertura de distribuidores queda parcialmente no extraíble. Se ha verificado distribución oficial fuera del ámbito prioritario con Trialworld en Madrid. No se ha corroborado punto físico con oferta TRRS actual en Málaga, Cádiz, Alicante o Murcia; esto no equivale a ausencia de red. OnlyTrial ofrece TRRS ONE RR 2027 desde Ponferrada (León), fuera del ámbito prioritario. No se atribuye servicio de marca ni autorización a tiendas multimarca sin evidencia específica."
     },
     {
       "brand_id": "brand-vespa",
@@ -7369,6 +7380,233 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 180,
       "notes": "Se conserva la base de descubrimiento del universo de marcas; las matriculaciones no prueban red comercial ni actividad de venta actual."
+    },
+    {
+      "source_id": "source-trs-company-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-trs",
+      "publisher": "TRS Motorcycles",
+      "source_type": "company_page",
+      "url": "https://trsmotorcycles.com/Empresa",
+      "title": "TRS Motorcycles — empresa, fabricación y sede",
+      "reliability_class": "primary_official",
+      "scope": "España; sede y producción en Barcelona",
+      "directory_scope": [
+        "manufacturer_identity",
+        "factory",
+        "company"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La empresa declara su constitución en 2013, producción de motocicletas de trial y que las instalaciones productivas e I+D+i están en la provincia de Barcelona. Contacto corporativo en Barcelona y fábrica en Santpedor."
+    },
+    {
+      "source_id": "source-trs-model-range-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-trs",
+      "publisher": "TRS Motorcycles",
+      "source_type": "product_catalog",
+      "url": "https://trsmotorcycles.com/Motocicletas",
+      "title": "TRS / TRRS — catálogo oficial de motocicletas",
+      "reliability_class": "primary_official",
+      "scope": "Gama global; catálogo consultado 13-11-2026",
+      "directory_scope": [
+        "product_catalog",
+        "motorcycles",
+        "trial"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Catálogo oficial vigente muestra TRRS ONE RR 2027, GOLD 2026, ONE R 2026, XTRACK ONE R 2026, ON-E Kids 2025 y ONE RR 80CC 2024. El fabricante advierte que las imágenes de motos son de competición/circuitos cerrados."
+    },
+    {
+      "source_id": "source-trs-news-2026",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-trs",
+      "publisher": "TRS Motorcycles",
+      "source_type": "official_statement",
+      "url": "https://trsmotorcycles.com/Noticias",
+      "title": "TRS Motorcycles — noticias y novedades 2026",
+      "reliability_class": "primary_official",
+      "scope": "España; noticias 2026",
+      "directory_scope": [
+        "brand_activity",
+        "new_models"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La sección oficial registra lanzamiento de TRRS ONE RR 2027 el 16-09-2026, noticias de competición en mayo de 2026 y evento TRRS Lovers en febrero de 2026."
+    },
+    {
+      "source_id": "source-trs-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-trs",
+      "publisher": "TRS Motorcycles",
+      "source_type": "official_directory",
+      "url": "https://trsmotorcycles.com/Distribuidores",
+      "title": "TRS Motorcycles — localizador oficial de distribuidores",
+      "reliability_class": "primary_official",
+      "scope": "España; listado de distribuidores",
+      "directory_scope": [
+        "dealer_network",
+        "sales",
+        "service"
+      ],
+      "capture_mode": "dynamic_unextractable",
+      "discovery_status": "dynamic_unextractable",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página oficial contiene formulario de búsqueda por nombre y selector, pero no entrega filas de distribuidores en HTML estático. No se infiere ausencia de red; queda pendiente de consulta interactiva/manual."
+    },
+    {
+      "source_id": "source-trs-official-online-store",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-trs",
+      "publisher": "TRS Motorcycles",
+      "source_type": "product_catalog",
+      "url": "https://motostore.trsmotorcycles.com/en",
+      "title": "TRRS — tienda oficial online de motocicletas",
+      "reliability_class": "primary_official",
+      "scope": "Venta online internacional; selector de país incluye España",
+      "directory_scope": [
+        "ecommerce",
+        "product_catalog"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El enlace desde la web oficial conduce a una tienda de motocicletas con selección de país, incluido España. El catálogo por país requiere navegación interactiva; no se computa como punto físico."
+    },
+    {
+      "source_id": "source-trs-nonstop-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "NonStop Bikes, S.L.",
+      "source_type": "product_catalog",
+      "url": "https://www.nonstopbikes.com/trial-aba/marca/trs/",
+      "title": "NonStop Bikes — catálogo TRS/TRRS 2026 y 2025",
+      "reliability_class": "primary_business",
+      "scope": "Tona, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "new_stock",
+        "used_stock"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "El catálogo del operador presenta TRS ONE RR 2026 inyección (8.535 €), XTRACK ONE R 2026 (7.790 €), ONE RR 2026 carburación (8.115 €), ONE R 2026 (7.245 €), ONE RR 80CC 2026 (5.249 €) y ON-E Kids 2025. También muestra motos usadas/demostración 2020–2024."
+    },
+    {
+      "source_id": "source-trs-nonstop-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "NonStop Bikes, S.L.",
+      "source_type": "company_page",
+      "url": "https://www.nonstopbikes.com/trial-aba/",
+      "title": "NonStop Bikes — tienda, taller y dirección física",
+      "reliability_class": "primary_business",
+      "scope": "Carrer Taradell 68, 08551 Tona, Barcelona, España",
+      "directory_scope": [
+        "retail_location",
+        "workshop",
+        "trial_specialist"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "La propia web confirma especialización en trial, categorías de motos nuevas y ocasión, contacto y domicilio fiscal/operativo en Tona. No se ha encontrado autodeclaración de concesionario oficial TRS ni prueba de autorización contractual."
+    },
+    {
+      "source_id": "source-trs-trialworld-madrid",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Trialworld Store",
+      "source_type": "press",
+      "url": "https://trialworld.es/trialworld-concesionario-oficial-trrs-trs-motorcycles-en-madrid/",
+      "title": "Trialworld — acuerdo de distribución oficial TRRS en Madrid (25-07-2024)",
+      "reliability_class": "primary_business",
+      "scope": "Las Rozas, Madrid; fuera de las provincias prioritarias",
+      "directory_scope": [
+        "official_dealer",
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "Publicación del propio operador anuncia acuerdo con Marc Arañó, director comercial y marketing de TRS, para distribuir toda la gama TRRS desde Madrid. Evidencia de distribución oficial en Madrid, fuera del ámbito provincial prioritario."
+    },
+    {
+      "source_id": "source-trs-onlytrial-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "OnlyTrial",
+      "source_type": "product_catalog",
+      "url": "https://onlytrial.es/",
+      "title": "OnlyTrial — oferta online TRRS ONE RR 2027",
+      "reliability_class": "primary_business",
+      "scope": "Ponferrada, León; venta online nacional, fuera del ámbito provincial prioritario",
+      "directory_scope": [
+        "ecommerce",
+        "product_catalog",
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "La web ofrece TRRS ONE RR 2027 a 8.527 € y declara stock real, envío 24/48h y sede física en Av. de Portugal 381, Ponferrada. Se excluye del recuento físico de las cinco provincias prioritarias."
+    },
+    {
+      "source_id": "source-trs-company-record",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Iberinform / Cinco Días",
+      "source_type": "public_record",
+      "url": "https://www.iberinform.es/empresa/6307052/trs-motorcycles",
+      "title": "TRS Motorcycles S.L. — datos societarios y CNAE 3091",
+      "reliability_class": "secondary_reputable",
+      "scope": "Barcelona, España; consulta pública 2026",
+      "directory_scope": [
+        "legal_entity",
+        "manufacturer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "Registro empresarial secundario identifica TRS MOTORCYCLES S.L., NIF B66187097, domicilio Muntaner 292 P 3 PTA 2, Barcelona y actividad CNAE 3091 fabricación de motocicletas. El domicilio registral/oficina no se trata como concesionario."
+    },
+    {
+      "source_id": "source-trs-secondary-motostore",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "NonStop Bikes / catálogo web",
+      "source_type": "aggregator",
+      "url": "https://www.nonstopbikes.com/trial-aba/",
+      "title": "Catálogo de mercado TRS/TRRS en distribuidor especializado",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "market_discovery",
+        "product_range"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 60,
+      "notes": "Fuente secundaria de descubrimiento de oferta; las pruebas de establecimiento y catálogo se apoyan directamente en la web del operador y se mantienen separadas de la autorización oficial."
     }
   ]
 }
