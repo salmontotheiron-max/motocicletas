@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Se prioriza la comunicación y el localizador oficial de NIU para establecer actividad de marca y estrategia de red. Dado que el localizador oficial es dinámico y no expone fichas individualizadas en la captura, las ubicaciones se incorporan solo cuando una página corporativa del operador publica catálogo, modelos NIU actuales o una alianza comercial explícita y permite identificar la dirección física. Los agregadores se usan para descubrir candidatos y contrastar, no como evidencia única. Se separan venta, servicio específico de marca, autodeclaración de oficialidad y autorización contractual verificada.",
+  "brand_status": "established",
+  "manufacturer_locator": {
+    "url": "https://global.niu.com/es",
+    "status": "locator_present_dynamic_content",
+    "spain_claimed_dealer_count": "20+",
+    "notes": "La web oficial anuncia más de 20 concesionarios en España y red de servicio integral, con enlace al localizador. La extracción textual no muestra las fichas individuales ni permite asignar establecimientos a provincias."
+  },
+  "distribution": {
+    "current_model": "direct_distribution_announced_by_NIU",
+    "current_entity": "NIU España (equipo local anunciado; razón social/importador legal español no identificado en las fuentes consultadas)",
+    "historical_partner": "Motos Bordoy S.A.",
+    "notes": "Motos Bordoy publicó su papel como importador desde la llegada de NIU a España en 2018. El comunicado oficial de 3 de febrero de 2026 anuncia el regreso de NIU con estrategia centrada en distribución directa y equipo local; no se presume que Bordoy siga siendo importador."
+  },
+  "counts": {
+    "sales_corroborated": 7,
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 1,
+      "Cádiz": 2,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "manufacturer_directory_individual_outlets_recovered": 0,
+    "official_operator_self_declarations": 1,
+    "service_brand_specific_explicitly_verified": 2,
+    "contractual_authorization_independently_verified": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "niu-eletamendi-barcelona",
+      "trading_name": "Eletamendi",
+      "operator": "Eletamendi / Grupo Letamendi",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de València 171, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://eletamendi.com/comprar-motos-electricas/niu/",
+      "supporting_urls": [
+        "https://eletamendi.com/quienes-somos/"
+      ],
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "Página NIU con varios modelos actuales y reserva/prueba. La empresa confirma tienda y taller de motos eléctricas; la página específica de NIU atribuye mantenimiento y reparación de la marca con recambios originales. No se recuperó ficha individual del localizador oficial NIU."
+    },
+    {
+      "outlet_id": "niu-moute-vilanova",
+      "trading_name": "Mou-te en moto",
+      "operator": "Mou-te en moto",
+      "province": "Barcelona",
+      "municipality": "Vilanova i la Geltrú",
+      "public_address": "Ronda Europa 60, Local 6, Edificio Eurocentre, 08800 Vilanova i la Geltrú, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.mouteenmoto.com/",
+      "supporting_urls": [
+        "https://www.mouteenmoto.com/catalogo"
+      ],
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "La web publica NIU NQIX 500 con entrega inmediata y catálogo con varios modelos NIU. Dirección y tienda física identificadas por el propio operador. No se atribuye servicio técnico NIU específico."
+    },
+    {
+      "outlet_id": "niu-amper-malaga",
+      "trading_name": "Amper Bikes Málaga",
+      "operator": "Amper Bikes",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de la Aurora 51, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.amperbikes.es/categoria-producto/niu/",
+      "supporting_urls": [
+        "https://www.amperbikes.es/"
+      ],
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "Catálogo NIU propio con seis modelos y precios; web corporativa identifica esta tienda física en Málaga. No se atribuye servicio NIU específico."
+    },
+    {
+      "outlet_id": "niu-electriccity-jerez",
+      "trading_name": "Electric City Jerez",
+      "operator": "Electric City",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Polígono Industrial Guadalquivir, Nave 37, 11408 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://electriccity.es/electriccity-y-niu-una-alianza-para-la-movilidad-electrica-del-futuro/",
+      "supporting_urls": [
+        "https://electriccity.es/"
+      ],
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "Página corporativa de alianza NIU con modelos específicos y llamada a visitar las tiendas de Jerez o Chiclana; dirección de Jerez identificada en el sitio de la empresa. No se atribuye servicio NIU específico."
+    },
+    {
+      "outlet_id": "niu-electriccity-chiclana",
+      "trading_name": "Electric City Chiclana",
+      "operator": "Electric City",
+      "province": "Cádiz",
+      "municipality": "Chiclana de la Frontera",
+      "public_address": "Carretera N-340 km 5, Avenida del Mueble, 11130 Chiclana de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://electriccity.es/electriccity-y-niu-una-alianza-para-la-movilidad-electrica-del-futuro/",
+      "supporting_urls": [
+        "https://electriccity.es/"
+      ],
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "La página corporativa de alianza NIU invita a visitar las tiendas de Jerez o Chiclana; la web corporativa identifica la sede de Chiclana. Se cuenta como segunda ubicación de venta de Electric City, sin inferir servicio específico de marca."
+    },
+    {
+      "outlet_id": "niu-scoomart-alicante",
+      "trading_name": "Scoomart",
+      "operator": "Scoomart",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida Conde de Casa Rojas 1A, Local 1, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://scoomart.com/motos-electricas-niu-alicante/",
+      "supporting_urls": [
+        "https://scoomart.com/contacto/"
+      ],
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "Página específica de modelos NIU XQi3 y NQiX con precios y dirección corroborada en el contacto corporativo. El taller general de vehículos eléctricos no se contabiliza como servicio NIU específico."
+    },
+    {
+      "outlet_id": "niu-belmonte-murcia",
+      "trading_name": "Francisco Belmonte",
+      "operator": "Francisco Belmonte S.A.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/niu-murcia/",
+      "supporting_urls": [
+        "https://franciscobelmonte.com/quienes-somos/"
+      ],
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página NIU con gama completa, compra y servicio posventa. La página corporativa declara expresamente concesionario oficial y exclusivo NIU para la Región de Murcia. Se trata de autodeclaración del operador, no contrato verificado independientemente."
+    }
+  ],
+  "candidates_and_exclusions": [
+    {
+      "candidate": "Only Scooter, Barcelona",
+      "reason": "El directorio secundario lo lista con NIU, pero no se recuperó una página propia actual con modelo NIU ofertado y dirección específica; no se cuenta."
+    },
+    {
+      "candidate": "Ecomobility Green World / Electric City Chiclana",
+      "reason": "La marca NIU queda asociada al operador Electric City mediante página propia de alianza; Chiclana se cuenta por la invitación expresa a visitar ambas tiendas y sus direcciones corporativas. No se duplica el mismo local bajo nombres comerciales distintos."
+    },
+    {
+      "candidate": "Otros puntos del directorio secundario",
+      "reason": "No se incorporan sin evidencia primaria de operador que permita comprobar oferta actual y dirección."
+    }
+  ],
+  "limitations": [
+    "La cifra oficial de más de 20 concesionarios no se puede desglosar por provincia desde la captura textual del localizador dinámico.",
+    "Las siete ubicaciones son un mínimo documental en cinco provincias, no un censo exhaustivo de la red nacional.",
+    "La autorización contractual individual no se ha verificado independientemente; solo Francisco Belmonte se autodeclara concesionario oficial en una página corporativa actual.",
+    "No se identifica una razón social importadora española actual. El papel de Motos Bordoy se conserva como antecedente histórico, no como importador actual."
+  ],
+  "sources": [
+    "https://global.niu.com/es/press-niu-back-in-spain",
+    "https://global.niu.com/es",
+    "https://global.niu.com/es/conviertete-en-concesionario",
+    "https://eletamendi.com/comprar-motos-electricas/niu/",
+    "https://eletamendi.com/quienes-somos/",
+    "https://www.mouteenmoto.com/",
+    "https://www.amperbikes.es/categoria-producto/niu/",
+    "https://electriccity.es/electriccity-y-niu-una-alianza-para-la-movilidad-electrica-del-futuro/",
+    "https://scoomart.com/motos-electricas-niu-alicante/",
+    "https://scoomart.com/contacto/",
+    "https://franciscobelmonte.com/niu-murcia/",
+    "https://franciscobelmonte.com/quienes-somos/",
+    "https://www.motosbordoy.com/el-negocio-niu/",
+    "https://concesionariosdemotos.com/niu",
+    "https://motos.coches.net/concesionarios/niu_/"
+  ]
+}
