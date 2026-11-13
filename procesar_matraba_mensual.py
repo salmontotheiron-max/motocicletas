@@ -12,7 +12,6 @@ from pathlib import Path
 
 from descargar_matraba_mensual import inspect_zip
 from descargar_transferencias_mensual import inspect_transfer_zip
-from descargar_transferencias_mensual import inspect_transfer_zip
 
 START = "2026-01"
 WIDTHS = [8,1,8,30,22,1,21,2,1,5,6,6,6,3,2,2,2,2,24,2,2,1,8,5,8,1,1,9,3,5,30,7,3,5,1,1,1,1,1,1,11,25,25,35,70,6,6,4,4,3,8,4,4,4,6,30,50,35,25,35,4,4,4,1,25,1,4,25,8]
