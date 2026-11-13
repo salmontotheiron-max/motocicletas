@@ -516,9 +516,10 @@
         "source-motoguzzi-vespamalaga-gruponieto",
         "source-motoguzzi-ciaomoto-alicante-piaggio",
         "source-motoguzzi-ciaomoto-murcia-inventory",
-        "source-motoguzzi-secondary-candidates-2026"
+        "source-motoguzzi-secondary-candidates-2026",
+        "source-motoguzzi-dosruedas-jerez"
       ],
-      "notes": "Actividad comercial actual corroborada en cinco ubicaciones de venta en provincias prioritarias: Barcelona (1), Málaga (2), Alicante (1) y Murcia (1). El localizador oficial es dinámico; recuento mínimo documental, no censo nacional exhaustivo."
+      "notes": "Actividad comercial actual corroborada en seis ubicaciones de venta en provincias prioritarias: Barcelona (1), Málaga (2), Cádiz (1), Alicante (1) y Murcia (1). El localizador oficial es dinámico; recuento mínimo documental, no censo nacional exhaustivo."
     },
     {
       "brand_id": "brand-moto-morini",
@@ -5643,6 +5644,27 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Usado para descubrir candidatos; entradas sin corroboración primaria no se computan."
+    },
+    {
+      "source_id": "source-motoguzzi-dosruedas-jerez",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Dos Ruedas",
+      "source_type": "company_page",
+      "url": "https://2ruedas.es/",
+      "title": "Dos Ruedas — distribuidor y servicio técnico oficial Moto Guzzi en Jerez",
+      "reliability_class": "primary_business",
+      "scope": "Jerez de la Frontera, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara distribución y servicio técnico oficial Moto Guzzi en Jerez y Sevilla; publica gama del Grupo Piaggio, incluida Moto Guzzi, y dirección de tienda/taller en PI Bertola, cruce Ctra. Sanlúcar s/n, Jerez."
     }
   ]
 }
