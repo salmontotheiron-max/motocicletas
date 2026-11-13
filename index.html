@@ -50,6 +50,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <article class="card"><div class="label">Matriculaciones nuevas</div><div class="value" id="newTotal">—</div><div class="sub" id="newScope">Provincia de matriculación</div></article>
     <article class="card"><div class="label">Matriculaciones de usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
     <article class="card"><div class="label">Transferencias de titularidad</div><div class="value" id="transferTotal">—</div><div class="sub" id="transferScope">Pendiente de captura específica DGT</div></article>
+    <article class="card"><div class="label">Transferencias con venta declarada</div><div class="value" id="saleTotal">—</div><div class="sub" id="saleScope">COD_POSESION=V · provincia destino registral</div></article>
     <article class="card"><div class="label">Peso de la provincia</div><div class="value" id="provinceShare">—</div><div class="sub">Sobre las matriculaciones nuevas nacionales</div></article>
     <article class="card"><div class="label">Periodos con datos</div><div class="value" id="periodCount">—</div><div class="sub" id="cutoff">Según inventario publicado</div></article>
   </section>
@@ -65,15 +66,15 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   </section>
   <section class="panel" aria-label="Desglose por modelo">
     <h2>Volumen por modelo</h2>
-    <p class="small">Agregado de microdatos DGT por marca, modelo, segmento y provincia. Los registros de transferencia se muestran separados de las matriculaciones usadas.</p>
+    <p class="small">Agregado de microdatos DGT por marca, modelo, segmento y provincia. Las transferencias se separan en venta declarada, subasta y sin clasificación mediante COD_POSESION.</p>
     <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
       <div><label for="modelBrand">Marca</label><select id="modelBrand"><option value="all">Todas las marcas</option></select></div>
-      <div><label for="modelOperation">Operación</label><select id="modelOperation"><option value="all">Todas</option><option value="matriculacion_nueva">Matriculación nueva</option><option value="matriculacion_usada">Matriculación usada</option><option value="transferencia">Transferencia (cambio de titular)</option></select></div>
+      <div><label for="modelOperation">Operación</label><select id="modelOperation"><option value="all">Todas</option><option value="matriculacion_nueva">Matriculación nueva</option><option value="matriculacion_usada">Matriculación usada</option><option value="venta">Venta declarada DGT (COD_POSESION=V)</option><option value="subasta">Subasta (COD_POSESION=S)</option><option value="transferencia_sin_clasificar">Transferencia sin clasificación</option></select></div>
       <div><label for="modelSearch">Buscar modelo</label><input id="modelSearch" type="search" placeholder="Nombre del modelo" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
     </div>
     <p class="small" id="modelScope">Volumen agregado por modelo; aplica también los filtros generales de periodo, provincia y segmento.</p>
     <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Modelo DGT</th><th>Volumen</th><th>Segmento</th><th>Provincia de referencia</th><th>Operación</th></tr></thead><tbody id="modelRanking"></tbody></table></div>
-    <p class="note">En matriculaciones nuevas la provincia es la de matriculación. En matriculaciones usadas y transferencias es la del domicilio registral del vehículo. La DGT no identifica en este registro la provincia donde se cerró la compraventa; no se interpreta el domicilio como provincia de venta.</p>
+    <p class="note">En matriculaciones nuevas la provincia es la de matriculación. En matriculaciones usadas y transferencias es la del domicilio registral del vehículo. COD_POSESION=V identifica una operación marcada como venta, pero no la provincia física de compraventa; el domicilio no se interpreta como provincia de venta.</p>
   </section>
   <section class="panel">
     <h2>Matriculación nueva → domicilio registral del vehículo</h2>
@@ -190,16 +191,20 @@ function nationalNew(period,kind){
 function render(){
   const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
   const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
-  const transferRows=state.models.filter(r=>r.tipo_registro==="transferencia"&&
+  const transferRows=state.models.filter(r=>["venta","subasta","transferencia_sin_clasificar"].includes(r.tipo_registro)&&
     (f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
     (f.province==="all"||r.provincia===f.province));
+  const saleRows=transferRows.filter(r=>r.tipo_registro==="venta");
   const transferAvailable=(state.manifest.archivos||[]).some(item=>item.tipo_fuente==="transferencias");
   const transferValue=transferRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
+  const saleValue=saleRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
   const national=nationalNew(f.period,f.kind);
   const share=f.province==="all"?100:(national?newValue/national*100:0);
   el("newTotal").textContent=fmt(newValue);el("usedTotal").textContent=fmt(usedValue);
   el("transferTotal").textContent=transferAvailable?fmt(transferValue):"—";
-  el("transferScope").textContent=transferAvailable?"Domicilio registral · no identifica provincia de venta":"Pendiente de primera captura de microdatos de transferencias";
+  el("transferScope").textContent=transferAvailable?"Cambios de titularidad · domicilio registral":"Pendiente de primera captura de microdatos de transferencias";
+  el("saleTotal").textContent=transferAvailable?fmt(saleValue):"—";
+  el("saleScope").textContent=transferAvailable?"COD_POSESION=V · domicilio registral, no provincia de venta":"Pendiente de primera captura de microdatos de transferencias";
   el("provinceShare").textContent=dec(share,2)+"%";
   el("periodCount").textContent=f.period==="all"?String(state.periods.length):"1";
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
@@ -277,7 +282,7 @@ function renderModels(f){
   el("modelScope").textContent=fmt(total)+" registros · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"mostrando todas");
   el("modelRanking").innerHTML=ranked.slice(0,100).map(r=>{
     const typeLabel={"50":"Moto 2 ruedas","51":"Moto con sidecar","90":"Ciclomotor 2 ruedas","91":"Ciclomotor 3 ruedas"}[r.COD_TIPO]||r.COD_TIPO;
-    const operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","transferencia":"Transferencia"}[r.tipo_registro]||r.tipo_registro;
+    const operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","venta":"Venta DGT","subasta":"Subasta","transferencia_sin_clasificar":"Transferencia sin clasificar"}[r.tipo_registro]||r.tipo_registro;
     return "<tr><td>"+escapeHTML(r.marca)+"</td><td>"+escapeHTML(r.modelo)+"</td><td>"+fmt(Number(r.recuento))+"</td><td>"+escapeHTML(typeLabel)+"</td><td>"+escapeHTML(r.provincia)+"</td><td>"+escapeHTML(operationLabel)+"</td></tr>";
   }).join("")||"<tr><td colspan='6'>Sin registros para los filtros seleccionados.</td></tr>";
 }
