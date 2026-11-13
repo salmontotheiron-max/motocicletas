@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan como venta las ubicaciones en las que una fuente primaria del operador publica showroom o catálogo Brixton y una sede física identificable. Se registra servicio/recambios por separado cuando una página corporativa actual lo identifica expresamente. Las autodeclaraciones históricas y los agregadores sin confirmación primaria actual se conservan como candidatos y no se suman.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Una página corporativa actual publica showroom o modelos Brixton y una dirección física identificable.",
+    "self_declared_official": "El operador se autodenomina concesionario oficial Brixton; no equivale a confirmación individual del fabricante.",
+    "manufacturer_individually_listed": "La dirección aparece individualizada en el localizador oficial Brixton.",
+    "secondary_candidate": "Un agregador o una declaración histórica atribuye Brixton a un establecimiento, pero no existe confirmación primaria actual suficiente; no se cuenta."
+  },
+  "outlet_count": 3,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 0,
+      "Alicante": 0,
+      "Murcia": 0
+    },
+    "sales": 2,
+    "service_locations": 1,
+    "same_site_sales_and_service": 0,
+    "service_only_locations": 1,
+    "manufacturer_individually_listed": 0,
+    "operator_self_declared_official_sales": 0,
+    "secondary_only_candidates": 4
+  },
+  "official_source": {
+    "urls": [
+      "https://www.brixton-motorcycles.com/es/dealers/",
+      "https://www.brixton-motorcycles.com/es/contact/"
+    ],
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial de Brixton ofrece búsqueda por ubicación, pero la captura textual solo devuelve el buscador y no fichas individualizadas. El sitio identifica a KSR Group como compañía responsable de la marca y ofrece contacto en español; no se identifica una entidad importadora española distinta ni se puede confirmar la autorización individual de los operadores."
+  },
+  "distribution": {
+    "brand_company": "KSR Group GmbH",
+    "territory": "España / soporte y actividad de marca",
+    "evidence_url": "https://www.brixton-motorcycles.com/es/contact/",
+    "notes": "El sitio oficial identifica KSR Group como compañía responsable de Brixton. La política de cookies publica un contacto Office.Spain@ksr-group.com. No se atribuye a KSR Group una filial española importadora sin evidencia societaria específica."
+  },
+  "outlets": [
+    {
+      "outlet_id": "brixton-motosturo-barcelona",
+      "brand": "Brixton",
+      "trading_name": "Motos Turó",
+      "operator": "Logic Mobility Services / Motos Turó",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Calvet, 61, 08021 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosturo.com/",
+      "supporting_urls": [
+        "https://motosturo.com/nuestras-tiendas"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web corporativa anuncia showroom Brixton y la página de tiendas identifica la sede Motosturó de Calvet 61. No se atribuye la oferta a las demás sucursales del grupo."
+    },
+    {
+      "outlet_id": "brixton-motosiles-malaga",
+      "brand": "Brixton",
+      "trading_name": "Moto Siles",
+      "operator": "Moto Siles",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Emilio Thuillier, 70, 29014 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosiles.es/tienda/",
+      "supporting_urls": [
+        "https://motosiles.es/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "El catálogo corporativo publica tres referencias Brixton y la sede de Málaga. No se extiende la oferta a la ubicación de Alhaurín de la Torre sin prueba específica."
+    },
+    {
+      "outlet_id": "brixton-grupoprim-alicante-service",
+      "brand": "Brixton",
+      "trading_name": "Grupo Prim — taller y recambios",
+      "operator": "Grupo Prim",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carretera de Ocaña, 29, 03007 Alicante, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.grupoprim.com/cita-de-taller-motos",
+      "supporting_urls": [
+        "https://www.grupoprim.com/noticias/nuevo-concesionario-de-motocicletas-brixton-en-alicante.html"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La página actual de taller y recambios incluye Brixton en esta sede. La incorporación como concesionario exclusivo anunciada históricamente no se toma como prueba de venta vigente; se registra solo posventa/recambios."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "brixton-belmonte-murcia",
+      "province": "Murcia",
+      "trading_name": "Francisco Belmonte S.A.",
+      "public_address": "Calle Isla Cristina, 12, 30007 Murcia, España",
+      "source_url": "https://franciscobelmonte.com/sobre-nosotros/",
+      "reason": "La página corporativa publicada en 2021 se autodeclara concesionario oficial y exclusivo Brixton para Murcia. El operador continúa activo, pero no se localizó oferta Brixton vigente en su catálogo actual; pendiente de confirmación."
+    },
+    {
+      "candidate_id": "brixton-coolmotorcycles-jerez",
+      "province": "Cádiz",
+      "trading_name": "COOLmotorcycles",
+      "public_address": "Calle Platino, 21, 11405 Jerez de la Frontera, Cádiz, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-coolmotorcycles",
+      "reason": "Un agregador atribuye Brixton y el perfil empresarial de LinkedIn se autodeclara concesionario oficial; la web corporativa actual no publica Brixton en el catálogo visible. No se contabiliza."
+    },
+    {
+      "candidate_id": "brixton-pernia-olvera",
+      "province": "Cádiz",
+      "trading_name": "Motos Pernía",
+      "public_address": "Avenida Julián Besteiro, 65, 11690 Olvera, Cádiz, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-motos-pernia",
+      "reason": "Atribución de Brixton por agregador; no se encontró página corporativa primaria actual que confirme la oferta."
+    },
+    {
+      "candidate_id": "brixton-dario-cadiz",
+      "province": "Cádiz",
+      "trading_name": "Motos Darío",
+      "public_address": "Calle Bulgaria, Nave 1, 7, 11011 Cádiz, España",
+      "source_url": "https://concesionariosdemotos.com/brixton",
+      "reason": "Atribución de Brixton por agregador. La web propia confirma actividad de venta multimarca, pero no publica la marca en la oferta consultada."
+    }
+  ],
+  "limitations": [
+    "Se documentan dos ubicaciones de venta con evidencia primaria actual: Barcelona (1) y Málaga (1).",
+    "Se identifica una ubicación de taller/recambios en Alicante, pero no se atribuye venta actual a Grupo Prim.",
+    "Murcia y Cádiz conservan candidatos con evidencia histórica o secundaria, sin confirmación primaria actual suficiente.",
+    "El localizador oficial Brixton es dinámico y no expone fichas individualizadas en la captura; ningún punto se clasifica como manufacturer_individually_listed.",
+    "KSR Group se identifica como compañía responsable de Brixton y ofrece contacto en español, pero no se ha identificado con certeza una sociedad importadora española independiente.",
+    "No se infieren stock disponible, ventas realizadas, matriculaciones, cuota, capacidad de servicio ni exhaustividad nacional."
+  ],
+  "methodology": [
+    "Se ha priorizado el sitio oficial Brixton/KSR Group para acreditar actividad de marca, estructura corporativa y existencia del localizador oficial.",
+    "Se han contrastado páginas corporativas de operadores para verificar oferta, catálogo y direcciones; se limita la atribución de venta a las sedes con evidencia explícita.",
+    "Se separan venta y posventa: la página actual de Grupo Prim acredita taller/recambios Brixton, pero no oferta comercial vigente.",
+    "Los candidatos respaldados únicamente por agregadores o por autodeclaraciones históricas se mantienen fuera del recuento.",
+    "Fecha de corte documental: 13 de noviembre de 2026."
+  ]
+}
