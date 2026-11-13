@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Auditoría documental de fabricante, distribución y red comercial ZXMOTO. Se computan puntos físicos con dirección pública corroborada y evidencia primaria actual de catálogo/oferta o declaración de franquicia/concesionario, separando autodeclaraciones y nombramientos difundidos por prensa de una ficha individual del localizador del fabricante. Los servicios se registran por separado y solo cuando el operador declara mantenimiento de ZXMOTO. Las aperturas anunciadas sin operador y dirección individual verificables no se computan. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "ZXMOTO / Zhang Xue Moto",
+    "country_of_origin": "China",
+    "registered_address": "Chongqing, China",
+    "notes": "El sitio corporativo internacional identifica a Zhang Xue como fundador y sitúa la creación de ZXMOTO en 2024. Una ficha sectorial de IAB China identifica como sujeto legal vinculado a Chongqing Zhangxue Motorcycle Industry Co., Ltd.; al no haberse contrastado esa denominación con un registro mercantil primario, se conserva como referencia secundaria y no como razón social registral verificada."
+  },
+  "spanish_distributor": {
+    "legal_name": "DESMOTRÓN, S.L.U.",
+    "tax_id": "B96701933",
+    "address": "Calle Noria, 11, 46550 Albuixech, Valencia, España",
+    "role": "Entidad titular del sitio oficial ZXMOTO España y distribuidor designado para el mercado español. La exclusividad se atribuye en comunicaciones sectoriales de lanzamiento, pero no se ha examinado un contrato de distribución.",
+    "evidence_url": "https://zxmoto.es/aviso-legal/",
+    "notes": "El aviso legal identifica a DESMOTRÓN, S.L.U. como titular de zxmoto.es. La página corporativa de ZXMOTO España describe su papel en el desarrollo de la red nacional y su experiencia previa como distribuidor de Ducati entre 1998 y 2023."
+  },
+  "manufacturer_locator": {
+    "url": "https://zxmoto.es/puntos-de-venta/",
+    "status": "locator_present_no_entries_yet",
+    "classification": "El localizador oficial presenta «Próximas aperturas», un buscador y un mapa, pero la captura HTML consultada no expone fichas individuales. No se interpreta como directorio vacío ni como ausencia de red."
+  },
+  "counts": {
+    "physical_outlets_documented": 2,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 0,
+      "Alicante": 0,
+      "Murcia": 0
+    },
+    "current_offer_or_official_dealer_catalogue": 2,
+    "operator_self_declared_official_points": 1,
+    "official_dealer_agreements_independently_corroborated_in_priority_provinces": 0,
+    "brand_specific_service_points_corroborated": 1,
+    "official_locator_static_entries": 0,
+    "candidates_not_counted": 2
+  },
+  "outlets": [
+    {
+      "outlet_id": "zxmoto-barcelona-asba",
+      "trading_name": "ZXMOTO ASBA Barcelona / Comercial Impala, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Calvet, 51, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "workshop"
+      ],
+      "evidence_url": "https://zxmotoasba.com/dealership",
+      "evidence_type": "operator_franchise_statement_catalog_and_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web propia declara que es la franquicia ZXMOTO de Barcelona, publica modelos y precios, permite reservar pruebas y afirma que la gama se ve, se prueba y se mantiene en el establecimiento. La ficha confirma dirección y horario de taller. No se ha localizado una ficha individual extraíble del localizador oficial."
+    },
+    {
+      "outlet_id": "zxmoto-malaga-motos-garrido",
+      "trading_name": "Motos Garrido",
+      "province": "Málaga",
+      "municipality": "Alhaurín de la Torre",
+      "public_address": "Calle Reserva, 51, 29130 Alhaurín de la Torre, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosgarrido.com/nl/19027-500rr",
+      "evidence_type": "operator_current_product_catalog_and_press_appointment",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "El catálogo propio publica ZXMOTO 500RR nueva por 6.592 euros y confirma la tienda de Calle Reserva 51. EL ESPAÑOL Málaga informó el 21-09-2026 de su nombramiento como concesionario oficial ZXMOTO. Se acepta la presencia comercial, pero no se clasifica como autorización verificada por el fabricante porque no hay ficha oficial individual ni declaración primaria inequívoca del contrato."
+    }
+  ],
+  "service_points": [
+    {
+      "service_id": "zxmoto-service-barcelona-asba",
+      "trading_name": "ZXMOTO ASBA Barcelona — taller",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Calvet, 51, Barcelona, España",
+      "evidence_url": "https://zxmotoasba.com/dealership",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La franquicia declara expresamente que las motos ZXMOTO se mantienen en el propio establecimiento y publica horario diferenciado de taller. No se afirma que exista una autorización técnica contractual verificada de forma independiente por el fabricante."
+    }
+  ],
+  "candidates_not_counted": [
+    {
+      "candidate_name": "Apertura anunciada de ZXMOTO en Cádiz (operador y dirección pendientes)",
+      "province": "Cádiz",
+      "municipality": null,
+      "public_address": null,
+      "reason": "MOTOSAN anunció en junio de 2026 una expansión con apertura confirmada en Cádiz, pero la noticia no identifica operador ni dirección y el localizador oficial consultado sigue mostrando «Próximas aperturas». No se puede contar como establecimiento físico operativo.",
+      "evidence_urls": [
+        "https://www.motosan.es/motos/zxmoto-espana-precios-modelos/",
+        "https://zxmoto.es/puntos-de-venta/"
+      ]
+    },
+    {
+      "candidate_name": "Apertura anunciada de ZXMOTO en Alicante (operador y dirección pendientes)",
+      "province": "Alicante",
+      "municipality": null,
+      "public_address": null,
+      "reason": "MOTOSAN anunció en junio de 2026 una expansión con apertura confirmada en Alicante, pero la noticia no identifica operador ni dirección y el localizador oficial consultado sigue mostrando «Próximas aperturas». No se puede contar como establecimiento físico operativo.",
+      "evidence_urls": [
+        "https://www.motosan.es/motos/zxmoto-espana-precios-modelos/",
+        "https://zxmoto.es/puntos-de-venta/"
+      ]
+    }
+  ]
+}
