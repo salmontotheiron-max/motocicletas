@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Auditoría de fabricante y red comercial Zero Motorcycles en España. Se computan puntos físicos con dirección propia corroborada y oferta actual de modelos Zero publicada por el operador, o concesionario oficial autodeclarado con gama nueva y garantía explícitas. Se separan las declaraciones del operador, los nombramientos históricos y las fichas de directorios agregadores. Los candidatos de Cádiz sin oferta actual demostrable no se contabilizan. El localizador oficial es interactivo y no permite extracción estática. El recuento es mínimo documental, no censo completo.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "Zero Motorcycles, Inc.",
+    "country_of_origin": "Estados Unidos",
+    "registered_address": "380 El Pueblo Road, Scotts Valley, CA 95066, Estados Unidos",
+    "european_entity": "Zero Motorcycles B.V.",
+    "european_address": "Oester 12, 1723 HW Noord-Scharwoude, Países Bajos",
+    "notes": "La política de privacidad oficial identifica Zero Motorcycles, Inc. como gestora del sitio y responsable, y Zero Motorcycles B.V. como representante europeo a efectos de privacidad. ZERO MOTORCYCLES SPAIN, S.L. (NIF B42782557) figura activa en el registro empresarial español, con domicilio en Calle Villalar 7, bajo izquierda, 28001 Madrid y objeto de venta mayorista, mantenimiento y reparación; no se presume que sea el importador exclusivo."
+  },
+  "spanish_distributor": {
+    "legal_name": "ZERO MOTORCYCLES SPAIN, S.L.",
+    "tax_id": "B42782557",
+    "address": "Calle Villalar, 7, bajo izquierda, 28001 Madrid, España",
+    "role": "Entidad española del grupo/mercado identificada en registro empresarial; función contractual de importador o distribuidor nacional no confirmada",
+    "evidence_url": "https://www.iberinform.es/empresa/9376131/zero-motorcycles-spain",
+    "notes": "Registro secundario consultado en julio de 2026 la identifica activa y con objeto social de venta mayorista, mantenimiento y reparación de motocicletas. No se asigna exclusividad ni representación contractual sin fuente primaria."
+  },
+  "manufacturer_locator": {
+    "url": "https://zeromotorcycles.com/es-es/contact-dealer",
+    "status": "dynamic_unextractable",
+    "classification": "El localizador oficial es un formulario que solicita ubicación/dirección y no expone entradas de establecimientos en HTML estático. No se interpreta como directorio vacío ni como ausencia de red."
+  },
+  "counts": {
+    "physical_outlets_documented": 4,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 0,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "current_offer_or_official_dealer_catalogue": 4,
+    "used_stock_corroborated": 0,
+    "official_dealer_operator_self_declarations": 2,
+    "official_dealer_historical_or_aggregator_only": 2,
+    "brand_specific_authorized_service_independently_corroborated": 0,
+    "workshop_points_with_zero_specific_authorization": 0,
+    "official_locator_static_entries": 0,
+    "candidates_not_counted": 2
+  },
+  "outlets": [
+    {
+      "outlet_id": "zero-barcelona-omega-bikes",
+      "trading_name": "Omega Bikes",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Ronda Sant Oleguer, 110-112, 08304 Mataró, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "workshop"
+      ],
+      "evidence_url": "https://www.omegabikes.net/linhai",
+      "evidence_type": "operator_zero_brand_page_and_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página propia específica Zero declara concesionario oficial, motos nuevas con garantía oficial, servicio propio y taller. Contacto y dirección en Mataró confirmados en la web corporativa. La declaración de autorización es del operador; no se ha verificado un contrato directamente con el fabricante."
+    },
+    {
+      "outlet_id": "zero-malaga-amper-aurora",
+      "trading_name": "Amper Bikes Aurora",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de la Aurora, 51, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.amperbikes.es/categoria-producto/zero/",
+      "evidence_type": "operator_product_catalog_and_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "Catálogo propio publica nueve modelos Zero con precios y opción de compra; dirección física confirmada en el contacto. Motorbike Magazine identificó a Amper como nuevo concesionario oficial en 2023 y directorios recientes siguen listándolo, pero no se ha localizado confirmación primaria actual de la autorización. El servicio técnico general del grupo no se atribuye como servicio oficial Zero."
+    },
+    {
+      "outlet_id": "zero-alicante-motos-marin-elche",
+      "trading_name": "Motos Marín Elche",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avenida de Alicante, 96A, 03203 Elche, Alicante, España",
+      "outlet_role": [
+        "sales",
+        "workshop"
+      ],
+      "evidence_url": "https://motosmarin.com/modelo/zero-xe/",
+      "evidence_type": "operator_product_catalog_and_company_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Catálogo propio publica Zero XE (6.510 €), XB, S, DS y SR/F y declara expresamente que los modelos Zero se comercializan desde sus concesionarios de Elche y Murcia. La empresa se autodeclara concesionario oficial Zero. El taller está confirmado, pero su página de posventa solo declara servicio técnico autorizado Suzuki; no se acredita servicio oficial Zero."
+    },
+    {
+      "outlet_id": "zero-murcia-motos-marin",
+      "trading_name": "Motos Marín Murcia",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle San Juan de la Cruz, 18, 30011 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "workshop"
+      ],
+      "evidence_url": "https://motosmarin.com/modelo/zero-xe/",
+      "evidence_type": "operator_product_catalog_and_company_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La ficha Zero propia de Motos Marín indica que los modelos anunciados se comercializan desde los concesionarios de Murcia y Elche. La empresa se autodeclara concesionario oficial Zero y confirma el establecimiento y taller en Murcia. No se acredita servicio técnico oficial Zero."
+    }
+  ],
+  "candidates_not_counted": [
+    {
+      "trading_name": "El Motorista Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avenida de Europa, 13, 11405 Jerez de la Frontera, Cádiz, España",
+      "reason": "Directorio reciente lo lista como concesionario oficial Zero y la red histórica de 2022 lo identificaba; la web propia confirma tienda/taller activo, pero no se encontró oferta actual de un modelo Zero en catálogo propio. Se mantiene como candidato no computado.",
+      "evidence_url": "https://concesionariosdemotos.com/tienda-el-motorista"
+    },
+    {
+      "trading_name": "Ecomobility Green World Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Carretera N-IV Km 640, Polígono Industrial Guadalquivir, Nave 37, 11408 Jerez de la Frontera, Cádiz, España",
+      "reason": "Directorio local confirma tienda de movilidad eléctrica activa en 2026 y Bikes4Sale la lista como showroom Zero con modelos; sin oferta/stock actual demostrable en fuente propia del operador. No se contabiliza.",
+      "evidence_url": "https://www.bikes4sale.com/new-bike-showrooms/dealer/zero/spain/jerez-de-la-frontera/17600/ecomobility-green-world-jerez"
+    }
+  ]
+}
