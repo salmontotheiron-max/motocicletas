@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan como venta los puntos en los que una fuente primaria del fabricante/importador o del operador publica oferta Bajaj y dirección física. Los talleres se registran por separado cuando la fuente primaria solo acredita servicio. Las fichas de agregadores sin confirmación primaria se conservan como pistas de investigación y no se suman a los establecimientos confirmados. La oficialidad autodeclarada no equivale a confirmación individual del importador.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Una fuente primaria del fabricante/importador o del operador publica oferta Bajaj y una dirección física identificable.",
+    "self_declared_official": "El operador se autodenomina concesionario o servicio oficial; no equivale a confirmación individual por el importador.",
+    "manufacturer_individually_listed": "La dirección aparece individualizada en el localizador oficial Bajaj.",
+    "secondary_candidate": "Un agregador atribuye Bajaj a un establecimiento, pero no existe confirmación primaria suficiente; no se cuenta como establecimiento confirmado."
+  },
+  "outlet_count": 6,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 0,
+      "Cádiz": 3,
+      "Alicante": 0,
+      "Murcia": 0
+    },
+    "sales": 4,
+    "service_locations": 4,
+    "same_site_sales_and_service": 2,
+    "service_only_locations": 2,
+    "manufacturer_individually_listed": 1,
+    "operator_self_declared_official_sales": 3,
+    "secondary_only_candidates": 2
+  },
+  "official_source": {
+    "url": "https://bajajmotos.es/concesionarios/",
+    "status": "locator_present_dynamic_content",
+    "notes": "La vista textual del localizador muestra Madrid, Barcelona y Valencia; Bajaj Barcelona en Carrer d'Aribau 64 coincide con una tienda individualizada. No se extraen fichas individuales para Málaga, Cádiz, Alicante o Murcia."
+  },
+  "outlets": [
+    {
+      "outlet_id": "bajaj-barcelona-aribau",
+      "brand": "Bajaj",
+      "trading_name": "Bajaj Barcelona",
+      "operator": "Bajaj España / Grupo UMA",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer d'Aribau, 64, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://bajajmotos.es/concesionarios/",
+      "supporting_urls": [
+        "https://www.moto1pro.com/actualidad/bajaj-abre-en-barcelona-su-primer-concesionario-oficial-en-europa"
+      ],
+      "evidence_type": "manufacturer_directory",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_individually_listed",
+      "notes": "El localizador oficial Bajaj España publica expresamente Bajaj Barcelona en esta dirección. La prensa sectorial documentó la apertura como primer concesionario oficial europeo en 2025. No se atribuye taller en la misma sede sin ficha individual que lo confirme."
+    },
+    {
+      "outlet_id": "bajaj-castro-cadiz-sales",
+      "brand": "Bajaj",
+      "trading_name": "Castro La Motocicleta Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/bajaj/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página específica Bajaj y declaración de concesionario oficial. El operador separa ventas de taller; esta dirección se cuenta solo como venta."
+    },
+    {
+      "outlet_id": "bajaj-castro-cadiz-workshop",
+      "brand": "Bajaj",
+      "trading_name": "Castro La Motocicleta — taller Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Calle García Quijano, 2, 11012 Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/bajaj/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Taller/posventa publicado por Castro en dirección distinta de la sede de ventas de Avenida de la Sanidad Pública 297; no se cuenta como punto de venta."
+    },
+    {
+      "outlet_id": "bajaj-castro-jerez",
+      "brand": "Bajaj",
+      "trading_name": "Castro La Motocicleta Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/bajaj/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Castro publica expresamente ventas y taller en la misma sede y se autodenomina concesionario oficial Bajaj."
+    },
+    {
+      "outlet_id": "bajaj-castro-palmones",
+      "brand": "Bajaj",
+      "trading_name": "Castro La Motocicleta Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/bajaj/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Castro publica expresamente ventas y taller en la misma sede y se autodenomina concesionario oficial Bajaj."
+    },
+    {
+      "outlet_id": "bajaj-indalmar-malaga-workshop",
+      "brand": "Bajaj",
+      "trading_name": "Indalmar Motor — taller Málaga",
+      "operator": "Indalmar Motor / Grupo Playcar",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 192, 29006 Málaga, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.indalmarmotor.com/contacto",
+      "supporting_urls": [
+        "https://www.indalmarmotor.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web corporativa identifica Bajaj entre las marcas de servicio oficial del taller de Málaga. La sede de venta está en el número 198 y no incluye Bajaj en la lista primaria de marcas comercializadas; se registra únicamente el taller en el número 192."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "bajaj-jj-chorro-alicante",
+      "province": "Alicante",
+      "trading_name": "JJ Chorro",
+      "public_address": "Avenida de Orihuela, 148, 03006 Alicante, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-jj-chorro",
+      "reason": "El agregador incluye Bajaj y servicios de venta/taller; la web corporativa consultada de JJ Chorro no publica Bajaj entre sus marcas actuales. No se cuenta hasta obtener confirmación primaria."
+    },
+    {
+      "candidate_id": "bajaj-remoto-murcia",
+      "province": "Murcia",
+      "trading_name": "Remoto",
+      "public_address": "Carril del Garre, 35, 30012 Murcia, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-remoto",
+      "reason": "El agregador incluye Bajaj y venta/taller; no se encontró confirmación primaria de oferta Bajaj. La información legal publicada por Remoto en Motomike declara que la empresa no está sujeta al canal de distribución oficial. No se clasifica como oficial."
+    }
+  ],
+  "limitations": [
+    "La auditoría documenta cuatro ubicaciones de venta confirmadas: una en Barcelona y tres en Cádiz. Málaga aporta una sede de servicio/taller, no una sede de venta Bajaj confirmada en la web corporativa del operador.",
+    "Alicante y Murcia presentan pistas en directorios secundarios, pero no se han incorporado como establecimientos confirmados por falta de evidencia primaria suficiente.",
+    "El localizador oficial Bajaj muestra tres ubicaciones en su vista textual (Madrid, Barcelona y Valencia), pero declara que el mapa/listado se está cargando; no es posible concluir que no existan otros puntos.",
+    "La oficialidad de Castro e Indalmar se registra como autodeclaración del operador; solo Bajaj Barcelona está individualizado en el localizador oficial en esta captura.",
+    "No se infieren stock, matriculaciones, ventas, cuota, capacidad comercial ni exhaustividad nacional."
+  ],
+  "methodology": [
+    "Se han priorizado el importador/distribuidor oficial, el localizador oficial y las páginas corporativas de los operadores.",
+    "Se han separado los domicilios de venta y taller de Castro en Cádiz capital y el taller Bajaj de Indalmar en Málaga de su sede de venta.",
+    "Los candidatos respaldados únicamente por agregadores se conservan como pistas, no como puntos confirmados.",
+    "La fecha de corte documental es 13 de noviembre de 2026."
+  ]
+}

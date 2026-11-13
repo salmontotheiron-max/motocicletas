@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "country_scope": "ES",
-  "registry_reviewed_at": "2026-11-12",
+  "registry_reviewed_at": "2026-11-13",
   "default_capture_interval_days": 7,
   "market_scope": {
     "coverage": "open_market",
@@ -71,13 +71,17 @@
       "brand_id": "brand-bajaj",
       "canonical_name": "Bajaj",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-bajaj-es-dealers",
+        "source-bajaj-grupo-uma",
+        "source-bajaj-castro-cadiz",
+        "source-bajaj-indalmar-malaga"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por el distribuidor exclusivo Grupo UMA y el localizador oficial Bajaj, que identifica Bajaj Barcelona (Carrer d'Aribau 64), además de Madrid y Valencia. Primera auditoría territorial en cinco provincias: cuatro ubicaciones de venta documentadas en Barcelona y Cádiz; dos sedes de servicio/taller identificadas en Cádiz y Málaga (una de ellas separada de la dirección de venta). En Alicante y Murcia solo se localizaron referencias secundarias a operadores, sin evidencia primaria suficiente para incorporarlos como establecimientos confirmados. La vista textual del localizador oficial no individualiza más puntos en las provincias objetivo. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-benda",
@@ -2028,6 +2032,150 @@
       "last_verified_at": "2026-11-12",
       "capture_interval_days": 30,
       "notes": "Página específica Macbor con venta, asesoramiento, servicio técnico, mantenimiento y recambios; identifica la sede de Calle Isla Cristina 12, Murcia. El operador declara además ser concesionario oficial Macbor para la Región de Murcia."
+    },
+    {
+      "source_id": "source-bajaj-es-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-bajaj",
+      "publisher": "Bajaj Motos España / Grupo UMA",
+      "source_type": "official_directory",
+      "url": "https://bajajmotos.es/concesionarios/",
+      "title": "Concesionarios Bajaj España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "El directorio oficial declara que está cargando mapa y listado; la vista textual permite identificar Bajaj Madrid, Bajaj Barcelona (Carrer d'Aribau 64) y Bajaj Valencia (C/ de Reus 30). No se atribuyen otros puntos a partir de esta vista ni se interpreta la falta de más resultados como ausencia de red."
+    },
+    {
+      "source_id": "source-bajaj-grupo-uma",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo UMA España",
+      "source_type": "official_statement",
+      "url": "https://grupouma.eu/es/",
+      "title": "Grupo UMA España — distribuidor oficial Bajaj en España y Portugal",
+      "reliability_class": "primary_official",
+      "scope": "España y Portugal",
+      "directory_scope": [
+        "distribution",
+        "brand_activity"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Grupo UMA se identifica expresamente como distribuidor oficial de motocicletas Bajaj en España y Portugal; la web indica que inició su actividad europea como distribuidor exclusivo en 2024."
+    },
+    {
+      "source_id": "source-bajaj-castro-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/bajaj/",
+      "title": "Concesionario oficial Bajaj en Cádiz, Jerez y Campo de Gibraltar — Castro",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa específica Bajaj; el operador se autodenomina concesionario oficial y publica venta en Cádiz, Jerez y Palmones. En Cádiz capital separa ventas (Avenida de la Sanidad Pública 297) y taller (Calle García Quijano 2); en Jerez y Palmones declara ventas y taller en la misma dirección."
+    },
+    {
+      "source_id": "source-bajaj-indalmar-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Indalmar Motor",
+      "source_type": "company_page",
+      "url": "https://www.indalmarmotor.com/contacto",
+      "title": "Indalmar Motor — centros y servicio oficial Bajaj",
+      "reliability_class": "primary_business",
+      "scope": "Málaga y Almería, España",
+      "directory_scope": [
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa identifica en Málaga un taller con servicio oficial Bajaj en Avenida José Ortega y Gasset 192; no incluye Bajaj entre las marcas de venta de su sede malagueña, por lo que se registra solo como servicio y no como punto de venta. La sede de Viator (Almería) sí publica Bajaj entre sus marcas oficiales, fuera de las cinco provincias prioritarias."
+    },
+    {
+      "source_id": "source-bajaj-alicante-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/tienda-jj-chorro",
+      "title": "JJ Chorro — ficha agregada de marcas y servicios en Alicante",
+      "reliability_class": "secondary_reputable",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador incluye Bajaj entre las marcas de JJ Chorro y publica venta/taller en Avenida de Orihuela 148. La web corporativa consultada de JJ Chorro no identifica Bajaj entre sus marcas actuales; por ello se conserva como pista secundaria y no se contabiliza como presencia comercial confirmada."
+    },
+    {
+      "source_id": "source-bajaj-murcia-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/tienda-remoto",
+      "title": "Remoto — ficha agregada de marcas y servicios en Murcia",
+      "reliability_class": "secondary_reputable",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador incluye Bajaj entre las marcas de Remoto y publica venta/taller en Carril del Garre 35. No se encontró una página corporativa primaria de Remoto que confirme oferta Bajaj; su información legal en Motomike indica además que no está sujeto al canal de distribución oficial. Se conserva como pista secundaria, sin clasificarlo como concesionario oficial ni contabilizarlo como presencia confirmada."
+    },
+    {
+      "source_id": "source-bajaj-malaga-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/tienda-indalmar-motor-malaga-by-grupo-playcar",
+      "title": "Indalmar Motor Málaga — ficha agregada Bajaj",
+      "reliability_class": "secondary_reputable",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye venta y taller Bajaj a la sede de Avenida de José Ortega y Gasset 198. La página corporativa actual de Indalmar separa la sede de venta multimarca de la sede de taller con servicio oficial Bajaj en el número 192; se prioriza la fuente primaria y no se contabiliza venta Bajaj en Málaga."
     }
   ]
 }
