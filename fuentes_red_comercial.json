@@ -5913,8 +5913,8 @@
     },
     {
       "source_id": "source-mvagusta-box31-authorized-network",
-      "source_role": "primary_monitoring",
-      "brand_id": "brand-mv-agusta",
+      "source_role": "market_discovery",
+      "brand_id": null,
       "publisher": "BOX31 MOTOS / MV Agusta Madrid",
       "source_type": "company_page",
       "url": "https://www.mvagustamadrid.es/autorizados.html",
