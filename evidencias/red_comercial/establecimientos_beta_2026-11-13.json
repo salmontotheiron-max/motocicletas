@@ -16,7 +16,7 @@
     "self_declared_official": "El operador se autodenomina concesionario oficial Beta; no equivale a confirmación individual independiente del distribuidor.",
     "secondary_candidate": "Un agregador atribuye Beta a un establecimiento, pero no existe confirmación primaria actual suficiente; no se cuenta."
   },
-  "outlet_count": 5,
+  "outlet_count": 6,
   "counts": {
     "by_province": {
       "Barcelona": 2,
