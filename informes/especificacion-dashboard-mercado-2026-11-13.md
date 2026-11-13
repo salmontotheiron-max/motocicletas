@@ -93,13 +93,15 @@ El diseño oficial de MATRABA identifica `MARCA_ITV` (campo 4, CHAR(30)) y `MODE
 Tipos de registro separados:
 - `matriculacion_nueva`: CLAVE_TRAMITE=1, IND_NUEVO_USADO=N; provincia de matriculación.
 - `matriculacion_usada`: CLAVE_TRAMITE=1, IND_NUEVO_USADO=U; domicilio registral del vehículo.
-- `transferencia`: CLAVE_TRAMITE=2; domicilio registral del vehículo.
+- `venta`: CLAVE_TRAMITE=2 y COD_POSESION=V (venta declarada en el registro); domicilio registral del vehículo.
+- `subasta`: CLAVE_TRAMITE=2 y COD_POSESION=S; domicilio registral del vehículo.
+- `transferencia_sin_clasificar`: CLAVE_TRAMITE=2 sin código de posesión V/S; domicilio registral del vehículo.
 
-El agregado de transferencias mide cambios de titularidad, no compraventas verificadas. Se mantiene separado del conjunto de matriculaciones y se contabiliza una sola vez. En el diseño oficial de transferencias se documentan COD_PROVINCIA_VEH (provincia donde está domiciliado el vehículo) y COD_PROVINCIA_MAT (provincia donde fue matriculado originalmente), pero no una variable que identifique la provincia física de venta o la ubicación del vendedor. Por tanto, la provincia de venta no puede derivarse de esos campos. El domicilio posterior puede usarse como proxy del destino registral, nunca como provincia de compraventa.
+El agregado de transferencias mide cambios de titularidad, no ventas netas ni operaciones comerciales verificadas fuera del código registral. COD_POSESION=V permite aislar transferencias marcadas como venta por DGT; COD_POSESION=S identifica subastas. El resto queda sin clasificar. Se mantiene separado del conjunto de matriculaciones y se contabiliza una sola vez. En el diseño oficial de transferencias se documentan COD_PROVINCIA_VEH (provincia donde está domiciliado el vehículo), COD_PROVINCIA_MAT (provincia donde fue matriculado originalmente) y COD_POSESION (campo 37, V=Venta, S=Subasta), pero no una variable que identifique la provincia física de venta o la ubicación del vendedor. Por tanto, la provincia de venta no puede derivarse de esos campos. El domicilio posterior puede usarse como proxy del destino registral, nunca como provincia de compraventa.
 
 Fuentes de diseño:
 - DGT, [Diseño de registro de Matriculaciones MATRABA](https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/matraba/MATRICULACIONES_MATRABA.pdf).
 - DGT, [Diseño de registro de Transferencias MATRABA](https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/matraba/TRANSFERENCIAS_MATRABA.pdf).
 - DGT, [Microdatos mensuales de Transferencias](https://www.dgt.es/menusecundario/dgt-en-cifras/dgt-en-cifras-resultados/dgt-en-cifras-detalle/Microdatos-de-Transferencias-de-Vehiculos-mensual/).
 
-El dashboard separa por tanto el volumen de matriculaciones nuevas, matriculaciones usadas y transferencias; no suma los tres como si fueran ventas. Los modelos se presentan con la denominación literal declarada en MATRABA, sin fusionar variantes de escritura automáticamente.
+El dashboard separa por tanto el volumen de matriculaciones nuevas, matriculaciones usadas y transferencias; no suma los tres como si fueran ventas. Los modelos se presentan con la denominación literal declarada en MATRABA, sin fusionar variantes de escritura automáticamente. Las transferencias marcadas COD_POSESION=V se muestran como ventas declaradas DGT, siempre con la provincia de domicilio registral como destino y sin atribuirla al lugar de venta.
