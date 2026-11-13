@@ -569,13 +569,24 @@
       "brand_id": "brand-niu",
       "canonical_name": "NIU",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-niu-official-return-spain",
+        "source-niu-official-store-finder",
+        "source-niu-dealer-recruitment",
+        "source-niu-eletamendi-barcelona",
+        "source-niu-moute-vilanova",
+        "source-niu-amper-malaga",
+        "source-niu-electriccity-cadiz",
+        "source-niu-scoomart-alicante",
+        "source-niu-belmonte-murcia",
+        "source-niu-motosbordoy-historical-importer",
+        "source-niu-secondary-directory"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por el comunicado oficial de NIU de 3 de febrero de 2026, que anuncia su regreso con distribución directa, equipo local y red reforzada, y por la web oficial que anuncia más de 20 concesionarios en España. La primera auditoría de las cinco provincias prioritarias documenta siete ubicaciones con oferta actual publicada por sus operadores: Barcelona (2), Málaga (1), Cádiz (2), Alicante (1) y Murcia (1). El localizador oficial es dinámico y no permite recuperar fichas individualizadas en la captura; los nombres y direcciones se corroboran mediante webs de operadores. Francisco Belmonte se autodeclara concesionario oficial para Murcia; no se presume autorización contractual independiente para los demás puntos. Motos Bordoy fue importador histórico desde 2018, pero el comunicado de 2026 anuncia una nueva estrategia de distribución directa, por lo que no se atribuye la importación actual a Bordoy. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-peugeot-motocycles",
@@ -6092,6 +6103,233 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Se usa para descubrir candidatos y contrastar ciudades, nunca como prueba única de autorización ni de venta actual. Identifica Fornells/Harley-Davidson Girona y otros posibles operadores."
+    },
+    {
+      "source_id": "source-niu-official-return-spain",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-niu",
+      "publisher": "NIU Technologies",
+      "source_type": "press",
+      "url": "https://global.niu.com/es/press-niu-back-in-spain",
+      "title": "NIU anuncia su regreso a España con distribución directa",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "market_entry",
+        "import_distribution",
+        "dealer_network",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Comunicado oficial fechado el 3 de febrero de 2026: NIU anuncia su regreso al mercado español con estrategia centrada en distribución directa, red comercial reforzada y catálogo renovado. Identifica a NIU España y un contacto local de prensa; no publica razón social de una entidad importadora española."
+    },
+    {
+      "source_id": "source-niu-official-store-finder",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-niu",
+      "publisher": "NIU Technologies",
+      "source_type": "official_directory",
+      "url": "https://global.niu.com/es",
+      "title": "NIU España — web oficial y localizador de concesionarios",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web oficial anuncia más de 20 concesionarios en España y red de servicio integral, y enlaza al localizador. La vista textual no expone fichas individualizadas ni permite asignar establecimientos por provincia; no se imputan nombres o direcciones a partir de la cifra agregada."
+    },
+    {
+      "source_id": "source-niu-dealer-recruitment",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-niu",
+      "publisher": "NIU España",
+      "source_type": "company_page",
+      "url": "https://global.niu.com/es/conviertete-en-concesionario",
+      "title": "NIU España — captación directa de concesionarios",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "dealer_network",
+        "import_distribution",
+        "after_sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página oficial invita a incorporarse a la red con comunicación directa con NIU y equipo local en España; describe concesionario estándar, tienda premium y flagship, además de soporte técnico, administrativo, logístico y formación."
+    },
+    {
+      "source_id": "source-niu-eletamendi-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Eletamendi",
+      "source_type": "company_page",
+      "url": "https://eletamendi.com/comprar-motos-electricas/niu/",
+      "title": "Eletamendi — catálogo y servicio NIU en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica NIU con varios modelos actuales, precios y reserva/prueba. Identifica la tienda en Carrer de València 171, Barcelona. Declara mantenimiento y reparación de NIU con recambios originales en su taller propio."
+    },
+    {
+      "source_id": "source-niu-moute-vilanova",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Mou-te en moto",
+      "source_type": "company_page",
+      "url": "https://www.mouteenmoto.com/",
+      "title": "Mou-te en moto — NIU NQIX 500 en stock y catálogo eléctrico",
+      "reliability_class": "primary_business",
+      "scope": "Vilanova i la Geltrú, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa publica NIU NQIX 500 con entrega inmediata y catálogo de modelos NIU, además de tienda física en Ronda Europa 60, local 6, Vilanova i la Geltrú. Se contabiliza venta; no se atribuye servicio técnico NIU específico."
+    },
+    {
+      "source_id": "source-niu-amper-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Amper Bikes",
+      "source_type": "company_page",
+      "url": "https://www.amperbikes.es/categoria-producto/niu/",
+      "title": "Amper Bikes — catálogo NIU y tienda de Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Catálogo propio con seis modelos NIU y precios. La web corporativa identifica la tienda Amper Bikes Málaga en Avenida de la Aurora 51, 29006 Málaga; se cuenta una sede de venta."
+    },
+    {
+      "source_id": "source-niu-electriccity-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Electric City",
+      "source_type": "company_page",
+      "url": "https://electriccity.es/electriccity-y-niu-una-alianza-para-la-movilidad-electrica-del-futuro/",
+      "title": "Electric City — alianza comercial NIU en Jerez y Chiclana",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica de alianza con NIU que publica las gamas NQIX y XQi3 y dirige a visitar las tiendas de Jerez o Chiclana. La web corporativa identifica ambas sedes: Polígono Industrial Guadalquivir, Nave 37, Jerez, y Carretera N-340 km 5, Avenida del Mueble, Chiclana. Se contabilizan dos ubicaciones de venta de la misma empresa; no se atribuye servicio NIU específico."
+    },
+    {
+      "source_id": "source-niu-scoomart-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Scoomart",
+      "source_type": "company_page",
+      "url": "https://scoomart.com/motos-electricas-niu-alicante/",
+      "title": "Scoomart — gama NIU en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica de venta NIU con modelos XQi3 y NQiX y precios; la página de contacto identifica el establecimiento en Avenida Conde de Casa Rojas 1A, local 1, 03006 Alicante. Se cuenta venta; el taller general no se atribuye como servicio NIU específico."
+    },
+    {
+      "source_id": "source-niu-belmonte-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Francisco Belmonte S.A.",
+      "source_type": "company_page",
+      "url": "https://franciscobelmonte.com/niu-murcia/",
+      "title": "Francisco Belmonte — concesionario oficial NIU en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica NIU con gama completa, compra online y servicio posventa; la página corporativa declara expresamente concesionario oficial y exclusivo NIU para la Región de Murcia. Dirección C/ Isla Cristina 12, 30007 Murcia. La oficialidad se registra como autodeclaración del operador, no como contrato verificado independientemente."
+    },
+    {
+      "source_id": "source-niu-motosbordoy-historical-importer",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Bordoy S.A.",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoy.com/el-negocio-niu/",
+      "title": "Motos Bordoy — importador histórico NIU en España",
+      "reliability_class": "primary_business",
+      "scope": "España",
+      "directory_scope": [
+        "import_distribution",
+        "brand_history"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "Página corporativa afirma que NIU llegó a España de la mano de Motos Bordoy en 2018 y describe su papel como importador, con más de 45 puntos de venta en el periodo descrito. Se conserva como antecedente histórico; no prueba la importación actual tras el comunicado oficial de NIU de febrero de 2026 que anuncia distribución directa."
+    },
+    {
+      "source_id": "source-niu-secondary-directory",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos / Motos.net",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/niu",
+      "title": "Directorios secundarios de establecimientos NIU en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El directorio secundario enumera 23 puntos y candidatos en provincias prioritarias; Motos.net muestra establecimientos con vehículos NIU anunciados. Se utiliza para descubrimiento y contraste, nunca como prueba única de venta actual ni autorización oficial."
     }
   ]
 }
