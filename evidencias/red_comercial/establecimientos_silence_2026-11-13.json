@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Se transcribe el listado provincial del localizador oficial Silence y se cruza con el directorio secundario concesionariosdemotos.com para obtener direcciones públicas donde están disponibles. La inclusión en el localizador oficial se clasifica manufacturer_listed; no demuestra stock, ventas efectivas ni contrato individual. Se consultan páginas propias de operadores para confirmar oferta o servicio concreto. Se mantienen separadas las funciones de venta y servicio y no se deduplican nombres parecidos sin evidencia de identidad. Los puntos sin dirección contrastada permanecen como manufacturer_listed_only con dirección null.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "SCUTUM LOGISTIC, S.L.",
+    "brand": "Silence",
+    "tax_id": "B65168916",
+    "group": "ACCIONA",
+    "registered_address": "C/ Còrsega, 293, 08008 Barcelona, España",
+    "country_of_origin": "España",
+    "notes": "Entidad identificada en la información legal del grupo ACCIONA y documentación oficial Silence como fabricante/distribuidor de vehículos eléctricos bajo la marca Silence."
+  },
+  "manufacturer_locator": {
+    "url": "https://www.silence.eco/es/encuentranos",
+    "status": "directory_content_visible",
+    "classification": "Listado oficial por provincia; entradas visibles sin direcciones individuales en el HTML. Flagship Stores declaradas en Barcelona, Madrid y Málaga."
+  },
+  "counts": {
+    "manufacturer_listed_outlets_priority_provinces": 24,
+    "by_province": {
+      "Barcelona": 10,
+      "Cádiz": 4,
+      "Alicante": 3,
+      "Málaga": 4,
+      "Murcia": 3
+    },
+    "with_public_address_from_secondary_or_operator_sources": 18,
+    "manufacturer_listed_without_address_corrobated": 6,
+    "operator_current_offer_corroborated": 3,
+    "operator_service_specific_corroborated": 2,
+    "manufacturer_flagship_cities_in_scope": 2,
+    "operator_self_declared_official": 1,
+    "contractual_authorization_independently_verified": 0,
+    "secondary_directory_national_claim": 87
+  },
+  "outlets": [
+    {
+      "outlet_id": "silence-bcn-flagship-corcega",
+      "trading_name": "FLAGSHIP CÓRCEGA",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ de Còrsega, 293, 08008 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence/en-barcelona",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Flagship identificado por Silence; dirección coincidente con domicilio declarado del fabricante."
+    },
+    {
+      "outlet_id": "silence-bcn-manresa",
+      "trading_name": "SILENCE MANRESA",
+      "province": "Barcelona",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada del localizador oficial; dirección no expuesta en la captura ni corroborada con dirección pública independiente."
+    },
+    {
+      "outlet_id": "silence-bcn-eletamendi",
+      "trading_name": "E-LETAMENDI",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de València, 171, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://eletamendi.com/quienes-somos/",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El operador confirma tienda/taller, marca Silence y servicio oficial Silence. La evidencia recuperada acredita servicio y presencia de marca, no stock concreto."
+    },
+    {
+      "outlet_id": "silence-bcn-moute",
+      "trading_name": "Mou-te en Moto",
+      "province": "Barcelona",
+      "municipality": "Vilanova i la Geltrú",
+      "public_address": "Ronda d'Europa, 60, Local 6, Edifici Eurocentre, 08800 Vilanova i la Geltrú, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.mouteenmoto.com/s01",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha propia S01 en stock con entrega inmediata y recogida en tienda."
+    },
+    {
+      "outlet_id": "silence-bcn-quadis",
+      "trading_name": "QUADIS MOTO STORE",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Marquès de Sentmenat, 44, 08014 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección secundaria; no se recuperó catálogo Silence propio actual."
+    },
+    {
+      "outlet_id": "silence-bcn-renania",
+      "trading_name": "RENANIA TRUST",
+      "province": "Barcelona",
+      "municipality": "Valldoreix",
+      "public_address": "Carrer del Segre, 2, 08174 Valldoreix, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección secundaria; sin oferta propia Silence corroborada."
+    },
+    {
+      "outlet_id": "silence-bcn-autoconchita",
+      "trading_name": "SILENCE BARCELONA NORTE (AUTO CONCHITA)",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Joan Torras, 5 y 11-15, 08030 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/tienda-silence-barcelona-norte-auto-conchita",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Localizador oficial y directorio secundario identifican el punto; no se ha recuperado web propia actual con catálogo."
+    },
+    {
+      "outlet_id": "silence-bcn-vic",
+      "trading_name": "SILENCE VIC",
+      "province": "Barcelona",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada del localizador oficial; dirección no expuesta ni corroborada."
+    },
+    {
+      "outlet_id": "silence-bcn-vilafranca-a",
+      "trading_name": "Silence Vilafranca",
+      "province": "Barcelona",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Nombre transcrito literalmente del localizador; no se fusiona con SILENCE VILLAFRANCA sin evidencia de identidad."
+    },
+    {
+      "outlet_id": "silence-bcn-vilafranca-b",
+      "trading_name": "SILENCE VILLAFRANCA",
+      "province": "Barcelona",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Segunda entrada del localizador con denominación muy similar; posible duplicidad pendiente de resolver, no se deduplica por conjetura."
+    },
+    {
+      "outlet_id": "silence-cadiz-andalgroup",
+      "trading_name": "ANDALGROUP CADIZ",
+      "province": "Cádiz",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada del localizador oficial; dirección no recuperada."
+    },
+    {
+      "outlet_id": "silence-cadiz-mercabox-jerez",
+      "trading_name": "MERCABOX",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle de Bonanza, 1, 11408 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección en directorio secundario; web propia actual destaca otras marcas y no publica oferta Silence específica."
+    },
+    {
+      "outlet_id": "silence-cadiz-mercabox-cadiz",
+      "trading_name": "MERCABOX - CÁDIZ",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de Andalucía, 86, 11008 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Punto distinto de Mercabox Jerez según localizador y directorio secundario; sin catálogo propio Silence recuperado."
+    },
+    {
+      "outlet_id": "silence-cadiz-recambiomotos",
+      "trading_name": "RECAMBIOMOTOS S.L",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Avenida Agua Marina, 42, 11203 Algeciras, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección secundaria; no se recuperó oferta propia Silence actual."
+    },
+    {
+      "outlet_id": "silence-alicante-alcomocion",
+      "trading_name": "ALCOMOCION",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Carrer Maestro Román, 1, 03204 Elche, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección secundaria; la web propia actual muestra actividad de venta y taller, pero no oferta Silence concreta."
+    },
+    {
+      "outlet_id": "silence-alicante-motos-medina",
+      "trading_name": "MOTOS MEDINA",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avinguda de Dénia, 15, 03002 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://ducatiducatalia.es/contacto/",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Nombre del localizador oficial. La web propia del grupo identifica Motos Medina/Ducatalia en Avinguda de Dénia 15; el directorio secundario atribuye a Ducatalia el número 13, discrepancia de portal que no se resuelve aquí."
+    },
+    {
+      "outlet_id": "silence-alicante-benidorm",
+      "trading_name": "SILENCE BENIDORM",
+      "province": "Alicante",
+      "municipality": "Villajoyosa",
+      "public_address": "Partida la Cala, 16, 03570 Villajoyosa, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección secundaria; no se recuperó catálogo propio del punto."
+    },
+    {
+      "outlet_id": "silence-malaga-flagship",
+      "trading_name": "SILENCE MALAGA",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle La Orotava, 2, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://mediahouse.silence.eco/silence/es/press-release/silence-abre-su-primer-concesionario-de-vehiculos-electricos-en-malaga",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Comunicado corporativo acredita inauguración del concesionario en esta dirección; el localizador oficial actual conserva la entrada y la marca identifica Málaga como ciudad con Flagship Store."
+    },
+    {
+      "outlet_id": "silence-malaga-andalgroup",
+      "trading_name": "ANDALGROUP MALAGA",
+      "province": "Málaga",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada del localizador oficial; dirección no expuesta."
+    },
+    {
+      "outlet_id": "silence-malaga-ando",
+      "trading_name": "ANDO MOTOS",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Héroe de Sostoa, 66, 29002 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.andomotos.com/",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El operador publica venta de vehículos eléctricos y servicio de taller; Silence aparece en el conjunto de marcas visuales, sin catálogo propio actual identificable."
+    },
+    {
+      "outlet_id": "silence-malaga-kaos",
+      "trading_name": "KAOS RACER",
+      "province": "Málaga",
+      "municipality": "Torremolinos",
+      "public_address": "Calle Antonio de Nebrija, 9, 29620 Torremolinos, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/silence",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada oficial y dirección secundaria; sin oferta Silence propia corroborada."
+    },
+    {
+      "outlet_id": "silence-murcia-jesant",
+      "trading_name": "AUTOMOVILES JESANT",
+      "province": "Murcia",
+      "municipality": null,
+      "public_address": null,
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.silence.eco/es/encuentranos",
+      "evidence_type": "manufacturer_locator_or_release",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada del localizador oficial no reflejada entre las dos fichas murcianas detalladas por el agregador; dirección pendiente."
+    },
+    {
+      "outlet_id": "silence-murcia-emisiones00",
+      "trading_name": "EMISIONES 00 MURCIA",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida Primero de Mayo, 1, 30006 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://emisiones00.com/web/contacto/",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "manufacturer_listed_only",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Entrada del localizador y dirección propia confirmada; la ficha Silence antigua no basta para afirmar stock actual."
+    },
+    {
+      "outlet_id": "silence-murcia-francisco-belmonte",
+      "trading_name": "FRANCISCO BELMONTE",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina, 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/motos-electricas-silence-murcia/",
+      "evidence_type": "secondary_directory_or_operator",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Oferta propia de gama Silence, asesoramiento, pruebas y servicio técnico autorizado; el operador se declara concesionario oficial. Autorización contractual no revisada."
+    }
+  ]
+}
