@@ -1,0 +1,126 @@
+{
+  "esquema": 1,
+  "ultima_captura_utc": "2026-11-13T16:13:26.609710+00:00",
+  "ejecuciones": [
+    {
+      "fecha_captura_utc": "2026-11-13T16:13:26.609710+00:00",
+      "periodos_consultados": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09",
+        "2026-10",
+        "2026-11"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-01",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-01/export_mensual_trf_202601_a28896a230224fa4d98dc2bd6153525921bf423cd981d7301aa27cd2ebe3f9ec.zip",
+          "sha256": "a28896a230224fa4d98dc2bd6153525921bf423cd981d7301aa27cd2ebe3f9ec",
+          "bytes_zip": 32082767,
+          "bytes_txt": 227527300,
+          "registros": 318220,
+          "url": "https://www.dgt.es/microdatos/salida/2026/1/vehiculos/transferencias/export_mensual_trf_202601.zip"
+        },
+        {
+          "periodo": "2026-02",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-02/export_mensual_trf_202602_84754245e124ca5b9c771bfd95bac396b28e4cbd8775240e97e1319f80338cd2.zip",
+          "sha256": "84754245e124ca5b9c771bfd95bac396b28e4cbd8775240e97e1319f80338cd2",
+          "bytes_zip": 36325025,
+          "bytes_txt": 255934965,
+          "registros": 357951,
+          "url": "https://www.dgt.es/microdatos/salida/2026/2/vehiculos/transferencias/export_mensual_trf_202602.zip"
+        },
+        {
+          "periodo": "2026-03",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-03/export_mensual_trf_202603_cebf94d9b56427a337beafb80edf6d4b7ee18e73a4482ee169281d7d15f67777.zip",
+          "sha256": "cebf94d9b56427a337beafb80edf6d4b7ee18e73a4482ee169281d7d15f67777",
+          "bytes_zip": 41378082,
+          "bytes_txt": 290888455,
+          "registros": 406837,
+          "url": "https://www.dgt.es/microdatos/salida/2026/3/vehiculos/transferencias/export_mensual_trf_202603.zip"
+        },
+        {
+          "periodo": "2026-04",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-04/export_mensual_trf_202604_728f0cb00a3e25438e8fd161d7e9ab85a6b997976eacbb1fb73cb0d6ffa8c160.zip",
+          "sha256": "728f0cb00a3e25438e8fd161d7e9ab85a6b997976eacbb1fb73cb0d6ffa8c160",
+          "bytes_zip": 37424095,
+          "bytes_txt": 263295175,
+          "registros": 368245,
+          "url": "https://www.dgt.es/microdatos/salida/2026/4/vehiculos/transferencias/export_mensual_trf_202604.zip"
+        },
+        {
+          "periodo": "2026-05",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-05/export_mensual_trf_202605_5753bee4da4bad5c9bc2d64653fef03300d3192662205af8cce1d7426431504b.zip",
+          "sha256": "5753bee4da4bad5c9bc2d64653fef03300d3192662205af8cce1d7426431504b",
+          "bytes_zip": 38098420,
+          "bytes_txt": 267660250,
+          "registros": 374350,
+          "url": "https://www.dgt.es/microdatos/salida/2026/5/vehiculos/transferencias/export_mensual_trf_202605.zip"
+        },
+        {
+          "periodo": "2026-06",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-06/export_mensual_trf_202606_e74a3a2f132a4b9e536a9b1cbf66116bfa299ed072681d1b14c3cb98787359be.zip",
+          "sha256": "e74a3a2f132a4b9e536a9b1cbf66116bfa299ed072681d1b14c3cb98787359be",
+          "bytes_zip": 40396793,
+          "bytes_txt": 283190050,
+          "registros": 396070,
+          "url": "https://www.dgt.es/microdatos/salida/2026/6/vehiculos/transferencias/export_mensual_trf_202606.zip"
+        },
+        {
+          "periodo": "2026-07",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-07/export_mensual_trf_202607_b84acc2825982428570e8bbc15b00217903f224029e1a6d37800160f152262b9.zip",
+          "sha256": "b84acc2825982428570e8bbc15b00217903f224029e1a6d37800160f152262b9",
+          "bytes_zip": 41990659,
+          "bytes_txt": 294601450,
+          "registros": 412030,
+          "url": "https://www.dgt.es/microdatos/salida/2026/7/vehiculos/transferencias/export_mensual_trf_202607.zip"
+        },
+        {
+          "periodo": "2026-08",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-08/export_mensual_trf_202608_1f702014128a5ab061466eb7795330824c2f2fe3561b8fb150933075c26a8134.zip",
+          "sha256": "1f702014128a5ab061466eb7795330824c2f2fe3561b8fb150933075c26a8134",
+          "bytes_zip": 33110344,
+          "bytes_txt": 232577345,
+          "registros": 325283,
+          "url": "https://www.dgt.es/microdatos/salida/2026/8/vehiculos/transferencias/export_mensual_trf_202608.zip"
+        },
+        {
+          "periodo": "2026-09",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/transferencias/nuevos/2026-09/export_mensual_trf_202609_2ffabb873f3266805f7d50bcb48ea37fea504d0e046611de5586540bc2d11b30.zip",
+          "sha256": "2ffabb873f3266805f7d50bcb48ea37fea504d0e046611de5586540bc2d11b30",
+          "bytes_zip": 38586446,
+          "bytes_txt": 270785515,
+          "registros": 378721,
+          "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/transferencias/export_mensual_trf_202609.zip"
+        },
+        {
+          "periodo": "2026-10",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/10/vehiculos/transferencias/export_mensual_trf_202610.zip"
+        },
+        {
+          "periodo": "2026-11",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/11/vehiculos/transferencias/export_mensual_trf_202611.zip"
+        }
+      ]
+    }
+  ]
+}
