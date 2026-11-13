@@ -104,7 +104,29 @@ def select_latest_archives(input_dir, inventory_path=None):
     return {period: pair[1] for period, pair in sorted(candidates.items())}
 
 
-def process_archive(path, period):
+def transfer_period_from_name(path):
+    match = re.fullmatch(r"export_mensual_trf_(\d{4})(\d{2})_([0-9a-f]{64})\.zip", path.name)
+    if not match:
+        return None
+    return f"{match.group(1)}-{match.group(2)}"
+
+
+def select_latest_transfer_archives(input_dir, inventory_path=None):
+    capture_times = load_capture_times(inventory_path)
+    candidates = {}
+    for path in Path(input_dir).rglob("*.zip"):
+        period = transfer_period_from_name(path)
+        if not period or period < START:
+            continue
+        captured = capture_times.get(path.name, "")
+        rank = (captured, path.name)
+        current = candidates.get(period)
+        if current is None or rank > current[0]:
+            candidates[period] = (rank, path)
+    return {period: pair[1] for period, pair in sorted(candidates.items())}
+
+
+def process_archive(path, period, include_transfers=False):
     payload = path.read_bytes()
     txt, error, record_count = inspect_zip(payload)
     if error:
@@ -116,6 +138,7 @@ def process_archive(path, period):
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
+    model_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     process_dates = []
@@ -138,6 +161,9 @@ def process_archive(path, period):
         vehicle_type = values[7]
         province_vehicle = values[19]
         province_registration = values[20]
+        brand_itv = values[3] or "(sin marca)"
+        model_itv = values[4] or "(sin modelo)"
+        possession_code = values[36]
 
         if vehicle_type not in TARGET_TYPE_CODES:
             excluded[vehicle_type or "(vacío)"] += 1
@@ -218,8 +244,29 @@ def process_archive(path, period):
                         reference_period, province_registration or "(vacío)",
                         province_vehicle or "(vacío)", vehicle_type
                     )] += 1
+            province_scope, province_code = (
+                ("matriculacion", province_registration) if new_used == "N"
+                else ("domicilio_vehiculo", province_vehicle)
+            )
+            model_counts[(
+                reference_period, brand_itv, model_itv, vehicle_type,
+                new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
+                province_scope, province_code or "(vacío)"
+            )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
+            if include_transfers and operation == "2":
+                # COD_POSESION: V=venta, S=subasta. No identifica provincia física de venta.
+                transfer_type = (
+                    "venta" if possession_code == "V"
+                    else "subasta" if possession_code == "S"
+                    else "transferencia_sin_clasificar"
+                )
+                model_counts[(
+                    transaction_date.strftime("%Y-%m"), brand_itv, model_itv,
+                    vehicle_type, new_used or "(vacío)", transfer_type,
+                    "domicilio_vehiculo", province_vehicle or "(vacío)"
+                )] += 1
 
     digest = hashlib.sha256(payload).hexdigest()
     expected_digest = path.stem.rsplit("_", 1)[-1]
@@ -233,7 +280,7 @@ def process_archive(path, period):
         "registros": record_count,
         "fec_proceso_min": min(process_dates) if process_dates else None,
         "fec_proceso_max": max(process_dates) if process_dates else None,
-    }, counts, provincial_counts, provincial_cross_counts, opcounts, excluded, audit_rows
+    }, counts, provincial_counts, provincial_cross_counts, model_counts, opcounts, excluded, audit_rows
 
 
 def main():
@@ -242,24 +289,41 @@ def main():
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--inventory-file")
     parser.add_argument("--previous-dir")
+    parser.add_argument("--transfers-dir")
+    parser.add_argument("--transfers-inventory-file")
     args = parser.parse_args()
     output = Path(args.output_dir)
     output.mkdir(parents=True, exist_ok=True)
 
     selected = select_latest_archives(args.input_dir, args.inventory_file)
+    selected_transfers = select_latest_transfer_archives(args.transfers_dir, args.transfers_inventory_file) if args.transfers_dir else {}
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
+    model_counts = Counter()
     opcounts = Counter()
     excluded = Counter()
     manifest = []
     audit_rows = []
     for period, archive in selected.items():
-        info, month_counts, month_provincial, month_cross, month_ops, month_excluded, month_audit = process_archive(archive, period)
+        info, month_counts, month_provincial, month_cross, month_models, month_ops, month_excluded, month_audit = process_archive(archive, period)
+        info["tipo_fuente"] = "matriculaciones"
         manifest.append(info)
         counts.update(month_counts)
         provincial_counts.update(month_provincial)
         provincial_cross_counts.update(month_cross)
+        model_counts.update(month_models)
+        opcounts.update(month_ops)
+        excluded.update(month_excluded)
+        audit_rows.extend(month_audit)
+
+    for period, archive in selected_transfers.items():
+        info, _, _, _, month_models, month_ops, month_excluded, month_audit = process_archive(
+            archive, period, include_transfers=True
+        )
+        info["tipo_fuente"] = "transferencias"
+        manifest.append(info)
+        model_counts.update(month_models)
         opcounts.update(month_ops)
         excluded.update(month_excluded)
         audit_rows.extend(month_audit)
@@ -295,6 +359,22 @@ def main():
                 vehicle_code,
                 PROVINCES.get(vehicle_code, "Código no catalogado") if vehicle_code != "(vacío)" else "Código vacío",
                 vehicle_type, value,
+            ])
+
+    with (output / "matriculaciones_marca_modelo_segmento.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow([
+            "periodo", "marca", "modelo", "COD_TIPO", "nuevo_usado",
+            "tipo_registro", "ambito_provincial", "COD_PROVINCIA", "provincia",
+            "recuento",
+        ])
+        for key, value in sorted(model_counts.items()):
+            period, brand, model, vehicle_type, new_used, record_type, scope, province_code = key
+            writer.writerow([
+                period, brand, model, vehicle_type, new_used, record_type,
+                scope, province_code,
+                PROVINCES.get(province_code, "Código no catalogado") if province_code != "(vacío)" else "Código vacío",
+                value,
             ])
 
     with (output / "tipo_operacion.csv").open("w", newline="", encoding="utf-8-sig") as handle:
@@ -358,9 +438,16 @@ def main():
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (output / "resumen.json").write_text(json.dumps({
         "archivos_procesados": len(manifest),
+        "archivos_matriculaciones": len(selected),
+        "archivos_transferencias": len(selected_transfers),
         "periodos_procesados": len(selected),
         "registros_matriculaciones": sum(counts.values()),
         "registros_operaciones": sum(opcounts.values()),
+        "registros_desglose_marca_modelo": sum(model_counts.values()),
+        "registros_transferencias": sum(value for key, value in model_counts.items() if key[5] in {"venta", "subasta", "transferencia_sin_clasificar"}),
+        "transferencias_cod_posesion_venta": sum(value for key, value in model_counts.items() if key[5] == "venta"),
+        "transferencias_cod_posesion_subasta": sum(value for key, value in model_counts.items() if key[5] == "subasta"),
+        "modelos_observados": len({(key[1], key[2]) for key in model_counts}),
         "filtro_cod_tipo": sorted(TARGET_TYPE_CODES),
         "registros_excluidos_por_cod_tipo": sum(excluded.values()),
         "exclusiones_por_codigo": dict(sorted(excluded.items())),

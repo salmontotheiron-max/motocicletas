@@ -177,3 +177,12 @@ El recuento de establecimientos verificados se mantiene vacío hasta que haya co
 ### Captura técnica reproducible de fuentes
 
 El script \`capturar_fuentes_red_comercial.py\` consulta exclusivamente las URLs HTTPS del inventario vigente y registra hashes SHA-256, extractos limitados y estados HTTP en SQLite. La migración \`migraciones/002_capturas_fuentes.sql\` añade el registro por fuente y captura. La guía \`informes/guia-captura-reproducible-red-comercial.md\` documenta ejecución, límites y salvaguardas. Esta fase no programa barridos periódicos ni transforma cambios de hash en aperturas, cierres o cambios de operador: cualquier interpretación comercial requiere revisión humana.
+
+
+## Nuevo alcance del cuadro de mando de mercado (13-11-2026)
+
+El dashboard incorpora una vista de matriculaciones nuevas por marca y segmento y un cruce entre provincia de matriculación y domicilio registral del vehículo. El alcance funcional, fórmulas, limitaciones y datos pendientes se documentan en [la especificación del cuadro de mando](informes/especificacion-dashboard-mercado-2026-11-13.md). No se generan informes narrativos por distribuidor como entregable. La provincia de domicilio registral se presenta como proxy territorial, no como localización observada de circulación; las transferencias de usados no se etiquetan como ventas localizadas mientras no se valide el campo provincial de la operación.
+
+La captura mensual de transferencias DGT se gestiona por separado de las matriculaciones mediante `descargar_transferencias_mensual.py`; el procesador publica el desglose por marca/modelo y domicilio registral, sin inferir una provincia de venta que la fuente no contiene.
+
+En transferencias DGT, `COD_POSESION=V` permite aislar registros marcados como venta y `COD_POSESION=S` subastas. La provincia publicada sigue siendo el domicilio registral del vehículo, no el lugar de venta.

@@ -48,9 +48,40 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   </section>
   <section class="cards" aria-label="Indicadores principales">
     <article class="card"><div class="label">Matriculaciones nuevas</div><div class="value" id="newTotal">—</div><div class="sub" id="newScope">Provincia de matriculación</div></article>
-    <article class="card"><div class="label">Cambios de titularidad usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
+    <article class="card"><div class="label">Matriculaciones de usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
+    <article class="card"><div class="label">Transferencias de titularidad</div><div class="value" id="transferTotal">—</div><div class="sub" id="transferScope">Pendiente de captura específica DGT</div></article>
+    <article class="card"><div class="label">Transferencias con venta declarada</div><div class="value" id="saleTotal">—</div><div class="sub" id="saleScope">COD_POSESION=V · provincia destino registral</div></article>
     <article class="card"><div class="label">Peso de la provincia</div><div class="value" id="provinceShare">—</div><div class="sub">Sobre las matriculaciones nuevas nacionales</div></article>
     <article class="card"><div class="label">Periodos con datos</div><div class="value" id="periodCount">—</div><div class="sub" id="cutoff">Según inventario publicado</div></article>
+  </section>
+  <section class="panel" aria-label="Análisis por marca">
+    <h2>Volumen por marca y segmento</h2>
+    <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
+      <div><label for="brandSearch">Buscar marca</label><input id="brandSearch" type="search" placeholder="Nombre de marca" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
+      <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="motos" selected>Motocicletas · 50 + 51</option><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
+      <div><label for="brandOperation">Operación</label><select id="brandOperation"><option value="matriculacion_nueva">Matriculación nueva</option><option value="venta">Venta declarada DGT (COD_POSESION=V)</option><option value="subasta">Subasta</option><option value="transferencia_sin_clasificar">Transferencia sin clasificar</option></select></div>
+    </div>
+    <p class="small" id="brandScope">Matriculaciones nuevas observadas en DGT MATRABA, acumulado de los periodos publicados.</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Volumen</th><th>Peso</th><th>Segmentos</th></tr></thead><tbody id="brandRanking"></tbody></table></div>
+    <p class="note">El volumen corresponde a la operación seleccionada: matriculación nueva o transferencia usada clasificada por DGT. No equivale a facturación ni ventas netas del fabricante. El desglose por modelo se muestra a continuación.</p>
+  </section>
+  <section class="panel" aria-label="Desglose por modelo">
+    <h2>Volumen por modelo</h2>
+    <p class="small">Agregado de microdatos DGT por marca, modelo, segmento y provincia. Las transferencias se separan en venta declarada, subasta y sin clasificación mediante COD_POSESION.</p>
+    <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
+      <div><label for="modelBrand">Marca</label><select id="modelBrand"><option value="all">Todas las marcas</option></select></div>
+      <div><label for="modelOperation">Operación</label><select id="modelOperation"><option value="all">Todas</option><option value="matriculacion_nueva">Matriculación nueva</option><option value="matriculacion_usada">Matriculación usada</option><option value="venta">Venta declarada DGT (COD_POSESION=V)</option><option value="subasta">Subasta (COD_POSESION=S)</option><option value="transferencia_sin_clasificar">Transferencia sin clasificación</option></select></div>
+      <div><label for="modelSearch">Buscar modelo</label><input id="modelSearch" type="search" placeholder="Nombre del modelo" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
+    </div>
+    <p class="small" id="modelScope">Volumen agregado por modelo; aplica también los filtros generales de periodo, provincia y segmento.</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Modelo DGT</th><th>Volumen</th><th>Segmento</th><th>Provincia de referencia</th><th>Operación</th></tr></thead><tbody id="modelRanking"></tbody></table></div>
+    <p class="note">En matriculaciones nuevas la provincia es la de matriculación. En matriculaciones usadas y transferencias es la del domicilio registral del vehículo. COD_POSESION=V identifica una operación marcada como venta, pero no la provincia física de compraventa; el domicilio no se interpreta como provincia de venta.</p>
+  </section>
+  <section class="panel">
+    <h2>Matriculación nueva → domicilio registral del vehículo</h2>
+    <p class="small">Cruce DGT por provincia de matriculación y provincia del domicilio registrado del vehículo. Se utiliza como proxy territorial de circulación, no como geolocalización del uso habitual.</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Provincia de matriculación</th><th>Mismo domicilio</th><th>Otro domicilio</th><th>Domicilios conocidos</th><th>Ratio mismo</th><th>Ratio distinto</th></tr></thead><tbody id="flowTable"></tbody></table></div>
+    <p class="note">Ratios calculados sobre registros con provincia de domicilio informada. Los domicilios no informados quedan fuera del denominador.</p>
   </section>
   <section class="grid">
     <article class="panel">
@@ -80,7 +111,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="panel">
     <h2>Datos, fuente y metodología</h2>
     <p><strong>Fuente primaria:</strong> microdatos mensuales DGT MATRABA, archivados y procesados en el <a href="https://github.com/salmontotheiron-max/motocicletas" target="_blank" rel="noopener">repositorio del observatorio</a>. Los datos mostrados proceden exclusivamente de los agregados publicados en <code>public/data</code>.</p>
-    <p><strong>Universo:</strong> códigos DGT 50 (motocicleta de dos ruedas sin sidecar) y 51 (motocicleta con sidecar). La serie de usados representa registros de cambio de titularidad, no todas las compraventas.</p>
+    <p><strong>Universo:</strong> códigos DGT 50 (motocicleta de dos ruedas sin sidecar) y 51 (motocicleta con sidecar). La serie de usados representa matriculaciones de vehículos clasificados como usados (NUEVO_USADO=U) en la operación de matriculación; no representa transferencias ni todas las compraventas.</p>
     <p><strong>Geografía:</strong> las nuevas se atribuyen a la provincia de matriculación. Los cambios de titularidad usados se atribuyen a la provincia del domicilio registral del vehículo. No son magnitudes territorialmente equivalentes.</p>
     <p><strong>Interpretación:</strong> el domicilio registral no demuestra residencia efectiva, lugar de compra, concesionario, entrega ni uso habitual. Las intensidades por población y parque son indicadores descriptivos; no son cuotas comerciales ni tasas de compra de residentes.</p>
     <p class="small" id="manifestInfo">El manifiesto de publicación identifica las capturas fuente y sus hashes SHA-256.</p>
@@ -94,13 +125,16 @@ const FILES = {
   manifest: "manifest.json",
   periods: "periodos.json",
   monthly: "matriculaciones_nuevos_usados_por_tipo.csv",
+  brands: "marcas_candidatas_revision.json",
+  cross: "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
+  models: "matriculaciones_marca_modelo_segmento.csv",
   provincial: "matriculaciones_motocicletas_por_provincia.csv",
   ranking: "ranking_motocicletas_provincia.csv",
   intensity: "indicadores_intensidad_territorial.csv"
 };
 const fmt = n => new Intl.NumberFormat("es-ES").format(n);
 const dec = (n,d=2) => Number(n).toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
-const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[]};
+const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[], cross:[], models:[]};
 const el = id => document.getElementById(id);
 function parseCSV(text){
   const rows=[];let row=[],field="",quoted=false;
@@ -124,14 +158,14 @@ async function loadText(path){
 }
 async function loadJSON(path){return JSON.parse(await loadText(path));}
 async function loadData(){
-  const [manifest,periods,monthly,provincial,ranking,intensity]=await Promise.all([
-    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity)
+  const [manifest,periods,monthly,provincial,ranking,intensity,brands,cross,models]=await Promise.all([
+    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity),loadJSON(FILES.brands),loadText(FILES.cross),loadText(FILES.models)
   ]);
   state.manifest=manifest;state.periods=periods.periodos_disponibles||[];
   state.monthly=parseCSV(monthly);state.provincial=parseCSV(provincial);
-  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);
+  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];state.cross=parseCSV(cross);state.models=parseCSV(models);
   if(!state.periods.length) throw new Error("El inventario no contiene periodos disponibles.");
-  populateFilters();render();
+  populateFilters();populateModelBrands();render();renderBrands();
   const files=(manifest.archivos||[]).length;
   el("status").className="status";
   el("status").textContent="Datos MATRABA cargados correctamente · "+files+" capturas fuente verificadas en el manifiesto · "+state.periods.length+" periodos disponibles.";
@@ -158,15 +192,26 @@ function nationalNew(period,kind){
 function render(){
   const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
   const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
+  const transferRows=state.models.filter(r=>["venta","subasta","transferencia_sin_clasificar"].includes(r.tipo_registro)&&
+    (f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
+    (f.province==="all"||r.provincia===f.province));
+  const saleRows=transferRows.filter(r=>r.tipo_registro==="venta");
+  const transferAvailable=(state.manifest.archivos||[]).some(item=>item.tipo_fuente==="transferencias");
+  const transferValue=transferRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
+  const saleValue=saleRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
   const national=nationalNew(f.period,f.kind);
   const share=f.province==="all"?100:(national?newValue/national*100:0);
   el("newTotal").textContent=fmt(newValue);el("usedTotal").textContent=fmt(usedValue);
+  el("transferTotal").textContent=transferAvailable?fmt(transferValue):"—";
+  el("transferScope").textContent=transferAvailable?"Cambios de titularidad · domicilio registral":"Pendiente de primera captura de microdatos de transferencias";
+  el("saleTotal").textContent=transferAvailable?fmt(saleValue):"—";
+  el("saleScope").textContent=transferAvailable?"COD_POSESION=V · domicilio registral, no provincia de venta":"Pendiente de primera captura de microdatos de transferencias";
   el("provinceShare").textContent=dec(share,2)+"%";
   el("periodCount").textContent=f.period==="all"?String(state.periods.length):"1";
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);
+  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
@@ -216,6 +261,82 @@ function renderIntensity(f){
   const months=state.intensity[0]?.periodos?.split("|")||[];
   el("intensityNote").textContent="Indicadores fijos del acumulado "+(months[0]||"")+" a "+(months[months.length-1]||"")+". No cambian al seleccionar un mes ni se recalculan por tipo 50/51.";
 }
+function populateModelBrands(){
+  const brands=[...new Set(state.models.map(row=>row.marca).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
+  el("modelBrand").innerHTML="<option value='all'>Todas las marcas</option>"+brands.map(name=>"<option value='"+escapeHTML(name)+"'>"+escapeHTML(name)+"</option>").join("");
+}
+function renderModels(f){
+  const brand=el("modelBrand").value, operation=el("modelOperation").value;
+  const query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es");
+  const rows=state.models.filter(r=>(f.period==="all"||r.periodo===f.period)&&
+    typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province)&&
+    (brand==="all"||r.marca===brand)&&(operation==="all"||r.tipo_registro===operation)&&
+    (r.modelo||"").toLocaleLowerCase("es").includes(query));
+  const groups=new Map();
+  rows.forEach(r=>{
+    const key=[r.marca,r.modelo,r.COD_TIPO,r.provincia,r.tipo_registro].join("|");
+    const item=groups.get(key)||{...r,recuento:0};
+    item.recuento+=Number(r.recuento)||0;groups.set(key,item);
+  });
+  const ranked=[...groups.values()].sort((a,b)=>Number(b.recuento)-Number(a.recuento));
+  const total=ranked.reduce((sum,r)=>sum+Number(r.recuento),0);
+  el("modelScope").textContent=fmt(total)+" registros · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"mostrando todas");
+  el("modelRanking").innerHTML=ranked.slice(0,100).map(r=>{
+    const typeLabel={"50":"Moto 2 ruedas","51":"Moto con sidecar","90":"Ciclomotor 2 ruedas","91":"Ciclomotor 3 ruedas"}[r.COD_TIPO]||r.COD_TIPO;
+    const operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","venta":"Venta DGT","subasta":"Subasta","transferencia_sin_clasificar":"Transferencia sin clasificar"}[r.tipo_registro]||r.tipo_registro;
+    return "<tr><td>"+escapeHTML(r.marca)+"</td><td>"+escapeHTML(r.modelo)+"</td><td>"+fmt(Number(r.recuento))+"</td><td>"+escapeHTML(typeLabel)+"</td><td>"+escapeHTML(r.provincia)+"</td><td>"+escapeHTML(operationLabel)+"</td></tr>";
+  }).join("")||"<tr><td colspan='6'>Sin registros para los filtros seleccionados.</td></tr>";
+}
+function renderFlows(f){
+  const groups=new Map();
+  state.cross.filter(r=>(f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
+    (f.province==="all"||r.provincia_matriculacion===f.province)&&
+    r.provincia_matriculacion&&r.provincia_domicilio_vehiculo&&
+    r.provincia_matriculacion!=="(vacío)"&&r.provincia_domicilio_vehiculo!=="(vacío)")
+  .forEach(r=>{
+    const origin=r.provincia_matriculacion;
+    const g=groups.get(origin)||{same:0,other:0,known:0};
+    const n=Number(r.recuento)||0;
+    g.known+=n;
+    if(r.provincia_matriculacion===r.provincia_domicilio_vehiculo)g.same+=n;
+    else g.other+=n;
+    groups.set(origin,g);
+  });
+  const rows=[...groups].map(([province,g])=>({province,...g})).sort((a,b)=>b.known-a.known);
+  el("flowTable").innerHTML=rows.map(r=>{
+    const local=r.known?r.same/r.known*100:0,external=r.known?r.other/r.known*100:0;
+    return "<tr><td>"+escapeHTML(r.province)+"</td><td>"+fmt(r.same)+"</td><td>"+fmt(r.other)+"</td><td>"+fmt(r.known)+"</td><td>"+dec(local,2)+"%</td><td>"+dec(external,2)+"%</td></tr>";
+  }).join("")||"<tr><td colspan='6'>Sin registros con provincias de origen y domicilio conocidas.</td></tr>";
+}
+function renderBrands(){
+  const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
+  const segment=el("brandSegment").value, operation=el("brandOperation").value, f=selected();
+  const grouped=new Map();
+  state.models.filter(r=>r.tipo_registro===operation&&
+    (f.period==="all"||r.periodo===f.period)&&
+    (f.province==="all"||r.provincia===f.province)&&typeOK(r,f.kind)&&
+    (segment==="all"||(segment==="motos"?["50","51"].includes(r.COD_TIPO):r.COD_TIPO===segment)))
+  .forEach(r=>{
+    const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}};
+    const n=Number(r.recuento)||0;item.volume+=n;
+    item.types[r.COD_TIPO]=(item.types[r.COD_TIPO]||0)+n;
+    grouped.set(r.marca,item);
+  });
+  const allRows=[...grouped.values()].sort((a,b)=>b.volume-a.volume);
+  const total=allRows.reduce((sum,item)=>sum+item.volume,0);
+  const rows=allRows.filter(item=>item.name.toLocaleLowerCase("es").includes(query));
+  const operationLabel={"matriculacion_nueva":"Matriculaciones nuevas","venta":"Ventas declaradas DGT (COD_POSESION=V)","subasta":"Subastas","transferencia_sin_clasificar":"Transferencias sin clasificar"}[operation]||operation;
+  el("brandScope").textContent=operationLabel+" · "+(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
+    " · "+fmt(total)+" registros · "+(f.province==="all"?"España":f.province)+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+rows.length+" marcas visibles.";
+  el("brandRanking").innerHTML=rows.map(item=>{
+    const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
+    const share=total?item.volume/total*100:0;
+    return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>DGT</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(share,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";
+  }).join("")||"<tr><td colspan='4'>Sin marcas para este filtro.</td></tr>";
+}
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+}
 function exportCSV(){
   const f=selected(),rows=[];
   state.periods.filter(p=>f.period==="all"||p===f.period).forEach(p=>{
@@ -230,6 +351,12 @@ function exportCSV(){
   a.href=url;a.download="matraba_motocicletas_filtrado.csv";a.click();URL.revokeObjectURL(url);
 }
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
+el("brandSearch").addEventListener("input",renderBrands);
+el("brandSegment").addEventListener("change",renderBrands);
+el("brandOperation").addEventListener("change",renderBrands);
+el("modelBrand").addEventListener("change",()=>renderModels(selected()));
+el("modelOperation").addEventListener("change",()=>renderModels(selected()));
+el("modelSearch").addEventListener("input",()=>renderModels(selected()));
 el("csv").addEventListener("click",exportCSV);el("pdf").addEventListener("click",()=>window.print());
 loadData().catch(error=>{el("status").className="status error";el("status").textContent="No se han podido cargar los agregados MATRABA. "+error.message+" Comprueba que el dashboard se sirve desde la raíz del repositorio y que public/data está publicado.";});
 </script>

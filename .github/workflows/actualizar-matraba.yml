@@ -53,17 +53,38 @@ jobs:
             --inventory-file public/data/capturas_mensuales.json \
             "${args[@]}"
 
+      - name: Descargar y validar meses de transferencias
+        env:
+          MONTHS_INPUT: ${{ inputs.months }}
+        run: |
+          args=()
+          if [ -n "$MONTHS_INPUT" ]; then
+            IFS=',' read -ra months <<< "$MONTHS_INPUT"
+            for month in "${months[@]}"; do
+              month="$(echo "$month" | xargs)"
+              [ -z "$month" ] || args+=(--month "$month")
+            done
+          fi
+          python descargar_transferencias_mensual.py \
+            --output-dir datos/matraba_mensual/transferencias/nuevos \
+            --inventory-file public/data/capturas_transferencias_mensuales.json \
+            "${args[@]}"
+
       - name: Recuperar ZIP históricos de GitHub Releases
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p datos/matraba_mensual/archivo
+          mkdir -p datos/matraba_mensual/archivo datos/matraba_mensual/transferencias/archivo
           gh release list --limit 1000 --json tagName --jq '.[].tagName' |
           while IFS= read -r tag; do
             [ -z "$tag" ] && continue
             gh release download "$tag" \
               --pattern 'export_mensual_mat_*.zip' \
               --dir datos/matraba_mensual/archivo \
+              --clobber || true
+            gh release download "$tag" \
+              --pattern 'export_mensual_trf_*.zip' \
+              --dir datos/matraba_mensual/transferencias/archivo \
               --clobber || true
           done
 
@@ -81,6 +102,7 @@ jobs:
             --title "MATRABA | barrido $GITHUB_RUN_ID" \
             --notes-file "$notes"
           gh release upload "$tag" public/data/capturas_mensuales.json
+          gh release upload "$tag" public/data/capturas_transferencias_mensuales.json
           gh api --paginate "repos/$GITHUB_REPOSITORY/releases" \
             --jq '.[].assets[].name' > /tmp/assets-previos.txt
           while IFS= read -r file; do
@@ -91,7 +113,7 @@ jobs:
             else
               gh release upload "$tag" "$file"
             fi
-          done < <(find datos/matraba_mensual/nuevos -type f -name '*.zip' | sort)
+          done < <(find datos/matraba_mensual/nuevos datos/matraba_mensual/transferencias/nuevos -type f -name '*.zip' | sort)
 
       - name: Procesar última versión válida de cada mes
         run: |
@@ -99,7 +121,9 @@ jobs:
             --input-dir datos/matraba_mensual \
             --output-dir datos/matraba_mensual/resultados \
             --inventory-file public/data/capturas_mensuales.json \
-            --previous-dir public/data
+            --previous-dir public/data \
+            --transfers-dir datos/matraba_mensual/transferencias \
+            --transfers-inventory-file public/data/capturas_transferencias_mensuales.json
 
       - name: Detectar marcas en nuevas matriculaciones
         run: |
@@ -169,7 +193,7 @@ jobs:
             git add public/data informes/informe-territorial-integrado.md
             message="Actualiza snapshots y agregados mensuales MATRABA"
           else
-            git add public/data/capturas_mensuales.json
+            git add public/data/capturas_mensuales.json public/data/capturas_transferencias_mensuales.json
             message="Registra captura piloto mensual MATRABA"
           fi
           if ! git diff --cached --quiet; then
