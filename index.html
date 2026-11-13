@@ -296,25 +296,27 @@ function renderFlows(f){
 }
 function renderBrands(){
   const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
-  const segment=el("brandSegment").value;
-  const allRows=state.brands.map(item=>{
-    const types=item.tipos_vehiculo||{};
-    const volume=segment==="all"
-      ?Object.values(types).reduce((sum,value)=>sum+Number(value||0),0)
-      :segment==="motos"
-        ?Number(types["50"]||0)+Number(types["51"]||0)
-        :Number(types[segment]||0);
-    return {name:item.marca_normalizada,volume,types,periods:(item.periodos_observados||[]).length,status:item.estado_revision};
-  }).filter(item=>item.volume>0).sort((a,b)=>b.volume-a.volume);
+  const segment=el("brandSegment").value, f=selected();
+  const grouped=new Map();
+  state.models.filter(r=>r.tipo_registro==="matriculacion_nueva"&&
+    (f.period==="all"||r.periodo===f.period)&&
+    (f.province==="all"||r.provincia===f.province)&&typeOK(r,f.kind)&&
+    (segment==="all"||(segment==="motos"?["50","51"].includes(r.COD_TIPO):r.COD_TIPO===segment)))
+  .forEach(r=>{
+    const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}};
+    const n=Number(r.recuento)||0;item.volume+=n;
+    item.types[r.COD_TIPO]=(item.types[r.COD_TIPO]||0)+n;
+    grouped.set(r.marca,item);
+  });
+  const allRows=[...grouped.values()].sort((a,b)=>b.volume-a.volume);
   const total=allRows.reduce((sum,item)=>sum+item.volume,0);
   const rows=allRows.filter(item=>item.name.toLocaleLowerCase("es").includes(query));
   el("brandScope").textContent=(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
-    " · "+fmt(total)+" matriculaciones nuevas del segmento · mostrando "+rows.length+" de "+allRows.length+" marcas.";
+    " · "+fmt(total)+" matriculaciones nuevas · "+(f.province==="all"?"España":f.province)+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+rows.length+" marcas visibles.";
   el("brandRanking").innerHTML=rows.map(item=>{
     const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
     const share=total?item.volume/total*100:0;
-    const stateLabel=item.status==="ya_en_inventario"?"Inventario":"Candidata";
-    return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>"+stateLabel+"</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(share,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";
+    return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>DGT</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(share,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";
   }).join("")||"<tr><td colspan='4'>Sin marcas para este filtro.</td></tr>";
 }
 function escapeHTML(value){
