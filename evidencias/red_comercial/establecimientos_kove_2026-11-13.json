@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se cuentan ubicaciones físicas solo cuando páginas corporativas actuales del operador publican oferta KOVE y permiten asociarla a una sede. Se separan venta y taller. La condición de concesionario oficial se registra como autodeclaración salvo ficha individual del fabricante/importador; el importador y sus tiendas propias se distinguen de terceros. Los agregadores sirven para descubrir candidatos, no para elevarlos a puntos confirmados. No se infiere ausencia por falta de evidencia.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Página corporativa actual del operador publica modelos KOVE y permite asociar la oferta a una sede física.",
+    "importer_operated_retail": "Punto de venta propio del importador español, con oferta KOVE publicada por la red del grupo.",
+    "self_declared_official": "El operador se autodenomina concesionario o servicio oficial KOVE; no equivale a una ficha individual del fabricante verificada independientemente.",
+    "service_only": "Página corporativa del operador declara servicio posventa KOVE en una sede, sin oferta de venta KOVE acreditada en esa misma dirección.",
+    "secondary_candidate": "Referencia secundaria sin evidencia primaria actual suficiente; no se cuenta."
+  },
+  "outlet_count": 8,
+  "counts": {
+    "by_province": {
+      "Barcelona": 4,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 0,
+      "Murcia": 0
+    },
+    "sales": 8,
+    "service_locations": 3,
+    "same_site_sales_and_service": 2,
+    "service_only_locations": 1,
+    "manufacturer_individually_listed": 0,
+    "importer_operated_retail_sales": 3,
+    "operator_self_declared_official_sales": 3,
+    "accepted_commercial_presence_sales": 8,
+    "secondary_only_candidates": 2
+  },
+  "manufacturer": {
+    "brand_owner": "KOVE / Tibet New Summit Motorcycle Co., Ltd.",
+    "spanish_importer": "MOTOS BORDOY S.A.",
+    "spanish_importer_address": "Avda. Castellbisbal s/n, 08191 Rubí (Barcelona), España",
+    "evidence_urls": [
+      "https://kovemotor.es/nota-legal/",
+      "https://www.motosbordoy.com/"
+    ],
+    "notes": "El aviso legal de KOVE España identifica a MOTOS BORDOY S.A. como responsable del sitio. La web corporativa de Grupo Motos Bordoy se declara importador exclusivo de KOVE en España. La FAQ global de KOVE remite a distribuidores y concesionarios autorizados para la venta en mercados extranjeros."
+  },
+  "official_source": {
+    "urls": [
+      "https://kovemotor.es/concesionarios/",
+      "https://kovemotor.es/nota-legal/"
+    ],
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial español presenta las secciones Concesionarios Oficiales KOVE y Servicios Oficiales KOVE, pero la captura textual no expone entradas ni fichas individuales. El aviso legal identifica MOTOS BORDOY S.A. como responsable del sitio. No se interpreta el contenido dinámico no extraíble como ausencia de red."
+  },
+  "outlets": [
+    {
+      "outlet_id": "kove-motos-bordoy-balmes-barcelona",
+      "brand": "KOVE",
+      "trading_name": "Motos Bordoy — Balmes",
+      "operator": "MOTOS BORDOY S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Balmes 186, 08006 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/promocion-kove-450-rally",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/tiendas",
+        "https://www.motosbordoybarcelona.com/es/motos"
+      ],
+      "evidence_type": "importer_operated_retail",
+      "verification_status": "importer_operated_retail",
+      "official_authorization_status": "importer_operated_retail",
+      "notes": "La promoción KOVE 450 Rally invita a visitar las tres tiendas del grupo y la web actual publica modelos KOVE. La sede Balmes 186 figura en la página corporativa de tiendas."
+    },
+    {
+      "outlet_id": "kove-motos-bordoy-valencia-barcelona",
+      "brand": "KOVE",
+      "trading_name": "Motos Bordoy — Valencia",
+      "operator": "MOTOS BORDOY S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Valencia 179, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/promocion-kove-450-rally",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/tiendas",
+        "https://www.motosbordoybarcelona.com/es/motos"
+      ],
+      "evidence_type": "importer_operated_retail",
+      "verification_status": "importer_operated_retail",
+      "official_authorization_status": "importer_operated_retail",
+      "notes": "La promoción KOVE 450 Rally invita a visitar las tres tiendas del grupo y la web actual publica modelos KOVE. La sede Valencia 179 figura en la página corporativa de tiendas."
+    },
+    {
+      "outlet_id": "kove-motos-bordoy-urgell-barcelona",
+      "brand": "KOVE",
+      "trading_name": "Motos Bordoy — Urgell",
+      "operator": "MOTOS BORDOY S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Comte d'Urgell 240, 08036 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/promocion-kove-450-rally",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/tiendas",
+        "https://www.motosbordoybarcelona.com/es/motos"
+      ],
+      "evidence_type": "importer_operated_retail",
+      "verification_status": "importer_operated_retail",
+      "official_authorization_status": "importer_operated_retail",
+      "notes": "La promoción KOVE 450 Rally invita a visitar las tres tiendas del grupo y la web actual publica modelos KOVE. La sede Urgell 240 figura en la página corporativa de tiendas."
+    },
+    {
+      "outlet_id": "kove-totmoto-barcelona",
+      "brand": "KOVE",
+      "trading_name": "TOTMOTO",
+      "operator": "MAS MONTANER S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Còrsega 378, 08037 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.totmoto.cat/motos-kove-a54e/marca/kove/",
+      "supporting_urls": [
+        "https://www.totmoto.cat/kove-350-rr-e5-b6ff2/",
+        "https://www.totmoto.cat/p/visita-nuestro-taller-multimarca/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "El catálogo publica siete modelos KOVE y una ficha declara disponibilidad solo en tienda. El pie de página identifica MAS MONTANER S.A. y C/ Còrsega 378. Otra página de taller del dominio .com menciona C/ Bruc 155; al no poder reconciliar ambas direcciones, no se cuenta esa segunda dirección como servicio KOVE."
+    },
+    {
+      "outlet_id": "kove-expomoto-malaga",
+      "brand": "KOVE",
+      "trading_name": "Expomoto Málaga",
+      "operator": "Expomoto Málaga",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de José Ortega y Gasset 262, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://expomotomalaga.es/marcas/kove/",
+      "supporting_urls": [
+        "https://expomotomalaga.es/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "La página específica de KOVE publica modelos actuales, incluidos 800X Pro 2026 y 450 Rally 2026, y dirección y teléfono del establecimiento. La web general se declara distribuidor multimarca KOVE."
+    },
+    {
+      "outlet_id": "kove-castro-cadiz-sales",
+      "brand": "KOVE",
+      "trading_name": "Castro La Motocicleta — Cádiz (ventas)",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/kove/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La página KOVE del operador declara que es concesionario oficial en todas sus instalaciones y publica expresamente la sede de ventas de Cádiz. Autodeclaración comercial, no ficha independiente del fabricante."
+    },
+    {
+      "outlet_id": "kove-castro-jerez",
+      "brand": "KOVE",
+      "trading_name": "Castro La Motocicleta — Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre 3, 11405 Jerez de la Frontera, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/kove/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La página KOVE declara la condición oficial para todas las instalaciones y publica esta sede como ventas y taller. Autodeclaración del operador."
+    },
+    {
+      "outlet_id": "kove-castro-palmones",
+      "brand": "KOVE",
+      "trading_name": "Castro La Motocicleta — Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios (Palmones)",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/kove/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La página KOVE declara la condición oficial para todas las instalaciones y publica esta sede como ventas y taller. Autodeclaración del operador."
+    },
+    {
+      "outlet_id": "kove-castro-cadiz-service",
+      "brand": "KOVE",
+      "trading_name": "Castro La Motocicleta — Taller Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Calle García Quijano 2, 11012 Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/kove/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La página KOVE del operador separa la dirección de taller en Cádiz de la dirección de ventas. Se cuenta como servicio, no como punto de venta."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "kove-prim-alicante",
+      "trading_name": "Motocicletas Prim Alicante",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle Madrid 31, 03002 Alicante, España",
+      "source_url": "https://concesionariosdemotos.com/kove",
+      "status": "secondary_candidate",
+      "notes": "El directorio secundario lista KOVE en esta sede; no se ha localizado corroboración primaria actual en la web del operador ni ficha individual accesible del localizador oficial. No se cuenta."
+    },
+    {
+      "candidate_id": "kove-francisco-belmonte-murcia",
+      "trading_name": "Francisco Belmonte",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina 12A, 30007 Murcia, España",
+      "source_url": "https://concesionariosdemotos.com/kove",
+      "status": "secondary_candidate",
+      "notes": "El directorio secundario lista KOVE en esta sede; no se ha localizado corroboración primaria actual en la web del operador ni ficha individual accesible del localizador oficial. No se cuenta."
+    }
+  ],
+  "limitations": [
+    "El localizador oficial español es dinámico y la captura textual no expone resultados ni fichas individuales; esto no equivale a ausencia de red.",
+    "Los ocho puntos de venta se documentan mediante páginas de operadores y del importador: tres tiendas propias de Motos Bordoy, TOTMOTO, Expomoto Málaga y tres sedes de Castro La Motocicleta. No se presenta este recuento como censo nacional.",
+    "Las tres sedes de Castro La Motocicleta se declaran concesionario oficial KOVE por el propio operador; la autorización no se ha verificado de forma independiente en fichas individuales del fabricante.",
+    "Alicante (Motocicletas Prim) y Murcia (Francisco Belmonte) aparecen en un directorio secundario, pero se excluyen del recuento por falta de corroboración primaria actual.",
+    "La página de taller de TOTMOTO en otro dominio publica C/ Bruc 155, mientras que el catálogo de venta y el aviso de la tienda .cat identifican C/ Còrsega 378. No se fusionan ni se atribuye el taller a KOVE por no reconciliar las direcciones.",
+    "La cifra de más de 30 puntos de venta procede de una comunicación de lanzamiento de abril de 2024 y no se utiliza como total actual.",
+    "No se infiere ausencia de actividad en ninguna de las cinco provincias por falta de resultados."
+  ]
+}

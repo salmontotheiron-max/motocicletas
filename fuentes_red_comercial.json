@@ -385,13 +385,23 @@
       "brand_id": "brand-kove",
       "canonical_name": "Kove",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-kove-es-dealer-locator",
+        "source-kove-es-legal",
+        "source-kove-global-faq",
+        "source-kove-es-market-launch-2024",
+        "source-kove-motos-bordoy-importer",
+        "source-kove-bordoy-retail",
+        "source-kove-totmoto",
+        "source-kove-expomoto-malaga",
+        "source-kove-castro-cadiz",
+        "source-kove-spanish-dealer-aggregator"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial KOVE actual acreditada mediante el importador español MOTOS BORDOY y páginas corporativas de operadores con oferta de modelos actuales. Se documentan ocho puntos de venta en Barcelona (4), Málaga (1) y Cádiz (3), además de tres ubicaciones de servicio declaradas por Castro La Motocicleta. El localizador oficial español es dinámico y no expone fichas en la captura textual. Alicante y Murcia aparecen como candidatos en un directorio secundario, sin corroboración primaria suficiente; no se cuentan. La clasificación established acredita actividad comercial, no un censo nacional ni autorización independiente de todos los puntos."
     },
     {
       "brand_id": "brand-ktm",
@@ -4743,6 +4753,201 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 90,
       "notes": "La ficha secundaria identifica ITALJET ESPAÑA SA en Badalona y describe como objeto la importación y comercialización de productos Italjet. No se usa para afirmar que mantenga actualmente el mandato contractual de importador/distribuidor."
+    },
+    {
+      "source_id": "source-kove-es-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-kove",
+      "publisher": "KOVE España / MOTOS BORDOY S.A.",
+      "source_type": "official_directory",
+      "url": "https://kovemotor.es/concesionarios/",
+      "title": "KOVE España — localizador de concesionarios y servicios oficiales",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Localizador español del distribuidor/importador de KOVE. La página muestra los módulos Concesionarios Oficiales KOVE y Servicios Oficiales KOVE, pero la captura textual no expone resultados ni fichas individuales. No se infiere ausencia de red."
+    },
+    {
+      "source_id": "source-kove-es-legal",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-kove",
+      "publisher": "MOTOS BORDOY S.A.",
+      "source_type": "company_page",
+      "url": "https://kovemotor.es/nota-legal/",
+      "title": "KOVE España — aviso legal e identificación del operador",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "corporate_identity"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "El aviso legal de kovemotor.es identifica como responsable del sitio a MOTOS BORDOY S.A., con domicilio en Rubí (Barcelona)."
+    },
+    {
+      "source_id": "source-kove-global-faq",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-kove",
+      "publisher": "KOVE / Tibet New Summit Motorcycle Co., Ltd.",
+      "source_type": "official_statement",
+      "url": "https://url.kovemoto.com/faq",
+      "title": "KOVE — FAQ oficial sobre distribución y venta mediante distribuidores autorizados",
+      "reliability_class": "primary_official",
+      "scope": "Global",
+      "directory_scope": [
+        "distribution_policy"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La FAQ oficial indica que la sede central no vende directamente a particulares extranjeros y remite a distribuidores o concesionarios autorizados del mercado correspondiente."
+    },
+    {
+      "source_id": "source-kove-es-market-launch-2024",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-kove",
+      "publisher": "KOVE España",
+      "source_type": "press",
+      "url": "https://kovemotor.es/2024/04/11/kove-tu-nuevo-destino-para-motocicletas-en-espana/",
+      "title": "KOVE anuncia su llegada a España y una red inicial de más de 30 puntos de venta",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "market_entry",
+        "sales_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "Comunicación oficial de abril de 2024 sobre entrada en España y más de 30 puntos de venta iniciales. Se usa como evidencia histórica de entrada, no como censo actual."
+    },
+    {
+      "source_id": "source-kove-motos-bordoy-importer",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Motos Bordoy",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoy.com/",
+      "title": "Grupo Motos Bordoy — declaración de importador exclusivo KOVE en España",
+      "reliability_class": "primary_business",
+      "scope": "España",
+      "directory_scope": [
+        "importer",
+        "distribution"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa del operador declara que actualmente es importador exclusivo de KOVE en España. Se registra como declaración empresarial del importador; no se presupone más allá de lo que declara."
+    },
+    {
+      "source_id": "source-kove-bordoy-retail",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Bordoy Barcelona",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoybarcelona.com/es/motos",
+      "title": "Motos Bordoy Barcelona — oferta actual de modelos KOVE y red de tres tiendas",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web del operador publica modelos KOVE 800X Rally, 800X Pro y 450 Rally. Su promoción KOVE invita a visitar sus tres tiendas de Barcelona: Balmes 186, Valencia 179 y Urgell 240; se documentan como venta del propio importador."
+    },
+    {
+      "source_id": "source-kove-totmoto",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "TOTMOTO / MAS MONTANER S.A.",
+      "source_type": "company_page",
+      "url": "https://www.totmoto.cat/motos-kove-a54e/marca/kove/",
+      "title": "TOTMOTO — catálogo actual KOVE disponible en tienda en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El catálogo del operador publica siete modelos KOVE y al menos una ficha indica disponibilidad solo en tienda. El pie de página identifica MAS MONTANER S.A. y C/ Còrsega 378, 08037 Barcelona. Se usa esa dirección, no la dirección distinta de C/ Bruc 155 de otra página de taller, que no se ha podido reconciliar."
+    },
+    {
+      "source_id": "source-kove-expomoto-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Expomoto Málaga",
+      "source_type": "company_page",
+      "url": "https://expomotomalaga.es/marcas/kove/",
+      "title": "Expomoto Málaga — catálogo KOVE y dirección de establecimiento",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica KOVE con modelos actuales 2026 y dirección Av. Ortega y Gasset 262, Málaga. La web general del operador se presenta como distribuidor multimarca de KOVE; no se afirma autorización independiente del fabricante."
+    },
+    {
+      "source_id": "source-kove-castro-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/kove/",
+      "title": "Castro La Motocicleta — concesionario KOVE autodeclarado en todas sus instalaciones",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica KOVE que declara ser concesionario oficial en todas sus instalaciones, publica modelos y separa direcciones de ventas y posventa en Cádiz, Jerez y Palmones. El acceso directo automatizado devolvió 403, pero el contenido indexado de la página estaba disponible; la autorización se mantiene como autodeclaración empresarial."
+    },
+    {
+      "source_id": "source-kove-spanish-dealer-aggregator",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/kove",
+      "title": "Directorio secundario de concesionarios KOVE por provincias",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "candidate_discovery"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Directorio secundario que lista 64 concesionarios y candidatos en las cinco provincias prioritarias, entre ellos Motocicletas Prim Alicante y Francisco Belmonte Murcia. Se usa para descubrimiento y contraste, no como prueba definitiva de autorización ni para computar ubicaciones sin corroboración primaria."
     }
   ]
 }
