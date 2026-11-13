@@ -305,7 +305,7 @@ def summarize_transfer_fields(path, period):
     txt, error, _ = inspect_transfer_zip(payload)
     if error:
         raise ValueError(f"{Path(path).name}: {error}")
-    lines = txt.replace(b"\\r\\n", b"\\n").split(b"\\n")
+    lines = txt.replace(b"\r\n", b"\n").split(b"\n")
     if lines and lines[-1] == b"":
         lines.pop()
     if lines and len(lines[0]) == 79:
