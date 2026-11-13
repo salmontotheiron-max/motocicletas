@@ -52,6 +52,16 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <article class="card"><div class="label">Peso de la provincia</div><div class="value" id="provinceShare">—</div><div class="sub">Sobre las matriculaciones nuevas nacionales</div></article>
     <article class="card"><div class="label">Periodos con datos</div><div class="value" id="periodCount">—</div><div class="sub" id="cutoff">Según inventario publicado</div></article>
   </section>
+  <section class="panel" aria-label="Análisis por marca">
+    <h2>Volumen por marca y segmento</h2>
+    <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
+      <div><label for="brandSearch">Buscar marca</label><input id="brandSearch" type="search" placeholder="Nombre de marca" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
+      <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
+    </div>
+    <p class="small" id="brandScope">Matriculaciones nuevas observadas en DGT MATRABA, acumulado de los periodos publicados.</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Volumen</th><th>Peso</th><th>Segmentos</th></tr></thead><tbody id="brandRanking"></tbody></table></div>
+    <p class="note">El volumen procede de matriculaciones nuevas (operación 1), no de facturación ni ventas netas del fabricante. Las marcas candidatas sin conciliación con el inventario se mantienen identificadas como pendientes de revisión. El detalle por modelo todavía no está publicado en los agregados.</p>
+  </section>
   <section class="grid">
     <article class="panel">
       <h2>Evolución mensual</h2>
@@ -94,13 +104,14 @@ const FILES = {
   manifest: "manifest.json",
   periods: "periodos.json",
   monthly: "matriculaciones_nuevos_usados_por_tipo.csv",
+  brands: "marcas_candidatas_revision.json",
   provincial: "matriculaciones_motocicletas_por_provincia.csv",
   ranking: "ranking_motocicletas_provincia.csv",
   intensity: "indicadores_intensidad_territorial.csv"
 };
 const fmt = n => new Intl.NumberFormat("es-ES").format(n);
 const dec = (n,d=2) => Number(n).toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
-const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[]};
+const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[]};
 const el = id => document.getElementById(id);
 function parseCSV(text){
   const rows=[];let row=[],field="",quoted=false;
@@ -124,14 +135,14 @@ async function loadText(path){
 }
 async function loadJSON(path){return JSON.parse(await loadText(path));}
 async function loadData(){
-  const [manifest,periods,monthly,provincial,ranking,intensity]=await Promise.all([
-    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity)
+  const [manifest,periods,monthly,provincial,ranking,intensity,brands]=await Promise.all([
+    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity),loadJSON("marcas_candidatas_revision.json")
   ]);
   state.manifest=manifest;state.periods=periods.periodos_disponibles||[];
   state.monthly=parseCSV(monthly);state.provincial=parseCSV(provincial);
-  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);
+  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];
   if(!state.periods.length) throw new Error("El inventario no contiene periodos disponibles.");
-  populateFilters();render();
+  populateFilters();render();renderBrands();
   const files=(manifest.archivos||[]).length;
   el("status").className="status";
   el("status").textContent="Datos MATRABA cargados correctamente · "+files+" capturas fuente verificadas en el manifiesto · "+state.periods.length+" periodos disponibles.";
@@ -216,6 +227,31 @@ function renderIntensity(f){
   const months=state.intensity[0]?.periodos?.split("|")||[];
   el("intensityNote").textContent="Indicadores fijos del acumulado "+(months[0]||"")+" a "+(months[months.length-1]||"")+". No cambian al seleccionar un mes ni se recalculan por tipo 50/51.";
 }
+function renderBrands(){
+  const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
+  const segment=el("brandSegment").value;
+  const rows=state.brands.map(item=>{
+    const types=item.tipos_vehiculo||{};
+    const volume=segment==="all"
+      ?Object.values(types).reduce((sum,value)=>sum+Number(value||0),0)
+      :Number(types[segment]||0);
+    return {name:item.marca_normalizada,volume,types,periods:(item.periodos_observados||[]).length,status:item.estado_revision};
+  }).filter(item=>item.volume>0&&item.name.toLocaleLowerCase("es").includes(query))
+   .sort((a,b)=>b.volume-a.volume);
+  const total=rows.reduce((sum,item)=>sum+item.volume,0);
+  const top=rows.slice(0,50);
+  el("brandScope").textContent=(segment==="all"?"Todos los segmentos observados":("Código DGT "+segment))+
+    " · "+fmt(total)+" matriculaciones nuevas de las marcas coincidentes con el filtro · "+rows.length+" marcas.";
+  el("brandRanking").innerHTML=top.map(item=>{
+    const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
+    const share=total?item.volume/total*100:0;
+    const stateLabel=item.status==="ya_en_inventario"?"Inventario":"Candidata";
+    return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>"+stateLabel+"</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(share,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";
+  }).join("")||"<tr><td colspan='4'>Sin marcas para este filtro.</td></tr>";
+}
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+}
 function exportCSV(){
   const f=selected(),rows=[];
   state.periods.filter(p=>f.period==="all"||p===f.period).forEach(p=>{
@@ -230,6 +266,8 @@ function exportCSV(){
   a.href=url;a.download="matraba_motocicletas_filtrado.csv";a.click();URL.revokeObjectURL(url);
 }
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
+el("brandSearch").addEventListener("input",renderBrands);
+el("brandSegment").addEventListener("change",renderBrands);
 el("csv").addEventListener("click",exportCSV);el("pdf").addEventListener("click",()=>window.print());
 loadData().catch(error=>{el("status").className="status error";el("status").textContent="No se han podido cargar los agregados MATRABA. "+error.message+" Comprueba que el dashboard se sirve desde la raíz del repositorio y que public/data está publicado.";});
 </script>
