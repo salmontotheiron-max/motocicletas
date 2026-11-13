@@ -95,7 +95,7 @@ Tipos de registro separados:
 - `matriculacion_usada`: CLAVE_TRAMITE=1, IND_NUEVO_USADO=U; domicilio registral del vehículo.
 - `transferencia`: CLAVE_TRAMITE=2; domicilio registral del vehículo.
 
-El agregado de transferencias mide cambios de titularidad, no compraventas verificadas. En el diseño oficial de transferencias se documentan COD_PROVINCIA_VEH (provincia donde está domiciliado el vehículo) y COD_PROVINCIA_MAT (provincia donde fue matriculado originalmente), pero no una variable que identifique la provincia física de venta o la ubicación del vendedor. Por tanto, la provincia de venta no puede derivarse de esos campos. El domicilio posterior puede usarse como proxy del destino registral, nunca como provincia de compraventa.
+El agregado de transferencias mide cambios de titularidad, no compraventas verificadas. Se mantiene separado del conjunto de matriculaciones y se contabiliza una sola vez. En el diseño oficial de transferencias se documentan COD_PROVINCIA_VEH (provincia donde está domiciliado el vehículo) y COD_PROVINCIA_MAT (provincia donde fue matriculado originalmente), pero no una variable que identifique la provincia física de venta o la ubicación del vendedor. Por tanto, la provincia de venta no puede derivarse de esos campos. El domicilio posterior puede usarse como proxy del destino registral, nunca como provincia de compraventa.
 
 Fuentes de diseño:
 - DGT, [Diseño de registro de Matriculaciones MATRABA](https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/dgt-en-cifras/matraba/MATRICULACIONES_MATRABA.pdf).
