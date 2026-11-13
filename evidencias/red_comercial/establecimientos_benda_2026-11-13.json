@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan como venta las ubicaciones físicas en las que una fuente primaria del fabricante/distribuidor o del propio operador publica oferta Benda. Las sedes con servicio/taller se registran por separado y solo se atribuye servicio Benda cuando la fuente lo identifica expresamente. Los agregadores sin confirmación primaria se conservan como candidatos y no se suman. La autodeclaración de oficialidad no equivale a confirmación individual por el fabricante.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Una fuente primaria del fabricante/distribuidor o del operador publica oferta Benda y una dirección física identificable.",
+    "self_declared_official": "El operador se autodenomina concesionario o taller oficial Benda; no equivale a confirmación individual por el fabricante/distribuidor.",
+    "manufacturer_individually_listed": "La dirección aparece individualizada en el localizador oficial Benda.",
+    "secondary_candidate": "Un agregador atribuye Benda a un establecimiento, pero no existe confirmación primaria suficiente; no se cuenta como establecimiento confirmado."
+  },
+  "outlet_count": 9,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 2,
+      "Cádiz": 3,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 8,
+    "service_locations": 5,
+    "same_site_sales_and_service": 4,
+    "service_only_locations": 1,
+    "manufacturer_individually_listed": 0,
+    "operator_self_declared_official_sales": 6,
+    "secondary_only_candidates": 2
+  },
+  "official_source": {
+    "url": "https://www.bendakeeway.com/es-es/stores",
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial Benda ofrece filtros de Tienda y Servicio, pero la extracción textual consultada solo muestra los controles y no devuelve fichas individualizadas. El directorio global oficial identifica a Keeway Group como distribuidor para España. No se atribuye manufacturer_individually_listed a ningún punto concreto ni se interpreta la vista incompleta como ausencia de red."
+  },
+  "outlets": [
+    {
+      "outlet_id": "benda-motissimo-barcelona",
+      "brand": "Benda",
+      "trading_name": "Motissimo Barcelona",
+      "operator": "Motissimo",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Comandant Benítez, 23, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motissimo.es/benda/",
+      "supporting_urls": [
+        "https://motissimo.es/tiendas/barcelona/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página específica con modelos Benda y declaración de concesionario oficial y taller Benda. La ubicación y actividad de venta se confirman en la página de la sede Barcelona."
+    },
+    {
+      "outlet_id": "benda-recambioslopez-mijas",
+      "brand": "Benda",
+      "trading_name": "Recambios López — Las Lagunas de Mijas",
+      "operator": "Recambios López",
+      "province": "Málaga",
+      "municipality": "Las Lagunas de Mijas",
+      "public_address": "Calle Poseidón, 4, 29651 Las Lagunas de Mijas, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://recambioslopez.com/cilindradas/500-cc/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La web del operador publica modelos Benda y este centro con contacto de ventas. No se autodenomina concesionario oficial Benda; no se atribuye servicio específico de marca."
+    },
+    {
+      "outlet_id": "benda-recambioslopez-marbella",
+      "brand": "Benda",
+      "trading_name": "Recambios López — Marbella",
+      "operator": "Recambios López",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "Avenida Arias de Velasco, 8, 29601 Marbella, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://recambioslopez.com/cilindradas/500-cc/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_confirmed",
+      "notes": "La misma página corporativa que publica productos Benda identifica esta sede con contacto de ventas. No se autodenomina concesionario oficial Benda; no se atribuye servicio específico de marca."
+    },
+    {
+      "outlet_id": "benda-castro-cadiz-sales",
+      "brand": "Benda",
+      "trading_name": "Castro La Motocicleta Cádiz",
+      "operator": "Motos Cádiz S.L. / Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/benda/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/historia/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página específica Benda y declaración corporativa de concesionario oficial en las tres sedes. Esta dirección es solo ventas; el taller se publica en Calle García Quijano 2."
+    },
+    {
+      "outlet_id": "benda-castro-cadiz-workshop",
+      "brand": "Benda",
+      "trading_name": "Castro La Motocicleta — taller Cádiz",
+      "operator": "Motos Cádiz S.L. / Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Calle García Quijano, 2, 11012 Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/benda/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Taller/posventa publicado por Castro en dirección distinta de la sede de ventas de Avenida de la Sanidad Pública 297; no se cuenta como punto de venta."
+    },
+    {
+      "outlet_id": "benda-castro-jerez",
+      "brand": "Benda",
+      "trading_name": "Castro La Motocicleta Jerez",
+      "operator": "Motos Cádiz S.L. / Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/benda/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Castro publica expresamente ventas y taller en la misma sede y se autodenomina concesionario oficial Benda."
+    },
+    {
+      "outlet_id": "benda-castro-palmones",
+      "brand": "Benda",
+      "trading_name": "Castro La Motocicleta Palmones",
+      "operator": "Motos Cádiz S.L. / Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/benda/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Castro publica expresamente ventas y taller en la misma sede y se autodenomina concesionario oficial Benda."
+    },
+    {
+      "outlet_id": "benda-mototeam-torrevieja",
+      "brand": "Benda",
+      "trading_name": "Moto Team",
+      "operator": "Moto Team",
+      "province": "Alicante",
+      "municipality": "Torrevieja",
+      "public_address": "Avenida Ricardo La Fuente Aguado, 33, 03183 Torrevieja, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.mototeam.es/site/contact",
+      "supporting_urls": [
+        "https://www.mototeam.es/b16453-visita-nuestra-tienda.html"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web propia se autodenomina concesionario oficial Benda y publica la sede y contacto. No se atribuye taller Benda en ausencia de evidencia explícita."
+    },
+    {
+      "outlet_id": "benda-jade-cartagena",
+      "brand": "Benda",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Jade Motor / Fenix Moto Premium S.L.",
+      "province": "Murcia",
+      "municipality": "Cartagena (Miranda)",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Miranda, Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/motos-nuevas/benda",
+      "supporting_urls": [
+        "https://jademotor.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página específica Benda que se autodenomina concesionario oficial en la Región de Murcia y anuncia taller oficial y recambio original. La sede de Cartagena es la única que se vincula a Benda; no se extiende la oferta a las sedes de Murcia capital o San Javier."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "benda-motoland-alicante",
+      "province": "Alicante",
+      "trading_name": "Motoland",
+      "public_address": "Calle Víctor de la Serna, 2, 03006 Alicante, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-motoland-alicante-alacant",
+      "reason": "Un agregador atribuye Benda a Motoland. La web corporativa confirma el establecimiento, pero no se encontró una página primaria de Motoland que confirme oferta Benda; no se contabiliza."
+    },
+    {
+      "candidate_id": "benda-sk-motos-malaga",
+      "province": "Málaga",
+      "trading_name": "SK Motos",
+      "public_address": "Calle La Bohème, 50, 29006 Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-sk-motos",
+      "reason": "Un agregador atribuye Benda a SK Motos. La web propia confirma dirección y actividad, pero no se localizó una página primaria específica de Benda; no se contabiliza."
+    }
+  ],
+  "limitations": [
+    "La auditoría documenta ocho ubicaciones de venta: Barcelona 1, Málaga 2, Cádiz 3, Alicante 1 y Murcia 1. El recuento no equivale a ventas realizadas ni a censo exhaustivo.",
+    "Se identifican cinco ubicaciones con servicio/taller Benda: Barcelona, Cádiz capital (taller separado de ventas), Jerez, Palmones y Cartagena. Solo cuatro comparten sede con ventas.",
+    "El localizador oficial Benda existe, pero la vista textual consultada no expone fichas individuales; por tanto, ningún establecimiento se clasifica como manufacturer_individually_listed.",
+    "La oficialidad de Motissimo, Castro, Moto Team y Jade se registra como autodeclaración de los operadores; Recambios López se cuenta por oferta comercial publicada, no por autorización oficial.",
+    "Motoland en Alicante y SK Motos en Málaga se mantienen como candidatos secundarios sin confirmación primaria y no se contabilizan.",
+    "No se infieren stock, ventas, matriculaciones, cuota, capacidad comercial ni exhaustividad nacional."
+  ],
+  "methodology": [
+    "Se ha priorizado el directorio global oficial de Benda para identificar el distribuidor español y el localizador oficial de tiendas/servicios.",
+    "Se han contrastado las ofertas y direcciones en páginas corporativas específicas de los operadores; se separan las sedes de ventas y taller de Castro en Cádiz capital.",
+    "Los candidatos respaldados únicamente por agregadores se conservan como pistas, no como puntos confirmados.",
+    "La fecha de corte documental es 13 de noviembre de 2026."
+  ]
+}
