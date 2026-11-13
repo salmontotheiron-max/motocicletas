@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Se consulta la página corporativa y la gama oficial de Sherco, así como su localizador oficial de distribuidores. El localizador permite filtrar por país, ciudad y categoría, pero su contenido de resultados es dinámico y no se pudo extraer como listado estático; no se usan APIs privadas. Para el inventario provincial se utiliza un directorio secundario de concesionarios y se deduplican las fichas por dirección física. Cada entrada se contrasta con web propia cuando está disponible. Se distingue accepted_commercial_presence (catálogo u oferta propia del operador) de secondary_directory_only (solo ficha en agregador); no se atribuye autorización contractual a las fichas secundarias.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "SHERCO",
+    "country_of_origin": "Francia",
+    "headquarters_and_motorcycle_production": "Nîmes, Gard, Francia",
+    "founded": 1998,
+    "spanish_importer": "No identificado en las fuentes consultadas; no se infiere que no exista."
+  },
+  "manufacturer_locator": {
+    "url": "https://www.sherco.com/es/red",
+    "status": "dynamic_unextractable",
+    "features": [
+      "country",
+      "city",
+      "distance",
+      "vehicle_category"
+    ],
+    "notes": "El HTML recuperado muestra los filtros, pero no las fichas de resultados."
+  },
+  "counts": {
+    "secondary_directory_unique_outlets_priority_provinces": 10,
+    "by_province": {
+      "Barcelona": 5,
+      "Cádiz": 2,
+      "Alicante": 1,
+      "Málaga": 1,
+      "Murcia": 1
+    },
+    "operator_current_offer_corroborated": 3,
+    "secondary_directory_only": 7,
+    "brand_specific_service_corroborated": 1,
+    "operator_self_declared_official": 2,
+    "contractual_authorization_independently_verified": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "sherco-barcelona-santa-eulalia",
+      "trading_name": "Motos Santa Eulàlia",
+      "province": "Barcelona",
+      "municipality": "L'Hospitalet de Llobregat",
+      "public_address": "Carrer Santa Eulàlia, 37, 08902 L'Hospitalet de Llobregat, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosantaeulalia.com/marcas/sherco/",
+      "evidence_type": "operator_brand_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página de marca propia: el operador se presenta como concesionario oficial Sherco. No se recuperó evidencia específica de taller Sherco en esta página."
+    },
+    {
+      "outlet_id": "sherco-barcelona-motos-girona",
+      "trading_name": "Motos Girona",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Bruc, 151, 08037 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/sherco",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Listado en directorio secundario bajo Sherco. La web propia de Motos Girona se centra en motocicletas de ocasión y no permitió corroborar oferta actual Sherco; la ficha duplicada del mismo establecimiento en el directorio se cuenta una sola vez."
+    },
+    {
+      "outlet_id": "sherco-barcelona-jrb-offroad",
+      "trading_name": "JRB Off Road Center",
+      "province": "Barcelona",
+      "municipality": "Cabrera de Mar",
+      "public_address": "Camí les Corts, 28, 08349 Cabrera de Mar, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/tienda-jrb-off-road-center",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Directorio secundario atribuye Sherco y servicios de venta y taller. La web propia recuperada no permitió confirmar catálogo Sherco ni servicio específico de marca."
+    },
+    {
+      "outlet_id": "sherco-barcelona-nonstop",
+      "trading_name": "NonStop Bikes",
+      "province": "Barcelona",
+      "municipality": "Tona",
+      "public_address": "Carrer Taradell, 68, 08551 Tona, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.nonstopbikes.com/motos-ab6/marca/sherco/",
+      "evidence_type": "operator_catalog",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Catálogo propio con nueve Sherco y precios, incluidos modelos nuevos 2026/2027. La web también documenta tienda física y taller de trial/enduro, pero no atribuye explícitamente al taller la condición de servicio oficial Sherco."
+    },
+    {
+      "outlet_id": "sherco-barcelona-kontrakos",
+      "trading_name": "Kontrakos",
+      "province": "Barcelona",
+      "municipality": "Sant Esteve de Palautordera",
+      "public_address": "Carretera del Montseny, 6, 08461 Sant Esteve de Palautordera, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/tienda-kontrakos",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Directorio secundario lista Sherco y servicio de venta. No se recuperó una página propia actual que confirme catálogo Sherco."
+    },
+    {
+      "outlet_id": "sherco-cadiz-adn",
+      "trading_name": "ADN Motosport",
+      "province": "Cádiz",
+      "municipality": "Chiclana de la Frontera",
+      "public_address": "Avenida del Comercio, 7, 11130 Chiclana de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/sherco",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Directorio secundario incluye Sherco en la relación de marcas. La web propia confirma tienda y taller off-road en la dirección, pero no publica evidencia inequívoca de catálogo Sherco."
+    },
+    {
+      "outlet_id": "sherco-cadiz-recambiomotos",
+      "trading_name": "Recambiomotos",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Avenida Agua Marina, 42, 11203 Algeciras, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/tienda-recambiomotos",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Directorio secundario lista Sherco, venta y taller. No se recuperó una fuente propia actual que confirme stock Sherco o servicio específico de marca."
+    },
+    {
+      "outlet_id": "sherco-alicante-jjchorro",
+      "trading_name": "JJ Chorro",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Orihuela, 148, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/sherco",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Directorio secundario lista Sherco en esta dirección. La web propia actual de JJ Chorro destaca MH y Leonart, sin evidencia recuperada de oferta Sherco vigente; no se atribuye stock ni autorización contractual."
+    },
+    {
+      "outlet_id": "sherco-malaga-goracing",
+      "trading_name": "Go Racing Motos",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 254, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://goracingmotos.com/tienda-motos/",
+      "evidence_type": "operator_company_and_service_pages",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "El operador se declara concesionario oficial Sherco. Su página de taller identifica experiencia técnica en Sherco y distribución oficial de recambios de la marca."
+    },
+    {
+      "outlet_id": "sherco-murcia-asensio",
+      "trading_name": "Asensio Motor, S.L.",
+      "province": "Murcia",
+      "municipality": "Sangonera la Seca",
+      "public_address": "Avenida de Lorca, 2, 30835 Sangonera la Seca, Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://concesionariosdemotos.com/sherco",
+      "evidence_type": "secondary_directory",
+      "verification_status": "secondary_directory_only",
+      "official_authorization_status": "third_party_directory_listed",
+      "notes": "Directorio secundario lista Sherco en la dirección. La existencia y actividad general del negocio se corroboran con directorios empresariales, pero no se recuperó oferta Sherco propia actual ni prueba de autorización directa."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Motos Girona duplicate directory row",
+      "reason": "The same business and same Bruc 151 address appear twice in the secondary directory; counted once."
+    }
+  ],
+  "limitations": [
+    "El directorio secundario declara 66 fichas nacionales, pero no se toma como censo oficial del fabricante.",
+    "El localizador oficial Sherco es dinámico y sus resultados no son visibles en el HTML capturado; no se presenta el inventario secundario como manufacturer_listed.",
+    "Tres operadores muestran oferta propia actual (Motos Santa Eulàlia, NonStop Bikes y Go Racing). Los otros siete se mantienen como secondary_directory_only.",
+    "Solo Go Racing publica expresamente especialización técnica y distribución de recambios Sherco; no se presume servicio de marca en otros talleres.",
+    "Las declaraciones de concesionario oficial de los operadores son self-declared; no se inspeccionaron contratos de distribución.",
+    "No se identifica entidad importadora española independiente en las fuentes consultadas."
+  ],
+  "sources": [
+    "https://www.sherco.com/es/company-es",
+    "https://www.sherco.com/es/motos-es",
+    "https://www.sherco.com/es/red",
+    "https://concesionariosdemotos.com/sherco",
+    "https://motosantaeulalia.com/marcas/sherco/",
+    "https://goracingmotos.com/tienda-motos/",
+    "https://goracingmotos.com/taller-de-motos/",
+    "https://www.nonstopbikes.com/motos-ab6/marca/sherco/",
+    "https://adnmotosport.net/",
+    "https://jjchorro.com/"
+  ]
+}

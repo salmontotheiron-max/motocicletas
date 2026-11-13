@@ -7,16 +7,16 @@ from urllib.parse import urlparse
 
 REGISTRY_PATH = Path(__file__).resolve().parent / "fuentes_red_comercial.json"
 ALLOWED_SOURCE_TYPES = {
-    "official_directory", "company_page", "official_statement",
+    "official_directory", "company_page", "product_catalog", "secondary_directory", "official_statement",
     "public_record", "press", "aggregator", "social", "other",
 }
 ALLOWED_RELIABILITY = {
-    "primary_official", "primary_business", "secondary_reputable",
+    "primary_official", "primary_business", "secondary_reputable", "secondary_aggregator",
     "community", "unverified",
 }
-ALLOWED_CAPTURE_MODES = {"http_html", "manual", "browser_required", "api"}
+ALLOWED_CAPTURE_MODES = {"http_html", "manual", "browser_required", "api", "dynamic_unextractable"}
 ALLOWED_DISCOVERY = {
-    "directory_content_visible", "locator_present_dynamic_content",
+    "directory_content_visible", "dynamic_unextractable", "locator_present_dynamic_content",
     "locator_present_no_entries_yet", "not_assessed",
 }
 ALLOWED_SOURCE_ROLES = {"primary_monitoring", "market_discovery"}

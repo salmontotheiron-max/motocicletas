@@ -665,13 +665,20 @@
       "brand_id": "brand-sherco",
       "canonical_name": "Sherco",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-sherco-company-official",
+        "source-sherco-model-range-official",
+        "source-sherco-dealer-locator-official",
+        "source-sherco-secondary-dealer-directory",
+        "source-sherco-santa-eulalia",
+        "source-sherco-goracing",
+        "source-sherco-nonstop-bikes"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Fabricante francés SHERCO, con sede social y unidad de producción en Nîmes. La web corporativa mantiene gama vigente y localizador oficial de distribuidores, pero su listado es dinámico y no se pudo extraer como inventario estático. En las cinco provincias prioritarias se identifican 10 puntos únicos en un directorio secundario (Barcelona 5, Cádiz 2, Alicante 1, Málaga 1 y Murcia 1), deduplicando una ficha repetida de Motos Girona. Oferta actual propia corroborada en tres operadores (Motos Santa Eulàlia, NonStop Bikes y Go Racing Málaga); el resto queda como presencia en directorio secundario, sin atribuir autorización del fabricante ni stock. Servicio específicamente vinculado a Sherco publicado por Go Racing; no se han verificado contratos individuales."
     },
     {
       "brand_id": "brand-silence",
@@ -6613,6 +6620,150 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Página propia dedicada a Rieju y catálogo de marcas del operador. El localizador oficial publica Carrer Foneria 9, mientras la página de contacto del operador publica Carrer Foneria 13; discrepancia de numeración pendiente de aclaración."
+    },
+    {
+      "source_id": "source-sherco-company-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-sherco",
+      "publisher": "SHERCO",
+      "source_type": "company_page",
+      "url": "https://www.sherco.com/es/company-es",
+      "title": "Sherco — información corporativa y fabricación",
+      "reliability_class": "primary_official",
+      "scope": "Nîmes, Francia; actividad comercial internacional",
+      "directory_scope": [
+        "manufacturer_identity",
+        "corporate_presence",
+        "production"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "La página corporativa identifica a Sherco como empresa francesa, fundada en 1998, con sede social y unidad de producción en Nîmes. Declara actividad internacional en más de 74 países y red global de puntos de venta; no identifica entidad importadora española."
+    },
+    {
+      "source_id": "source-sherco-model-range-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-sherco",
+      "publisher": "SHERCO",
+      "source_type": "product_catalog",
+      "url": "https://www.sherco.com/es/motos-es",
+      "title": "Sherco — gama oficial de motocicletas",
+      "reliability_class": "primary_official",
+      "scope": "Gama internacional",
+      "directory_scope": [
+        "product_range",
+        "current_products"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Catálogo oficial consultado con modelos de enduro, trial, 50 cc, ocio, streetbike y e-bike, con referencias 2026 y 2027. Se utiliza para acreditar actividad de producto vigente, no ventas españolas por sí sola."
+    },
+    {
+      "source_id": "source-sherco-dealer-locator-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-sherco",
+      "publisher": "SHERCO",
+      "source_type": "official_directory",
+      "url": "https://www.sherco.com/es/red",
+      "title": "Sherco — localizador oficial de distribuidores",
+      "reliability_class": "primary_official",
+      "scope": "Red internacional con búsqueda por país, ciudad, distancia y categoría de vehículo",
+      "directory_scope": [
+        "dealer_network",
+        "sales",
+        "service"
+      ],
+      "capture_mode": "dynamic_unextractable",
+      "discovery_status": "dynamic_unextractable",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Página oficial con buscador de distribuidores por país, ciudad, distancia y categorías de vehículo. El HTML visible expone los filtros, pero no las fichas de resultados; no se ha intentado acceder a endpoints privados ni inferir de este localizador las direcciones españolas."
+    },
+    {
+      "source_id": "source-sherco-secondary-dealer-directory",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "secondary_directory",
+      "url": "https://concesionariosdemotos.com/sherco",
+      "title": "Directorio secundario de concesionarios Sherco en España",
+      "reliability_class": "secondary_aggregator",
+      "scope": "España; provincias Barcelona, Cádiz, Alicante, Málaga y Murcia",
+      "directory_scope": [
+        "dealer_discovery",
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El directorio declara 66 fichas a escala nacional y agrupa puntos por provincia. En las cinco provincias prioritarias se transcriben 11 filas, pero Motos Girona aparece duplicada; se deduplican 10 ubicaciones. Es fuente secundaria, no sustituye el localizador oficial ni acredita por sí sola contrato o stock."
+    },
+    {
+      "source_id": "source-sherco-santa-eulalia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Santa Eulàlia",
+      "source_type": "company_page",
+      "url": "https://motosantaeulalia.com/marcas/sherco/",
+      "title": "Motos Santa Eulàlia — Sherco",
+      "reliability_class": "primary_business",
+      "scope": "L'Hospitalet de Llobregat, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página propia de marca: el operador se presenta como concesionario oficial Sherco y publica ubicación y contacto en Carrer Santa Eulàlia 37."
+    },
+    {
+      "source_id": "source-sherco-goracing",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Go Racing Motos",
+      "source_type": "company_page",
+      "url": "https://goracingmotos.com/tienda-motos/",
+      "title": "Go Racing Motos — concesionario oficial Sherco en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service",
+        "parts"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El operador declara ser concesionario oficial Sherco y publica dirección en Av. José Ortega y Gasset 254. Su página de taller identifica mecánicos expertos en Sherco y distribución oficial de recambios Sherco."
+    },
+    {
+      "source_id": "source-sherco-nonstop-bikes",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "NonStop Bikes",
+      "source_type": "company_page",
+      "url": "https://www.nonstopbikes.com/motos-ab6/marca/sherco/",
+      "title": "NonStop Bikes — catálogo Sherco",
+      "reliability_class": "primary_business",
+      "scope": "Tona, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Catálogo propio con nueve motocicletas Sherco, incluidos modelos nuevos 2026 y 2027, precios y datos de contacto del operador en Carrer Taradell 68, Tona."
     }
   ]
 }
