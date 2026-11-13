@@ -34,6 +34,11 @@ class IntegratedReportTests(unittest.TestCase):
             ["periodo","COD_TIPO","nuevo_usado","recuento"],
             [{"periodo":"2026-01","COD_TIPO":"50","nuevo_usado":"Nuevo","recuento":str(total-1)},
              {"periodo":"2026-01","COD_TIPO":"50","nuevo_usado":"Usado","recuento":"1"}])
+        self.write_csv(d/"matriculaciones_marca_modelo_segmento.csv",
+            ["periodo","marca","modelo","COD_TIPO","nuevo_usado","tipo_registro","ambito_provincial","COD_PROVINCIA","provincia","recuento"],
+            [{"periodo":"2026-01","marca":"Marca A","modelo":"Modelo A","COD_TIPO":"50","nuevo_usado":"U","tipo_registro":"transferencia_sin_clasificar","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"M","provincia":"Madrid","recuento":"5"},
+             {"periodo":"2026-01","marca":"Marca A","modelo":"Modelo B","COD_TIPO":"50","nuevo_usado":"U","tipo_registro":"subasta","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"SG","provincia":"Segovia","recuento":"2"},
+             {"periodo":"2026-01","marca":"Marca A","modelo":"Modelo C","COD_TIPO":"51","nuevo_usado":"U","tipo_registro":"venta","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"M","provincia":"Madrid","recuento":"1"}])
         self.write_csv(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
             ["periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"],
             [{"periodo":"2026-01","COD_PROVINCIA_MAT":"SG","provincia_matriculacion":"Segovia","COD_PROVINCIA_VEH":"SG","provincia_domicilio_vehiculo":"Segovia","COD_TIPO":"50","recuento":"1"},
@@ -55,7 +60,20 @@ class IntegratedReportTests(unittest.TestCase):
             result=report.build_report(data,output)
             body=output.read_text(encoding="utf-8")
             self.assertEqual(result["nuevas"],3)
+            self.assertEqual(result["matriculaciones_usados"],1)
+            self.assertEqual(result["transferencias"],8)
+            self.assertEqual(result["ventas_declaradas"],1)
+            self.assertEqual(result["subastas"],2)
+            self.assertEqual(result["transferencias_sin_clasificar"],5)
             self.assertEqual(result["alertas"],["Segovia"])
+            self.assertIn("no son transferencias",body)
+            self.assertIn("provincia física de venta",body)
+            self.assertIn("Venta declarada (V)",body)
+            transfer_csv = data/"transferencias_motocicletas_por_provincia.csv"
+            self.assertTrue(transfer_csv.exists())
+            with transfer_csv.open(encoding="utf-8-sig",newline="") as handle:
+                transfer_rows = list(csv.DictReader(handle))
+            self.assertEqual(sum(int(row["recuento"]) for row in transfer_rows),8)
             self.assertIn("2026-01",body)
             self.assertIn("REVISAR",body)
             self.assertIn("Domicilio Madrid",body)
@@ -89,6 +107,7 @@ class IntegratedReportTests(unittest.TestCase):
                     "dispersion_provincias_flujos.csv",
                     "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
                     "matriculaciones_nuevos_usados_por_tipo.csv",
+                    "matriculaciones_marca_modelo_segmento.csv",
                     "informe_dispersion_provincias.json"]
         if not all((data / name).exists() for name in required):
             self.skipTest("No hay snapshot MATRABA publicado en este checkout")
