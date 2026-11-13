@@ -243,15 +243,15 @@ def process_archive(path, period, include_transfers=False):
                         reference_period, province_registration or "(vacío)",
                         province_vehicle or "(vacío)", vehicle_type
                     )] += 1
-                province_scope, province_code = (
-                    ("matriculacion", province_registration) if new_used == "N"
-                    else ("domicilio_vehiculo", province_vehicle)
-                )
-                model_counts[(
-                    reference_period, brand_itv, model_itv, vehicle_type,
-                    new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
-                    province_scope, province_code or "(vacío)"
-                )] += 1
+            province_scope, province_code = (
+                ("matriculacion", province_registration) if new_used == "N"
+                else ("domicilio_vehiculo", province_vehicle)
+            )
+            model_counts[(
+                reference_period, brand_itv, model_itv, vehicle_type,
+                new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
+                province_scope, province_code or "(vacío)"
+            )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
             if include_transfers and operation == "2":
