@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se computan sedes con catálogo Morbidelli o página de marca actual en la web del operador y dirección física identificable. Se evita duplicar sucursales sin prueba específica de oferta en esa sede. El localizador oficial es dinámico; las entradas de agregadores se usan para descubrimiento y no se convierten automáticamente en ventas confirmadas. Las autodeclaraciones de oficialidad se distinguen de la autorización contractual independiente.",
+  "verification_status_policy": {
+    "operator_current_brand_offer": "La web corporativa del operador publica catálogo o modelos Morbidelli actuales y permite identificar la sede.",
+    "operator_self_declared_official": "El operador se autodenomina concesionario oficial; no equivale a verificación contractual independiente.",
+    "secondary_candidate": "Referencia secundaria sin corroboración primaria actual; no se computa como establecimiento confirmado."
+  },
+  "outlet_count": 10,
+  "counts": {
+    "sales_corroborated": 10,
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 2,
+      "Cádiz": 3,
+      "Alicante": 2,
+      "Murcia": 1
+    },
+    "service_locations_explicitly_published": 4,
+    "operator_self_declared_official_sales": 3,
+    "manufacturer_individual_directory_entries_recovered": 0,
+    "contractual_authorization_independently_verified": 0
+  },
+  "distribution": {
+    "group": "Keeway Group España",
+    "status": "Keeway Group España declara ser filial directa de Keeway Group y encargarse de recepción, almacenamiento y distribución del producto del grupo. Morbidelli se incorporó a su cartera española en 2024.",
+    "address": "Calle Garbí, 4, 08213 Polinyà, Barcelona, España",
+    "evidence_url": "https://www.keeway.group/sobre-nosotros/",
+    "notes": "La relación de distribución y soporte de posventa está declarada en la web corporativa del grupo. No se atribuye una razón social mercantil más precisa que la denominación pública «Keeway Group España»."
+  },
+  "official_locator": {
+    "url": "https://www.morbidelli.com/es-es/stores",
+    "status": "locator_present_dynamic_content",
+    "notes": "Localizador oficial con filtros de distancia y categorías Tienda/Servicio. La extracción textual consultada no individualizó establecimientos; se han contrastado los operadores con sus propias páginas corporativas."
+  },
+  "outlets": [
+    {
+      "outlet_id": "morbidelli-motissimo-barcelona",
+      "brand": "Morbidelli",
+      "trading_name": "Motissimo Barcelona",
+      "operator": "Motissimo",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Comandant Benítez 23, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motissimo.es/mbp-morbidelli/",
+      "supporting_urls": [
+        "https://motissimo.es/tiendas/barcelona/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página específica MBP Morbidelli con catálogo y autodeclaración de concesionario oficial; la sede de Barcelona ofrece venta y taller oficial."
+    },
+    {
+      "outlet_id": "morbidelli-motissimo-vilanova",
+      "brand": "Morbidelli",
+      "trading_name": "Motissimo Vilanova",
+      "operator": "Motissimo Vilanova",
+      "province": "Barcelona",
+      "municipality": "Vilanova i la Geltrú",
+      "public_address": "Rambla de l'Exposició 49, 08800 Vilanova i la Geltrú, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motissimovilanova.es/morbidelli/",
+      "evidence_type": "operator_brand_catalogue",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_brand_offer_not_manufacturer_verified",
+      "notes": "Catálogo corporativo actual con modelos Morbidelli y dirección de tienda física."
+    },
+    {
+      "outlet_id": "morbidelli-motosiles-malaga",
+      "brand": "Morbidelli",
+      "trading_name": "Moto Siles",
+      "operator": "Moto Siles",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Emilio Thuillier 70, 29014 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosiles.es/tienda/",
+      "supporting_urls": [
+        "https://motosiles.es/"
+      ],
+      "evidence_type": "operator_current_catalog",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_brand_offer_not_manufacturer_verified",
+      "notes": "La tienda online mantiene Morbidelli entre sus marcas y muestra cinco referencias de catálogo. La web identifica esta sede de Málaga; no se duplica la tienda de Alhaurín sin evidencia individual de oferta."
+    },
+    {
+      "outlet_id": "morbidelli-recambioslopez-mijas",
+      "brand": "Morbidelli",
+      "trading_name": "Recambios López",
+      "operator": "Recambios López",
+      "province": "Málaga",
+      "municipality": "Las Lagunas de Mijas",
+      "public_address": "Calle Poseidón 4, 29651 Las Lagunas de Mijas, Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://recambioslopez.org/catalogo/",
+      "supporting_urls": [
+        "https://recambioslopez.com/"
+      ],
+      "evidence_type": "operator_current_catalog",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_brand_offer_not_manufacturer_verified",
+      "notes": "El catálogo incluye motocicletas Morbidelli, incluida C1002V; la web identifica ventas, taller y dirección física en Mijas."
+    },
+    {
+      "outlet_id": "morbidelli-castro-cadiz",
+      "brand": "Morbidelli",
+      "trading_name": "Castro La Motocicleta — Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/morbidelli/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/historia/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página específica de Morbidelli con venta en la sede de Cádiz; taller posventa indicado por separado en Calle García Quijano 2."
+    },
+    {
+      "outlet_id": "morbidelli-castro-jerez",
+      "brand": "Morbidelli",
+      "trading_name": "Castro La Motocicleta — Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/morbidelli/",
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página de marca identifica la sede como ventas y taller."
+    },
+    {
+      "outlet_id": "morbidelli-castro-palmones",
+      "brand": "Morbidelli",
+      "trading_name": "Castro La Motocicleta — Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/morbidelli/",
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página de marca identifica la sede como ventas y taller."
+    },
+    {
+      "outlet_id": "morbidelli-motoland-el-campello",
+      "brand": "Morbidelli",
+      "trading_name": "Motoland — El Campello",
+      "operator": "Motoland",
+      "province": "Alicante",
+      "municipality": "El Campello",
+      "public_address": "Carrer de Sant Ramon 99, 03560 El Campello, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motoland.es/Morbidelli/",
+      "evidence_type": "operator_brand_catalogue",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_brand_offer_not_manufacturer_verified",
+      "notes": "La página de marca publica catálogo Morbidelli y esta tienda física."
+    },
+    {
+      "outlet_id": "morbidelli-motoland-alicante",
+      "brand": "Morbidelli",
+      "trading_name": "Motoland — Alicante",
+      "operator": "Motoland",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle Víctor de la Serna 2, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motoland.es/Morbidelli/",
+      "evidence_type": "operator_brand_catalogue",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_brand_offer_not_manufacturer_verified",
+      "notes": "La página de marca publica catálogo Morbidelli y esta segunda tienda física."
+    },
+    {
+      "outlet_id": "morbidelli-jademotor-cartagena",
+      "brand": "Morbidelli",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Fenix Moto Premium S.L. (marca comercial Jade Motor)",
+      "province": "Murcia",
+      "municipality": "Cartagena",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/motos-nuevas/morbidelli",
+      "supporting_urls": [
+        "https://jademotor.com/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página específica que se declara concesionario oficial Morbidelli en la Región de Murcia y ofrece taller oficial y recambio; la sede Cartagena se identifica como punto del grupo. No se computa Murcia capital porque la página de sedes no asigna Morbidelli a esa tienda."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "trading_name": "Keeway Center BCN",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Vilamarí 48, 08015 Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli/en-barcelona",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador como distribuidor Morbidelli; no se recuperó página corporativa actual del operador que lo confirme."
+    },
+    {
+      "trading_name": "Bruc Motors",
+      "province": "Barcelona",
+      "municipality": "Manresa",
+      "public_address": "Carrer del Bruc 54, 08241 Manresa, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli/en-barcelona",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador; sin corroboración corporativa primaria actual recuperada."
+    },
+    {
+      "trading_name": "Tramuntana Motors",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Passatge Torrijos 32, 08302 Mataró, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli/en-barcelona",
+      "status": "secondary_candidate",
+      "notes": "Listado por el agregador; sin corroboración corporativa primaria actual recuperada."
+    },
+    {
+      "trading_name": "Moto Siles Alhaurín",
+      "province": "Málaga",
+      "municipality": "Alhaurín de la Torre",
+      "public_address": "Polígono Industrial Fase II, nave 9, 29130 Alhaurín de la Torre, Málaga, España",
+      "evidence_url": "https://motosiles.es/",
+      "status": "secondary_candidate",
+      "notes": "La web identifica la sucursal, pero no se pudo confirmar oferta Morbidelli individualizada en esa dirección."
+    },
+    {
+      "trading_name": "SK Motos",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle La Bohème 50, 29006 Málaga, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli/en-malaga",
+      "status": "secondary_candidate",
+      "notes": "Listado por agregador; sin página corporativa actual con oferta Morbidelli recuperada."
+    },
+    {
+      "trading_name": "Recambiomotos",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Avenida Agua Marina 42, 11203 Algeciras, Cádiz, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli/en-cadiz",
+      "status": "secondary_candidate",
+      "notes": "Listado por agregador; sin corroboración corporativa actual recuperada."
+    },
+    {
+      "trading_name": "Alcomoción",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Calle Maestro Román 1, 03204 Elche, Alicante, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli",
+      "status": "secondary_candidate",
+      "notes": "Listado por agregador; no se recuperó página corporativa actual que confirme oferta Morbidelli."
+    },
+    {
+      "trading_name": "Jade Motor Murcia",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Pintor Pedro Flores 32, 30010 Murcia, España",
+      "evidence_url": "https://concesionariosdemotos.com/morbidelli",
+      "status": "secondary_candidate",
+      "notes": "El agregador la lista, pero la web actual de Jade Motor no incluye Morbidelli en el listado de marcas asignadas a la tienda de Murcia ciudad; no se computa."
+    }
+  ],
+  "notes": [
+    "La clasificación established acredita presencia comercial actual y no un censo nacional exhaustivo.",
+    "El localizador oficial existe, pero su contenido es dinámico y la extracción textual no individualizó las tiendas; se contrastaron operadores en sus propias webs.",
+    "Las diez sedes computadas tienen catálogo Morbidelli o página de marca y dirección física identificable.",
+    "Se han evitado duplicar sucursales de un mismo operador cuando no existe evidencia específica de oferta Morbidelli en esa ubicación.",
+    "Las autodeclaraciones de concesionario oficial no se presentan como verificación contractual independiente.",
+    "Keeway Group España declara la distribución del producto del grupo y la incorporación de Morbidelli a su cartera en 2024; no se presume razón social mercantil adicional."
+  ]
+}
