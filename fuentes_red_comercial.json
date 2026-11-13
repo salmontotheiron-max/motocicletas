@@ -47,7 +47,16 @@
       "brand_id": "brand-zontes-es",
       "canonical_name": "Zontes",
       "manufacturer_id": null,
-      "market_status": "established"
+      "market_status": "established",
+      "discovery_basis": [
+        "source-dgt-monthly-motorcycle-registrations",
+        "source-anesdor-members",
+        "source-carwow-50-brands-2026",
+        "source-zontes-es-dealers",
+        "source-zontes-es-company",
+        "source-zontes-es-legal"
+      ],
+      "notes": "Actividad comercial actual en España acreditada por la web oficial Zontes España, titularidad de TURBIMOT, S.L.U., que identifica a Guangdong Tayo Motorcycle Technology Co. Ltd. como fabricante y a Turbimot como operador/distribuidor de la marca en España. La auditoría documental de cinco provincias prioritarias identifica 13 puntos físicos: Barcelona (5), Málaga (3), Cádiz (2), Alicante (1) y Murcia (2). Doce puntos publican gama Zontes o se autodeclaran concesionarios oficiales; un punto adicional mantiene stock de ocasión de una 703RR 2026. Se separan las declaraciones de autorización del operador, el stock usado y los servicios específicos de marca. El localizador oficial está presente, pero sus fichas no son extraíbles en la captura estática. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-zxmoto-es",
@@ -887,7 +896,7 @@
       ],
       "capture_mode": "http_html",
       "discovery_status": "locator_present_dynamic_content",
-      "last_verified_at": "2026-11-12",
+      "last_verified_at": "2026-11-13",
       "capture_interval_days": 7,
       "notes": "Página oficial enlazada como Puntos de venta. La vista textual expone buscador y mapa, pero no una lista completa; investigar carga JavaScript/API antes de extraer."
     },
@@ -992,7 +1001,7 @@
       ],
       "capture_mode": "http_html",
       "discovery_status": "directory_content_visible",
-      "last_verified_at": "2026-11-12",
+      "last_verified_at": "2026-11-13",
       "capture_interval_days": 7,
       "notes": "Web propia del establecimiento; declara ser distribuidor y punto de venta oficial Zontes. Evidencia de negocio autodeclarada, pendiente de contraste con directorio oficial y entidad operadora."
     },
@@ -1032,7 +1041,7 @@
       ],
       "capture_mode": "http_html",
       "discovery_status": "directory_content_visible",
-      "last_verified_at": "2026-11-12",
+      "last_verified_at": "2026-11-13",
       "capture_interval_days": 7,
       "notes": "Web propia que declara distribución y punto de venta oficial Zontes en Barcelona. Evidencia autodeclarada; falta contrastar establecimientos y operador con fuente primaria de marca."
     },
@@ -7873,6 +7882,291 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 90,
       "notes": "La tienda online aún muestra E-Max/Vmoto 110S, 120S, 120SD y 90S con botones de cesta, pero las fichas técnicas remontan a productos de hace unos 15 años y no se acredita stock real, vigencia comercial ni correspondencia con la gama Vmoto actual. Se conserva como candidato histórico y no se contabiliza como punto de venta actual de la gama vigente."
+    },
+    {
+      "source_id": "source-zontes-es-company",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zontes-es",
+      "publisher": "Zontes España / TURBIMOT, S.L.U.",
+      "source_type": "official_statement",
+      "url": "https://zontesmotos.es/compania/",
+      "title": "Sobre Zontes España — fabricante y distribuidor",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer",
+        "distributor",
+        "brand_activity"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web oficial identifica Guangdong Tayo Motorcycle Technology Co. Ltd. como fabricante y describe a TURBIMOT como operador/distribuidor de Zontes en España. No se presume exclusividad contractual."
+    },
+    {
+      "source_id": "source-zontes-es-legal",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-zontes-es",
+      "publisher": "Zontes España / TURBIMOT, S.L.U.",
+      "source_type": "official_statement",
+      "url": "https://zontesmotos.es/aviso-legal-condiciones/",
+      "title": "Aviso legal Zontes España — titular TURBIMOT, S.L.U.",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "legal_entity",
+        "distributor"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Identifica como titular de la web a TURBIMOT, S.L.U., NIF B98887169, domicilio en Calle Noria 11, Polígono Industrial Mediterráneo, 46550 Albuixech (Valencia)."
+    },
+    {
+      "source_id": "source-zontes-barcelona-grupo-via",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Vía Motos",
+      "source_type": "company_page",
+      "url": "https://grupoviamotos.com/",
+      "title": "Red de concesionarios oficiales Zontes de Grupo Vía en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web propia identifica dos concesionarios oficiales Zontes: Avenida República Argentina 83, 08023 Barcelona, y Avenida de Madrid 80, 08028 Barcelona. Se contabilizan como dos sedes de venta. Los talleres del grupo se separan de las sedes comerciales y no se atribuye autorización de servicio Zontes sin evidencia específica."
+    },
+    {
+      "source_id": "source-zontes-barcelona-zontesbcn",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Zontes BCN",
+      "source_type": "product_catalog",
+      "url": "https://zontesbcn.com/",
+      "title": "Zontes BCN — catálogo y punto de venta en Mallorca 497",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "El operador se autodeclara distribuidor y punto de venta oficial, publica gama actual y facilita dirección C/ Mallorca 497, 08013 Barcelona. No se ha contrastado individualmente la autorización con el localizador oficial."
+    },
+    {
+      "source_id": "source-zontes-barcelona-boix",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Boix Motos, S.L.",
+      "source_type": "product_catalog",
+      "url": "https://boixmotos.com/concesionario-oficial-zontes/",
+      "title": "Boix Motos — concesionario Zontes en Ripollet",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "test_ride"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Página propia declara concesionario oficial Zontes desde 2019, lista modelos actuales y pruebas de unidades. Dirección C/ Federico García Lorca 1, 08291 Ripollet, Barcelona."
+    },
+    {
+      "source_id": "source-zontes-barcelona-maquina-used",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Màquina Motors",
+      "source_type": "product_catalog",
+      "url": "https://maquinamotors.com/motos-de-ocasion/moto-ocasion-zontes-703-rr-2026-80175.html",
+      "title": "Màquina Motors — stock de ocasión Zontes 703 RR 2026",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "used_stock",
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Anuncio propio de una Zontes 703 RR 2026 de ocasión, precio publicado, garantía de un año y recogida en tienda Màquina Motors Consell de Cent, C/ Consell de Cent 130-136, 08015 Barcelona. Se computa como oferta de ocasión, no como concesionario oficial Zontes."
+    },
+    {
+      "source_id": "source-zontes-malaga-indalmar",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Indalmar Motor / Grupo Playcar",
+      "source_type": "company_page",
+      "url": "https://www.indalmarmotor.com/contacto",
+      "title": "Indalmar Motor Málaga — concesionario y servicio Zontes",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web propia identifica Indalmar Motor Málaga–Ortega y Gasset como concesionario oficial Zontes en Av. José Ortega y Gasset 198, 29006 Málaga, y un taller separado con servicio oficial Zontes en el nº 192. Se contabiliza una sede de venta y un punto de servicio separado."
+    },
+    {
+      "source_id": "source-zontes-malaga-skmotos",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "SK Motos, S.L.",
+      "source_type": "product_catalog",
+      "url": "https://zontesmalaga-sk.com/subpaginas/modelos/modelos.html",
+      "title": "SK Motos — catálogo Zontes y servicio posventa en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Micrositio específico Zontes publica modelos, atención de ventas, recambios originales y posventa especializada. El aviso legal identifica SK MOTOS, S.L., CIF B93265973, domicilio C/ La Bohème 50, 29006 Málaga. La autorización contractual de concesionario oficial no se confirma independientemente."
+    },
+    {
+      "source_id": "source-zontes-malaga-skmotos-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "SK Motos, S.L.",
+      "source_type": "company_page",
+      "url": "https://zontesmalaga-sk.com/subpaginas/contacto/contacto.html",
+      "title": "SK Motos — contacto de ventas y servicio Zontes",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Confirma la misma dirección de ventas y servicio técnico en C/ La Bohème 50, 29006 Málaga, y contactos diferenciados de ventas y posventa."
+    },
+    {
+      "source_id": "source-zontes-malaga-goracing",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Go Racing Motos, S.L.",
+      "source_type": "company_page",
+      "url": "https://goracingmotos.com/tienda-motos/",
+      "title": "Go Racing Motos — concesionario oficial Zontes en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web propia se autodeclara concesionario oficial Zontes, declara venta de motos nuevas y de ocasión y confirma Av. José Ortega y Gasset 254, 29006 Málaga."
+    },
+    {
+      "source_id": "source-zontes-cadiz-coolmotorcycles-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Coolmotorcycles / Coolmotobiker",
+      "source_type": "product_catalog",
+      "url": "https://www.coolmotorcycles.es/zontes/",
+      "title": "Coolmotorcycles — catálogo actual Zontes en Cádiz",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Catálogo propio lista modelos actuales Zontes y facilita contactos de Jerez y Chiclana. La web Coolmotobiker declara expresamente a Chiclana como distribuidor oficial Zontes en Cádiz; la noticia sectorial del 29-10-2026 confirma disponibilidad de la 703T en ambas sedes. La dirección de exposición Zontes de Jerez se diferencia de la dirección de taller/corporativa."
+    },
+    {
+      "source_id": "source-zontes-cadiz-coolmotorcycles-contact",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Coolmotorcycles",
+      "source_type": "company_page",
+      "url": "https://www.coolmotorcycles.es/contacto/",
+      "title": "Coolmotorcycles — direcciones de Jerez y Chiclana",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "sales",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Confirma C/ Platino 21, Jerez de la Frontera, y C/ Juan Sebastián Elcano 10, Chiclana. La ficha del localizador de Royal Enfield separa el punto Zontes de Jerez en C/ Platino 1 del taller/corporativo en C/ Platino 21."
+    },
+    {
+      "source_id": "source-zontes-alicante-motos-medina",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Medina, S.L.",
+      "source_type": "company_page",
+      "url": "https://motosmedina.com/es",
+      "title": "Motos Medina — concesionario Zontes en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web propia lista Zontes entre las marcas oficiales que comercializa y confirma Avda. de Dénia 13, 03002 Alicante, venta de motocicletas y scooters. La condición de concesionario oficial es autodeclaración del operador."
+    },
+    {
+      "source_id": "source-zontes-murcia-francisco-belmonte",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Francisco Belmonte, S.A.",
+      "source_type": "company_page",
+      "url": "https://franciscobelmonte.com/quienes-somos/",
+      "title": "Francisco Belmonte — concesionario oficial Zontes en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web corporativa se autodeclara concesionario oficial y exclusivo de Zontes para la Región de Murcia, ofrece venta de motocicletas y taller y confirma C/ Isla Cristina 12, 30007 Murcia. No se ha verificado contrato directamente con el fabricante."
     }
   ]
 }
