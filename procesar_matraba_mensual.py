@@ -104,7 +104,29 @@ def select_latest_archives(input_dir, inventory_path=None):
     return {period: pair[1] for period, pair in sorted(candidates.items())}
 
 
-def process_archive(path, period):
+def transfer_period_from_name(path):
+    match = re.fullmatch(r"export_mensual_trf_(\\d{4})(\\d{2})_([0-9a-f]{64})\\.zip", path.name)
+    if not match:
+        return None
+    return f"{match.group(1)}-{match.group(2)}"
+
+
+def select_latest_transfer_archives(input_dir, inventory_path=None):
+    capture_times = load_capture_times(inventory_path)
+    candidates = {}
+    for path in Path(input_dir).rglob("*.zip"):
+        period = transfer_period_from_name(path)
+        if not period or period < START:
+            continue
+        captured = capture_times.get(path.name, "")
+        rank = (captured, path.name)
+        current = candidates.get(period)
+        if current is None or rank > current[0]:
+            candidates[period] = (rank, path)
+    return {period: pair[1] for period, pair in sorted(candidates.items())}
+
+
+def process_archive(path, period, include_transfers=False):
     payload = path.read_bytes()
     txt, error, record_count = inspect_zip(payload)
     if error:
@@ -232,7 +254,7 @@ def process_archive(path, period):
                 )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
-            if operation == "2":
+            if include_transfers and operation == "2":
                 # COD_PROVINCIA_VEH es el domicilio registral, no la provincia de venta.
                 model_counts[(
                     transaction_date.strftime("%Y-%m"), brand_itv, model_itv,
@@ -261,11 +283,14 @@ def main():
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--inventory-file")
     parser.add_argument("--previous-dir")
+    parser.add_argument("--transfers-dir")
+    parser.add_argument("--transfers-inventory-file")
     args = parser.parse_args()
     output = Path(args.output_dir)
     output.mkdir(parents=True, exist_ok=True)
 
     selected = select_latest_archives(args.input_dir, args.inventory_file)
+    selected_transfers = select_latest_transfer_archives(args.transfers_dir, args.transfers_inventory_file) if args.transfers_dir else {}
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
@@ -276,10 +301,22 @@ def main():
     audit_rows = []
     for period, archive in selected.items():
         info, month_counts, month_provincial, month_cross, month_models, month_ops, month_excluded, month_audit = process_archive(archive, period)
+        info["tipo_fuente"] = "matriculaciones"
         manifest.append(info)
         counts.update(month_counts)
         provincial_counts.update(month_provincial)
         provincial_cross_counts.update(month_cross)
+        model_counts.update(month_models)
+        opcounts.update(month_ops)
+        excluded.update(month_excluded)
+        audit_rows.extend(month_audit)
+
+    for period, archive in selected_transfers.items():
+        info, _, _, _, month_models, month_ops, month_excluded, month_audit = process_archive(
+            archive, period, include_transfers=True
+        )
+        info["tipo_fuente"] = "transferencias"
+        manifest.append(info)
         model_counts.update(month_models)
         opcounts.update(month_ops)
         excluded.update(month_excluded)
@@ -395,10 +432,13 @@ def main():
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (output / "resumen.json").write_text(json.dumps({
         "archivos_procesados": len(manifest),
+        "archivos_matriculaciones": len(selected),
+        "archivos_transferencias": len(selected_transfers),
         "periodos_procesados": len(selected),
         "registros_matriculaciones": sum(counts.values()),
         "registros_operaciones": sum(opcounts.values()),
         "registros_desglose_marca_modelo": sum(model_counts.values()),
+        "registros_transferencias": sum(value for key, value in model_counts.items() if key[5] == "transferencia"),
         "modelos_observados": len({(key[1], key[2]) for key in model_counts}),
         "filtro_cod_tipo": sorted(TARGET_TYPE_CODES),
         "registros_excluidos_por_cod_tipo": sum(excluded.values()),
