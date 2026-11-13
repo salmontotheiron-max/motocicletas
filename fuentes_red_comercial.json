@@ -684,13 +684,21 @@
       "brand_id": "brand-silence",
       "canonical_name": "Silence",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-silence-company-official",
+        "source-silence-model-range-official",
+        "source-silence-dealer-locator-official",
+        "source-silence-secondary-directory",
+        "source-silence-malaga-official",
+        "source-silence-moute-en-moto",
+        "source-silence-eletamendi",
+        "source-silence-francisco-belmonte"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Fabricante español SCUTUM LOGISTIC, S.L. (marca Silence), integrado en ACCIONA; domicilio declarado en C/ Còrsega 293, Barcelona. La web oficial publica gama vigente S01+, S01, S02 y S04 y un localizador nacional con contenido visible. En las cinco provincias prioritarias el localizador oficial enumera 24 puntos (Barcelona 10, Cádiz 4, Alicante 3, Málaga 4 y Murcia 3). Se han podido asociar 18 de esos puntos a direcciones públicas mediante un directorio secundario; seis nombres oficiales no tienen dirección corroborada en esta captura. Oferta comercial propia actual corroborada en Mou-te en Moto (S01 en stock, Vilanova i la Geltrú) y Francisco Belmonte (gama Silence y servicio técnico, Murcia); Silence Málaga está documentado por comunicado corporativo como concesionario inaugurado en C/ La Orotava 2. E-Letamendi publica servicio oficial Silence, no se computa como oferta comercial actual por separado. No se han verificado contratos de distribución individuales."
     },
     {
       "brand_id": "brand-super-soco",
@@ -6764,6 +6772,195 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Catálogo propio con nueve motocicletas Sherco, incluidos modelos nuevos 2026 y 2027, precios y datos de contacto del operador en Carrer Taradell 68, Tona."
+    },
+    {
+      "source_id": "source-silence-company-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-silence",
+      "publisher": "Silence / ACCIONA",
+      "source_type": "company_page",
+      "url": "https://www.silence.eco/es/sobre-nosotros",
+      "title": "Silence — empresa, fabricación y gama",
+      "reliability_class": "primary_official",
+      "scope": "España; sede y fabricación en Barcelona",
+      "directory_scope": [
+        "manufacturer_identity",
+        "corporate_presence",
+        "production",
+        "product_range"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "La página corporativa identifica a Silence como marca de movilidad eléctrica, con diseño, desarrollo y fabricación Made in Barcelona; gama oficial visible S01+, S01, S02 y S04."
+    },
+    {
+      "source_id": "source-silence-legal-manufacturer",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-silence",
+      "publisher": "Silence / SCUTUM LOGISTIC, S.L.",
+      "source_type": "official_statement",
+      "url": "https://www.silence.eco/es/consentimiento-de-grupo-acciona",
+      "title": "Silence — entidad fabricante y domicilio",
+      "reliability_class": "primary_official",
+      "scope": "SCUTUM LOGISTIC, S.L., Barcelona, España",
+      "directory_scope": [
+        "manufacturer_identity",
+        "legal_entity",
+        "registered_address"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "La información legal de ACCIONA identifica a SCUTUM LOGISTIC, S.L. (NIF B65168916) como entidad de fabricación y distribución de vehículos Silence, con domicilio en C/ Còrsega 293, 08008 Barcelona."
+    },
+    {
+      "source_id": "source-silence-model-range-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-silence",
+      "publisher": "Silence",
+      "source_type": "product_catalog",
+      "url": "https://www.silence.eco/es/configurator",
+      "title": "Silence — catálogo y configurador oficial",
+      "reliability_class": "primary_official",
+      "scope": "Gama vigente España",
+      "directory_scope": [
+        "product_range",
+        "current_products"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Configurador oficial presenta S01+, S01, S02 (L3e 125 cc y L1e 50 cc) y S04 (L6e/L7e); evidencia de catálogo vigente, no de ventas efectivas por sí sola."
+    },
+    {
+      "source_id": "source-silence-dealer-locator-official",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-silence",
+      "publisher": "Silence",
+      "source_type": "official_directory",
+      "url": "https://www.silence.eco/es/encuentranos",
+      "title": "Silence — localizador oficial de tiendas y concesionarios",
+      "reliability_class": "primary_official",
+      "scope": "España; listado agrupado por provincias",
+      "directory_scope": [
+        "dealer_network",
+        "sales",
+        "flagship_stores"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "El HTML recuperado expone el listado provincial de puntos de venta. En las cinco provincias prioritarias enumera 24 entradas: Barcelona 10, Cádiz 4, Alicante 3, Málaga 4 y Murcia 3. La página identifica Flagship Stores en Barcelona, Madrid y Málaga. El listado no ofrece dirección en cada entrada."
+    },
+    {
+      "source_id": "source-silence-secondary-directory",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "secondary_directory",
+      "url": "https://concesionariosdemotos.com/silence",
+      "title": "Directorio secundario de concesionarios Silence en España",
+      "reliability_class": "secondary_aggregator",
+      "scope": "España; provincias prioritarias Barcelona, Cádiz, Alicante, Málaga y Murcia",
+      "directory_scope": [
+        "dealer_discovery",
+        "sales",
+        "public_addresses"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador declara 87 fichas nacionales. La página provincial anuncia 10 en Barcelona, 4 en Cádiz, 3 en Alicante, 3 en Málaga y 2 en Murcia; la captura detallada expone 6 direcciones en Barcelona, 4 en Cádiz, 3 en Alicante, 3 en Málaga y 2 en Murcia. Se utiliza solo para localizar direcciones y contrastar nombres; no sustituye el localizador oficial ni acredita autorización contractual."
+    },
+    {
+      "source_id": "source-silence-malaga-official",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Silence / ACCIONA",
+      "source_type": "press",
+      "url": "https://mediahouse.silence.eco/silence/es/press-release/silence-abre-su-primer-concesionario-de-vehiculos-electricos-en-malaga",
+      "title": "Silence — apertura de concesionario en Málaga",
+      "reliability_class": "primary_official",
+      "scope": "C/ La Orotava 2, Málaga, España",
+      "directory_scope": [
+        "sales",
+        "flagship_store",
+        "dealer_opening"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "Comunicado corporativo del 21-02-2023 documenta la inauguración del concesionario Silence Málaga con Grupo MEI en C/ La Orotava 2. Es evidencia directa de apertura; la vigencia actual se apoya adicionalmente en el localizador oficial."
+    },
+    {
+      "source_id": "source-silence-moute-en-moto",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Mou-te en Moto",
+      "source_type": "product_catalog",
+      "url": "https://www.mouteenmoto.com/s01",
+      "title": "Mou-te en Moto — Silence S01 en stock",
+      "reliability_class": "primary_business",
+      "scope": "Ronda d'Europa 60, Vilanova i la Geltrú, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "current_stock"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Ficha propia publica Silence S01 a 4.190 €, en stock y con entrega inmediata/recogida en tienda en Vilanova i la Geltrú. La página de contacto identifica el punto físico."
+    },
+    {
+      "source_id": "source-silence-eletamendi",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "E-Letamendi",
+      "source_type": "company_page",
+      "url": "https://eletamendi.com/quienes-somos/",
+      "title": "E-Letamendi — tienda y servicio oficial Silence",
+      "reliability_class": "primary_business",
+      "scope": "Carrer de València 171, Barcelona, España",
+      "directory_scope": [
+        "service",
+        "brand_presence",
+        "retail_location"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El operador identifica Silence entre las marcas con las que trabaja y se declara servicio oficial Silence para mantenimiento y reparación; publica dirección y actividad de tienda/taller. No se contabiliza por sí solo como catálogo/stock actual."
+    },
+    {
+      "source_id": "source-silence-francisco-belmonte",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Francisco Belmonte, S.A.",
+      "source_type": "product_catalog",
+      "url": "https://franciscobelmonte.com/motos-electricas-silence-murcia/",
+      "title": "Francisco Belmonte — motos Silence y servicio técnico en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "C/ Isla Cristina 12, Murcia, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página propia ofrece gama Silence, asesoramiento, pruebas, financiación y servicio técnico autorizado; el operador se autodeclara concesionario oficial. La página de contacto confirma la dirección."
     }
   ]
 }
