@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Auditoría de fabricante, distribución nacional y red de comercialización de Vmoto. Se distingue la marca vigente Vmoto de las denominaciones históricas Super Soco y E-Max tras el rebranding de 2024. Solo se contabilizan puntos físicos en las cinco provincias prioritarias con dirección corroborada y oferta publicada de un modelo de la gama Vmoto vigente o stock comercial nuevo de un modelo que actualmente forma parte de dicha gama. Los catálogos históricos sin prueba de stock no se computan. Se separan venta, taller multimarca, servicio oficial y autorización individual; no se presume contrato de distribución por aparecer en agregadores.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "Vmoto Limited",
+    "tax_id": "ABN 36 098 455 460",
+    "brand_names": [
+      "Vmoto",
+      "Super Soco (marca anterior)",
+      "E-Max (marca anterior)"
+    ],
+    "country_of_origin": "Australia",
+    "registered_address": "Australia; sociedad matriz cotizada en Australian Securities Exchange (ASX: VMT)",
+    "factory_address": "Nanjing, Jiangsu, China",
+    "notes": "El Annual Report 2025 identifica a Vmoto Limited como sociedad matriz australiana y documenta el diseño, fabricación y distribución de vehículos eléctricos de dos ruedas, con operaciones de fabricación en Nanjing. La marca se unificó bajo Vmoto en abril de 2024 y dejó de comercializar nuevos productos bajo Super Soco y E-Max."
+  },
+  "spanish_distributor": {
+    "legal_name": "NUUK MOBILITY SOLUTIONS, S.L.",
+    "tax_id": "B95993416",
+    "address": "Parque Empresarial Boroa, P2-A4, 48340 Amorebieta-Etxano, Bizkaia, España",
+    "role": "Distribuidor exclusivo en España de vehículos Vmoto B2C",
+    "evidence_url": "https://vmoto.com/es/aviso-legal-y-condiciones-generales-de-uso-del-sitio-web",
+    "notes": "El aviso legal oficial de Vmoto España identifica expresamente a Nuuk Mobility Solutions, S.L. como distribuidor exclusivo B2C en España. No se extiende esa atribución a la antigua marca Super Soco por separado."
+  },
+  "manufacturer_locator": {
+    "url": "https://vmoto.com/es/store-locator",
+    "status": "dynamic_unextractable",
+    "classification": "El localizador oficial permite buscar por ubicación, pero la captura HTML no devuelve puntos y el mapa no carga. La red oficial existe según las condiciones de garantía asociadas a Nuuk, pero no se han podido extraer fichas individuales por provincia."
+  },
+  "counts": {
+    "physical_outlets_documented": 4,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 0
+    },
+    "current_model_or_new_stock_offer_corroborated": 4,
+    "used_stock_corroborated": 0,
+    "official_dealer_agreements_independently_corroborated_in_priority_provinces": 0,
+    "operator_self_declared_official_points": 1,
+    "brand_specific_service_corroborated": 0,
+    "general_electric_workshop_points": 1,
+    "official_locator_static_entries": 0,
+    "legacy_catalogue_candidates_not_counted": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "vmoto-barcelona-eletamendi",
+      "trading_name": "Eletamendi (Grupo Letamendi)",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de València, 171, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "workshop"
+      ],
+      "evidence_url": "https://eletamendi.com/comprar-motos-electricas/vmoto/",
+      "evidence_type": "operator_product_catalog_and_company_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Catálogo propio de ocho modelos Vmoto con precios y reserva/prueba (CU, CPx, Citi, CPx Explorer, TC Max, TSX, TC y Stash). La web corporativa se autodeclara distribuidor oficial de 11 marcas e incluye Vmoto. Mantiene taller de motos eléctricas de todas las marcas, pero se declara servicio oficial únicamente de Silence y SEAT MÓ; no se acredita servicio oficial Vmoto."
+    },
+    {
+      "outlet_id": "vmoto-malaga-amper-aurora",
+      "trading_name": "Amper Bikes Aurora",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de la Aurora, 51, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.amperbikes.es/categoria-producto/vmoto/",
+      "evidence_type": "operator_product_catalog_and_company_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "Catálogo actual del operador publica ocho modelos Vmoto con precio y opción de compra online, incluidos Stash, TC Max, Citi, CPX, CPX Explorer, TC, CU y TSX. La dirección física de Aurora 51 figura en el contacto corporativo. No se ha localizado autodeclaración de concesionario oficial Vmoto ni autorización contractual; el servicio técnico del grupo no se atribuye como oficial de marca."
+    },
+    {
+      "outlet_id": "vmoto-cadiz-coolmotorcycles-jerez",
+      "trading_name": "Coolmotorcycles Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Platino, 21, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motos.coches.net/nuevas/super_soco/stash/version_2025-2025-en-cadiz-8889547.htm",
+      "evidence_type": "aggregator_new_stock_and_operator_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "Motos.net publica una Stash 2025 nueva, 1 km, con garantía de tres años y entrega según disponibilidad por 5.450 €, anunciada por Coolmotorcycles en Jerez. El anuncio conserva la denominación Super Soco, pero Stash permanece en la gama oficial Vmoto tras el rebranding. La web del operador confirma el establecimiento físico. No se verifica autorización oficial Vmoto ni se atribuye el stock al punto de Chiclana."
+    },
+    {
+      "outlet_id": "vmoto-alicante-scoomart",
+      "trading_name": "Scoomart Motos Eléctricas",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avda. Conde de Casas Rojas, 1A, local 1, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://scoomart.com/motos-electricas-alicante/moto-electrica-super-soco-tc-max/",
+      "evidence_type": "operator_product_catalog_and_company_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "La página propia ofrece Vmoto TC Max 125cc por 4.199 €, con ficha técnica y garantía de tres años; el contacto confirma concesionario físico en Alicante. La empresa anunció ser nuevo distribuidor Super Soco en 2020, pero esa evidencia histórica no demuestra autorización contractual vigente de Vmoto."
+    }
+  ]
+}
