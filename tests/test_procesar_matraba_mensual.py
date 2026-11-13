@@ -191,7 +191,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             row = make_record(
                 FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
                 MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
-                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U", COD_POSESION="V",
                 COD_PROVINCIA_VEH="MU", COD_PROVINCIA_MAT="A",
                 FEC_PROCESO="31082026",
             )
