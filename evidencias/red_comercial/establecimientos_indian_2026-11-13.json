@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se prioriza el directorio oficial Indian Motorcycle España, que lista individualmente cada concesionario y dirección. Las páginas corporativas de los operadores se utilizan para verificar funciones de venta y servicio. Se distingue el listado oficial del fabricante de autodeclaraciones de los operadores. No se infiere ausencia de red por falta de una sede en el directorio.",
+  "verification_status_policy": {
+    "manufacturer_listed": "El establecimiento aparece individualizado en el directorio oficial de concesionarios Indian Motorcycle España.",
+    "operator_declared_service": "La web corporativa del operador publica servicio/taller Indian Motorcycle en la sede o localidad.",
+    "service_not_independently_verified": "El operador publica taller general, pero no se ha acreditado servicio Indian específico."
+  },
+  "outlet_count": 5,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 2,
+      "Cádiz": 0,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 5,
+    "service_locations": 4,
+    "same_site_sales_and_service": 4,
+    "service_only_locations": 0,
+    "sales_only_locations": 1,
+    "manufacturer_individually_listed": 5,
+    "operator_self_declared_official_sales": 5,
+    "accepted_commercial_presence_sales": 5,
+    "secondary_only_candidates": 0
+  },
+  "manufacturer": {
+    "brand_owner": "Indian Motorcycle — negocio independiente tras la separación de Polaris; participación mayoritaria adquirida por Carolwood LP (EE.UU.) el 2 de febrero de 2026",
+    "spanish_group_contact": "No se ha identificado una sociedad importadora/distribuidora española actual en las fuentes corporativas consultadas.",
+    "spanish_contact_address": null,
+    "evidence_urls": [
+      "https://ir.polaris.com/news/news-details/2026/Polaris-Completes-Separation-of-Indian-Motorcycle-and-Sale-of-Majority-Stake-to-Carolwood-LP/default.aspx",
+      "https://www.indianmotorcycle.com/en-us/self-help/",
+      "https://www.anesdor.com/asociados/"
+    ],
+    "notes": "Polaris comunicó el 2-2-2026 la separación de Indian Motorcycle como negocio independiente y la venta de la participación mayoritaria a Carolwood LP. La ficha de ANESDOR continúa mostrando Polaris Sales Spain junto a Indian, pero puede estar desactualizada tras la transacción; no se usa para atribuir importación o distribución contractual vigente."
+  },
+  "official_source": {
+    "urls": [
+      "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/",
+      "https://www.indianmotorcycle.es/contactanos/"
+    ],
+    "status": "directory_content_visible",
+    "notes": "El listado oficial español muestra 17 concesionarios. En las cinco provincias prioritarias se identifican cinco sedes: Barcelona (1), Málaga (2), Alicante (1), Murcia (1), Cádiz (0). Todas las cinco sedes se registran como manufacturer_listed."
+  },
+  "outlets": [
+    {
+      "outlet_id": "indian-bordoy-barcelona",
+      "brand": "Indian Motorcycle",
+      "trading_name": "Indian Motorcycle Bordoy",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Balmes, 186, 08006 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.indianmotorcycle-barcelona.com/",
+      "supporting_urls": [
+        "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/",
+        "https://www.motosbordoy.com/el-negocio-concesionarios/"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual del directorio oficial español y web específica del concesionario, que se declara oficial. Bordoy publica taller y recambios en Balmes 186, pero no se cuenta servicio Indian específico al no localizarse declaración expresa de servicio de marca."
+    },
+    {
+      "outlet_id": "indian-siebla-malaga",
+      "brand": "Indian Motorcycle",
+      "trading_name": "Indian Motorcycle Siebla Málaga",
+      "operator": "Motos Siebla",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Martínez de la Rosa, 109, 29009 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.indianmotorcyclesiebla.es/dealership",
+      "supporting_urls": [
+        "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial individualiza la sede de Málaga. La web de Siebla declara exposición y venta de Indian en Málaga y servicio de taller/recambios para Indian en Málaga y Marbella."
+    },
+    {
+      "outlet_id": "indian-siebla-marbella",
+      "brand": "Indian Motorcycle",
+      "trading_name": "Indian Motorcycle Marbella — Motos Siebla",
+      "operator": "Motos Siebla",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "Calle Ramón Gómez de la Serna, 29600 Marbella, Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.indianmotorcyclesiebla.es/dealership",
+      "supporting_urls": [
+        "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "El directorio oficial individualiza Marbella como concesionario Indian. Siebla declara ventas, taller, recambios y accesorios Indian en Marbella y Málaga."
+    },
+    {
+      "outlet_id": "indian-alcycles-alicante",
+      "brand": "Indian Motorcycle",
+      "trading_name": "Indian Motorcycle Alicante",
+      "operator": "Alcycles",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Calle Río Júcar, 18, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://alcycles.com/contacto/",
+      "supporting_urls": [
+        "https://www.indianmotorcyclealicante.es/",
+        "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La web del concesionario y el localizador oficial confirman la sede y condición oficial. Alcycles publica expresamente servicio oficial Indian Motorcycle en su taller de la misma dirección."
+    },
+    {
+      "outlet_id": "indian-intruder-murcia",
+      "brand": "Indian Motorcycle",
+      "trading_name": "Indian Motorcycle Murcia — Intruder",
+      "operator": "Intruder",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Carretera de Alicante, 209, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.intruder.com/donde-estamos/",
+      "supporting_urls": [
+        "https://www.indianmotorcyclemurcia.es/",
+        "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "La sede aparece en el directorio oficial. Intruder se declara concesionario oficial Indian desde 2013 y publica taller oficial Indian Motorcycle con certificación GOLD by POLARIS."
+    }
+  ],
+  "service_only_locations": [],
+  "secondary_candidates": [],
+  "limitations": [
+    "Cinco puntos de venta manufacturer_listed en cuatro provincias prioritarias: Barcelona (1), Málaga (2), Alicante (1), Murcia (1). No es un censo nacional.",
+    "El directorio oficial lista 17 concesionarios en España; el alcance de esta auditoría se limita a las cinco provincias prioritarias y no implica cobertura completa de todo el país.",
+    "Cádiz no presenta una ficha de concesionario Indian en el listado oficial consultado. Esto acredita ausencia de sede en ese directorio concreto, no ausencia absoluta de venta informal o actividad no listada.",
+    "Se cuentan cuatro ubicaciones con servicio Indian: Siebla Málaga, Siebla Marbella, Alcycles Alicante e Intruder Murcia. No se atribuye servicio Indian a Bordoy por disponer únicamente de evidencia de taller general en su página de tiendas.",
+    "ANESDOR aún asocia Indian Motorcycles a Polaris Sales Spain, pero la ficha puede estar desactualizada después de la separación corporativa de febrero de 2026. No se atribuye importador contractual actual.",
+    "El localizador y la web de marca son fuente primaria para la condición manufacturer_listed; el servicio específico se apoya en las páginas corporativas de los operadores."
+  ]
+}

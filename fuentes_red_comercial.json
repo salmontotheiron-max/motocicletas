@@ -319,13 +319,22 @@
       "brand_id": "brand-indian",
       "canonical_name": "Indian",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-indian-motorcycle-spain-dealer-list",
+        "source-indian-motorcycle-spain-contact",
+        "source-indian-motorcycle-ownership-2026",
+        "source-indian-anesdor-polaris-spain",
+        "source-indian-siebla-dealers",
+        "source-indian-bordoy-dealer",
+        "source-indian-alcycles-alicante",
+        "source-indian-intruder-murcia",
+        "source-indian-motorcycle-global-help"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual acreditada en cinco ubicaciones de venta de cuatro provincias prioritarias: Barcelona (1), Málaga (2), Alicante (1) y Murcia (1). Las cinco aparecen individualmente en el directorio oficial Indian Motorcycle España. Se documentan cuatro ubicaciones con servicio de marca: Málaga y Marbella (Siebla), Alicante (Alcycles) y Murcia (Intruder). El directorio oficial no lista sede en Cádiz; se registra como cobertura no acreditada en el directorio, no como ausencia absoluta. Indian Motorcycle pasó a compañía independiente tras el cierre de su separación de Polaris y la venta de participación mayoritaria a Carolwood LP el 2-2-2026. No se identifica importador contractual español actual."
     },
     {
       "brand_id": "brand-italjet",
@@ -4328,6 +4337,191 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Fuente histórica: comunicado de 28-09-2010 sobre el fin del contrato de importación de Motos Bordoy y la gestión temporal por BMW Ibérica. No se usa para describir la estructura empresarial ni distribución actuales."
+    },
+    {
+      "source_id": "source-indian-motorcycle-spain-dealer-list",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-indian",
+      "publisher": "Indian Motorcycle España",
+      "source_type": "official_directory",
+      "url": "https://www.indianmotorcycle.es/busqueda-de-concesionario/list/",
+      "title": "Directorio oficial de concesionarios Indian Motorcycle España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Directorio oficial español con fichas individualizadas de concesionarios; cinco sedes en las provincias prioritarias."
+    },
+    {
+      "source_id": "source-indian-motorcycle-spain-contact",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-indian",
+      "publisher": "Indian Motorcycle España",
+      "source_type": "company_page",
+      "url": "https://www.indianmotorcycle.es/contactanos/",
+      "title": "Contacto oficial y selección de concesionario Indian Motorcycle España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "customer_contact",
+        "dealer_network"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa oficial de contacto y derivación a concesionarios."
+    },
+    {
+      "source_id": "source-indian-motorcycle-ownership-2026",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-indian",
+      "publisher": "Polaris Investor Relations",
+      "source_type": "official_statement",
+      "url": "https://ir.polaris.com/news/news-details/2026/Polaris-Completes-Separation-of-Indian-Motorcycle-and-Sale-of-Majority-Stake-to-Carolwood-LP/default.aspx",
+      "title": "Polaris completa la separación de Indian Motorcycle y la venta de una participación mayoritaria a Carolwood LP (2-2-2026)",
+      "reliability_class": "primary_official",
+      "scope": "International",
+      "directory_scope": [
+        "manufacturer",
+        "ownership",
+        "corporate_structure"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Comunicado corporativo primario sobre la separación y el cambio de propiedad."
+    },
+    {
+      "source_id": "source-indian-anesdor-polaris-spain",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "ANESDOR",
+      "source_type": "other",
+      "url": "https://www.anesdor.com/asociados/",
+      "title": "Asociados ANESDOR — ficha de Polaris Sales Spain e Indian Motorcycles",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "industry_association",
+        "historical_distribution_context"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Fuente sectorial secundaria; la asociación aún vincula Indian a Polaris Sales Spain. Se conserva como contexto histórico y no acredita distribución contractual actual."
+    },
+    {
+      "source_id": "source-indian-siebla-dealers",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Siebla",
+      "source_type": "company_page",
+      "url": "https://www.indianmotorcyclesiebla.es/dealership",
+      "title": "Indian Motorcycle Siebla — concesionarios de Málaga y Marbella, ventas y posventa",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa del operador que documenta sus sedes y servicios Indian."
+    },
+    {
+      "source_id": "source-indian-bordoy-dealer",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Bordoy, S.A.",
+      "source_type": "company_page",
+      "url": "https://www.indianmotorcycle-barcelona.com/",
+      "title": "Indian Motorcycle Bordoy — concesionario de Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Web específica del concesionario; se utiliza para corroborar actividad comercial declarada."
+    },
+    {
+      "source_id": "source-indian-alcycles-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Alcycles",
+      "source_type": "company_page",
+      "url": "https://alcycles.com/contacto/",
+      "title": "Alcycles — concesionario y servicio Indian Motorcycle en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa del operador con datos de sede y actividad Indian."
+    },
+    {
+      "source_id": "source-indian-intruder-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Intruder",
+      "source_type": "company_page",
+      "url": "https://www.intruder.com/donde-estamos/",
+      "title": "Intruder — concesionario y taller Indian Motorcycle en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa del operador con ubicación y declaración de actividad Indian."
+    },
+    {
+      "source_id": "source-indian-motorcycle-global-help",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Indian Motorcycle",
+      "source_type": "company_page",
+      "url": "https://www.indianmotorcycle.com/en-us/self-help/",
+      "title": "Indian Motorcycle — información oficial sobre la transición a compañía independiente",
+      "reliability_class": "primary_official",
+      "scope": "International",
+      "directory_scope": [
+        "manufacturer",
+        "ownership",
+        "after_sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página global oficial con información para clientes sobre la transición corporativa."
     }
   ]
 }
