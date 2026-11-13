@@ -76,18 +76,23 @@ def inspect_transfer_zip(payload):
 
     # A diferencia del fichero de matriculaciones, el mensual de transferencias
     # comienza directamente por el primer registro MATRABA de 714 posiciones.
-    invalid = sorted({len(line) for line in lines if len(line) != WIDTH})
+    # Admite una cabecera histórica de 79 bytes, pero los ZIP de transferencias
+    # actuales empiezan directamente con el primer registro de 714 bytes.
+    records = lines[1:] if len(lines[0]) == 79 else lines
+    if not records:
+        return None, "txt_sin_registros", 0
+    invalid = sorted({len(line) for line in records if len(line) != WIDTH})
     if invalid:
-        return None, f"longitudes_registro_invalidas:{invalid[:10]}", len(lines)
+        return None, f"longitudes_registro_invalidas:{invalid[:10]}", len(records)
 
-    for number, record in enumerate(lines, 1):
+    for number, record in enumerate(records, 1):
         try:
             raw_date = record[706:714].decode("ascii").strip()
             datetime.strptime(raw_date, "%d%m%Y")
         except (UnicodeDecodeError, ValueError):
-            return None, f"fec_proceso_invalida_registro:{number}", len(lines)
+            return None, f"fec_proceso_invalida_registro:{number}", len(records)
 
-    return data, None, len(lines)
+    return data, None, len(records)
 
 
 def download_month(month, output_dir, opener=urlopen, retries=2, pause=1):
