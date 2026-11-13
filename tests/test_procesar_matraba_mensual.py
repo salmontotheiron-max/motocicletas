@@ -27,6 +27,13 @@ def make_zip(record):
     return data.getvalue()
 
 
+def make_transfer_zip(record):
+    data = BytesIO()
+    with zipfile.ZipFile(data, "w", zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("transferencias.txt", record)
+    return data.getvalue()
+
+
 class MonthlyProcessorTests(unittest.TestCase):
     def test_transfer_snapshot_filename_is_recognized(self):
         from pathlib import Path
@@ -194,6 +201,25 @@ class MonthlyProcessorTests(unittest.TestCase):
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
             key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
                    "matriculacion_nueva", "matriculacion", "A")
+            self.assertEqual(models[key], 1)
+
+    def test_processes_first_transfer_record_without_header(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
+                COD_POSESION="V", COD_PROVINCIA_VEH="MU",
+                COD_PROVINCIA_MAT="A", FEC_PROCESO="31082026",
+            )
+            payload = make_transfer_zip(row)
+            archive = Path(tmp) / ("export_mensual_trf_202608_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, _, _, _, models, _, _, _ = p.process_archive(
+                archive, "2026-08", include_transfers=True
+            )
+            key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
+                   "venta", "domicilio_vehiculo", "MU")
             self.assertEqual(models[key], 1)
 
     def test_transfer_model_uses_vehicle_domicile_not_a_sale_province(self):
