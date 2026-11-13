@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se cuentan sedes físicas con evidencia actual de oferta comercial Harley-Davidson. La inclusión individual en el localizador del fabricante prevalece como prueba de dealer network; las páginas de operadores se usan para dirección y alcance. Las autodeclaraciones de oficialidad no se elevan a autorización verificada. Ventas y servicio se registran por separado.",
+  "verification_status_policy": {
+    "manufacturer_listed": "Ficha individual accesible en el localizador oficial Harley-Davidson.",
+    "accepted_commercial_presence": "Página corporativa del operador publica oferta Harley-Davidson actual y permite asociarla a una sede física.",
+    "self_declared_official": "El operador se denomina concesionario/taller oficial; no equivale a verificación independiente del fabricante.",
+    "secondary_candidate": "Referencia de agregador/perfil secundario sin evidencia primaria actual; no se cuenta."
+  },
+  "outlet_count": 4,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 1,
+      "Murcia": 1
+    },
+    "sales": 4,
+    "service_locations": 4,
+    "same_site_sales_and_service": 4,
+    "service_only_locations": 0,
+    "manufacturer_individually_listed": 3,
+    "operator_self_declared_official_sales": 1,
+    "accepted_commercial_presence_sales": 4,
+    "secondary_only_candidates": 2
+  },
+  "manufacturer": {
+    "brand_owner": "Harley-Davidson Motor Company, Inc. (Estados Unidos)",
+    "spanish_corporate_presence": "Harley-Davidson España, S.L. / contacto corporativo Harley-Davidson España, Sant Cugat del Vallès (Barcelona)",
+    "evidence_urls": [
+      "https://www.harley-davidson.com/es/es/customer-service/contact-us.html",
+      "https://www.cnmc.es/sites/default/files/34606_7.pdf"
+    ],
+    "notes": "La página corporativa actual de Harley-Davidson identifica su contacto de España en Sant Cugat del Vallès. Una resolución de la CNMC relativa a hechos de 2010 describió a Harley-Davidson España, S.L. como importador y representante para España. Esa referencia histórica no basta para certificar sin documentación contractual que la misma sociedad mantiene hoy idéntica función importadora; se registra la entidad española y se deja la función contractual actual como pendiente de actualización."
+  },
+  "official_source": {
+    "urls": [
+      "https://www.harley-davidson.com/es/es/tools/find-a-dealer.html"
+    ],
+    "status": "directory_content_visible",
+    "notes": "Se recuperaron tres fichas individuales oficiales en las provincias objetivo: ESPACIO BCN, Siebla-Málaga y Harley-Davidson Cádiz. Cada ficha publica venta y servicio técnico de motocicletas H-D. No se considera una auditoría exhaustiva del directorio nacional."
+  },
+  "outlets": [
+    {
+      "outlet_id": "harley-davidson-espacio-bcn",
+      "brand": "Harley-Davidson",
+      "trading_name": "Harley-Davidson ESPACIO BCN",
+      "operator": "SAGREFE, S.L. (marca comercial Espacio Harley-Davidson BCN)",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Joan Güell, 207, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.harley-davidson.com/es/es/tools/find-a-dealer/harley-davidson-espacio-bcn/7858",
+      "supporting_urls": [
+        "https://certified.harley-davidson.es/es/dealer-enquiry/1532547/nightster-std-%E2%80%93-2024/397744/harley-davidson-espacio-bcn",
+        "https://cincodias.elpais.com/directorio-empresas/empresa/1058033/harley-davidson-espana"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial vigente declara venta de motocicletas H-D, usadas certificadas y servicio técnico. Dirección contrastada con dealer enquiry de Harley-Davidson Certified y fuentes mercantiles."
+    },
+    {
+      "outlet_id": "harley-davidson-siebla-malaga",
+      "brand": "Harley-Davidson",
+      "trading_name": "Harley-Davidson Siebla-Málaga",
+      "operator": "Motos Siebla (operador mercantil por confirmar)",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Martínez de la Rosa, 109, 29009 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.harley-davidson.com/es/es/tools/find-a-dealer/harley-davidson-siebla-malaga/8018",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/tienda-motos-siebla-malaga"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha oficial individual declara venta de motocicletas H-D, usadas certificadas y servicio técnico. La dirección se contrasta con el agregador especializado; pendiente de contraste con página corporativa del operador."
+    },
+    {
+      "outlet_id": "harley-davidson-cadiz",
+      "brand": "Harley-Davidson",
+      "trading_name": "Harley-Davidson Cádiz",
+      "operator": "Operador local Harley-Davidson Cádiz (razón social no confirmada)",
+      "province": "Cádiz",
+      "municipality": "El Puerto de Santa María",
+      "public_address": "Avenida de Fuentebravía, 1, 11500 El Puerto de Santa María, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.harley-davidson.com/es/es/tools/find-a-dealer/harley-davidson-cadiz/7379",
+      "supporting_urls": [
+        "https://www.hdcadiz.com/contacto",
+        "https://www.hdcadiz.com/concesionario-harley-davidson-cadiz"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual oficial declara venta de motocicletas H-D y servicio técnico. La web del operador publica dirección, tienda y actividad relacionada con venta/servicio de la marca."
+    },
+    {
+      "outlet_id": "harley-davidson-steelusa-murcia",
+      "brand": "Harley-Davidson",
+      "trading_name": "HD Murcia — Steel USA",
+      "operator": "Steel USA (razón social no confirmada)",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida del Progreso, 195, 30012 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://steelusa.es/",
+      "supporting_urls": [
+        "https://steelusa.es/service/",
+        "https://steelusa.es/contacto/",
+        "https://form.harley-davidson.com/es_ES/ES25294DL?dealerid=7930"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador publica gama/stock Harley-Davidson, se denomina concesionario oficial y declara HD Service/taller oficial con técnicos formados por Harley-Davidson University. El formulario oficial de prueba de conducción contiene dealerid=7930, indicio adicional de integración comercial, pero no se recuperó ficha pública individual del localizador en esta revisión."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "harley-davidson-alicante-legacy",
+      "province": "Alicante",
+      "trading_name": "Harley Davidson Alicante",
+      "public_address": "Carretera de Ocaña, 58, 03006 Alicante, España",
+      "source_url": "https://es.linkedin.com/company/harley-davidson-alicante",
+      "reason": "Perfil secundario se presenta como concesionario oficial, pero no se localizó web corporativa primaria actual ni ficha individual del localizador que acredite actividad vigente. No se cuenta."
+    },
+    {
+      "candidate_id": "harley-davidson-siebla-marbella",
+      "province": "Málaga",
+      "trading_name": "Siebla Marbella / Too Wheels",
+      "public_address": "Calle Carbón, 38, 29603 Marbella, Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/harley-davidson",
+      "reason": "Agregador enumera la sede entre los puntos Harley-Davidson, pero no se ha localizado ficha oficial individual ni evidencia primaria actual de venta nueva H-D. No se cuenta."
+    }
+  ],
+  "limitations": [
+    "Cuatro sedes de venta acreditadas en cuatro provincias prioritarias; inventario mínimo documental, no censo nacional.",
+    "Tres sedes tienen ficha individual del localizador oficial; Steel USA Murcia se contabiliza por oferta propia actual y oficialidad autodeclarada, no como ficha individual confirmada.",
+    "La función importadora contractual actual de Harley-Davidson España, S.L. no se confirma con evidencia contractual reciente; la referencia CNMC disponible describe su función en 2010.",
+    "Alicante queda pendiente: las referencias encontradas son perfiles secundarios o comercios de ocasión que no acreditan una concesión H-D actual.",
+    "No se cuenta Siebla Marbella ni talleres independientes de Harley especializados sin evidencia primaria actual de venta o autorización.",
+    "Los puntos oficiales de Barcelona, Málaga y Cádiz publican venta y servicio técnico; Steel USA declara ambos servicios en Murcia."
+  ]
+}
