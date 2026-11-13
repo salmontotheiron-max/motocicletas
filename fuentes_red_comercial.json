@@ -547,13 +547,23 @@
       "brand_id": "brand-mv-agusta",
       "canonical_name": "MV Agusta",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-mvagusta-official-dealer-locator",
+        "source-mvagusta-box31-authorized-network",
+        "source-mvagusta-box31-algete",
+        "source-mvagusta-motosbordoy-barcelona",
+        "source-mvagusta-motostock-santceloni",
+        "source-mvagusta-siebla-marbella",
+        "source-mvagusta-bertolini-alicante",
+        "source-mvagusta-factorybike-pontevedra",
+        "source-mvagusta-gubra-canarias",
+        "source-mvagusta-secondary-candidates"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de MV Agusta en España acreditada. El localizador oficial consultado enumera ocho ciudades: Algete, Barcelona, Fornells de la Selva, Las Palmas de Gran Canaria, Marbella, Pontevedra, San Cristóbal de La Laguna y San Juan de Alicante. Se han corroborado ocho ubicaciones de venta con evidencia primaria o comercial directa: Algete (1), Barcelona (1), Sant Celoni (1), Marbella (1), San Juan de Alicante (1), Pontevedra (1), Las Palmas (1) y La Laguna (1). Fornells se mantiene como entrada del localizador/candidato sin evidencia primaria actual específica de venta MV Agusta en la sede. En las cinco provincias prioritarias: Barcelona (2), Málaga (1), Alicante (1), Cádiz (0), Murcia (0). No se infiere ausencia nacional ni se confunde taller autorizado con punto de venta."
     },
     {
       "brand_id": "brand-niu",
@@ -5879,6 +5889,209 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Lista 57 establecimientos nacionales y candidatos en provincias prioritarias. Se usa para descubrir y contrastar; no sustituye páginas corporativas ni acredita por sí solo venta actual o autorización contractual."
+    },
+    {
+      "source_id": "source-mvagusta-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-mv-agusta",
+      "publisher": "MV Agusta Motor S.p.A.",
+      "source_type": "official_directory",
+      "url": "https://www.mvagusta.com/dealers",
+      "title": "MV Agusta — localizador oficial de concesionarios",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "parts"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La lista de España expone ocho ciudades: Algete, Barcelona, Fornells de la Selva, Las Palmas de Gran Canaria, Marbella, Pontevedra, San Cristóbal de La Laguna y San Juan de Alicante. El listado no muestra el nombre comercial de cada ficha en la extracción textual."
+    },
+    {
+      "source_id": "source-mvagusta-box31-authorized-network",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-mv-agusta",
+      "publisher": "BOX31 MOTOS / MV Agusta Madrid",
+      "source_type": "company_page",
+      "url": "https://www.mvagustamadrid.es/autorizados.html",
+      "title": "Red de puntos autorizados BOX31 MOTOS — MV Agusta",
+      "reliability_class": "primary_business",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 14,
+      "notes": "BOX31 explica dos modalidades de colaboración, punto de venta autorizado y servicio técnico autorizado, y muestra BOX31 Algete, Ridocci Performance Valencia y Motor Extremo Fuengirola. La página consultada no permite asignar con certeza a cada socio una de las dos modalidades, por lo que los socios externos se conservan como candidatos hasta corroborar venta."
+    },
+    {
+      "source_id": "source-mvagusta-box31-algete",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "BOX31 MOTOS",
+      "source_type": "company_page",
+      "url": "https://www.box31motos.com/",
+      "title": "BOX31 MOTOS — MV Agusta mono brand dealer, exposición y venta",
+      "reliability_class": "primary_business",
+      "scope": "Algete, Madrid, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "parts"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Se declara distribuidor oficial y servicio técnico MV Agusta desde 2003, mono-brand dealer, con exposición y venta de motos nuevas y usadas. Dirección C/ de la Tejera 12, 28110 Algete."
+    },
+    {
+      "source_id": "source-mvagusta-motosbordoy-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Bordoy Barcelona",
+      "source_type": "company_page",
+      "url": "https://www.motosbordoybarcelona.com/es/promocion-mv-agusta-dragster-rosso-y-brutale-rosso",
+      "title": "Motos Bordoy — promoción MV Agusta y tienda oficial Balmes",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La promoción corporativa anuncia entrega inmediata y denomina a Balmes 186 tienda oficial MV Agusta. El catálogo online publica varias MV Agusta nuevas y la página de tiendas confirma la dirección."
+    },
+    {
+      "source_id": "source-mvagusta-motostock-santceloni",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Moto Stock",
+      "source_type": "company_page",
+      "url": "https://www.moto-stock.com/es/quienes-somos.html",
+      "title": "Moto Stock — concesionario oficial MV Agusta",
+      "reliability_class": "primary_business",
+      "scope": "Sant Celoni, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara a Moto Stock concesionario oficial de MV Agusta y servicio técnico oficial multimarca. Dirección Sant Isidre s/n, 08470 Sant Celoni. No se ha recuperado inventario MV Agusta actual individualizado."
+    },
+    {
+      "source_id": "source-mvagusta-siebla-marbella",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Siebla",
+      "source_type": "company_page",
+      "url": "https://old.siebla.com/",
+      "title": "Grupo Siebla — concesionario oficial MV Agusta y stock actual",
+      "reliability_class": "primary_business",
+      "scope": "Marbella y Málaga, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara a Grupo Siebla concesionario oficial MV Agusta con instalaciones en Málaga capital y Marbella y muestra tres MV Agusta en su stock, incluidas dos unidades nuevas 0 km. El localizador oficial de MV Agusta incluye Marbella. La sede de venta de Marbella se identifica en la página de contacto como C/ Ramón Gómez de la Serna 8, Local 1; C/ Carbón 38 aparece como taller."
+    },
+    {
+      "source_id": "source-mvagusta-bertolini-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Bertolini Motos",
+      "source_type": "aggregator",
+      "url": "https://motos.coches.net/nuevas/mv_agusta/dragster/800_rr_scs-2026-en-alicante-10138733.htm",
+      "title": "Bertolini Motos — MV Agusta Dragster 800 RR SCS 2026, San Juan de Alicante",
+      "reliability_class": "secondary_reputable",
+      "scope": "San Juan de Alicante, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 14,
+      "notes": "Anuncio profesional actual de unidad 2026 con garantía de cinco años, autodeclaración de concesionario oficial y dirección Avenida de Mutxamel 4, Sant Joan d'Alacant. La web propia de Bertolini confirma venta y servicio multimarca con atención a MV Agusta; el localizador oficial enumera San Juan de Alicante."
+    },
+    {
+      "source_id": "source-mvagusta-factorybike-pontevedra",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Factory Bike / Torres de Dios S.L.",
+      "source_type": "company_page",
+      "url": "https://www.factory-bike.es/486-mv-agusta",
+      "title": "Factory Bike — distribuidor oficial MV Agusta en Galicia",
+      "reliability_class": "primary_business",
+      "scope": "Pontevedra, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica declara distribuidor oficial MV Agusta en Galicia y publica catálogo actual con 22 productos, incluida LXP Enduro Veloce. Dirección Avda. de Lugo 75, 36004 Pontevedra."
+    },
+    {
+      "source_id": "source-mvagusta-gubra-canarias",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Gubra",
+      "source_type": "company_page",
+      "url": "https://gubra.com/portfolio-types/mvagusta/",
+      "title": "Gubra — concesionario oficial MV Agusta para Canarias",
+      "reliability_class": "primary_business",
+      "scope": "Las Palmas y Santa Cruz de Tenerife, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa declara concesionario oficial MV Agusta para las Islas Canarias y publica datos de dos centros en las dos capitales insulares. El localizador oficial lista Las Palmas de Gran Canaria y San Cristóbal de La Laguna. Se asocian los puntos a Gubra, sin extrapolar otras sucursales de la empresa."
+    },
+    {
+      "source_id": "source-mvagusta-secondary-candidates",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos / Motos.net",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/mv-agusta",
+      "title": "Directorios secundarios MV Agusta España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Se usa para descubrir candidatos y contrastar ciudades, nunca como prueba única de autorización ni de venta actual. Identifica Fornells/Harley-Davidson Girona y otros posibles operadores."
     }
   ]
 }
