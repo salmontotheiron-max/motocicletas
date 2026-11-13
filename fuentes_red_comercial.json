@@ -231,13 +231,13 @@
       "brand_id": "brand-gasgas",
       "canonical_name": "GasGas",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
         "source-carwow-50-brands-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de motocicletas GasGas acreditada en cinco ubicaciones de venta de tres operadores en Barcelona y Murcia. La red oficial del fabricante dispone de localizador, pero el contenido de establecimientos no resulta visible en la captura estática; no se afirma que los cinco puntos estén individualmente listados por GasGas. El servicio de marca se contabiliza solo donde el operador publica expresamente taller oficial GasGas (Jade Motor, Cartagena y Murcia). Málaga, Cádiz y Alicante quedan pendientes de verificación primaria; ausencia de resultados no equivale a ausencia de red."
     },
     {
       "brand_id": "brand-harley-davidson",
@@ -3592,6 +3592,66 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Ficha individual del dominio oficial Fantic identifica a Moto Chiclana GP MX S.L., dirección Travesía Alameda de Solano 26 y categoría Motos. La página del operador contiene una publicación antigua sobre su condición de concesionario Fantic; se toma la ficha vigente del fabricante como prueba principal."
+    },
+    {
+      "source_id": "source-gasgas-es-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-gasgas",
+      "publisher": "GASGAS",
+      "source_type": "official_directory",
+      "url": "https://www.gasgas.com/es-es/dealer-search.html",
+      "title": "Búsqueda oficial de concesionarios GASGAS España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial de motocicletas GasGas. La página visible indica búsqueda de concesionarios, pero la captura HTML consultada no expone fichas ni resultados; no se atribuye a este localizador ninguno de los puntos individualizados en la auditoría."
+    },
+    {
+      "source_id": "source-gasgas-ktm-espana-contact",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-gasgas",
+      "publisher": "KTM Sportmotorcycle España, S.L.",
+      "source_type": "company_page",
+      "url": "https://www.ktm.com/es-es/contact.html",
+      "title": "Contacto corporativo KTM España",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa identifica KTM Sportmotorcycle España, S.L. y su domicilio en Terrassa. Se usa como evidencia de estructura corporativa de KTM España, no como prueba concluyente de que esta sociedad sea el importador o distribuidor contractual de GasGas."
+    },
+    {
+      "source_id": "source-gasgas-anesdor-membership",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "ANESDOR",
+      "source_type": "official_directory",
+      "url": "https://www.anesdor.com/asociados/",
+      "title": "Asociados ANESDOR — KTM Sportmotorcycle España y marcas",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "ANESDOR muestra a KTM Sportmotorcycle España como asociado y representa conjuntamente KTM, Husqvarna, GasGas y ZEEHO. Fuente institucional de contexto empresarial, no evidencia de red de concesionarios."
     }
   ]
 }
