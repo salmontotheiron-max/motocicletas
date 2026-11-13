@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-12",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Extracción individual de las entradas SYM del snapshot agregado de establecimientos autodeclarados, conservando la evidencia pública del operador y separando la oferta comercial declarada de la autorización oficial. Las tres sedes se identifican como puntos de venta y servicio en la misma ubicación; no se duplican como establecimientos de servicio independientes. Corte documental, no censo exhaustivo.",
+  "brand_status": "established",
+  "manufacturer": null,
+  "manufacturer_locator": {
+    "url": "https://www.sym.com.es/concesionarios-scooter",
+    "status": "official_directory",
+    "classification": "Localizador oficial SYM España atribuido a Motos Bordoy, S.A. El HTML público muestra un buscador por ciudad o código postal y separa concesionarios oficiales de servicios oficiales, pero no expone las fichas de establecimientos en la extracción estática observada el 2026-11-12. La evidencia de los tres puntos de venta de este snapshot procede de las páginas públicas del importador/operador Motos Bordoy."
+  },
+  "counts": {
+    "physical_outlets_documented": 3,
+    "sales_points": 3,
+    "service_only_points": 0,
+    "sales_locations_also_listing_service": 3,
+    "by_province": {
+      "Barcelona": 3
+    },
+    "operator_groups": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "sym-motos-bordoy-balmes",
+      "trading_name": "Motos Bordoy – Balmes",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Balmes, 186, 08006 Barcelona",
+      "outlet_role": "sales",
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/tiendas",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/servicios",
+        "https://www.motosbordoybarcelona.com/es/sym-20-anos-siempre-contigo",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "observed_at": "2026-11-12",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "operator_group_id": "motos-bordoy",
+      "notes": "Motos Bordoy declara ser importador de SYM en España y concesionario oficial. Sus páginas publican oferta de vehículos nuevos SYM y citan esta sede como punto de venta; la página de servicios publica actividad de taller. La autorización se registra como declaración del importador/operador, no como contraste independiente adicional."
+    },
+    {
+      "outlet_id": "sym-motos-bordoy-valencia-barcelona",
+      "trading_name": "Motos Bordoy – Valencia",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Valencia, 179, 08011 Barcelona",
+      "outlet_role": "sales",
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/tiendas",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/servicios",
+        "https://www.motosbordoybarcelona.com/es/sym-20-anos-siempre-contigo",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "observed_at": "2026-11-12",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "operator_group_id": "motos-bordoy",
+      "notes": "Motos Bordoy declara ser importador de SYM en España y concesionario oficial. Sus páginas publican oferta de vehículos nuevos SYM y citan esta sede como punto de venta; la página de servicios publica actividad de taller. La autorización se registra como declaración del importador/operador, no como contraste independiente adicional."
+    },
+    {
+      "outlet_id": "sym-motos-bordoy-urgell",
+      "trading_name": "Motos Bordoy – Urgell",
+      "operator": "Motos Bordoy, S.A.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "C/ Comte d'Urgell, 240, 08036 Barcelona",
+      "outlet_role": "sales",
+      "evidence_url": "https://www.motosbordoybarcelona.com/es/tiendas",
+      "supporting_urls": [
+        "https://www.motosbordoybarcelona.com/es/servicios",
+        "https://www.motosbordoybarcelona.com/es/sym-20-anos-siempre-contigo",
+        "https://www.motosbordoy.com/"
+      ],
+      "evidence_type": "operator_self_declaration",
+      "observed_at": "2026-11-12",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "importer_and_operator_declaration",
+      "operator_group_id": "motos-bordoy",
+      "notes": "Motos Bordoy declara ser importador de SYM en España y concesionario oficial. Sus páginas publican oferta de vehículos nuevos SYM y citan esta sede como punto de venta; la página de servicios publica actividad de taller. La autorización se registra como declaración del importador/operador, no como contraste independiente adicional."
+    }
+  ],
+  "limitations": [
+    "El inventario individualiza las tres sedes SYM presentes en el snapshot agregado de autodeclaraciones con fecha de corte 2026-11-12; no constituye una nueva captura en tiempo real.",
+    "El ámbito se limita a Barcelona, Málaga, Cádiz, Alicante y Murcia; las tres ubicaciones documentadas se encuentran en Barcelona.",
+    "La ausencia de entradas en Málaga, Cádiz, Alicante y Murcia en este snapshot no demuestra ausencia de red comercial SYM.",
+    "La actividad de venta y servicio se atribuye a las mismas tres sedes; no se cuentan puntos de servicio independientes.",
+    "La autorización oficial se conserva como declaración del importador/operador Motos Bordoy; no se presenta como verificación independiente adicional.",
+    "El localizador oficial SYM es dinámico y no expuso establecimientos en la extracción estática observada; esta limitación técnica no se interpreta como ausencia de red.",
+    "El inventario no es un censo nacional exhaustivo ni acredita ventas efectivas."
+  ]
+}
