@@ -62,10 +62,10 @@ No mezclar motocicletas y ciclomotores en rankings sin etiqueta.
 | Provincia × periodo × segmento (nuevos) | Disponible | matriculaciones_motocicletas_por_provincia.csv |
 | Matriculación × domicilio registral (nuevos) | Disponible | matriculaciones_motocicletas_cruce_provincias_nuevas.csv |
 | Ratio mismo domicilio / otro domicilio (nuevos) | Derivable | Cruce anterior |
-| Transferencias de usados | Disponible parcialmente | Serie de operación y agregados por domicilio; no equivale a todas las ventas |
-| Provincia de venta de usados | Pendiente de validación | No hay campo territorial semánticamente validado en el agregado actual |
-| Modelo × marca × periodo | Pendiente de extracción | No publicado todavía en los agregados del dashboard |
-| Marca × provincia | Pendiente de extracción | Requiere agregación de microdatos y validación de campos |
+| Transferencias de usados | Captura y procesado automatizados; primera ejecución pendiente | Microdatos mensuales DGT de transferencias; cambio de titularidad, no venta verificada |
+| Provincia de venta de usados | No disponible en el diseño DGT consultado | El registro publica domicilio del vehículo y provincia de matriculación original, no ubicación de la compraventa |
+| Modelo × marca × periodo | Extracción implementada; primera regeneración pendiente | `MODELO_ITV` + `MARCA_ITV` en MATRABA; agregado por segmento y provincia |
+| Marca × provincia | Derivable del nuevo agregado | Suma por marca del desglose marca/modelo/segmento/provincia |
 
 ## Criterios de presentación web
 
