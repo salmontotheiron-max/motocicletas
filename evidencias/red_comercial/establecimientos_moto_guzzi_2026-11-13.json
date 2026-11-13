@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se computan sedes con evidencia primaria actual de oferta Moto Guzzi o publicación corporativa del Grupo Piaggio que identifica la marca en la instalación, junto con dirección física y actividad de venta. Sucursales adicionales del mismo operador no se duplican sin evidencia específica de oferta.",
+  "verification_status_policy": {
+    "operator_current_brand_offer": "Página corporativa actual, inventario o publicación oficial del Grupo Piaggio confirma Moto Guzzi en esa instalación.",
+    "operator_self_declared_official": "El operador o grupo se declara concesionario oficial; no equivale a verificación contractual independiente.",
+    "secondary_candidate": "Referencia secundaria sin corroboración primaria actual suficiente; no se computa."
+  },
+  "outlet_count": 5,
+  "counts": {
+    "sales_corroborated": 5,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 2,
+      "Cádiz": 0,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "service_locations_explicitly_published": 5,
+    "operator_self_declared_official_sales": 3,
+    "manufacturer_individual_directory_entries_recovered": 0,
+    "contractual_authorization_independently_verified": 0
+  },
+  "distribution": {
+    "group": "Piaggio & C. S.p.A.",
+    "status": "Moto Guzzi forma parte del Grupo Piaggio. La auditoría identifica operadores que publican oferta de la marca o cuyas instalaciones aparecen vinculadas a ella en publicaciones corporativas del grupo.",
+    "notes": "No se atribuye un importador español con razón social distinta sin evidencia específica."
+  },
+  "official_locator": {
+    "url": "https://www.motoguzzi.com/es_ES/dealer-locator/",
+    "status": "locator_present_dynamic_content",
+    "notes": "Localizador oficial con iframe dinámico; la extracción textual no individualiza fichas ni permite censo nacional completo."
+  },
+  "outlets": [
+    {
+      "outlet_id": "motoguzzi-motovivo-santboi",
+      "brand": "Moto Guzzi",
+      "trading_name": "Motovivo",
+      "operator": "Autovivo Grup",
+      "province": "Barcelona",
+      "municipality": "Sant Boi de Llobregat",
+      "public_address": "Ctra. de la Santa Creu de Calafell 63, 08830 Sant Boi de Llobregat, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motovivo.es/",
+      "supporting_urls": [
+        "https://motovivo.es/instalaciones-detalle/grupo-piaggio",
+        "https://autovivo.net/comprar-motos/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_group_official_dealer_declaration",
+      "notes": "La web corporativa presenta Moto Guzzi en gama de motos nuevas y publica una V85 TT en stock de ocasión. Ficha de instalación identifica sede y taller; Autovivo Grup identifica Motovivo como concesionario oficial del Grupo Piaggio."
+    },
+    {
+      "outlet_id": "motoguzzi-motomercado-fuengirola",
+      "brand": "Moto Guzzi",
+      "trading_name": "MotoMercado Fuengirola",
+      "operator": "Comercial Mountain Bikes S.L. (MotoMercado)",
+      "province": "Málaga",
+      "municipality": "Fuengirola",
+      "public_address": "Avenida Jesús Cautivo 46, 29640 Fuengirola, Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motomercadomalaga.es/",
+      "supporting_urls": [
+        "https://motomercadomalaga.es/contacto-motomercado/",
+        "https://www.vespa.com/es_ES/dealer-locator/fuengirola/motomercado/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official_group_piaggio",
+      "notes": "La web publica Moto Guzzi V85 TT, comercialización y reparación oficial del Grupo Piaggio y dirección de Fuengirola. Localizador oficial Vespa/Grupo Piaggio identifica esta sede como distribuidor y punto de asistencia. Marbella no se duplica por falta de evidencia individualizada."
+    },
+    {
+      "outlet_id": "motoguzzi-vespamalaga-malaga",
+      "brand": "Moto Guzzi",
+      "trading_name": "Vespamálaga",
+      "operator": "Grupo Nieto",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset 296, 29006 Málaga, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://gruponieto.es/centros/vespamalaga/",
+      "supporting_urls": [
+        "https://gruponieto.es/centros/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_group_official_dealer_declaration",
+      "notes": "Grupo Nieto declara expresamente Vespamálaga como concesionario oficial Moto Guzzi, con ventas y taller. La página de centros publica dirección."
+    },
+    {
+      "outlet_id": "motoguzzi-ciaomoto-alicante",
+      "brand": "Moto Guzzi",
+      "trading_name": "Ciao Moto Alicante",
+      "operator": "Ciao Moto",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Orihuela 99, 03007 Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.vespa.com/es_ES/mundo-vespa/dealer/nuevo-concesionario-en-alicante/",
+      "supporting_urls": [
+        "https://www.vespa.com/es_ES/dealer-locator/alicante/ciao-moto-s-l/"
+      ],
+      "evidence_type": "manufacturer_group_statement",
+      "verification_status": "manufacturer_group_confirms_brand_at_location",
+      "official_authorization_status": "manufacturer_group_official_dealer",
+      "notes": "Piaggio confirma que el showroom Ciao Moto expone Moto Guzzi y dispone de taller técnico. La ficha del localizador oficial de Vespa/Grupo Piaggio identifica Ciao Moto como distribuidor y punto de asistencia oficial."
+    },
+    {
+      "outlet_id": "motoguzzi-ciaomoto-murcia",
+      "brand": "Moto Guzzi",
+      "trading_name": "Ciao Moto Murcia",
+      "operator": "Ciao Moto",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida del Rocío 8, 30007 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motos.coches.net/concesionario/ciaomoto/",
+      "supporting_urls": [
+        "https://www.cylex.es/murcia/ciao-moto-12645636.html",
+        "https://www.paginasamarillas.es/f/murcia/ciao-moto_218710317_000000001.html"
+      ],
+      "evidence_type": "current_inventory_and_operator_declaration",
+      "verification_status": "current_offer_secondary_corroborated",
+      "official_authorization_status": "operator_self_declared_official_not_independently_verified",
+      "notes": "Motos.net publica una Moto Guzzi V85 TT Travel nueva atribuida a Ciao Moto Murcia; directorios reproducen autodeclaración como concesionario y servicio técnico oficial. Oferta actual corroborada; autorización contractual no verificada independientemente."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "trading_name": "El Motorista Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avenida de Europa 13, 11405 Jerez de la Frontera, Cádiz, España",
+      "evidence_url": "https://concesionariosdemotos.com/tienda-el-motorista",
+      "status": "secondary_candidate",
+      "notes": "Agregador actual lista Moto Guzzi, pero la página corporativa actual no publica oferta específica en esa sede."
+    },
+    {
+      "trading_name": "Dos Ruedas",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Polígono Industrial Bertola, cruce carretera de Sanlúcar, 11408 Jerez de la Frontera, Cádiz, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-guzzi",
+      "status": "secondary_candidate",
+      "notes": "Listado por agregador como vendedor Moto Guzzi; sin página corporativa actual recuperada."
+    },
+    {
+      "trading_name": "El Motorista Algeciras",
+      "province": "Cádiz",
+      "municipality": "Algeciras",
+      "public_address": "Carretera de Málaga km 108, 11205 Algeciras, Cádiz, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-guzzi",
+      "status": "secondary_candidate",
+      "notes": "Listado secundario; falta corroboración primaria actual de oferta en esa sucursal."
+    },
+    {
+      "trading_name": "Motospazio",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Calle Calvet 49, 08021 Barcelona, España",
+      "evidence_url": "https://linktr.ee/Motospazio",
+      "status": "secondary_candidate",
+      "notes": "Perfil social lo identifica como concesionario Moto Guzzi, pero la información visible incluye promociones de 2022 y no se obtuvo confirmación actual suficiente."
+    },
+    {
+      "trading_name": "Paya Motocicletas",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Carrer Batista i Roca 21, 08302 Mataró, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-guzzi",
+      "status": "secondary_candidate",
+      "notes": "Agregador lista la marca, sin corroboración corporativa actual."
+    },
+    {
+      "trading_name": "Vallescar Moto",
+      "province": "Barcelona",
+      "municipality": "Sabadell",
+      "public_address": "Carrer de Joaquín Costa 7, 08206 Sabadell, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-guzzi",
+      "status": "secondary_candidate",
+      "notes": "Agregador lista la marca, sin corroboración corporativa actual."
+    },
+    {
+      "trading_name": "Hespalicante",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carretera de Ocaña 65, 03007 Alicante, España",
+      "evidence_url": "https://www.paginasamarillas.es/f/alacant-alicante/hespalicante_228620662_000000001.html",
+      "status": "secondary_candidate",
+      "notes": "Directorio comercial lo presenta como concesionario Moto Guzzi; falta corroboración primaria actual."
+    },
+    {
+      "trading_name": "MotoMercado Marbella",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "Avenida Ricardo Soriano 76, 29600 Marbella, Málaga, España",
+      "evidence_url": "https://motomercadomalaga.es/",
+      "status": "secondary_candidate",
+      "notes": "Misma empresa y web que MotoMercado Fuengirola, pero no se recuperó evidencia específica de oferta asignada a esta sucursal; no se duplica."
+    }
+  ],
+  "notes": [
+    "established acredita actividad comercial actual y no censo nacional exhaustivo.",
+    "El localizador oficial Moto Guzzi es dinámico y no permitió recuperar fichas individualizadas.",
+    "Cinco ubicaciones corroboradas: Barcelona 1, Málaga 2, Alicante 1 y Murcia 1; Cádiz permanece sin sedes confirmadas.",
+    "Los puntos de asistencia se contabilizan solo cuando el operador publica taller o servicio.",
+    "Las autodeclaraciones de oficialidad se distinguen de la verificación independiente de autorización contractual.",
+    "Los candidatos secundarios no se suman al total confirmado."
+  ]
+}
