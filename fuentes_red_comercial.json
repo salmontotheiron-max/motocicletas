@@ -261,13 +261,24 @@
       "brand_id": "brand-hero",
       "canonical_name": "Hero",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-hero-official-spain-entry",
+        "source-hero-official-dealer-locator",
+        "source-hero-official-contact",
+        "source-hero-maquina-barcelona",
+        "source-hero-motosmedina-alicante",
+        "source-hero-castro-cadiz",
+        "source-hero-jade-murcia",
+        "source-hero-indalmar-malaga",
+        "source-hero-motomercado-secondary",
+        "source-hero-playcar-secondary",
+        "source-hero-motociclismo-network-2026"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por la entrada oficial anunciada por Hero MotoCorp mediante Noria Motos (Grupo ONEX), entidad identificada en el contacto corporativo oficial. Primera auditoría documental de cinco provincias prioritarias: seis sedes de venta (Barcelona 1, Cádiz 3, Alicante 1 y Murcia 1) y cinco ubicaciones de servicio, incluida una sede de servicio-only en Málaga. La ficha del localizador oficial es dinámica y no expone establecimientos individualizados en la captura; por tanto, las sedes se clasifican según evidencia corporativa de operadores y no como fichas manufacturer_listed. Motomercado Fuengirola/Marbella y Automóviles Playcar Málaga quedan como candidatos secundarios no contabilizados. Inventario mínimo documental, no censo nacional ni evidencia de ventas efectivas."
     },
     {
       "brand_id": "brand-honda",
@@ -3845,6 +3856,235 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "El agregador enumera Siebla Marbella/Too Wheels como operador relacionado con Harley-Davidson, pero no se ha localizado ficha individual del fabricante ni página corporativa primaria actual que confirme venta nueva H-D en esa sede. No se contabiliza."
+    },
+    {
+      "source_id": "source-hero-official-spain-entry",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-hero",
+      "publisher": "Hero MotoCorp Ltd.",
+      "source_type": "official_statement",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/press-releases/2025/october/Press%20Release-EICMA-2023-Nov-7-23.pdf",
+      "title": "Hero MotoCorp — entrada oficial en España y acuerdo de distribución con Noria Motos",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_or_distributor"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La comunicación corporativa de 15-10-2025 anuncia la entrada oficial de Hero en España mediante Noria Motos, parte de Grupo ONEX. Declara una red inicial de más de 30 puntos oficiales de venta y servicio y un plan de expansión; el objetivo anunciado no se trata como cifra verificada de red actual."
+    },
+    {
+      "source_id": "source-hero-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-hero",
+      "publisher": "Hero MotoCorp Ltd.",
+      "source_type": "official_directory",
+      "url": "https://www.heromotocorp.com/es-es/dealers.html",
+      "title": "Hero MotoCorp España — localizador de vendedores autorizados",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial español con campos de búsqueda por categoría, provincia y ciudad. La captura textual no expone resultados individualizados; no se atribuyen establecimientos concretos a este directorio."
+    },
+    {
+      "source_id": "source-hero-official-contact",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-hero",
+      "publisher": "Hero MotoCorp Ltd.",
+      "source_type": "company_page",
+      "url": "https://www.heromotocorp.com/es-es/reach-us.html",
+      "title": "Hero MotoCorp España — contacto y Noria Motos S.L.",
+      "reliability_class": "primary_official",
+      "scope": "Spain",
+      "directory_scope": [
+        "manufacturer_market",
+        "brand_market",
+        "importer_or_distributor"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página oficial identifica a Hero MotoCorp Limited (oficina corporativa en Nueva Delhi) y publica Noria Motos SL, Calle Noria 11, 46500 Albuixech (Valencia), correo hero@grupo-onex.com. En combinación con el anuncio de distribución, acredita entidad distribuidora y presencia de contacto en España."
+    },
+    {
+      "source_id": "source-hero-maquina-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Màquina Motors S.A.U.",
+      "source_type": "company_page",
+      "url": "https://maquinamotors.com/blog/hero-desembarca-en-maquina-motors/",
+      "title": "Maquina Motors — llegada de Hero a Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El operador identifica a Maquina Motors como primer concesionario Hero en Barcelona y vincula su incorporación a la asociación nacional con Noria Motos. La dirección de Consell de Cent 130-136 se contrasta con su localizador de tiendas. No se ha recuperado ficha individual del localizador oficial Hero ni evidencia primaria de taller Hero en esa sede."
+    },
+    {
+      "source_id": "source-hero-motosmedina-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Medina",
+      "source_type": "company_page",
+      "url": "https://www.motosmedina.com/es",
+      "title": "Motos Medina — concesionario Hero en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa se declara concesionario oficial Hero, publica venta de motocicletas y recambios y dirección Avda. de Dénia 13, 03002 Alicante. No se atribuye servicio técnico Hero por falta de mención específica."
+    },
+    {
+      "source_id": "source-hero-castro-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/hero/",
+      "title": "Castro La Motocicleta — Hero en Cádiz, Jerez y Palmones",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa anuncia venta Hero y servicio posventa; individualiza Cádiz (ventas en Av. de la Sanidad Pública 297 y taller en C/ García Quijano 2), Jerez de la Frontera (ventas y taller en C/ Pilar Aranda Latorre 3) y Palmones/Los Barrios (ventas y taller en C/ Fragata, Pol. Palmones 11). La página de historia del operador declara concesionario oficial en sus tres sedes. Se separan las direcciones de venta y taller de Cádiz capital."
+    },
+    {
+      "source_id": "source-hero-jade-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Fenix Moto Premium S.L. — Jade Motor",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/motos-nuevas/hero",
+      "title": "Jade Motor — motos nuevas Hero en Murcia y Cartagena",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web ofrece gama Hero, pedidos a fábrica y declara concesionario y taller oficial Hero en la Región de Murcia. La sede mercantil principal se identifica como Ctra. Nacional 301, km 431, 30319 Cartagena. La página también presenta sedes en Murcia, pero no asigna expresamente la oferta Hero a cada una; se cuenta una sola sede comercial regional y no se duplica el punto de Murcia capital."
+    },
+    {
+      "source_id": "source-hero-indalmar-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Indalmar Motor",
+      "source_type": "company_page",
+      "url": "https://www.indalmarmotor.com/contacto",
+      "title": "Indalmar Motor Málaga — servicio oficial Hero",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página corporativa identifica un taller en Av. José Ortega y Gasset 192, Málaga, y declara Servicio Oficial Hero, mantenimiento, reparación, recambios y posventa. No publica venta Hero en esa sede; se clasifica como servicio-only y no como punto de venta."
+    },
+    {
+      "source_id": "source-hero-motomercado-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/hero",
+      "title": "Directorio secundario Hero — Motomercado Fuengirola y Marbella",
+      "reliability_class": "secondary_reputable",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Agregador enumera Hero entre las marcas de Motomercado Fuengirola y Motomercado Marbella. No se ha encontrado página corporativa primaria actual que confirme la oferta Hero en esas sedes; quedan como candidatos, no contabilizados."
+    },
+    {
+      "source_id": "source-hero-playcar-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos.net / Grupo Playcar",
+      "source_type": "aggregator",
+      "url": "https://motos.coches.net/concesionarios/hero",
+      "title": "Directorio secundario Hero — Automóviles Playcar Málaga",
+      "reliability_class": "secondary_reputable",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "brand_offer",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El directorio de concesionarios enumera Automóviles Playcar Málaga entre los puntos con marca Hero. La web corporativa de Playcar consultada no confirma venta Hero en su sede de Málaga; no se contabiliza como punto de venta."
+    },
+    {
+      "source_id": "source-hero-motociclismo-network-2026",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motociclismo",
+      "source_type": "press",
+      "url": "https://www.motociclismo.es/noticias/hero-lanza-espana-nuevo-scooter-125-menos-1900-euros-cinco-anos-garantia_332420_102.html",
+      "title": "Motociclismo — Hero amplía red española a 62 concesionarios (septiembre 2026)",
+      "reliability_class": "secondary_reputable",
+      "scope": "Spain",
+      "directory_scope": [
+        "brand_market",
+        "dealer_network"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Artículo sectorial de 11-09-2026 atribuye a Hero una red de 62 concesionarios oficiales de venta y servicio gracias a Noria Motos. Se conserva como cifra secundaria publicada, no como censo verificado ni como recuento de las cinco provincias."
     }
   ]
 }

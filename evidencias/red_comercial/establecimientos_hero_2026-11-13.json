@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se cuentan ubicaciones físicas solo cuando una página corporativa actual del operador publica oferta Hero y permite asociarla a sede; se separan venta y taller. La condición de concesionario oficial se registra como autodeclaración salvo ficha individual del fabricante. Los agregadores sirven para descubrir candidatos, no para elevarlos a puntos confirmados. No se infiere ausencia por falta de evidencia.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Página corporativa del operador publica oferta Hero actual y permite asociarla a sede física.",
+    "self_declared_official": "El operador se autodenomina concesionario o servicio oficial; no equivale a una ficha individual verificada del localizador.",
+    "service_only": "Página corporativa publica servicio técnico Hero en una sede, sin oferta de venta Hero acreditada.",
+    "secondary_candidate": "Referencia secundaria sin evidencia primaria actual; no se cuenta."
+  },
+  "outlet_count": 6,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 0,
+      "Cádiz": 3,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 6,
+    "service_locations": 5,
+    "same_site_sales_and_service": 4,
+    "service_only_locations": 1,
+    "sales_only_locations": 2,
+    "manufacturer_individually_listed": 0,
+    "operator_self_declared_official_sales": 5,
+    "accepted_commercial_presence_sales": 6,
+    "secondary_only_candidates": 3
+  },
+  "manufacturer": {
+    "brand_owner": "Hero MotoCorp Limited (India)",
+    "spanish_distributor": "Noria Motos S.L. (Grupo ONEX)",
+    "spanish_contact_address": "Calle Noria 11, 46500 Albuixech (Valencia), España",
+    "evidence_urls": [
+      "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/press-releases/2025/october/Press%20Release-EICMA-2023-Nov-7-23.pdf",
+      "https://www.heromotocorp.com/es-es/reach-us.html"
+    ],
+    "notes": "Hero MotoCorp anunció el 15-10-2025 su entrada oficial en España mediante una alianza de distribución con Noria Motos, parte de Grupo ONEX. El contacto oficial español identifica Hero MotoCorp Limited y publica Noria Motos S.L. en Albuixech (Valencia). No se ha localizado evidencia de una filial fabricante española."
+  },
+  "official_source": {
+    "urls": [
+      "https://www.heromotocorp.com/es-es/dealers.html",
+      "https://www.heromotocorp.com/es-es/reach-us.html"
+    ],
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial presenta búsqueda por categoría, provincia y ciudad, pero la captura textual no expone resultados ni fichas individuales. Se registra la existencia del directorio, sin atribuirle los puntos de venta individualizados por las páginas de operadores."
+  },
+  "outlets": [
+    {
+      "outlet_id": "hero-maquina-motors-barcelona",
+      "brand": "Hero",
+      "trading_name": "Maquina Motors — Consell de Cent",
+      "operator": "Màquina Motors S.A.U.",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Consell de Cent, 130-136, 08015 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://maquinamotors.com/blog/hero-desembarca-en-maquina-motors/",
+      "supporting_urls": [
+        "https://maquinamotors.com/nuestras-tiendas"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_independently_verified",
+      "notes": "El operador explica su incorporación a la red Hero en España junto a Noria Motos y se identifica como primer concesionario Hero en Barcelona. La dirección se contrasta con el localizador de tiendas. No se atribuye taller Hero en esta sede."
+    },
+    {
+      "outlet_id": "hero-motos-medina-alicante",
+      "brand": "Hero",
+      "trading_name": "Motos Medina",
+      "operator": "Motos Medina",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Dénia, 13, 03002 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosmedina.com/es",
+      "supporting_urls": [],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web corporativa incluye Hero entre sus concesiones oficiales y declara venta de motocicletas y recambios. No se atribuye servicio Hero por falta de evidencia específica."
+    },
+    {
+      "outlet_id": "hero-castro-cadiz",
+      "brand": "Hero",
+      "trading_name": "Castro La Motocicleta — Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Ventas: Avenida de la Sanidad Pública, 297, 11012 Cádiz; taller: Calle García Quijano, 2, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "service_address": "Calle García Quijano, 2, Cádiz, España",
+      "evidence_url": "https://castrolamotocicleta.com/hero/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/historia/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página Hero identifica punto de venta en Cádiz y un taller posventa en dirección distinta. Se contabiliza una sede de venta y una ubicación de servicio separada."
+    },
+    {
+      "outlet_id": "hero-castro-jerez",
+      "brand": "Hero",
+      "trading_name": "Castro La Motocicleta — Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/hero/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/historia/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La página Hero identifica ventas y taller en la misma dirección. El operador declara ser concesionario oficial en sus tres sedes."
+    },
+    {
+      "outlet_id": "hero-castro-palmones",
+      "brand": "Hero",
+      "trading_name": "Castro La Motocicleta — Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios (Palmones)",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/hero/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/historia/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La página Hero identifica ventas y taller en la misma dirección. El operador declara ser concesionario oficial en sus tres sedes."
+    },
+    {
+      "outlet_id": "hero-jade-motor-cartagena",
+      "brand": "Hero",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Fenix Moto Premium S.L. (marca comercial Jade Motor)",
+      "province": "Murcia",
+      "municipality": "Cartagena (Miranda)",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena (Miranda), Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/motos-nuevas/hero",
+      "supporting_urls": [
+        "https://jademotor.com/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web ofrece gama Hero, pedidos a fábrica y declara concesionario/taller oficial Hero en la Región de Murcia. Se registra una sede regional en Cartagena; la web menciona también Murcia, pero no asigna la oferta Hero a cada sede de forma individual, por lo que no se duplica el recuento."
+    }
+  ],
+  "service_only_locations": [
+    {
+      "service_id": "hero-indalmar-malaga-service",
+      "brand": "Hero",
+      "trading_name": "Indalmar Motor — taller Málaga",
+      "operator": "Indalmar Motor",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 192, 29006 Málaga, España",
+      "service_scope": [
+        "official_brand_service",
+        "maintenance",
+        "repair",
+        "parts",
+        "after_sales"
+      ],
+      "evidence_url": "https://www.indalmarmotor.com/contacto",
+      "verification_status": "operator_declared_official_service",
+      "notes": "El operador declara Servicio Oficial Hero en esta dirección; no publica venta Hero en la sede. Se contabiliza exclusivamente como servicio."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "hero-motomercado-fuengirola",
+      "province": "Málaga",
+      "trading_name": "Motomercado",
+      "municipality": "Fuengirola",
+      "public_address": "Avenida Nuestro Padre Jesús Cautivo, 46 / Avenida de los Boliches, 108, 29640 Fuengirola, Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/hero",
+      "reason": "El agregador enumera Hero entre las marcas del operador, pero no se ha localizado evidencia corporativa primaria actual que confirme la oferta; no se cuenta."
+    },
+    {
+      "candidate_id": "hero-motomercado-marbella",
+      "province": "Málaga",
+      "trading_name": "Motomercado Marbella",
+      "municipality": "Marbella",
+      "public_address": "Avenida Ricardo Soriano, 76, 29600 Marbella, Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/hero",
+      "reason": "El agregador enumera Hero entre las marcas del operador, pero no se ha localizado evidencia corporativa primaria actual que confirme la oferta; no se cuenta."
+    },
+    {
+      "candidate_id": "hero-playcar-malaga",
+      "province": "Málaga",
+      "trading_name": "Automóviles Playcar",
+      "municipality": "Málaga",
+      "public_address": "Calle Tucídides, 30, 29004 Málaga, España",
+      "source_url": "https://motos.coches.net/concesionarios/hero",
+      "reason": "El agregador enumera Hero entre las marcas, pero la web corporativa de Playcar no confirma oferta Hero en su sede de Málaga; no se cuenta."
+    }
+  ],
+  "limitations": [
+    "Seis ubicaciones de venta acreditadas en cuatro provincias prioritarias; inventario mínimo documental, no censo nacional.",
+    "El localizador oficial Hero es dinámico y la captura textual no expone fichas individuales; ninguna de las seis sedes se etiqueta como manufacturer_listed.",
+    "Málaga presenta un taller que se autodeclara Servicio Oficial Hero, pero no se ha acreditado venta Hero en la sede; los tres candidatos de venta encontrados proceden de agregadores y no se cuentan.",
+    "En Barcelona y Alicante se acredita oferta comercial del operador, pero no servicio Hero específico.",
+    "En Cádiz se identifican tres puntos de venta; el taller de Cádiz capital se ubica en una dirección distinta a la exposición y se contabiliza como ubicación de servicio separada.",
+    "Jade Motor anuncia Hero para Murcia y Cartagena, pero la página no atribuye expresamente la oferta a cada sede. Se cuenta una sola ubicación regional en Cartagena para evitar duplicación.",
+    "La cifra de 62 concesionarios publicada por prensa sectorial en septiembre de 2026 no se considera censo verificado ni desglose provincial."
+  ]
+}
