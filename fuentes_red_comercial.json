@@ -8167,6 +8167,45 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 7,
       "notes": "La web corporativa se autodeclara concesionario oficial y exclusivo de Zontes para la Región de Murcia, ofrece venta de motocicletas y taller y confirma C/ Isla Cristina 12, 30007 Murcia. No se ha verificado contrato directamente con el fabricante."
+    },
+    {
+      "source_id": "source-zontes-cadiz-royalenfield-locator-address",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Royal Enfield España — localizador oficial",
+      "source_type": "official_directory",
+      "url": "https://locate-us.royalenfield.com/es/es/espana/coolmotorcycles-jerez-333",
+      "title": "Localizador oficial Coolmotorcycles Jerez — direcciones Platino 21 y Platino 1 Zontes",
+      "reliability_class": "primary_official",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "operator_location"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La ficha oficial de Royal Enfield del operador Coolmotorcycles identifica Calle Platino 21 y añade expresamente Calle Platino 1 (Zontes), lo que permite distinguir el punto de exposición Zontes de la dirección corporativa/taller. No se usa como prueba de autorización Zontes."
+    },
+    {
+      "source_id": "source-zontes-cadiz-coolmotorcycles-press-703t",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "La Guía del Motor",
+      "source_type": "press",
+      "url": "https://laguiadelmotor.net/noticia/ya-esta-en-cool-motorcycles-la-nueva-zontes-703t/",
+      "title": "Cool Motorcycles dispone de Zontes 703T en Jerez y Chiclana (29-10-2026)",
+      "reliability_class": "secondary_reputable",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "current_model_offer",
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Noticia sectorial del 29-10-2026 informa de disponibilidad de unidades 703T en las instalaciones de Jerez y Chiclana. Se utiliza como corroboración secundaria de oferta, no como prueba de autorización contractual."
     }
   ]
 }
