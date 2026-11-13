@@ -224,6 +224,33 @@ class MonthlyProcessorTests(unittest.TestCase):
             _, counts, _, _, _, _, _, audit = p.process_archive(archive, "2026-07")
             self.assertEqual(sum(counts.values()), 2)
 
+    def test_processes_transfer_monthly_records_without_header(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
+                COD_POSESION="V", COD_PROVINCIA_VEH="MU",
+                COD_PROVINCIA_MAT="A", FEC_PROCESO="31082026",
+            )
+            data = BytesIO()
+            with zipfile.ZipFile(data, "w", zipfile.ZIP_DEFLATED) as archive:
+                archive.writestr("transferencias.txt", row)
+            payload = data.getvalue()
+            path = Path(tmp) / (
+                "export_mensual_trf_202608_" + hashlib.sha256(payload).hexdigest() + ".zip"
+            )
+            path.write_bytes(payload)
+            info, _, _, _, models, _, _, _ = p.process_archive(
+                path, "2026-08", include_transfers=True
+            )
+            self.assertEqual(info["registros"], 1)
+            self.assertEqual(
+                models[("2026-08", "YAMAHA", "MT-07", "50", "U",
+                        "venta", "domicilio_vehiculo", "MU")],
+                1,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

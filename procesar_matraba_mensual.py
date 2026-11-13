@@ -11,6 +11,7 @@ from datetime import datetime
 from pathlib import Path
 
 from descargar_matraba_mensual import inspect_zip
+from descargar_transferencias_mensual import inspect_transfer_zip
 
 START = "2026-01"
 WIDTHS = [8,1,8,30,22,1,21,2,1,5,6,6,6,3,2,2,2,2,24,2,2,1,8,5,8,1,1,9,3,5,30,7,3,5,1,1,1,1,1,1,11,25,25,35,70,6,6,4,4,3,8,4,4,4,6,30,50,35,25,35,4,4,4,1,25,1,4,25,8]
@@ -128,13 +129,18 @@ def select_latest_transfer_archives(input_dir, inventory_path=None):
 
 def process_archive(path, period, include_transfers=False):
     payload = path.read_bytes()
-    txt, error, record_count = inspect_zip(payload)
+    if include_transfers:
+        txt, error, record_count = inspect_transfer_zip(payload)
+    else:
+        txt, error, record_count = inspect_zip(payload)
     if error:
         raise ValueError(f"{path.name}: {error}")
     lines = txt.replace(b"\r\n", b"\n").split(b"\n")
     if lines and lines[-1] == b"":
         lines.pop()
-    rows = [line.decode("cp1252") for line in lines[1:]]
+    has_header = len(lines[0]) == 79
+    data_lines = lines[1:] if (not include_transfers or has_header) else lines
+    rows = [line.decode("cp1252") for line in data_lines]
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
