@@ -179,7 +179,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202608_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-08")
+            _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-08", include_transfers=True)
             key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
                    "transferencia", "domicilio_vehiculo", "MU")
             self.assertEqual(models[key], 1)
