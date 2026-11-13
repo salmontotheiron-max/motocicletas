@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan como venta las ubicaciones físicas con una fuente primaria del distribuidor oficial o del propio operador que publica oferta Beta y dirección identificable. Servicio se atribuye únicamente cuando la fuente identifica servicio Beta explícitamente; los servicios generales del operador no se extrapolan automáticamente a la marca. Los agregadores sin confirmación primaria se mantienen como candidatos y no se suman.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Una fuente primaria del distribuidor oficial o del propio operador publica oferta Beta y una dirección física identificable.",
+    "manufacturer_or_distributor_confirmed": "El fabricante o distribuidor oficial identifica expresamente al establecimiento como concesionario Beta.",
+    "self_declared_official": "El operador se autodenomina concesionario oficial Beta; no equivale a confirmación individual independiente del distribuidor.",
+    "secondary_candidate": "Un agregador atribuye Beta a un establecimiento, pero no existe confirmación primaria actual suficiente; no se cuenta."
+  },
+  "outlet_count": 6,
+  "counts": {
+    "by_province": {
+      "Barcelona": 2,
+      "Málaga": 2,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 0
+    },
+    "sales": 6,
+    "service_locations": 1,
+    "same_site_sales_and_service": 1,
+    "service_only_locations": 0,
+    "manufacturer_or_distributor_confirmed": 1,
+    "operator_self_declared_official_sales": 4,
+    "secondary_only_candidates": 1
+  },
+  "official_source": {
+    "urls": [
+      "https://www.betamotor.com/en/dealers/",
+      "https://www.betatrueba.com/distribuidores/"
+    ],
+    "status": "locator_present_dynamic_content",
+    "notes": "Betamotor dispone de localizador oficial y Beta Trueba, distribuidor exclusivo para España y Andorra, publica su propio localizador. Ambos muestran controles dinámicos sin fichas individualizadas de España en la captura textual. No se clasifica ningún punto como listado por el localizador. Beta Trueba identifica individualmente a JRB Off Road Center como concesionario oficial en su noticia de febrero de 2025."
+  },
+  "distribution": {
+    "distributor": "Beta Trueba S.L.",
+    "territory": "España y Andorra",
+    "evidence_url": "https://www.betatrueba.com/beta-trueba-racing-team/",
+    "notes": "Beta Trueba se define expresamente como distribuidor en exclusiva para España y Andorra de las motocicletas Betamotor. La sede corporativa se encuentra en Polígono Industrial Can Comelles, C/ Enclusa 59-63, 08292 Esparreguera (Barcelona). Se registra como sede de distribución, no como punto de venta minorista adicional."
+  },
+  "outlets": [
+    {
+      "outlet_id": "beta-motosjab-mataro",
+      "brand": "Beta",
+      "trading_name": "Motos Jab",
+      "operator": "Motos Jab S.L.",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Carrer Foneria, 13, 08304 Mataró, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosjab.com/p/motos/",
+      "supporting_urls": [
+        "https://www.motosjab.com/p/contactar/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web corporativa incluye Beta entre las marcas de las que el establecimiento es concesionario. No se atribuye taller Beta específico."
+    },
+    {
+      "outlet_id": "beta-jrb-cabrera",
+      "brand": "Beta",
+      "trading_name": "JRB Off Road Center",
+      "operator": "JRB Off Road Center",
+      "province": "Barcelona",
+      "municipality": "Cabrera de Mar",
+      "public_address": "Camí les Corts, 28, 08349 Cabrera de Mar, Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://www.betatrueba.com/2025/02/18/beta-trueba-presenta-su-equipo-2025-en-la-bassella-race/",
+      "supporting_urls": [
+        "https://jrboffroad.com/"
+      ],
+      "evidence_type": "distributor_official_statement",
+      "verification_status": "manufacturer_or_distributor_confirmed",
+      "official_authorization_status": "distributor_confirmed",
+      "notes": "Beta Trueba lo identifica expresamente como concesionario oficial Beta Trueba en Cabrera de Mar. La web corporativa publica dirección y actividad de servicio off-road; se atribuye venta de Beta por la condición de concesionario oficial. El servicio de marca no queda detallado en una página específica."
+    },
+    {
+      "outlet_id": "beta-azoffroad-malaga",
+      "brand": "Beta",
+      "trading_name": "AZ Offroad",
+      "operator": "AZ Offroad",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Carretera Carril de Guetara, 24, 29004 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://az-offroad.com/",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web corporativa se autodenomina concesionario oficial Beta Motor en Málaga y ofrece gama de enduro, trial y motocross. No se atribuye taller Beta sin declaración específica."
+    },
+    {
+      "outlet_id": "beta-goracing-malaga",
+      "brand": "Beta",
+      "trading_name": "Go Racing Motos",
+      "operator": "Go Racing S.L.U.",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 254, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://goracingmotos.com/tienda-motos/",
+      "supporting_urls": [
+        "https://goracingmotos.com/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web corporativa se declara concesionario oficial Beta y confirma sede. Dispone de servicio técnico y recambios, pero no se atribuye servicio específico Beta en esta auditoría."
+    },
+    {
+      "outlet_id": "beta-motodest-barbate",
+      "brand": "Beta",
+      "trading_name": "Motodest",
+      "operator": "Motodest",
+      "province": "Cádiz",
+      "municipality": "Barbate",
+      "public_address": "Avenida de la Mar, 114, 11160 Barbate, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motodest.es/concesionario-oficial-beta/",
+      "supporting_urls": [
+        "https://motodest.es/"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página corporativa específica de la gama Beta y asesoramiento, con dirección y contacto del operador. No se atribuye taller Beta."
+    },
+    {
+      "outlet_id": "beta-sahara-alicante",
+      "brand": "Beta",
+      "trading_name": "Sáhara Motor",
+      "operator": "Sáhara Motor",
+      "province": "Alicante",
+      "municipality": "San Vicente del Raspeig",
+      "public_address": "Calle Torno, 23, 03690 San Vicente del Raspeig, Alicante, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://saharamotor.com/beta/",
+      "supporting_urls": [
+        "https://saharamotor.com/contacto/",
+        "https://endurorecambios.com/contactenos"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Página específica con gama Beta, compra mediante Enduro Recambios y declaración de servicio oficial, preparación y recambio original. La dirección se confirma en contacto."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "beta-corbalan-cehegin",
+      "province": "Murcia",
+      "trading_name": "Corbalán Racing",
+      "public_address": "Calle Cuesta del Olivar, 60, 30430 Cehegín, Murcia, España",
+      "source_url": "https://concesionariosdemotos.com/tienda-corbalan-racing",
+      "reason": "El agregador lo identifica como concesionario oficial Beta Trueba y publica venta, taller y recambios. No se pudo verificar el dominio propio por bloqueo 403 ni localizar una fuente primaria actual de Beta; no se contabiliza."
+    },
+    {
+      "candidate_id": "beta-andres-zambrana-malaga",
+      "province": "Málaga",
+      "trading_name": "Andrés Zambrana Offroad",
+      "public_address": "Carretera Carril de Guetara, 24, 29006 Málaga, España",
+      "source_url": "https://concesionariosdemotos.com/beta-trueba",
+      "reason": "El agregador lo incluye como punto Beta Trueba, pero la dirección coincide con AZ Offroad y no se ha podido establecer si es la misma entidad, una denominación comercial alternativa o un punto separado. No se duplica ni se cuenta."
+    }
+  ],
+  "limitations": [
+    "Se documentan seis ubicaciones de venta: Barcelona 2, Málaga 2, Cádiz 1 y Alicante 1. En Murcia no se confirma un punto de venta con fuente primaria actual; Corbalán Racing queda como candidato secundario.",
+    "El localizador de Betamotor y el de Beta Trueba son dinámicos y no exponen fichas individualizadas en la captura textual consultada. No se atribuye manufacturer_listed a ninguna dirección.",
+    "Beta Trueba identifica expresamente a JRB Off Road Center como concesionario oficial Beta Trueba en una noticia de 2025; el resto de los operadores se clasifican según sus declaraciones corporativas y oferta publicada.",
+    "Solo Sáhara Motor declara explícitamente servicio oficial Beta en su página específica; otros operadores pueden ofrecer taller general, pero no se infiere que estén autorizados para servicio Beta.",
+    "La sede de Beta Trueba en Esparreguera se registra como sede del distribuidor nacional, no como punto de venta minorista adicional.",
+    "El recuento es inventario mínimo documental, no censo exhaustivo, ni evidencia de stock, ventas efectivas, matriculaciones o cuota."
+  ],
+  "methodology": [
+    "Se ha identificado a Beta Trueba como distribuidor exclusivo de Betamotor para España y Andorra mediante su propia declaración corporativa.",
+    "Se han contrastado páginas corporativas de operadores que publican oferta Beta, además de la noticia del distribuidor que identifica a JRB Off Road Center como concesionario oficial.",
+    "Los candidatos respaldados únicamente por agregadores se conservan como pistas y no se contabilizan; se evita duplicar AZ Offroad y Andrés Zambrana Offroad mientras no se aclare su relación.",
+    "Fecha de corte documental: 13 de noviembre de 2026."
+  ]
+}
