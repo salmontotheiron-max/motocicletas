@@ -51,7 +51,7 @@ def months_to_check(inventory_path, today=None):
 
 
 def inspect_transfer_zip(payload):
-    """Valida ZIP de transferencias: TXT de registros fijos de 714 bytes, sin cabecera."""
+    """Valida ZIP de transferencias: registros de 714 bytes, con o sin cabecera."""
     try:
         with zipfile.ZipFile(BytesIO(payload)) as archive:
             bad_member = archive.testzip()
@@ -74,18 +74,21 @@ def inspect_transfer_zip(payload):
     if not lines:
         return None, "txt_vacio", 0
 
-    invalid = sorted({len(line) for line in lines if len(line) != WIDTH})
+    records = lines[1:] if len(lines[0]) == 79 else lines
+    if not records:
+        return None, "txt_sin_registros", 0
+    invalid = sorted({len(line) for line in records if len(line) != WIDTH})
     if invalid:
-        return None, f"longitudes_registro_invalidas:{invalid[:10]}", len(lines)
+        return None, f"longitudes_registro_invalidas:{invalid[:10]}", len(records)
 
-    for number, record in enumerate(lines, 1):
+    for number, record in enumerate(records, 1):
         try:
             raw_date = record[706:714].decode("ascii").strip()
             datetime.strptime(raw_date, "%d%m%Y")
         except (UnicodeDecodeError, ValueError):
-            return None, f"fec_proceso_invalida_registro:{number}", len(lines)
+            return None, f"fec_proceso_invalida_registro:{number}", len(records)
 
-    return data, None, len(lines)
+    return data, None, len(records)
 
 
 def download_month(month, output_dir, opener=urlopen, retries=2, pause=1):
