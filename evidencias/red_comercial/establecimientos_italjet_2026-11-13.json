@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se priorizan las fichas individuales del localizador oficial Italjet y se complementan con páginas corporativas y ofertas de operadores. Se distinguen los puntos listados individualmente por el fabricante de las autodeclaraciones de concesionarios y de los anuncios de vendedor. Venta y servicio se registran por separado. No se infiere ausencia de red a partir del localizador dinámico sin resultados.",
+  "verification_status_policy": {
+    "manufacturer_listed": "El establecimiento tiene ficha individual publicada en el dominio oficial de Italjet.",
+    "operator_self_declared_official": "El operador declara ser concesionario/distribuidor oficial Italjet; no equivale a autorización verificada independientemente.",
+    "seller_declared_offer": "El vendedor publica oferta actual de producto Italjet y se identifica como concesionario oficial; la autorización no se considera verificada por el fabricante.",
+    "operator_declared_service": "El operador declara explícitamente servicio oficial Italjet en esa ubicación."
+  },
+  "outlet_count": 6,
+  "counts": {
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 2,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "sales": 6,
+    "service_locations": 1,
+    "same_site_sales_and_service": 0,
+    "service_only_locations": 1,
+    "sales_only_locations": 6,
+    "manufacturer_individually_listed": 2,
+    "operator_self_declared_official_sales": 3,
+    "accepted_commercial_presence_sales": 6,
+    "secondary_only_candidates": 0
+  },
+  "manufacturer": {
+    "brand_owner": "Italjet S.r.l. (Italia)",
+    "spanish_group_contact": "Una ficha empresarial secundaria identifica ITALJET ESPAÑA SA en Badalona y describe un objeto de importación y comercialización de productos Italjet. No se ha localizado confirmación corporativa primaria de que mantenga actualmente un mandato contractual de importador/distribuidor.",
+    "spanish_contact_address": "Calle Manuel Moreno Mauricio 17N, 08917 Badalona (Barcelona), según ficha empresarial secundaria; no se atribuye como sede operativa actual sin verificación primaria.",
+    "evidence_urls": [
+      "https://italjet.com/es/pages/contact",
+      "https://cincodias.elpais.com/directorio-empresas/empresa/1853990/italjet-espana"
+    ],
+    "notes": "Italjet publica contacto corporativo en Italia. La existencia de una ficha secundaria de ITALJET ESPAÑA SA no permite afirmar por sí sola que la sociedad siga siendo importador contractual vigente."
+  },
+  "official_source": {
+    "urls": [
+      "https://italjet.com/es/pages/italjet-dealer-finder",
+      "https://italjet.com/es/a/store-locator/italjet-barcelona-323.html",
+      "https://italjet.com/es/a/store-locator/moto1000-254.html"
+    ],
+    "status": "locator_present_no_entries_yet",
+    "notes": "La vista textual indexada del localizador general muestra cero resultados, pero el propio dominio oficial mantiene fichas individuales para ITALJET BARCELONA y MOTO1000. La página explica que los distribuidores deben ser confirmados por el distribuidor oficial regional antes de activar una ficha. Se conservan las dos fichas individuales como manufacturer_listed y no se extrapola el listado a toda España."
+  },
+  "outlets": [
+    {
+      "outlet_id": "italjet-barcelona",
+      "brand": "Italjet",
+      "trading_name": "ITALJET BARCELONA",
+      "operator": null,
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Mallorca, 497, 08013 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://italjet.com/es/a/store-locator/italjet-barcelona-323.html",
+      "supporting_urls": [
+        "https://italjet.com/es/pages/italjet-dealer-finder",
+        "https://concesionariosdemotos.com/italjet"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual oficial de Italjet. El agregador secundario identifica otros operadores en Barcelona con direcciones distintas; no se fusionan por proximidad ni se atribuye operador societario a esta ficha."
+    },
+    {
+      "outlet_id": "italjet-moto1000-malaga",
+      "brand": "Italjet",
+      "trading_name": "MOTO1000",
+      "operator": "Moto 1000 Trukati S.L.",
+      "province": "Málaga",
+      "municipality": "Churriana (Málaga)",
+      "public_address": "Carretera de Coín 32, Nave 3, 29140 Churriana, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://italjet.com/es/a/store-locator/moto1000-254.html",
+      "supporting_urls": [
+        "https://www.moto1000.es/?page_id=50",
+        "https://cincodias.elpais.com/directorio-empresas/empresa/5030168/moto-1000-trukati"
+      ],
+      "evidence_type": "manufacturer_directory_listing",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual oficial Italjet con teléfono y correo del operador. La página corporativa de Moto1000 confirma dirección de Churriana. No se atribuye servicio Italjet específico a partir de su página, que describe Ducati Service."
+    },
+    {
+      "outlet_id": "italjet-indalmar-malaga",
+      "brand": "Italjet",
+      "trading_name": "Indalmar Motor Málaga — Ortega y Gasset",
+      "operator": "Indalmar Motor / Grupo Playcar",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 198, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.indalmarmotor.com/contacto",
+      "supporting_urls": [
+        "https://www.indalmarmotor.com/",
+        "https://concesionariosdemotos.com/italjet"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La web corporativa declara expresamente concesionario oficial Italjet en esta sede y publica contacto. Se cuenta como oferta comercial declarada, sin confirmación independiente del fabricante."
+    },
+    {
+      "outlet_id": "italjet-mercabox-cadiz",
+      "brand": "Italjet",
+      "trading_name": "Mercabox",
+      "operator": "Mercabox",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle de Bonanza 1, 11408 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://mercabox.com/italjet/",
+      "supporting_urls": [
+        "https://mercabox.com/",
+        "https://concesionariosdemotos.com/tienda-mercabox-jerez-de-la-frontera"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "Página de gama Italjet del operador, con dirección de Jerez y oferta de producto. El operador se presenta como concesionario oficial en su web. La página describe taller especializado general, pero no se computa servicio Italjet específico."
+    },
+    {
+      "outlet_id": "italjet-motos-medina-alicante",
+      "brand": "Italjet",
+      "trading_name": "Motos Medina / Ducatalia",
+      "operator": "Motos Medina",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Dénia 13, 03002 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motosmedina.com/es",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/tienda-ducatalia"
+      ],
+      "evidence_type": "operator_company_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La web del operador incluye Italjet entre las marcas para las que se declara concesionario oficial y publica dirección, contacto y horario. El agregador denomina al establecimiento Ducatalia en la misma dirección; se conserva una sola ubicación y no se duplican los nombres comerciales."
+    },
+    {
+      "outlet_id": "italjet-steelcenter-murcia",
+      "brand": "Italjet",
+      "trading_name": "Steel Center",
+      "operator": "Steelcenter Motorbike S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida del Progreso 232, 30012 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motos.coches.net/ocasion/italjet/dragster-700/-2026-en-murcia-10216134.htm",
+      "supporting_urls": [
+        "https://steelcenter.es/",
+        "https://zontesmurcia.com/contacto"
+      ],
+      "evidence_type": "seller_listing",
+      "verification_status": "seller_declared_offer",
+      "official_authorization_status": "self_declared_only",
+      "notes": "Anuncio de vendedor de una Italjet Dragster 700 nueva con entrega inmediata y declaración expresa de concesionario oficial. La dirección y entidad del operador se contrastan con su web corporativa y aviso legal; no hay ficha individual de Steel Center localizada en el directorio oficial Italjet."
+    },
+    {
+      "outlet_id": "italjet-indalmar-service-malaga",
+      "brand": "Italjet",
+      "trading_name": "Indalmar Motor — Taller Málaga",
+      "operator": "Indalmar Motor / Grupo Playcar",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 192, Málaga, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://www.indalmarmotor.com/contacto",
+      "supporting_urls": [],
+      "evidence_type": "operator_company_page",
+      "verification_status": "operator_declared_service",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La web corporativa identifica esta dirección como taller y declara expresamente Servicio Oficial Italjet. Se registra como ubicación de servicio separada del punto de venta en el número 198."
+    }
+  ],
+  "limitations": [
+    "El localizador oficial general muestra cero resultados en la vista textual indexada; dos fichas individuales oficiales sí son accesibles. La cobertura del localizador no se considera exhaustiva.",
+    "Cuatro de los seis puntos de venta se apoyan en declaraciones de operadores o en una oferta de vendedor; no se certifica autorización independiente para esos puntos.",
+    "El recuento se limita a cinco provincias prioritarias y no constituye un censo nacional.",
+    "No se duplica Motos Medina/Ducatalia en Alicante porque las fuentes sitúan ambos nombres en Avenida de Dénia 13.",
+    "No se incorpora como punto adicional la nueva sede de Mercabox en Cádiz capital: la web la anuncia, pero la evidencia consultada no individualiza oferta Italjet en esa sede.",
+    "El listado secundario menciona candidatos adicionales en Barcelona, Málaga y otras provincias; se excluyen del recuento cuando la identidad, dirección o actividad de venta actual no queda suficientemente corroborada.",
+    "No se infiere ausencia de actividad en ninguna provincia por falta de ficha o resultado."
+  ]
+}
