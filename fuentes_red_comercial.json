@@ -156,13 +156,16 @@
       "brand_id": "brand-bsa",
       "canonical_name": "BSA",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-bsa-official-dealers",
+        "source-bsa-classic-legends",
+        "source-bsa-desmotron-distributor"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual en España acreditada por el sitio oficial BSA, su localizador de puntos de venta y la distribución oficial en España atribuida a Desmotrón (Grupo Onex) por prensa sectorial de julio de 2026. La auditoría de las cinco provincias prioritarias documenta tres ubicaciones de venta con evidencia primaria del operador: Barcelona (1) y Cádiz (2). No se confirman ventas actuales en Málaga, Alicante ni Murcia; los puntos que aparecen solo en agregadores se mantienen como candidatos. El localizador oficial es dinámico y no expone fichas individualizadas en la captura consultada. Se identifica además BSA Valencia como concesionario y servicio oficial autodeclarado fuera de las provincias objetivo. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas; la oficialidad individual de los puntos no se presume salvo autodeclaración del operador."
     },
     {
       "brand_id": "brand-cfmoto",
@@ -2819,6 +2822,251 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "El agregador atribuye Brixton a Motos Darío, C/ Bulgaria Nave 1, 7, Cádiz. La web propia confirma actividad de venta multimarca, pero no publica Brixton en la oferta consultada; no se contabiliza."
+    },
+    {
+      "source_id": "source-bsa-official-dealers",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-bsa",
+      "publisher": "BSA Motorcycles",
+      "source_type": "official_directory",
+      "url": "https://bsacompany.es/concesionarios/",
+      "title": "BSA Motorcycles España — localizador oficial de puntos de venta",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_network"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "El sitio oficial español dispone de localizador de puntos de venta con búsqueda por ubicación y radio. La extracción textual consultada solo muestra los controles y no devuelve fichas individualizadas; no se clasifica ningún establecimiento como manufacturer_listed."
+    },
+    {
+      "source_id": "source-bsa-classic-legends",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-bsa",
+      "publisher": "BSA Company Ltd / Classic Legends",
+      "source_type": "official_statement",
+      "url": "https://www.bsacompany.co.uk/privacy-policy/",
+      "title": "BSA Company — identificación corporativa y matriz Classic Legends",
+      "reliability_class": "primary_official",
+      "scope": "Fabricante internacional",
+      "directory_scope": [
+        "manufacturer",
+        "corporate_ownership"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La política corporativa de BSA Company Ltd identifica a Classic Legends Private Limited como matriz y responsable de datos; Classic Legends forma parte del Grupo Mahindra. No identifica por sí misma al importador español."
+    },
+    {
+      "source_id": "source-bsa-desmotron-distributor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motofichas",
+      "source_type": "press",
+      "url": "https://www.motofichas.com/noticias/7689-bsa-consolida-su-nueva-etapa-en-espana-apoyada-en-su-historia-y-en-una-gama-renovada",
+      "title": "BSA consolida su nueva etapa en España — Desmotrón como distribuidor oficial",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "distribution",
+        "importer",
+        "brand_activity"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Artículo sectorial fechado 13-07-2026 identifica expresamente a Desmotrón como distribuidor oficial de BSA en España. Una publicación portuguesa de junio de 2026 atribuye la distribución ibérica a Grupo Onex y señala a Desmotron Portugal como representante en Portugal. No se afirma exclusividad ni se asigna la distribución a una filial concreta sin evidencia societaria adicional."
+    },
+    {
+      "source_id": "source-bsa-maquina-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Màquina Motors S.A.U.",
+      "source_type": "company_page",
+      "url": "https://maquinamotors.com/blog/bsa-llega-a-maquina-motors-la-leyenda-britanica-vuelve/",
+      "title": "Maquina Motors — concesionario oficial BSA en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "official_dealer_self_claim"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Artículo corporativo de marzo de 2026 se autodenomina concesionario oficial BSA y presenta tres modelos. Identifica la sede de Consell de Cent 130-136, Barcelona. El directorio general actual de tiendas no desglosa BSA en la lista de marcas de esa sede; se conserva como autodeclaración comercial del operador, no como ficha individual confirmada por fabricante."
+    },
+    {
+      "source_id": "source-bsa-cool-catalog",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "COOLmotorcycles",
+      "source_type": "company_page",
+      "url": "https://www.coolmotorcycles.es/bsa/",
+      "title": "COOLmotorcycles — catálogo corporativo BSA",
+      "reliability_class": "primary_business",
+      "scope": "Jerez de la Frontera y Chiclana, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa específica de BSA que presenta Bantam 350, Scrambler 650 y Gold Star y muestra los contactos de sus dos sedes, Jerez y Chiclana. Se contabilizan ambas ubicaciones como oferta comercial publicada por el propio operador; no se afirma autorización oficial del fabricante."
+    },
+    {
+      "source_id": "source-bsa-cool-addresses",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "COOLmotorcycles",
+      "source_type": "company_page",
+      "url": "https://www.coolmotorcycles.es/contacto/",
+      "title": "COOLmotorcycles — direcciones de Jerez y Chiclana",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "location",
+        "sales"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página corporativa identifica Jerez en C/ Platino 21, 11405 Jerez de la Frontera, y Chiclana en C/ Juan Sebastián Elcano 10, Centro Comercial Higinio, 11130 Chiclana de la Frontera. Se usa junto con la página específica BSA para asociar la oferta a ambas sedes."
+    },
+    {
+      "source_id": "source-bsa-indalmar-viator",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Indalmar Motor / Automóviles Playcar",
+      "source_type": "company_page",
+      "url": "https://www.indalmarmotor.com/vehiculo/bsa-scrambler-650/93786",
+      "title": "Indalmar Motor — catálogo actual BSA y sede de Viator",
+      "reliability_class": "primary_business",
+      "scope": "Viator, Almería, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web publica una BSA Scrambler 650 nueva y otros modelos BSA en su catálogo. El pie de la ficha vincula la oferta a Indalmar Motor - Viator, cuyo sitio corporativo publica la dirección C/ Sierra de Cazorla 47, 04240 Viator y lista BSA entre sus marcas oficiales. Está fuera de las cinco provincias prioritarias; se registra como evidencia nacional, no se suma al recuento territorial."
+    },
+    {
+      "source_id": "source-bsa-valencia-outside-scope",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "BSA Motorcycles Valencia / Motocorse S.L.",
+      "source_type": "company_page",
+      "url": "https://bsavalencia.es/",
+      "title": "BSA Valencia — concesionario y servicio oficial autodeclarado",
+      "reliability_class": "primary_business",
+      "scope": "Valencia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer",
+        "official_dealer_self_claim"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El operador se presenta como concesionario y servicio oficial BSA, publica Bantam 350, Gold Star 650 y Scrambler 650, y facilita dirección en C/ Arquitecte Alfaro 56, Valencia. Se registra como evidencia de actividad nacional fuera de las cinco provincias prioritarias; no se cuenta en el inventario territorial."
+    },
+    {
+      "source_id": "source-bsa-ducatalia-alicante-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/bsa",
+      "title": "Ducatalia — candidato agregado BSA en Alicante",
+      "reliability_class": "secondary_reputable",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye BSA a Ducatalia en Avenida de Dénia 13, Alicante. No se localizó una página corporativa primaria actual de Ducatalia que publique oferta BSA; no se contabiliza."
+    },
+    {
+      "source_id": "source-bsa-zontesmurcia-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/bsa",
+      "title": "Zontes Murcia — candidato agregado BSA en Murcia",
+      "reliability_class": "secondary_reputable",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye BSA a Zontes Murcia, Av. del Progreso 232 B. La página corporativa actual de Zontes Murcia confirma la sede, pero no publica BSA entre las marcas ofrecidas; no se contabiliza."
+    },
+    {
+      "source_id": "source-bsa-motoscarbo-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/bsa",
+      "title": "Motos Carbó — candidato agregado BSA en Castelldefels",
+      "reliability_class": "secondary_reputable",
+      "scope": "Castelldefels, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye BSA a Motos Carbó en C/ Pau Casals 4, Castelldefels. La página corporativa consultada confirma dirección y actividad, pero no publica oferta BSA; no se contabiliza."
+    },
+    {
+      "source_id": "source-bsa-motomercado-malaga-secondary",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/bsa",
+      "title": "Motomercado — candidatos agregados BSA en Málaga",
+      "reliability_class": "secondary_reputable",
+      "scope": "Fuengirola y Marbella, Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador atribuye BSA a Motomercado en Fuengirola y Marbella. No se localizó una página corporativa primaria actual del operador que publique la marca; no se contabilizan."
     }
   ]
 }
