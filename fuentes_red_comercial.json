@@ -483,13 +483,23 @@
       "brand_id": "brand-morbidelli",
       "canonical_name": "Morbidelli",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-morbidelli-official-store-locator",
+        "source-keeway-group-spain-distribution",
+        "source-morbidelli-motissimo-barcelona",
+        "source-morbidelli-motissimo-vilanova",
+        "source-morbidelli-castro-cadiz-network",
+        "source-morbidelli-motoland-alicante",
+        "source-morbidelli-motosiles-malaga",
+        "source-morbidelli-recambioslopez-mijas",
+        "source-morbidelli-jademotor-cartagena",
+        "source-morbidelli-dealer-aggregator"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial actual de Morbidelli en España acreditada por Keeway Group España como distribuidor del grupo desde 2024, el localizador oficial y operadores que publican oferta actual de modelos. En las cinco provincias prioritarias se corroboran diez ubicaciones de venta: Barcelona (2), Málaga (2), Cádiz (3), Alicante (2) y Murcia (1, Cartagena). El localizador oficial es dinámico y no se recuperaron sus fichas individualizadas; la clasificación se apoya en webs corporativas de operadores. No se equiparan todas las entradas de agregadores a concesionarios confirmados ni se presume autorización contractual individual sin confirmación del fabricante."
     },
     {
       "brand_id": "brand-moto-guzzi",
@@ -5284,6 +5294,207 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "El agregador lista 80 entradas nacionales y candidatos en las cinco provincias prioritarias. Se usa para descubrir y contrastar operadores; no sustituye fuentes corporativas ni acredita por sí solo actividad actual o autorización contractual."
+    },
+    {
+      "source_id": "source-morbidelli-official-store-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-morbidelli",
+      "publisher": "Morbidelli",
+      "source_type": "official_directory",
+      "url": "https://www.morbidelli.com/es-es/stores",
+      "title": "Morbidelli — localizador oficial de tiendas y centros de servicio",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "browser_required",
+      "discovery_status": "locator_present_dynamic_content",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Localizador oficial con filtros por distancia y categorías Tienda/Servicio. La página está renderizada dinámicamente y la extracción textual consultada no expone fichas de establecimientos; se contrasta con páginas corporativas de operadores."
+    },
+    {
+      "source_id": "source-keeway-group-spain-distribution",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-morbidelli",
+      "publisher": "Keeway Group España",
+      "source_type": "official_statement",
+      "url": "https://www.keeway.group/sobre-nosotros/",
+      "title": "Keeway Group España — estructura de distribución y marcas representadas",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "import_distribution",
+        "after_sales",
+        "brand_portfolio"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Keeway Group España se identifica como filial directa del grupo, declara recepción, almacenamiento y distribución de producto, e indica la incorporación de Morbidelli y Benda a su cartera en 2024. Publica instalaciones en Polinyà (Barcelona)."
+    },
+    {
+      "source_id": "source-morbidelli-motissimo-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motissimo",
+      "source_type": "company_page",
+      "url": "https://motissimo.es/mbp-morbidelli/",
+      "title": "Motissimo — catálogo Morbidelli y concesionario oficial en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página dedicada MBP Morbidelli, publica catálogo de modelos y se declara concesionario oficial; identifica dirección en Carrer del Comandant Benítez 23, Barcelona. La página de tienda actual mantiene MBP Morbidelli en marcas oficiales."
+    },
+    {
+      "source_id": "source-morbidelli-motissimo-vilanova",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motissimo Vilanova",
+      "source_type": "company_page",
+      "url": "https://motissimovilanova.es/morbidelli/",
+      "title": "Motissimo Vilanova — catálogo actual de motos Morbidelli",
+      "reliability_class": "primary_business",
+      "scope": "Vilanova i la Geltrú, Barcelona, España",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página del operador publica catálogo Morbidelli con modelos T1002V, SC300, SC125LX, SC125, M502N y C1002V y facilita dirección en Rambla de l'Exposició 49, Vilanova i la Geltrú."
+    },
+    {
+      "source_id": "source-morbidelli-castro-cadiz-network",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/morbidelli/",
+      "title": "Castro La Motocicleta — concesionario Morbidelli en Cádiz, Jerez y Campo de Gibraltar",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica Morbidelli: se autodeclara concesionario oficial y publica venta y posventa. Detalla sedes con venta en Cádiz, Jerez de la Frontera y Palmones (Los Barrios), y dirección separada de taller en Cádiz."
+    },
+    {
+      "source_id": "source-morbidelli-motoland-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motoland",
+      "source_type": "company_page",
+      "url": "https://motoland.es/Morbidelli/",
+      "title": "Motoland — gama Morbidelli y dos tiendas en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web del operador presenta catálogo Morbidelli con modelos T1002VX, T502X, T352X, T125X, C1002V, C652V, F352, M502N y scooters, y publica dos tiendas: Carrer de Sant Ramon 99, El Campello y Calle Víctor de la Serna 2, Alicante."
+    },
+    {
+      "source_id": "source-morbidelli-motosiles-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Moto Siles",
+      "source_type": "company_page",
+      "url": "https://motosiles.es/tienda/",
+      "title": "Moto Siles — catálogo Morbidelli en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La tienda online del operador muestra Morbidelli entre las marcas con cinco referencias de catálogo; la web corporativa identifica la sede Málaga en C/ Emilio Thuillier 70. Se computa esa sede; no se duplica la ubicación de Alhaurín sin evidencia específica de oferta en dicha sucursal."
+    },
+    {
+      "source_id": "source-morbidelli-recambioslopez-mijas",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Recambios López",
+      "source_type": "company_page",
+      "url": "https://recambioslopez.org/catalogo/",
+      "title": "Recambios López — catálogo de motocicletas Morbidelli en Mijas",
+      "reliability_class": "primary_business",
+      "scope": "Las Lagunas de Mijas, Málaga, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El catálogo actual incluye motocicletas Morbidelli, entre ellas C1002V. La web corporativa identifica sede y contacto de ventas en C/ Poseidón 4, Las Lagunas de Mijas, además de taller de motos."
+    },
+    {
+      "source_id": "source-morbidelli-jademotor-cartagena",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Jade Motor / Fenix Moto Premium S.L.",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/motos-nuevas/morbidelli",
+      "title": "Jade Motor — concesionario oficial Morbidelli en Cartagena y Región de Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Cartagena, Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica de Morbidelli que se declara concesionario oficial en la Región de Murcia, ofrece motos nuevas y taller oficial/recambio. La página corporativa identifica la sede de Cartagena en Ctra. Nacional 301, km 431, 30319. No se computa la sede Murcia ciudad, que no aparece en la relación de marcas de esa tienda."
+    },
+    {
+      "source_id": "source-morbidelli-dealer-aggregator",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/morbidelli",
+      "title": "Directorio secundario de establecimientos Morbidelli en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Agregador que lista 78 concesionarios nacionales y candidatos por provincia. Se usa para descubrimiento y contraste, no como prueba suficiente de venta actual o autorización del fabricante."
     }
   ]
 }
