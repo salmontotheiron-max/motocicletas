@@ -633,13 +633,21 @@
       "brand_id": "brand-rieju",
       "canonical_name": "Rieju",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-rieju-official-dealer-locator",
+        "source-rieju-corporate-contact",
+        "source-rieju-company-history",
+        "source-rieju-prim-alicante",
+        "source-rieju-belmonte-murcia",
+        "source-rieju-el-motorista-malaga",
+        "source-rieju-vrmoto-barcelona",
+        "source-rieju-motosjab-barcelona"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Fabricante español RIEJU, S.A. (NIF A17001322), con fábrica en Figueres (Girona), almacén de recambios en Vilamalla y distribución directa en España. El localizador oficial lista 26 puntos en las cinco provincias prioritarias: Barcelona (21), Alicante (2), Cádiz (1), Málaga (1) y Murcia (1). En el localizador, 23 puntos aparecen con categoría «Motos» y tres solo con «Hard Off-Road»; se conservan separados para no confundir red de motocicletas general con puntos especializados off-road. Oferta comercial actual corroborada en cinco operadores; servicio Rieju específico publicado por tres. El listado es una captura documental del localizador y no prueba ventas efectivas ni constituye censo exhaustivo."
     },
     {
       "brand_id": "brand-royal-enfield",
@@ -6438,6 +6446,173 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "El agregador declara 57 establecimientos oficiales y muestra agrupación provincial y operadores. Se utiliza solo como contraste secundario; la base de la clasificación es el localizador oficial del fabricante."
+    },
+    {
+      "source_id": "source-rieju-official-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-rieju",
+      "publisher": "RIEJU, S.A.",
+      "source_type": "official_directory",
+      "url": "https://rieju.com/es/concesionarios/espana",
+      "title": "Rieju — localizador oficial de distribuidores en España",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "sales",
+        "dealer_network",
+        "electric",
+        "hard_off_road"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Localizador oficial con distribuidores agrupados por provincia y catálogo de producto por establecimiento. La captura permite identificar 26 entradas en las cinco provincias prioritarias; distingue «Motos», «Electric», «Ray 7.7» y «Hard Off-Road». La inclusión en el localizador acredita manufacturer_listed, no inventario ni transacciones."
+    },
+    {
+      "source_id": "source-rieju-corporate-contact",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-rieju",
+      "publisher": "RIEJU, S.A.",
+      "source_type": "company_page",
+      "url": "https://rieju.com/es/contacto/",
+      "title": "Rieju — contacto corporativo, fábrica y almacén",
+      "reliability_class": "primary_official",
+      "scope": "Figueres y Vilamalla, Girona, España",
+      "directory_scope": [
+        "manufacturer_identity",
+        "corporate_presence",
+        "factory",
+        "parts_distribution"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La página oficial identifica RIEJU, S.A., NIF A17001322, domicilio en C/ Borrassà 41, Figueres, teléfono y correo corporativo. Identifica la fábrica en Figueres y el almacén de recambios y expediciones en Vilamalla."
+    },
+    {
+      "source_id": "source-rieju-company-history",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-rieju",
+      "publisher": "RIEJU, S.A.",
+      "source_type": "company_page",
+      "url": "https://rieju.com/es/historia",
+      "title": "Rieju — historia corporativa y fabricación",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "manufacturer_history",
+        "industrial_activity"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "Historia corporativa oficial: Rieju nace en 1934 y documenta su actividad industrial y fabricación de vehículos en Figueres desde la década de 1940. Se usa como contexto histórico, no como prueba autónoma de ventas actuales."
+    },
+    {
+      "source_id": "source-rieju-prim-alicante",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Grupo Prim",
+      "source_type": "company_page",
+      "url": "https://www.grupoprim.com/concesionarios/motocycles.html",
+      "title": "Grupo Prim — concesionario Rieju en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El operador declara concesionario oficial Rieju en Alicante y publica departamento de ventas, taller y recambios. La sede coincide con el punto de venta de Ctra. de Ocaña 29, 03007 Alicante."
+    },
+    {
+      "source_id": "source-rieju-belmonte-murcia",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Francisco Belmonte, S.A.",
+      "source_type": "company_page",
+      "url": "https://franciscobelmonte.com/rieju-murcia/",
+      "title": "Francisco Belmonte — catálogo Rieju y servicio en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página específica con gama Rieju, compra y servicio técnico especializado. Identifica la tienda en C/ Isla Cristina 12, Murcia, dirección coincidente con el localizador oficial."
+    },
+    {
+      "source_id": "source-rieju-el-motorista-malaga",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "El Motorista",
+      "source_type": "company_page",
+      "url": "https://www.elmotorista.es/motos/concesionario-malaga/nueva",
+      "title": "El Motorista — catálogo nuevo Rieju en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Catálogo de motos nuevas de la sede de Málaga con múltiples modelos Rieju y precios publicados. El localizador oficial identifica El Motorista en Avenida de la Aurora 73, Málaga."
+    },
+    {
+      "source_id": "source-rieju-vrmoto-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "VR Moto",
+      "source_type": "company_page",
+      "url": "https://www.vrmoto.net/",
+      "title": "VR Moto — concesionario y taller Rieju en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El operador se declara concesionario oficial Rieju, publica catálogo de modelos y taller especializado en Calle Nàpols 333. Dirección y operador coinciden con la ficha del localizador oficial (Napols 333)."
+    },
+    {
+      "source_id": "source-rieju-motosjab-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Jab",
+      "source_type": "company_page",
+      "url": "https://www.motosjab.com/p/rieju/",
+      "title": "Motos Jab — oferta Rieju en Mataró",
+      "reliability_class": "primary_business",
+      "scope": "Mataró, Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "brand_offer"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Página propia dedicada a Rieju y catálogo de marcas del operador. El localizador oficial publica Carrer Foneria 9, mientras la página de contacto del operador publica Carrer Foneria 13; discrepancia de numeración pendiente de aclaración."
     }
   ]
 }
