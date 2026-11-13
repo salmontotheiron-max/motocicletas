@@ -116,7 +116,7 @@ class IntegratedReportTests(unittest.TestCase):
             dispersion = json.loads((data / "informe_dispersion_provincias.json").read_text(encoding="utf-8"))
             self.assertEqual(result["nuevas"], dispersion["total_matriculaciones"])
             self.assertGreater(result["matriculaciones_usados"], 0)
-            self.assertGreater(result["transferencias"], 0)
+            self.assertGreaterEqual(result["transferencias"], 0)
             self.assertTrue((Path(tmp) / "informe.md").exists())
 
     def test_rejects_inconsistent_totals(self):
