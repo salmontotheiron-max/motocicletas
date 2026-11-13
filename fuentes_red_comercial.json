@@ -221,9 +221,11 @@
         "source-fantic-dealer-demoto-malaga",
         "source-fantic-dealer-motodest-cadiz",
         "source-fantic-dealer-lozano-alicante",
-        "source-fantic-dealer-belmonte-murcia"
+        "source-fantic-dealer-belmonte-murcia",
+        "source-fantic-dealer-zambrana-malaga",
+        "source-fantic-dealer-chiclana-cadiz"
       ],
-      "notes": "Fantic Motor S.p.A. (Italia) es la entidad fabricante identificada en la web corporativa. No se ha acreditado una sociedad importadora española separada; el fabricante mantiene un localizador oficial de concesionarios e importadores y opera una red de distribución autorizada. La ficha individual del fabricante permite documentar seis puntos de venta de motocicletas en las cinco provincias prioritarias: Barcelona (2), Málaga (1), Cádiz (1), Alicante (1) y Murcia (1). No se atribuye servicio técnico a los puntos salvo prueba específica. Hay discrepancia entre la dirección de Álvaro Lozano publicada en el localizador oficial y la dirección actual de su propia web; en Murcia el código postal del localizador parece truncado, mientras que la dirección del operador es completa. Clasificación established basada en seis fichas individuales del fabricante y catálogos actuales de los operadores; no equivale a censo nacional completo."
+      "notes": "Fantic Motor S.p.A. (Italia) es la entidad fabricante identificada en la web corporativa. No se ha acreditado una sociedad importadora española separada; el fabricante mantiene un localizador oficial de concesionarios e importadores. Ocho fichas individuales del fabricante permiten documentar ocho puntos de venta de motocicletas en las cinco provincias prioritarias: Barcelona (2), Málaga (2), Cádiz (2), Alicante (1) y Murcia (1). Motissimo Barcelona publica además servicio/taller Fantic explícito; no se atribuye servicio de marca a los demás puntos. Hay discrepancia entre la dirección de Álvaro Lozano publicada en el localizador oficial y la dirección actual de su propia web; en Murcia el código postal del localizador parece truncado. Clasificación established basada en ocho fichas individuales del fabricante y catálogos actuales de los operadores; no equivale a censo nacional completo."
     },
     {
       "brand_id": "brand-gasgas",
@@ -3550,6 +3552,46 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Agregador enumera 41 concesionarios Fantic en España y varios candidatos adicionales en provincias objetivo. Se utiliza para descubrir operadores, no para acreditar autorización ni sumar establecimientos no contrastados."
+    },
+    {
+      "source_id": "source-fantic-dealer-zambrana-malaga",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-fantic",
+      "publisher": "Fantic Motor S.p.A. — directorio oficial",
+      "source_type": "official_directory",
+      "url": "https://www.fantic.com/es-es/rivenditore/fantic-motor/zambrana-motos-slu_12170?country=211&lang=ES&sl=ES",
+      "title": "Zambrana Motos, S.L.U. — ficha oficial Fantic Mollina",
+      "reliability_class": "primary_official",
+      "scope": "Mollina, Málaga, España",
+      "directory_scope": [
+        "sales",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Ficha individual del dominio oficial Fantic identifica a Zambrana Motos S.L.U., dirección en Mollina y categoría Motos. Se añade como punto de venta listado por el fabricante; no se ha localizado página corporativa independiente actual que detalle catálogo Fantic."
+    },
+    {
+      "source_id": "source-fantic-dealer-chiclana-cadiz",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-fantic",
+      "publisher": "Fantic Motor S.p.A. — directorio oficial",
+      "source_type": "official_directory",
+      "url": "https://fantic.com/cl-es/rivenditore/fantic-motor/moto-chiclana-gp-mx-sl_12210?country=40&lang=ES&sl=CL",
+      "title": "Moto Chiclana GP MX, S.L. — ficha oficial Fantic Chiclana",
+      "reliability_class": "primary_official",
+      "scope": "Chiclana de la Frontera, Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "dealer_network"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "Ficha individual del dominio oficial Fantic identifica a Moto Chiclana GP MX S.L., dirección Travesía Alameda de Solano 26 y categoría Motos. La página del operador contiene una publicación antigua sobre su condición de concesionario Fantic; se toma la ficha vigente del fabricante como prueba principal."
     }
   ]
 }

@@ -15,23 +15,23 @@
     "accepted_commercial_presence": "Página corporativa actual del operador publica catálogo/oferta Fantic y permite asociarla a la sede.",
     "secondary_candidate": "Un agregador atribuye Fantic al operador, pero no se dispone de ficha oficial individual o evidencia primaria suficiente; no se cuenta."
   },
-  "outlet_count": 6,
+  "outlet_count": 8,
   "counts": {
     "by_province": {
       "Barcelona": 2,
-      "Málaga": 1,
-      "Cádiz": 1,
+      "Málaga": 2,
+      "Cádiz": 2,
       "Alicante": 1,
       "Murcia": 1
     },
-    "sales": 6,
-    "service_locations": 0,
-    "same_site_sales_and_service": 0,
+    "sales": 8,
+    "service_locations": 1,
+    "same_site_sales_and_service": 1,
     "service_only_locations": 0,
-    "manufacturer_individually_listed": 6,
+    "manufacturer_individually_listed": 8,
     "operator_self_declared_official_sales": 0,
     "accepted_commercial_presence_sales": 0,
-    "secondary_only_candidates": 3
+    "secondary_only_candidates": 1
   },
   "manufacturer": {
     "legal_name": "Fantic Motor S.p.A.",
@@ -58,7 +58,8 @@
       "municipality": "Barcelona",
       "public_address": "Carrer del Comandant Benítez, 23, 08028 Barcelona, España",
       "outlet_role": [
-        "sales"
+        "sales",
+        "service"
       ],
       "evidence_url": "https://www.fantic.com/DettaglioDealer.cshtml?country=55&id=11909&lang=ES",
       "supporting_urls": [
@@ -67,7 +68,7 @@
       "evidence_type": "manufacturer_individual_dealer_listing",
       "verification_status": "manufacturer_individually_listed",
       "official_authorization_status": "manufacturer_listed",
-      "notes": "Ficha individual Fantic Motor identifica al operador, dirección y categoría Motos. La web del operador publica catálogo actual con precios y se autodenomina concesionario oficial."
+      "notes": "Ficha individual Fantic Motor identifica al operador, dirección y categoría Motos. La web del operador publica catálogo actual con precios y se autodenomina concesionario oficial; además mantiene una sección explícita «Taller de motos Fantic en Barcelona» en la misma dirección, por lo que se contabiliza servicio de marca autodeclarado."
     },
     {
       "outlet_id": "fantic-motissimo-vilanova",
@@ -169,25 +170,47 @@
       "verification_status": "manufacturer_individually_listed",
       "official_authorization_status": "manufacturer_listed",
       "notes": "Ficha oficial Fantic con categoría Motos, Moto Offroad Racing y eMobility; catálogo corporativo actual publica numerosos modelos Fantic y dirección C/ Isla Cristina 12, 30007 Murcia. La ficha oficial muestra 3007, aparentemente con un cero omitido."
+    },
+    {
+      "outlet_id": "fantic-zambrana-mollina",
+      "brand": "Fantic",
+      "trading_name": "Zambrana Motos, S.L.U. (MX Zambrana)",
+      "operator": "Zambrana Motos, S.L.U.",
+      "province": "Málaga",
+      "municipality": "Mollina",
+      "public_address": "Polígono Industrial La Fuente, Calle Olivos 11, Polígono Industrial El Castaño, 29532 Mollina, Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.fantic.com/es-es/rivenditore/fantic-motor/zambrana-motos-slu_12170?country=211&lang=ES&sl=ES",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual oficial Fantic identifica a Zambrana Motos S.L.U., la dirección en Mollina y categoría Motos. La atribución secundaria previa queda sustituida por evidencia primaria del fabricante; no se atribuye servicio técnico ni se afirma catálogo actual independiente."
+    },
+    {
+      "outlet_id": "fantic-motochiclana-cadiz",
+      "brand": "Fantic",
+      "trading_name": "Moto Chiclana GP MX, S.L.",
+      "operator": "Moto Chiclana GP MX, S.L.",
+      "province": "Cádiz",
+      "municipality": "Chiclana de la Frontera",
+      "public_address": "Travesía Alameda de Solano, 26, 11130 Chiclana de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://fantic.com/cl-es/rivenditore/fantic-motor/moto-chiclana-gp-mx-sl_12210?country=40&lang=ES&sl=CL",
+      "supporting_urls": [
+        "https://www.motochiclanagp.com/"
+      ],
+      "evidence_type": "manufacturer_individual_dealer_listing",
+      "verification_status": "manufacturer_individually_listed",
+      "official_authorization_status": "manufacturer_listed",
+      "notes": "Ficha individual oficial Fantic identifica al operador, dirección en Chiclana y categoría Motos. La web propia contiene una publicación de 2022 que lo presenta como concesionario oficial Fantic; la ficha actual del fabricante es la evidencia principal. No se atribuye servicio técnico específico de marca."
     }
   ],
   "secondary_candidates": [
-    {
-      "candidate_id": "fantic-moto-chiclana-gp",
-      "province": "Cádiz",
-      "trading_name": "Moto Chiclana GP MX, S.L.",
-      "public_address": "Avenida de los Descubrimientos, 43, 11130 Chiclana de la Frontera, Cádiz, España",
-      "source_url": "https://concesionariosdemotos.com/fantic",
-      "reason": "Agregador lo identifica con Fantic, pero no se localizó ficha individual del fabricante ni página primaria actual del operador que confirme oferta Fantic."
-    },
-    {
-      "candidate_id": "fantic-mx-zambrana",
-      "province": "Málaga",
-      "trading_name": "MX Zambrana",
-      "public_address": "Polígono Industrial La Fuente, Calle Los Olivos, Nave 11, 29532 Mollina, Málaga, España",
-      "source_url": "https://concesionariosdemotos.com/fantic",
-      "reason": "Aparece en agregador con Fantic, pero no se localizó ficha individual oficial ni oferta primaria actual."
-    },
     {
       "candidate_id": "fantic-corbalan-racing",
       "province": "Murcia",
@@ -198,18 +221,18 @@
     }
   ],
   "limitations": [
-    "El recuento es de seis ubicaciones de venta con ficha individual en el directorio oficial Fantic, no un censo nacional exhaustivo.",
+    "El recuento es de ocho ubicaciones de venta con ficha individual en el directorio oficial Fantic, no un censo nacional exhaustivo.",
     "El localizador oficial distingue concesionarios e importadores, pero la captura disponible no permite identificar una sociedad importadora española separada. Fantic Motor S.p.A. figura como entidad corporativa fabricante con sede en Italia.",
-    "Las fichas individuales consultadas enumeran categorías de producto, no un servicio de taller por establecimiento; por eso no se contabilizan puntos de servicio.",
+    "Solo se contabiliza servicio de marca en Motissimo Barcelona, cuya web publica una sección específica de taller Fantic en la misma dirección. Las fichas del fabricante enumeran categorías de producto, no alcance de taller por sede.",
     "En Petrer, la ficha oficial Fantic indica C/ Mestre Albéniz 6 y la web actual del operador indica C/ Norte 15 Bajo Iz. Se cuenta un solo establecimiento y se registra la discrepancia.",
     "En Murcia, la ficha Fantic muestra el código postal 3007, mientras que la web del operador publica 30007; se conserva la dirección del operador corregida por contraste.",
     "Los candidatos de agregadores no se cuentan sin ficha oficial o evidencia primaria actual.",
     "La clasificación established acredita presencia comercial y distribución autorizada documentada, no cuota de mercado, matriculaciones ni stock efectivo."
   ],
   "methodology": [
-    "Consulta del localizador oficial Fantic y de las fichas individuales de seis establecimientos.",
-    "Contraste de la oferta vigente con catálogos y páginas corporativas de Motissimo, Demoto, Motodest, Lozano MX Center y Francisco Belmonte.",
-    "Separación de venta y posventa; no se infiere servicio técnico de la mera condición de concesionario.",
+    "Consulta del localizador oficial Fantic y de ocho fichas individuales de establecimientos; se conserva la ficha oficial como evidencia principal incluso cuando no se encontró un catálogo independiente actual del operador.",
+    "Contraste de la oferta vigente con catálogos y páginas corporativas de Motissimo, Demoto, Motodest, Lozano MX Center y Francisco Belmonte. Las fichas de Zambrana y Moto Chiclana GP se incluyen por su identificación individual en el directorio oficial.",
+    "Separación de venta y posventa; solo se contabiliza servicio Fantic en Motissimo Barcelona por su declaración explícita de taller Fantic en la misma dirección.",
     "Los agregadores se usan exclusivamente como fuentes de descubrimiento de candidatos.",
     "Fecha de corte documental: 13 de noviembre de 2026."
   ]
