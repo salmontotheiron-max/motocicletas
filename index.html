@@ -266,7 +266,7 @@ function renderModels(f){
   });
   const ranked=[...groups.values()].sort((a,b)=>Number(b.recuento)-Number(a.recuento));
   const total=ranked.reduce((sum,r)=>sum+Number(r.recuento),0);
-  el("modelScope").textContent=fmt(total)+" registros · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"";
+  el("modelScope").textContent=fmt(total)+" registros · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"mostrando todas");
   el("modelRanking").innerHTML=ranked.slice(0,100).map(r=>{
     const typeLabel={"50":"Moto 2 ruedas","51":"Moto con sidecar","90":"Ciclomotor 2 ruedas","91":"Ciclomotor 3 ruedas"}[r.COD_TIPO]||r.COD_TIPO;
     const operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","transferencia":"Transferencia"}[r.tipo_registro]||r.tipo_registro;
