@@ -1,0 +1,541 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Se usa el localizador oficial de Rieju como fuente primaria para incluir distribuidores y transcribir las categorías de producto que el propio fabricante muestra por punto. Se separa la categoría «Motos» de «Hard Off-Road» cuando esta última aparece sola, para no tratar automáticamente un punto especializado off-road como tienda de gama general. La inclusión en el localizador se clasifica manufacturer_listed y no prueba por sí sola inventario, transacciones ni servicio posventa. Se contrasta la oferta actual con webs de operadores cuando hay evidencia propia recuperable. El fabricante publica directamente la red española; no se presume una entidad importadora independiente.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "RIEJU, S.A.",
+    "tax_id": "A17001322",
+    "registered_contact_address": "C/ Borrassà, 41, 17600 Figueres (Girona), España",
+    "factory_address": "Borrassà 41-45, 17600 Figueres (Girona), España",
+    "parts_warehouse": "Avda. Empordà s/n, Polígono Industrial Pont del Príncep, 17469 Vilamalla (Girona), España",
+    "distribution_model": "El fabricante declara distribuir directamente sus motocicletas y ciclomotores en España; no se ha identificado importador español independiente."
+  },
+  "manufacturer_locator": {
+    "url": "https://rieju.com/es/concesionarios/espana",
+    "status": "directory_content_visible",
+    "classification": "Distribuidores agrupados por provincia; cada ficha expone categorías como Motos, Electric, Ray 7.7 y Hard Off-Road."
+  },
+  "counts": {
+    "manufacturer_listed_priority_province_outlets": 26,
+    "by_province": {
+      "Barcelona": 21,
+      "Alicante": 2,
+      "Cádiz": 1,
+      "Málaga": 1,
+      "Murcia": 1
+    },
+    "manufacturer_listed_with_motos_category": 23,
+    "hard_off_road_only": 3,
+    "operator_current_offer_corroborated": 5,
+    "manufacturer_listed_only": 21,
+    "brand_specific_service_corroborated": 3,
+    "contractual_authorization_independently_verified": 0
+  },
+  "outlets": [
+    {
+      "outlet_id": "rieju-01",
+      "trading_name": "NonStop Bikes",
+      "province": "Barcelona",
+      "municipality": "Tona",
+      "public_address": "Taradell, 68, 08551 Tona, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "El localizador oficial la lista como distribuidor con categorías Motos y Hard Off-Road. El operador mantiene tienda y taller off-road; no se recuperó oferta Rieju en su web propia."
+    },
+    {
+      "outlet_id": "rieju-02",
+      "trading_name": "SANTAMOTO",
+      "province": "Barcelona",
+      "municipality": "L'Hospitalet de Llobregat",
+      "public_address": "Av. Pau Casals, 132, 08907 L'Hospitalet de Llobregat, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado por Rieju con categorías Motos y Hard Off-Road; sin corroboración independiente de catálogo Rieju actual."
+    },
+    {
+      "outlet_id": "rieju-03",
+      "trading_name": "VR MOTO RIEJU BCN",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Nàpols, 333, 08025 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://www.vrmoto.net/",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Electric",
+        "Hard Off-Road"
+      ],
+      "notes": "El operador se declara concesionario oficial Rieju, publica catálogo actual y taller especialista. El localizador confirma la misma dirección como Napols 333."
+    },
+    {
+      "outlet_id": "rieju-04",
+      "trading_name": "Motos Isart",
+      "province": "Barcelona",
+      "municipality": "Piera",
+      "public_address": "Avinguda de la Carretera d'Igualada, 83, 08784 Piera, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; no se recuperó oferta Rieju propia actual."
+    },
+    {
+      "outlet_id": "rieju-05",
+      "trading_name": "Motissimo Vilanova",
+      "province": "Barcelona",
+      "municipality": "Vilanova i la Geltrú",
+      "public_address": "Rambla de l'Exposició, 49, 08800 Vilanova i la Geltrú, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Hard Off-Road"
+      ],
+      "notes": "El localizador muestra solo Hard Off-Road, sin categoría Motos; se mantiene separado de los puntos de venta de gama general."
+    },
+    {
+      "outlet_id": "rieju-06",
+      "trading_name": "MOTOBAIX",
+      "province": "Barcelona",
+      "municipality": "Sant Boi de Llobregat",
+      "public_address": "Ronda de Sant Ramon, 183, 08830 Sant Boi de Llobregat, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-07",
+      "trading_name": "ANOIA MOTOS",
+      "province": "Barcelona",
+      "municipality": "Igualada",
+      "public_address": "Avinguda de Caresmar, 54, 08700 Igualada, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos"
+      ],
+      "notes": "Listado oficial en categoría Motos; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-08",
+      "trading_name": "MOTO CISCAR",
+      "province": "Barcelona",
+      "municipality": "Rubí",
+      "public_address": "Carretera de Terrassa, 45, 08191 Rubí, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos"
+      ],
+      "notes": "Listado oficial en categoría Motos; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-09",
+      "trading_name": "L'H Motos",
+      "province": "Barcelona",
+      "municipality": "L'Hospitalet de Llobregat",
+      "public_address": "Carrer de Barcelona, 47, 08901 L'Hospitalet de Llobregat, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-10",
+      "trading_name": "XMOTORS RIEJU VALLES STORE",
+      "province": "Barcelona",
+      "municipality": "La Garriga",
+      "public_address": "Carrer de Vulcà, 21, 08530 La Garriga, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Electric",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos, Electric y Hard Off-Road; oferta propia actual no corroborada en la captura."
+    },
+    {
+      "outlet_id": "rieju-11",
+      "trading_name": "MOTOS JAB",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Carrer Foneria, 9, 08304 Mataró, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://www.motosjab.com/p/rieju/",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Página propia dedicada a Rieju y catálogo de marcas confirma oferta. Discrepancia: el localizador oficial publica número 9 y la página de contacto del operador número 13; no se resuelve por inferencia."
+    },
+    {
+      "outlet_id": "rieju-12",
+      "trading_name": "Moto Stock",
+      "province": "Barcelona",
+      "municipality": "Sant Celoni",
+      "public_address": "Carretera Comarcal, 7, 08470 Sant Celoni, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-13",
+      "trading_name": "MOTOS BARO",
+      "province": "Barcelona",
+      "municipality": "Terrassa",
+      "public_address": "Carrer de Mañé i Flaquer, 20, 08222 Terrassa, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-14",
+      "trading_name": "Motos Orpí",
+      "province": "Barcelona",
+      "municipality": "Igualada",
+      "public_address": "Carrer de Sant Antoni Maria Claret, 11, 08700 Igualada, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Hard Off-Road"
+      ],
+      "notes": "El localizador muestra solo Hard Off-Road, sin categoría Motos; no se cuenta como punto de gama general."
+    },
+    {
+      "outlet_id": "rieju-15",
+      "trading_name": "BRUC MOTOR'S",
+      "province": "Barcelona",
+      "municipality": "Manresa",
+      "public_address": "Carrer del Bruc, 54, 08241 Manresa, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Electric",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos, Electric y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-16",
+      "trading_name": "PELNA MOTO",
+      "province": "Barcelona",
+      "municipality": "Martorell",
+      "public_address": "Carrer de Pere Puig, 109, 08760 Martorell, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-17",
+      "trading_name": "CICLOS ORTEGA",
+      "province": "Barcelona",
+      "municipality": "Pineda de Mar",
+      "public_address": "Carrer d'Anselm Clavé, 2, 08397 Pineda de Mar, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-18",
+      "trading_name": "MAD GAS",
+      "province": "Barcelona",
+      "municipality": "Vilanova i la Geltrú",
+      "public_address": "Rambla del Castell, 75, 08800 Vilanova i la Geltrú, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos"
+      ],
+      "notes": "Listado oficial en categoría Motos; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-19",
+      "trading_name": "Jed Motor",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Petrarca, 55, 08031 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-20",
+      "trading_name": "MOTISSIMO",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer del Comandant Benítez, 23, 08028 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Electric",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos, Electric y Hard Off-Road; oferta propia actual no corroborada en esta sede concreta."
+    },
+    {
+      "outlet_id": "rieju-21",
+      "trading_name": "Motos Rubio",
+      "province": "Barcelona",
+      "municipality": "Premià de Mar",
+      "public_address": "Carrer de Jaume Balmes, 54, 08330 Premià de Mar, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial con categorías Motos y Hard Off-Road; oferta propia actual no corroborada."
+    },
+    {
+      "outlet_id": "rieju-22",
+      "trading_name": "MOTOLAND ALICANTE",
+      "province": "Alicante",
+      "municipality": "El Campello",
+      "public_address": "Carrer de Sant Ramon, 99, 03560 El Campello, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Hard Off-Road"
+      ],
+      "notes": "El localizador muestra solo Hard Off-Road, sin categoría Motos; se mantiene como punto off-road y no como distribuidor de gama general."
+    },
+    {
+      "outlet_id": "rieju-23",
+      "trading_name": "Grupo PRIM",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carretera de Ocaña, 29, 03007 Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://www.grupoprim.com/concesionarios/motocycles.html",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Electric",
+        "Ray 7.7",
+        "Hard Off-Road"
+      ],
+      "notes": "El operador declara concesionario oficial Rieju, publica gama y departamentos de venta, taller y recambios."
+    },
+    {
+      "outlet_id": "rieju-24",
+      "trading_name": "EL MOTORISTA (Cádiz)",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Avenida de Europa, 60, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "manufacturer_listed_only",
+      "evidence_url": "https://rieju.com/es/concesionarios/espana",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "Listado oficial en categorías Motos y Hard Off-Road. No se recuperó catálogo propio inequívoco de Rieju asociado específicamente a esta sede."
+    },
+    {
+      "outlet_id": "rieju-25",
+      "trading_name": "EL MOTORISTA",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de la Aurora, 73, 29006 Málaga, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://www.elmotorista.es/motos/concesionario-malaga/nueva",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "El catálogo de motos nuevas de la sede de Málaga publica varios modelos Rieju con precio."
+    },
+    {
+      "outlet_id": "rieju-26",
+      "trading_name": "MOTOS BELMONTE",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina, 12, 30007 Murcia, España",
+      "outlet_role": [
+        "manufacturer_listed_point_of_sale"
+      ],
+      "verification_status": "current_brand_offer_corroborated",
+      "evidence_url": "https://franciscobelmonte.com/rieju-murcia/",
+      "official_authorization_status": "manufacturer_listed",
+      "product_categories": [
+        "Motos",
+        "Hard Off-Road"
+      ],
+      "notes": "El operador publica página específica Rieju, gama actual y servicio técnico especializado en la dirección del localizador."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Distribuidores Rieju de otras provincias",
+      "reason": "Fuera del ámbito territorial de esta primera auditoría; no implica ausencia de red."
+    },
+    {
+      "candidate": "Puntos secundarios no incluidos en el localizador oficial",
+      "reason": "No se incorporan sin evidencia primaria suficiente de relación comercial actual."
+    }
+  ],
+  "limitations": [
+    "Los 26 puntos son los que aparecen en la captura del localizador oficial para las cinco provincias prioritarias; no constituyen censo exhaustivo nacional ni evidencia de ventas efectivas.",
+    "Tres entradas muestran solo la categoría Hard Off-Road (Motissimo Vilanova, Motos Orpí y Motoland Alicante); se separan de los 23 puntos que muestran la categoría Motos.",
+    "La oferta actual propia se ha corroborado en cinco operadores; los demás puntos permanecen como manufacturer_listed_only, sin inferir cierre ni falta de actividad.",
+    "La dirección de MOTOS JAB difiere entre fuentes: el localizador oficial muestra Carrer Foneria 9 y el operador publica Carrer Foneria 13. Se conserva el dato del fabricante y se documenta la discrepancia.",
+    "No se han inspeccionado contratos individuales de distribución; manufacturer_listed no equivale a verificación contractual independiente.",
+    "El servicio Rieju se cuenta solo cuando el operador publica explícitamente servicio técnico, taller o recambios vinculados a la marca."
+  ],
+  "sources": [
+    "https://rieju.com/es/concesionarios/espana",
+    "https://rieju.com/es/contacto/",
+    "https://rieju.com/es/historia",
+    "https://www.grupoprim.com/concesionarios/motocycles.html",
+    "https://franciscobelmonte.com/rieju-murcia/",
+    "https://www.elmotorista.es/motos/concesionario-malaga/nueva",
+    "https://www.vrmoto.net/",
+    "https://www.motosjab.com/p/rieju/"
+  ]
+}
