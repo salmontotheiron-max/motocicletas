@@ -252,5 +252,45 @@ class MonthlyProcessorTests(unittest.TestCase):
             )
 
 
+    def test_audits_semantic_field_values_from_original_transfer_txt(self):
+        rows = [
+            make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
+                COD_POSESION="V", COD_PROVINCIA_VEH="MU",
+                COD_PROVINCIA_MAT="A", FEC_PROCESO="31082026",
+            ),
+            make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="N",
+                COD_POSESION="S", COD_PROVINCIA_VEH="SG",
+                COD_PROVINCIA_MAT="A", FEC_PROCESO="31082026",
+            ),
+            make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                COD_TIPO="50", CLAVE_TRAMITE="1", NUEVO_USADO="N",
+                COD_POSESION="", COD_PROVINCIA_VEH="MU",
+                COD_PROVINCIA_MAT="A", FEC_PROCESO="31082026",
+            ),
+        ]
+        data = BytesIO()
+        with zipfile.ZipFile(data, "w", zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr("transferencias.txt", b"\\n".join(rows))
+        payload = data.getvalue()
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / (
+                "export_mensual_trf_202608_" + hashlib.sha256(payload).hexdigest() + ".zip"
+            )
+            path.write_bytes(payload)
+            audit = p.summarize_transfer_fields(path, "2026-08")
+
+        counts = {(field, scope, value): count for _, _, field, scope, value, count in audit}
+        self.assertEqual(counts[("COD_POSESION", "solo_CLAVE_TRAMITE_2", "V")], 1)
+        self.assertEqual(counts[("COD_POSESION", "solo_CLAVE_TRAMITE_2", "S")], 1)
+        self.assertEqual(counts[("COD_POSESION", "todos_los_registros", "(vacío)")], 1)
+        self.assertEqual(counts[("IND_NUEVO_USADO", "solo_CLAVE_TRAMITE_2", "N")], 1)
+        self.assertEqual(counts[("IND_NUEVO_USADO", "solo_CLAVE_TRAMITE_2", "U")], 1)
+
+
 if __name__ == "__main__":
     unittest.main()
