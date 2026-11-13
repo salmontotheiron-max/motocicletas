@@ -197,7 +197,7 @@ function render(){
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);renderModels(f);
+  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
