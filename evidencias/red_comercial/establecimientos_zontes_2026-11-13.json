@@ -292,16 +292,6 @@
         "https://www.motoscarbo.com/contact/",
         "https://concesionariosdemotos.com/tienda-motos-carbo-castelldefels"
       ]
-    },
-    {
-      "candidate_name": "VO Motos",
-      "province": "Barcelona",
-      "municipality": "Barcelona",
-      "public_address": "Avenida de Madrid, 20-22, 08028 Barcelona, España",
-      "reason": "Los resultados secundarios atribuyen oferta de Zontes al operador, pero no se ha corroborado en esta revisión una página propia actual con modelos/oferta y vínculo inequívoco a la sede física. No se incorpora.",
-      "evidence_urls": [
-        "https://vopmotos.com/"
-      ]
     }
   ]
 }
