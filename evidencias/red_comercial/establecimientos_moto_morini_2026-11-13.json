@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se computan ubicaciones con catálogo, página de marca o anuncio comercial actual atribuible al operador y dirección física identificable. Las páginas corporativas y los anuncios profesionales publicados por los propios operadores se distinguen de directorios secundarios. Se evita duplicar sucursales sin evidencia específica de oferta en esa sede. Las autodeclaraciones de oficialidad no equivalen a autorización contractual independiente.",
+  "verification_status_policy": {
+    "operator_current_brand_offer": "El operador publica modelos, catálogo o unidades actuales de Moto Morini y puede identificarse una sede física.",
+    "operator_self_declared_official": "El operador se autodenomina concesionario o distribuidor oficial; no equivale a verificación contractual independiente.",
+    "secondary_candidate": "Referencia secundaria sin corroboración primaria actual; no se computa como establecimiento confirmado."
+  },
+  "outlet_count": 8,
+  "counts": {
+    "sales_corroborated": 8,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 2,
+      "Murcia": 1
+    },
+    "service_locations_explicitly_published": 3,
+    "operator_self_declared_official_sales": 8,
+    "manufacturer_individual_directory_entries_recovered": 0,
+    "contractual_authorization_independently_verified": 0
+  },
+  "distribution": {
+    "group": "Grupo Multimoto / Multimoto Motor España, S.L.",
+    "status": "Grupo Multimoto anunció el 9 de enero de 2026 que asumía la distribución oficial de Moto Morini en España. El sitio corporativo identifica a Multimoto Motor España, S.L. y publica su sede en Alcorcón.",
+    "address": "Calle Loeches 49, 28925 Alcorcón, Madrid, España",
+    "evidence_url": "https://multimotoespana.es/vehiculos/2026/01/09/grupo-multimoto-asume-la-distribucion-oficial-de-moto-morini-en-espana/",
+    "notes": "La distribución nacional está acreditada por declaración oficial del distribuidor. No se ha recuperado una ficha contractual o documento societario de mandato separado."
+  },
+  "official_locator": {
+    "url": "https://motomorini.eu/es/concesionarios/",
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial es visible, pero la extracción textual consultada no individualiza fichas. No se interpreta como ausencia de red."
+  },
+  "outlets": [
+    {
+      "outlet_id": "motomorini-oriol-barcelona",
+      "brand": "Moto Morini",
+      "trading_name": "Oriol Motos",
+      "operator": "Oriol Motos",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer de Rocafort 89, 08015 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://oriolmotos.com/moto-morini/",
+      "supporting_urls": [
+        "https://oriolmotos.com/contacto/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página específica con modelos actuales X-CAPE 700, X-CAPE 1200, Alltrhike 450 y Calibro; el operador se declara concesionario oficial Moto Morini. No se atribuye taller específico de marca."
+    },
+    {
+      "outlet_id": "motomorini-siebla-malaga",
+      "brand": "Moto Morini",
+      "trading_name": "Motos Siebla Málaga",
+      "operator": "Grupo Siebla",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Calle Martínez de la Rosa 109, 29010 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motos.coches.net/nuevas/moto_morini/x__cape/2026-en-malaga-10035976.htm",
+      "supporting_urls": [
+        "https://old.siebla.com/"
+      ],
+      "evidence_type": "operator_current_offer_professional_listing",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Anuncio profesional actual de X-CAPE 700 nueva 2026 atribuido a Motos Siebla y con dirección individualizada; la web corporativa de Grupo Siebla se declara concesionario oficial Moto Morini. No se duplica Marbella: no se recuperó oferta específica de esa sucursal."
+    },
+    {
+      "outlet_id": "motomorini-castro-cadiz",
+      "brand": "Moto Morini",
+      "trading_name": "Castro La Motocicleta — Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/motomorini/",
+      "supporting_urls": [
+        "https://castrolamotocicleta.com/historia/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Página específica de marca con modelos y venta; dirección de taller/posventa publicada por separado en Calle García Quijano 2, Cádiz."
+    },
+    {
+      "outlet_id": "motomorini-castro-jerez",
+      "brand": "Moto Morini",
+      "trading_name": "Castro La Motocicleta — Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/motomorini/",
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página específica de Moto Morini identifica esta sede como ventas y taller."
+    },
+    {
+      "outlet_id": "motomorini-castro-palmones",
+      "brand": "Moto Morini",
+      "trading_name": "Castro La Motocicleta — Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/motomorini/",
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página específica de Moto Morini identifica esta sede como ventas y taller."
+    },
+    {
+      "outlet_id": "motomorini-fatherson-elche",
+      "brand": "Moto Morini",
+      "trading_name": "Fatherson Motorcycles — Moto Morini Elche",
+      "operator": "Fatherson Motorcycles",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Carrer Sabadell 6, 03203 Elche, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motomorinielche.es/",
+      "supporting_urls": [
+        "https://fathersonmotorcycles.com/contacto/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Web específica de Moto Morini declara concesionario oficial para Elche y la provincia de Alicante, y publica gama actual. La web de Fatherson confirma la misma sede y teléfono."
+    },
+    {
+      "outlet_id": "motomorini-ciaomoto-alicante",
+      "brand": "Moto Morini",
+      "trading_name": "Ciao Moto Alicante",
+      "operator": "Ciao Moto S.L.",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Orihuela 99, 03007 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.milanuncios.com/tiendas-profesionales/ciao-moto-alicante-550693",
+      "evidence_type": "operator_professional_marketplace_offer",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Perfil profesional del operador publica Moto Morini Alltrhike 450 nueva 2026 y se autodeclara distribuidor oficial en Alicante y Murcia. Evidencia directa atribuida al anunciante, aunque alojada en marketplace; no es ficha del localizador fabricante."
+    },
+    {
+      "outlet_id": "motomorini-steelcenter-murcia",
+      "brand": "Moto Morini",
+      "trading_name": "Steel Center Motorbike S.L.",
+      "operator": "Steelcenter Motorbike S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida del Progreso 232, 30012 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motos.coches.net/ocasion/moto-morini/x-cape-1200/version-2025-2026-en-murcia-10175207.htm",
+      "supporting_urls": [
+        "https://motos.coches.net/ocasion/moto-morini/calibro-bagger/version-2024-2026-en-murcia-10139542.htm"
+      ],
+      "evidence_type": "operator_professional_marketplace_offer",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Varios anuncios profesionales recientes de X-CAPE 1200, Calibro Bagger y otros modelos, atribuidos a Steelcenter Motorbike S.L. en esta dirección; el anunciante se autodeclara concesionario oficial provincial."
+    }
+  ],
+  "service_only_locations": [
+    {
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Calle García Quijano 2, 11012 Cádiz, España",
+      "outlet_role": [
+        "service"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/motomorini/",
+      "notes": "Taller/posventa separado de la dirección de ventas de Cádiz; no se cuenta como punto adicional de venta."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "trading_name": "Moto Stock 2009",
+      "province": "Barcelona",
+      "municipality": "Sant Celoni",
+      "public_address": "Carrer Sant Isidre s/n, 08470 Sant Celoni, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-morini",
+      "status": "secondary_candidate",
+      "notes": "El agregador lo lista como Moto Morini, pero la página corporativa de Moto Stock no incluye actualmente la marca entre sus marcas oficiales."
+    },
+    {
+      "trading_name": "Moto 4 Hermanos Gode",
+      "province": "Barcelona",
+      "municipality": "Cornellà de Llobregat",
+      "public_address": "Carrer de Granada 1, 08940 Cornellà de Llobregat, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-morini",
+      "status": "secondary_candidate",
+      "notes": "Referencia de agregador; sin página corporativa actual de oferta Moto Morini recuperada."
+    },
+    {
+      "trading_name": "Renania Trust",
+      "province": "Barcelona",
+      "municipality": "Valldoreix",
+      "public_address": "Carrer del Segre 2, 08174 Valldoreix, Barcelona, España",
+      "evidence_url": "https://concesionariosdemotos.com/moto-morini",
+      "status": "secondary_candidate",
+      "notes": "Referencia de agregador; sin corroboración corporativa primaria actual."
+    },
+    {
+      "trading_name": "Siebla Marbella",
+      "province": "Málaga",
+      "municipality": "Marbella",
+      "public_address": "Calle Carbón 38, 29603 Marbella, Málaga, España",
+      "evidence_url": "https://old.siebla.com/",
+      "status": "secondary_candidate",
+      "notes": "Grupo Siebla declara concesionario oficial Moto Morini en instalaciones de Málaga y Marbella, pero no se recuperó oferta Moto Morini individualizada para esta sede; no se duplica."
+    },
+    {
+      "trading_name": "Ciao Moto Murcia",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Av. del Rocío 8, 30007 Murcia, España",
+      "evidence_url": "https://www.milanuncios.com/tiendas-profesionales/ciao-moto-alicante-550693",
+      "status": "secondary_candidate",
+      "notes": "El operador se autodeclara distribuidor oficial en Murcia, pero el anuncio de oferta localizado está asociado a Ciao Moto Alicante; no se incorpora una segunda sede sin oferta/dirección específica corroborada."
+    },
+    {
+      "trading_name": "Alcomoción Elche",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": null,
+      "evidence_url": "https://concesionariosdemotos.com/moto-morini",
+      "status": "secondary_candidate",
+      "notes": "Referencia de agregador sin corroboración primaria actual."
+    }
+  ]
+}
