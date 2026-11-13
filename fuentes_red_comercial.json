@@ -7979,7 +7979,7 @@
     {
       "source_id": "source-zero-spain-company-record",
       "source_role": "market_discovery",
-      "brand_id": "brand-zero",
+      "brand_id": null,
       "publisher": "Iberinform / Registro Mercantil (ficha empresarial)",
       "source_type": "public_record",
       "url": "https://www.iberinform.es/empresa/9376131/zero-motorcycles-spain",
@@ -8153,7 +8153,7 @@
     {
       "source_id": "source-zero-elmotorista-network-history",
       "source_role": "market_discovery",
-      "brand_id": "brand-zero",
+      "brand_id": null,
       "publisher": "Motorbike Magazine / Zero Motorcycles",
       "source_type": "press",
       "url": "https://www.motorbikemag.es/zero-motorcycles-concesionarios-espana-julio-2023/",
