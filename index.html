@@ -49,6 +49,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="cards" aria-label="Indicadores principales">
     <article class="card"><div class="label">Matriculaciones nuevas</div><div class="value" id="newTotal">—</div><div class="sub" id="newScope">Provincia de matriculación</div></article>
     <article class="card"><div class="label">Matriculaciones de usados</div><div class="value" id="usedTotal">—</div><div class="sub" id="usedScope">Provincia del domicilio registral</div></article>
+    <article class="card"><div class="label">Transferencias de titularidad</div><div class="value" id="transferTotal">—</div><div class="sub" id="transferScope">Pendiente de captura específica DGT</div></article>
     <article class="card"><div class="label">Peso de la provincia</div><div class="value" id="provinceShare">—</div><div class="sub">Sobre las matriculaciones nuevas nacionales</div></article>
     <article class="card"><div class="label">Periodos con datos</div><div class="value" id="periodCount">—</div><div class="sub" id="cutoff">Según inventario publicado</div></article>
   </section>
@@ -189,9 +190,16 @@ function nationalNew(period,kind){
 function render(){
   const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
   const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
+  const transferRows=state.models.filter(r=>r.tipo_registro==="transferencia"&&
+    (f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
+    (f.province==="all"||r.provincia===f.province));
+  const transferAvailable=(state.manifest.archivos||[]).some(item=>item.tipo_fuente==="transferencias");
+  const transferValue=transferRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
   const national=nationalNew(f.period,f.kind);
   const share=f.province==="all"?100:(national?newValue/national*100:0);
   el("newTotal").textContent=fmt(newValue);el("usedTotal").textContent=fmt(usedValue);
+  el("transferTotal").textContent=transferAvailable?fmt(transferValue):"—";
+  el("transferScope").textContent=transferAvailable?"Domicilio registral · no identifica provincia de venta":"Pendiente de primera captura de microdatos de transferencias";
   el("provinceShare").textContent=dec(share,2)+"%";
   el("periodCount").textContent=f.period==="all"?String(state.periods.length):"1";
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
