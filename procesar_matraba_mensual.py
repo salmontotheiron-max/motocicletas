@@ -128,13 +128,20 @@ def select_latest_transfer_archives(input_dir, inventory_path=None):
 
 def process_archive(path, period, include_transfers=False):
     payload = path.read_bytes()
-    txt, error, record_count = inspect_zip(payload)
+    if include_transfers:
+        txt, error, record_count = inspect_transfer_zip(payload)
+    else:
+        txt, error, record_count = inspect_zip(payload)
     if error:
         raise ValueError(f"{path.name}: {error}")
     lines = txt.replace(b"\r\n", b"\n").split(b"\n")
     if lines and lines[-1] == b"":
         lines.pop()
-    rows = [line.decode("cp1252") for line in lines[1:]]
+    # Los TXT de matriculaciones llevan cabecera de 79 bytes. Los de
+    # transferencias publicados por DGT comienzan directamente con datos.
+    has_header = len(lines[0]) == 79
+    data_lines = lines[1:] if (not include_transfers or has_header) else lines
+    rows = [line.decode("cp1252") for line in data_lines]
     counts = Counter()
     provincial_counts = Counter()
     provincial_cross_counts = Counter()
