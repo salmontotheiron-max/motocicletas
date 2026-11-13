@@ -275,7 +275,7 @@ class MonthlyProcessorTests(unittest.TestCase):
         ]
         data = BytesIO()
         with zipfile.ZipFile(data, "w", zipfile.ZIP_DEFLATED) as archive:
-            archive.writestr("transferencias.txt", b"\\n".join(rows))
+            archive.writestr("transferencias.txt", b"\n".join(rows))
         payload = data.getvalue()
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / (
