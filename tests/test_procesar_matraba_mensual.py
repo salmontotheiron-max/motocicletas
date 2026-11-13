@@ -12,7 +12,7 @@ import descargar_matraba_mensual as d
 
 def make_record(**fields):
     values = [""] * 69
-    indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 22, "COD_TIPO": 7,
+    indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 22, "MARCA_ITV": 3, "MODELO_ITV": 4, "COD_TIPO": 7,
                "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "COD_PROVINCIA_VEH": 19, "COD_PROVINCIA_MAT": 20, "FEC_PROCESO": 68}
     for name, value in fields.items():
         values[indexes[name]] = value
@@ -52,7 +52,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            info, counts, provincial, cross, ops, excluded, audit = p.process_archive(archive, "2026-07")
+            info, counts, provincial, cross, models, ops, excluded, audit = p.process_archive(archive, "2026-07")
             self.assertEqual(info["registros"], 1)
             self.assertEqual(sum(counts.values()), 1)
             self.assertEqual(sum(ops.values()), 1)
@@ -67,7 +67,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _, _, _, audit = p.process_archive(archive, "2026-09")
+            _, counts, _, _, _, _, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(counts[("2026-08", "50", "U", False)], 1)
 
     def test_future_matriculation_date_uses_process_month_and_is_flagged(self):
@@ -92,7 +92,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(row)
             archive = Path(tmp) / ("export_mensual_mat_202609_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, counts, _, _, ops, _, audit = p.process_archive(archive, "2026-09")
+            _, counts, _, _, _, ops, _, audit = p.process_archive(archive, "2026-09")
             self.assertEqual(sum(counts.values()), 0)
             self.assertEqual(sum(ops.values()), 0)
             self.assertEqual(audit[0][2], "FEC_TRAMITE_POSTERIOR_A_FEC_PROCESO")
@@ -144,11 +144,28 @@ class MonthlyProcessorTests(unittest.TestCase):
             payload = make_zip(new_row + b"\n" + used_row)
             archive = Path(tmp) / ("export_mensual_mat_202608_" + hashlib.sha256(payload).hexdigest() + ".zip")
             archive.write_bytes(payload)
-            _, _, provincial, cross, _, _, _ = p.process_archive(archive, "2026-08")
+            _, _, provincial, cross, _, _, _, _ = p.process_archive(archive, "2026-08")
             self.assertEqual(provincial[("2026-07", "matriculacion", "A", "50", "N")], 1)
             self.assertEqual(provincial[("2026-08", "domicilio_vehiculo", "MU", "50", "U")], 1)
             self.assertEqual(cross[("2026-07", "A", "MU", "50")], 1)
             self.assertEqual(sum(cross.values()), 1)
+
+    def test_extracts_brand_model_segment_and_province_without_vehicle_identifiers(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(
+                FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
+                MARCA_ITV="HONDA", MODELO_ITV="CB 500 X",
+                COD_TIPO="50", CLAVE_TRAMITE="1", NUEVO_USADO="N",
+                COD_PROVINCIA_VEH="MU", COD_PROVINCIA_MAT="A",
+                FEC_PROCESO="31072026",
+            )
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
+            key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
+                   "matriculacion_nueva", "matriculacion", "A")
+            self.assertEqual(models[key], 1)
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
