@@ -289,6 +289,49 @@ def process_archive(path, period, include_transfers=False):
     }, counts, provincial_counts, provincial_cross_counts, model_counts, opcounts, excluded, audit_rows
 
 
+TRANSFER_AUDIT_FIELDS = {
+    "COD_TIPO": 7,
+    "COD_PROVINCIA_VEH": 19,
+    "COD_PROVINCIA_MAT": 20,
+    "CLAVE_TRAMITE": 21,
+    "IND_NUEVO_USADO": 25,
+    "COD_POSESION": 36,
+}
+
+
+def summarize_transfer_fields(path, period):
+    """Cuenta valores de campos semánticos directamente en el TXT de transferencias."""
+    payload = Path(path).read_bytes()
+    txt, error, _ = inspect_transfer_zip(payload)
+    if error:
+        raise ValueError(f"{Path(path).name}: {error}")
+    lines = txt.replace(b"\\r\\n", b"\\n").split(b"\\n")
+    if lines and lines[-1] == b"":
+        lines.pop()
+    if lines and len(lines[0]) == 79:
+        lines = lines[1:]
+
+    counts = Counter()
+    for number, raw in enumerate(lines, 1):
+        row = raw.decode("cp1252")
+        values = []
+        offset = 0
+        for width in WIDTHS:
+            values.append(row[offset:offset + width].strip())
+            offset += width
+        operation = values[TRANSFER_AUDIT_FIELDS["CLAVE_TRAMITE"]]
+        for field, index in TRANSFER_AUDIT_FIELDS.items():
+            value = values[index] or "(vacío)"
+            counts[(field, "todos_los_registros", value)] += 1
+            if operation == "2":
+                counts[(field, "solo_CLAVE_TRAMITE_2", value)] += 1
+
+    return [
+        (period, Path(path).name, field, scope, value, count)
+        for (field, scope, value), count in sorted(counts.items())
+    ]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", required=True)
@@ -311,6 +354,7 @@ def main():
     excluded = Counter()
     manifest = []
     audit_rows = []
+    transfer_field_audit = []
     for period, archive in selected.items():
         info, month_counts, month_provincial, month_cross, month_models, month_ops, month_excluded, month_audit = process_archive(archive, period)
         info["tipo_fuente"] = "matriculaciones"
@@ -324,6 +368,7 @@ def main():
         audit_rows.extend(month_audit)
 
     for period, archive in selected_transfers.items():
+        transfer_field_audit.extend(summarize_transfer_fields(archive, period))
         info, _, _, _, month_models, month_ops, month_excluded, month_audit = process_archive(
             archive, period, include_transfers=True
         )
@@ -388,6 +433,11 @@ def main():
         writer.writerow(["periodo", "CLAVE_TRAMITE", "descripcion_operacion", "recuento", "fecha_sustitutiva_con_asterisco"])
         for key, value in sorted(opcounts.items()):
             writer.writerow([key[0], key[1], OPS[key[1]], value, "*" if key[2] else ""])
+
+    with (output / "auditoria_campos_transferencias.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["periodo", "archivo", "campo", "ambito", "valor", "recuento"])
+        writer.writerows(transfer_field_audit)
 
     with (output / "auditoria_registros.csv").open("w", newline="", encoding="utf-8-sig") as handle:
         writer = csv.writer(handle)
