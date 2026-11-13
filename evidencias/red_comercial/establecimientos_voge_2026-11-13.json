@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Auditoría documental de VOGE basada en páginas del importador/fabricante y páginas primarias de operadores. Se computan ubicaciones físicas con oferta Voge explícita y dirección pública dentro de las cinco provincias prioritarias. Venta y servicio se registran por separado; no se atribuye servicio de marca por la mera existencia de un taller multimarca. La autodeclaración del operador o un nombramiento publicado por el propio operador no se presenta como verificación contractual independiente del fabricante. Inventario mínimo documental, no censo exhaustivo ni evidencia de ventas efectivas.",
+  "brand_status": "established",
+  "manufacturer": null,
+  "spanish_distributor": {
+    "legal_name": "ONETRÓN MOTOS, S.L.U.",
+    "role": "La web oficial Voge España identifica a ONETRÓN MOTOS, S.L.U. como responsable del tratamiento y canal comercial en España. La página corporativa atribuye la representación de Voge en España a Onetrón Motos, sociedad del Grupo Onex.",
+    "evidence_url": "https://vogespain.es/contacto/",
+    "notes": "La identidad y función se basan en las páginas corporativas oficiales. No se ha examinado contrato de distribución ni documentación societaria registral en esta auditoría."
+  },
+  "manufacturer_locator": {
+    "url": "https://vogespain.es/puntos-de-venta-espana/",
+    "status": "locator_present_dynamic_content",
+    "classification": "El localizador oficial Voge España está publicado y conduce a selección de provincia y punto de venta, pero la extracción HTML estática consultada no expone fichas individualizadas. La página corporativa declara una red nacional superior a 100 puntos de venta y sus respectivos servicios técnicos; no se atribuye manufacturer_individually_listed a las sedes de este inventario sin ficha individual recuperable."
+  },
+  "counts": {
+    "physical_outlets_documented": 9,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 1,
+      "Cádiz": 3,
+      "Alicante": 2,
+      "Murcia": 2
+    },
+    "sales_points": 9,
+    "service_points": 8,
+    "same_site_sales_and_service": 6,
+    "separate_service_addresses": 2,
+    "manufacturer_individually_listed": 0,
+    "operator_self_declared_official_sales": 9,
+    "candidates_not_counted": 3
+  },
+  "outlets": [
+    {
+      "outlet_id": "voge-barcelona-viascooter",
+      "trading_name": "Voge Barcelona / Viascooter",
+      "operator": "THE SCOOT ALLIANCE, S.L. / Grupo Vía Motos",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Avenida de Vallcarca, 69, 08023 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://viascooter.es/quienes-somos/",
+      "evidence_type": "operator_brand_declaration_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "El operador se declara distribuidor oficial de Voge y designa expresamente Avenida Vallcarca 69 como concesionario oficial Voge. No se ha recuperado ficha individual del localizador del fabricante."
+    },
+    {
+      "outlet_id": "voge-malaga-indalmar",
+      "trading_name": "Indalmar Motor Málaga – Ortega y Gasset",
+      "operator": "Indalmar Motor / Grupo Playcar",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 198, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.indalmarmotor.com/contacto",
+      "evidence_type": "operator_brand_declaration_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web del operador identifica el nº 198 como concesionario oficial Voge y publica la oferta de la marca."
+    },
+    {
+      "outlet_id": "voge-cadiz-castro-cadiz",
+      "trading_name": "Castro La Motocicleta – Cádiz",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Avenida de la Sanidad Pública, 297, 11012 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/voge/",
+      "evidence_type": "brand_specific_operator_page_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página específica Voge declara concesionario oficial y publica esta dirección como ventas. El taller Voge se ubica en dirección distinta, Calle García Quijano 2."
+    },
+    {
+      "outlet_id": "voge-cadiz-castro-jerez",
+      "trading_name": "Castro La Motocicleta – Jerez",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/voge/",
+      "evidence_type": "brand_specific_operator_page_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página específica Voge identifica la sede de Jerez para ventas y taller en la misma dirección."
+    },
+    {
+      "outlet_id": "voge-cadiz-castro-palmones",
+      "trading_name": "Castro La Motocicleta – Palmones",
+      "operator": "Castro La Motocicleta",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://castrolamotocicleta.com/voge/",
+      "evidence_type": "brand_specific_operator_page_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página específica Voge identifica la sede de Palmones para ventas y taller en la misma dirección."
+    },
+    {
+      "outlet_id": "voge-alicante-motos-medina",
+      "trading_name": "Motos Medina",
+      "operator": "Motos Medina, S.L.",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Dénia, 13, 03002 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://ducatialicante.motosmedina.com/es/contribucion-nuestras-instalaciones-5264",
+      "evidence_type": "operator_brand_declaration_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La página del operador incluye Voge entre sus marcas y se declara concesionario oficial para Alicante; publica la dirección y actividad de venta y servicio oficial."
+    },
+    {
+      "outlet_id": "voge-alicante-motos-marin-elche",
+      "trading_name": "Motos Marín – Elche",
+      "operator": "Motos Marín",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avenida de Alicante, 96A, 03203 Elche, Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosmarin.com/tienda/10000003-voge",
+      "evidence_type": "operator_brand_catalog_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "El catálogo propio de Voge identifica la tienda de Elche y publica modelos Voge. La página corporativa de Motos Marín incluye la marca entre sus concesiones oficiales y confirma ventas y taller en esta sede."
+    },
+    {
+      "outlet_id": "voge-murcia-motos-marin",
+      "trading_name": "Motos Marín – Murcia",
+      "operator": "Motos Marín",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida San Juan de la Cruz, 18, 30011 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosmarin.com/",
+      "evidence_type": "operator_brand_declaration_and_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La empresa se declara concesionario oficial Voge y confirma la sede de Murcia con ventas y taller en la misma ubicación."
+    },
+    {
+      "outlet_id": "voge-murcia-jademotor-cartagena",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Fenix Moto Premium, S.L. / Jade Motor",
+      "province": "Murcia",
+      "municipality": "Cartagena",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://jademotor.com/noticia/jademotor-nuevo-concesionario-voge",
+      "evidence_type": "operator_appointment_announcement_and_current_location",
+      "observed_at": "2026-11-13",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "El operador anunció el 03-11-2025 su nombramiento como concesionario oficial Voge para Cartagena y San Javier; la página actual identifica la sede Cartagena, oferta Voge y taller."
+    }
+  ],
+  "service_points": [
+    {
+      "service_id": "voge-service-cadiz-castro",
+      "trading_name": "Castro La Motocicleta – Taller Cádiz",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Calle García Quijano, 2, 11012 Cádiz, España",
+      "evidence_url": "https://castrolamotocicleta.com/voge/",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página específica Voge separa el punto de ventas de Avenida de la Sanidad Pública 297 y el taller/posventa en Calle García Quijano 2."
+    },
+    {
+      "service_id": "voge-service-cadiz-castro-jerez",
+      "trading_name": "Castro La Motocicleta – Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Pilar Aranda Latorre, 3, 11405 Jerez de la Frontera, Cádiz, España",
+      "evidence_url": "https://castrolamotocicleta.com/voge/",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página específica Voge indica expresamente ventas y taller en esta dirección."
+    },
+    {
+      "service_id": "voge-service-cadiz-castro-palmones",
+      "trading_name": "Castro La Motocicleta – Palmones",
+      "province": "Cádiz",
+      "municipality": "Los Barrios",
+      "public_address": "Calle Fragata, Polígono Palmones 11, 11379 Los Barrios, Cádiz, España",
+      "evidence_url": "https://castrolamotocicleta.com/voge/",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página específica Voge indica expresamente ventas y taller en esta dirección."
+    },
+    {
+      "service_id": "voge-service-malaga-indalmar",
+      "trading_name": "Indalmar Motor – Taller Voge Málaga",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 192, Málaga, España",
+      "evidence_url": "https://www.indalmarmotor.com/contacto",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página del operador identifica esta dirección separada del concesionario del nº 198 como Servicio Oficial Voge."
+    },
+    {
+      "service_id": "voge-service-alicante-motos-medina",
+      "trading_name": "Motos Medina – Servicio oficial",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida de Dénia, 13, 03002 Alicante, España",
+      "evidence_url": "https://ducatialicante.motosmedina.com/es/contribucion-nuestras-instalaciones-5264",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página identifica Voge entre las marcas de la empresa y publica servicio oficial en las mismas instalaciones."
+    },
+    {
+      "service_id": "voge-service-alicante-motos-marin",
+      "trading_name": "Motos Marín – Elche",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avenida de Alicante, 96A, 03203 Elche, Alicante, España",
+      "evidence_url": "https://motosmarin.com/empresa/",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página corporativa identifica Voge como marca oficial y publica taller en la sede de Elche."
+    },
+    {
+      "service_id": "voge-service-murcia-motos-marin",
+      "trading_name": "Motos Marín – Murcia",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Avenida San Juan de la Cruz, 18, 30011 Murcia, España",
+      "evidence_url": "https://motosmarin.com/empresa/",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página corporativa identifica Voge como marca oficial y publica ventas y taller en la sede de Murcia."
+    },
+    {
+      "service_id": "voge-service-murcia-jademotor",
+      "trading_name": "Jade Motor Cartagena – Taller",
+      "province": "Murcia",
+      "municipality": "Cartagena",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "evidence_url": "https://jademotor.com/contacto?marca=VOGE",
+      "verification_status": "operator_declared_brand_specific_service",
+      "notes": "La página actual de contacto identifica Voge en la sede Cartagena y declara tienda, recambios y taller; el nombramiento específico Voge se documenta en la noticia del operador."
+    }
+  ],
+  "candidates_not_counted": [
+    {
+      "candidate_name": "Vogo Spain",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Platino 1, 11405 Jerez de la Frontera",
+      "reason": "Falso positivo por similitud nominal y dominio. vogospain.com vende inodoros inteligentes y espejos; no es Voge, fabricante de motocicletas. El directorio consultado es un directorio de tiendas de productos de baño.",
+      "evidence_urls": [
+        "https://vogospain.com/es/",
+        "https://vogospain.com/es/tiendas"
+      ]
+    },
+    {
+      "candidate_name": "BADAMETAL",
+      "province": "Barcelona",
+      "municipality": "Badalona",
+      "public_address": "C/ de Nàpols 42, 08914 Badalona",
+      "reason": "Solo aparece en el directorio de tiendas de Vogo Spain (productos de baño); no se ha encontrado evidencia de oferta Voge motocicletas en el operador ni en el localizador oficial.",
+      "evidence_urls": [
+        "https://vogospain.com/es/tiendas"
+      ]
+    },
+    {
+      "candidate_name": "UDESING",
+      "province": "Málaga",
+      "municipality": "San Pedro Alcántara",
+      "public_address": "Calle Luxemburgo esquina Calle Turquía, 29670 San Pedro Alcántara",
+      "reason": "Solo aparece en el directorio de tiendas de Vogo Spain (productos de baño); la actividad identificada de UDesign es arquitectura/interiorismo y no se ha encontrado evidencia de oferta Voge motocicletas.",
+      "evidence_urls": [
+        "https://vogospain.com/es/tiendas",
+        "https://www.udesign.es/"
+      ]
+    }
+  ],
+  "limitations": [
+    "El localizador oficial Voge está disponible, pero su contenido individualizado no es extraíble mediante la captura HTML estática consultada. No se interpreta esta limitación como ausencia de red.",
+    "Las 9 ubicaciones son puntos con oferta Voge publicada por los propios operadores dentro de las provincias prioritarias; el inventario no es un censo nacional exhaustivo ni prueba ventas efectivas.",
+    "La condición de concesionario oficial se conserva como autodeclaración o nombramiento publicado por el operador; no se han verificado contratos individuales directamente con ONETRÓN o el fabricante.",
+    "Los servicios se computan únicamente cuando el operador identifica Voge o sus servicios técnicos de marca en esa sede. Los talleres genéricos de otros establecimientos no se incorporan.",
+    "Se excluyen tres entradas del directorio agregado previo porque proceden de vogospain.com, un comercio de equipamiento de baño con marca VOGO, no del dominio oficial de Voge motocicletas vogespain.es."
+  ]
+}
