@@ -41,6 +41,16 @@ class MonthlyProcessorTests(unittest.TestCase):
             "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/transferencias/export_mensual_trf_202609.zip",
         )
 
+    def test_transfer_download_retries_months_without_validated_snapshot(self):
+        from datetime import date
+        with tempfile.TemporaryDirectory() as tmp:
+            inventory = Path(tmp) / "transfers.json"
+            inventory.write_text(json.dumps({"ejecuciones": [{"capturas": [
+                {"periodo": "2026-01", "estado": "descargado_validado"},
+                {"periodo": "2026-02", "estado": "no_disponible_en_barrido"},
+            ]}]}), encoding="utf-8")
+            self.assertEqual(dt.months_to_check(inventory, today=date(2026, 3, 13)), ["2026-02", "2026-03"])
+
     def test_transfer_backfill_starts_in_january_2026(self):
         from datetime import date
         months = dt.initial_months(today=date(2026, 3, 13))
