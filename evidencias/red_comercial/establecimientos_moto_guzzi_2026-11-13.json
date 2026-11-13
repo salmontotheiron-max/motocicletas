@@ -15,13 +15,13 @@
     "operator_self_declared_official": "El operador o grupo se declara concesionario oficial; no equivale a verificación contractual independiente.",
     "secondary_candidate": "Referencia secundaria sin corroboración primaria actual suficiente; no se computa."
   },
-  "outlet_count": 5,
+  "outlet_count": 6,
   "counts": {
-    "sales_corroborated": 5,
+    "sales_corroborated": 6,
     "by_province": {
       "Barcelona": 1,
       "Málaga": 2,
-      "Cádiz": 0,
+      "Cádiz": 1,
       "Alicante": 1,
       "Murcia": 1
     },
@@ -148,6 +148,27 @@
       "verification_status": "current_offer_secondary_corroborated",
       "official_authorization_status": "operator_self_declared_official_not_independently_verified",
       "notes": "Motos.net publica una Moto Guzzi V85 TT Travel nueva atribuida a Ciao Moto Murcia; directorios reproducen autodeclaración como concesionario y servicio técnico oficial. Oferta actual corroborada; autorización contractual no verificada independientemente."
+    },
+    {
+      "outlet_id": "motoguzzi-dosruedas-jerez",
+      "brand": "Moto Guzzi",
+      "trading_name": "Dos Ruedas Jerez",
+      "operator": "Dos Ruedas",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Polígono Industrial Bertola, cruce carretera de Sanlúcar s/n, 11408 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://2ruedas.es/",
+      "supporting_urls": [
+        "https://2ruedas.es/contacto/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web corporativa declara distribución y servicio técnico oficial de Moto Guzzi en Jerez y publica la gama del Grupo Piaggio, incluida Moto Guzzi. La página de contacto identifica tienda y taller en esta dirección."
     }
   ],
   "secondary_candidates": [
@@ -161,22 +182,13 @@
       "notes": "Agregador actual lista Moto Guzzi, pero la página corporativa actual no publica oferta específica en esa sede."
     },
     {
-      "trading_name": "Dos Ruedas",
-      "province": "Cádiz",
-      "municipality": "Jerez de la Frontera",
-      "public_address": "Polígono Industrial Bertola, cruce carretera de Sanlúcar, 11408 Jerez de la Frontera, Cádiz, España",
-      "evidence_url": "https://concesionariosdemotos.com/moto-guzzi",
-      "status": "secondary_candidate",
-      "notes": "Listado por agregador como vendedor Moto Guzzi; sin página corporativa actual recuperada."
-    },
-    {
       "trading_name": "El Motorista Algeciras",
       "province": "Cádiz",
       "municipality": "Algeciras",
       "public_address": "Carretera de Málaga km 108, 11205 Algeciras, Cádiz, España",
       "evidence_url": "https://concesionariosdemotos.com/moto-guzzi",
       "status": "secondary_candidate",
-      "notes": "Listado secundario; falta corroboración primaria actual de oferta en esa sucursal."
+      "notes": "El agregador lo lista como Moto Guzzi, pero la ficha oficial del Grupo Piaggio/Vespa recuperada para Algeciras solo lo identifica como punto de asistencia autorizado, no como distribuidor de ventas. No se computa como punto de venta."
     },
     {
       "trading_name": "Motospazio",
@@ -227,7 +239,7 @@
   "notes": [
     "established acredita actividad comercial actual y no censo nacional exhaustivo.",
     "El localizador oficial Moto Guzzi es dinámico y no permitió recuperar fichas individualizadas.",
-    "Cinco ubicaciones corroboradas: Barcelona 1, Málaga 2, Alicante 1 y Murcia 1; Cádiz permanece sin sedes confirmadas.",
+    "Seis ubicaciones corroboradas: Barcelona 1, Málaga 2, Cádiz 1, Alicante 1 y Murcia 1.",
     "Los puntos de asistencia se contabilizan solo cuando el operador publica taller o servicio.",
     "Las autodeclaraciones de oficialidad se distinguen de la verificación independiente de autorización contractual.",
     "Los candidatos secundarios no se suman al total confirmado."
