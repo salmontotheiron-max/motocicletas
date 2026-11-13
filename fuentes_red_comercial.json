@@ -8685,6 +8685,178 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Artículo del 30-06-2026 anuncia ciudades de primera implantación y aperturas en Málaga, Cádiz y Alicante. No aporta nombres ni direcciones individualizadas para Cádiz o Alicante; se usa como pista de mercado, no como prueba de establecimientos operativos."
+    },
+    {
+      "source_id": "source-voge-barcelona-viascooter",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "VIASCOOTER / Grupo Vía Motos",
+      "source_type": "company_page",
+      "url": "https://viascooter.es/quienes-somos/",
+      "title": "Viascooter — distribuidor oficial Voge y concesionarios en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, Spain",
+      "directory_scope": [
+        "sales",
+        "brand_offer",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web del operador se declara distribuidor oficial de Voge y confirma Avenida Vallcarca 69 como concesionario oficial Voge. Otras direcciones del grupo no se atribuyen a Voge sin evidencia individual."
+    },
+    {
+      "source_id": "source-voge-malaga-indalmar",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Indalmar Motor / Grupo Playcar",
+      "source_type": "company_page",
+      "url": "https://www.indalmarmotor.com/contacto",
+      "title": "Indalmar Motor — sedes de venta y taller Voge en Málaga",
+      "reliability_class": "primary_business",
+      "scope": "Málaga, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La web identifica el concesionario Voge de Av. José Ortega y Gasset 198 y un taller de servicio Voge en el nº 192. Se registran como dos direcciones diferenciadas."
+    },
+    {
+      "source_id": "source-voge-cadiz-castro",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Castro La Motocicleta",
+      "source_type": "company_page",
+      "url": "https://castrolamotocicleta.com/voge/",
+      "title": "Castro La Motocicleta — concesionario Voge en Cádiz y Campo de Gibraltar",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Página específica Voge publica gama y oferta, declara concesionario oficial y detalla tres ubicaciones: Cádiz, Jerez y Palmones/Los Barrios; distingue ventas y posventa."
+    },
+    {
+      "source_id": "source-voge-alicante-motos-medina",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Medina, S.L.",
+      "source_type": "company_page",
+      "url": "https://ducatialicante.motosmedina.com/es/contribucion-nuestras-instalaciones-5264",
+      "title": "Motos Medina — concesionario Voge en Alicante",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La página del operador se declara concesionario oficial para Alicante e incluye Voge entre sus marcas; publica venta, servicio oficial y dirección Avda. de Dénia 13."
+    },
+    {
+      "source_id": "source-voge-alicante-motos-marin-elche",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Marín",
+      "source_type": "company_page",
+      "url": "https://motosmarin.com/empresa/",
+      "title": "Motos Marín — sedes y servicios en Elche y Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Alicante, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La empresa declara comercializar oficialmente Voge y detalla la sede de Elche en Avda. de Alicante 96A con ventas y taller. La marca y la dirección se contrastan con su catálogo Voge y página corporativa."
+    },
+    {
+      "source_id": "source-voge-murcia-motos-marin",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Marín",
+      "source_type": "company_page",
+      "url": "https://motosmarin.com/",
+      "title": "Motos Marín — concesionario Voge en Murcia",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "La empresa se declara concesionario oficial Voge y publica la sede de Murcia en San Juan de la Cruz 18 con ventas y taller."
+    },
+    {
+      "source_id": "source-voge-murcia-jademotor",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Jade Motor / Fenix Moto Premium, S.L.",
+      "source_type": "company_page",
+      "url": "https://jademotor.com/noticia/jademotor-nuevo-concesionario-voge",
+      "title": "Jade Motor — nombramiento como concesionario Voge para Cartagena y San Javier",
+      "reliability_class": "primary_business",
+      "scope": "Murcia, Spain",
+      "directory_scope": [
+        "sales",
+        "service",
+        "brand_offer",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 7,
+      "notes": "Anuncio del operador fechado 03-11-2025 identifica a Jade Motor como nuevo concesionario oficial Voge para Cartagena y San Javier. La sede Cartagena y su taller se identifican en la página actual de contacto."
+    },
+    {
+      "source_id": "source-voge-vogospain-domain-collision",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Vogo Spain (comercio de equipamiento de baño)",
+      "source_type": "company_page",
+      "url": "https://vogospain.com/es/tiendas",
+      "title": "Vogo Spain — directorio de tiendas de productos de baño, no de motocicletas Voge",
+      "reliability_class": "primary_business",
+      "scope": "Spain",
+      "directory_scope": [
+        "false_positive_review",
+        "locations"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La página identifica productos de inodoros inteligentes y espejos; las tiendas Vogo Spain, BADAMETAL y UDESING no son evidencia de la red de motocicletas VOGE. Se registra para documentar y evitar la colisión nominal/dominio observada en el snapshot autodeclarado previo."
     }
   ]
 }
