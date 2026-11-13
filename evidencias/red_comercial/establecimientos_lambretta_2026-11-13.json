@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se distingue entre establecimientos que aparecen en el localizador oficial de Lambretta y actividad de venta corroborada en la web del operador. El localizador describe distribuidores especializados, pero también incluye encabezados de Agentes Comerciales; por tanto, una entrada no se convierte automáticamente en concesionario de venta con autorización contractual confirmada. Se separan las ubicaciones listadas de las ubicaciones con oferta comercial confirmada. Los agregadores son fuentes de descubrimiento, no prueba definitiva. No se infiere ausencia por falta de evidencia.",
+  "verification_status_policy": {
+    "manufacturer_listed": "Ubicación incluida en el localizador oficial de Lambretta; la categoría contractual y actividad individual no se han verificado separadamente.",
+    "operator_current_brand_offer": "Web corporativa del operador publica Lambretta entre las marcas de venta/exposición.",
+    "operator_self_declared_official": "El operador se autodenomina concesionario oficial Lambretta; no equivale a verificación contractual independiente del fabricante.",
+    "secondary_candidate": "Referencia secundaria sin confirmación en el localizador oficial o en la web del operador."
+  },
+  "outlet_count": 17,
+  "counts": {
+    "manufacturer_listed_locations": 17,
+    "by_province": {
+      "Barcelona": 5,
+      "Málaga": 2,
+      "Cádiz": 2,
+      "Alicante": 8,
+      "Murcia": 1
+    },
+    "sales_independently_corroborated": 2,
+    "operator_self_declared_official_sales": 1,
+    "service_locations_independently_corroborated": 0,
+    "entries_with_contractual_authorization_independently_verified": 0
+  },
+  "importer": {
+    "group": "Moteo Group",
+    "spanish_presence": "Moteo Group declara una sucursal española desde 2024; la prensa sectorial identifica la filial como Moteo Motor España.",
+    "evidence_urls": [
+      "https://www.lambrettascooters.es/es/novedades/Moteogroup-nuevo-importador.html",
+      "https://moteogroup.com/",
+      "https://mototaller.info/conocemos-a-moteo-motor-espana-importador-de-fb-mondial-lambretta-y-kl/"
+    ],
+    "notes": "La marca confirma oficialmente su alianza de distribución con Moteo Group desde 2024. No se atribuye una razón social exacta ni domicilio fiscal de la filial española al no quedar acreditados por una fuente corporativa primaria consultada."
+  },
+  "official_directory": {
+    "url": "https://www.lambrettascooters.es/es/concesionarios.html",
+    "status": "directory_content_visible",
+    "indexed_entries": 75,
+    "notes": "El localizador se presenta como «Encuentra tu concesionario» y habla de distribuidores especializados. El listado incluye etiquetas «Agentes Comerciales» en varios puntos; no hay ficha individual ni categoría contractual detallada para cada dirección. Se transcriben 17 entradas de las cinco provincias prioritarias."
+  },
+  "outlets": [
+    {
+      "outlet_id": "lambretta-italovespa-barcelona",
+      "brand": "Lambretta",
+      "trading_name": "Italo Vespa / Italo Motor",
+      "operator": "Italo Vespa / Italo Motor",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Carrer d'Aragó 153, 08011 Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.italovespa.com/",
+      "supporting_urls": [
+        "https://www.lambrettascooters.es/es/concesionarios.html"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_current_brand_offer",
+      "official_authorization_status": "manufacturer_listed_not_independently_certified",
+      "notes": "Página corporativa actual incluye Lambretta entre las marcas de venta y exposición; la sede también dispone de taller general."
+    },
+    {
+      "outlet_id": "lambretta-the-doctor-motos-barcelona",
+      "brand": "Lambretta",
+      "trading_name": "The Doctor Motos",
+      "operator": "The Doctor Motos",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Plaça de Mossèn Clapés 2, 08030 Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. No se ha localizado una página individual actual de oferta Lambretta para confirmar stock o servicio."
+    },
+    {
+      "outlet_id": "lambretta-motos-xevi-mataro",
+      "brand": "Lambretta",
+      "trading_name": "Motos Xevi",
+      "operator": "Motos Xevi",
+      "province": "Barcelona",
+      "municipality": "Mataró",
+      "public_address": "Camí Ral 16, 08301 Mataró, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. La ficha no distingue con claridad si la relación es concesionario o agente comercial."
+    },
+    {
+      "outlet_id": "lambretta-motos-argentona",
+      "brand": "Lambretta",
+      "trading_name": "Motos Argentona",
+      "operator": "Motos Argentona",
+      "province": "Barcelona",
+      "municipality": "Argentona",
+      "public_address": "Carrer Montserrat Roig 1, 08310 Argentona, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. No se ha corroborado individualmente oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-sixlyon-sitges",
+      "brand": "Lambretta",
+      "trading_name": "Sixlyon Racing",
+      "operator": "Sixlyon Racing",
+      "province": "Barcelona",
+      "municipality": "Sitges",
+      "public_address": "Polígono Industrial Mas Alba, Carrer Drets Humans 13, 08870 Sitges, Barcelona, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. No se ha corroborado individualmente oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-recambios-lopez-mijas",
+      "brand": "Lambretta",
+      "trading_name": "Recambios López",
+      "operator": "Recambios López",
+      "province": "Málaga",
+      "municipality": "Mijas",
+      "public_address": "Calle Poseidón 4, Polígono Industrial San Rafael, 29651 Mijas, Málaga, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. El directorio secundario también lo lista; no se ha verificado stock actual en página individual."
+    },
+    {
+      "outlet_id": "lambretta-indalmar-malaga",
+      "brand": "Lambretta",
+      "trading_name": "Indalmar Motor",
+      "operator": "Indalmar Motor",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de José Ortega y Gasset 192, 29006 Málaga, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. No se atribuye automáticamente taller o venta efectiva solo por su presencia en el listado."
+    },
+    {
+      "outlet_id": "lambretta-motos-dario-cadiz",
+      "brand": "Lambretta",
+      "trading_name": "Motos Darío",
+      "operator": "Motos Darío",
+      "province": "Cádiz",
+      "municipality": "Cádiz",
+      "public_address": "Calle Bulgaria, Nave 1.7, 11011 Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motosdario.es/",
+      "supporting_urls": [
+        "https://www.lambrettascooters.es/es/concesionarios.html",
+        "https://motosdario.es/contacto/"
+      ],
+      "evidence_type": "operator_brand_page",
+      "verification_status": "operator_self_declared_official",
+      "official_authorization_status": "self_declared_only",
+      "notes": "La web del operador se declara concesionario oficial Lambretta para Cádiz y provincia y confirma tienda de venta en esta dirección. No hay verificación contractual independiente del fabricante."
+    },
+    {
+      "outlet_id": "lambretta-apr-recambios-sanlucar",
+      "brand": "Lambretta",
+      "trading_name": "APR Recambios Sanlúcar",
+      "operator": "APR Recambios Sanlúcar",
+      "province": "Cádiz",
+      "municipality": "Sanlúcar de Barrameda",
+      "public_address": "Avenida Al-Ándalus 10, 11540 Sanlúcar de Barrameda, Cádiz, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. No se ha corroborado individualmente la oferta actual ni si opera como agente comercial."
+    },
+    {
+      "outlet_id": "lambretta-x77-gata-gorgos",
+      "brand": "Lambretta",
+      "trading_name": "X77 Moto",
+      "operator": "X77 Moto",
+      "province": "Alicante",
+      "municipality": "Gata de Gorgos",
+      "public_address": "Paseo de Alicante 7, 03740 Gata de Gorgos, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-mobybike-alicante",
+      "brand": "Lambretta",
+      "trading_name": "Mobybike (Alicante)",
+      "operator": "Mobybike (Alicante)",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Carrer Riu Túria 16, 03006 Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-motos-marin-elche",
+      "brand": "Lambretta",
+      "trading_name": "Motos Marín Elche",
+      "operator": "Motos Marín Elche",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avenida de Alicante 96, 03202 Elche, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-xabia-motor-workshop",
+      "brand": "Lambretta",
+      "trading_name": "Xàbia Motor Workshop",
+      "operator": "Xàbia Motor Workshop",
+      "province": "Alicante",
+      "municipality": "Xàbia",
+      "public_address": "Avenida del Pla 126, 03730 Xàbia, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. El nombre incluye workshop, pero no se atribuye servicio Lambretta sin prueba específica."
+    },
+    {
+      "outlet_id": "lambretta-mototeam-torrevieja",
+      "brand": "Lambretta",
+      "trading_name": "Mototeam (Torrevieja)",
+      "operator": "Mototeam (Torrevieja)",
+      "province": "Alicante",
+      "municipality": "Torrevieja",
+      "public_address": "Ronda de Ricardo Lafuente Aguado 33, 03183 Torrevieja, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-mototeam-guardamar",
+      "brand": "Lambretta",
+      "trading_name": "Mototeam (Guardamar)",
+      "operator": "Mototeam (Guardamar)",
+      "province": "Alicante",
+      "municipality": "Guardamar del Segura",
+      "public_address": "Calle Fusters 110, 03140 Guardamar del Segura, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-ivars-calpe",
+      "brand": "Lambretta",
+      "trading_name": "Ivars Moto",
+      "operator": "Ivars Moto",
+      "province": "Alicante",
+      "municipality": "Calpe",
+      "public_address": "Carrer Mare de Déu del Carme 14, 03710 Calpe, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-motovery-elche",
+      "brand": "Lambretta",
+      "trading_name": "Motovery",
+      "operator": "Motovery",
+      "province": "Alicante",
+      "municipality": "Elche",
+      "public_address": "Avinguda de la Llibertat 99, 03201 Elche, Alicante, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta; no se ha corroborado individualmente la oferta actual."
+    },
+    {
+      "outlet_id": "lambretta-francisco-belmonte-murcia",
+      "brand": "Lambretta",
+      "trading_name": "Francisco Belmonte",
+      "operator": "Francisco Belmonte",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina 12, 30007 Murcia, España",
+      "outlet_role": [
+        "manufacturer_listed"
+      ],
+      "evidence_url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "supporting_urls": [],
+      "evidence_type": "manufacturer_directory_entry",
+      "verification_status": "manufacturer_listed",
+      "official_authorization_status": "manufacturer_listed_category_not_individually_verified",
+      "notes": "Figura en el localizador oficial de Lambretta. La ficha secundaria también lo lista; no se ha corroborado individualmente la oferta actual."
+    }
+  ],
+  "limitations": [
+    "El localizador oficial lista 75 entradas a nivel nacional en la vista indexada, pero mezcla distribuidores especializados y entradas bajo encabezados de Agentes Comerciales; no se interpreta cada una como concesión plena ni se infiere su rol exacto.",
+    "En las cinco provincias prioritarias se identifican 17 ubicaciones listadas: Barcelona (5), Málaga (2), Cádiz (2), Alicante (8) y Murcia (1).",
+    "Solo dos operadores se han corroborado individualmente con páginas corporativas actuales que mencionan Lambretta: Italo Vespa en Barcelona y Motos Darío en Cádiz. Motos Darío se autodeclara concesionario oficial.",
+    "No se verifican de forma independiente autorizaciones contractuales de cada ubicación ni se asignan servicios posventa específicos salvo evidencia expresa.",
+    "Moteo Group es el socio de distribución desde 2024; la razón social exacta de la filial española no se atribuye sin fuente primaria suficiente.",
+    "El recuento se limita a cinco provincias prioritarias y no constituye un censo nacional.",
+    "No se infiere ausencia de actividad en ninguna provincia por falta de evidencia."
+  ]
+}
