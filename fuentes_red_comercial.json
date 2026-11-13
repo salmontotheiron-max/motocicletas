@@ -431,13 +431,20 @@
       "brand_id": "brand-lambretta",
       "canonical_name": "Lambretta",
       "manufacturer_id": null,
-      "market_status": "under_review",
+      "market_status": "established",
       "discovery_basis": [
         "source-dgt-monthly-motorcycle-registrations",
         "source-anesdor-members",
-        "source-carwow-50-brands-2026"
+        "source-carwow-50-brands-2026",
+        "source-lambretta-es-dealer-locator",
+        "source-lambretta-moteo-new-importer",
+        "source-lambretta-moteo-group-brands",
+        "source-lambretta-motos-dario-cadiz",
+        "source-lambretta-italovespa-barcelona",
+        "source-lambretta-dealer-aggregator",
+        "source-lambretta-moteo-launch-press"
       ],
-      "notes": "Marca incluida en el universo inicial de vigilancia; pendiente de contraste de actividad comercial actual en España, entidad importadora/fabricante y localizador oficial de puntos de venta."
+      "notes": "Actividad comercial de Lambretta en España acreditada por el localizador oficial de Lambretta, que lista distribuidores especializados y agentes comerciales, y por páginas actuales de operadores en Barcelona y Cádiz. Moteo Group es el socio de distribución de Lambretta desde 2024 y cuenta con sucursal española. Se han identificado 17 ubicaciones listadas en las cinco provincias prioritarias; no se equipara automáticamente cada entrada del directorio (incluidos agentes comerciales) a una concesión con venta/servicio verificados. Dos operadores confirman oferta/actividad de venta en sus propias webs. La clasificación established acredita presencia comercial, no un censo nacional ni autorización contractual individual de todas las ubicaciones."
     },
     {
       "brand_id": "brand-macbor",
@@ -4948,6 +4955,144 @@
       "last_verified_at": "2026-11-13",
       "capture_interval_days": 30,
       "notes": "Directorio secundario que lista 64 concesionarios y candidatos en las cinco provincias prioritarias, entre ellos Motocicletas Prim Alicante y Francisco Belmonte Murcia. Se usa para descubrimiento y contraste, no como prueba definitiva de autorización ni para computar ubicaciones sin corroboración primaria."
+    },
+    {
+      "source_id": "source-lambretta-es-dealer-locator",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-lambretta",
+      "publisher": "Lambretta España",
+      "source_type": "official_directory",
+      "url": "https://www.lambrettascooters.es/es/concesionarios.html",
+      "title": "Lambretta España — localizador oficial de concesionarios y agentes comerciales",
+      "reliability_class": "primary_official",
+      "scope": "España",
+      "directory_scope": [
+        "dealer_and_commercial_agent_listings"
+      ],
+      "capture_mode": "manual",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El localizador oficial indexa 75 entradas y las describe como distribuidores especializados; en el listado aparecen también encabezados de Agentes Comerciales. Se han extraído 17 ubicaciones de las cinco provincias prioritarias. La pertenencia al listado no permite atribuir a todas la misma categoría contractual ni confirmar individualmente actividad/stock actual."
+    },
+    {
+      "source_id": "source-lambretta-moteo-new-importer",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-lambretta",
+      "publisher": "Lambretta España",
+      "source_type": "official_statement",
+      "url": "https://www.lambrettascooters.es/es/novedades/Moteogroup-nuevo-importador.html",
+      "title": "Lambretta anuncia a Moteo Group como nuevo socio de distribución desde 2024",
+      "reliability_class": "primary_official",
+      "scope": "España y ocho mercados europeos",
+      "directory_scope": [
+        "importer",
+        "distribution"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La comunicación oficial de Lambretta explica que la marca y Moteo Group unen fuerzas desde 2024 y que Moteo tiene una sucursal española desde ese año. No se infiere una razón social española concreta no publicada en la fuente."
+    },
+    {
+      "source_id": "source-lambretta-moteo-group-brands",
+      "source_role": "primary_monitoring",
+      "brand_id": "brand-lambretta",
+      "publisher": "Moteo Group",
+      "source_type": "company_page",
+      "url": "https://moteogroup.com/",
+      "title": "Moteo Group — cartera de marcas y distribución europea de Lambretta",
+      "reliability_class": "primary_official",
+      "scope": "Europa",
+      "directory_scope": [
+        "brand_distribution"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 90,
+      "notes": "La web corporativa de Moteo incluye Lambretta entre las marcas de su cartera de distribución europea y describe su red internacional de puntos de venta."
+    },
+    {
+      "source_id": "source-lambretta-motos-dario-cadiz",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Motos Darío",
+      "source_type": "company_page",
+      "url": "https://motosdario.es/",
+      "title": "Motos Darío — concesionario oficial Lambretta para Cádiz y provincia",
+      "reliability_class": "primary_business",
+      "scope": "Cádiz, España",
+      "directory_scope": [
+        "sales",
+        "dealer_self_declaration"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web del operador se declara concesionario oficial Lambretta para Cádiz y provincia. La página de contacto confirma la tienda en C/ Bulgaria, Nave 1, 7, 11011 Cádiz y actividad de venta de motos. La autorización se mantiene como autodeclaración del operador."
+    },
+    {
+      "source_id": "source-lambretta-italovespa-barcelona",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Italo Vespa / Italo Motor",
+      "source_type": "company_page",
+      "url": "https://www.italovespa.com/",
+      "title": "Italo Vespa — venta, exposición y servicio técnico de Lambretta en Barcelona",
+      "reliability_class": "primary_business",
+      "scope": "Barcelona, España",
+      "directory_scope": [
+        "sales",
+        "service"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "La web corporativa incluye Lambretta entre las marcas vendidas y expuestas, ofrece taller de motos y publica la sede de Carrer d'Aragó 153, Barcelona."
+    },
+    {
+      "source_id": "source-lambretta-dealer-aggregator",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Concesionarios de Motos",
+      "source_type": "aggregator",
+      "url": "https://concesionariosdemotos.com/lambretta",
+      "title": "Directorio secundario de puntos de venta Lambretta en España",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "candidate_discovery",
+        "cross_check"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 30,
+      "notes": "El agregador muestra 71 concesionarios por provincia y coincide con múltiples ubicaciones del localizador oficial. Se usa para contraste y descubrimiento, no como prueba independiente de autorización ni de actividad actual."
+    },
+    {
+      "source_id": "source-lambretta-moteo-launch-press",
+      "source_role": "market_discovery",
+      "brand_id": null,
+      "publisher": "Mototaller",
+      "source_type": "press",
+      "url": "https://mototaller.info/conocemos-a-moteo-motor-espana-importador-de-fb-mondial-lambretta-y-kl/",
+      "title": "Moteo Motor España — cobertura periodística del inicio de importación y distribución",
+      "reliability_class": "secondary_reputable",
+      "scope": "España",
+      "directory_scope": [
+        "importer",
+        "distribution"
+      ],
+      "capture_mode": "http_html",
+      "discovery_status": "directory_content_visible",
+      "last_verified_at": "2026-11-13",
+      "capture_interval_days": 180,
+      "notes": "Reportaje de julio de 2024 sobre el inicio de la actividad de Moteo Motor España para importación, distribución y posventa de Lambretta y FB Mondial. Se usa como contexto secundario, no para atribuir una razón social exacta."
     }
   ]
 }
