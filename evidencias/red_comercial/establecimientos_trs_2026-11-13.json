@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Auditoría de fabricante y red de comercialización de TRS Motorcycles (marca corporativa TRS; motocicletas comercializadas como TRRS). Se contrasta el catálogo y las noticias oficiales, la página oficial de distribuidores, las tiendas de operadores especializados y sus catálogos actuales. Solo se contabilizan puntos físicos dentro de las cinco provincias prioritarias con dirección y oferta TRS/TRRS actual publicada. Se distingue venta de motos nuevas, demostración y ocasión. La existencia de taller multimarca no prueba servicio oficial de marca; no se presume autorización contractual sin fuente específica. La página oficial de distribuidores es dinámica y no expone registros en captura HTML, por lo que los huecos provinciales quedan como no corroborados, no como ausencia.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "TRS MOTORCYCLES, S.L.",
+    "tax_id": "B66187097",
+    "brand_names": [
+      "TRS Motorcycles",
+      "TRRS"
+    ],
+    "country_of_origin": "España",
+    "registered_address": "Calle Muntaner, 292, 3º 2ª, 08021 Barcelona, España",
+    "factory_address": "Ronda Sant Pere, 306, Polígono Les Verges, 08251 Santpedor, Barcelona, España",
+    "notes": "Constituida en 2013. La empresa declara instalaciones productivas y departamentos de I+D+i en la provincia de Barcelona. La entidad legal y CNAE 3091 se contrastan con registro empresarial secundario; el fabricante oficial publica dirección corporativa y de fábrica."
+  },
+  "manufacturer_locator": {
+    "url": "https://trsmotorcycles.com/Distribuidores",
+    "status": "dynamic_unextractable",
+    "classification": "La página oficial contiene formulario de búsqueda por nombre y selector, pero no expone filas de distribuidores en HTML estático. No permite auditar exhaustivamente la red territorial desde la captura consultada."
+  },
+  "counts": {
+    "physical_outlets_documented": 1,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 0,
+      "Cádiz": 0,
+      "Alicante": 0,
+      "Murcia": 0
+    },
+    "current_new_or_demo_offer_corroborated": 1,
+    "used_stock_corroborated": 1,
+    "official_dealer_agreements_independently_corroborated_in_priority_provinces": 0,
+    "brand_specific_service_corroborated": 0,
+    "official_locator_static_entries": 0,
+    "official_dealer_outlets_confirmed_outside_priority_scope": 1,
+    "online_only_or_remote_sellers_outside_scope": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "trs-barcelona-nonstop-bikes",
+      "trading_name": "NonStop Bikes, S.L.",
+      "province": "Barcelona",
+      "municipality": "Tona",
+      "public_address": "Carrer Taradell, 68, 08551 Tona, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.nonstopbikes.com/trial-aba/marca/trs/",
+      "evidence_type": "operator_product_catalog_and_company_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "Catálogo actual publica TRS ONE RR 2026 inyección (8.535 €), XTRACK ONE R 2026 (7.790 €), ONE RR 2026 carburación (8.115 €), ONE R 2026 (7.245 €), ONE RR 80CC 2026 (5.249 €) y ON-E Kids 2025, además de modelos usados/demo. La web confirma tienda especializada en trial y domicilio en Tona. No se ha hallado autodeclaración de concesionario oficial TRS ni contrato de distribución."
+    }
+  ]
+}
