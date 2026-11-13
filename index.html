@@ -56,7 +56,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <h2>Volumen por marca y segmento</h2>
     <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
       <div><label for="brandSearch">Buscar marca</label><input id="brandSearch" type="search" placeholder="Nombre de marca" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
-      <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
+      <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="motos" selected>Motocicletas · 50 + 51</option><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
     </div>
     <p class="small" id="brandScope">Matriculaciones nuevas observadas en DGT MATRABA, acumulado de los periodos publicados.</p>
     <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Volumen</th><th>Peso</th><th>Segmentos</th></tr></thead><tbody id="brandRanking"></tbody></table></div>
@@ -258,19 +258,20 @@ function renderFlows(f){
 function renderBrands(){
   const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
   const segment=el("brandSegment").value;
-  const rows=state.brands.map(item=>{
+  const allRows=state.brands.map(item=>{
     const types=item.tipos_vehiculo||{};
     const volume=segment==="all"
       ?Object.values(types).reduce((sum,value)=>sum+Number(value||0),0)
-      :Number(types[segment]||0);
+      :segment==="motos"
+        ?Number(types["50"]||0)+Number(types["51"]||0)
+        :Number(types[segment]||0);
     return {name:item.marca_normalizada,volume,types,periods:(item.periodos_observados||[]).length,status:item.estado_revision};
-  }).filter(item=>item.volume>0&&item.name.toLocaleLowerCase("es").includes(query))
-   .sort((a,b)=>b.volume-a.volume);
-  const total=rows.reduce((sum,item)=>sum+item.volume,0);
-  const top=rows.slice(0,50);
-  el("brandScope").textContent=(segment==="all"?"Todos los segmentos observados":("Código DGT "+segment))+
-    " · "+fmt(total)+" matriculaciones nuevas de las marcas coincidentes con el filtro · "+rows.length+" marcas.";
-  el("brandRanking").innerHTML=top.map(item=>{
+  }).filter(item=>item.volume>0).sort((a,b)=>b.volume-a.volume);
+  const total=allRows.reduce((sum,item)=>sum+item.volume,0);
+  const rows=allRows.filter(item=>item.name.toLocaleLowerCase("es").includes(query));
+  el("brandScope").textContent=(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
+    " · "+fmt(total)+" matriculaciones nuevas del segmento · mostrando "+rows.length+" de "+allRows.length+" marcas.";
+  el("brandRanking").innerHTML=rows.map(item=>{
     const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
     const share=total?item.volume/total*100:0;
     const stateLabel=item.status==="ya_en_inventario"?"Inventario":"Candidata";
