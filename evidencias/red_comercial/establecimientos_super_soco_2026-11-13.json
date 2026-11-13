@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "methodology": "Auditoría de presencia comercial residual de Super Soco tras el rebranding global a VMoto anunciado en abril de 2024. Se contrastan fuentes corporativas del grupo, documentos de Vmoto Limited, localizador actual VMoto y páginas propias/stock publicado por operadores. Solo se cuentan establecimientos físicos con dirección pública corroborada. La oferta/stock de 2026 se separa de la comercialización de nuevos modelos bajo la marca Super Soco, que el fabricante anunció que cesaría; las unidades de ocasión o a matricular se describen como inventario legado. Las autodeclaraciones de oficialidad no se elevan a autorización contractual verificada. Las referencias secundarias sirven para descubrimiento, no para confirmar actividad por sí solas.",
+  "brand_status": "established",
+  "manufacturer": {
+    "legal_name": "Nanjing Vmoto Soco Intelligent Technology Co., Ltd.",
+    "brand": "Super Soco",
+    "group": "Vmoto Limited (Australia)",
+    "country_of_origin": "China",
+    "notes": "Entidad de fabricación identificada como Vmoto Soco Manufacturing. Vmoto Limited comunicó el 26-08-2024 la adquisición del 100% de la sociedad fabricante y la transferencia de marcas, patentes y diseños Super Soco. La comercialización de nuevos productos bajo Super Soco se abandonó en favor de la marca unificada VMoto en abril de 2024."
+  },
+  "spanish_distributor": {
+    "legal_name": "NUUK MOBILITY SOLUTIONS, S.L.",
+    "tax_id": "B95993416",
+    "address": "Parque Empresarial Boroa, P2-A4, 48340 Amorebieta-Etxano, Bizkaia, España",
+    "scope": "Distribuidor exclusivo en España de vehículos VMoto B2C según aviso legal vigente; no se acredita que el mandato abarque la antigua marca Super Soco después del rebranding."
+  },
+  "manufacturer_locator": {
+    "url": "https://vmoto.com/es/store-locator",
+    "status": "dynamic_unextractable",
+    "classification": "El localizador oficial actual corresponde a VMoto. La captura HTML no devuelve resultados sin búsqueda y el mapa no carga; no se atribuyen sus puntos a Super Soco."
+  },
+  "counts": {
+    "physical_outlets_documented": 6,
+    "by_province": {
+      "Barcelona": 1,
+      "Málaga": 2,
+      "Cádiz": 1,
+      "Alicante": 1,
+      "Murcia": 1
+    },
+    "current_offer_or_stock_corroborated": 5,
+    "operator_self_declared_official_or_service": 5,
+    "brand_specific_service_corroborated": 1,
+    "contractual_authorization_independently_verified": 0,
+    "manufacturer_listed_outlets_currently_visible": 0,
+    "online_only_retailers_not_counted_as_physical": 1
+  },
+  "outlets": [
+    {
+      "outlet_id": "super-soco-barcelona-motospace",
+      "trading_name": "Motospace",
+      "province": "Barcelona",
+      "municipality": "Barcelona",
+      "public_address": "Rambla del Brasil, 19, 08028 Barcelona, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://motospacebcn.com/taller/",
+      "evidence_type": "operator_website_and_dealer_stock",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "El operador se declara servicio oficial SuperSoco. Su web menciona Super Soco entre las marcas de motos nuevas; el inventario de Motos.net muestra una CUx 2019, año 2021, 537 km, 1.499 € y garantía. La unidad anunciada es de ocasión."
+    },
+    {
+      "outlet_id": "super-soco-malaga-indalmar",
+      "trading_name": "Indalmar Motor Málaga — Ortega y Gasset",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida José Ortega y Gasset, 198, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.indalmarmotor.com/motos-segunda-mano-ocasion-malaga",
+      "evidence_type": "operator_catalog_and_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web del grupo identifica el establecimiento como concesionario oficial Super Soco. El catálogo propio anuncia TC Wanderer 125 eléctrico, 0 km/a matricular, año 2026, a 2.290 €. Se trata como stock legado anunciado, no como prueba de nueva gama comercial del fabricante."
+    },
+    {
+      "outlet_id": "super-soco-malaga-amper",
+      "trading_name": "Amper Bikes Málaga",
+      "province": "Málaga",
+      "municipality": "Málaga",
+      "public_address": "Avenida de la Aurora, 51, 29006 Málaga, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.amperbikes.es/motos/",
+      "evidence_type": "operator_catalog",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "not_verified",
+      "notes": "Catálogo propio anuncia Super Soco CPX de ocasión (V.O.) a 3.000 €. La gama nueva actual del operador se organiza bajo Vmoto y no se atribuye autorización oficial Super Soco."
+    },
+    {
+      "outlet_id": "super-soco-cadiz-coolmotorcycles",
+      "trading_name": "Coolmotorcycles Jerez",
+      "province": "Cádiz",
+      "municipality": "Jerez de la Frontera",
+      "public_address": "Calle Platino, 21, 11405 Jerez de la Frontera, Cádiz, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://motos.coches.net/concesionario/coolmotorcycles/",
+      "evidence_type": "operator_stock_listing_and_company_profile",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Motos.net muestra Super Soco F01 versión 2023 y Stash versión 2025 como nuevas, con garantía. Coolmotorcycles se autodeclara concesionario oficial Super Soco en su perfil empresarial de LinkedIn; la web propia confirma el punto de Jerez."
+    },
+    {
+      "outlet_id": "super-soco-alicante-scoomart",
+      "trading_name": "Scoomart Motos Eléctricas",
+      "province": "Alicante",
+      "municipality": "Alicante",
+      "public_address": "Avenida Conde de Casas Rojas, 1A, local 1, 03006 Alicante, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://scoomart.com/motos-electricas-super-soco-alicante/",
+      "evidence_type": "operator_catalog_and_contact",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "Catálogo propio en 2026 lista CU, TC, TSX, Citi, TC Max, CPX y CPX Explorer con precios. El operador se presentó como distribuidor Super Soco en Alicante en una publicación propia de 2020; no se ha verificado contrato actual tras el rebranding."
+    },
+    {
+      "outlet_id": "super-soco-murcia-francisco-belmonte",
+      "trading_name": "Francisco Belmonte, S.A.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Isla Cristina, 12, 30007 Murcia, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://franciscobelmonte.com/quienes-somos/",
+      "evidence_type": "operator_company_page",
+      "verification_status": "operator_self_declared_presence",
+      "official_authorization_status": "operator_self_declared_official",
+      "notes": "La web corporativa se autodeclara concesionario oficial y exclusivo Super Soco para Murcia. La página actual de movilidad eléctrica no muestra modelos ni stock Super Soco concreto, por lo que no se cuenta como oferta actual corroborada ni se atribuye servicio específico de marca."
+    }
+  ]
+}
