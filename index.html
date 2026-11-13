@@ -62,6 +62,18 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Volumen</th><th>Peso</th><th>Segmentos</th></tr></thead><tbody id="brandRanking"></tbody></table></div>
     <p class="note">El volumen procede de matriculaciones nuevas (operación 1), no de facturación ni ventas netas del fabricante. Las marcas candidatas sin conciliación con el inventario se mantienen identificadas como pendientes de revisión. El detalle por modelo todavía no está publicado en los agregados.</p>
   </section>
+  <section class="panel" aria-label="Desglose por modelo">
+    <h2>Volumen por modelo</h2>
+    <p class="small">Agregado de microdatos DGT por marca, modelo, segmento y provincia. Los registros de transferencia se muestran separados de las matriculaciones usadas.</p>
+    <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
+      <div><label for="modelBrand">Marca</label><select id="modelBrand"><option value="all">Todas las marcas</option></select></div>
+      <div><label for="modelOperation">Operación</label><select id="modelOperation"><option value="all">Todas</option><option value="matriculacion_nueva">Matriculación nueva</option><option value="matriculacion_usada">Matriculación usada</option><option value="transferencia">Transferencia (cambio de titular)</option></select></div>
+      <div><label for="modelSearch">Buscar modelo</label><input id="modelSearch" type="search" placeholder="Nombre del modelo" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
+    </div>
+    <p class="small" id="modelScope">Volumen agregado por modelo; aplica también los filtros generales de periodo, provincia y segmento.</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Modelo DGT</th><th>Volumen</th><th>Segmento</th><th>Provincia de referencia</th><th>Operación</th></tr></thead><tbody id="modelRanking"></tbody></table></div>
+    <p class="note">En matriculaciones nuevas la provincia es la de matriculación. En matriculaciones usadas y transferencias es la del domicilio registral del vehículo. La DGT no identifica en este registro la provincia donde se cerró la compraventa; no se interpreta el domicilio como provincia de venta.</p>
+  </section>
   <section class="panel">
     <h2>Matriculación nueva → domicilio registral del vehículo</h2>
     <p class="small">Cruce DGT por provincia de matriculación y provincia del domicilio registrado del vehículo. Se utiliza como proxy territorial de circulación, no como geolocalización del uso habitual.</p>
@@ -112,13 +124,14 @@ const FILES = {
   monthly: "matriculaciones_nuevos_usados_por_tipo.csv",
   brands: "marcas_candidatas_revision.json",
   cross: "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
+  models: "matriculaciones_marca_modelo_segmento.csv",
   provincial: "matriculaciones_motocicletas_por_provincia.csv",
   ranking: "ranking_motocicletas_provincia.csv",
   intensity: "indicadores_intensidad_territorial.csv"
 };
 const fmt = n => new Intl.NumberFormat("es-ES").format(n);
 const dec = (n,d=2) => Number(n).toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
-const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[], cross:[]};
+const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[], cross:[], models:[]};
 const el = id => document.getElementById(id);
 function parseCSV(text){
   const rows=[];let row=[],field="",quoted=false;
@@ -142,14 +155,14 @@ async function loadText(path){
 }
 async function loadJSON(path){return JSON.parse(await loadText(path));}
 async function loadData(){
-  const [manifest,periods,monthly,provincial,ranking,intensity,brands,cross]=await Promise.all([
-    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity),loadJSON(FILES.brands),loadText(FILES.cross)
+  const [manifest,periods,monthly,provincial,ranking,intensity,brands,cross,models]=await Promise.all([
+    loadJSON(FILES.manifest),loadJSON(FILES.periods),loadText(FILES.monthly),loadText(FILES.provincial),loadText(FILES.ranking),loadText(FILES.intensity),loadJSON(FILES.brands),loadText(FILES.cross),loadText(FILES.models)
   ]);
   state.manifest=manifest;state.periods=periods.periodos_disponibles||[];
   state.monthly=parseCSV(monthly);state.provincial=parseCSV(provincial);
-  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];state.cross=parseCSV(cross);
+  state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];state.cross=parseCSV(cross);state.models=parseCSV(models);
   if(!state.periods.length) throw new Error("El inventario no contiene periodos disponibles.");
-  populateFilters();render();renderBrands();
+  populateFilters();populateModelBrands();render();renderBrands();
   const files=(manifest.archivos||[]).length;
   el("status").className="status";
   el("status").textContent="Datos MATRABA cargados correctamente · "+files+" capturas fuente verificadas en el manifiesto · "+state.periods.length+" periodos disponibles.";
@@ -184,7 +197,7 @@ function render(){
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);
+  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);renderModels(f);
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
@@ -233,6 +246,32 @@ function renderIntensity(f){
   el("intensity").innerHTML=rows.map(r=>'<tr><td>'+r.provincia+'</td><td>'+fmt(Number(r.matriculaciones_nuevas))+'</td><td>'+dec(Number(r.matriculaciones_por_1000_habitantes),2)+'</td><td>'+dec(Number(r.matriculaciones_sobre_parque_pct),2)+'%</td></tr>').join("")||'<tr><td colspan="4">Sin datos</td></tr>';
   const months=state.intensity[0]?.periodos?.split("|")||[];
   el("intensityNote").textContent="Indicadores fijos del acumulado "+(months[0]||"")+" a "+(months[months.length-1]||"")+". No cambian al seleccionar un mes ni se recalculan por tipo 50/51.";
+}
+function populateModelBrands(){
+  const brands=[...new Set(state.models.map(row=>row.marca).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
+  el("modelBrand").innerHTML="<option value='all'>Todas las marcas</option>"+brands.map(name=>"<option value='"+escapeHTML(name)+"'>"+escapeHTML(name)+"</option>").join("");
+}
+function renderModels(f){
+  const brand=el("modelBrand").value, operation=el("modelOperation").value;
+  const query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es");
+  const rows=state.models.filter(r=>(f.period==="all"||r.periodo===f.period)&&
+    typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province)&&
+    (brand==="all"||r.marca===brand)&&(operation==="all"||r.tipo_registro===operation)&&
+    (r.modelo||"").toLocaleLowerCase("es").includes(query));
+  const groups=new Map();
+  rows.forEach(r=>{
+    const key=[r.marca,r.modelo,r.COD_TIPO,r.provincia,r.tipo_registro].join("|");
+    const item=groups.get(key)||{...r,recuento:0};
+    item.recuento+=Number(r.recuento)||0;groups.set(key,item);
+  });
+  const ranked=[...groups.values()].sort((a,b)=>Number(b.recuento)-Number(a.recuento));
+  const total=ranked.reduce((sum,r)=>sum+Number(r.recuento),0);
+  el("modelScope").textContent=fmt(total)+" registros · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"";
+  el("modelRanking").innerHTML=ranked.slice(0,100).map(r=>{
+    const typeLabel={"50":"Moto 2 ruedas","51":"Moto con sidecar","90":"Ciclomotor 2 ruedas","91":"Ciclomotor 3 ruedas"}[r.COD_TIPO]||r.COD_TIPO;
+    const operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","transferencia":"Transferencia"}[r.tipo_registro]||r.tipo_registro;
+    return "<tr><td>"+escapeHTML(r.marca)+"</td><td>"+escapeHTML(r.modelo)+"</td><td>"+fmt(Number(r.recuento))+"</td><td>"+escapeHTML(typeLabel)+"</td><td>"+escapeHTML(r.provincia)+"</td><td>"+escapeHTML(operationLabel)+"</td></tr>";
+  }).join("")||"<tr><td colspan='6'>Sin registros para los filtros seleccionados.</td></tr>";
 }
 function renderFlows(f){
   const groups=new Map();
@@ -297,6 +336,9 @@ function exportCSV(){
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
 el("brandSearch").addEventListener("input",renderBrands);
 el("brandSegment").addEventListener("change",renderBrands);
+el("modelBrand").addEventListener("change",()=>renderModels(selected()));
+el("modelOperation").addEventListener("change",()=>renderModels(selected()));
+el("modelSearch").addEventListener("input",()=>renderModels(selected()));
 el("csv").addEventListener("click",exportCSV);el("pdf").addEventListener("click",()=>window.print());
 loadData().catch(error=>{el("status").className="status error";el("status").textContent="No se han podido cargar los agregados MATRABA. "+error.message+" Comprueba que el dashboard se sirve desde la raíz del repositorio y que public/data está publicado.";});
 </script>
