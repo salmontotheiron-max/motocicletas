@@ -59,10 +59,11 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
       <div><label for="brandSearch">Buscar marca</label><input id="brandSearch" type="search" placeholder="Nombre de marca" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
       <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="motos" selected>Motocicletas · 50 + 51</option><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
+      <div><label for="brandOperation">Operación</label><select id="brandOperation"><option value="matriculacion_nueva">Matriculación nueva</option><option value="venta">Venta declarada DGT (COD_POSESION=V)</option><option value="subasta">Subasta</option><option value="transferencia_sin_clasificar">Transferencia sin clasificar</option></select></div>
     </div>
     <p class="small" id="brandScope">Matriculaciones nuevas observadas en DGT MATRABA, acumulado de los periodos publicados.</p>
     <div style="overflow-x:auto"><table><thead><tr><th>Marca</th><th>Volumen</th><th>Peso</th><th>Segmentos</th></tr></thead><tbody id="brandRanking"></tbody></table></div>
-    <p class="note">El volumen procede de matriculaciones nuevas (operación 1), no de facturación ni ventas netas del fabricante. El volumen se calcula con los mismos filtros generales de periodo, provincia y segmento. El desglose por modelo se muestra en la tabla siguiente.</p>
+    <p class="note">El volumen corresponde a la operación seleccionada: matriculación nueva o transferencia usada clasificada por DGT. No equivale a facturación ni ventas netas del fabricante. El desglose por modelo se muestra a continuación.</p>
   </section>
   <section class="panel" aria-label="Desglose por modelo">
     <h2>Volumen por modelo</h2>
@@ -309,9 +310,9 @@ function renderFlows(f){
 }
 function renderBrands(){
   const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
-  const segment=el("brandSegment").value, f=selected();
+  const segment=el("brandSegment").value, operation=el("brandOperation").value, f=selected();
   const grouped=new Map();
-  state.models.filter(r=>r.tipo_registro==="matriculacion_nueva"&&
+  state.models.filter(r=>r.tipo_registro===operation&&
     (f.period==="all"||r.periodo===f.period)&&
     (f.province==="all"||r.provincia===f.province)&&typeOK(r,f.kind)&&
     (segment==="all"||(segment==="motos"?["50","51"].includes(r.COD_TIPO):r.COD_TIPO===segment)))
@@ -324,8 +325,9 @@ function renderBrands(){
   const allRows=[...grouped.values()].sort((a,b)=>b.volume-a.volume);
   const total=allRows.reduce((sum,item)=>sum+item.volume,0);
   const rows=allRows.filter(item=>item.name.toLocaleLowerCase("es").includes(query));
-  el("brandScope").textContent=(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
-    " · "+fmt(total)+" matriculaciones nuevas · "+(f.province==="all"?"España":f.province)+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+rows.length+" marcas visibles.";
+  const operationLabel={"matriculacion_nueva":"Matriculaciones nuevas","venta":"Ventas declaradas DGT (COD_POSESION=V)","subasta":"Subastas","transferencia_sin_clasificar":"Transferencias sin clasificar"}[operation]||operation;
+  el("brandScope").textContent=operationLabel+" · "+(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
+    " · "+fmt(total)+" registros · "+(f.province==="all"?"España":f.province)+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+rows.length+" marcas visibles.";
   el("brandRanking").innerHTML=rows.map(item=>{
     const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
     const share=total?item.volume/total*100:0;
@@ -351,6 +353,7 @@ function exportCSV(){
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
 el("brandSearch").addEventListener("input",renderBrands);
 el("brandSegment").addEventListener("change",renderBrands);
+el("brandOperation").addEventListener("change",renderBrands);
 el("modelBrand").addEventListener("change",()=>renderModels(selected()));
 el("modelOperation").addEventListener("change",()=>renderModels(selected()));
 el("modelSearch").addEventListener("input",()=>renderModels(selected()));
