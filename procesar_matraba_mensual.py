@@ -119,7 +119,8 @@ def select_latest_transfer_archives(input_dir, inventory_path=None):
     for path in Path(input_dir).rglob("*.zip"):
         period = transfer_period_from_name(path)
         if not period or period < START:
-            continue        captured = capture_times.get(path.name, "")
+            continue
+        captured = capture_times.get(path.name, "")
         rank = (captured, path.name)
         current = candidates.get(period)
         if current is None or rank > current[0]:
@@ -241,7 +242,8 @@ def process_archive(path, period, include_transfers=False):
                     reference_period, province_scope, province_code or "(vacío)",
                     vehicle_type, new_used
                 )] += 1
-                if new_used == "N":                    # Contraste exploratorio: provincia de matriculación frente
+                if new_used == "N":
+                    # Contraste exploratorio: provincia de matriculación frente
                     # a provincia del domicilio registrado del vehículo.
                     provincial_cross_counts[(
                         reference_period, province_registration or "(vacío)",
@@ -360,7 +362,8 @@ def main():
                 period, registration_code,
                 PROVINCES.get(registration_code, "Código no catalogado") if registration_code != "(vacío)" else "Código vacío",
                 vehicle_code,
-                PROVINCES.get(vehicle_code, "Código no catalogado") if vehicle_code != "(vacío)" else "Código vacío",                vehicle_type, value,
+                PROVINCES.get(vehicle_code, "Código no catalogado") if vehicle_code != "(vacío)" else "Código vacío",
+                vehicle_type, value,
             ])
 
     with (output / "matriculaciones_marca_modelo_segmento.csv").open("w", newline="", encoding="utf-8-sig") as handle:
