@@ -28,6 +28,13 @@ def make_zip(record):
 
 
 class MonthlyProcessorTests(unittest.TestCase):
+    def test_transfer_snapshot_filename_is_recognized(self):
+        from pathlib import Path
+        self.assertEqual(
+            p.transfer_period_from_name(Path("export_mensual_trf_202609_" + "a" * 64 + ".zip")),
+            "2026-09",
+        )
+
     def test_transfer_url_uses_the_official_monthly_export_pattern(self):
         self.assertEqual(
             dt.transfer_url("2026-09"),
