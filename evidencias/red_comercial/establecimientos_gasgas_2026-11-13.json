@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "country_scope": "ES",
+  "cutoff_date": "2026-11-13",
+  "scope_provinces": [
+    "Barcelona",
+    "Málaga",
+    "Cádiz",
+    "Alicante",
+    "Murcia"
+  ],
+  "source_policy": "Se contabilizan sedes físicas con oferta actual de motocicletas GasGas publicada por el propio operador. La autodeclaración de concesionario oficial se conserva como tal y no se transforma en autorización del fabricante. Servicio solo se cuenta cuando el operador lo declara expresamente para GasGas. El localizador oficial se registra como dinámico y no se usa para atribuir fichas individuales.",
+  "verification_status_policy": {
+    "accepted_commercial_presence": "Página corporativa del operador publica oferta GasGas actual y permite asociarla a una sede física.",
+    "self_declared_official": "El operador se denomina concesionario oficial GasGas; no equivale a confirmación individual del fabricante.",
+    "secondary_candidate": "Agregador atribuye GasGas a un operador sin evidencia primaria individual actual; no se cuenta."
+  },
+  "outlet_count": 5,
+  "counts": {
+    "by_province": {
+      "Barcelona": 3,
+      "Murcia": 2
+    },
+    "sales": 5,
+    "service_locations": 2,
+    "same_site_sales_and_service": 2,
+    "service_only_locations": 0,
+    "manufacturer_individually_listed": 0,
+    "operator_self_declared_official_sales": 4,
+    "accepted_commercial_presence_sales": 5,
+    "secondary_only_candidates": 1
+  },
+  "manufacturer": {
+    "brand_owner": "KTM AG",
+    "Spanish_group_contact": "KTM Sportmotorcycle España, S.L.",
+    "address": "Cinca 8-10, Pol. Ind. Santa Margarida, 08223 Terrassa (Barcelona), España",
+    "evidence_urls": [
+      "https://www.ktm.com/es-es/contact.html",
+      "https://www.anesdor.com/asociados/"
+    ],
+    "notes": "ANESDOR identifica a KTM Sportmotorcycle España como asociado y vincula las marcas KTM, Husqvarna y GasGas. No se ha probado que KTM Sportmotorcycle España, S.L. sea el importador contractual o facturador de motocicletas GasGas en España. Fuentes mercantiles secundarias identifican además GasGas Motorcycles España, S.L., pero no se atribuye una función concreta de importación sin documentación primaria."
+  },
+  "official_source": {
+    "urls": [
+      "https://www.gasgas.com/es-es/dealer-search.html"
+    ],
+    "status": "locator_present_dynamic_content",
+    "notes": "El localizador oficial de GasGas está disponible, pero la captura estática no expone establecimientos individualizados. Los cinco puntos contabilizados proceden de evidencia corporativa de los operadores, no de fichas extraídas del localizador."
+  },
+  "outlets": [
+    {
+      "outlet_id": "gasgas-motorgas-manresa",
+      "brand": "GasGas",
+      "trading_name": "Motor Gas Motos / Motorgas",
+      "operator": "Motor Gas Motos",
+      "province": "Barcelona",
+      "municipality": "Manresa",
+      "public_address": "Carrer de la Pau, 8, 08243 Manresa, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://www.motorgas.com/",
+      "supporting_urls": [
+        "https://www.motorgas.com/"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web del operador se identifica como concesionario oficial GasGas y publica tienda física en Manresa. Dispone de taller propio, pero no se atribuye servicio específico GasGas por falta de declaración explícita de alcance de marca."
+    },
+    {
+      "outlet_id": "gasgas-sixlyon-sitges",
+      "brand": "GasGas",
+      "trading_name": "Sixlyon Bikes",
+      "operator": "Sixlyon Bikes",
+      "province": "Barcelona",
+      "municipality": "Sitges",
+      "public_address": "Polígono Industrial Mas Alba, Carrer Drets Humans, 13-15, 08870 Sitges, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://sixlyonbikes.com/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/gas-gas"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "El operador mantiene actividad comercial física en Sitges; su presencia GasGas aparece respaldada por el catálogo de marcas del operador y referencias sectoriales. La evidencia primaria accesible en esta revisión no permite atribuir servicio técnico específico GasGas."
+    },
+    {
+      "outlet_id": "gasgas-kontrakos-barcelona",
+      "brand": "GasGas",
+      "trading_name": "Kontrakos",
+      "operator": "Kontrakos",
+      "province": "Barcelona",
+      "municipality": "Sant Esteve de Palautordera",
+      "public_address": "Carretera del Montseny, 6, 08461 Sant Esteve de Palautordera, Barcelona, España",
+      "outlet_role": [
+        "sales"
+      ],
+      "evidence_url": "https://kontrakos.com/",
+      "supporting_urls": [
+        "https://concesionariosdemotos.com/gas-gas"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "Operador especializado en off-road; la información pública de su actividad comercial lo asocia a GasGas y a una tienda física. No se atribuye servicio específico de marca sin evidencia directa."
+    },
+    {
+      "outlet_id": "gasgas-jade-cartagena",
+      "brand": "GasGas",
+      "trading_name": "Jade Motor Cartagena",
+      "operator": "Jademotor, S.L.",
+      "province": "Murcia",
+      "municipality": "Cartagena (Miranda)",
+      "public_address": "Carretera Nacional 301, km 431, 30319 Cartagena, Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/motos-nuevas/gasgas",
+      "supporting_urls": [
+        "https://jademotor.com/contacto?marca=VOGE"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La página GasGas de Jade Motor ofrece gama actual y señala concesionario oficial GasGas en la Región de Murcia. La página de sedes identifica Cartagena como sede principal con tienda, concesionario y taller; se cuenta servicio por declaración expresa de taller oficial del grupo para GasGas."
+    },
+    {
+      "outlet_id": "gasgas-jade-murcia",
+      "brand": "GasGas",
+      "trading_name": "Jade Motor Murcia",
+      "operator": "Jademotor, S.L.",
+      "province": "Murcia",
+      "municipality": "Murcia",
+      "public_address": "Calle Pintor Pedro Flores, 32, 30010 Murcia, España",
+      "outlet_role": [
+        "sales",
+        "service"
+      ],
+      "evidence_url": "https://jademotor.com/motos-nuevas/gasgas",
+      "supporting_urls": [
+        "https://jademotor.com/contacto?marca=VOGE"
+      ],
+      "evidence_type": "operator_current_brand_offer",
+      "verification_status": "accepted_commercial_presence",
+      "official_authorization_status": "self_declared_official",
+      "notes": "La web identifica GasGas entre las marcas de la tienda de Murcia y declara taller oficial en la misma dirección. Se cuenta una sede de venta y servicio, diferenciada de Cartagena."
+    }
+  ],
+  "secondary_candidates": [
+    {
+      "candidate_id": "gasgas-el-motorista-jerez",
+      "province": "Cádiz",
+      "trading_name": "El Motorista",
+      "public_address": "Avenida de Europa, 13, 11405 Jerez de la Frontera, Cádiz, España",
+      "source_url": "https://concesionariosdemotos.com/gas-gas",
+      "reason": "Aparece en directorios secundarios como operador GasGas; no se ha localizado una página corporativa primaria actual que permita confirmar la oferta GasGas en esta sede. No se cuenta."
+    }
+  ],
+  "limitations": [
+    "Cinco sedes de venta acreditadas en Barcelona y Murcia; no es un censo nacional ni una extracción del localizador oficial.",
+    "El localizador oficial GasGas requiere contenido dinámico y no expone fichas individuales en la captura consultada.",
+    "No se ha confirmado con fuente primaria la sociedad que actúa como importador contractual de motocicletas GasGas en España.",
+    "Málaga, Cádiz y Alicante quedan pendientes de verificación primaria. La falta de resultados no demuestra ausencia de actividad.",
+    "Los cuatro operadores que se autodenominan concesionarios oficiales no se presentan como autorizaciones individualmente verificadas por el fabricante.",
+    "El servicio técnico solo se contabiliza en las dos sedes de Jade Motor, donde el operador declara taller oficial GasGas."
+  ]
+}
