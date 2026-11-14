@@ -360,7 +360,7 @@
         {
           "brand_id": "brand-bajaj",
           "canonical_name": "Bajaj",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -417,7 +417,7 @@
         {
           "brand_id": "brand-benda",
           "canonical_name": "Benda",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -512,7 +512,7 @@
         {
           "brand_id": "brand-beta",
           "canonical_name": "Beta",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -599,7 +599,7 @@
         {
           "brand_id": "brand-brixton",
           "canonical_name": "Brixton",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -656,7 +656,7 @@
         {
           "brand_id": "brand-bsa",
           "canonical_name": "BSA",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -918,7 +918,7 @@
         {
           "brand_id": "brand-cyclone",
           "canonical_name": "Cyclone",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -1877,7 +1877,7 @@
         {
           "brand_id": "brand-gasgas",
           "canonical_name": "GasGas",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -2091,7 +2091,7 @@
         {
           "brand_id": "brand-harley-davidson",
           "canonical_name": "Harley-Davidson",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -2263,7 +2263,7 @@
         {
           "brand_id": "brand-husqvarna",
           "canonical_name": "Husqvarna",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -2338,7 +2338,7 @@
         {
           "brand_id": "brand-indian",
           "canonical_name": "Indian",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -2474,7 +2474,7 @@
         {
           "brand_id": "brand-italjet",
           "canonical_name": "Italjet",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -2741,7 +2741,7 @@
         {
           "brand_id": "brand-kove",
           "canonical_name": "Kove",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -2874,7 +2874,7 @@
         {
           "brand_id": "brand-lambretta",
           "canonical_name": "Lambretta",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -3698,7 +3698,7 @@
         {
           "brand_id": "brand-morbidelli",
           "canonical_name": "Morbidelli",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -3755,7 +3755,7 @@
         {
           "brand_id": "brand-moto-guzzi",
           "canonical_name": "Moto Guzzi",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -3791,7 +3791,7 @@
         {
           "brand_id": "brand-moto-morini",
           "canonical_name": "Moto Morini",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -4016,7 +4016,7 @@
         {
           "brand_id": "brand-mv-agusta",
           "canonical_name": "MV Agusta",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -4162,7 +4162,7 @@
         {
           "brand_id": "brand-niu",
           "canonical_name": "NIU",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -4716,7 +4716,7 @@
         {
           "brand_id": "brand-rieju",
           "canonical_name": "Rieju",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -5166,7 +5166,7 @@
         {
           "brand_id": "brand-sherco",
           "canonical_name": "Sherco",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -5204,7 +5204,7 @@
         {
           "brand_id": "brand-silence",
           "canonical_name": "Silence",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -5422,7 +5422,7 @@
         {
           "brand_id": "brand-super-soco",
           "canonical_name": "Super Soco",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -5891,7 +5891,7 @@
         {
           "brand_id": "brand-trs",
           "canonical_name": "TRS",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -6443,7 +6443,7 @@
         {
           "brand_id": "brand-vmoto",
           "canonical_name": "Vmoto",
-          "market_status": "under_review"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",
@@ -6992,7 +6992,7 @@
         {
           "brand_id": "brand-zxmoto-es",
           "canonical_name": "ZXMOTO",
-          "market_status": "recent_entry"
+          "market_status": "established"
         }
       ],
       "estado_revision": "ya_en_inventario",

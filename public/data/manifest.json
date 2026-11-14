@@ -20,7 +20,8 @@
       "bytes_zip": 12218198,
       "registros": 130543,
       "fec_proceso_min": "2026-01-02",
-      "fec_proceso_max": "2026-01-30"
+      "fec_proceso_max": "2026-01-30",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202602_dfa40d2d0014ea810830115293b1b9e339733799ae7a3bc212134abe338cfa03.zip",
@@ -29,7 +30,8 @@
       "bytes_zip": 14724174,
       "registros": 161682,
       "fec_proceso_min": "2026-02-02",
-      "fec_proceso_max": "2026-02-27"
+      "fec_proceso_max": "2026-02-27",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202603_70b01875b6beed7a50e827b9ebcc0d85d1f955773d2ba7fce9c9566f966a27d0.zip",
@@ -38,7 +40,8 @@
       "bytes_zip": 18782350,
       "registros": 210097,
       "fec_proceso_min": "2026-03-02",
-      "fec_proceso_max": "2026-03-31"
+      "fec_proceso_max": "2026-03-31",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202604_e5bef264616bc6be36c42ef61a51b635a566c8c3dc1082ec79bb1c7bbd1941a3.zip",
@@ -47,7 +50,8 @@
       "bytes_zip": 16389678,
       "registros": 180135,
       "fec_proceso_min": "2026-04-01",
-      "fec_proceso_max": "2026-04-30"
+      "fec_proceso_max": "2026-04-30",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202605_272b7576fbd4ebd0825dbc2632dda88ba590835f7f8bef7afe6650ce2bfe246f.zip",
@@ -56,7 +60,8 @@
       "bytes_zip": 17332519,
       "registros": 189626,
       "fec_proceso_min": "2026-05-04",
-      "fec_proceso_max": "2026-05-29"
+      "fec_proceso_max": "2026-05-29",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202606_3b54c225827ab3213b265fcb186778a641ae0098ad6ac9c81c74ea945d65a6cf.zip",
@@ -65,7 +70,8 @@
       "bytes_zip": 19658972,
       "registros": 217004,
       "fec_proceso_min": "2026-06-01",
-      "fec_proceso_max": "2026-06-30"
+      "fec_proceso_max": "2026-06-30",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202607_9e32f705904dc17dbee21af336b098703323f5fbfe23116d43e4235fffb06000.zip",
@@ -74,7 +80,8 @@
       "bytes_zip": 17837719,
       "registros": 189104,
       "fec_proceso_min": "2026-07-01",
-      "fec_proceso_max": "2026-07-31"
+      "fec_proceso_max": "2026-07-31",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202608_e1fe9bb91abcc20e2b452a56183dbc7ec08cd760b9c4330e0ba3cf5265c79a4a.zip",
@@ -83,7 +90,8 @@
       "bytes_zip": 12021955,
       "registros": 126610,
       "fec_proceso_min": "2026-08-03",
-      "fec_proceso_max": "2026-08-31"
+      "fec_proceso_max": "2026-08-31",
+      "tipo_fuente": "matriculaciones"
     },
     {
       "archivo": "export_mensual_mat_202609_0587fb9490da556034894dd342a702477c3073e23ed6e622fb6d9bc299e5ff12.zip",
@@ -92,8 +100,99 @@
       "bytes_zip": 15991671,
       "registros": 169941,
       "fec_proceso_min": "2026-09-01",
-      "fec_proceso_max": "2026-09-30"
+      "fec_proceso_max": "2026-09-30",
+      "tipo_fuente": "matriculaciones"
+    },
+    {
+      "archivo": "export_mensual_trf_202601_a28896a230224fa4d98dc2bd6153525921bf423cd981d7301aa27cd2ebe3f9ec.zip",
+      "periodo_fuente": "2026-01",
+      "sha256": "a28896a230224fa4d98dc2bd6153525921bf423cd981d7301aa27cd2ebe3f9ec",
+      "bytes_zip": 32082767,
+      "registros": 318220,
+      "fec_proceso_min": "2026-01-02",
+      "fec_proceso_max": "2026-01-31",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202602_84754245e124ca5b9c771bfd95bac396b28e4cbd8775240e97e1319f80338cd2.zip",
+      "periodo_fuente": "2026-02",
+      "sha256": "84754245e124ca5b9c771bfd95bac396b28e4cbd8775240e97e1319f80338cd2",
+      "bytes_zip": 36325025,
+      "registros": 357951,
+      "fec_proceso_min": "2026-02-02",
+      "fec_proceso_max": "2026-02-28",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202603_cebf94d9b56427a337beafb80edf6d4b7ee18e73a4482ee169281d7d15f67777.zip",
+      "periodo_fuente": "2026-03",
+      "sha256": "cebf94d9b56427a337beafb80edf6d4b7ee18e73a4482ee169281d7d15f67777",
+      "bytes_zip": 41378082,
+      "registros": 406837,
+      "fec_proceso_min": "2026-03-02",
+      "fec_proceso_max": "2026-03-31",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202604_728f0cb00a3e25438e8fd161d7e9ab85a6b997976eacbb1fb73cb0d6ffa8c160.zip",
+      "periodo_fuente": "2026-04",
+      "sha256": "728f0cb00a3e25438e8fd161d7e9ab85a6b997976eacbb1fb73cb0d6ffa8c160",
+      "bytes_zip": 37424095,
+      "registros": 368245,
+      "fec_proceso_min": "2026-04-01",
+      "fec_proceso_max": "2026-04-30",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202605_5753bee4da4bad5c9bc2d64653fef03300d3192662205af8cce1d7426431504b.zip",
+      "periodo_fuente": "2026-05",
+      "sha256": "5753bee4da4bad5c9bc2d64653fef03300d3192662205af8cce1d7426431504b",
+      "bytes_zip": 38098420,
+      "registros": 374350,
+      "fec_proceso_min": "2026-05-02",
+      "fec_proceso_max": "2026-05-31",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202606_e74a3a2f132a4b9e536a9b1cbf66116bfa299ed072681d1b14c3cb98787359be.zip",
+      "periodo_fuente": "2026-06",
+      "sha256": "e74a3a2f132a4b9e536a9b1cbf66116bfa299ed072681d1b14c3cb98787359be",
+      "bytes_zip": 40396793,
+      "registros": 396070,
+      "fec_proceso_min": "2026-06-01",
+      "fec_proceso_max": "2026-06-30",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202607_b84acc2825982428570e8bbc15b00217903f224029e1a6d37800160f152262b9.zip",
+      "periodo_fuente": "2026-07",
+      "sha256": "b84acc2825982428570e8bbc15b00217903f224029e1a6d37800160f152262b9",
+      "bytes_zip": 41990659,
+      "registros": 412030,
+      "fec_proceso_min": "2026-07-01",
+      "fec_proceso_max": "2026-07-31",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202608_1f702014128a5ab061466eb7795330824c2f2fe3561b8fb150933075c26a8134.zip",
+      "periodo_fuente": "2026-08",
+      "sha256": "1f702014128a5ab061466eb7795330824c2f2fe3561b8fb150933075c26a8134",
+      "bytes_zip": 33110344,
+      "registros": 325283,
+      "fec_proceso_min": "2026-08-01",
+      "fec_proceso_max": "2026-08-31",
+      "tipo_fuente": "transferencias"
+    },
+    {
+      "archivo": "export_mensual_trf_202609_2ffabb873f3266805f7d50bcb48ea37fea504d0e046611de5586540bc2d11b30.zip",
+      "periodo_fuente": "2026-09",
+      "sha256": "2ffabb873f3266805f7d50bcb48ea37fea504d0e046611de5586540bc2d11b30",
+      "bytes_zip": 38586446,
+      "registros": 378721,
+      "fec_proceso_min": "2026-09-01",
+      "fec_proceso_max": "2026-09-30",
+      "tipo_fuente": "transferencias"
     }
   ],
-  "capturas_validas_procesadas": 9
+  "capturas_validas_procesadas": 18
 }

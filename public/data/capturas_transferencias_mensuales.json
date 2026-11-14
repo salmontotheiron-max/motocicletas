@@ -1,6 +1,6 @@
 {
   "esquema": 1,
-  "ultima_captura_utc": "2026-11-13T16:13:26.609710+00:00",
+  "ultima_captura_utc": "2026-11-14T06:07:09.948214+00:00",
   "ejecuciones": [
     {
       "fecha_captura_utc": "2026-11-13T16:13:26.609710+00:00",
@@ -108,6 +108,27 @@
           "registros": 378721,
           "url": "https://www.dgt.es/microdatos/salida/2026/9/vehiculos/transferencias/export_mensual_trf_202609.zip"
         },
+        {
+          "periodo": "2026-10",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/10/vehiculos/transferencias/export_mensual_trf_202610.zip"
+        },
+        {
+          "periodo": "2026-11",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/11/vehiculos/transferencias/export_mensual_trf_202611.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-14T06:07:09.948214+00:00",
+      "periodos_consultados": [
+        "2026-10",
+        "2026-11"
+      ],
+      "capturas": [
         {
           "periodo": "2026-10",
           "estado": "no_disponible_en_barrido",
