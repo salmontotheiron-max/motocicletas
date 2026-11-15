@@ -54,7 +54,10 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('["venta","subasta","transferencia_sin_clasificar"]', export)
         self.assertIn('typeOK(r,f.kind)', export)
         self.assertIn('f.province===r.provincia', export)
+        self.assertIn('"nivel_agregacion","periodo","tipo_registro"', export)
         self.assertIn('"marca","modelo","recuento"', export)
+        self.assertIn('["marca_modelo",period,r.tipo_registro', export)
+        self.assertIn('"matriculacion_nueva":"Matriculación nueva"', export)
 
     def test_used_registration_is_not_exported_as_a_transfer(self):
         self.assertIn('"matriculacion_usada","Usada · matriculación de vehículo usado"', self.html)
