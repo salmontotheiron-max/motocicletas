@@ -34,6 +34,10 @@ class IntegratedReportTests(unittest.TestCase):
             ["periodo","COD_TIPO","nuevo_usado","recuento"],
             [{"periodo":"2026-01","COD_TIPO":"50","nuevo_usado":"Nuevo","recuento":str(total-1)},
              {"periodo":"2026-01","COD_TIPO":"50","nuevo_usado":"Usado","recuento":"1"}])
+        self.write_csv(d/"matriculaciones_marca_modelo_segmento.csv",
+            ["CLAVE_TRAMITE","COD_TIPO","naturaleza_operacion","recuento"],
+            [{"CLAVE_TRAMITE":"2","COD_TIPO":"50","naturaleza_operacion":"transferencia_sin_clasificar","recuento":"7"},
+             {"CLAVE_TRAMITE":"2","COD_TIPO":"51","naturaleza_operacion":"subasta","recuento":"2"}])
         self.write_csv(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
             ["periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"],
             [{"periodo":"2026-01","COD_PROVINCIA_MAT":"SG","provincia_matriculacion":"Segovia","COD_PROVINCIA_VEH":"SG","provincia_domicilio_vehiculo":"Segovia","COD_TIPO":"50","recuento":"1"},
@@ -55,6 +59,14 @@ class IntegratedReportTests(unittest.TestCase):
             result=report.build_report(data,output)
             body=output.read_text(encoding="utf-8")
             self.assertEqual(result["nuevas"],3)
+            self.assertEqual(result["usadas_matriculadas"],1)
+            self.assertEqual(result["transferencias"],9)
+            self.assertEqual(result["ventas_declaradas"],0)
+            self.assertEqual(result["subastas"],2)
+            self.assertEqual(result["transferencias_sin_clasificar"],7)
+            self.assertIn("matriculaciones con IND_NUEVO_USADO=U",body)
+            self.assertIn("Transferencias separadas (CLAVE_TRAMITE=2)",body)
+            self.assertNotIn("cambios de titularidad",body.lower())
             self.assertEqual(result["alertas"],["Segovia"])
             self.assertIn("2026-01",body)
             self.assertIn("REVISAR",body)
@@ -89,6 +101,7 @@ class IntegratedReportTests(unittest.TestCase):
                     "dispersion_provincias_flujos.csv",
                     "matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
                     "matriculaciones_nuevos_usados_por_tipo.csv",
+                    "matriculaciones_marca_modelo_segmento.csv",
                     "informe_dispersion_provincias.json"]
         if not all((data / name).exists() for name in required):
             self.skipTest("No hay snapshot MATRABA publicado en este checkout")
@@ -96,7 +109,8 @@ class IntegratedReportTests(unittest.TestCase):
             result = report.build_report(data, Path(tmp) / "informe.md")
             dispersion = json.loads((data / "informe_dispersion_provincias.json").read_text(encoding="utf-8"))
             self.assertEqual(result["nuevas"], dispersion["total_matriculaciones"])
-            self.assertGreater(result["usadas"], 0)
+            self.assertGreater(result["usadas_matriculadas"], 0)
+            self.assertGreater(result["transferencias"], 0)
             self.assertTrue((Path(tmp) / "informe.md").exists())
 
     def test_rejects_inconsistent_totals(self):
