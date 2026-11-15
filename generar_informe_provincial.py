@@ -179,7 +179,8 @@ def build_reports(rows, output_dir):
         ],
         "nota_interpretacion": (
             "Los recuentos de nuevos y usados usan ámbitos geográficos distintos. "
-            "Los usados representan cambios de titularidad y no todas las compraventas."
+            "Los registros Usado de este agregado son matriculaciones de vehículos con IND_NUEVO_USADO=U (trámite 1); no representan transferencias ni el total de cambios de titularidad. "
+            "Las transferencias se identifican por separado mediante CLAVE_TRAMITE=2 y su COD_POSESION."
         ),
     }
     (output / "resumen_territorial.json").write_text(
