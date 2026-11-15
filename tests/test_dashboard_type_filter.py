@@ -37,17 +37,18 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
 
     def test_composition_chart_uses_the_selected_type_filter_and_scope(self):
         start = self.html.index("function renderTypes(f){")
-        end = self.html.index("\\nfunction renderRanking(f){", start)
+        end = self.html.index("\nfunction renderRanking(f){", start)
         chart = self.html[start:end]
         self.assertIn('const source=f.province==="all"?state.monthly:state.provincial;', chart)
         self.assertIn("typeOK(r,f.kind)", chart)
         self.assertIn('r.ambito_provincial==="matriculacion"', chart)
         self.assertIn('"90":"Ciclomotor de dos ruedas"', chart)
         self.assertIn('"92":"Cuadriciclo ligero"', chart)
+        self.assertIn('el("typeNote").textContent=', chart)
 
     def test_csv_export_includes_all_filtered_operation_families(self):
         start = self.html.index("function exportCSV(){")
-        end = self.html.index('\\n["period","province","kind"]', start)
+        end = self.html.index('\n["period","province","kind"]', start)
         export = self.html[start:end]
         self.assertIn('r.tipo_registro', export)
         self.assertIn('["venta","subasta","transferencia_sin_clasificar"]', export)
