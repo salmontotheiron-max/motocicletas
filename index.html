@@ -43,7 +43,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="filters" aria-label="Filtros del observatorio">
     <div><label for="period">Periodo</label><select id="period"><option value="all">Todos los meses disponibles</option></select></div>
     <div><label for="province">Provincia</label><select id="province"><option value="all">Todas las provincias</option></select></div>
-    <div><label for="kind">Categoría registral</label><select id="kind"><option value="all">Motocicletas (50 + 51)</option><option value="50">Tipo 50 · Dos ruedas sin sidecar</option><option value="51">Tipo 51 · Con sidecar</option></select></div>
+    <div><label for="kind">Categoría registral</label><select id="kind"><option value="motos" selected>Motocicletas (50 + 51)</option><option value="50">Tipo 50 · Dos ruedas sin sidecar</option><option value="51">Tipo 51 · Con sidecar</option><option value="all">Todos los tipos observados</option></select></div>
     <div class="actions"><button id="csv">Exportar datos filtrados</button><button id="pdf" class="secondary">Imprimir / PDF</button></div>
   </section>
   <section class="cards" aria-label="Indicadores principales">
@@ -179,7 +179,7 @@ function populateFilters(){
 function selected(){
   return {period:el("period").value,province:el("province").value,kind:el("kind").value};
 }
-function typeOK(r,k){return k==="all"||r.COD_TIPO===k;}
+function typeOK(r,k){if(k==="motos")return ["50","51"].includes(String(r.COD_TIPO));if(k==="all")return true;return String(r.COD_TIPO)===String(k);}
 function provincialSum(period,province,kind,scope,used){
   return state.provincial.filter(r=>(period==="all"||r.periodo===period)&&r.ambito_provincial===scope&&typeOK(r,kind)&&
     (used?r.nuevo_usado==="Usado":r.nuevo_usado==="Nuevo")&&(province==="all"||r.provincia===province))
