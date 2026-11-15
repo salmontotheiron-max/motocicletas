@@ -316,11 +316,11 @@ class MonthlyProcessorTests(unittest.TestCase):
 
     def test_transfer_semantics_keep_three_dgt_fields_independent(self):
         self.assertEqual(
-            p.semantic_model_fields("N", "venta"),
+            p.semantic_model_fields("N", "venta", "V"),
             ("2", "N", "V", "venta_declarada_DGT"),
         )
         self.assertEqual(
-            p.semantic_model_fields("N", "subasta"),
+            p.semantic_model_fields("N", "subasta", "S"),
             ("2", "N", "S", "subasta"),
         )
         self.assertEqual(
