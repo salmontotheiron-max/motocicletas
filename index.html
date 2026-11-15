@@ -93,7 +93,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <article class="panel">
       <h2>Composición por tipo</h2>
       <div id="typeBars"></div>
-      <p class="small">Tipos DGT incluidos: 50 y 51. Se excluyen ciclomotores, motocarros, triciclos y cuadriciclos.</p>
+      <p class="small" id="typeNote">La composición de matriculaciones nuevas respeta el periodo, provincia y categoría registral seleccionados.</p>
     </article>
   </section>
   <section class="grid">
@@ -251,6 +251,10 @@ function renderTypes(f){
   const entries=[...totals].sort((a,b)=>b[1]-a[1]);
   const total=entries.reduce((sum,item)=>sum+item[1],0);
   const max=Math.max(1,...entries.map(item=>item[1]));
+  const typeLabel=f.kind==="motos"?"Motocicletas 50/51":f.kind==="all"?"Todos los tipos observados":"Tipo DGT "+f.kind;
+  const periodLabel=f.period==="all"?"todos los periodos":f.period;
+  const provinceLabel=f.province==="all"?"España":f.province+" · provincia de matriculación";
+  el("typeNote").textContent="Matriculaciones nuevas · "+typeLabel+" · "+provinceLabel+" · "+periodLabel+".";
   el("typeBars").innerHTML=entries.map(([code,value])=>{
     const name=descriptions[code]||("Tipo DGT "+code);
     const share=total?value/total*100:0;
