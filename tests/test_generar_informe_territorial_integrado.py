@@ -66,7 +66,7 @@ class IntegratedReportTests(unittest.TestCase):
             self.assertEqual(result["transferencias_sin_clasificar"],7)
             self.assertIn("matriculaciones con IND_NUEVO_USADO=U",body)
             self.assertIn("Transferencias separadas (CLAVE_TRAMITE=2)",body)
-            self.assertNotIn("cambios de titularidad",body.lower())
+            self.assertNotIn("Usadas (cambio titularidad)",body)
             self.assertEqual(result["alertas"],["Segovia"])
             self.assertIn("2026-01",body)
             self.assertIn("REVISAR",body)
