@@ -93,7 +93,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <article class="panel">
       <h2>Composición por tipo</h2>
       <div id="typeBars"></div>
-      <p class="small">Tipos DGT incluidos: 50 y 51. Se excluyen ciclomotores, motocarros, triciclos y cuadriciclos.</p>
+      <p class="small" id="typeNote">La composición de matriculaciones nuevas respeta el periodo, provincia y categoría registral seleccionados.</p>
     </article>
   </section>
   <section class="grid">
@@ -229,16 +229,37 @@ function renderTrend(f){
   el("trend").innerHTML=svg;
 }
 function renderTypes(f){
-  // Este panel representa exclusivamente el universo de motocicletas DGT: tipos 50 y 51.
-  const motorcycleTypes=["50","51"];
-  const rows=f.province==="all"
-    ?state.monthly.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.nuevo_usado==="Nuevo"&&motorcycleTypes.includes(r.COD_TIPO)&&typeOK(r,f.kind))
-    :state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&motorcycleTypes.includes(r.COD_TIPO)&&typeOK(r,f.kind)&&r.provincia===f.province);
-  const descriptions={"50":"Motocicleta de dos ruedas sin sidecar","51":"Motocicleta con sidecar"};
-  const totals={};
-  rows.forEach(r=>{const name=descriptions[r.COD_TIPO];if(name)totals[name]=(totals[name]||0)+Number(r.recuento||0);});
-  const max=Math.max(1,...Object.values(totals));
-  el("typeBars").innerHTML=Object.entries(totals).map(([name,value])=>'<div class="bar-row"><span>'+name.replace("Motocicleta de ","")+'</span><div class="bar"><span style="width:'+(value/max*100)+'%"></span></div><strong>'+fmt(value)+'</strong></div>').join("")||'<p class="small">Sin datos para la selección.</p>';
+  const source=f.province==="all"?state.monthly:state.provincial;
+  const rows=source.filter(r=>(f.period==="all"||r.periodo===f.period)&&
+    (f.province==="all"||(r.ambito_provincial==="matriculacion"&&r.provincia===f.province))&&
+    r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind));
+  const descriptions={
+    "50":"Motocicleta de dos ruedas sin sidecar",
+    "51":"Motocicleta con sidecar",
+    "52":"Motocarro",
+    "53":"Automóvil de tres ruedas",
+    "54":"Cuadriciclo pesado",
+    "90":"Ciclomotor de dos ruedas",
+    "91":"Ciclomotor de tres ruedas",
+    "92":"Cuadriciclo ligero"
+  };
+  const totals=new Map();
+  rows.forEach(r=>{
+    const code=String(r.COD_TIPO);
+    totals.set(code,(totals.get(code)||0)+(Number(r.recuento)||0));
+  });
+  const entries=[...totals].sort((a,b)=>b[1]-a[1]);
+  const total=entries.reduce((sum,item)=>sum+item[1],0);
+  const max=Math.max(1,...entries.map(item=>item[1]));
+  const typeLabel=f.kind==="motos"?"Motocicletas 50/51":f.kind==="all"?"Todos los tipos observados":"Tipo DGT "+f.kind;
+  const periodLabel=f.period==="all"?"todos los periodos":f.period;
+  const provinceLabel=f.province==="all"?"España":f.province+" · provincia de matriculación";
+  el("typeNote").textContent="Matriculaciones nuevas · "+typeLabel+" · "+provinceLabel+" · "+periodLabel+".";
+  el("typeBars").innerHTML=entries.map(([code,value])=>{
+    const name=descriptions[code]||("Tipo DGT "+code);
+    const share=total?value/total*100:0;
+    return '<div class="bar-row"><span>'+escapeHTML(name)+'</span><div class="bar"><span style="width:'+(value/max*100)+'%"></span></div><strong>'+fmt(value)+' · '+dec(share,1)+'%</strong></div>';
+  }).join("")||'<p class="small">Sin datos para la selección.</p>';
 }
 function renderRanking(f){
   let rows;
@@ -339,16 +360,38 @@ function escapeHTML(value){
 }
 function exportCSV(){
   const f=selected(),rows=[];
-  state.periods.filter(p=>f.period==="all"||p===f.period).forEach(p=>{
-    const newRows=state.provincial.filter(r=>r.periodo===p&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
-    const usedRows=state.provincial.filter(r=>r.periodo===p&&r.ambito_provincial==="domicilio_vehiculo"&&r.nuevo_usado==="Usado"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
-    newRows.forEach(r=>rows.push([p,"Nueva","Provincia de matriculación",r.provincia,r.COD_TIPO,r.recuento]));
-    usedRows.forEach(r=>rows.push([p,"Usada · cambio de titularidad","Provincia del domicilio registral",r.provincia,r.COD_TIPO,r.recuento]));
+  const periods=state.periods.filter(period=>f.period==="all"||period===f.period);
+  const operationLabels={
+    "matriculacion_nueva":"Matriculación nueva",
+    "matriculacion_usada":"Matriculación de vehículo usado",
+    "venta":"Transferencia · venta declarada DGT",
+    "subasta":"Transferencia · subasta",
+    "transferencia_sin_clasificar":"Transferencia · sin clasificar"
+  };
+  periods.forEach(period=>{
+    const newRows=state.provincial.filter(r=>r.periodo===period&&r.ambito_provincial==="matriculacion"&&
+      r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+    const usedRows=state.provincial.filter(r=>r.periodo===period&&r.ambito_provincial==="domicilio_vehiculo"&&
+      r.nuevo_usado==="Usado"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+    const modelRows=state.models.filter(r=>r.periodo===period&&
+      Object.prototype.hasOwnProperty.call(operationLabels,r.tipo_registro)&&
+      typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+    newRows.forEach(r=>rows.push(["provincia",period,"matriculacion_nueva",operationLabels.matriculacion_nueva,
+      "Provincia de matriculación",r.provincia,r.COD_TIPO,"","",r.recuento]));
+    usedRows.forEach(r=>rows.push(["provincia",period,"matriculacion_usada",operationLabels.matriculacion_usada,
+      "Domicilio registral",r.provincia,r.COD_TIPO,"","",r.recuento]));
+    modelRows.forEach(r=>rows.push(["marca_modelo",period,r.tipo_registro,operationLabels[r.tipo_registro],
+      r.tipo_registro==="matriculacion_nueva"?"Provincia de matriculación":"Domicilio registral",
+      r.provincia,r.COD_TIPO,r.marca||"",r.modelo||"",r.recuento]));
   });
-  const head=["periodo","categoria","ambito_geografico","provincia","COD_TIPO","recuento"];
-  const csv="\uFEFF"+[head,...rows].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(";")).join("\r\n");
-  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
-  a.href=url;a.download="matraba_motocicletas_filtrado.csv";a.click();URL.revokeObjectURL(url);
+  const head=["nivel_agregacion","periodo","tipo_registro","categoria","ambito_geografico","provincia","COD_TIPO","marca","modelo","recuento"];
+  const quote=value=>'"'+String(value??"").replaceAll('"','""')+'"';
+  const csv="\uFEFF"+[head,...rows].map(row=>row.map(quote).join(";")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="matraba_dashboard_filtrado.csv";
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),0);
 }
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
 el("brandSearch").addEventListener("input",renderBrands);
