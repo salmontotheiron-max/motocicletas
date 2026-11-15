@@ -332,6 +332,25 @@ def summarize_transfer_fields(path, period):
     ]
 
 
+def semantic_model_fields(new_used, record_type):
+    """Devuelve por separado trámite, estado original y posesión declarada."""
+    if record_type in {"venta", "subasta", "transferencia_sin_clasificar"}:
+        operation = "2"
+    elif record_type in {"matriculacion_nueva", "matriculacion_usada"}:
+        operation = "1"
+    else:
+        operation = ""
+    possession = {"venta": "V", "subasta": "S"}.get(record_type, "")
+    nature = {
+        "venta": "venta_declarada_DGT",
+        "subasta": "subasta",
+        "transferencia_sin_clasificar": "transferencia_sin_clasificar",
+        "matriculacion_nueva": "matriculacion_nueva",
+        "matriculacion_usada": "matriculacion_usada",
+    }.get(record_type, "sin_clasificar")
+    return operation, new_used, possession, nature
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", required=True)
@@ -416,14 +435,19 @@ def main():
         writer = csv.writer(handle)
         writer.writerow([
             "periodo", "marca", "modelo", "COD_TIPO", "nuevo_usado",
+            "CLAVE_TRAMITE", "IND_NUEVO_USADO", "COD_POSESION", "naturaleza_operacion",
             "tipo_registro", "ambito_provincial", "COD_PROVINCIA", "provincia",
             "recuento",
         ])
         for key, value in sorted(model_counts.items()):
             period, brand, model, vehicle_type, new_used, record_type, scope, province_code = key
+            operation_code, original_condition, possession_code, operation_nature = semantic_model_fields(
+                new_used, record_type
+            )
             writer.writerow([
-                period, brand, model, vehicle_type, new_used, record_type,
-                scope, province_code,
+                period, brand, model, vehicle_type, new_used,
+                operation_code, original_condition, possession_code, operation_nature,
+                record_type, scope, province_code,
                 PROVINCES.get(province_code, "Código no catalogado") if province_code != "(vacío)" else "Código vacío",
                 value,
             ])
@@ -510,6 +534,7 @@ def main():
         "registros_auditados_con_incidencias": len(audit_rows),
         "incidencias_por_tipo": dict(sorted(Counter(row[2] for row in audit_rows).items())),
         "nota_fecha": "En nuevos se utiliza FEC_MATRICULA. En usados se utiliza FEC_TRAMITE para observar los cambios de titular. Si FEC_MATRICULA (nuevos) o FEC_TRAMITE (cualquier operación) es posterior a FEC_PROCESO, se excluye el registro y se anota en auditoría. No se sustituyen fechas futuras por FEC_PROCESO.",
+        "nota_separacion_semantica": "CLAVE_TRAMITE identifica el trámite (1 matriculación, 2 transferencia); IND_NUEVO_USADO describe el estado del vehículo al matricularse originalmente; COD_POSESION identifica la posesión declarada en la transferencia (V venta, S subasta, vacío/no especificado). No deben intercambiarse ni deducirse unos de otros. La provincia disponible en transferencias es el domicilio registral del vehículo, no el lugar físico de venta.",
         "privacidad": "No exportar campos personales ni identificadores sensibles.",
         "duplicados": "No se eliminan filas idénticas automáticamente.",
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
