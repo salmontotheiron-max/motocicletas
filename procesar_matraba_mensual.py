@@ -257,7 +257,7 @@ def process_archive(path, period, include_transfers=False):
             model_counts[(
                 reference_period, brand_itv, model_itv, vehicle_type,
                 new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
-                province_scope, province_code or "(vacío)"
+                province_scope, province_code or "(vacío)", possession_code
             )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
@@ -271,7 +271,7 @@ def process_archive(path, period, include_transfers=False):
                 model_counts[(
                     transaction_date.strftime("%Y-%m"), brand_itv, model_itv,
                     vehicle_type, new_used or "(vacío)", transfer_type,
-                    "domicilio_vehiculo", province_vehicle or "(vacío)"
+                    "domicilio_vehiculo", province_vehicle or "(vacío)", possession_code
                 )] += 1
 
     digest = hashlib.sha256(payload).hexdigest()
@@ -332,15 +332,17 @@ def summarize_transfer_fields(path, period):
     ]
 
 
-def semantic_model_fields(new_used, record_type):
-    """Devuelve por separado trámite, estado original y posesión declarada."""
+def semantic_model_fields(new_used, record_type, possession_code=""):
+    """Devuelve trámite, estado original, código bruto de posesión y naturaleza."""
     if record_type in {"venta", "subasta", "transferencia_sin_clasificar"}:
         operation = "2"
     elif record_type in {"matriculacion_nueva", "matriculacion_usada"}:
         operation = "1"
     else:
         operation = ""
-    possession = {"venta": "V", "subasta": "S"}.get(record_type, "")
+    # COD_POSESION es un dato fuente: conservarlo literalmente, incluso si
+    # contiene un código no catalogado. La naturaleza se clasifica aparte.
+    possession = possession_code
     nature = {
         "venta": "venta_declarada_DGT",
         "subasta": "subasta",
@@ -440,9 +442,9 @@ def main():
             "recuento",
         ])
         for key, value in sorted(model_counts.items()):
-            period, brand, model, vehicle_type, new_used, record_type, scope, province_code = key
+            period, brand, model, vehicle_type, new_used, record_type, scope, province_code, raw_possession_code = key
             operation_code, original_condition, possession_code, operation_nature = semantic_model_fields(
-                new_used, record_type
+                new_used, record_type, raw_possession_code
             )
             writer.writerow([
                 period, brand, model, vehicle_type, new_used,
