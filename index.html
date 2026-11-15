@@ -386,7 +386,7 @@ function exportCSV(){
   });
   const head=["nivel_agregacion","periodo","tipo_registro","categoria","ambito_geografico","provincia","COD_TIPO","marca","modelo","recuento"];
   const quote=value=>'"'+String(value??"").replaceAll('"','""')+'"';
-  const csv="\\uFEFF"+[head,...rows].map(row=>row.map(quote).join(";")).join("\\r\\n");
+  const csv="\uFEFF"+[head,...rows].map(row=>row.map(quote).join(";")).join("\r\n");
   const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
   const url=URL.createObjectURL(blob),a=document.createElement("a");
   a.href=url;a.download="matraba_dashboard_filtrado.csv";
