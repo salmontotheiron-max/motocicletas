@@ -35,6 +35,30 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('f.kind==="motos"', self.html)
         self.assertNotIn('f.kind==="all"){\n    rows=state.ranking', self.html)
 
+    def test_composition_chart_uses_the_selected_type_filter_and_scope(self):
+        start = self.html.index("function renderTypes(f){")
+        end = self.html.index("\\nfunction renderRanking(f){", start)
+        chart = self.html[start:end]
+        self.assertIn('const source=f.province==="all"?state.monthly:state.provincial;', chart)
+        self.assertIn("typeOK(r,f.kind)", chart)
+        self.assertIn('r.ambito_provincial==="matriculacion"', chart)
+        self.assertIn('"90":"Ciclomotor de dos ruedas"', chart)
+        self.assertIn('"92":"Cuadriciclo ligero"', chart)
+
+    def test_csv_export_includes_all_filtered_operation_families(self):
+        start = self.html.index("function exportCSV(){")
+        end = self.html.index('\\n["period","province","kind"]', start)
+        export = self.html[start:end]
+        self.assertIn('r.tipo_registro', export)
+        self.assertIn('["venta","subasta","transferencia_sin_clasificar"]', export)
+        self.assertIn('typeOK(r,f.kind)', export)
+        self.assertIn('f.province===r.provincia', export)
+        self.assertIn('"marca","modelo","recuento"', export)
+
+    def test_used_registration_is_not_exported_as_a_transfer(self):
+        self.assertIn('"matriculacion_usada","Usada · matriculación de vehículo usado"', self.html)
+        self.assertNotIn('"Usada · cambio de titularidad"', self.html)
+
 
 if __name__ == "__main__":
     unittest.main()
