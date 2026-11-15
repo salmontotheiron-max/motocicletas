@@ -55,7 +55,7 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('"subasta":"Transferencia · subasta"', export)
         self.assertIn('"transferencia_sin_clasificar":"Transferencia · sin clasificar"', export)
         self.assertIn('typeOK(r,f.kind)', export)
-        self.assertIn('f.province===r.provincia', export)
+        self.assertIn('r.provincia===f.province', export)
         self.assertIn('"nivel_agregacion","periodo","tipo_registro"', export)
         self.assertIn('"marca","modelo","recuento"', export)
         self.assertIn('["marca_modelo",period,r.tipo_registro', export)
