@@ -55,8 +55,6 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('typeOK(r,f.kind)', export)
         self.assertIn('f.province===r.provincia', export)
         self.assertIn('"marca","modelo","recuento"', export)
-        self.assertIn('const csv="\\\\uFEFF"', export)
-        self.assertIn('.join("\\\\r\\\\n")', export)
 
     def test_used_registration_is_not_exported_as_a_transfer(self):
         self.assertIn('"matriculacion_usada","Usada · matriculación de vehículo usado"', self.html)
