@@ -242,7 +242,7 @@ function renderTypes(f){
 }
 function renderRanking(f){
   let rows;
-  if(f.period==="all"&&f.province==="all"&&f.kind==="all"){
+  if(f.period==="all"&&f.province==="all"&&f.kind==="motos"){
     rows=state.ranking.filter(r=>r.ambito_provincial==="matriculacion").sort((a,b)=>Number(a.puesto)-Number(b.puesto)).slice(0,10).map(r=>({name:r.provincia,value:Number(r.recuento)}));
   }else{
     const map=new Map();

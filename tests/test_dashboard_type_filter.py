@@ -31,6 +31,10 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
     def test_shared_predicate_is_used_across_dashboard_views(self):
         self.assertGreaterEqual(self.html.count("typeOK(r,f.kind)"), 5)
 
+    def test_precomputed_motorcycle_ranking_is_not_used_for_all_types(self):
+        self.assertIn('f.kind==="motos"', self.html)
+        self.assertNotIn('f.kind==="all"){\n    rows=state.ranking', self.html)
+
 
 if __name__ == "__main__":
     unittest.main()
