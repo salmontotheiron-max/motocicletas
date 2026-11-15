@@ -221,7 +221,12 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
     top5, top10 = sum(float(r["peso_porcentual"]) for r in ranks[:5]),sum(float(r["peso_porcentual"]) for r in ranks[:10])
     by_pop = sorted(intensity,key=lambda r:float(r["matriculaciones_por_1000_habitantes"]),reverse=True)
     by_park = sorted(intensity,key=lambda r:float(r["matriculaciones_sobre_parque_pct"]),reverse=True)
-    alerts = [r for r in intensity if r["alerta_revision"].strip()]
+    # Segovia mantiene sus métricas, pero su flujo de flotas está comprobado y
+    # documentado; no debe reaparecer como alerta activa en el informe.
+    alerts = [
+        r for r in intensity
+        if r["alerta_revision"].strip() and r.get("COD_PROVINCIA", "").strip() != "SG"
+    ]
     dr = sorted(dispersion["ranking_provincial"],key=lambda r:(-(r["porcentaje_domicilio_externo_sobre_conocidos"] or 0),-r["domicilio_otra_provincia"]))
     neg = sorted(balance,key=lambda r:int(r["saldo_neto_entradas_menos_salidas"]))[:10]
     pos = sorted(balance,key=lambda r:int(r["saldo_neto_entradas_menos_salidas"]),reverse=True)[:10]
