@@ -51,7 +51,9 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         end = self.html.index('\n["period","province","kind"]', start)
         export = self.html[start:end]
         self.assertIn('r.tipo_registro', export)
-        self.assertIn('["venta","subasta","transferencia_sin_clasificar"]', export)
+        self.assertIn('"venta":"Transferencia · venta declarada DGT"', export)
+        self.assertIn('"subasta":"Transferencia · subasta"', export)
+        self.assertIn('"transferencia_sin_clasificar":"Transferencia · sin clasificar"', export)
         self.assertIn('typeOK(r,f.kind)', export)
         self.assertIn('f.province===r.provincia', export)
         self.assertIn('"nivel_agregacion","periodo","tipo_registro"', export)
@@ -60,7 +62,7 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('"matriculacion_nueva":"Matriculación nueva"', export)
 
     def test_used_registration_is_not_exported_as_a_transfer(self):
-        self.assertIn('"matriculacion_usada","Usada · matriculación de vehículo usado"', self.html)
+        self.assertIn('"matriculacion_usada":"Matriculación de vehículo usado"', self.html)
         self.assertNotIn('"Usada · cambio de titularidad"', self.html)
 
 
