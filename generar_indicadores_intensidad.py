@@ -129,7 +129,7 @@ def build_report(provincial_path, population_path, park_path, output_dir):
             "parque_motocicletas": motorcycles,
             "matriculaciones_sobre_parque_pct": round(rate_park, 4),
             "umbral_revision_parque_pct": ALERTA_PARQUE_PCT,
-            "alerta_revision": "REVISAR" if rate_park >= ALERTA_PARQUE_PCT else "",
+            "alerta_revision": "REVISAR" if rate_park >= ALERTA_PARQUE_PCT and code != "SG" else "",
             "periodos": "|".join(periods),
         })
 
@@ -160,7 +160,8 @@ def build_report(provincial_path, population_path, park_path, output_dir):
         },
         "alerta": {
             "umbral_pct": ALERTA_PARQUE_PCT,
-            "criterio": "Marca REVISAR cuando las matriculaciones acumuladas igualan o superan el 25% del parque de referencia. Es un umbral operativo de revisión, no una anomalía confirmada ni una tasa de renovación.",
+            "criterio": "Marca REVISAR cuando las matriculaciones acumuladas igualan o superan el 25% del parque de referencia, salvo excepciones contextuales documentadas. Es un umbral operativo de revisión, no una anomalía confirmada ni una tasa de renovación.",
+            "excepciones_contextuales": [{"COD_PROVINCIA": "SG", "provincia": "Segovia", "motivo": "Flujo de flotas ya comprobado: empresas matriculan en Segovia y destinan los vehículos a otras provincias. Se mantienen íntegros los recuentos e indicadores; no se genera alerta activa."}],
         },
         "limitaciones": [
             "Los nuevos se asignan por provincia de matriculación; el parque se asigna por provincia del parque registrado por la DGT.",
