@@ -360,24 +360,33 @@ function escapeHTML(value){
 }
 function exportCSV(){
   const f=selected(),rows=[];
-  const periods=state.periods.filter(p=>f.period==="all"||p===f.period);
+  const periods=state.periods.filter(period=>f.period==="all"||period===f.period);
+  const operationLabels={
+    "matriculacion_nueva":"Matriculación nueva",
+    "matriculacion_usada":"Matriculación de vehículo usado",
+    "venta":"Transferencia · venta declarada DGT",
+    "subasta":"Transferencia · subasta",
+    "transferencia_sin_clasificar":"Transferencia · sin clasificar"
+  };
   periods.forEach(period=>{
     const newRows=state.provincial.filter(r=>r.periodo===period&&r.ambito_provincial==="matriculacion"&&
       r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
     const usedRows=state.provincial.filter(r=>r.periodo===period&&r.ambito_provincial==="domicilio_vehiculo"&&
       r.nuevo_usado==="Usado"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
-    const transferRows=state.models.filter(r=>r.periodo===period&&
-      ["venta","subasta","transferencia_sin_clasificar"].includes(r.tipo_registro)&&
+    const modelRows=state.models.filter(r=>r.periodo===period&&
+      Object.prototype.hasOwnProperty.call(operationLabels,r.tipo_registro)&&
       typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
-    newRows.forEach(r=>rows.push([period,"matriculacion_nueva","Nueva","Provincia de matriculación",r.provincia,r.COD_TIPO,"","",r.recuento]));
-    usedRows.forEach(r=>rows.push([period,"matriculacion_usada","Usada · matriculación de vehículo usado","Domicilio registral",r.provincia,r.COD_TIPO,"","",r.recuento]));
-    transferRows.forEach(r=>rows.push([period,r.tipo_registro,
-      r.tipo_registro==="venta"?"Transferencia · venta declarada DGT":r.tipo_registro==="subasta"?"Transferencia · subasta":"Transferencia · sin clasificar",
-      "Domicilio registral",r.provincia,r.COD_TIPO,r.marca||"",r.modelo||"",r.recuento]));
+    newRows.forEach(r=>rows.push(["provincia",period,"matriculacion_nueva",operationLabels.matriculacion_nueva,
+      "Provincia de matriculación",r.provincia,r.COD_TIPO,"","",r.recuento]));
+    usedRows.forEach(r=>rows.push(["provincia",period,"matriculacion_usada",operationLabels.matriculacion_usada,
+      "Domicilio registral",r.provincia,r.COD_TIPO,"","",r.recuento]));
+    modelRows.forEach(r=>rows.push(["marca_modelo",period,r.tipo_registro,operationLabels[r.tipo_registro],
+      r.tipo_registro==="matriculacion_nueva"?"Provincia de matriculación":"Domicilio registral",
+      r.provincia,r.COD_TIPO,r.marca||"",r.modelo||"",r.recuento]));
   });
-  const head=["periodo","tipo_registro","categoria","ambito_geografico","provincia","COD_TIPO","marca","modelo","recuento"];
+  const head=["nivel_agregacion","periodo","tipo_registro","categoria","ambito_geografico","provincia","COD_TIPO","marca","modelo","recuento"];
   const quote=value=>'"'+String(value??"").replaceAll('"','""')+'"';
-  const csv="\uFEFF"+[head,...rows].map(row=>row.map(quote).join(";")).join("\r\n");
+  const csv="\\uFEFF"+[head,...rows].map(row=>row.map(quote).join(";")).join("\\r\\n");
   const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
   const url=URL.createObjectURL(blob),a=document.createElement("a");
   a.href=url;a.download="matraba_dashboard_filtrado.csv";
