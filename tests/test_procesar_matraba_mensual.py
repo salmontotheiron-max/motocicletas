@@ -292,5 +292,24 @@ class MonthlyProcessorTests(unittest.TestCase):
         self.assertEqual(counts[("IND_NUEVO_USADO", "solo_CLAVE_TRAMITE_2", "U")], 1)
 
 
+    def test_transfer_semantics_keep_three_dgt_fields_independent(self):
+        self.assertEqual(
+            p.semantic_model_fields("N", "venta"),
+            ("2", "N", "V", "venta_declarada_DGT"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("N", "subasta"),
+            ("2", "N", "S", "subasta"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("U", "transferencia_sin_clasificar"),
+            ("2", "U", "", "transferencia_sin_clasificar"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("U", "matriculacion_usada"),
+            ("1", "U", "", "matriculacion_usada"),
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
