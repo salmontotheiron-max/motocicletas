@@ -1,7 +1,9 @@
 import json
+import csv
 import hashlib
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 from io import BytesIO
 import zipfile
@@ -193,7 +195,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
             key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
-                   "matriculacion_nueva", "matriculacion", "A")
+                   "matriculacion_nueva", "matriculacion", "A", "")
             self.assertEqual(models[key], 1)
 
     def test_transfer_model_uses_vehicle_domicile_not_a_sale_province(self):
@@ -210,8 +212,73 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-08", include_transfers=True)
             key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
-                   "venta", "domicilio_vehiculo", "MU")
+                   "venta", "domicilio_vehiculo", "MU", "V")
             self.assertEqual(models[key], 1)
+
+
+    def test_transfer_model_preserves_unknown_nonempty_possession_code(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
+                COD_POSESION="X", COD_PROVINCIA_VEH="MU",
+                FEC_PROCESO="31082026",
+            )
+            payload = make_zip(row)
+            archive = Path(tmp) / (
+                "export_mensual_trf_202608_" + hashlib.sha256(payload).hexdigest() + ".zip"
+            )
+            archive.write_bytes(payload)
+            _, _, _, _, models, _, _, _ = p.process_archive(
+                archive, "2026-08", include_transfers=True
+            )
+            key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
+                   "transferencia_sin_clasificar", "domicilio_vehiculo", "MU", "X")
+            self.assertEqual(models[key], 1)
+
+
+    def test_generated_model_csv_keeps_raw_unknown_possession_code(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            input_dir = root / "matriculaciones"
+            transfers_dir = root / "transferencias"
+            output_dir = root / "resultados"
+            input_dir.mkdir()
+            transfers_dir.mkdir()
+            row = make_record(
+                FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
+                COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
+                COD_POSESION="X", COD_PROVINCIA_VEH="MU",
+                FEC_PROCESO="31082026",
+            )
+            data = BytesIO()
+            with zipfile.ZipFile(data, "w", zipfile.ZIP_DEFLATED) as archive:
+                archive.writestr("transferencias.txt", row)
+            payload = data.getvalue()
+            archive_path = transfers_dir / (
+                "export_mensual_trf_202608_" + hashlib.sha256(payload).hexdigest() + ".zip"
+            )
+            archive_path.write_bytes(payload)
+
+            with mock.patch("sys.argv", [
+                "procesar_matraba_mensual.py",
+                "--input-dir", str(input_dir),
+                "--output-dir", str(output_dir),
+                "--transfers-dir", str(transfers_dir),
+            ]):
+                p.main()
+
+            with (output_dir / "matriculaciones_marca_modelo_segmento.csv").open(
+                newline="", encoding="utf-8-sig"
+            ) as handle:
+                rows = list(csv.DictReader(handle))
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["COD_POSESION"], "X")
+            self.assertEqual(rows[0]["naturaleza_operacion"], "transferencia_sin_clasificar")
+            self.assertEqual(rows[0]["CLAVE_TRAMITE"], "2")
+            self.assertEqual(rows[0]["IND_NUEVO_USADO"], "U")
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -247,7 +314,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             self.assertEqual(info["registros"], 1)
             self.assertEqual(
                 models[("2026-08", "YAMAHA", "MT-07", "50", "U",
-                        "venta", "domicilio_vehiculo", "MU")],
+                        "venta", "domicilio_vehiculo", "MU", "V")],
                 1,
             )
 
@@ -290,6 +357,25 @@ class MonthlyProcessorTests(unittest.TestCase):
         self.assertEqual(counts[("COD_POSESION", "todos_los_registros", "(vacío)")], 1)
         self.assertEqual(counts[("IND_NUEVO_USADO", "solo_CLAVE_TRAMITE_2", "N")], 1)
         self.assertEqual(counts[("IND_NUEVO_USADO", "solo_CLAVE_TRAMITE_2", "U")], 1)
+
+
+    def test_transfer_semantics_keep_three_dgt_fields_independent(self):
+        self.assertEqual(
+            p.semantic_model_fields("N", "venta", "V"),
+            ("2", "N", "V", "venta_declarada_DGT"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("N", "subasta", "S"),
+            ("2", "N", "S", "subasta"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("U", "transferencia_sin_clasificar", "X"),
+            ("2", "U", "X", "transferencia_sin_clasificar"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("U", "matriculacion_usada"),
+            ("1", "U", "", "matriculacion_usada"),
+        )
 
 
 if __name__ == "__main__":
