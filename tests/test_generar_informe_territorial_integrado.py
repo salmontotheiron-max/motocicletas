@@ -105,6 +105,10 @@ class IntegratedReportTests(unittest.TestCase):
                     "informe_dispersion_provincias.json"]
         if not all((data / name).exists() for name in required):
             self.skipTest("No hay snapshot MATRABA publicado en este checkout")
+        with (data / "matriculaciones_marca_modelo_segmento.csv").open(encoding="utf-8-sig", newline="") as f:
+            model_fields = set(next(csv.reader(f), []))
+        if not {"CLAVE_TRAMITE", "naturaleza_operacion"}.issubset(model_fields):
+            self.skipTest("El snapshot publicado es anterior a la separación semántica de transferencias")
         with tempfile.TemporaryDirectory() as tmp:
             result = report.build_report(data, Path(tmp) / "informe.md")
             dispersion = json.loads((data / "informe_dispersion_provincias.json").read_text(encoding="utf-8"))
