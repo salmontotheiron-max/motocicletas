@@ -181,6 +181,8 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
     flows = rows(d/"dispersion_provincias_flujos.csv",
         {"provincia_matriculacion","provincia_domicilio_vehiculo","recuento"})
     types = rows(d/"matriculaciones_nuevos_usados_por_tipo.csv", {"periodo","COD_TIPO","nuevo_usado","recuento"})
+    model_rows = rows(d/"matriculaciones_marca_modelo_segmento.csv",
+        {"CLAVE_TRAMITE","COD_TIPO","naturaleza_operacion","recuento"})
     dispersion = json.loads((d/"informe_dispersion_provincias.json").read_text(encoding="utf-8"))
     cross = rows(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
         {"periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"})
@@ -201,6 +203,16 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
         if r["COD_TIPO"] in MOTOS:
             (new if r["nuevo_usado"]=="Nuevo" else used)[r["periodo"]] += int(r["recuento"])
     total_new, total_used = sum(new.values()), sum(used.values())
+    transfers = Counter()
+    for r in model_rows:
+        if r["CLAVE_TRAMITE"].strip() == "2" and r["COD_TIPO"].strip() in MOTOS:
+            transfers[r["naturaleza_operacion"].strip()] += int(r["recuento"])
+    total_transfers = sum(transfers.values())
+    transfer_sales = transfers["venta"]
+    transfer_auctions = transfers["subasta"]
+    transfer_unclassified = transfers["transferencia_sin_clasificar"]
+    if total_transfers != transfer_sales + transfer_auctions + transfer_unclassified:
+        raise ValueError("No concilian las naturalezas de las transferencias de motocicletas")
     val = dispersion["validacion"]
     if total_new != int(dispersion["total_matriculaciones"]) or not val["agregado_provincial_coincide"]:
         raise ValueError("No concilian los totales de motocicletas nuevas y el cruce provincial")
@@ -220,7 +232,8 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
       f"## España · {periods[0]} a {periods[-1]}","",f"**Fecha de corte:** {cutoff}",
       "**Universo:** motocicletas DGT de códigos 50 y 51.","",
       "## 1. Resumen ejecutivo","",
-      f"El periodo acumula **{fmt(total_new)} matriculaciones nuevas** y **{fmt(total_used)} registros usados** (cambios de titularidad).",
+      f"El periodo acumula **{fmt(total_new)} matriculaciones nuevas** y **{fmt(total_used)} matriculaciones con IND_NUEVO_USADO=U** (trámite 1; vehículo usado al matricularse).",
+      f"- Transferencias separadas (CLAVE_TRAMITE=2): **{fmt(total_transfers)}**; COD_POSESION: {fmt(transfer_sales)} ventas declaradas, {fmt(transfer_auctions)} subastas y {fmt(transfer_unclassified)} sin clasificar.",
       f"- Las cinco primeras provincias reúnen el **{dec(top5)}%**; las diez primeras, el **{dec(top10)}%**.",
       f"- {fmt(dispersion['otra_provincia'])} ({pct(dispersion['porcentaje_interprovincial_sobre_domicilios_conocidos'])}) de las nuevas tienen domicilio registral en otra provincia.",
       f"- Conciliación del cruce: diferencia {fmt(val['diferencias'])} registros.",
@@ -229,11 +242,15 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
       "## 2. Alcance y metodología","",
       "- Se incluyen exclusivamente los códigos 50 y 51; se excluyen 52–54 y 90–92.",
       "- Nuevas: fecha de matriculación y provincia COD_PROVINCIA_MAT.",
-      "- Usadas: fecha de trámite de cambio de titularidad y provincia COD_PROVINCIA_VEH; no representan todas las compraventas.",
+      "- Registros con IND_NUEVO_USADO=U: son trámites 1 de matriculación de vehículos usados; se fechan por FEC_TRAMITE y se asignan a COD_PROVINCIA_VEH. No equivalen al total de cambios de titularidad.",
+      "- Transferencias: CLAVE_TRAMITE=2, se contabilizan aparte. COD_POSESION=V identifica venta declarada, S subasta y vacío/no especificado queda sin clasificar. La provincia disponible es domicilio registral, no lugar físico de venta.",
       "- El domicilio registral del vehículo no acredita residencia efectiva, concesionario, lugar de compra/entrega ni uso habitual.",
       "- Población de referencia: 1-1-2025 (INE). Parque: 31-12-2025 (DGT, Anuario 2025, tabla 75).",
       "- Los bastidores están parcialmente enmascarados; no se atribuyen identidades individuales ni causas no demostradas.","",
-      "## 3. Evolución mensual","",mdtable(["Periodo","Nuevas","Usadas (cambio titularidad)","Total"],monthly),"",
+      "## 3. Evolución mensual","",mdtable(["Periodo","Nuevas (N)","Matriculaciones con estado U","Total"],monthly),"",
+      "### Transferencias de motocicletas (trámite 2)","",
+      mdtable(["Naturaleza declarada","Registros"],[["Venta declarada (V)",fmt(transfer_sales)],["Subasta (S)",fmt(transfer_auctions)],["Sin clasificar",fmt(transfer_unclassified)],["Total transferencias",fmt(total_transfers)]]),
+      "Las transferencias no se suman a las matriculaciones nuevas ni a las matriculaciones de vehículos usados. Una transferencia sin COD_POSESION no se clasifica automáticamente como venta.", "",
       "## 4. Concentración provincial","",
       "### Diez primeras provincias por nuevas","",
       mdtable(["Puesto","Provincia","Nuevas","Peso"],[[r["puesto"],r["provincia"],fmt(r["recuento"]),pct(r["peso_porcentual"])] for r in ranks[:10]]),
@@ -296,7 +313,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
         ["Entradas (matriculadas fuera, domicilio Segovia)",fmt(sb.get("entradas_interprovinciales",0))],
         ["Saldo neto",fmt(sb.get("saldo_neto_entradas_menos_salidas",0))],
         ["Misma provincia",fmt(seg["domicilio_segovia"])] ]),"",
-      "La concentración es una señal de revisión. La proximidad a Madrid y posibles estructuras administrativas o comerciales son hipótesis, no causas demostradas. No se corrigen ni excluyen registros por su magnitud.","",
+      "El patrón de Segovia corresponde al flujo de flotas ya comprobado: empresas matriculan en Segovia y destinan los vehículos a otras provincias. Es una explicación conocida, no una anomalía pendiente. Se conserva como indicador de matriculación frente a domicilio registral; no se corrigen ni excluyen registros.","",
       "### Evolución mensual de Segovia","",
       mdtable(["Periodo","Matriculaciones","Domicilio Segovia","Domicilio Madrid","Otras provincias"],[[r["periodo"],fmt(r["matriculaciones"]),fmt(r["domicilio_segovia"]),fmt(r["domicilio_madrid"]),fmt(r["domicilio_otras_provincias"])] for r in seg["evolucion_mensual"]]),"",
       "## 9. Conclusiones y seguimiento","",
@@ -314,7 +331,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
     with corridor_path.open("w",encoding="utf-8-sig",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=corridor_fields); writer.writeheader(); writer.writerows(corridors)
     target=Path(output); target.parent.mkdir(parents=True,exist_ok=True); target.write_text("\n".join(text),encoding="utf-8")
-    return {"periodos":periods,"nuevas":total_new,"usadas":total_used,"alertas":[r["provincia"] for r in alerts],"provincias_dispersion_mayor_20":len(high_dispersion),"provincias_estables_mayor_20":len(stable_high),"corredores":len(corridors),"csv_corredores":str(corridor_path),"output":str(target)}
+    return {"periodos":periods,"nuevas":total_new,"usadas_matriculadas":total_used,"transferencias":total_transfers,"ventas_declaradas":transfer_sales,"subastas":transfer_auctions,"transferencias_sin_clasificar":transfer_unclassified,"alertas":[r["provincia"] for r in alerts],"provincias_dispersion_mayor_20":len(high_dispersion),"provincias_estables_mayor_20":len(stable_high),"corredores":len(corridors),"csv_corredores":str(corridor_path),"output":str(target)}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__); p.add_argument("--data-dir",default="public/data"); p.add_argument("--output",default="informes/informe-territorial-integrado.md")
