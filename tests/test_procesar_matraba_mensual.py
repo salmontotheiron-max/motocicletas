@@ -198,6 +198,23 @@ class MonthlyProcessorTests(unittest.TestCase):
                    "matriculacion_nueva", "matriculacion", "A", "")
             self.assertEqual(models[key], 1)
 
+    def test_matriculation_model_discards_incidental_possession_code(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            row = make_record(
+                FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
+                MARCA_ITV="HONDA", MODELO_ITV="CB 500 X",
+                COD_TIPO="50", CLAVE_TRAMITE="1", NUEVO_USADO="N",
+                COD_POSESION="S", COD_PROVINCIA_VEH="MU",
+                COD_PROVINCIA_MAT="A", FEC_PROCESO="31072026",
+            )
+            payload = make_zip(row)
+            archive = Path(tmp) / ("export_mensual_mat_202607_" + hashlib.sha256(payload).hexdigest() + ".zip")
+            archive.write_bytes(payload)
+            _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
+            key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
+                   "matriculacion_nueva", "matriculacion", "A", "")
+            self.assertEqual(models[key], 1)
+
     def test_transfer_model_uses_vehicle_domicile_not_a_sale_province(self):
         with tempfile.TemporaryDirectory() as tmp:
             row = make_record(
@@ -374,6 +391,14 @@ class MonthlyProcessorTests(unittest.TestCase):
         )
         self.assertEqual(
             p.semantic_model_fields("U", "matriculacion_usada"),
+            ("1", "U", "", "matriculacion_usada"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("N", "matriculacion_nueva", "S"),
+            ("1", "N", "", "matriculacion_nueva"),
+        )
+        self.assertEqual(
+            p.semantic_model_fields("U", "matriculacion_usada", "X"),
             ("1", "U", "", "matriculacion_usada"),
         )
 
