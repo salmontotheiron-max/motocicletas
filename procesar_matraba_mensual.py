@@ -257,7 +257,7 @@ def process_archive(path, period, include_transfers=False):
             model_counts[(
                 reference_period, brand_itv, model_itv, vehicle_type,
                 new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
-                province_scope, province_code or "(vacío)", possession_code
+                province_scope, province_code or "(vacío)", ""
             )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
@@ -340,9 +340,10 @@ def semantic_model_fields(new_used, record_type, possession_code=""):
         operation = "1"
     else:
         operation = ""
-    # COD_POSESION es un dato fuente: conservarlo literalmente, incluso si
-    # contiene un código no catalogado. La naturaleza se clasifica aparte.
-    possession = possession_code
+    # COD_POSESION solo tiene semántica en trámites de transferencia (2).
+    # En matriculaciones (1), el campo puede contener valores incidentales:
+    # no deben exportarse como código de posesión.
+    possession = possession_code if operation == "2" else ""
     nature = {
         "venta": "venta_declarada_DGT",
         "subasta": "subasta",
