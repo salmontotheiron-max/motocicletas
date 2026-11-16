@@ -112,7 +112,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
     <h2>Variación mensual provincial</h2>
     <p class="small">Compara los dos últimos periodos publicados. Los cambios porcentuales se calculan sobre el periodo anterior; si la base es cero, se muestran como no calculables.</p>
     <p class="small" id="monthlyComparisonNote">—</p>
-    <div class="grid-2">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem">
       <article class="panel">
         <h3>Nuevas · provincia de matriculación</h3>
         <div style="overflow-x:auto"><table><thead><tr><th>Provincia</th><th>Anterior</th><th>Último</th><th>Variación</th><th>%</th></tr></thead><tbody id="monthlyNewChanges"></tbody></table></div>
