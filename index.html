@@ -108,6 +108,20 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
       <p class="small" id="intensityNote">Indicadores publicados por MATRABA para el acumulado de periodos disponible. No se recalculan al cambiar el filtro mensual.</p>
     </article>
   </section>
+  <section class="panel" aria-label="Concentración y ranking territorial">
+    <h2>Concentración y ranking territorial</h2>
+    <p class="small">Comparación provincial separada por dimensión geográfica. Las matriculaciones nuevas se ordenan por provincia de matriculación; las usadas, por domicilio registral del vehículo.</p>
+    <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
+      <div><label for="territorialScope">Distribución territorial</label><select id="territorialScope"><option value="nuevo">Nuevas · provincia de matriculación</option><option value="usado">Usadas · domicilio registral</option></select></div>
+    </div>
+    <section class="cards" aria-label="Indicadores de concentración">
+      <article class="card"><div class="label">Concentración top 5</div><div class="value" id="top5Share">—</div><div class="sub" id="top5Count">Acumulado de las cinco primeras provincias</div></article>
+      <article class="card"><div class="label">Concentración top 10</div><div class="value" id="top10Share">—</div><div class="sub" id="top10Count">Acumulado de las diez primeras provincias</div></article>
+      <article class="card"><div class="label">Provincias con registros</div><div class="value" id="territorialProvinceCount">—</div><div class="sub">En el ámbito seleccionado</div></article>
+    </section>
+    <p class="small" id="territorialNote">—</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>Puesto</th><th>Provincia</th><th>Recuento</th><th>Peso</th><th>Acumulado</th></tr></thead><tbody id="territorialRanking"></tbody></table></div>
+  </section>
   <section class="panel">
     <h2>Datos, fuente y metodología</h2>
     <p><strong>Fuente primaria:</strong> microdatos mensuales DGT MATRABA, archivados y procesados en el <a href="https://github.com/salmontotheiron-max/motocicletas" target="_blank" rel="noopener">repositorio del observatorio</a>. Los datos mostrados proceden exclusivamente de los agregados publicados en <code>public/data</code>.</p>
@@ -211,7 +225,41 @@ function render(){
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
+  renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
+}
+function renderTerritorial(f){
+  const scope=el("territorialScope").value;
+  const used=scope==="usado";
+  const dimension=used?"domicilio_vehiculo":"matriculacion";
+  const condition=used?"Usado":"Nuevo";
+  const totals=new Map();
+  state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&
+    r.ambito_provincial===dimension&&r.nuevo_usado===condition&&typeOK(r,f.kind))
+    .forEach(r=>totals.set(r.provincia,(totals.get(r.provincia)||0)+(Number(r.recuento)||0)));
+  const rows=[...totals].map(([province,value])=>({province,value}))
+    .sort((a,b)=>b.value-a.value||a.province.localeCompare(b.province,"es"));
+  const total=rows.reduce((sum,r)=>sum+r.value,0);
+  const top5=rows.slice(0,5).reduce((sum,r)=>sum+r.value,0);
+  const top10=rows.slice(0,10).reduce((sum,r)=>sum+r.value,0);
+  const selectedRow=f.province==="all"?null:rows.find(r=>r.province===f.province);
+  const selectedRank=selectedRow?rows.findIndex(r=>r.province===f.province)+1:null;
+  el("top5Share").textContent=dec(total?top5/total*100:0,2)+"%";
+  el("top10Share").textContent=dec(total?top10/total*100:0,2)+"%";
+  el("top5Count").textContent=fmt(top5)+" de "+fmt(total)+" registros";
+  el("top10Count").textContent=fmt(top10)+" de "+fmt(total)+" registros";
+  el("territorialProvinceCount").textContent=fmt(rows.length);
+  const scopeLabel=used?"usadas · domicilio registral":"nuevas · provincia de matriculación";
+  const periodLabel=f.period==="all"?"todos los periodos":f.period;
+  const kindLabel=f.kind==="motos"?"códigos 50/51":f.kind==="all"?"todos los tipos observados":"código "+f.kind;
+  el("territorialNote").textContent="Distribución de matriculaciones "+scopeLabel+" · "+periodLabel+" · "+kindLabel+
+    (f.province!=="all"?(selectedRow?" · "+f.province+": puesto "+selectedRank+" de "+rows.length+" ("+fmt(selectedRow.value)+"; "+dec(total?selectedRow.value/total*100:0,2)+"%).":" · "+f.province+": sin registros en esta selección."):" · ranking nacional.");
+  let accumulated=0;
+  el("territorialRanking").innerHTML=rows.slice(0,20).map((r,i)=>{
+    accumulated+=r.value;
+    const share=total?r.value/total*100:0,acc=total?accumulated/total*100:0;
+    const highlight=f.province!=="all"&&r.province===f.province;
+    return "<tr"+(highlight?" style='font-weight:800;background:#eff8ff'":"")+"><td>"+(i+1)+"</td><td>"+escapeHTML(r.province)+(highlight?" · seleccionada":"")+"</td><td>"+fmt(r.value)+"</td><td>"+dec(share,2)+"%</td><td>"+dec(acc,2)+"%</td></tr>";
+  }).join("")||"<tr><td colspan='5'>Sin datos para los filtros seleccionados.</td></tr>";
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
@@ -394,6 +442,7 @@ function exportCSV(){
   setTimeout(()=>URL.revokeObjectURL(url),0);
 }
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
+el("territorialScope").addEventListener("change",()=>renderTerritorial(selected()));
 el("brandSearch").addEventListener("input",renderBrands);
 el("brandSegment").addEventListener("change",renderBrands);
 el("brandOperation").addEventListener("change",renderBrands);
