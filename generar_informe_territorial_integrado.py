@@ -209,7 +209,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
         if r["CLAVE_TRAMITE"].strip() == "2" and r["COD_TIPO"].strip() in MOTOS:
             transfers[r["naturaleza_operacion"].strip()] += int(r["recuento"])
     total_transfers = sum(transfers.values())
-    transfer_sales = transfers["venta"]
+    transfer_sales = transfers["venta_declarada_DGT"]
     transfer_auctions = transfers["subasta"]
     transfer_unclassified = transfers["transferencia_sin_clasificar"]
 
@@ -221,7 +221,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
                 and r["COD_TIPO"].strip() in MOTOS
                 and r["ambito_provincial"].strip() == "domicilio_vehiculo"
                 and r["naturaleza_operacion"].strip() in {
-                    "venta", "subasta", "transferencia_sin_clasificar"
+                    "venta_declarada_DGT", "subasta", "transferencia_sin_clasificar"
                 }):
             key = (
                 r["periodo"].strip(), r["COD_TIPO"].strip(),
