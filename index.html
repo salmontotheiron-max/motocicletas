@@ -29,8 +29,21 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,t
 footer{max-width:1240px;margin:auto;padding:1rem;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
 a{color:var(--accent)}.nowrap{white-space:nowrap}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:100px 1fr 65px}th,td{padding:.48rem .22rem;font-size:.82rem}}
+.province-map-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(230px,.8fr);gap:1rem;align-items:start}
+#provinceMap{width:100%;height:auto;display:block;min-height:280px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}
+#provinceMap path{stroke:#fff;stroke-width:1.15;cursor:pointer;transition:opacity .12s,stroke-width .12s}
+#provinceMap path:hover,#provinceMap path.selected{stroke:#101828;stroke-width:2.4;opacity:1}
+.map-legend{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--muted);margin:.7rem 0}
+.map-gradient{height:10px;flex:1;max-width:210px;border-radius:99px;background:linear-gradient(90deg,#eff6ff,#155eef)}
+.map-gradient.used{background:linear-gradient(90deg,#e6f4f1,#087e8b)}
+.map-detail{padding:.9rem;background:#f8fafc;border:1px solid var(--line);border-radius:10px;min-height:130px}
+.map-detail .big{font-size:1.65rem;font-weight:800;letter-spacing:-.03em}
+@media(max-width:760px){.province-map-wrap{grid-template-columns:1fr}#provinceMap{min-height:220px}}
 @media print{body{background:white}header{background:white;color:black;padding:0 0 1rem}header p,header .eyebrow{color:#333}.filters,.actions{display:none!important}main{max-width:none;margin:0;padding:0}.card,.panel{break-inside:avoid}.grid{grid-template-columns:1fr 1fr}footer{max-width:none}}
 </style>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/topojson.v3.min.js"></script>
+<script src="https://unpkg.com/d3-composite-projections@1.3.0"></script>
 </head>
 <body>
 <header>
@@ -123,6 +136,27 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
       </article>
     </div>
   </section>
+  <section class="panel" aria-label="Mapa provincial interactivo">
+    <h2>Mapa provincial interactivo</h2>
+    <p class="small">Selecciona nuevas o usadas para cambiar la dimensión territorial y su escala cromática. Pulsa una provincia para aplicar el filtro general del observatorio.</p>
+    <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
+      <div><label for="mapScope">Indicador del mapa</label><select id="mapScope"><option value="nuevo">Nuevas · provincia de matriculación</option><option value="usado">Usadas · domicilio registral</option></select></div>
+    </div>
+    <div class="province-map-wrap">
+      <div>
+        <svg id="provinceMap" viewBox="0 0 900 620" role="img" aria-label="Mapa provincial interactivo de España"></svg>
+        <div class="map-legend"><span>Menor</span><span id="mapGradient" class="map-gradient"></span><span id="mapMax">Mayor</span></div>
+        <p class="small" id="mapStatus" role="status">Cargando límites provinciales…</p>
+      </div>
+      <aside class="map-detail" aria-live="polite">
+        <div class="label">Provincia seleccionada</div>
+        <div id="mapProvinceName"><strong>Todas las provincias</strong></div>
+        <div class="big" id="mapProvinceValue">—</div>
+        <div class="small" id="mapProvinceMeta">Pulsa una provincia para consultar su cifra y puesto.</div>
+      </aside>
+    </div>
+    <p class="note">Cartografía provincial del atlas <a href="https://github.com/martgnz/es-atlas" target="_blank" rel="noopener">es-atlas</a>, derivado de datos geográficos del IGN. El mapa utiliza códigos INE provinciales para enlazar geometría y agregados DGT; los datos sin correspondencia quedan sin colorear. Geometría bajo CC BY 4.0; atribución y licencia en el repositorio de origen.</p>
+  </section>
   <section class="panel" aria-label="Concentración y ranking territorial">
     <h2>Concentración y ranking territorial</h2>
     <p class="small">Comparación provincial separada por dimensión geográfica. Las matriculaciones nuevas se ordenan por provincia de matriculación; las usadas, por domicilio registral del vehículo.</p>
@@ -164,6 +198,7 @@ const FILES = {
 const fmt = n => new Intl.NumberFormat("es-ES").format(n);
 const dec = (n,d=2) => Number(n).toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
 const state = {manifest:null, periods:[], monthly:[], provincial:[], ranking:[], intensity:[], brands:[], cross:[], models:[]};
+const provinceMapState = {features:[],ready:false,failed:false};
 const el = id => document.getElementById(id);
 function parseCSV(text){
   const rows=[];let row=[],field="",quoted=false;
@@ -195,6 +230,7 @@ async function loadData(){
   state.ranking=parseCSV(ranking);state.intensity=parseCSV(intensity);state.brands=brands.observaciones||[];state.cross=parseCSV(cross);state.models=parseCSV(models);
   if(!state.periods.length) throw new Error("El inventario no contiene periodos disponibles.");
   populateFilters();populateModelBrands();render();renderBrands();
+  loadProvinceMap();
   const files=(manifest.archivos||[]).length;
   el("status").className="status";
   el("status").textContent="Datos MATRABA cargados correctamente · "+files+" capturas fuente verificadas en el manifiesto · "+state.periods.length+" periodos disponibles.";
@@ -240,7 +276,80 @@ function render(){
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderMonthlyChanges(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
+  renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderMonthlyChanges(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();renderProvinceMap(f);
+}
+const INE_TO_DGT_PROVINCE={
+ "01":"VI","02":"AB","03":"A","04":"AL","05":"AV","06":"BA","07":"IB","08":"B","09":"BU","10":"CC","11":"CA","12":"CS","13":"CR","14":"CO","15":"C","16":"CU","17":"GI","18":"GR","19":"GU","20":"SS","21":"H","22":"HU","23":"J","24":"LE","25":"L","26":"LO","27":"LU","28":"M","29":"MA","30":"MU","31":"NA","32":"OU","33":"O","34":"P","35":"GC","36":"PO","37":"SA","38":"TF","39":"S","40":"SG","41":"SE","42":"SO","43":"T","44":"TE","45":"TO","46":"V","47":"VA","48":"BI","49":"ZA","50":"Z","51":"CE","52":"ML"
+};
+async function loadProvinceMap(){
+  try{
+    if(!window.d3||!window.topojson||!d3.geoConicConformalSpain)throw new Error("No se han podido cargar las bibliotecas cartográficas.");
+    const response=await fetch("https://cdn.jsdelivr.net/npm/es-atlas@0.6.0/es/provinces.json",{mode:"cors",cache:"force-cache"});
+    if(!response.ok)throw new Error("Atlas provincial no disponible (HTTP "+response.status+").");
+    const topology=await response.json();
+    const object=topology.objects&&topology.objects.provinces;
+    if(!object)throw new Error("El atlas no contiene el objeto de provincias esperado.");
+    const collection=topojson.feature(topology,object);
+    if(!collection.features||collection.features.length<50)throw new Error("La geometría provincial está incompleta.");
+    provinceMapState.features=collection.features;provinceMapState.ready=true;
+    renderProvinceMap(selected());
+  }catch(error){
+    provinceMapState.failed=true;
+    el("mapStatus").textContent="Mapa no disponible: "+error.message+" · Los rankings y tablas siguen operativos.";
+  }
+}
+function renderProvinceMap(f){
+  if(!el("provinceMap"))return;
+  if(!provinceMapState.ready){if(!provinceMapState.failed)el("mapStatus").textContent="Cargando límites provinciales…";return;}
+  const used=el("mapScope").value==="usado";
+  const scope=used?"domicilio_vehiculo":"matriculacion",condition=used?"Usado":"Nuevo";
+  const totals=new Map(),names=new Map();
+  state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial===scope&&r.nuevo_usado===condition&&typeOK(r,f.kind))
+    .forEach(r=>{const code=String(r.COD_PROVINCIA||"");totals.set(code,(totals.get(code)||0)+(Number(r.recuento)||0));names.set(code,r.provincia);});
+  const values=[...totals.values()].filter(v=>v>0),max=Math.max(1,...values);
+  const color=d3.scaleSequential(used?d3.interpolatePuBuGn:d3.interpolateBlues).domain([0,max]);
+  const collection={type:"FeatureCollection",features:provinceMapState.features};
+  const projection=d3.geoConicConformalSpain().fitSize([860,570],collection);
+  const path=d3.geoPath(projection);
+  const svg=d3.select("#provinceMap");svg.selectAll("*").remove();
+  const features=svg.selectAll("path").data(provinceMapState.features).join("path")
+    .attr("d",path)
+    .attr("fill",feature=>{
+      const id=String(feature.id??"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id];
+      return code&&totals.has(code)?color(totals.get(code)):"#e5e7eb";
+    })
+    .attr("class",feature=>{
+      const id=String(feature.id??"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id];
+      return code&&names.get(code)===f.province?"selected":"";
+    })
+    .attr("tabindex",0).attr("role","button")
+    .attr("aria-label",feature=>{
+      const id=String(feature.id??"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id],name=code?(names.get(code)||feature.properties?.name||"Provincia sin datos"):(feature.properties?.name||"Provincia");
+      return name+": "+(code&&totals.has(code)?fmt(totals.get(code))+" registros":"dato no disponible");
+    })
+    .on("click keydown",function(event,feature){
+      if(event.type==="keydown"&&event.key!=="Enter"&&event.key!==" ")return;
+      if(event.type==="keydown")event.preventDefault();
+      const id=String(feature.id??"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id],name=code?names.get(code):null;
+      if(!name)return;
+      el("province").value=name;render();
+    });
+  features.append("title").text(feature=>{
+    const id=String(feature.id??"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id],name=code?(names.get(code)||feature.properties?.name||"Provincia"):(feature.properties?.name||"Provincia");
+    return name+" · "+(code&&totals.has(code)?fmt(totals.get(code))+" registros":"dato no disponible");
+  });
+  el("mapGradient").className="map-gradient"+(used?" used":"");
+  el("mapMax").textContent=fmt(max);
+  const mode=used?"Usadas · domicilio registral":"Nuevas · provincia de matriculación";
+  el("mapStatus").textContent=mode+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+(f.kind==="motos"?"códigos 50/51":f.kind==="all"?"todos los tipos observados":"tipo "+f.kind)+". Las provincias grises no tienen dato en esta selección.";
+  const selectedCode=[...names].find(([,name])=>name===f.province)?.[0];
+  const selectedValue=selectedCode?totals.get(selectedCode):null;
+  const ranked=[...totals].filter(([,value])=>value>0).sort((a,b)=>b[1]-a[1]);
+  const rank=selectedCode?ranked.findIndex(([code])=>code===selectedCode)+1:0;
+  el("mapProvinceName").innerHTML=f.province==="all"?"<strong>Todas las provincias</strong>":"<strong>"+escapeHTML(f.province)+"</strong>";
+  el("mapProvinceValue").textContent=f.province==="all"?fmt(values.reduce((a,b)=>a+b,0)):selectedValue===undefined?"Sin datos":fmt(selectedValue);
+  el("mapProvinceMeta").textContent=f.province==="all"?fmt(ranked.length)+" provincias con registros · "+mode.toLocaleLowerCase("es"):
+    selectedValue===undefined?"No hay registros para esta provincia y selección.": "Puesto "+rank+" de "+ranked.length+" provincias · "+(selectedValue/Math.max(1,values.reduce((a,b)=>a+b,0))*100).toLocaleString("es-ES",{maximumFractionDigits:2})+"% del total mostrado.";
 }
 function renderMonthlyChanges(f){
   const periods=state.periods.slice().sort();
@@ -492,6 +601,7 @@ function exportCSV(){
 }
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
 el("territorialScope").addEventListener("change",()=>renderTerritorial(selected()));
+el("mapScope").addEventListener("change",()=>renderProvinceMap(selected()));
 el("brandSearch").addEventListener("input",renderBrands);
 el("brandSegment").addEventListener("change",renderBrands);
 el("brandOperation").addEventListener("change",renderBrands);
