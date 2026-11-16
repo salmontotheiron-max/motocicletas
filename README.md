@@ -45,7 +45,7 @@ Cada ejecución crea un Release de barrido. Un ZIP con el mismo nombre/hash que 
 
 El procesador `procesar_matraba_mensual.py` selecciona una única versión por mes: la última captura válida registrada en el inventario. Las versiones anteriores se conservan como evidencia y no se suman entre sí.
 
-Para vehículos nuevos se usa `FEC_MATRICULA`. Para usados se usa `FEC_TRAMITE`, porque el informe observa cambios de titularidad que no necesariamente modifican `FEC_MATRICULA`. En el agregado territorial de motocicletas, los nuevos se agrupan por provincia de matriculación (`COD_PROVINCIA_MAT`) y los usados por provincia de domicilio del vehículo (`COD_PROVINCIA_VEH`); son dimensiones distintas y no deben sumarse como una única distribución territorial. Las operaciones se fechan igualmente por `FEC_TRAMITE`. Si la fecha de referencia de un registro es posterior a `FEC_PROCESO`, se excluye el registro y se anota en la auditoría; no se sustituye por `FEC_PROCESO`. Los registros sin fecha de referencia válida tampoco se incorporan al recuento correspondiente. `FEC_PROCESO` se utiliza como control de coherencia y no para asignar el periodo.
+Para matriculaciones nuevas y usadas (`CLAVE_TRAMITE=1`) se usa `FEC_MATRICULA`; `IND_NUEVO_USADO` distingue la condición del vehículo al matricularse. Las transferencias (`CLAVE_TRAMITE=2`) se fechan por `FEC_TRAMITE`. En el agregado territorial, las matriculaciones nuevas se agrupan por provincia de matriculación (`COD_PROVINCIA_MAT`), las matriculaciones usadas por domicilio registral (`COD_PROVINCIA_VEH`) y las transferencias se mantienen como operación separada. Son universos y dimensiones distintos y no deben sumarse como una única distribución territorial. Si la fecha de referencia de un registro es posterior a `FEC_PROCESO`, se excluye el registro y se anota en la auditoría; no se sustituye por `FEC_PROCESO`. Los registros sin fecha de referencia válida tampoco se incorporan al recuento correspondiente. `FEC_PROCESO` se utiliza como control de coherencia y no para asignar el periodo.
 
 Salidas:
 
@@ -112,7 +112,7 @@ El `index.html` consume directamente los agregados publicados en `public/data`; 
 - Filtro por periodo mensual o acumulado de todos los periodos disponibles.
 - Filtro por provincia.
 - Filtro por código 50 (motocicleta de dos ruedas sin sidecar) o 51 (motocicleta con sidecar).
-- Indicadores de matriculaciones nuevas y cambios de titularidad usados.
+- Indicadores separados de matriculaciones nuevas, matriculaciones de vehículos usados (`IND_NUEVO_USADO=U`) y transferencias (`CLAVE_TRAMITE=2`), con desglose de `COD_POSESION`.
 - Evolución mensual, composición por tipo y ranking provincial.
 - Tabla de intensidad territorial con población y parque de referencia.
 - Exportación CSV del subconjunto filtrado e impresión/guardado en PDF.
@@ -125,7 +125,7 @@ El `index.html` consume directamente los agregados publicados en `public/data`; 
 - `ranking_motocicletas_provincia.csv`: ranking acumulado publicado.
 - `indicadores_intensidad_territorial.csv`: intensidad por población y parque.
 
-Las nuevas se agregan por provincia de matriculación; los usados, por provincia del domicilio registral del vehículo. El panel mantiene ambos universos separados y etiqueta el alcance geográfico en indicadores, gráficos y exportaciones. Los indicadores de población/parque corresponden al acumulado publicado y no se recalculan al seleccionar un mes o un único código.
+Las matriculaciones nuevas se agregan por provincia de matriculación; las matriculaciones de vehículos usados (`CLAVE_TRAMITE=1`, `IND_NUEVO_USADO=U`) por provincia del domicilio registral. Las transferencias (`CLAVE_TRAMITE=2`) se presentan aparte y se clasifican como venta declarada (`COD_POSESION=V`), subasta (`S`) o sin clasificar. El domicilio registral no identifica la provincia física de venta ni acredita el uso habitual. El panel mantiene los universos separados y etiqueta su alcance geográfico. Los indicadores de población/parque corresponden al acumulado publicado y no se recalculan al seleccionar un mes o un único código.
 
 El dashboard debe servirse desde la raíz del sitio para que las rutas relativas `public/data/` resuelvan correctamente. Si un fichero no está disponible o falla la carga, muestra un error explícito; no sustituye ausencias por ceros.
 
@@ -145,7 +145,7 @@ El script `generar_indicadores_intensidad.py` genera:
 
 La cobertura de los dos denominadores debe ser exactamente de 52 territorios (50 provincias y las ciudades autónomas), sin códigos duplicados, nombres incompatibles ni fechas de referencia distintas de las declaradas. El total del parque de motocicletas debe coincidir con 4.510.222 unidades de la tabla 75 de la DGT.
 
-Los indicadores se calculan únicamente para motocicletas nuevas (códigos 50 y 51), por provincia de matriculación. No se calculan ratios para usados: estos son cambios de titularidad por provincia de domicilio del vehículo y no todas las compraventas. Los flujos acumulados de 2026 se comparan con población de 1-1-2025 y parque de 31-12-2025; por tanto, son indicadores descriptivos de intensidad, no tasas de renovación ni cuotas de mercado.
+Los indicadores se calculan únicamente para matriculaciones nuevas de motocicletas (códigos 50 y 51), por provincia de matriculación. No se calculan ratios de venta→circulación para matriculaciones usadas ni transferencias: `IND_NUEVO_USADO=U` identifica vehículos usados en un trámite de matriculación, mientras que `CLAVE_TRAMITE=2` identifica transferencias. La DGT no aporta en los campos territoriales validados la provincia física de compraventa; el domicilio registral solo puede usarse como proxy del destino registral. Los flujos acumulados de 2026 se comparan con población de 1-1-2025 y parque de 31-12-2025; por tanto, son indicadores descriptivos de intensidad, no tasas de renovación ni cuotas de mercado.
 
 Se marca `REVISAR` cuando las matriculaciones acumuladas alcanzan el 25% del parque de referencia. El umbral es una señal operativa de revisión, no una anomalía confirmada. No excluye ni corrige registros. En particular, los valores elevados de Segovia se conservan íntegramente.
 
