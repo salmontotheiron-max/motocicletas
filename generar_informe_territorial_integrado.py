@@ -182,7 +182,8 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
         {"provincia_matriculacion","provincia_domicilio_vehiculo","recuento"})
     types = rows(d/"matriculaciones_nuevos_usados_por_tipo.csv", {"periodo","COD_TIPO","nuevo_usado","recuento"})
     model_rows = rows(d/"matriculaciones_marca_modelo_segmento.csv",
-        {"CLAVE_TRAMITE","COD_TIPO","naturaleza_operacion","recuento"})
+        {"periodo","CLAVE_TRAMITE","COD_TIPO","naturaleza_operacion",
+         "ambito_provincial","COD_PROVINCIA","provincia","recuento"})
     dispersion = json.loads((d/"informe_dispersion_provincias.json").read_text(encoding="utf-8"))
     cross = rows(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
         {"periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"})
@@ -211,6 +212,37 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
     transfer_sales = transfers["venta"]
     transfer_auctions = transfers["subasta"]
     transfer_unclassified = transfers["transferencia_sin_clasificar"]
+
+    # Exportación territorial de transferencias: la provincia disponible es
+    # COD_PROVINCIA_VEH (domicilio registral), no el lugar físico de venta.
+    transfer_by_province = Counter()
+    for r in model_rows:
+        if (r["CLAVE_TRAMITE"].strip() == "2"
+                and r["COD_TIPO"].strip() in MOTOS
+                and r["ambito_provincial"].strip() == "domicilio_vehiculo"
+                and r["naturaleza_operacion"].strip() in {
+                    "venta", "subasta", "transferencia_sin_clasificar"
+                }):
+            key = (
+                r["periodo"].strip(), r["COD_TIPO"].strip(),
+                r["COD_PROVINCIA"].strip(), r["provincia"].strip(),
+                r["naturaleza_operacion"].strip(),
+            )
+            transfer_by_province[key] += int(r["recuento"])
+
+    transfer_path = d / "transferencias_motocicletas_por_provincia.csv"
+    with transfer_path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow([
+            "periodo", "COD_TIPO", "COD_PROVINCIA_VEH",
+            "provincia_domicilio_vehiculo", "clasificacion_COD_POSESION",
+            "recuento",
+        ])
+        for key, count in sorted(transfer_by_province.items()):
+            writer.writerow([*key, count])
+
+    if sum(transfer_by_province.values()) != total_transfers:
+        raise ValueError("No concilia el desglose provincial de transferencias con el total")
     if total_transfers != transfer_sales + transfer_auctions + transfer_unclassified:
         raise ValueError("No concilian las naturalezas de las transferencias de motocicletas")
     val = dispersion["validacion"]
@@ -255,7 +287,8 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
       "## 3. Evolución mensual","",mdtable(["Periodo","Nuevas (N)","Matriculaciones con estado U","Total"],monthly),"",
       "### Transferencias de motocicletas (trámite 2)","",
       mdtable(["Naturaleza declarada","Registros"],[["Venta declarada (V)",fmt(transfer_sales)],["Subasta (S)",fmt(transfer_auctions)],["Sin clasificar",fmt(transfer_unclassified)],["Total transferencias",fmt(total_transfers)]]),
-      "Las transferencias no se suman a las matriculaciones nuevas ni a las matriculaciones de vehículos usados. Una transferencia sin COD_POSESION no se clasifica automáticamente como venta.", "",
+      "Las transferencias no se suman a las matriculaciones nuevas ni a las matriculaciones de vehículos usados. Una transferencia sin COD_POSESION no se clasifica automáticamente como venta.",
+      "Desglose territorial: transferencias_motocicletas_por_provincia.csv, agrupado por COD_PROVINCIA_VEH (domicilio registral), tipo 50/51 y clasificación COD_POSESION. No representa la provincia física de venta.", "",
       "## 4. Concentración provincial","",
       "### Diez primeras provincias por nuevas","",
       mdtable(["Puesto","Provincia","Nuevas","Peso"],[[r["puesto"],r["provincia"],fmt(r["recuento"]),pct(r["peso_porcentual"])] for r in ranks[:10]]),
@@ -336,7 +369,7 @@ def build_report(data_dir="public/data", output="informes/informe-territorial-in
     with corridor_path.open("w",encoding="utf-8-sig",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=corridor_fields); writer.writeheader(); writer.writerows(corridors)
     target=Path(output); target.parent.mkdir(parents=True,exist_ok=True); target.write_text("\n".join(text),encoding="utf-8")
-    return {"periodos":periods,"nuevas":total_new,"usadas_matriculadas":total_used,"transferencias":total_transfers,"ventas_declaradas":transfer_sales,"subastas":transfer_auctions,"transferencias_sin_clasificar":transfer_unclassified,"alertas":[r["provincia"] for r in alerts],"provincias_dispersion_mayor_20":len(high_dispersion),"provincias_estables_mayor_20":len(stable_high),"corredores":len(corridors),"csv_corredores":str(corridor_path),"output":str(target)}
+    return {"periodos":periods,"nuevas":total_new,"usadas_matriculadas":total_used,"transferencias":total_transfers,"ventas_declaradas":transfer_sales,"subastas":transfer_auctions,"transferencias_sin_clasificar":transfer_unclassified,"alertas":[r["provincia"] for r in alerts],"provincias_dispersion_mayor_20":len(high_dispersion),"provincias_estables_mayor_20":len(stable_high),"corredores":len(corridors),"csv_corredores":str(corridor_path),"csv_transferencias":str(transfer_path),"output":str(target)}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__); p.add_argument("--data-dir",default="public/data"); p.add_argument("--output",default="informes/informe-territorial-integrado.md")
