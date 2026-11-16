@@ -1,0 +1,982 @@
+﻿periodo,COD_TIPO,COD_PROVINCIA_VEH,provincia_domicilio_vehiculo,clasificacion_COD_POSESION,recuento
+2026-01,50,A,Alicante/Alacant,subasta,4
+2026-01,50,A,Alicante/Alacant,transferencia_sin_clasificar,1232
+2026-01,50,AB,Albacete,subasta,1
+2026-01,50,AB,Albacete,transferencia_sin_clasificar,143
+2026-01,50,AL,Almería,transferencia_sin_clasificar,343
+2026-01,50,AV,Ávila,transferencia_sin_clasificar,66
+2026-01,50,B,Barcelona,subasta,7
+2026-01,50,B,Barcelona,transferencia_sin_clasificar,3947
+2026-01,50,BA,Badajoz,transferencia_sin_clasificar,318
+2026-01,50,BI,Bizkaia,transferencia_sin_clasificar,414
+2026-01,50,BU,Burgos,transferencia_sin_clasificar,117
+2026-01,50,C,A Coruña,transferencia_sin_clasificar,431
+2026-01,50,CA,Cádiz,transferencia_sin_clasificar,766
+2026-01,50,CC,Cáceres,transferencia_sin_clasificar,172
+2026-01,50,CE,Ceuta,transferencia_sin_clasificar,112
+2026-01,50,CO,Córdoba,transferencia_sin_clasificar,392
+2026-01,50,CR,Ciudad Real,transferencia_sin_clasificar,192
+2026-01,50,CS,Castellón/Castelló,subasta,1
+2026-01,50,CS,Castellón/Castelló,transferencia_sin_clasificar,300
+2026-01,50,CU,Cuenca,transferencia_sin_clasificar,90
+2026-01,50,GC,Las Palmas,transferencia_sin_clasificar,700
+2026-01,50,GI,Girona,subasta,2
+2026-01,50,GI,Girona,transferencia_sin_clasificar,513
+2026-01,50,GR,Granada,transferencia_sin_clasificar,670
+2026-01,50,GU,Guadalajara,transferencia_sin_clasificar,162
+2026-01,50,H,Huelva,transferencia_sin_clasificar,251
+2026-01,50,HU,Huesca,transferencia_sin_clasificar,88
+2026-01,50,IB,Illes Balears,subasta,2
+2026-01,50,IB,Illes Balears,transferencia_sin_clasificar,910
+2026-01,50,J,Jaén,transferencia_sin_clasificar,307
+2026-01,50,L,Lleida,transferencia_sin_clasificar,220
+2026-01,50,LE,León,transferencia_sin_clasificar,159
+2026-01,50,LO,La Rioja,transferencia_sin_clasificar,147
+2026-01,50,LU,Lugo,transferencia_sin_clasificar,112
+2026-01,50,M,Madrid,subasta,6
+2026-01,50,M,Madrid,transferencia_sin_clasificar,2811
+2026-01,50,MA,Málaga,subasta,4
+2026-01,50,MA,Málaga,transferencia_sin_clasificar,1359
+2026-01,50,ML,Melilla,transferencia_sin_clasificar,80
+2026-01,50,MU,Murcia,subasta,2
+2026-01,50,MU,Murcia,transferencia_sin_clasificar,795
+2026-01,50,NA,Navarra,transferencia_sin_clasificar,284
+2026-01,50,O,Asturias,subasta,1
+2026-01,50,O,Asturias,transferencia_sin_clasificar,447
+2026-01,50,OU,Ourense,transferencia_sin_clasificar,140
+2026-01,50,P,Palencia,transferencia_sin_clasificar,69
+2026-01,50,PO,Pontevedra,subasta,2
+2026-01,50,PO,Pontevedra,transferencia_sin_clasificar,507
+2026-01,50,S,Cantabria,transferencia_sin_clasificar,283
+2026-01,50,SA,Salamanca,subasta,2
+2026-01,50,SA,Salamanca,transferencia_sin_clasificar,158
+2026-01,50,SE,Sevilla,subasta,1
+2026-01,50,SE,Sevilla,transferencia_sin_clasificar,1105
+2026-01,50,SG,Segovia,transferencia_sin_clasificar,58
+2026-01,50,SO,Soria,transferencia_sin_clasificar,30
+2026-01,50,SS,Gipuzkoa,transferencia_sin_clasificar,337
+2026-01,50,T,Tarragona,subasta,2
+2026-01,50,T,Tarragona,transferencia_sin_clasificar,542
+2026-01,50,TE,Teruel,transferencia_sin_clasificar,53
+2026-01,50,TF,Santa Cruz de Tenerife,subasta,2
+2026-01,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,844
+2026-01,50,TO,Toledo,subasta,3
+2026-01,50,TO,Toledo,transferencia_sin_clasificar,355
+2026-01,50,V,Valencia/València,subasta,7
+2026-01,50,V,Valencia/València,transferencia_sin_clasificar,1414
+2026-01,50,VA,Valladolid,subasta,1
+2026-01,50,VA,Valladolid,transferencia_sin_clasificar,270
+2026-01,50,VI,Araba/Álava,transferencia_sin_clasificar,121
+2026-01,50,Z,Zaragoza,subasta,1
+2026-01,50,Z,Zaragoza,transferencia_sin_clasificar,393
+2026-01,50,ZA,Zamora,transferencia_sin_clasificar,94
+2026-01,51,A,Alicante/Alacant,transferencia_sin_clasificar,3
+2026-01,51,AB,Albacete,transferencia_sin_clasificar,1
+2026-01,51,AL,Almería,transferencia_sin_clasificar,2
+2026-01,51,B,Barcelona,transferencia_sin_clasificar,8
+2026-01,51,BI,Bizkaia,transferencia_sin_clasificar,1
+2026-01,51,C,A Coruña,transferencia_sin_clasificar,1
+2026-01,51,CA,Cádiz,transferencia_sin_clasificar,2
+2026-01,51,CC,Cáceres,transferencia_sin_clasificar,2
+2026-01,51,CE,Ceuta,transferencia_sin_clasificar,1
+2026-01,51,CO,Córdoba,transferencia_sin_clasificar,2
+2026-01,51,CU,Cuenca,transferencia_sin_clasificar,1
+2026-01,51,GI,Girona,transferencia_sin_clasificar,1
+2026-01,51,J,Jaén,transferencia_sin_clasificar,2
+2026-01,51,LO,La Rioja,transferencia_sin_clasificar,1
+2026-01,51,M,Madrid,transferencia_sin_clasificar,3
+2026-01,51,MU,Murcia,transferencia_sin_clasificar,1
+2026-01,51,PO,Pontevedra,transferencia_sin_clasificar,1
+2026-01,51,S,Cantabria,transferencia_sin_clasificar,1
+2026-01,51,T,Tarragona,transferencia_sin_clasificar,2
+2026-01,51,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1
+2026-01,51,V,Valencia/València,transferencia_sin_clasificar,2
+2026-01,51,VA,Valladolid,transferencia_sin_clasificar,2
+2026-01,51,VI,Araba/Álava,transferencia_sin_clasificar,1
+2026-02,50,A,Alicante/Alacant,transferencia_sin_clasificar,1438
+2026-02,50,AB,Albacete,subasta,1
+2026-02,50,AB,Albacete,transferencia_sin_clasificar,180
+2026-02,50,AL,Almería,transferencia_sin_clasificar,388
+2026-02,50,AV,Ávila,transferencia_sin_clasificar,54
+2026-02,50,B,Barcelona,subasta,8
+2026-02,50,B,Barcelona,transferencia_sin_clasificar,4830
+2026-02,50,BA,Badajoz,subasta,1
+2026-02,50,BA,Badajoz,transferencia_sin_clasificar,302
+2026-02,50,BI,Bizkaia,subasta,4
+2026-02,50,BI,Bizkaia,transferencia_sin_clasificar,527
+2026-02,50,BU,Burgos,transferencia_sin_clasificar,136
+2026-02,50,C,A Coruña,transferencia_sin_clasificar,466
+2026-02,50,CA,Cádiz,subasta,1
+2026-02,50,CA,Cádiz,transferencia_sin_clasificar,718
+2026-02,50,CC,Cáceres,transferencia_sin_clasificar,171
+2026-02,50,CE,Ceuta,transferencia_sin_clasificar,108
+2026-02,50,CO,Córdoba,subasta,3
+2026-02,50,CO,Córdoba,transferencia_sin_clasificar,428
+2026-02,50,CR,Ciudad Real,transferencia_sin_clasificar,175
+2026-02,50,CS,Castellón/Castelló,subasta,2
+2026-02,50,CS,Castellón/Castelló,transferencia_sin_clasificar,314
+2026-02,50,CU,Cuenca,transferencia_sin_clasificar,63
+2026-02,50,GC,Las Palmas,transferencia_sin_clasificar,838
+2026-02,50,GI,Girona,transferencia_sin_clasificar,611
+2026-02,50,GR,Granada,subasta,2
+2026-02,50,GR,Granada,transferencia_sin_clasificar,686
+2026-02,50,GU,Guadalajara,subasta,2
+2026-02,50,GU,Guadalajara,transferencia_sin_clasificar,157
+2026-02,50,H,Huelva,transferencia_sin_clasificar,221
+2026-02,50,HU,Huesca,transferencia_sin_clasificar,114
+2026-02,50,IB,Illes Balears,subasta,1
+2026-02,50,IB,Illes Balears,transferencia_sin_clasificar,1140
+2026-02,50,J,Jaén,subasta,1
+2026-02,50,J,Jaén,transferencia_sin_clasificar,320
+2026-02,50,L,Lleida,subasta,1
+2026-02,50,L,Lleida,transferencia_sin_clasificar,254
+2026-02,50,LE,León,transferencia_sin_clasificar,202
+2026-02,50,LO,La Rioja,subasta,1
+2026-02,50,LO,La Rioja,transferencia_sin_clasificar,146
+2026-02,50,LU,Lugo,transferencia_sin_clasificar,139
+2026-02,50,M,Madrid,subasta,10
+2026-02,50,M,Madrid,transferencia_sin_clasificar,3033
+2026-02,50,MA,Málaga,subasta,2
+2026-02,50,MA,Málaga,transferencia_sin_clasificar,1512
+2026-02,50,ML,Melilla,transferencia_sin_clasificar,91
+2026-02,50,MU,Murcia,subasta,1
+2026-02,50,MU,Murcia,transferencia_sin_clasificar,905
+2026-02,50,NA,Navarra,subasta,3
+2026-02,50,NA,Navarra,transferencia_sin_clasificar,320
+2026-02,50,O,Asturias,subasta,2
+2026-02,50,O,Asturias,transferencia_sin_clasificar,483
+2026-02,50,OU,Ourense,transferencia_sin_clasificar,125
+2026-02,50,P,Palencia,transferencia_sin_clasificar,64
+2026-02,50,PO,Pontevedra,subasta,2
+2026-02,50,PO,Pontevedra,transferencia_sin_clasificar,525
+2026-02,50,S,Cantabria,transferencia_sin_clasificar,324
+2026-02,50,SA,Salamanca,transferencia_sin_clasificar,147
+2026-02,50,SE,Sevilla,subasta,2
+2026-02,50,SE,Sevilla,transferencia_sin_clasificar,1158
+2026-02,50,SG,Segovia,transferencia_sin_clasificar,62
+2026-02,50,SO,Soria,subasta,1
+2026-02,50,SO,Soria,transferencia_sin_clasificar,41
+2026-02,50,SS,Gipuzkoa,transferencia_sin_clasificar,393
+2026-02,50,T,Tarragona,transferencia_sin_clasificar,646
+2026-02,50,TE,Teruel,transferencia_sin_clasificar,73
+2026-02,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,808
+2026-02,50,TO,Toledo,transferencia_sin_clasificar,392
+2026-02,50,V,Valencia/València,subasta,6
+2026-02,50,V,Valencia/València,transferencia_sin_clasificar,1803
+2026-02,50,VA,Valladolid,subasta,1
+2026-02,50,VA,Valladolid,transferencia_sin_clasificar,280
+2026-02,50,VI,Araba/Álava,transferencia_sin_clasificar,146
+2026-02,50,Z,Zaragoza,subasta,3
+2026-02,50,Z,Zaragoza,transferencia_sin_clasificar,454
+2026-02,50,ZA,Zamora,transferencia_sin_clasificar,77
+2026-02,51,A,Alicante/Alacant,transferencia_sin_clasificar,3
+2026-02,51,B,Barcelona,transferencia_sin_clasificar,5
+2026-02,51,BA,Badajoz,transferencia_sin_clasificar,1
+2026-02,51,CO,Córdoba,transferencia_sin_clasificar,1
+2026-02,51,CS,Castellón/Castelló,transferencia_sin_clasificar,1
+2026-02,51,GC,Las Palmas,transferencia_sin_clasificar,1
+2026-02,51,H,Huelva,transferencia_sin_clasificar,1
+2026-02,51,IB,Illes Balears,transferencia_sin_clasificar,2
+2026-02,51,J,Jaén,transferencia_sin_clasificar,1
+2026-02,51,L,Lleida,transferencia_sin_clasificar,1
+2026-02,51,LE,León,transferencia_sin_clasificar,3
+2026-02,51,M,Madrid,transferencia_sin_clasificar,9
+2026-02,51,MA,Málaga,transferencia_sin_clasificar,2
+2026-02,51,OU,Ourense,transferencia_sin_clasificar,1
+2026-02,51,PO,Pontevedra,transferencia_sin_clasificar,2
+2026-02,51,SS,Gipuzkoa,transferencia_sin_clasificar,1
+2026-02,51,T,Tarragona,transferencia_sin_clasificar,2
+2026-02,51,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,3
+2026-02,51,TO,Toledo,transferencia_sin_clasificar,1
+2026-02,51,V,Valencia/València,transferencia_sin_clasificar,4
+2026-02,51,Z,Zaragoza,transferencia_sin_clasificar,1
+2026-03,50,A,Alicante/Alacant,subasta,4
+2026-03,50,A,Alicante/Alacant,transferencia_sin_clasificar,1583
+2026-03,50,AB,Albacete,transferencia_sin_clasificar,237
+2026-03,50,AL,Almería,transferencia_sin_clasificar,480
+2026-03,50,AV,Ávila,transferencia_sin_clasificar,107
+2026-03,50,B,Barcelona,subasta,19
+2026-03,50,B,Barcelona,transferencia_sin_clasificar,6104
+2026-03,50,BA,Badajoz,transferencia_sin_clasificar,446
+2026-03,50,BI,Bizkaia,subasta,2
+2026-03,50,BI,Bizkaia,transferencia_sin_clasificar,656
+2026-03,50,BU,Burgos,transferencia_sin_clasificar,200
+2026-03,50,C,A Coruña,transferencia_sin_clasificar,659
+2026-03,50,CA,Cádiz,subasta,3
+2026-03,50,CA,Cádiz,transferencia_sin_clasificar,1171
+2026-03,50,CC,Cáceres,subasta,2
+2026-03,50,CC,Cáceres,transferencia_sin_clasificar,280
+2026-03,50,CE,Ceuta,transferencia_sin_clasificar,159
+2026-03,50,CO,Córdoba,subasta,1
+2026-03,50,CO,Córdoba,transferencia_sin_clasificar,641
+2026-03,50,CR,Ciudad Real,subasta,1
+2026-03,50,CR,Ciudad Real,transferencia_sin_clasificar,292
+2026-03,50,CS,Castellón/Castelló,transferencia_sin_clasificar,404
+2026-03,50,CU,Cuenca,transferencia_sin_clasificar,101
+2026-03,50,GC,Las Palmas,transferencia_sin_clasificar,895
+2026-03,50,GI,Girona,subasta,3
+2026-03,50,GI,Girona,transferencia_sin_clasificar,806
+2026-03,50,GR,Granada,subasta,1
+2026-03,50,GR,Granada,transferencia_sin_clasificar,970
+2026-03,50,GU,Guadalajara,transferencia_sin_clasificar,231
+2026-03,50,H,Huelva,subasta,1
+2026-03,50,H,Huelva,transferencia_sin_clasificar,354
+2026-03,50,HU,Huesca,transferencia_sin_clasificar,135
+2026-03,50,IB,Illes Balears,subasta,7
+2026-03,50,IB,Illes Balears,transferencia_sin_clasificar,1396
+2026-03,50,J,Jaén,transferencia_sin_clasificar,491
+2026-03,50,L,Lleida,transferencia_sin_clasificar,322
+2026-03,50,LE,León,transferencia_sin_clasificar,298
+2026-03,50,LO,La Rioja,transferencia_sin_clasificar,214
+2026-03,50,LU,Lugo,subasta,1
+2026-03,50,LU,Lugo,transferencia_sin_clasificar,211
+2026-03,50,M,Madrid,subasta,6
+2026-03,50,M,Madrid,transferencia_sin_clasificar,4305
+2026-03,50,MA,Málaga,subasta,3
+2026-03,50,MA,Málaga,transferencia_sin_clasificar,1897
+2026-03,50,ML,Melilla,transferencia_sin_clasificar,89
+2026-03,50,MU,Murcia,subasta,2
+2026-03,50,MU,Murcia,transferencia_sin_clasificar,1105
+2026-03,50,NA,Navarra,transferencia_sin_clasificar,443
+2026-03,50,O,Asturias,subasta,1
+2026-03,50,O,Asturias,transferencia_sin_clasificar,739
+2026-03,50,OU,Ourense,transferencia_sin_clasificar,222
+2026-03,50,P,Palencia,transferencia_sin_clasificar,96
+2026-03,50,PO,Pontevedra,subasta,7
+2026-03,50,PO,Pontevedra,transferencia_sin_clasificar,864
+2026-03,50,S,Cantabria,transferencia_sin_clasificar,419
+2026-03,50,SA,Salamanca,transferencia_sin_clasificar,241
+2026-03,50,SE,Sevilla,subasta,1
+2026-03,50,SE,Sevilla,transferencia_sin_clasificar,1568
+2026-03,50,SG,Segovia,transferencia_sin_clasificar,102
+2026-03,50,SO,Soria,transferencia_sin_clasificar,40
+2026-03,50,SS,Gipuzkoa,transferencia_sin_clasificar,527
+2026-03,50,T,Tarragona,transferencia_sin_clasificar,859
+2026-03,50,TE,Teruel,transferencia_sin_clasificar,83
+2026-03,50,TF,Santa Cruz de Tenerife,subasta,6
+2026-03,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1005
+2026-03,50,TO,Toledo,subasta,1
+2026-03,50,TO,Toledo,transferencia_sin_clasificar,563
+2026-03,50,V,Valencia/València,subasta,3
+2026-03,50,V,Valencia/València,transferencia_sin_clasificar,1946
+2026-03,50,VA,Valladolid,transferencia_sin_clasificar,361
+2026-03,50,VI,Araba/Álava,transferencia_sin_clasificar,178
+2026-03,50,Z,Zaragoza,subasta,1
+2026-03,50,Z,Zaragoza,transferencia_sin_clasificar,555
+2026-03,50,ZA,Zamora,subasta,1
+2026-03,50,ZA,Zamora,transferencia_sin_clasificar,117
+2026-03,51,A,Alicante/Alacant,transferencia_sin_clasificar,2
+2026-03,51,AB,Albacete,transferencia_sin_clasificar,1
+2026-03,51,AV,Ávila,transferencia_sin_clasificar,1
+2026-03,51,B,Barcelona,transferencia_sin_clasificar,4
+2026-03,51,CA,Cádiz,transferencia_sin_clasificar,3
+2026-03,51,CO,Córdoba,transferencia_sin_clasificar,1
+2026-03,51,CR,Ciudad Real,transferencia_sin_clasificar,5
+2026-03,51,CS,Castellón/Castelló,transferencia_sin_clasificar,1
+2026-03,51,GC,Las Palmas,transferencia_sin_clasificar,1
+2026-03,51,GI,Girona,transferencia_sin_clasificar,1
+2026-03,51,IB,Illes Balears,transferencia_sin_clasificar,1
+2026-03,51,LO,La Rioja,transferencia_sin_clasificar,3
+2026-03,51,M,Madrid,subasta,1
+2026-03,51,M,Madrid,transferencia_sin_clasificar,12
+2026-03,51,MA,Málaga,transferencia_sin_clasificar,1
+2026-03,51,MU,Murcia,transferencia_sin_clasificar,3
+2026-03,51,O,Asturias,transferencia_sin_clasificar,1
+2026-03,51,SA,Salamanca,transferencia_sin_clasificar,1
+2026-03,51,SE,Sevilla,transferencia_sin_clasificar,2
+2026-03,51,T,Tarragona,transferencia_sin_clasificar,1
+2026-03,51,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,2
+2026-03,51,TO,Toledo,transferencia_sin_clasificar,5
+2026-03,51,V,Valencia/València,transferencia_sin_clasificar,1
+2026-04,50,A,Alicante/Alacant,subasta,1
+2026-04,50,A,Alicante/Alacant,transferencia_sin_clasificar,1635
+2026-04,50,AB,Albacete,subasta,1
+2026-04,50,AB,Albacete,transferencia_sin_clasificar,224
+2026-04,50,AL,Almería,subasta,1
+2026-04,50,AL,Almería,transferencia_sin_clasificar,458
+2026-04,50,AV,Ávila,transferencia_sin_clasificar,93
+2026-04,50,B,Barcelona,subasta,11
+2026-04,50,B,Barcelona,transferencia_sin_clasificar,5483
+2026-04,50,BA,Badajoz,subasta,1
+2026-04,50,BA,Badajoz,transferencia_sin_clasificar,443
+2026-04,50,BI,Bizkaia,subasta,1
+2026-04,50,BI,Bizkaia,transferencia_sin_clasificar,661
+2026-04,50,BU,Burgos,subasta,3
+2026-04,50,BU,Burgos,transferencia_sin_clasificar,182
+2026-04,50,C,A Coruña,transferencia_sin_clasificar,699
+2026-04,50,CA,Cádiz,subasta,1
+2026-04,50,CA,Cádiz,transferencia_sin_clasificar,1205
+2026-04,50,CC,Cáceres,transferencia_sin_clasificar,242
+2026-04,50,CE,Ceuta,transferencia_sin_clasificar,152
+2026-04,50,CO,Córdoba,subasta,1
+2026-04,50,CO,Córdoba,transferencia_sin_clasificar,585
+2026-04,50,CR,Ciudad Real,transferencia_sin_clasificar,269
+2026-04,50,CS,Castellón/Castelló,subasta,1
+2026-04,50,CS,Castellón/Castelló,transferencia_sin_clasificar,416
+2026-04,50,CU,Cuenca,transferencia_sin_clasificar,122
+2026-04,50,GC,Las Palmas,subasta,1
+2026-04,50,GC,Las Palmas,transferencia_sin_clasificar,830
+2026-04,50,GI,Girona,subasta,1
+2026-04,50,GI,Girona,transferencia_sin_clasificar,881
+2026-04,50,GR,Granada,transferencia_sin_clasificar,954
+2026-04,50,GU,Guadalajara,transferencia_sin_clasificar,236
+2026-04,50,H,Huelva,transferencia_sin_clasificar,379
+2026-04,50,HU,Huesca,transferencia_sin_clasificar,124
+2026-04,50,IB,Illes Balears,subasta,6
+2026-04,50,IB,Illes Balears,transferencia_sin_clasificar,1533
+2026-04,50,J,Jaén,transferencia_sin_clasificar,487
+2026-04,50,L,Lleida,transferencia_sin_clasificar,290
+2026-04,50,LE,León,subasta,1
+2026-04,50,LE,León,transferencia_sin_clasificar,276
+2026-04,50,LO,La Rioja,transferencia_sin_clasificar,196
+2026-04,50,LU,Lugo,transferencia_sin_clasificar,188
+2026-04,50,M,Madrid,subasta,10
+2026-04,50,M,Madrid,transferencia_sin_clasificar,4100
+2026-04,50,MA,Málaga,subasta,6
+2026-04,50,MA,Málaga,transferencia_sin_clasificar,1904
+2026-04,50,ML,Melilla,subasta,1
+2026-04,50,ML,Melilla,transferencia_sin_clasificar,94
+2026-04,50,MU,Murcia,transferencia_sin_clasificar,1059
+2026-04,50,NA,Navarra,transferencia_sin_clasificar,412
+2026-04,50,O,Asturias,subasta,1
+2026-04,50,O,Asturias,transferencia_sin_clasificar,684
+2026-04,50,OU,Ourense,transferencia_sin_clasificar,216
+2026-04,50,P,Palencia,transferencia_sin_clasificar,90
+2026-04,50,PO,Pontevedra,subasta,1
+2026-04,50,PO,Pontevedra,transferencia_sin_clasificar,909
+2026-04,50,S,Cantabria,transferencia_sin_clasificar,425
+2026-04,50,SA,Salamanca,transferencia_sin_clasificar,198
+2026-04,50,SE,Sevilla,subasta,4
+2026-04,50,SE,Sevilla,transferencia_sin_clasificar,1444
+2026-04,50,SG,Segovia,transferencia_sin_clasificar,77
+2026-04,50,SO,Soria,transferencia_sin_clasificar,61
+2026-04,50,SS,Gipuzkoa,transferencia_sin_clasificar,531
+2026-04,50,T,Tarragona,subasta,2
+2026-04,50,T,Tarragona,transferencia_sin_clasificar,775
+2026-04,50,TE,Teruel,transferencia_sin_clasificar,73
+2026-04,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,840
+2026-04,50,TO,Toledo,subasta,3
+2026-04,50,TO,Toledo,transferencia_sin_clasificar,529
+2026-04,50,V,Valencia/València,subasta,11
+2026-04,50,V,Valencia/València,transferencia_sin_clasificar,1952
+2026-04,50,VA,Valladolid,transferencia_sin_clasificar,308
+2026-04,50,VI,Araba/Álava,transferencia_sin_clasificar,182
+2026-04,50,Z,Zaragoza,subasta,2
+2026-04,50,Z,Zaragoza,transferencia_sin_clasificar,517
+2026-04,50,ZA,Zamora,transferencia_sin_clasificar,115
+2026-04,51,A,Alicante/Alacant,transferencia_sin_clasificar,3
+2026-04,51,AB,Albacete,transferencia_sin_clasificar,1
+2026-04,51,AL,Almería,transferencia_sin_clasificar,2
+2026-04,51,B,Barcelona,transferencia_sin_clasificar,9
+2026-04,51,BI,Bizkaia,transferencia_sin_clasificar,1
+2026-04,51,CA,Cádiz,transferencia_sin_clasificar,2
+2026-04,51,CC,Cáceres,transferencia_sin_clasificar,1
+2026-04,51,GC,Las Palmas,transferencia_sin_clasificar,1
+2026-04,51,GI,Girona,transferencia_sin_clasificar,1
+2026-04,51,GR,Granada,transferencia_sin_clasificar,2
+2026-04,51,H,Huelva,transferencia_sin_clasificar,1
+2026-04,51,IB,Illes Balears,transferencia_sin_clasificar,3
+2026-04,51,M,Madrid,transferencia_sin_clasificar,9
+2026-04,51,MA,Málaga,transferencia_sin_clasificar,5
+2026-04,51,MU,Murcia,transferencia_sin_clasificar,2
+2026-04,51,NA,Navarra,transferencia_sin_clasificar,3
+2026-04,51,SE,Sevilla,transferencia_sin_clasificar,2
+2026-04,51,SS,Gipuzkoa,transferencia_sin_clasificar,1
+2026-04,51,T,Tarragona,transferencia_sin_clasificar,1
+2026-04,51,V,Valencia/València,transferencia_sin_clasificar,4
+2026-04,51,VA,Valladolid,transferencia_sin_clasificar,3
+2026-05,50,A,Alicante/Alacant,subasta,1
+2026-05,50,A,Alicante/Alacant,transferencia_sin_clasificar,1800
+2026-05,50,AB,Albacete,subasta,1
+2026-05,50,AB,Albacete,transferencia_sin_clasificar,245
+2026-05,50,AL,Almería,transferencia_sin_clasificar,444
+2026-05,50,AV,Ávila,transferencia_sin_clasificar,102
+2026-05,50,B,Barcelona,subasta,12
+2026-05,50,B,Barcelona,transferencia_sin_clasificar,5687
+2026-05,50,BA,Badajoz,transferencia_sin_clasificar,459
+2026-05,50,BI,Bizkaia,transferencia_sin_clasificar,939
+2026-05,50,BU,Burgos,transferencia_sin_clasificar,208
+2026-05,50,C,A Coruña,transferencia_sin_clasificar,673
+2026-05,50,CA,Cádiz,subasta,1
+2026-05,50,CA,Cádiz,transferencia_sin_clasificar,1138
+2026-05,50,CC,Cáceres,transferencia_sin_clasificar,258
+2026-05,50,CE,Ceuta,subasta,2
+2026-05,50,CE,Ceuta,transferencia_sin_clasificar,122
+2026-05,50,CO,Córdoba,transferencia_sin_clasificar,588
+2026-05,50,CR,Ciudad Real,subasta,1
+2026-05,50,CR,Ciudad Real,transferencia_sin_clasificar,241
+2026-05,50,CS,Castellón/Castelló,transferencia_sin_clasificar,447
+2026-05,50,CU,Cuenca,transferencia_sin_clasificar,147
+2026-05,50,GC,Las Palmas,transferencia_sin_clasificar,932
+2026-05,50,GI,Girona,subasta,2
+2026-05,50,GI,Girona,transferencia_sin_clasificar,953
+2026-05,50,GR,Granada,subasta,3
+2026-05,50,GR,Granada,transferencia_sin_clasificar,931
+2026-05,50,GU,Guadalajara,subasta,1
+2026-05,50,GU,Guadalajara,transferencia_sin_clasificar,222
+2026-05,50,H,Huelva,transferencia_sin_clasificar,397
+2026-05,50,HU,Huesca,transferencia_sin_clasificar,122
+2026-05,50,IB,Illes Balears,subasta,2
+2026-05,50,IB,Illes Balears,transferencia_sin_clasificar,1575
+2026-05,50,J,Jaén,transferencia_sin_clasificar,515
+2026-05,50,L,Lleida,subasta,1
+2026-05,50,L,Lleida,transferencia_sin_clasificar,310
+2026-05,50,LE,León,transferencia_sin_clasificar,308
+2026-05,50,LO,La Rioja,transferencia_sin_clasificar,189
+2026-05,50,LU,Lugo,transferencia_sin_clasificar,193
+2026-05,50,M,Madrid,subasta,12
+2026-05,50,M,Madrid,transferencia_sin_clasificar,4219
+2026-05,50,MA,Málaga,subasta,7
+2026-05,50,MA,Málaga,transferencia_sin_clasificar,1919
+2026-05,50,ML,Melilla,transferencia_sin_clasificar,91
+2026-05,50,MU,Murcia,subasta,3
+2026-05,50,MU,Murcia,transferencia_sin_clasificar,1098
+2026-05,50,NA,Navarra,subasta,2
+2026-05,50,NA,Navarra,transferencia_sin_clasificar,438
+2026-05,50,O,Asturias,subasta,1
+2026-05,50,O,Asturias,transferencia_sin_clasificar,715
+2026-05,50,OU,Ourense,subasta,1
+2026-05,50,OU,Ourense,transferencia_sin_clasificar,195
+2026-05,50,P,Palencia,transferencia_sin_clasificar,99
+2026-05,50,PO,Pontevedra,subasta,2
+2026-05,50,PO,Pontevedra,transferencia_sin_clasificar,968
+2026-05,50,S,Cantabria,transferencia_sin_clasificar,449
+2026-05,50,SA,Salamanca,transferencia_sin_clasificar,207
+2026-05,50,SE,Sevilla,subasta,3
+2026-05,50,SE,Sevilla,transferencia_sin_clasificar,1512
+2026-05,50,SG,Segovia,transferencia_sin_clasificar,95
+2026-05,50,SO,Soria,transferencia_sin_clasificar,54
+2026-05,50,SS,Gipuzkoa,transferencia_sin_clasificar,587
+2026-05,50,T,Tarragona,transferencia_sin_clasificar,864
+2026-05,50,TE,Teruel,transferencia_sin_clasificar,70
+2026-05,50,TF,Santa Cruz de Tenerife,subasta,1
+2026-05,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,999
+2026-05,50,TO,Toledo,transferencia_sin_clasificar,530
+2026-05,50,V,Valencia/València,subasta,5
+2026-05,50,V,Valencia/València,transferencia_sin_clasificar,2037
+2026-05,50,VA,Valladolid,subasta,1
+2026-05,50,VA,Valladolid,transferencia_sin_clasificar,302
+2026-05,50,VI,Araba/Álava,transferencia_sin_clasificar,174
+2026-05,50,Z,Zaragoza,transferencia_sin_clasificar,599
+2026-05,50,ZA,Zamora,transferencia_sin_clasificar,101
+2026-05,51,A,Alicante/Alacant,transferencia_sin_clasificar,3
+2026-05,51,AL,Almería,transferencia_sin_clasificar,1
+2026-05,51,B,Barcelona,transferencia_sin_clasificar,8
+2026-05,51,BU,Burgos,transferencia_sin_clasificar,2
+2026-05,51,CA,Cádiz,transferencia_sin_clasificar,1
+2026-05,51,CC,Cáceres,transferencia_sin_clasificar,1
+2026-05,51,CE,Ceuta,transferencia_sin_clasificar,1
+2026-05,51,CS,Castellón/Castelló,transferencia_sin_clasificar,1
+2026-05,51,GC,Las Palmas,transferencia_sin_clasificar,1
+2026-05,51,GI,Girona,transferencia_sin_clasificar,2
+2026-05,51,IB,Illes Balears,transferencia_sin_clasificar,2
+2026-05,51,L,Lleida,transferencia_sin_clasificar,1
+2026-05,51,M,Madrid,transferencia_sin_clasificar,5
+2026-05,51,MA,Málaga,transferencia_sin_clasificar,4
+2026-05,51,MU,Murcia,transferencia_sin_clasificar,1
+2026-05,51,OU,Ourense,transferencia_sin_clasificar,1
+2026-05,51,PO,Pontevedra,transferencia_sin_clasificar,2
+2026-05,51,SA,Salamanca,transferencia_sin_clasificar,1
+2026-05,51,SE,Sevilla,transferencia_sin_clasificar,4
+2026-05,51,V,Valencia/València,transferencia_sin_clasificar,5
+2026-05,51,VA,Valladolid,transferencia_sin_clasificar,1
+2026-06,50,A,Alicante/Alacant,subasta,5
+2026-06,50,A,Alicante/Alacant,transferencia_sin_clasificar,1874
+2026-06,50,AB,Albacete,subasta,1
+2026-06,50,AB,Albacete,transferencia_sin_clasificar,282
+2026-06,50,AL,Almería,transferencia_sin_clasificar,446
+2026-06,50,AV,Ávila,transferencia_sin_clasificar,127
+2026-06,50,B,Barcelona,subasta,13
+2026-06,50,B,Barcelona,transferencia_sin_clasificar,6136
+2026-06,50,BA,Badajoz,transferencia_sin_clasificar,407
+2026-06,50,BI,Bizkaia,subasta,1
+2026-06,50,BI,Bizkaia,transferencia_sin_clasificar,905
+2026-06,50,BU,Burgos,subasta,1
+2026-06,50,BU,Burgos,transferencia_sin_clasificar,217
+2026-06,50,C,A Coruña,subasta,1
+2026-06,50,C,A Coruña,transferencia_sin_clasificar,817
+2026-06,50,CA,Cádiz,subasta,2
+2026-06,50,CA,Cádiz,transferencia_sin_clasificar,1217
+2026-06,50,CC,Cáceres,subasta,1
+2026-06,50,CC,Cáceres,transferencia_sin_clasificar,253
+2026-06,50,CE,Ceuta,transferencia_sin_clasificar,170
+2026-06,50,CO,Córdoba,transferencia_sin_clasificar,615
+2026-06,50,CR,Ciudad Real,subasta,1
+2026-06,50,CR,Ciudad Real,transferencia_sin_clasificar,259
+2026-06,50,CS,Castellón/Castelló,subasta,1
+2026-06,50,CS,Castellón/Castelló,transferencia_sin_clasificar,466
+2026-06,50,CU,Cuenca,transferencia_sin_clasificar,143
+2026-06,50,GC,Las Palmas,transferencia_sin_clasificar,971
+2026-06,50,GI,Girona,subasta,2
+2026-06,50,GI,Girona,transferencia_sin_clasificar,949
+2026-06,50,GR,Granada,subasta,2
+2026-06,50,GR,Granada,transferencia_sin_clasificar,1005
+2026-06,50,GU,Guadalajara,transferencia_sin_clasificar,212
+2026-06,50,H,Huelva,subasta,1
+2026-06,50,H,Huelva,transferencia_sin_clasificar,434
+2026-06,50,HU,Huesca,transferencia_sin_clasificar,134
+2026-06,50,IB,Illes Balears,subasta,4
+2026-06,50,IB,Illes Balears,transferencia_sin_clasificar,1591
+2026-06,50,J,Jaén,subasta,1
+2026-06,50,J,Jaén,transferencia_sin_clasificar,458
+2026-06,50,L,Lleida,subasta,1
+2026-06,50,L,Lleida,transferencia_sin_clasificar,360
+2026-06,50,LE,León,transferencia_sin_clasificar,333
+2026-06,50,LO,La Rioja,transferencia_sin_clasificar,191
+2026-06,50,LU,Lugo,transferencia_sin_clasificar,207
+2026-06,50,M,Madrid,subasta,9
+2026-06,50,M,Madrid,transferencia_sin_clasificar,4588
+2026-06,50,MA,Málaga,subasta,7
+2026-06,50,MA,Málaga,transferencia_sin_clasificar,1935
+2026-06,50,ML,Melilla,transferencia_sin_clasificar,113
+2026-06,50,MU,Murcia,subasta,3
+2026-06,50,MU,Murcia,transferencia_sin_clasificar,1111
+2026-06,50,NA,Navarra,subasta,2
+2026-06,50,NA,Navarra,transferencia_sin_clasificar,490
+2026-06,50,O,Asturias,subasta,2
+2026-06,50,O,Asturias,transferencia_sin_clasificar,807
+2026-06,50,OU,Ourense,transferencia_sin_clasificar,219
+2026-06,50,P,Palencia,transferencia_sin_clasificar,131
+2026-06,50,PO,Pontevedra,subasta,4
+2026-06,50,PO,Pontevedra,transferencia_sin_clasificar,1049
+2026-06,50,S,Cantabria,transferencia_sin_clasificar,549
+2026-06,50,SA,Salamanca,subasta,1
+2026-06,50,SA,Salamanca,transferencia_sin_clasificar,231
+2026-06,50,SE,Sevilla,subasta,3
+2026-06,50,SE,Sevilla,transferencia_sin_clasificar,1497
+2026-06,50,SG,Segovia,transferencia_sin_clasificar,119
+2026-06,50,SO,Soria,transferencia_sin_clasificar,66
+2026-06,50,SS,Gipuzkoa,transferencia_sin_clasificar,719
+2026-06,50,T,Tarragona,transferencia_sin_clasificar,898
+2026-06,50,TE,Teruel,transferencia_sin_clasificar,110
+2026-06,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1007
+2026-06,50,TO,Toledo,subasta,3
+2026-06,50,TO,Toledo,transferencia_sin_clasificar,551
+2026-06,50,V,Valencia/València,subasta,6
+2026-06,50,V,Valencia/València,transferencia_sin_clasificar,2203
+2026-06,50,VA,Valladolid,transferencia_sin_clasificar,366
+2026-06,50,VI,Araba/Álava,subasta,1
+2026-06,50,VI,Araba/Álava,transferencia_sin_clasificar,170
+2026-06,50,Z,Zaragoza,subasta,2
+2026-06,50,Z,Zaragoza,transferencia_sin_clasificar,619
+2026-06,50,ZA,Zamora,transferencia_sin_clasificar,104
+2026-06,51,A,Alicante/Alacant,transferencia_sin_clasificar,7
+2026-06,51,AL,Almería,transferencia_sin_clasificar,3
+2026-06,51,B,Barcelona,transferencia_sin_clasificar,6
+2026-06,51,BA,Badajoz,transferencia_sin_clasificar,1
+2026-06,51,BI,Bizkaia,transferencia_sin_clasificar,1
+2026-06,51,C,A Coruña,transferencia_sin_clasificar,2
+2026-06,51,CA,Cádiz,transferencia_sin_clasificar,1
+2026-06,51,CE,Ceuta,transferencia_sin_clasificar,1
+2026-06,51,CS,Castellón/Castelló,transferencia_sin_clasificar,2
+2026-06,51,GI,Girona,transferencia_sin_clasificar,1
+2026-06,51,H,Huelva,transferencia_sin_clasificar,1
+2026-06,51,IB,Illes Balears,transferencia_sin_clasificar,3
+2026-06,51,LO,La Rioja,transferencia_sin_clasificar,1
+2026-06,51,LU,Lugo,transferencia_sin_clasificar,2
+2026-06,51,M,Madrid,transferencia_sin_clasificar,6
+2026-06,51,MA,Málaga,transferencia_sin_clasificar,4
+2026-06,51,O,Asturias,transferencia_sin_clasificar,2
+2026-06,51,PO,Pontevedra,transferencia_sin_clasificar,2
+2026-06,51,S,Cantabria,transferencia_sin_clasificar,2
+2026-06,51,SE,Sevilla,transferencia_sin_clasificar,4
+2026-06,51,SS,Gipuzkoa,transferencia_sin_clasificar,1
+2026-06,51,T,Tarragona,transferencia_sin_clasificar,4
+2026-06,51,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1
+2026-07,50,A,Alicante/Alacant,subasta,6
+2026-07,50,A,Alicante/Alacant,transferencia_sin_clasificar,1936
+2026-07,50,AB,Albacete,transferencia_sin_clasificar,255
+2026-07,50,AL,Almería,subasta,1
+2026-07,50,AL,Almería,transferencia_sin_clasificar,451
+2026-07,50,AV,Ávila,transferencia_sin_clasificar,107
+2026-07,50,B,Barcelona,subasta,21
+2026-07,50,B,Barcelona,transferencia_sin_clasificar,6376
+2026-07,50,BA,Badajoz,subasta,1
+2026-07,50,BA,Badajoz,transferencia_sin_clasificar,370
+2026-07,50,BI,Bizkaia,transferencia_sin_clasificar,874
+2026-07,50,BU,Burgos,transferencia_sin_clasificar,230
+2026-07,50,C,A Coruña,transferencia_sin_clasificar,770
+2026-07,50,CA,Cádiz,subasta,1
+2026-07,50,CA,Cádiz,transferencia_sin_clasificar,1151
+2026-07,50,CC,Cáceres,transferencia_sin_clasificar,236
+2026-07,50,CE,Ceuta,transferencia_sin_clasificar,169
+2026-07,50,CO,Córdoba,subasta,2
+2026-07,50,CO,Córdoba,transferencia_sin_clasificar,577
+2026-07,50,CR,Ciudad Real,transferencia_sin_clasificar,353
+2026-07,50,CS,Castellón/Castelló,subasta,1
+2026-07,50,CS,Castellón/Castelló,transferencia_sin_clasificar,506
+2026-07,50,CU,Cuenca,transferencia_sin_clasificar,121
+2026-07,50,GC,Las Palmas,transferencia_sin_clasificar,955
+2026-07,50,GI,Girona,subasta,2
+2026-07,50,GI,Girona,transferencia_sin_clasificar,973
+2026-07,50,GR,Granada,subasta,2
+2026-07,50,GR,Granada,transferencia_sin_clasificar,947
+2026-07,50,GU,Guadalajara,subasta,1
+2026-07,50,GU,Guadalajara,transferencia_sin_clasificar,187
+2026-07,50,H,Huelva,transferencia_sin_clasificar,375
+2026-07,50,HU,Huesca,transferencia_sin_clasificar,166
+2026-07,50,IB,Illes Balears,subasta,2
+2026-07,50,IB,Illes Balears,transferencia_sin_clasificar,1589
+2026-07,50,J,Jaén,transferencia_sin_clasificar,492
+2026-07,50,L,Lleida,subasta,1
+2026-07,50,L,Lleida,transferencia_sin_clasificar,336
+2026-07,50,LE,León,transferencia_sin_clasificar,297
+2026-07,50,LO,La Rioja,transferencia_sin_clasificar,193
+2026-07,50,LU,Lugo,subasta,1
+2026-07,50,LU,Lugo,transferencia_sin_clasificar,240
+2026-07,50,M,Madrid,subasta,17
+2026-07,50,M,Madrid,transferencia_sin_clasificar,4346
+2026-07,50,MA,Málaga,subasta,5
+2026-07,50,MA,Málaga,transferencia_sin_clasificar,2024
+2026-07,50,ML,Melilla,transferencia_sin_clasificar,120
+2026-07,50,MU,Murcia,subasta,1
+2026-07,50,MU,Murcia,transferencia_sin_clasificar,1111
+2026-07,50,NA,Navarra,transferencia_sin_clasificar,387
+2026-07,50,O,Asturias,transferencia_sin_clasificar,887
+2026-07,50,OU,Ourense,transferencia_sin_clasificar,221
+2026-07,50,P,Palencia,transferencia_sin_clasificar,93
+2026-07,50,PO,Pontevedra,subasta,6
+2026-07,50,PO,Pontevedra,transferencia_sin_clasificar,990
+2026-07,50,S,Cantabria,subasta,1
+2026-07,50,S,Cantabria,transferencia_sin_clasificar,526
+2026-07,50,SA,Salamanca,transferencia_sin_clasificar,205
+2026-07,50,SE,Sevilla,subasta,3
+2026-07,50,SE,Sevilla,transferencia_sin_clasificar,1476
+2026-07,50,SG,Segovia,transferencia_sin_clasificar,102
+2026-07,50,SO,Soria,transferencia_sin_clasificar,65
+2026-07,50,SS,Gipuzkoa,subasta,1
+2026-07,50,SS,Gipuzkoa,transferencia_sin_clasificar,706
+2026-07,50,T,Tarragona,subasta,2
+2026-07,50,T,Tarragona,transferencia_sin_clasificar,938
+2026-07,50,TE,Teruel,transferencia_sin_clasificar,76
+2026-07,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1120
+2026-07,50,TO,Toledo,subasta,1
+2026-07,50,TO,Toledo,transferencia_sin_clasificar,525
+2026-07,50,V,Valencia/València,subasta,4
+2026-07,50,V,Valencia/València,transferencia_sin_clasificar,2260
+2026-07,50,VA,Valladolid,subasta,1
+2026-07,50,VA,Valladolid,transferencia_sin_clasificar,337
+2026-07,50,VI,Araba/Álava,transferencia_sin_clasificar,231
+2026-07,50,Z,Zaragoza,transferencia_sin_clasificar,601
+2026-07,50,ZA,Zamora,transferencia_sin_clasificar,109
+2026-07,51,A,Alicante/Alacant,transferencia_sin_clasificar,3
+2026-07,51,AL,Almería,transferencia_sin_clasificar,1
+2026-07,51,B,Barcelona,transferencia_sin_clasificar,11
+2026-07,51,BI,Bizkaia,transferencia_sin_clasificar,2
+2026-07,51,C,A Coruña,transferencia_sin_clasificar,1
+2026-07,51,CC,Cáceres,transferencia_sin_clasificar,1
+2026-07,51,CO,Córdoba,transferencia_sin_clasificar,1
+2026-07,51,CS,Castellón/Castelló,transferencia_sin_clasificar,2
+2026-07,51,GI,Girona,transferencia_sin_clasificar,1
+2026-07,51,GR,Granada,transferencia_sin_clasificar,1
+2026-07,51,GU,Guadalajara,transferencia_sin_clasificar,2
+2026-07,51,IB,Illes Balears,transferencia_sin_clasificar,5
+2026-07,51,LO,La Rioja,transferencia_sin_clasificar,1
+2026-07,51,M,Madrid,transferencia_sin_clasificar,8
+2026-07,51,MA,Málaga,transferencia_sin_clasificar,3
+2026-07,51,MU,Murcia,transferencia_sin_clasificar,3
+2026-07,51,NA,Navarra,transferencia_sin_clasificar,1
+2026-07,51,PO,Pontevedra,transferencia_sin_clasificar,1
+2026-07,51,S,Cantabria,transferencia_sin_clasificar,1
+2026-07,51,SE,Sevilla,transferencia_sin_clasificar,3
+2026-07,51,T,Tarragona,transferencia_sin_clasificar,1
+2026-07,51,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1
+2026-07,51,TO,Toledo,transferencia_sin_clasificar,2
+2026-07,51,V,Valencia/València,transferencia_sin_clasificar,4
+2026-07,51,VA,Valladolid,transferencia_sin_clasificar,1
+2026-08,50,A,Alicante/Alacant,subasta,2
+2026-08,50,A,Alicante/Alacant,transferencia_sin_clasificar,1491
+2026-08,50,AB,Albacete,subasta,1
+2026-08,50,AB,Albacete,transferencia_sin_clasificar,202
+2026-08,50,AL,Almería,transferencia_sin_clasificar,368
+2026-08,50,AV,Ávila,transferencia_sin_clasificar,97
+2026-08,50,B,Barcelona,subasta,5
+2026-08,50,B,Barcelona,transferencia_sin_clasificar,3901
+2026-08,50,BA,Badajoz,subasta,1
+2026-08,50,BA,Badajoz,transferencia_sin_clasificar,386
+2026-08,50,BI,Bizkaia,subasta,1
+2026-08,50,BI,Bizkaia,transferencia_sin_clasificar,526
+2026-08,50,BU,Burgos,transferencia_sin_clasificar,173
+2026-08,50,C,A Coruña,subasta,2
+2026-08,50,C,A Coruña,transferencia_sin_clasificar,641
+2026-08,50,CA,Cádiz,transferencia_sin_clasificar,990
+2026-08,50,CC,Cáceres,transferencia_sin_clasificar,218
+2026-08,50,CE,Ceuta,transferencia_sin_clasificar,98
+2026-08,50,CO,Córdoba,subasta,1
+2026-08,50,CO,Córdoba,transferencia_sin_clasificar,523
+2026-08,50,CR,Ciudad Real,subasta,1
+2026-08,50,CR,Ciudad Real,transferencia_sin_clasificar,211
+2026-08,50,CS,Castellón/Castelló,subasta,1
+2026-08,50,CS,Castellón/Castelló,transferencia_sin_clasificar,384
+2026-08,50,CU,Cuenca,transferencia_sin_clasificar,107
+2026-08,50,GC,Las Palmas,transferencia_sin_clasificar,861
+2026-08,50,GI,Girona,subasta,1
+2026-08,50,GI,Girona,transferencia_sin_clasificar,772
+2026-08,50,GR,Granada,subasta,4
+2026-08,50,GR,Granada,transferencia_sin_clasificar,758
+2026-08,50,GU,Guadalajara,subasta,1
+2026-08,50,GU,Guadalajara,transferencia_sin_clasificar,168
+2026-08,50,H,Huelva,transferencia_sin_clasificar,307
+2026-08,50,HU,Huesca,transferencia_sin_clasificar,101
+2026-08,50,IB,Illes Balears,subasta,1
+2026-08,50,IB,Illes Balears,transferencia_sin_clasificar,1325
+2026-08,50,J,Jaén,transferencia_sin_clasificar,372
+2026-08,50,L,Lleida,transferencia_sin_clasificar,252
+2026-08,50,LE,León,subasta,1
+2026-08,50,LE,León,transferencia_sin_clasificar,243
+2026-08,50,LO,La Rioja,transferencia_sin_clasificar,143
+2026-08,50,LU,Lugo,subasta,1
+2026-08,50,LU,Lugo,transferencia_sin_clasificar,175
+2026-08,50,M,Madrid,subasta,9
+2026-08,50,M,Madrid,transferencia_sin_clasificar,2971
+2026-08,50,MA,Málaga,subasta,4
+2026-08,50,MA,Málaga,transferencia_sin_clasificar,1714
+2026-08,50,ML,Melilla,transferencia_sin_clasificar,80
+2026-08,50,MU,Murcia,transferencia_sin_clasificar,802
+2026-08,50,NA,Navarra,transferencia_sin_clasificar,410
+2026-08,50,O,Asturias,subasta,2
+2026-08,50,O,Asturias,transferencia_sin_clasificar,696
+2026-08,50,OU,Ourense,transferencia_sin_clasificar,180
+2026-08,50,P,Palencia,transferencia_sin_clasificar,67
+2026-08,50,PO,Pontevedra,subasta,4
+2026-08,50,PO,Pontevedra,transferencia_sin_clasificar,763
+2026-08,50,S,Cantabria,transferencia_sin_clasificar,430
+2026-08,50,SA,Salamanca,transferencia_sin_clasificar,158
+2026-08,50,SE,Sevilla,subasta,3
+2026-08,50,SE,Sevilla,transferencia_sin_clasificar,1120
+2026-08,50,SG,Segovia,transferencia_sin_clasificar,86
+2026-08,50,SO,Soria,transferencia_sin_clasificar,36
+2026-08,50,SS,Gipuzkoa,subasta,1
+2026-08,50,SS,Gipuzkoa,transferencia_sin_clasificar,436
+2026-08,50,T,Tarragona,subasta,1
+2026-08,50,T,Tarragona,transferencia_sin_clasificar,722
+2026-08,50,TE,Teruel,transferencia_sin_clasificar,55
+2026-08,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,897
+2026-08,50,TO,Toledo,transferencia_sin_clasificar,424
+2026-08,50,V,Valencia/València,subasta,4
+2026-08,50,V,Valencia/València,transferencia_sin_clasificar,1636
+2026-08,50,VA,Valladolid,transferencia_sin_clasificar,248
+2026-08,50,VI,Araba/Álava,transferencia_sin_clasificar,136
+2026-08,50,Z,Zaragoza,subasta,1
+2026-08,50,Z,Zaragoza,transferencia_sin_clasificar,379
+2026-08,50,ZA,Zamora,transferencia_sin_clasificar,81
+2026-08,51,A,Alicante/Alacant,transferencia_sin_clasificar,4
+2026-08,51,AB,Albacete,transferencia_sin_clasificar,1
+2026-08,51,AL,Almería,transferencia_sin_clasificar,1
+2026-08,51,B,Barcelona,transferencia_sin_clasificar,10
+2026-08,51,BA,Badajoz,transferencia_sin_clasificar,1
+2026-08,51,BI,Bizkaia,transferencia_sin_clasificar,1
+2026-08,51,C,A Coruña,transferencia_sin_clasificar,1
+2026-08,51,CA,Cádiz,transferencia_sin_clasificar,2
+2026-08,51,CO,Córdoba,transferencia_sin_clasificar,1
+2026-08,51,GI,Girona,transferencia_sin_clasificar,2
+2026-08,51,IB,Illes Balears,transferencia_sin_clasificar,3
+2026-08,51,M,Madrid,transferencia_sin_clasificar,7
+2026-08,51,MA,Málaga,transferencia_sin_clasificar,1
+2026-08,51,ML,Melilla,transferencia_sin_clasificar,1
+2026-08,51,MU,Murcia,transferencia_sin_clasificar,2
+2026-08,51,NA,Navarra,transferencia_sin_clasificar,1
+2026-08,51,O,Asturias,transferencia_sin_clasificar,1
+2026-08,51,OU,Ourense,transferencia_sin_clasificar,1
+2026-08,51,PO,Pontevedra,transferencia_sin_clasificar,2
+2026-08,51,SS,Gipuzkoa,transferencia_sin_clasificar,2
+2026-08,51,T,Tarragona,transferencia_sin_clasificar,1
+2026-08,51,TO,Toledo,transferencia_sin_clasificar,2
+2026-08,51,V,Valencia/València,transferencia_sin_clasificar,1
+2026-09,50,A,Alicante/Alacant,subasta,7
+2026-09,50,A,Alicante/Alacant,transferencia_sin_clasificar,1894
+2026-09,50,AB,Albacete,transferencia_sin_clasificar,214
+2026-09,50,AL,Almería,subasta,2
+2026-09,50,AL,Almería,transferencia_sin_clasificar,475
+2026-09,50,AV,Ávila,transferencia_sin_clasificar,92
+2026-09,50,B,Barcelona,subasta,8
+2026-09,50,B,Barcelona,transferencia_sin_clasificar,5538
+2026-09,50,BA,Badajoz,subasta,1
+2026-09,50,BA,Badajoz,transferencia_sin_clasificar,385
+2026-09,50,BI,Bizkaia,transferencia_sin_clasificar,674
+2026-09,50,BU,Burgos,transferencia_sin_clasificar,185
+2026-09,50,C,A Coruña,subasta,1
+2026-09,50,C,A Coruña,transferencia_sin_clasificar,699
+2026-09,50,CA,Cádiz,subasta,3
+2026-09,50,CA,Cádiz,transferencia_sin_clasificar,1221
+2026-09,50,CC,Cáceres,transferencia_sin_clasificar,232
+2026-09,50,CE,Ceuta,transferencia_sin_clasificar,122
+2026-09,50,CO,Córdoba,transferencia_sin_clasificar,581
+2026-09,50,CR,Ciudad Real,transferencia_sin_clasificar,275
+2026-09,50,CS,Castellón/Castelló,transferencia_sin_clasificar,383
+2026-09,50,CU,Cuenca,subasta,2
+2026-09,50,CU,Cuenca,transferencia_sin_clasificar,110
+2026-09,50,GC,Las Palmas,transferencia_sin_clasificar,922
+2026-09,50,GI,Girona,subasta,2
+2026-09,50,GI,Girona,transferencia_sin_clasificar,824
+2026-09,50,GR,Granada,subasta,1
+2026-09,50,GR,Granada,transferencia_sin_clasificar,966
+2026-09,50,GU,Guadalajara,transferencia_sin_clasificar,187
+2026-09,50,H,Huelva,subasta,1
+2026-09,50,H,Huelva,transferencia_sin_clasificar,351
+2026-09,50,HU,Huesca,transferencia_sin_clasificar,122
+2026-09,50,IB,Illes Balears,subasta,2
+2026-09,50,IB,Illes Balears,transferencia_sin_clasificar,1499
+2026-09,50,J,Jaén,subasta,1
+2026-09,50,J,Jaén,transferencia_sin_clasificar,398
+2026-09,50,L,Lleida,transferencia_sin_clasificar,326
+2026-09,50,LE,León,subasta,1
+2026-09,50,LE,León,transferencia_sin_clasificar,232
+2026-09,50,LO,La Rioja,subasta,1
+2026-09,50,LO,La Rioja,transferencia_sin_clasificar,165
+2026-09,50,LU,Lugo,transferencia_sin_clasificar,195
+2026-09,50,M,Madrid,subasta,12
+2026-09,50,M,Madrid,transferencia_sin_clasificar,4053
+2026-09,50,MA,Málaga,subasta,3
+2026-09,50,MA,Málaga,transferencia_sin_clasificar,2041
+2026-09,50,ML,Melilla,transferencia_sin_clasificar,123
+2026-09,50,MU,Murcia,subasta,3
+2026-09,50,MU,Murcia,transferencia_sin_clasificar,1103
+2026-09,50,NA,Navarra,subasta,1
+2026-09,50,NA,Navarra,transferencia_sin_clasificar,493
+2026-09,50,O,Asturias,transferencia_sin_clasificar,750
+2026-09,50,OU,Ourense,subasta,1
+2026-09,50,OU,Ourense,transferencia_sin_clasificar,193
+2026-09,50,P,Palencia,transferencia_sin_clasificar,95
+2026-09,50,PO,Pontevedra,subasta,4
+2026-09,50,PO,Pontevedra,transferencia_sin_clasificar,828
+2026-09,50,S,Cantabria,transferencia_sin_clasificar,451
+2026-09,50,SA,Salamanca,transferencia_sin_clasificar,166
+2026-09,50,SE,Sevilla,subasta,2
+2026-09,50,SE,Sevilla,transferencia_sin_clasificar,1452
+2026-09,50,SG,Segovia,transferencia_sin_clasificar,86
+2026-09,50,SO,Soria,transferencia_sin_clasificar,57
+2026-09,50,SS,Gipuzkoa,subasta,2
+2026-09,50,SS,Gipuzkoa,transferencia_sin_clasificar,610
+2026-09,50,T,Tarragona,subasta,1
+2026-09,50,T,Tarragona,transferencia_sin_clasificar,845
+2026-09,50,TE,Teruel,transferencia_sin_clasificar,70
+2026-09,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1055
+2026-09,50,TO,Toledo,subasta,1
+2026-09,50,TO,Toledo,transferencia_sin_clasificar,524
+2026-09,50,V,Valencia/València,subasta,4
+2026-09,50,V,Valencia/València,transferencia_sin_clasificar,2145
+2026-09,50,VA,Valladolid,transferencia_sin_clasificar,311
+2026-09,50,VI,Araba/Álava,transferencia_sin_clasificar,190
+2026-09,50,Z,Zaragoza,transferencia_sin_clasificar,567
+2026-09,50,ZA,Zamora,transferencia_sin_clasificar,83
+2026-09,51,B,Barcelona,transferencia_sin_clasificar,5
+2026-09,51,BI,Bizkaia,transferencia_sin_clasificar,1
+2026-09,51,CA,Cádiz,transferencia_sin_clasificar,1
+2026-09,51,CR,Ciudad Real,transferencia_sin_clasificar,1
+2026-09,51,CS,Castellón/Castelló,transferencia_sin_clasificar,2
+2026-09,51,GC,Las Palmas,transferencia_sin_clasificar,1
+2026-09,51,GI,Girona,transferencia_sin_clasificar,2
+2026-09,51,GR,Granada,transferencia_sin_clasificar,1
+2026-09,51,H,Huelva,transferencia_sin_clasificar,2
+2026-09,51,IB,Illes Balears,transferencia_sin_clasificar,5
+2026-09,51,J,Jaén,transferencia_sin_clasificar,2
+2026-09,51,LE,León,transferencia_sin_clasificar,2
+2026-09,51,LU,Lugo,transferencia_sin_clasificar,1
+2026-09,51,M,Madrid,transferencia_sin_clasificar,9
+2026-09,51,MU,Murcia,transferencia_sin_clasificar,1
+2026-09,51,NA,Navarra,transferencia_sin_clasificar,4
+2026-09,51,PO,Pontevedra,transferencia_sin_clasificar,6
+2026-09,51,SE,Sevilla,transferencia_sin_clasificar,1
+2026-09,51,SS,Gipuzkoa,transferencia_sin_clasificar,2
+2026-09,51,T,Tarragona,transferencia_sin_clasificar,1
+2026-09,51,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,1
+2026-09,51,V,Valencia/València,transferencia_sin_clasificar,1
+2026-09,51,VA,Valladolid,transferencia_sin_clasificar,1
+2026-09,51,VI,Araba/Álava,transferencia_sin_clasificar,1
+2026-10,50,A,Alicante/Alacant,subasta,4
+2026-10,50,A,Alicante/Alacant,transferencia_sin_clasificar,1645
+2026-10,50,AB,Albacete,subasta,1
+2026-10,50,AB,Albacete,transferencia_sin_clasificar,193
+2026-10,50,AL,Almería,subasta,2
+2026-10,50,AL,Almería,transferencia_sin_clasificar,452
+2026-10,50,AV,Ávila,transferencia_sin_clasificar,82
+2026-10,50,B,Barcelona,subasta,21
+2026-10,50,B,Barcelona,transferencia_sin_clasificar,4949
+2026-10,50,BA,Badajoz,subasta,3
+2026-10,50,BA,Badajoz,transferencia_sin_clasificar,397
+2026-10,50,BI,Bizkaia,transferencia_sin_clasificar,652
+2026-10,50,BU,Burgos,transferencia_sin_clasificar,153
+2026-10,50,C,A Coruña,transferencia_sin_clasificar,589
+2026-10,50,CA,Cádiz,subasta,3
+2026-10,50,CA,Cádiz,transferencia_sin_clasificar,1087
+2026-10,50,CC,Cáceres,transferencia_sin_clasificar,195
+2026-10,50,CE,Ceuta,transferencia_sin_clasificar,154
+2026-10,50,CO,Córdoba,transferencia_sin_clasificar,566
+2026-10,50,CR,Ciudad Real,transferencia_sin_clasificar,242
+2026-10,50,CS,Castellón/Castelló,transferencia_sin_clasificar,344
+2026-10,50,CU,Cuenca,transferencia_sin_clasificar,102
+2026-10,50,GC,Las Palmas,transferencia_sin_clasificar,913
+2026-10,50,GI,Girona,subasta,2
+2026-10,50,GI,Girona,transferencia_sin_clasificar,686
+2026-10,50,GR,Granada,transferencia_sin_clasificar,831
+2026-10,50,GU,Guadalajara,transferencia_sin_clasificar,174
+2026-10,50,H,Huelva,transferencia_sin_clasificar,348
+2026-10,50,HU,Huesca,transferencia_sin_clasificar,95
+2026-10,50,IB,Illes Balears,subasta,3
+2026-10,50,IB,Illes Balears,transferencia_sin_clasificar,1323
+2026-10,50,J,Jaén,subasta,2
+2026-10,50,J,Jaén,transferencia_sin_clasificar,413
+2026-10,50,L,Lleida,subasta,1
+2026-10,50,L,Lleida,transferencia_sin_clasificar,291
+2026-10,50,LE,León,transferencia_sin_clasificar,204
+2026-10,50,LO,La Rioja,transferencia_sin_clasificar,175
+2026-10,50,LU,Lugo,transferencia_sin_clasificar,137
+2026-10,50,M,Madrid,subasta,6
+2026-10,50,M,Madrid,transferencia_sin_clasificar,3851
+2026-10,50,MA,Málaga,subasta,9
+2026-10,50,MA,Málaga,transferencia_sin_clasificar,1870
+2026-10,50,ML,Melilla,transferencia_sin_clasificar,106
+2026-10,50,MU,Murcia,transferencia_sin_clasificar,1055
+2026-10,50,NA,Navarra,subasta,1
+2026-10,50,NA,Navarra,transferencia_sin_clasificar,382
+2026-10,50,O,Asturias,subasta,2
+2026-10,50,O,Asturias,transferencia_sin_clasificar,659
+2026-10,50,OU,Ourense,transferencia_sin_clasificar,167
+2026-10,50,P,Palencia,transferencia_sin_clasificar,77
+2026-10,50,PO,Pontevedra,subasta,2
+2026-10,50,PO,Pontevedra,transferencia_sin_clasificar,720
+2026-10,50,S,Cantabria,transferencia_sin_clasificar,376
+2026-10,50,SA,Salamanca,transferencia_sin_clasificar,188
+2026-10,50,SE,Sevilla,subasta,2
+2026-10,50,SE,Sevilla,transferencia_sin_clasificar,1571
+2026-10,50,SG,Segovia,transferencia_sin_clasificar,82
+2026-10,50,SO,Soria,transferencia_sin_clasificar,36
+2026-10,50,SS,Gipuzkoa,subasta,1
+2026-10,50,SS,Gipuzkoa,transferencia_sin_clasificar,519
+2026-10,50,T,Tarragona,subasta,2
+2026-10,50,T,Tarragona,transferencia_sin_clasificar,750
+2026-10,50,TE,Teruel,transferencia_sin_clasificar,70
+2026-10,50,TF,Santa Cruz de Tenerife,subasta,2
+2026-10,50,TF,Santa Cruz de Tenerife,transferencia_sin_clasificar,925
+2026-10,50,TO,Toledo,subasta,1
+2026-10,50,TO,Toledo,transferencia_sin_clasificar,435
+2026-10,50,V,Valencia/València,subasta,4
+2026-10,50,V,Valencia/València,transferencia_sin_clasificar,1833
+2026-10,50,VA,Valladolid,subasta,1
+2026-10,50,VA,Valladolid,transferencia_sin_clasificar,291
+2026-10,50,VI,Araba/Álava,transferencia_sin_clasificar,178
+2026-10,50,Z,Zaragoza,transferencia_sin_clasificar,517
+2026-10,50,ZA,Zamora,transferencia_sin_clasificar,88
+2026-10,51,AL,Almería,transferencia_sin_clasificar,4
+2026-10,51,B,Barcelona,transferencia_sin_clasificar,7
+2026-10,51,BA,Badajoz,transferencia_sin_clasificar,1
+2026-10,51,C,A Coruña,transferencia_sin_clasificar,1
+2026-10,51,CA,Cádiz,transferencia_sin_clasificar,1
+2026-10,51,CR,Ciudad Real,transferencia_sin_clasificar,1
+2026-10,51,GI,Girona,transferencia_sin_clasificar,1
+2026-10,51,GR,Granada,transferencia_sin_clasificar,2
+2026-10,51,H,Huelva,transferencia_sin_clasificar,2
+2026-10,51,IB,Illes Balears,transferencia_sin_clasificar,7
+2026-10,51,J,Jaén,transferencia_sin_clasificar,1
+2026-10,51,L,Lleida,transferencia_sin_clasificar,1
+2026-10,51,LE,León,transferencia_sin_clasificar,1
+2026-10,51,M,Madrid,transferencia_sin_clasificar,6
+2026-10,51,MA,Málaga,transferencia_sin_clasificar,2
+2026-10,51,ML,Melilla,transferencia_sin_clasificar,1
+2026-10,51,PO,Pontevedra,transferencia_sin_clasificar,1
+2026-10,51,S,Cantabria,transferencia_sin_clasificar,1
+2026-10,51,T,Tarragona,transferencia_sin_clasificar,1
+2026-10,51,V,Valencia/València,transferencia_sin_clasificar,1
+2026-10,51,VA,Valladolid,transferencia_sin_clasificar,2
+2026-10,51,VI,Araba/Álava,transferencia_sin_clasificar,1

@@ -48,6 +48,7 @@ Los indicadores son descriptivos; no son cuotas comerciales, tasas de renovació
 | Sin clasificar | 352.232 |
 | Total transferencias | 352.919 |
 Las transferencias no se suman a las matriculaciones nuevas ni a las matriculaciones de vehículos usados. Una transferencia sin COD_POSESION no se clasifica automáticamente como venta.
+Desglose territorial: transferencias_motocicletas_por_provincia.csv, agrupado por COD_PROVINCIA_VEH (domicilio registral), tipo 50/51 y clasificación COD_POSESION. No representa la provincia física de venta.
 
 ## 4. Concentración provincial
 
