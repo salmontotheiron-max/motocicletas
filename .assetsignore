@@ -1,0 +1,3 @@
+# Exclude the 38.5 MiB model aggregate from the Worker static asset bundle.
+# The dashboard fetches it separately from GitHub Raw until the R2 bucket is configured.
+/public/data/matriculaciones_marca_modelo_segmento.csv
