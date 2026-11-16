@@ -37,7 +37,8 @@ class IntegratedReportTests(unittest.TestCase):
         self.write_csv(d/"matriculaciones_marca_modelo_segmento.csv",
             ["periodo","CLAVE_TRAMITE","COD_TIPO","naturaleza_operacion","ambito_provincial","COD_PROVINCIA","provincia","recuento"],
             [{"periodo":"2026-01","CLAVE_TRAMITE":"2","COD_TIPO":"50","naturaleza_operacion":"transferencia_sin_clasificar","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"M","provincia":"Madrid","recuento":"7"},
-             {"periodo":"2026-01","CLAVE_TRAMITE":"2","COD_TIPO":"51","naturaleza_operacion":"subasta","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"SG","provincia":"Segovia","recuento":"2"}])
+             {"periodo":"2026-01","CLAVE_TRAMITE":"2","COD_TIPO":"51","naturaleza_operacion":"subasta","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"SG","provincia":"Segovia","recuento":"2"},
+             {"periodo":"2026-01","CLAVE_TRAMITE":"2","COD_TIPO":"50","naturaleza_operacion":"venta_declarada_DGT","ambito_provincial":"domicilio_vehiculo","COD_PROVINCIA":"B","provincia":"Barcelona","recuento":"3"}])
         self.write_csv(d/"matriculaciones_motocicletas_cruce_provincias_nuevas.csv",
             ["periodo","COD_PROVINCIA_MAT","provincia_matriculacion","COD_PROVINCIA_VEH","provincia_domicilio_vehiculo","COD_TIPO","recuento"],
             [{"periodo":"2026-01","COD_PROVINCIA_MAT":"SG","provincia_matriculacion":"Segovia","COD_PROVINCIA_VEH":"SG","provincia_domicilio_vehiculo":"Segovia","COD_TIPO":"50","recuento":"1"},
@@ -60,18 +61,18 @@ class IntegratedReportTests(unittest.TestCase):
             body=output.read_text(encoding="utf-8")
             self.assertEqual(result["nuevas"],3)
             self.assertEqual(result["usadas_matriculadas"],1)
-            self.assertEqual(result["transferencias"],9)
-            self.assertEqual(result["ventas_declaradas"],0)
+            self.assertEqual(result["transferencias"],12)
+            self.assertEqual(result["ventas_declaradas"],3)
             self.assertEqual(result["subastas"],2)
             self.assertEqual(result["transferencias_sin_clasificar"],7)
             transfer_csv = data/"transferencias_motocicletas_por_provincia.csv"
             self.assertEqual(result["csv_transferencias"],str(transfer_csv))
             with transfer_csv.open(encoding="utf-8-sig",newline="") as handle:
                 transfer_rows = list(csv.DictReader(handle))
-            self.assertEqual(sum(int(row["recuento"]) for row in transfer_rows),9)
+            self.assertEqual(sum(int(row["recuento"]) for row in transfer_rows),12)
             self.assertEqual(
                 {(row["COD_PROVINCIA_VEH"],row["clasificacion_COD_POSESION"]) for row in transfer_rows},
-                {("M","transferencia_sin_clasificar"),("SG","subasta")}
+                {("M","transferencia_sin_clasificar"),("SG","subasta"),("B","venta_declarada_DGT")}
             )
             self.assertIn("domicilio registral",body)
             self.assertIn("transferencias_motocicletas_por_provincia.csv",body)
