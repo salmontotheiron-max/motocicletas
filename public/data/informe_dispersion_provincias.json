@@ -8,23 +8,24 @@
     "2026-06",
     "2026-07",
     "2026-08",
-    "2026-09"
+    "2026-09",
+    "2026-10"
   ],
   "ambito": "Matriculaciones nuevas de motocicletas, COD_TIPO 50 y 51, operación 1 y FEC_MATRICULA válida",
-  "total_matriculaciones": 219565,
-  "misma_provincia": 163444,
-  "otra_provincia": 56121,
+  "total_matriculaciones": 244618,
+  "misma_provincia": 182288,
+  "otra_provincia": 62330,
   "domicilio_no_informado": 0,
-  "porcentaje_misma_provincia": 74.4399,
-  "porcentaje_interprovincial_sobre_domicilios_conocidos": 25.5601,
+  "porcentaje_misma_provincia": 74.5195,
+  "porcentaje_interprovincial_sobre_domicilios_conocidos": 25.4805,
   "provincias_matriculacion": 52,
   "provincias_domicilio": 52,
   "matriz_filas": 2704,
   "validacion": {
     "agregado_provincial_coincide": true,
     "diferencias": 0,
-    "total_cruce": 219565,
-    "total_agregado_provincial": 219565
+    "total_cruce": 244618,
+    "total_agregado_provincial": 244618
   },
   "evolucion_mensual": [
     {
@@ -98,464 +99,472 @@
       "otra_provincia": 6916,
       "domicilio_no_informado": 0,
       "porcentaje_interprovincial_sobre_domicilios_conocidos": 24.746
+    },
+    {
+      "periodo": "2026-10",
+      "total": 25053,
+      "misma_provincia": 18844,
+      "otra_provincia": 6209,
+      "domicilio_no_informado": 0,
+      "porcentaje_interprovincial_sobre_domicilios_conocidos": 24.7835
     }
   ],
   "ranking_provincial": [
     {
       "COD_PROVINCIA_MAT": "SG",
       "provincia_matriculacion": "Segovia",
-      "matriculaciones": 8908,
-      "misma_provincia": 174,
-      "domicilio_otra_provincia": 8734,
+      "matriculaciones": 9964,
+      "misma_provincia": 181,
+      "domicilio_otra_provincia": 9783,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 98.0467
+      "porcentaje_domicilio_externo_sobre_conocidos": 98.1835
     },
     {
       "COD_PROVINCIA_MAT": "CO",
       "provincia_matriculacion": "Córdoba",
-      "matriculaciones": 7109,
-      "misma_provincia": 2406,
-      "domicilio_otra_provincia": 4703,
+      "matriculaciones": 8071,
+      "misma_provincia": 2720,
+      "domicilio_otra_provincia": 5351,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 66.1556
+      "porcentaje_domicilio_externo_sobre_conocidos": 66.2991
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
-      "matriculaciones": 25351,
-      "misma_provincia": 13168,
-      "domicilio_otra_provincia": 12183,
+      "matriculaciones": 28086,
+      "misma_provincia": 14774,
+      "domicilio_otra_provincia": 13312,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 48.0573
+      "porcentaje_domicilio_externo_sobre_conocidos": 47.3973
     },
     {
       "COD_PROVINCIA_MAT": "J",
       "provincia_matriculacion": "Jaén",
-      "matriculaciones": 2931,
-      "misma_provincia": 1604,
-      "domicilio_otra_provincia": 1327,
+      "matriculaciones": 3263,
+      "misma_provincia": 1782,
+      "domicilio_otra_provincia": 1481,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 45.2747
+      "porcentaje_domicilio_externo_sobre_conocidos": 45.3877
     },
     {
       "COD_PROVINCIA_MAT": "P",
       "provincia_matriculacion": "Palencia",
-      "matriculaciones": 255,
-      "misma_provincia": 153,
-      "domicilio_otra_provincia": 102,
+      "matriculaciones": 277,
+      "misma_provincia": 164,
+      "domicilio_otra_provincia": 113,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 40.0
+      "porcentaje_domicilio_externo_sobre_conocidos": 40.7942
     },
     {
       "COD_PROVINCIA_MAT": "SE",
       "provincia_matriculacion": "Sevilla",
-      "matriculaciones": 7254,
-      "misma_provincia": 4675,
-      "domicilio_otra_provincia": 2579,
+      "matriculaciones": 8451,
+      "misma_provincia": 5421,
+      "domicilio_otra_provincia": 3030,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 35.5528
-    },
-    {
-      "COD_PROVINCIA_MAT": "VI",
-      "provincia_matriculacion": "Araba/Álava",
-      "matriculaciones": 974,
-      "misma_provincia": 632,
-      "domicilio_otra_provincia": 342,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 35.1129
+      "porcentaje_domicilio_externo_sobre_conocidos": 35.8537
     },
     {
       "COD_PROVINCIA_MAT": "TO",
       "provincia_matriculacion": "Toledo",
-      "matriculaciones": 1042,
-      "misma_provincia": 677,
-      "domicilio_otra_provincia": 365,
+      "matriculaciones": 1165,
+      "misma_provincia": 750,
+      "domicilio_otra_provincia": 415,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 35.0288
+      "porcentaje_domicilio_externo_sobre_conocidos": 35.6223
     },
     {
       "COD_PROVINCIA_MAT": "BU",
       "provincia_matriculacion": "Burgos",
-      "matriculaciones": 771,
-      "misma_provincia": 503,
-      "domicilio_otra_provincia": 268,
+      "matriculaciones": 834,
+      "misma_provincia": 543,
+      "domicilio_otra_provincia": 291,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 34.7601
+      "porcentaje_domicilio_externo_sobre_conocidos": 34.8921
     },
     {
       "COD_PROVINCIA_MAT": "PO",
       "provincia_matriculacion": "Pontevedra",
-      "matriculaciones": 3848,
-      "misma_provincia": 2541,
-      "domicilio_otra_provincia": 1307,
+      "matriculaciones": 4237,
+      "misma_provincia": 2778,
+      "domicilio_otra_provincia": 1459,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 33.9657
+      "porcentaje_domicilio_externo_sobre_conocidos": 34.4347
+    },
+    {
+      "COD_PROVINCIA_MAT": "VI",
+      "provincia_matriculacion": "Araba/Álava",
+      "matriculaciones": 1085,
+      "misma_provincia": 721,
+      "domicilio_otra_provincia": 364,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 33.5484
     },
     {
       "COD_PROVINCIA_MAT": "GU",
       "provincia_matriculacion": "Guadalajara",
-      "matriculaciones": 567,
-      "misma_provincia": 385,
-      "domicilio_otra_provincia": 182,
+      "matriculaciones": 633,
+      "misma_provincia": 433,
+      "domicilio_otra_provincia": 200,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 32.0988
+      "porcentaje_domicilio_externo_sobre_conocidos": 31.5956
     },
     {
       "COD_PROVINCIA_MAT": "CC",
       "provincia_matriculacion": "Cáceres",
-      "matriculaciones": 776,
-      "misma_provincia": 540,
-      "domicilio_otra_provincia": 236,
+      "matriculaciones": 863,
+      "misma_provincia": 600,
+      "domicilio_otra_provincia": 263,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 30.4124
+      "porcentaje_domicilio_externo_sobre_conocidos": 30.4751
     },
     {
       "COD_PROVINCIA_MAT": "GC",
       "provincia_matriculacion": "Las Palmas",
-      "matriculaciones": 6509,
-      "misma_provincia": 4601,
-      "domicilio_otra_provincia": 1908,
+      "matriculaciones": 7292,
+      "misma_provincia": 5187,
+      "domicilio_otra_provincia": 2105,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 29.3133
+      "porcentaje_domicilio_externo_sobre_conocidos": 28.8673
     },
     {
       "COD_PROVINCIA_MAT": "AB",
       "provincia_matriculacion": "Albacete",
-      "matriculaciones": 1501,
-      "misma_provincia": 1080,
-      "domicilio_otra_provincia": 421,
+      "matriculaciones": 1679,
+      "misma_provincia": 1212,
+      "domicilio_otra_provincia": 467,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 28.048
-    },
-    {
-      "COD_PROVINCIA_MAT": "LO",
-      "provincia_matriculacion": "La Rioja",
-      "matriculaciones": 768,
-      "misma_provincia": 559,
-      "domicilio_otra_provincia": 209,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 27.2135
-    },
-    {
-      "COD_PROVINCIA_MAT": "ZA",
-      "provincia_matriculacion": "Zamora",
-      "matriculaciones": 96,
-      "misma_provincia": 70,
-      "domicilio_otra_provincia": 26,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 27.0833
-    },
-    {
-      "COD_PROVINCIA_MAT": "VA",
-      "provincia_matriculacion": "Valladolid",
-      "matriculaciones": 1724,
-      "misma_provincia": 1260,
-      "domicilio_otra_provincia": 464,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 26.9142
+      "porcentaje_domicilio_externo_sobre_conocidos": 27.8142
     },
     {
       "COD_PROVINCIA_MAT": "LU",
       "provincia_matriculacion": "Lugo",
-      "matriculaciones": 445,
-      "misma_provincia": 328,
-      "domicilio_otra_provincia": 117,
+      "matriculaciones": 492,
+      "misma_provincia": 359,
+      "domicilio_otra_provincia": 133,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 26.2921
+      "porcentaje_domicilio_externo_sobre_conocidos": 27.0325
+    },
+    {
+      "COD_PROVINCIA_MAT": "VA",
+      "provincia_matriculacion": "Valladolid",
+      "matriculaciones": 1910,
+      "misma_provincia": 1394,
+      "domicilio_otra_provincia": 516,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 27.0157
+    },
+    {
+      "COD_PROVINCIA_MAT": "LO",
+      "provincia_matriculacion": "La Rioja",
+      "matriculaciones": 834,
+      "misma_provincia": 610,
+      "domicilio_otra_provincia": 224,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 26.8585
     },
     {
       "COD_PROVINCIA_MAT": "Z",
       "provincia_matriculacion": "Zaragoza",
-      "matriculaciones": 3901,
-      "misma_provincia": 2895,
-      "domicilio_otra_provincia": 1006,
+      "matriculaciones": 4416,
+      "misma_provincia": 3293,
+      "domicilio_otra_provincia": 1123,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 25.7883
+      "porcentaje_domicilio_externo_sobre_conocidos": 25.4303
     },
     {
-      "COD_PROVINCIA_MAT": "AV",
-      "provincia_matriculacion": "Ávila",
-      "matriculaciones": 45,
-      "misma_provincia": 34,
-      "domicilio_otra_provincia": 11,
+      "COD_PROVINCIA_MAT": "ZA",
+      "provincia_matriculacion": "Zamora",
+      "matriculaciones": 110,
+      "misma_provincia": 83,
+      "domicilio_otra_provincia": 27,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 24.4444
+      "porcentaje_domicilio_externo_sobre_conocidos": 24.5455
     },
     {
       "COD_PROVINCIA_MAT": "SA",
       "provincia_matriculacion": "Salamanca",
-      "matriculaciones": 608,
-      "misma_provincia": 463,
-      "domicilio_otra_provincia": 145,
+      "matriculaciones": 669,
+      "misma_provincia": 508,
+      "domicilio_otra_provincia": 161,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 23.8487
+      "porcentaje_domicilio_externo_sobre_conocidos": 24.0658
     },
     {
       "COD_PROVINCIA_MAT": "MU",
       "provincia_matriculacion": "Murcia",
-      "matriculaciones": 6813,
-      "misma_provincia": 5214,
-      "domicilio_otra_provincia": 1599,
+      "matriculaciones": 7695,
+      "misma_provincia": 5889,
+      "domicilio_otra_provincia": 1806,
       "domicilio_no_informado": 0,
       "porcentaje_domicilio_externo_sobre_conocidos": 23.4698
     },
     {
+      "COD_PROVINCIA_MAT": "AV",
+      "provincia_matriculacion": "Ávila",
+      "matriculaciones": 47,
+      "misma_provincia": 36,
+      "domicilio_otra_provincia": 11,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 23.4043
+    },
+    {
       "COD_PROVINCIA_MAT": "NA",
       "provincia_matriculacion": "Navarra",
-      "matriculaciones": 1729,
-      "misma_provincia": 1350,
-      "domicilio_otra_provincia": 379,
+      "matriculaciones": 1926,
+      "misma_provincia": 1504,
+      "domicilio_otra_provincia": 422,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 21.9202
+      "porcentaje_domicilio_externo_sobre_conocidos": 21.9107
     },
     {
       "COD_PROVINCIA_MAT": "TE",
       "provincia_matriculacion": "Teruel",
-      "matriculaciones": 266,
-      "misma_provincia": 211,
-      "domicilio_otra_provincia": 55,
+      "matriculaciones": 311,
+      "misma_provincia": 245,
+      "domicilio_otra_provincia": 66,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 20.6767
+      "porcentaje_domicilio_externo_sobre_conocidos": 21.2219
     },
     {
       "COD_PROVINCIA_MAT": "GI",
       "provincia_matriculacion": "Girona",
-      "matriculaciones": 3879,
-      "misma_provincia": 3102,
-      "domicilio_otra_provincia": 777,
+      "matriculaciones": 4187,
+      "misma_provincia": 3354,
+      "domicilio_otra_provincia": 833,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 20.0309
+      "porcentaje_domicilio_externo_sobre_conocidos": 19.8949
     },
     {
       "COD_PROVINCIA_MAT": "C",
       "provincia_matriculacion": "A Coruña",
-      "matriculaciones": 1521,
-      "misma_provincia": 1236,
-      "domicilio_otra_provincia": 285,
+      "matriculaciones": 1694,
+      "misma_provincia": 1383,
+      "domicilio_otra_provincia": 311,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 18.7377
+      "porcentaje_domicilio_externo_sobre_conocidos": 18.3589
     },
     {
       "COD_PROVINCIA_MAT": "CR",
       "provincia_matriculacion": "Ciudad Real",
-      "matriculaciones": 634,
-      "misma_provincia": 522,
-      "domicilio_otra_provincia": 112,
+      "matriculaciones": 718,
+      "misma_provincia": 587,
+      "domicilio_otra_provincia": 131,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 17.6656
-    },
-    {
-      "COD_PROVINCIA_MAT": "GR",
-      "provincia_matriculacion": "Granada",
-      "matriculaciones": 4187,
-      "misma_provincia": 3462,
-      "domicilio_otra_provincia": 725,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 17.3155
-    },
-    {
-      "COD_PROVINCIA_MAT": "L",
-      "provincia_matriculacion": "Lleida",
-      "matriculaciones": 1198,
-      "misma_provincia": 997,
-      "domicilio_otra_provincia": 201,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 16.778
-    },
-    {
-      "COD_PROVINCIA_MAT": "V",
-      "provincia_matriculacion": "Valencia/València",
-      "matriculaciones": 12128,
-      "misma_provincia": 10171,
-      "domicilio_otra_provincia": 1957,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 16.1362
-    },
-    {
-      "COD_PROVINCIA_MAT": "LE",
-      "provincia_matriculacion": "León",
-      "matriculaciones": 1007,
-      "misma_provincia": 847,
-      "domicilio_otra_provincia": 160,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 15.8888
-    },
-    {
-      "COD_PROVINCIA_MAT": "H",
-      "provincia_matriculacion": "Huelva",
-      "matriculaciones": 2116,
-      "misma_provincia": 1784,
-      "domicilio_otra_provincia": 332,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 15.69
-    },
-    {
-      "COD_PROVINCIA_MAT": "BA",
-      "provincia_matriculacion": "Badajoz",
-      "matriculaciones": 1558,
-      "misma_provincia": 1314,
-      "domicilio_otra_provincia": 244,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 15.6611
-    },
-    {
-      "COD_PROVINCIA_MAT": "T",
-      "provincia_matriculacion": "Tarragona",
-      "matriculaciones": 4025,
-      "misma_provincia": 3407,
-      "domicilio_otra_provincia": 618,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 15.354
-    },
-    {
-      "COD_PROVINCIA_MAT": "B",
-      "provincia_matriculacion": "Barcelona",
-      "matriculaciones": 38180,
-      "misma_provincia": 32339,
-      "domicilio_otra_provincia": 5841,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 15.2986
-    },
-    {
-      "COD_PROVINCIA_MAT": "CA",
-      "provincia_matriculacion": "Cádiz",
-      "matriculaciones": 10827,
-      "misma_provincia": 9230,
-      "domicilio_otra_provincia": 1597,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 14.7502
+      "porcentaje_domicilio_externo_sobre_conocidos": 18.2451
     },
     {
       "COD_PROVINCIA_MAT": "HU",
       "provincia_matriculacion": "Huesca",
-      "matriculaciones": 190,
-      "misma_provincia": 162,
-      "domicilio_otra_provincia": 28,
+      "matriculaciones": 218,
+      "misma_provincia": 180,
+      "domicilio_otra_provincia": 38,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 14.7368
+      "porcentaje_domicilio_externo_sobre_conocidos": 17.4312
+    },
+    {
+      "COD_PROVINCIA_MAT": "GR",
+      "provincia_matriculacion": "Granada",
+      "matriculaciones": 4684,
+      "misma_provincia": 3884,
+      "domicilio_otra_provincia": 800,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 17.0794
+    },
+    {
+      "COD_PROVINCIA_MAT": "L",
+      "provincia_matriculacion": "Lleida",
+      "matriculaciones": 1314,
+      "misma_provincia": 1091,
+      "domicilio_otra_provincia": 223,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 16.9711
+    },
+    {
+      "COD_PROVINCIA_MAT": "V",
+      "provincia_matriculacion": "Valencia/València",
+      "matriculaciones": 13507,
+      "misma_provincia": 11323,
+      "domicilio_otra_provincia": 2184,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 16.1694
+    },
+    {
+      "COD_PROVINCIA_MAT": "LE",
+      "provincia_matriculacion": "León",
+      "matriculaciones": 1094,
+      "misma_provincia": 918,
+      "domicilio_otra_provincia": 176,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 16.0878
+    },
+    {
+      "COD_PROVINCIA_MAT": "H",
+      "provincia_matriculacion": "Huelva",
+      "matriculaciones": 2356,
+      "misma_provincia": 1990,
+      "domicilio_otra_provincia": 366,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 15.5348
+    },
+    {
+      "COD_PROVINCIA_MAT": "BA",
+      "provincia_matriculacion": "Badajoz",
+      "matriculaciones": 1714,
+      "misma_provincia": 1451,
+      "domicilio_otra_provincia": 263,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 15.3442
+    },
+    {
+      "COD_PROVINCIA_MAT": "CA",
+      "provincia_matriculacion": "Cádiz",
+      "matriculaciones": 11903,
+      "misma_provincia": 10088,
+      "domicilio_otra_provincia": 1815,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 15.2483
+    },
+    {
+      "COD_PROVINCIA_MAT": "T",
+      "provincia_matriculacion": "Tarragona",
+      "matriculaciones": 4532,
+      "misma_provincia": 3847,
+      "domicilio_otra_provincia": 685,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 15.1147
+    },
+    {
+      "COD_PROVINCIA_MAT": "B",
+      "provincia_matriculacion": "Barcelona",
+      "matriculaciones": 42586,
+      "misma_provincia": 36235,
+      "domicilio_otra_provincia": 6351,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 14.9134
     },
     {
       "COD_PROVINCIA_MAT": "BI",
       "provincia_matriculacion": "Bizkaia",
-      "matriculaciones": 3029,
-      "misma_provincia": 2616,
-      "domicilio_otra_provincia": 413,
+      "matriculaciones": 3348,
+      "misma_provincia": 2890,
+      "domicilio_otra_provincia": 458,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 13.6349
+      "porcentaje_domicilio_externo_sobre_conocidos": 13.6798
     },
     {
       "COD_PROVINCIA_MAT": "TF",
       "provincia_matriculacion": "Santa Cruz de Tenerife",
-      "matriculaciones": 4693,
-      "misma_provincia": 4070,
-      "domicilio_otra_provincia": 623,
+      "matriculaciones": 5242,
+      "misma_provincia": 4544,
+      "domicilio_otra_provincia": 698,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 13.2751
+      "porcentaje_domicilio_externo_sobre_conocidos": 13.3155
     },
     {
       "COD_PROVINCIA_MAT": "OU",
       "provincia_matriculacion": "Ourense",
-      "matriculaciones": 273,
-      "misma_provincia": 240,
-      "domicilio_otra_provincia": 33,
+      "matriculaciones": 302,
+      "misma_provincia": 263,
+      "domicilio_otra_provincia": 39,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 12.0879
+      "porcentaje_domicilio_externo_sobre_conocidos": 12.9139
     },
     {
       "COD_PROVINCIA_MAT": "SO",
       "provincia_matriculacion": "Soria",
-      "matriculaciones": 79,
-      "misma_provincia": 70,
-      "domicilio_otra_provincia": 9,
+      "matriculaciones": 89,
+      "misma_provincia": 78,
+      "domicilio_otra_provincia": 11,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 11.3924
+      "porcentaje_domicilio_externo_sobre_conocidos": 12.3596
     },
     {
       "COD_PROVINCIA_MAT": "A",
       "provincia_matriculacion": "Alicante/Alacant",
-      "matriculaciones": 9381,
-      "misma_provincia": 8351,
-      "domicilio_otra_provincia": 1030,
+      "matriculaciones": 10420,
+      "misma_provincia": 9278,
+      "domicilio_otra_provincia": 1142,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 10.9796
-    },
-    {
-      "COD_PROVINCIA_MAT": "S",
-      "provincia_matriculacion": "Cantabria",
-      "matriculaciones": 2266,
-      "misma_provincia": 2047,
-      "domicilio_otra_provincia": 219,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 9.6646
-    },
-    {
-      "COD_PROVINCIA_MAT": "O",
-      "provincia_matriculacion": "Asturias",
-      "matriculaciones": 3381,
-      "misma_provincia": 3071,
-      "domicilio_otra_provincia": 310,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 9.1689
-    },
-    {
-      "COD_PROVINCIA_MAT": "CS",
-      "provincia_matriculacion": "Castellón/Castelló",
-      "matriculaciones": 1566,
-      "misma_provincia": 1428,
-      "domicilio_otra_provincia": 138,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 8.8123
-    },
-    {
-      "COD_PROVINCIA_MAT": "MA",
-      "provincia_matriculacion": "Málaga",
-      "matriculaciones": 14512,
-      "misma_provincia": 13275,
-      "domicilio_otra_provincia": 1237,
-      "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 8.524
+      "porcentaje_domicilio_externo_sobre_conocidos": 10.9597
     },
     {
       "COD_PROVINCIA_MAT": "CU",
       "provincia_matriculacion": "Cuenca",
-      "matriculaciones": 133,
-      "misma_provincia": 122,
-      "domicilio_otra_provincia": 11,
+      "matriculaciones": 144,
+      "misma_provincia": 130,
+      "domicilio_otra_provincia": 14,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 8.2707
+      "porcentaje_domicilio_externo_sobre_conocidos": 9.7222
+    },
+    {
+      "COD_PROVINCIA_MAT": "S",
+      "provincia_matriculacion": "Cantabria",
+      "matriculaciones": 2476,
+      "misma_provincia": 2239,
+      "domicilio_otra_provincia": 237,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 9.5719
+    },
+    {
+      "COD_PROVINCIA_MAT": "O",
+      "provincia_matriculacion": "Asturias",
+      "matriculaciones": 3788,
+      "misma_provincia": 3454,
+      "domicilio_otra_provincia": 334,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 8.8173
+    },
+    {
+      "COD_PROVINCIA_MAT": "CS",
+      "provincia_matriculacion": "Castellón/Castelló",
+      "matriculaciones": 1757,
+      "misma_provincia": 1604,
+      "domicilio_otra_provincia": 153,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 8.708
+    },
+    {
+      "COD_PROVINCIA_MAT": "MA",
+      "provincia_matriculacion": "Málaga",
+      "matriculaciones": 16100,
+      "misma_provincia": 14753,
+      "domicilio_otra_provincia": 1347,
+      "domicilio_no_informado": 0,
+      "porcentaje_domicilio_externo_sobre_conocidos": 8.3665
     },
     {
       "COD_PROVINCIA_MAT": "AL",
       "provincia_matriculacion": "Almería",
-      "matriculaciones": 1864,
-      "misma_provincia": 1719,
-      "domicilio_otra_provincia": 145,
+      "matriculaciones": 2133,
+      "misma_provincia": 1970,
+      "domicilio_otra_provincia": 163,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 7.779
+      "porcentaje_domicilio_externo_sobre_conocidos": 7.6418
     },
     {
       "COD_PROVINCIA_MAT": "SS",
       "provincia_matriculacion": "Gipuzkoa",
-      "matriculaciones": 2588,
-      "misma_provincia": 2441,
-      "domicilio_otra_provincia": 147,
+      "matriculaciones": 2836,
+      "misma_provincia": 2675,
+      "domicilio_otra_provincia": 161,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 5.6801
+      "porcentaje_domicilio_externo_sobre_conocidos": 5.677
     },
     {
       "COD_PROVINCIA_MAT": "IB",
       "provincia_matriculacion": "Illes Balears",
-      "matriculaciones": 8739,
-      "misma_provincia": 8478,
-      "domicilio_otra_provincia": 261,
+      "matriculaciones": 9563,
+      "misma_provincia": 9289,
+      "domicilio_otra_provincia": 274,
       "domicilio_no_informado": 0,
-      "porcentaje_domicilio_externo_sobre_conocidos": 2.9866
+      "porcentaje_domicilio_externo_sobre_conocidos": 2.8652
     },
     {
       "COD_PROVINCIA_MAT": "CE",
       "provincia_matriculacion": "Ceuta",
-      "matriculaciones": 827,
-      "misma_provincia": 827,
+      "matriculaciones": 922,
+      "misma_provincia": 922,
       "domicilio_otra_provincia": 0,
       "domicilio_no_informado": 0,
       "porcentaje_domicilio_externo_sobre_conocidos": 0.0
@@ -563,8 +572,8 @@
     {
       "COD_PROVINCIA_MAT": "ML",
       "provincia_matriculacion": "Melilla",
-      "matriculaciones": 593,
-      "misma_provincia": 593,
+      "matriculaciones": 681,
+      "misma_provincia": 681,
       "domicilio_otra_provincia": 0,
       "domicilio_no_informado": 0,
       "porcentaje_domicilio_externo_sobre_conocidos": 0.0
@@ -576,153 +585,160 @@
       "provincia_matriculacion": "Segovia",
       "COD_PROVINCIA_VEH": "M",
       "provincia_domicilio_vehiculo": "Madrid",
-      "recuento": 6727
+      "recuento": 7573
     },
     {
       "COD_PROVINCIA_MAT": "B",
       "provincia_matriculacion": "Barcelona",
       "COD_PROVINCIA_VEH": "GI",
       "provincia_domicilio_vehiculo": "Girona",
-      "recuento": 2228
-    },
-    {
-      "COD_PROVINCIA_MAT": "M",
-      "provincia_matriculacion": "Madrid",
-      "COD_PROVINCIA_VEH": "B",
-      "provincia_domicilio_vehiculo": "Barcelona",
-      "recuento": 2045
+      "recuento": 2400
     },
     {
       "COD_PROVINCIA_MAT": "CO",
       "provincia_matriculacion": "Córdoba",
       "COD_PROVINCIA_VEH": "SE",
       "provincia_domicilio_vehiculo": "Sevilla",
-      "recuento": 2005
+      "recuento": 2249
+    },
+    {
+      "COD_PROVINCIA_MAT": "M",
+      "provincia_matriculacion": "Madrid",
+      "COD_PROVINCIA_VEH": "B",
+      "provincia_domicilio_vehiculo": "Barcelona",
+      "recuento": 2240
     },
     {
       "COD_PROVINCIA_MAT": "GC",
       "provincia_matriculacion": "Las Palmas",
       "COD_PROVINCIA_VEH": "TF",
       "provincia_domicilio_vehiculo": "Santa Cruz de Tenerife",
-      "recuento": 1907
-    },
-    {
-      "COD_PROVINCIA_MAT": "MU",
-      "provincia_matriculacion": "Murcia",
-      "COD_PROVINCIA_VEH": "A",
-      "provincia_domicilio_vehiculo": "Alicante/Alacant",
-      "recuento": 1108
+      "recuento": 2104
     },
     {
       "COD_PROVINCIA_MAT": "CA",
       "provincia_matriculacion": "Cádiz",
       "COD_PROVINCIA_VEH": "SE",
       "provincia_domicilio_vehiculo": "Sevilla",
-      "recuento": 1090
+      "recuento": 1256
+    },
+    {
+      "COD_PROVINCIA_MAT": "MU",
+      "provincia_matriculacion": "Murcia",
+      "COD_PROVINCIA_VEH": "A",
+      "provincia_domicilio_vehiculo": "Alicante/Alacant",
+      "recuento": 1248
     },
     {
       "COD_PROVINCIA_MAT": "J",
       "provincia_matriculacion": "Jaén",
       "COD_PROVINCIA_VEH": "GR",
       "provincia_domicilio_vehiculo": "Granada",
-      "recuento": 1060
+      "recuento": 1168
     },
     {
       "COD_PROVINCIA_MAT": "CO",
       "provincia_matriculacion": "Córdoba",
       "COD_PROVINCIA_VEH": "M",
       "provincia_domicilio_vehiculo": "Madrid",
-      "recuento": 921
+      "recuento": 982
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
       "COD_PROVINCIA_VEH": "IB",
       "provincia_domicilio_vehiculo": "Illes Balears",
-      "recuento": 912
+      "recuento": 948
     },
     {
       "COD_PROVINCIA_MAT": "B",
       "provincia_matriculacion": "Barcelona",
       "COD_PROVINCIA_VEH": "M",
       "provincia_domicilio_vehiculo": "Madrid",
-      "recuento": 866
+      "recuento": 928
     },
     {
       "COD_PROVINCIA_MAT": "B",
       "provincia_matriculacion": "Barcelona",
       "COD_PROVINCIA_VEH": "IB",
       "provincia_domicilio_vehiculo": "Illes Balears",
-      "recuento": 827
+      "recuento": 884
     },
     {
       "COD_PROVINCIA_MAT": "PO",
       "provincia_matriculacion": "Pontevedra",
       "COD_PROVINCIA_VEH": "C",
       "provincia_domicilio_vehiculo": "A Coruña",
-      "recuento": 791
-    },
-    {
-      "COD_PROVINCIA_MAT": "M",
-      "provincia_matriculacion": "Madrid",
-      "COD_PROVINCIA_VEH": "TO",
-      "provincia_domicilio_vehiculo": "Toledo",
-      "recuento": 767
+      "recuento": 877
     },
     {
       "COD_PROVINCIA_MAT": "SE",
       "provincia_matriculacion": "Sevilla",
       "COD_PROVINCIA_VEH": "AL",
       "provincia_domicilio_vehiculo": "Almería",
-      "recuento": 724
+      "recuento": 862
     },
     {
       "COD_PROVINCIA_MAT": "SE",
       "provincia_matriculacion": "Sevilla",
       "COD_PROVINCIA_VEH": "MA",
       "provincia_domicilio_vehiculo": "Málaga",
-      "recuento": 693
+      "recuento": 857
+    },
+    {
+      "COD_PROVINCIA_MAT": "M",
+      "provincia_matriculacion": "Madrid",
+      "COD_PROVINCIA_VEH": "TO",
+      "provincia_domicilio_vehiculo": "Toledo",
+      "recuento": 847
     },
     {
       "COD_PROVINCIA_MAT": "GI",
       "provincia_matriculacion": "Girona",
       "COD_PROVINCIA_VEH": "B",
       "provincia_domicilio_vehiculo": "Barcelona",
-      "recuento": 689
-    },
-    {
-      "COD_PROVINCIA_MAT": "V",
-      "provincia_matriculacion": "Valencia/València",
-      "COD_PROVINCIA_VEH": "A",
-      "provincia_domicilio_vehiculo": "Alicante/Alacant",
-      "recuento": 638
-    },
-    {
-      "COD_PROVINCIA_MAT": "M",
-      "provincia_matriculacion": "Madrid",
-      "COD_PROVINCIA_VEH": "V",
-      "provincia_domicilio_vehiculo": "Valencia/València",
-      "recuento": 637
+      "recuento": 734
     },
     {
       "COD_PROVINCIA_MAT": "TF",
       "provincia_matriculacion": "Santa Cruz de Tenerife",
       "COD_PROVINCIA_VEH": "GC",
       "provincia_domicilio_vehiculo": "Las Palmas",
-      "recuento": 623
+      "recuento": 698
+    },
+    {
+      "COD_PROVINCIA_MAT": "V",
+      "provincia_matriculacion": "Valencia/València",
+      "COD_PROVINCIA_VEH": "A",
+      "provincia_domicilio_vehiculo": "Alicante/Alacant",
+      "recuento": 694
+    },
+    {
+      "COD_PROVINCIA_MAT": "M",
+      "provincia_matriculacion": "Madrid",
+      "COD_PROVINCIA_VEH": "V",
+      "provincia_domicilio_vehiculo": "Valencia/València",
+      "recuento": 693
     },
     {
       "COD_PROVINCIA_MAT": "B",
       "provincia_matriculacion": "Barcelona",
       "COD_PROVINCIA_VEH": "T",
       "provincia_domicilio_vehiculo": "Tarragona",
-      "recuento": 605
+      "recuento": 670
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
       "COD_PROVINCIA_VEH": "A",
       "provincia_domicilio_vehiculo": "Alicante/Alacant",
+      "recuento": 551
+    },
+    {
+      "COD_PROVINCIA_MAT": "CO",
+      "provincia_matriculacion": "Córdoba",
+      "COD_PROVINCIA_VEH": "CA",
+      "provincia_domicilio_vehiculo": "Cádiz",
       "recuento": 503
     },
     {
@@ -730,963 +746,956 @@
       "provincia_matriculacion": "Valencia/València",
       "COD_PROVINCIA_VEH": "CS",
       "provincia_domicilio_vehiculo": "Castellón/Castelló",
-      "recuento": 442
+      "recuento": 491
     },
     {
       "COD_PROVINCIA_MAT": "A",
       "provincia_matriculacion": "Alicante/Alacant",
       "COD_PROVINCIA_VEH": "V",
       "provincia_domicilio_vehiculo": "Valencia/València",
-      "recuento": 414
+      "recuento": 455
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
       "COD_PROVINCIA_VEH": "GU",
       "provincia_domicilio_vehiculo": "Guadalajara",
-      "recuento": 392
+      "recuento": 429
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
       "COD_PROVINCIA_VEH": "MA",
       "provincia_domicilio_vehiculo": "Málaga",
-      "recuento": 376
+      "recuento": 414
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
       "COD_PROVINCIA_VEH": "MU",
       "provincia_domicilio_vehiculo": "Murcia",
-      "recuento": 358
+      "recuento": 390
     },
     {
       "COD_PROVINCIA_MAT": "PO",
       "provincia_matriculacion": "Pontevedra",
       "COD_PROVINCIA_VEH": "OU",
       "provincia_domicilio_vehiculo": "Ourense",
-      "recuento": 326
+      "recuento": 367
     },
     {
       "COD_PROVINCIA_MAT": "M",
       "provincia_matriculacion": "Madrid",
-      "COD_PROVINCIA_VEH": "GI",
-      "provincia_domicilio_vehiculo": "Girona",
-      "recuento": 317
-    },
-    {
-      "COD_PROVINCIA_MAT": "CO",
-      "provincia_matriculacion": "Córdoba",
-      "COD_PROVINCIA_VEH": "CA",
-      "provincia_domicilio_vehiculo": "Cádiz",
-      "recuento": 312
+      "COD_PROVINCIA_VEH": "SE",
+      "provincia_domicilio_vehiculo": "Sevilla",
+      "recuento": 356
     }
   ],
   "balance_interprovincial_por_provincia": [
     {
       "COD_PROVINCIA": "SG",
       "provincia": "Segovia",
-      "matriculaciones": 8908,
-      "salidas_interprovinciales": 8734,
-      "entradas_interprovinciales": 170,
-      "saldo_neto_entradas_menos_salidas": -8564,
-      "salidas_sobre_matriculaciones_pct": 98.0467,
-      "entradas_sobre_matriculaciones_pct": 1.9084,
-      "saldo_neto_sobre_matriculaciones_pct": -96.1383
+      "matriculaciones": 9964,
+      "salidas_interprovinciales": 9783,
+      "entradas_interprovinciales": 186,
+      "saldo_neto_entradas_menos_salidas": -9597,
+      "salidas_sobre_matriculaciones_pct": 98.1835,
+      "entradas_sobre_matriculaciones_pct": 1.8667,
+      "saldo_neto_sobre_matriculaciones_pct": -96.3167
     },
     {
       "COD_PROVINCIA": "CO",
       "provincia": "Córdoba",
-      "matriculaciones": 7109,
-      "salidas_interprovinciales": 4703,
-      "entradas_interprovinciales": 695,
-      "saldo_neto_entradas_menos_salidas": -4008,
-      "salidas_sobre_matriculaciones_pct": 66.1556,
-      "entradas_sobre_matriculaciones_pct": 9.7763,
-      "saldo_neto_sobre_matriculaciones_pct": -56.3792
+      "matriculaciones": 8071,
+      "salidas_interprovinciales": 5351,
+      "entradas_interprovinciales": 784,
+      "saldo_neto_entradas_menos_salidas": -4567,
+      "salidas_sobre_matriculaciones_pct": 66.2991,
+      "entradas_sobre_matriculaciones_pct": 9.7138,
+      "saldo_neto_sobre_matriculaciones_pct": -56.5853
     },
     {
       "COD_PROVINCIA": "B",
       "provincia": "Barcelona",
-      "matriculaciones": 38180,
-      "salidas_interprovinciales": 5841,
-      "entradas_interprovinciales": 3702,
-      "saldo_neto_entradas_menos_salidas": -2139,
-      "salidas_sobre_matriculaciones_pct": 15.2986,
-      "entradas_sobre_matriculaciones_pct": 9.6962,
-      "saldo_neto_sobre_matriculaciones_pct": -5.6024
+      "matriculaciones": 42586,
+      "salidas_interprovinciales": 6351,
+      "entradas_interprovinciales": 4054,
+      "saldo_neto_entradas_menos_salidas": -2297,
+      "salidas_sobre_matriculaciones_pct": 14.9134,
+      "entradas_sobre_matriculaciones_pct": 9.5196,
+      "saldo_neto_sobre_matriculaciones_pct": -5.3938
     },
     {
       "COD_PROVINCIA": "M",
       "provincia": "Madrid",
-      "matriculaciones": 25351,
-      "salidas_interprovinciales": 12183,
-      "entradas_interprovinciales": 10334,
-      "saldo_neto_entradas_menos_salidas": -1849,
-      "salidas_sobre_matriculaciones_pct": 48.0573,
-      "entradas_sobre_matriculaciones_pct": 40.7637,
-      "saldo_neto_sobre_matriculaciones_pct": -7.2936
+      "matriculaciones": 28086,
+      "salidas_interprovinciales": 13312,
+      "entradas_interprovinciales": 11482,
+      "saldo_neto_entradas_menos_salidas": -1830,
+      "salidas_sobre_matriculaciones_pct": 47.3973,
+      "entradas_sobre_matriculaciones_pct": 40.8816,
+      "saldo_neto_sobre_matriculaciones_pct": -6.5157
     },
     {
       "COD_PROVINCIA": "GC",
       "provincia": "Las Palmas",
-      "matriculaciones": 6509,
-      "salidas_interprovinciales": 1908,
-      "entradas_interprovinciales": 634,
-      "saldo_neto_entradas_menos_salidas": -1274,
-      "salidas_sobre_matriculaciones_pct": 29.3133,
-      "entradas_sobre_matriculaciones_pct": 9.7404,
-      "saldo_neto_sobre_matriculaciones_pct": -19.5729
+      "matriculaciones": 7292,
+      "salidas_interprovinciales": 2105,
+      "entradas_interprovinciales": 712,
+      "saldo_neto_entradas_menos_salidas": -1393,
+      "salidas_sobre_matriculaciones_pct": 28.8673,
+      "entradas_sobre_matriculaciones_pct": 9.7641,
+      "saldo_neto_sobre_matriculaciones_pct": -19.1031
     },
     {
       "COD_PROVINCIA": "MU",
       "provincia": "Murcia",
-      "matriculaciones": 6813,
-      "salidas_interprovinciales": 1599,
-      "entradas_interprovinciales": 877,
-      "saldo_neto_entradas_menos_salidas": -722,
+      "matriculaciones": 7695,
+      "salidas_interprovinciales": 1806,
+      "entradas_interprovinciales": 964,
+      "saldo_neto_entradas_menos_salidas": -842,
       "salidas_sobre_matriculaciones_pct": 23.4698,
-      "entradas_sobre_matriculaciones_pct": 12.8724,
-      "saldo_neto_sobre_matriculaciones_pct": -10.5974
+      "entradas_sobre_matriculaciones_pct": 12.5276,
+      "saldo_neto_sobre_matriculaciones_pct": -10.9422
     },
     {
       "COD_PROVINCIA": "J",
       "provincia": "Jaén",
-      "matriculaciones": 2931,
-      "salidas_interprovinciales": 1327,
-      "entradas_interprovinciales": 616,
-      "saldo_neto_entradas_menos_salidas": -711,
-      "salidas_sobre_matriculaciones_pct": 45.2747,
-      "entradas_sobre_matriculaciones_pct": 21.0167,
-      "saldo_neto_sobre_matriculaciones_pct": -24.2579
+      "matriculaciones": 3263,
+      "salidas_interprovinciales": 1481,
+      "entradas_interprovinciales": 685,
+      "saldo_neto_entradas_menos_salidas": -796,
+      "salidas_sobre_matriculaciones_pct": 45.3877,
+      "entradas_sobre_matriculaciones_pct": 20.993,
+      "saldo_neto_sobre_matriculaciones_pct": -24.3947
     },
     {
       "COD_PROVINCIA": "Z",
       "provincia": "Zaragoza",
-      "matriculaciones": 3901,
-      "salidas_interprovinciales": 1006,
-      "entradas_interprovinciales": 467,
-      "saldo_neto_entradas_menos_salidas": -539,
-      "salidas_sobre_matriculaciones_pct": 25.7883,
-      "entradas_sobre_matriculaciones_pct": 11.9713,
-      "saldo_neto_sobre_matriculaciones_pct": -13.817
+      "matriculaciones": 4416,
+      "salidas_interprovinciales": 1123,
+      "entradas_interprovinciales": 521,
+      "saldo_neto_entradas_menos_salidas": -602,
+      "salidas_sobre_matriculaciones_pct": 25.4303,
+      "entradas_sobre_matriculaciones_pct": 11.798,
+      "saldo_neto_sobre_matriculaciones_pct": -13.6322
     },
     {
       "COD_PROVINCIA": "PO",
       "provincia": "Pontevedra",
-      "matriculaciones": 3848,
-      "salidas_interprovinciales": 1307,
-      "entradas_interprovinciales": 790,
-      "saldo_neto_entradas_menos_salidas": -517,
-      "salidas_sobre_matriculaciones_pct": 33.9657,
-      "entradas_sobre_matriculaciones_pct": 20.5301,
-      "saldo_neto_sobre_matriculaciones_pct": -13.4356
+      "matriculaciones": 4237,
+      "salidas_interprovinciales": 1459,
+      "entradas_interprovinciales": 863,
+      "saldo_neto_entradas_menos_salidas": -596,
+      "salidas_sobre_matriculaciones_pct": 34.4347,
+      "entradas_sobre_matriculaciones_pct": 20.3682,
+      "saldo_neto_sobre_matriculaciones_pct": -14.0666
     },
     {
       "COD_PROVINCIA": "V",
       "provincia": "Valencia/València",
-      "matriculaciones": 12128,
-      "salidas_interprovinciales": 1957,
-      "entradas_interprovinciales": 1654,
-      "saldo_neto_entradas_menos_salidas": -303,
-      "salidas_sobre_matriculaciones_pct": 16.1362,
-      "entradas_sobre_matriculaciones_pct": 13.6379,
-      "saldo_neto_sobre_matriculaciones_pct": -2.4984
+      "matriculaciones": 13507,
+      "salidas_interprovinciales": 2184,
+      "entradas_interprovinciales": 1816,
+      "saldo_neto_entradas_menos_salidas": -368,
+      "salidas_sobre_matriculaciones_pct": 16.1694,
+      "entradas_sobre_matriculaciones_pct": 13.4449,
+      "saldo_neto_sobre_matriculaciones_pct": -2.7245
     },
     {
       "COD_PROVINCIA": "CA",
       "provincia": "Cádiz",
-      "matriculaciones": 10827,
-      "salidas_interprovinciales": 1597,
-      "entradas_interprovinciales": 1308,
-      "saldo_neto_entradas_menos_salidas": -289,
-      "salidas_sobre_matriculaciones_pct": 14.7502,
-      "entradas_sobre_matriculaciones_pct": 12.0809,
-      "saldo_neto_sobre_matriculaciones_pct": -2.6693
+      "matriculaciones": 11903,
+      "salidas_interprovinciales": 1815,
+      "entradas_interprovinciales": 1599,
+      "saldo_neto_entradas_menos_salidas": -216,
+      "salidas_sobre_matriculaciones_pct": 15.2483,
+      "entradas_sobre_matriculaciones_pct": 13.4336,
+      "saldo_neto_sobre_matriculaciones_pct": -1.8147
     },
     {
       "COD_PROVINCIA": "AB",
       "provincia": "Albacete",
-      "matriculaciones": 1501,
-      "salidas_interprovinciales": 421,
-      "entradas_interprovinciales": 294,
-      "saldo_neto_entradas_menos_salidas": -127,
-      "salidas_sobre_matriculaciones_pct": 28.048,
-      "entradas_sobre_matriculaciones_pct": 19.5869,
-      "saldo_neto_sobre_matriculaciones_pct": -8.461
+      "matriculaciones": 1679,
+      "salidas_interprovinciales": 467,
+      "entradas_interprovinciales": 332,
+      "saldo_neto_entradas_menos_salidas": -135,
+      "salidas_sobre_matriculaciones_pct": 27.8142,
+      "entradas_sobre_matriculaciones_pct": 19.7737,
+      "saldo_neto_sobre_matriculaciones_pct": -8.0405
     },
     {
       "COD_PROVINCIA": "VA",
       "provincia": "Valladolid",
-      "matriculaciones": 1724,
-      "salidas_interprovinciales": 464,
-      "entradas_interprovinciales": 355,
-      "saldo_neto_entradas_menos_salidas": -109,
-      "salidas_sobre_matriculaciones_pct": 26.9142,
-      "entradas_sobre_matriculaciones_pct": 20.5916,
-      "saldo_neto_sobre_matriculaciones_pct": -6.3225
+      "matriculaciones": 1910,
+      "salidas_interprovinciales": 516,
+      "entradas_interprovinciales": 390,
+      "saldo_neto_entradas_menos_salidas": -126,
+      "salidas_sobre_matriculaciones_pct": 27.0157,
+      "entradas_sobre_matriculaciones_pct": 20.4188,
+      "saldo_neto_sobre_matriculaciones_pct": -6.5969
     },
     {
       "COD_PROVINCIA": "VI",
       "provincia": "Araba/Álava",
-      "matriculaciones": 974,
-      "salidas_interprovinciales": 342,
-      "entradas_interprovinciales": 284,
-      "saldo_neto_entradas_menos_salidas": -58,
-      "salidas_sobre_matriculaciones_pct": 35.1129,
-      "entradas_sobre_matriculaciones_pct": 29.1581,
-      "saldo_neto_sobre_matriculaciones_pct": -5.9548
+      "matriculaciones": 1085,
+      "salidas_interprovinciales": 364,
+      "entradas_interprovinciales": 311,
+      "saldo_neto_entradas_menos_salidas": -53,
+      "salidas_sobre_matriculaciones_pct": 33.5484,
+      "entradas_sobre_matriculaciones_pct": 28.6636,
+      "saldo_neto_sobre_matriculaciones_pct": -4.8848
     },
     {
       "COD_PROVINCIA": "CE",
       "provincia": "Ceuta",
-      "matriculaciones": 827,
+      "matriculaciones": 922,
       "salidas_interprovinciales": 0,
       "entradas_interprovinciales": 3,
       "saldo_neto_entradas_menos_salidas": 3,
       "salidas_sobre_matriculaciones_pct": 0.0,
-      "entradas_sobre_matriculaciones_pct": 0.3628,
-      "saldo_neto_sobre_matriculaciones_pct": 0.3628
+      "entradas_sobre_matriculaciones_pct": 0.3254,
+      "saldo_neto_sobre_matriculaciones_pct": 0.3254
     },
     {
       "COD_PROVINCIA": "ML",
       "provincia": "Melilla",
-      "matriculaciones": 593,
+      "matriculaciones": 681,
       "salidas_interprovinciales": 0,
       "entradas_interprovinciales": 7,
       "saldo_neto_entradas_menos_salidas": 7,
       "salidas_sobre_matriculaciones_pct": 0.0,
-      "entradas_sobre_matriculaciones_pct": 1.1804,
-      "saldo_neto_sobre_matriculaciones_pct": 1.1804
+      "entradas_sobre_matriculaciones_pct": 1.0279,
+      "saldo_neto_sobre_matriculaciones_pct": 1.0279
     },
     {
       "COD_PROVINCIA": "BU",
       "provincia": "Burgos",
-      "matriculaciones": 771,
-      "salidas_interprovinciales": 268,
-      "entradas_interprovinciales": 354,
-      "saldo_neto_entradas_menos_salidas": 86,
-      "salidas_sobre_matriculaciones_pct": 34.7601,
-      "entradas_sobre_matriculaciones_pct": 45.9144,
-      "saldo_neto_sobre_matriculaciones_pct": 11.1543
+      "matriculaciones": 834,
+      "salidas_interprovinciales": 291,
+      "entradas_interprovinciales": 386,
+      "saldo_neto_entradas_menos_salidas": 95,
+      "salidas_sobre_matriculaciones_pct": 34.8921,
+      "entradas_sobre_matriculaciones_pct": 46.283,
+      "saldo_neto_sobre_matriculaciones_pct": 11.3909
     },
     {
       "COD_PROVINCIA": "SO",
       "provincia": "Soria",
-      "matriculaciones": 79,
-      "salidas_interprovinciales": 9,
-      "entradas_interprovinciales": 127,
-      "saldo_neto_entradas_menos_salidas": 118,
-      "salidas_sobre_matriculaciones_pct": 11.3924,
-      "entradas_sobre_matriculaciones_pct": 160.7595,
-      "saldo_neto_sobre_matriculaciones_pct": 149.3671
-    },
-    {
-      "COD_PROVINCIA": "LU",
-      "provincia": "Lugo",
-      "matriculaciones": 445,
-      "salidas_interprovinciales": 117,
-      "entradas_interprovinciales": 239,
-      "saldo_neto_entradas_menos_salidas": 122,
-      "salidas_sobre_matriculaciones_pct": 26.2921,
-      "entradas_sobre_matriculaciones_pct": 53.7079,
-      "saldo_neto_sobre_matriculaciones_pct": 27.4157
+      "matriculaciones": 89,
+      "salidas_interprovinciales": 11,
+      "entradas_interprovinciales": 138,
+      "saldo_neto_entradas_menos_salidas": 127,
+      "salidas_sobre_matriculaciones_pct": 12.3596,
+      "entradas_sobre_matriculaciones_pct": 155.0562,
+      "saldo_neto_sobre_matriculaciones_pct": 142.6966
     },
     {
       "COD_PROVINCIA": "TE",
       "provincia": "Teruel",
-      "matriculaciones": 266,
-      "salidas_interprovinciales": 55,
-      "entradas_interprovinciales": 178,
-      "saldo_neto_entradas_menos_salidas": 123,
-      "salidas_sobre_matriculaciones_pct": 20.6767,
-      "entradas_sobre_matriculaciones_pct": 66.9173,
-      "saldo_neto_sobre_matriculaciones_pct": 46.2406
+      "matriculaciones": 311,
+      "salidas_interprovinciales": 66,
+      "entradas_interprovinciales": 197,
+      "saldo_neto_entradas_menos_salidas": 131,
+      "salidas_sobre_matriculaciones_pct": 21.2219,
+      "entradas_sobre_matriculaciones_pct": 63.3441,
+      "saldo_neto_sobre_matriculaciones_pct": 42.1222
+    },
+    {
+      "COD_PROVINCIA": "LU",
+      "provincia": "Lugo",
+      "matriculaciones": 492,
+      "salidas_interprovinciales": 133,
+      "entradas_interprovinciales": 266,
+      "saldo_neto_entradas_menos_salidas": 133,
+      "salidas_sobre_matriculaciones_pct": 27.0325,
+      "entradas_sobre_matriculaciones_pct": 54.065,
+      "saldo_neto_sobre_matriculaciones_pct": 27.0325
     },
     {
       "COD_PROVINCIA": "P",
       "provincia": "Palencia",
-      "matriculaciones": 255,
-      "salidas_interprovinciales": 102,
-      "entradas_interprovinciales": 242,
-      "saldo_neto_entradas_menos_salidas": 140,
-      "salidas_sobre_matriculaciones_pct": 40.0,
-      "entradas_sobre_matriculaciones_pct": 94.902,
-      "saldo_neto_sobre_matriculaciones_pct": 54.902
+      "matriculaciones": 277,
+      "salidas_interprovinciales": 113,
+      "entradas_interprovinciales": 265,
+      "saldo_neto_entradas_menos_salidas": 152,
+      "salidas_sobre_matriculaciones_pct": 40.7942,
+      "entradas_sobre_matriculaciones_pct": 95.6679,
+      "saldo_neto_sobre_matriculaciones_pct": 54.8736
     },
     {
       "COD_PROVINCIA": "NA",
       "provincia": "Navarra",
-      "matriculaciones": 1729,
-      "salidas_interprovinciales": 379,
-      "entradas_interprovinciales": 546,
-      "saldo_neto_entradas_menos_salidas": 167,
-      "salidas_sobre_matriculaciones_pct": 21.9202,
-      "entradas_sobre_matriculaciones_pct": 31.5789,
-      "saldo_neto_sobre_matriculaciones_pct": 9.6588
+      "matriculaciones": 1926,
+      "salidas_interprovinciales": 422,
+      "entradas_interprovinciales": 596,
+      "saldo_neto_entradas_menos_salidas": 174,
+      "salidas_sobre_matriculaciones_pct": 21.9107,
+      "entradas_sobre_matriculaciones_pct": 30.945,
+      "saldo_neto_sobre_matriculaciones_pct": 9.0343
     },
     {
       "COD_PROVINCIA": "SA",
       "provincia": "Salamanca",
-      "matriculaciones": 608,
-      "salidas_interprovinciales": 145,
-      "entradas_interprovinciales": 342,
-      "saldo_neto_entradas_menos_salidas": 197,
-      "salidas_sobre_matriculaciones_pct": 23.8487,
-      "entradas_sobre_matriculaciones_pct": 56.25,
-      "saldo_neto_sobre_matriculaciones_pct": 32.4013
+      "matriculaciones": 669,
+      "salidas_interprovinciales": 161,
+      "entradas_interprovinciales": 366,
+      "saldo_neto_entradas_menos_salidas": 205,
+      "salidas_sobre_matriculaciones_pct": 24.0658,
+      "entradas_sobre_matriculaciones_pct": 54.7085,
+      "saldo_neto_sobre_matriculaciones_pct": 30.6428
     },
     {
       "COD_PROVINCIA": "H",
       "provincia": "Huelva",
-      "matriculaciones": 2116,
-      "salidas_interprovinciales": 332,
-      "entradas_interprovinciales": 530,
-      "saldo_neto_entradas_menos_salidas": 198,
-      "salidas_sobre_matriculaciones_pct": 15.69,
-      "entradas_sobre_matriculaciones_pct": 25.0473,
-      "saldo_neto_sobre_matriculaciones_pct": 9.3573
-    },
-    {
-      "COD_PROVINCIA": "O",
-      "provincia": "Asturias",
-      "matriculaciones": 3381,
-      "salidas_interprovinciales": 310,
-      "entradas_interprovinciales": 524,
-      "saldo_neto_entradas_menos_salidas": 214,
-      "salidas_sobre_matriculaciones_pct": 9.1689,
-      "entradas_sobre_matriculaciones_pct": 15.4984,
-      "saldo_neto_sobre_matriculaciones_pct": 6.3295
+      "matriculaciones": 2356,
+      "salidas_interprovinciales": 366,
+      "entradas_interprovinciales": 596,
+      "saldo_neto_entradas_menos_salidas": 230,
+      "salidas_sobre_matriculaciones_pct": 15.5348,
+      "entradas_sobre_matriculaciones_pct": 25.2971,
+      "saldo_neto_sobre_matriculaciones_pct": 9.7623
     },
     {
       "COD_PROVINCIA": "CC",
       "provincia": "Cáceres",
-      "matriculaciones": 776,
-      "salidas_interprovinciales": 236,
-      "entradas_interprovinciales": 453,
-      "saldo_neto_entradas_menos_salidas": 217,
-      "salidas_sobre_matriculaciones_pct": 30.4124,
-      "entradas_sobre_matriculaciones_pct": 58.3763,
-      "saldo_neto_sobre_matriculaciones_pct": 27.9639
+      "matriculaciones": 863,
+      "salidas_interprovinciales": 263,
+      "entradas_interprovinciales": 501,
+      "saldo_neto_entradas_menos_salidas": 238,
+      "salidas_sobre_matriculaciones_pct": 30.4751,
+      "entradas_sobre_matriculaciones_pct": 58.0533,
+      "saldo_neto_sobre_matriculaciones_pct": 27.5782
+    },
+    {
+      "COD_PROVINCIA": "O",
+      "provincia": "Asturias",
+      "matriculaciones": 3788,
+      "salidas_interprovinciales": 334,
+      "entradas_interprovinciales": 589,
+      "saldo_neto_entradas_menos_salidas": 255,
+      "salidas_sobre_matriculaciones_pct": 8.8173,
+      "entradas_sobre_matriculaciones_pct": 15.5491,
+      "saldo_neto_sobre_matriculaciones_pct": 6.7318
     },
     {
       "COD_PROVINCIA": "LO",
       "provincia": "La Rioja",
-      "matriculaciones": 768,
-      "salidas_interprovinciales": 209,
-      "entradas_interprovinciales": 453,
-      "saldo_neto_entradas_menos_salidas": 244,
-      "salidas_sobre_matriculaciones_pct": 27.2135,
-      "entradas_sobre_matriculaciones_pct": 58.9844,
-      "saldo_neto_sobre_matriculaciones_pct": 31.7708
+      "matriculaciones": 834,
+      "salidas_interprovinciales": 224,
+      "entradas_interprovinciales": 506,
+      "saldo_neto_entradas_menos_salidas": 282,
+      "salidas_sobre_matriculaciones_pct": 26.8585,
+      "entradas_sobre_matriculaciones_pct": 60.6715,
+      "saldo_neto_sobre_matriculaciones_pct": 33.8129
     },
     {
       "COD_PROVINCIA": "ZA",
       "provincia": "Zamora",
-      "matriculaciones": 96,
-      "salidas_interprovinciales": 26,
-      "entradas_interprovinciales": 307,
-      "saldo_neto_entradas_menos_salidas": 281,
-      "salidas_sobre_matriculaciones_pct": 27.0833,
-      "entradas_sobre_matriculaciones_pct": 319.7917,
-      "saldo_neto_sobre_matriculaciones_pct": 292.7083
+      "matriculaciones": 110,
+      "salidas_interprovinciales": 27,
+      "entradas_interprovinciales": 341,
+      "saldo_neto_entradas_menos_salidas": 314,
+      "salidas_sobre_matriculaciones_pct": 24.5455,
+      "entradas_sobre_matriculaciones_pct": 310.0,
+      "saldo_neto_sobre_matriculaciones_pct": 285.4545
     },
     {
       "COD_PROVINCIA": "AV",
       "provincia": "Ávila",
-      "matriculaciones": 45,
+      "matriculaciones": 47,
       "salidas_interprovinciales": 11,
-      "entradas_interprovinciales": 297,
-      "saldo_neto_entradas_menos_salidas": 286,
-      "salidas_sobre_matriculaciones_pct": 24.4444,
-      "entradas_sobre_matriculaciones_pct": 660.0,
-      "saldo_neto_sobre_matriculaciones_pct": 635.5556
+      "entradas_interprovinciales": 325,
+      "saldo_neto_entradas_menos_salidas": 314,
+      "salidas_sobre_matriculaciones_pct": 23.4043,
+      "entradas_sobre_matriculaciones_pct": 691.4894,
+      "saldo_neto_sobre_matriculaciones_pct": 668.0851
     },
     {
       "COD_PROVINCIA": "CR",
       "provincia": "Ciudad Real",
-      "matriculaciones": 634,
-      "salidas_interprovinciales": 112,
-      "entradas_interprovinciales": 405,
-      "saldo_neto_entradas_menos_salidas": 293,
-      "salidas_sobre_matriculaciones_pct": 17.6656,
-      "entradas_sobre_matriculaciones_pct": 63.8801,
-      "saldo_neto_sobre_matriculaciones_pct": 46.2145
+      "matriculaciones": 718,
+      "salidas_interprovinciales": 131,
+      "entradas_interprovinciales": 449,
+      "saldo_neto_entradas_menos_salidas": 318,
+      "salidas_sobre_matriculaciones_pct": 18.2451,
+      "entradas_sobre_matriculaciones_pct": 62.5348,
+      "saldo_neto_sobre_matriculaciones_pct": 44.2897
     },
     {
       "COD_PROVINCIA": "CU",
       "provincia": "Cuenca",
-      "matriculaciones": 133,
-      "salidas_interprovinciales": 11,
-      "entradas_interprovinciales": 347,
-      "saldo_neto_entradas_menos_salidas": 336,
-      "salidas_sobre_matriculaciones_pct": 8.2707,
-      "entradas_sobre_matriculaciones_pct": 260.9023,
-      "saldo_neto_sobre_matriculaciones_pct": 252.6316
+      "matriculaciones": 144,
+      "salidas_interprovinciales": 14,
+      "entradas_interprovinciales": 380,
+      "saldo_neto_entradas_menos_salidas": 366,
+      "salidas_sobre_matriculaciones_pct": 9.7222,
+      "entradas_sobre_matriculaciones_pct": 263.8889,
+      "saldo_neto_sobre_matriculaciones_pct": 254.1667
     },
     {
       "COD_PROVINCIA": "LE",
       "provincia": "León",
-      "matriculaciones": 1007,
-      "salidas_interprovinciales": 160,
-      "entradas_interprovinciales": 499,
-      "saldo_neto_entradas_menos_salidas": 339,
-      "salidas_sobre_matriculaciones_pct": 15.8888,
-      "entradas_sobre_matriculaciones_pct": 49.5531,
-      "saldo_neto_sobre_matriculaciones_pct": 33.6643
+      "matriculaciones": 1094,
+      "salidas_interprovinciales": 176,
+      "entradas_interprovinciales": 563,
+      "saldo_neto_entradas_menos_salidas": 387,
+      "salidas_sobre_matriculaciones_pct": 16.0878,
+      "entradas_sobre_matriculaciones_pct": 51.4625,
+      "saldo_neto_sobre_matriculaciones_pct": 35.3748
     },
     {
       "COD_PROVINCIA": "GU",
       "provincia": "Guadalajara",
-      "matriculaciones": 567,
-      "salidas_interprovinciales": 182,
-      "entradas_interprovinciales": 549,
-      "saldo_neto_entradas_menos_salidas": 367,
-      "salidas_sobre_matriculaciones_pct": 32.0988,
-      "entradas_sobre_matriculaciones_pct": 96.8254,
-      "saldo_neto_sobre_matriculaciones_pct": 64.7266
-    },
-    {
-      "COD_PROVINCIA": "L",
-      "provincia": "Lleida",
-      "matriculaciones": 1198,
-      "salidas_interprovinciales": 201,
-      "entradas_interprovinciales": 587,
-      "saldo_neto_entradas_menos_salidas": 386,
-      "salidas_sobre_matriculaciones_pct": 16.778,
-      "entradas_sobre_matriculaciones_pct": 48.9983,
-      "saldo_neto_sobre_matriculaciones_pct": 32.2204
+      "matriculaciones": 633,
+      "salidas_interprovinciales": 200,
+      "entradas_interprovinciales": 602,
+      "saldo_neto_entradas_menos_salidas": 402,
+      "salidas_sobre_matriculaciones_pct": 31.5956,
+      "entradas_sobre_matriculaciones_pct": 95.1027,
+      "saldo_neto_sobre_matriculaciones_pct": 63.5071
     },
     {
       "COD_PROVINCIA": "HU",
       "provincia": "Huesca",
-      "matriculaciones": 190,
-      "salidas_interprovinciales": 28,
-      "entradas_interprovinciales": 420,
-      "saldo_neto_entradas_menos_salidas": 392,
-      "salidas_sobre_matriculaciones_pct": 14.7368,
-      "entradas_sobre_matriculaciones_pct": 221.0526,
-      "saldo_neto_sobre_matriculaciones_pct": 206.3158
+      "matriculaciones": 218,
+      "salidas_interprovinciales": 38,
+      "entradas_interprovinciales": 464,
+      "saldo_neto_entradas_menos_salidas": 426,
+      "salidas_sobre_matriculaciones_pct": 17.4312,
+      "entradas_sobre_matriculaciones_pct": 212.844,
+      "saldo_neto_sobre_matriculaciones_pct": 195.4128
     },
     {
-      "COD_PROVINCIA": "BA",
-      "provincia": "Badajoz",
-      "matriculaciones": 1558,
-      "salidas_interprovinciales": 244,
-      "entradas_interprovinciales": 658,
-      "saldo_neto_entradas_menos_salidas": 414,
-      "salidas_sobre_matriculaciones_pct": 15.6611,
-      "entradas_sobre_matriculaciones_pct": 42.2336,
-      "saldo_neto_sobre_matriculaciones_pct": 26.5725
-    },
-    {
-      "COD_PROVINCIA": "T",
-      "provincia": "Tarragona",
-      "matriculaciones": 4025,
-      "salidas_interprovinciales": 618,
-      "entradas_interprovinciales": 1032,
-      "saldo_neto_entradas_menos_salidas": 414,
-      "salidas_sobre_matriculaciones_pct": 15.354,
-      "entradas_sobre_matriculaciones_pct": 25.6398,
-      "saldo_neto_sobre_matriculaciones_pct": 10.2857
+      "COD_PROVINCIA": "L",
+      "provincia": "Lleida",
+      "matriculaciones": 1314,
+      "salidas_interprovinciales": 223,
+      "entradas_interprovinciales": 654,
+      "saldo_neto_entradas_menos_salidas": 431,
+      "salidas_sobre_matriculaciones_pct": 16.9711,
+      "entradas_sobre_matriculaciones_pct": 49.7717,
+      "saldo_neto_sobre_matriculaciones_pct": 32.8006
     },
     {
       "COD_PROVINCIA": "SS",
       "provincia": "Gipuzkoa",
-      "matriculaciones": 2588,
-      "salidas_interprovinciales": 147,
-      "entradas_interprovinciales": 564,
-      "saldo_neto_entradas_menos_salidas": 417,
-      "salidas_sobre_matriculaciones_pct": 5.6801,
-      "entradas_sobre_matriculaciones_pct": 21.7929,
-      "saldo_neto_sobre_matriculaciones_pct": 16.1128
+      "matriculaciones": 2836,
+      "salidas_interprovinciales": 161,
+      "entradas_interprovinciales": 616,
+      "saldo_neto_entradas_menos_salidas": 455,
+      "salidas_sobre_matriculaciones_pct": 5.677,
+      "entradas_sobre_matriculaciones_pct": 21.7207,
+      "saldo_neto_sobre_matriculaciones_pct": 16.0437
+    },
+    {
+      "COD_PROVINCIA": "T",
+      "provincia": "Tarragona",
+      "matriculaciones": 4532,
+      "salidas_interprovinciales": 685,
+      "entradas_interprovinciales": 1142,
+      "saldo_neto_entradas_menos_salidas": 457,
+      "salidas_sobre_matriculaciones_pct": 15.1147,
+      "entradas_sobre_matriculaciones_pct": 25.1986,
+      "saldo_neto_sobre_matriculaciones_pct": 10.0838
+    },
+    {
+      "COD_PROVINCIA": "BA",
+      "provincia": "Badajoz",
+      "matriculaciones": 1714,
+      "salidas_interprovinciales": 263,
+      "entradas_interprovinciales": 743,
+      "saldo_neto_entradas_menos_salidas": 480,
+      "salidas_sobre_matriculaciones_pct": 15.3442,
+      "entradas_sobre_matriculaciones_pct": 43.3489,
+      "saldo_neto_sobre_matriculaciones_pct": 28.0047
     },
     {
       "COD_PROVINCIA": "BI",
       "provincia": "Bizkaia",
-      "matriculaciones": 3029,
-      "salidas_interprovinciales": 413,
-      "entradas_interprovinciales": 910,
-      "saldo_neto_entradas_menos_salidas": 497,
-      "salidas_sobre_matriculaciones_pct": 13.6349,
-      "entradas_sobre_matriculaciones_pct": 30.0429,
-      "saldo_neto_sobre_matriculaciones_pct": 16.4081
+      "matriculaciones": 3348,
+      "salidas_interprovinciales": 458,
+      "entradas_interprovinciales": 991,
+      "saldo_neto_entradas_menos_salidas": 533,
+      "salidas_sobre_matriculaciones_pct": 13.6798,
+      "entradas_sobre_matriculaciones_pct": 29.5998,
+      "saldo_neto_sobre_matriculaciones_pct": 15.92
     },
     {
       "COD_PROVINCIA": "OU",
       "provincia": "Ourense",
-      "matriculaciones": 273,
-      "salidas_interprovinciales": 33,
-      "entradas_interprovinciales": 546,
-      "saldo_neto_entradas_menos_salidas": 513,
-      "salidas_sobre_matriculaciones_pct": 12.0879,
-      "entradas_sobre_matriculaciones_pct": 200.0,
-      "saldo_neto_sobre_matriculaciones_pct": 187.9121
+      "matriculaciones": 302,
+      "salidas_interprovinciales": 39,
+      "entradas_interprovinciales": 603,
+      "saldo_neto_entradas_menos_salidas": 564,
+      "salidas_sobre_matriculaciones_pct": 12.9139,
+      "entradas_sobre_matriculaciones_pct": 199.6689,
+      "saldo_neto_sobre_matriculaciones_pct": 186.755
     },
     {
       "COD_PROVINCIA": "S",
       "provincia": "Cantabria",
-      "matriculaciones": 2266,
-      "salidas_interprovinciales": 219,
-      "entradas_interprovinciales": 765,
-      "saldo_neto_entradas_menos_salidas": 546,
-      "salidas_sobre_matriculaciones_pct": 9.6646,
-      "entradas_sobre_matriculaciones_pct": 33.7599,
-      "saldo_neto_sobre_matriculaciones_pct": 24.0953
+      "matriculaciones": 2476,
+      "salidas_interprovinciales": 237,
+      "entradas_interprovinciales": 824,
+      "saldo_neto_entradas_menos_salidas": 587,
+      "salidas_sobre_matriculaciones_pct": 9.5719,
+      "entradas_sobre_matriculaciones_pct": 33.2795,
+      "saldo_neto_sobre_matriculaciones_pct": 23.7076
     },
     {
       "COD_PROVINCIA": "MA",
       "provincia": "Málaga",
-      "matriculaciones": 14512,
-      "salidas_interprovinciales": 1237,
-      "entradas_interprovinciales": 1845,
-      "saldo_neto_entradas_menos_salidas": 608,
-      "salidas_sobre_matriculaciones_pct": 8.524,
-      "entradas_sobre_matriculaciones_pct": 12.7136,
-      "saldo_neto_sobre_matriculaciones_pct": 4.1896
-    },
-    {
-      "COD_PROVINCIA": "TO",
-      "provincia": "Toledo",
-      "matriculaciones": 1042,
-      "salidas_interprovinciales": 365,
-      "entradas_interprovinciales": 1128,
-      "saldo_neto_entradas_menos_salidas": 763,
-      "salidas_sobre_matriculaciones_pct": 35.0288,
-      "entradas_sobre_matriculaciones_pct": 108.2534,
-      "saldo_neto_sobre_matriculaciones_pct": 73.2246
+      "matriculaciones": 16100,
+      "salidas_interprovinciales": 1347,
+      "entradas_interprovinciales": 2138,
+      "saldo_neto_entradas_menos_salidas": 791,
+      "salidas_sobre_matriculaciones_pct": 8.3665,
+      "entradas_sobre_matriculaciones_pct": 13.2795,
+      "saldo_neto_sobre_matriculaciones_pct": 4.913
     },
     {
       "COD_PROVINCIA": "CS",
       "provincia": "Castellón/Castelló",
-      "matriculaciones": 1566,
-      "salidas_interprovinciales": 138,
-      "entradas_interprovinciales": 918,
-      "saldo_neto_entradas_menos_salidas": 780,
-      "salidas_sobre_matriculaciones_pct": 8.8123,
-      "entradas_sobre_matriculaciones_pct": 58.6207,
-      "saldo_neto_sobre_matriculaciones_pct": 49.8084
+      "matriculaciones": 1757,
+      "salidas_interprovinciales": 153,
+      "entradas_interprovinciales": 1001,
+      "saldo_neto_entradas_menos_salidas": 848,
+      "salidas_sobre_matriculaciones_pct": 8.708,
+      "entradas_sobre_matriculaciones_pct": 56.9721,
+      "saldo_neto_sobre_matriculaciones_pct": 48.2641
+    },
+    {
+      "COD_PROVINCIA": "TO",
+      "provincia": "Toledo",
+      "matriculaciones": 1165,
+      "salidas_interprovinciales": 415,
+      "entradas_interprovinciales": 1273,
+      "saldo_neto_entradas_menos_salidas": 858,
+      "salidas_sobre_matriculaciones_pct": 35.6223,
+      "entradas_sobre_matriculaciones_pct": 109.2704,
+      "saldo_neto_sobre_matriculaciones_pct": 73.6481
     },
     {
       "COD_PROVINCIA": "C",
       "provincia": "A Coruña",
-      "matriculaciones": 1521,
-      "salidas_interprovinciales": 285,
-      "entradas_interprovinciales": 1252,
-      "saldo_neto_entradas_menos_salidas": 967,
-      "salidas_sobre_matriculaciones_pct": 18.7377,
-      "entradas_sobre_matriculaciones_pct": 82.3143,
-      "saldo_neto_sobre_matriculaciones_pct": 63.5766
+      "matriculaciones": 1694,
+      "salidas_interprovinciales": 311,
+      "entradas_interprovinciales": 1381,
+      "saldo_neto_entradas_menos_salidas": 1070,
+      "salidas_sobre_matriculaciones_pct": 18.3589,
+      "entradas_sobre_matriculaciones_pct": 81.523,
+      "saldo_neto_sobre_matriculaciones_pct": 63.1641
     },
     {
       "COD_PROVINCIA": "AL",
       "provincia": "Almería",
-      "matriculaciones": 1864,
-      "salidas_interprovinciales": 145,
-      "entradas_interprovinciales": 1382,
-      "saldo_neto_entradas_menos_salidas": 1237,
-      "salidas_sobre_matriculaciones_pct": 7.779,
-      "entradas_sobre_matriculaciones_pct": 74.1416,
-      "saldo_neto_sobre_matriculaciones_pct": 66.3627
+      "matriculaciones": 2133,
+      "salidas_interprovinciales": 163,
+      "entradas_interprovinciales": 1585,
+      "saldo_neto_entradas_menos_salidas": 1422,
+      "salidas_sobre_matriculaciones_pct": 7.6418,
+      "entradas_sobre_matriculaciones_pct": 74.3085,
+      "saldo_neto_sobre_matriculaciones_pct": 66.6667
     },
     {
       "COD_PROVINCIA": "TF",
       "provincia": "Santa Cruz de Tenerife",
-      "matriculaciones": 4693,
-      "salidas_interprovinciales": 623,
-      "entradas_interprovinciales": 1925,
-      "saldo_neto_entradas_menos_salidas": 1302,
-      "salidas_sobre_matriculaciones_pct": 13.2751,
-      "entradas_sobre_matriculaciones_pct": 41.0185,
-      "saldo_neto_sobre_matriculaciones_pct": 27.7434
+      "matriculaciones": 5242,
+      "salidas_interprovinciales": 698,
+      "entradas_interprovinciales": 2122,
+      "saldo_neto_entradas_menos_salidas": 1424,
+      "salidas_sobre_matriculaciones_pct": 13.3155,
+      "entradas_sobre_matriculaciones_pct": 40.4807,
+      "saldo_neto_sobre_matriculaciones_pct": 27.1652
     },
     {
       "COD_PROVINCIA": "GR",
       "provincia": "Granada",
-      "matriculaciones": 4187,
-      "salidas_interprovinciales": 725,
-      "entradas_interprovinciales": 2049,
-      "saldo_neto_entradas_menos_salidas": 1324,
-      "salidas_sobre_matriculaciones_pct": 17.3155,
-      "entradas_sobre_matriculaciones_pct": 48.9372,
-      "saldo_neto_sobre_matriculaciones_pct": 31.6217
+      "matriculaciones": 4684,
+      "salidas_interprovinciales": 800,
+      "entradas_interprovinciales": 2264,
+      "saldo_neto_entradas_menos_salidas": 1464,
+      "salidas_sobre_matriculaciones_pct": 17.0794,
+      "entradas_sobre_matriculaciones_pct": 48.3348,
+      "saldo_neto_sobre_matriculaciones_pct": 31.2553
     },
     {
       "COD_PROVINCIA": "SE",
       "provincia": "Sevilla",
-      "matriculaciones": 7254,
-      "salidas_interprovinciales": 2579,
-      "entradas_interprovinciales": 4033,
-      "saldo_neto_entradas_menos_salidas": 1454,
-      "salidas_sobre_matriculaciones_pct": 35.5528,
-      "entradas_sobre_matriculaciones_pct": 55.5969,
-      "saldo_neto_sobre_matriculaciones_pct": 20.0441
+      "matriculaciones": 8451,
+      "salidas_interprovinciales": 3030,
+      "entradas_interprovinciales": 4572,
+      "saldo_neto_entradas_menos_salidas": 1542,
+      "salidas_sobre_matriculaciones_pct": 35.8537,
+      "entradas_sobre_matriculaciones_pct": 54.1001,
+      "saldo_neto_sobre_matriculaciones_pct": 18.2464
     },
     {
       "COD_PROVINCIA": "A",
       "provincia": "Alicante/Alacant",
-      "matriculaciones": 9381,
-      "salidas_interprovinciales": 1030,
-      "entradas_interprovinciales": 2581,
-      "saldo_neto_entradas_menos_salidas": 1551,
-      "salidas_sobre_matriculaciones_pct": 10.9796,
-      "entradas_sobre_matriculaciones_pct": 27.5131,
-      "saldo_neto_sobre_matriculaciones_pct": 16.5334
+      "matriculaciones": 10420,
+      "salidas_interprovinciales": 1142,
+      "entradas_interprovinciales": 2864,
+      "saldo_neto_entradas_menos_salidas": 1722,
+      "salidas_sobre_matriculaciones_pct": 10.9597,
+      "entradas_sobre_matriculaciones_pct": 27.4856,
+      "saldo_neto_sobre_matriculaciones_pct": 16.5259
     },
     {
       "COD_PROVINCIA": "GI",
       "provincia": "Girona",
-      "matriculaciones": 3879,
-      "salidas_interprovinciales": 777,
-      "entradas_interprovinciales": 2655,
-      "saldo_neto_entradas_menos_salidas": 1878,
-      "salidas_sobre_matriculaciones_pct": 20.0309,
-      "entradas_sobre_matriculaciones_pct": 68.4455,
-      "saldo_neto_sobre_matriculaciones_pct": 48.4145
+      "matriculaciones": 4187,
+      "salidas_interprovinciales": 833,
+      "entradas_interprovinciales": 2863,
+      "saldo_neto_entradas_menos_salidas": 2030,
+      "salidas_sobre_matriculaciones_pct": 19.8949,
+      "entradas_sobre_matriculaciones_pct": 68.3783,
+      "saldo_neto_sobre_matriculaciones_pct": 48.4834
     },
     {
       "COD_PROVINCIA": "IB",
       "provincia": "Illes Balears",
-      "matriculaciones": 8739,
-      "salidas_interprovinciales": 261,
-      "entradas_interprovinciales": 2289,
-      "saldo_neto_entradas_menos_salidas": 2028,
-      "salidas_sobre_matriculaciones_pct": 2.9866,
-      "entradas_sobre_matriculaciones_pct": 26.1929,
-      "saldo_neto_sobre_matriculaciones_pct": 23.2063
+      "matriculaciones": 9563,
+      "salidas_interprovinciales": 274,
+      "entradas_interprovinciales": 2455,
+      "saldo_neto_entradas_menos_salidas": 2181,
+      "salidas_sobre_matriculaciones_pct": 2.8652,
+      "entradas_sobre_matriculaciones_pct": 25.6719,
+      "saldo_neto_sobre_matriculaciones_pct": 22.8067
     }
   ],
   "provincias_mayor_saldo_positivo": [
     {
       "COD_PROVINCIA": "IB",
       "provincia": "Illes Balears",
-      "matriculaciones": 8739,
-      "salidas_interprovinciales": 261,
-      "entradas_interprovinciales": 2289,
-      "saldo_neto_entradas_menos_salidas": 2028,
-      "salidas_sobre_matriculaciones_pct": 2.9866,
-      "entradas_sobre_matriculaciones_pct": 26.1929,
-      "saldo_neto_sobre_matriculaciones_pct": 23.2063
+      "matriculaciones": 9563,
+      "salidas_interprovinciales": 274,
+      "entradas_interprovinciales": 2455,
+      "saldo_neto_entradas_menos_salidas": 2181,
+      "salidas_sobre_matriculaciones_pct": 2.8652,
+      "entradas_sobre_matriculaciones_pct": 25.6719,
+      "saldo_neto_sobre_matriculaciones_pct": 22.8067
     },
     {
       "COD_PROVINCIA": "GI",
       "provincia": "Girona",
-      "matriculaciones": 3879,
-      "salidas_interprovinciales": 777,
-      "entradas_interprovinciales": 2655,
-      "saldo_neto_entradas_menos_salidas": 1878,
-      "salidas_sobre_matriculaciones_pct": 20.0309,
-      "entradas_sobre_matriculaciones_pct": 68.4455,
-      "saldo_neto_sobre_matriculaciones_pct": 48.4145
+      "matriculaciones": 4187,
+      "salidas_interprovinciales": 833,
+      "entradas_interprovinciales": 2863,
+      "saldo_neto_entradas_menos_salidas": 2030,
+      "salidas_sobre_matriculaciones_pct": 19.8949,
+      "entradas_sobre_matriculaciones_pct": 68.3783,
+      "saldo_neto_sobre_matriculaciones_pct": 48.4834
     },
     {
       "COD_PROVINCIA": "A",
       "provincia": "Alicante/Alacant",
-      "matriculaciones": 9381,
-      "salidas_interprovinciales": 1030,
-      "entradas_interprovinciales": 2581,
-      "saldo_neto_entradas_menos_salidas": 1551,
-      "salidas_sobre_matriculaciones_pct": 10.9796,
-      "entradas_sobre_matriculaciones_pct": 27.5131,
-      "saldo_neto_sobre_matriculaciones_pct": 16.5334
+      "matriculaciones": 10420,
+      "salidas_interprovinciales": 1142,
+      "entradas_interprovinciales": 2864,
+      "saldo_neto_entradas_menos_salidas": 1722,
+      "salidas_sobre_matriculaciones_pct": 10.9597,
+      "entradas_sobre_matriculaciones_pct": 27.4856,
+      "saldo_neto_sobre_matriculaciones_pct": 16.5259
     },
     {
       "COD_PROVINCIA": "SE",
       "provincia": "Sevilla",
-      "matriculaciones": 7254,
-      "salidas_interprovinciales": 2579,
-      "entradas_interprovinciales": 4033,
-      "saldo_neto_entradas_menos_salidas": 1454,
-      "salidas_sobre_matriculaciones_pct": 35.5528,
-      "entradas_sobre_matriculaciones_pct": 55.5969,
-      "saldo_neto_sobre_matriculaciones_pct": 20.0441
+      "matriculaciones": 8451,
+      "salidas_interprovinciales": 3030,
+      "entradas_interprovinciales": 4572,
+      "saldo_neto_entradas_menos_salidas": 1542,
+      "salidas_sobre_matriculaciones_pct": 35.8537,
+      "entradas_sobre_matriculaciones_pct": 54.1001,
+      "saldo_neto_sobre_matriculaciones_pct": 18.2464
     },
     {
       "COD_PROVINCIA": "GR",
       "provincia": "Granada",
-      "matriculaciones": 4187,
-      "salidas_interprovinciales": 725,
-      "entradas_interprovinciales": 2049,
-      "saldo_neto_entradas_menos_salidas": 1324,
-      "salidas_sobre_matriculaciones_pct": 17.3155,
-      "entradas_sobre_matriculaciones_pct": 48.9372,
-      "saldo_neto_sobre_matriculaciones_pct": 31.6217
+      "matriculaciones": 4684,
+      "salidas_interprovinciales": 800,
+      "entradas_interprovinciales": 2264,
+      "saldo_neto_entradas_menos_salidas": 1464,
+      "salidas_sobre_matriculaciones_pct": 17.0794,
+      "entradas_sobre_matriculaciones_pct": 48.3348,
+      "saldo_neto_sobre_matriculaciones_pct": 31.2553
     },
     {
       "COD_PROVINCIA": "TF",
       "provincia": "Santa Cruz de Tenerife",
-      "matriculaciones": 4693,
-      "salidas_interprovinciales": 623,
-      "entradas_interprovinciales": 1925,
-      "saldo_neto_entradas_menos_salidas": 1302,
-      "salidas_sobre_matriculaciones_pct": 13.2751,
-      "entradas_sobre_matriculaciones_pct": 41.0185,
-      "saldo_neto_sobre_matriculaciones_pct": 27.7434
+      "matriculaciones": 5242,
+      "salidas_interprovinciales": 698,
+      "entradas_interprovinciales": 2122,
+      "saldo_neto_entradas_menos_salidas": 1424,
+      "salidas_sobre_matriculaciones_pct": 13.3155,
+      "entradas_sobre_matriculaciones_pct": 40.4807,
+      "saldo_neto_sobre_matriculaciones_pct": 27.1652
     },
     {
       "COD_PROVINCIA": "AL",
       "provincia": "Almería",
-      "matriculaciones": 1864,
-      "salidas_interprovinciales": 145,
-      "entradas_interprovinciales": 1382,
-      "saldo_neto_entradas_menos_salidas": 1237,
-      "salidas_sobre_matriculaciones_pct": 7.779,
-      "entradas_sobre_matriculaciones_pct": 74.1416,
-      "saldo_neto_sobre_matriculaciones_pct": 66.3627
+      "matriculaciones": 2133,
+      "salidas_interprovinciales": 163,
+      "entradas_interprovinciales": 1585,
+      "saldo_neto_entradas_menos_salidas": 1422,
+      "salidas_sobre_matriculaciones_pct": 7.6418,
+      "entradas_sobre_matriculaciones_pct": 74.3085,
+      "saldo_neto_sobre_matriculaciones_pct": 66.6667
     },
     {
       "COD_PROVINCIA": "C",
       "provincia": "A Coruña",
-      "matriculaciones": 1521,
-      "salidas_interprovinciales": 285,
-      "entradas_interprovinciales": 1252,
-      "saldo_neto_entradas_menos_salidas": 967,
-      "salidas_sobre_matriculaciones_pct": 18.7377,
-      "entradas_sobre_matriculaciones_pct": 82.3143,
-      "saldo_neto_sobre_matriculaciones_pct": 63.5766
-    },
-    {
-      "COD_PROVINCIA": "CS",
-      "provincia": "Castellón/Castelló",
-      "matriculaciones": 1566,
-      "salidas_interprovinciales": 138,
-      "entradas_interprovinciales": 918,
-      "saldo_neto_entradas_menos_salidas": 780,
-      "salidas_sobre_matriculaciones_pct": 8.8123,
-      "entradas_sobre_matriculaciones_pct": 58.6207,
-      "saldo_neto_sobre_matriculaciones_pct": 49.8084
+      "matriculaciones": 1694,
+      "salidas_interprovinciales": 311,
+      "entradas_interprovinciales": 1381,
+      "saldo_neto_entradas_menos_salidas": 1070,
+      "salidas_sobre_matriculaciones_pct": 18.3589,
+      "entradas_sobre_matriculaciones_pct": 81.523,
+      "saldo_neto_sobre_matriculaciones_pct": 63.1641
     },
     {
       "COD_PROVINCIA": "TO",
       "provincia": "Toledo",
-      "matriculaciones": 1042,
-      "salidas_interprovinciales": 365,
-      "entradas_interprovinciales": 1128,
-      "saldo_neto_entradas_menos_salidas": 763,
-      "salidas_sobre_matriculaciones_pct": 35.0288,
-      "entradas_sobre_matriculaciones_pct": 108.2534,
-      "saldo_neto_sobre_matriculaciones_pct": 73.2246
+      "matriculaciones": 1165,
+      "salidas_interprovinciales": 415,
+      "entradas_interprovinciales": 1273,
+      "saldo_neto_entradas_menos_salidas": 858,
+      "salidas_sobre_matriculaciones_pct": 35.6223,
+      "entradas_sobre_matriculaciones_pct": 109.2704,
+      "saldo_neto_sobre_matriculaciones_pct": 73.6481
+    },
+    {
+      "COD_PROVINCIA": "CS",
+      "provincia": "Castellón/Castelló",
+      "matriculaciones": 1757,
+      "salidas_interprovinciales": 153,
+      "entradas_interprovinciales": 1001,
+      "saldo_neto_entradas_menos_salidas": 848,
+      "salidas_sobre_matriculaciones_pct": 8.708,
+      "entradas_sobre_matriculaciones_pct": 56.9721,
+      "saldo_neto_sobre_matriculaciones_pct": 48.2641
     }
   ],
   "provincias_mayor_saldo_negativo": [
     {
       "COD_PROVINCIA": "SG",
       "provincia": "Segovia",
-      "matriculaciones": 8908,
-      "salidas_interprovinciales": 8734,
-      "entradas_interprovinciales": 170,
-      "saldo_neto_entradas_menos_salidas": -8564,
-      "salidas_sobre_matriculaciones_pct": 98.0467,
-      "entradas_sobre_matriculaciones_pct": 1.9084,
-      "saldo_neto_sobre_matriculaciones_pct": -96.1383
+      "matriculaciones": 9964,
+      "salidas_interprovinciales": 9783,
+      "entradas_interprovinciales": 186,
+      "saldo_neto_entradas_menos_salidas": -9597,
+      "salidas_sobre_matriculaciones_pct": 98.1835,
+      "entradas_sobre_matriculaciones_pct": 1.8667,
+      "saldo_neto_sobre_matriculaciones_pct": -96.3167
     },
     {
       "COD_PROVINCIA": "CO",
       "provincia": "Córdoba",
-      "matriculaciones": 7109,
-      "salidas_interprovinciales": 4703,
-      "entradas_interprovinciales": 695,
-      "saldo_neto_entradas_menos_salidas": -4008,
-      "salidas_sobre_matriculaciones_pct": 66.1556,
-      "entradas_sobre_matriculaciones_pct": 9.7763,
-      "saldo_neto_sobre_matriculaciones_pct": -56.3792
+      "matriculaciones": 8071,
+      "salidas_interprovinciales": 5351,
+      "entradas_interprovinciales": 784,
+      "saldo_neto_entradas_menos_salidas": -4567,
+      "salidas_sobre_matriculaciones_pct": 66.2991,
+      "entradas_sobre_matriculaciones_pct": 9.7138,
+      "saldo_neto_sobre_matriculaciones_pct": -56.5853
     },
     {
       "COD_PROVINCIA": "B",
       "provincia": "Barcelona",
-      "matriculaciones": 38180,
-      "salidas_interprovinciales": 5841,
-      "entradas_interprovinciales": 3702,
-      "saldo_neto_entradas_menos_salidas": -2139,
-      "salidas_sobre_matriculaciones_pct": 15.2986,
-      "entradas_sobre_matriculaciones_pct": 9.6962,
-      "saldo_neto_sobre_matriculaciones_pct": -5.6024
+      "matriculaciones": 42586,
+      "salidas_interprovinciales": 6351,
+      "entradas_interprovinciales": 4054,
+      "saldo_neto_entradas_menos_salidas": -2297,
+      "salidas_sobre_matriculaciones_pct": 14.9134,
+      "entradas_sobre_matriculaciones_pct": 9.5196,
+      "saldo_neto_sobre_matriculaciones_pct": -5.3938
     },
     {
       "COD_PROVINCIA": "M",
       "provincia": "Madrid",
-      "matriculaciones": 25351,
-      "salidas_interprovinciales": 12183,
-      "entradas_interprovinciales": 10334,
-      "saldo_neto_entradas_menos_salidas": -1849,
-      "salidas_sobre_matriculaciones_pct": 48.0573,
-      "entradas_sobre_matriculaciones_pct": 40.7637,
-      "saldo_neto_sobre_matriculaciones_pct": -7.2936
+      "matriculaciones": 28086,
+      "salidas_interprovinciales": 13312,
+      "entradas_interprovinciales": 11482,
+      "saldo_neto_entradas_menos_salidas": -1830,
+      "salidas_sobre_matriculaciones_pct": 47.3973,
+      "entradas_sobre_matriculaciones_pct": 40.8816,
+      "saldo_neto_sobre_matriculaciones_pct": -6.5157
     },
     {
       "COD_PROVINCIA": "GC",
       "provincia": "Las Palmas",
-      "matriculaciones": 6509,
-      "salidas_interprovinciales": 1908,
-      "entradas_interprovinciales": 634,
-      "saldo_neto_entradas_menos_salidas": -1274,
-      "salidas_sobre_matriculaciones_pct": 29.3133,
-      "entradas_sobre_matriculaciones_pct": 9.7404,
-      "saldo_neto_sobre_matriculaciones_pct": -19.5729
+      "matriculaciones": 7292,
+      "salidas_interprovinciales": 2105,
+      "entradas_interprovinciales": 712,
+      "saldo_neto_entradas_menos_salidas": -1393,
+      "salidas_sobre_matriculaciones_pct": 28.8673,
+      "entradas_sobre_matriculaciones_pct": 9.7641,
+      "saldo_neto_sobre_matriculaciones_pct": -19.1031
     },
     {
       "COD_PROVINCIA": "MU",
       "provincia": "Murcia",
-      "matriculaciones": 6813,
-      "salidas_interprovinciales": 1599,
-      "entradas_interprovinciales": 877,
-      "saldo_neto_entradas_menos_salidas": -722,
+      "matriculaciones": 7695,
+      "salidas_interprovinciales": 1806,
+      "entradas_interprovinciales": 964,
+      "saldo_neto_entradas_menos_salidas": -842,
       "salidas_sobre_matriculaciones_pct": 23.4698,
-      "entradas_sobre_matriculaciones_pct": 12.8724,
-      "saldo_neto_sobre_matriculaciones_pct": -10.5974
+      "entradas_sobre_matriculaciones_pct": 12.5276,
+      "saldo_neto_sobre_matriculaciones_pct": -10.9422
     },
     {
       "COD_PROVINCIA": "J",
       "provincia": "Jaén",
-      "matriculaciones": 2931,
-      "salidas_interprovinciales": 1327,
-      "entradas_interprovinciales": 616,
-      "saldo_neto_entradas_menos_salidas": -711,
-      "salidas_sobre_matriculaciones_pct": 45.2747,
-      "entradas_sobre_matriculaciones_pct": 21.0167,
-      "saldo_neto_sobre_matriculaciones_pct": -24.2579
+      "matriculaciones": 3263,
+      "salidas_interprovinciales": 1481,
+      "entradas_interprovinciales": 685,
+      "saldo_neto_entradas_menos_salidas": -796,
+      "salidas_sobre_matriculaciones_pct": 45.3877,
+      "entradas_sobre_matriculaciones_pct": 20.993,
+      "saldo_neto_sobre_matriculaciones_pct": -24.3947
     },
     {
       "COD_PROVINCIA": "Z",
       "provincia": "Zaragoza",
-      "matriculaciones": 3901,
-      "salidas_interprovinciales": 1006,
-      "entradas_interprovinciales": 467,
-      "saldo_neto_entradas_menos_salidas": -539,
-      "salidas_sobre_matriculaciones_pct": 25.7883,
-      "entradas_sobre_matriculaciones_pct": 11.9713,
-      "saldo_neto_sobre_matriculaciones_pct": -13.817
+      "matriculaciones": 4416,
+      "salidas_interprovinciales": 1123,
+      "entradas_interprovinciales": 521,
+      "saldo_neto_entradas_menos_salidas": -602,
+      "salidas_sobre_matriculaciones_pct": 25.4303,
+      "entradas_sobre_matriculaciones_pct": 11.798,
+      "saldo_neto_sobre_matriculaciones_pct": -13.6322
     },
     {
       "COD_PROVINCIA": "PO",
       "provincia": "Pontevedra",
-      "matriculaciones": 3848,
-      "salidas_interprovinciales": 1307,
-      "entradas_interprovinciales": 790,
-      "saldo_neto_entradas_menos_salidas": -517,
-      "salidas_sobre_matriculaciones_pct": 33.9657,
-      "entradas_sobre_matriculaciones_pct": 20.5301,
-      "saldo_neto_sobre_matriculaciones_pct": -13.4356
+      "matriculaciones": 4237,
+      "salidas_interprovinciales": 1459,
+      "entradas_interprovinciales": 863,
+      "saldo_neto_entradas_menos_salidas": -596,
+      "salidas_sobre_matriculaciones_pct": 34.4347,
+      "entradas_sobre_matriculaciones_pct": 20.3682,
+      "saldo_neto_sobre_matriculaciones_pct": -14.0666
     },
     {
       "COD_PROVINCIA": "V",
       "provincia": "Valencia/València",
-      "matriculaciones": 12128,
-      "salidas_interprovinciales": 1957,
-      "entradas_interprovinciales": 1654,
-      "saldo_neto_entradas_menos_salidas": -303,
-      "salidas_sobre_matriculaciones_pct": 16.1362,
-      "entradas_sobre_matriculaciones_pct": 13.6379,
-      "saldo_neto_sobre_matriculaciones_pct": -2.4984
+      "matriculaciones": 13507,
+      "salidas_interprovinciales": 2184,
+      "entradas_interprovinciales": 1816,
+      "saldo_neto_entradas_menos_salidas": -368,
+      "salidas_sobre_matriculaciones_pct": 16.1694,
+      "entradas_sobre_matriculaciones_pct": 13.4449,
+      "saldo_neto_sobre_matriculaciones_pct": -2.7245
     }
   ],
   "segovia": {
-    "matriculaciones": 8908,
-    "domicilio_segovia": 174,
-    "domicilio_otra_provincia": 8734,
-    "domicilio_madrid": 6727,
-    "porcentaje_domicilio_externo_sobre_conocidos": 98.0467,
-    "porcentaje_domicilio_madrid_sobre_total": 75.5164,
+    "matriculaciones": 9964,
+    "domicilio_segovia": 181,
+    "domicilio_otra_provincia": 9783,
+    "domicilio_madrid": 7573,
+    "porcentaje_domicilio_externo_sobre_conocidos": 98.1835,
+    "porcentaje_domicilio_madrid_sobre_total": 76.0036,
     "destinos": [
       {
         "COD_PROVINCIA_VEH": "M",
         "provincia": "Madrid",
-        "recuento": 6727
+        "recuento": 7573
       },
       {
         "COD_PROVINCIA_VEH": "B",
         "provincia": "Barcelona",
-        "recuento": 312
+        "recuento": 342
       },
       {
         "COD_PROVINCIA_VEH": "TO",
         "provincia": "Toledo",
-        "recuento": 182
+        "recuento": 204
       },
       {
         "COD_PROVINCIA_VEH": "SG",
         "provincia": "Segovia",
-        "recuento": 174
+        "recuento": 181
       },
       {
         "COD_PROVINCIA_VEH": "V",
         "provincia": "Valencia/València",
-        "recuento": 111
+        "recuento": 125
       },
       {
         "COD_PROVINCIA_VEH": "A",
         "provincia": "Alicante/Alacant",
-        "recuento": 97
+        "recuento": 105
       },
       {
         "COD_PROVINCIA_VEH": "GU",
         "provincia": "Guadalajara",
-        "recuento": 90
+        "recuento": 99
       },
       {
         "COD_PROVINCIA_VEH": "MA",
         "provincia": "Málaga",
-        "recuento": 88
+        "recuento": 99
       },
       {
         "COD_PROVINCIA_VEH": "AV",
         "provincia": "Ávila",
-        "recuento": 71
+        "recuento": 77
       },
       {
         "COD_PROVINCIA_VEH": "SE",
         "provincia": "Sevilla",
-        "recuento": 65
+        "recuento": 73
       },
       {
         "COD_PROVINCIA_VEH": "Z",
         "provincia": "Zaragoza",
-        "recuento": 62
+        "recuento": 69
       },
       {
         "COD_PROVINCIA_VEH": "IB",
         "provincia": "Illes Balears",
-        "recuento": 53
+        "recuento": 61
       },
       {
         "COD_PROVINCIA_VEH": "MU",
         "provincia": "Murcia",
-        "recuento": 50
+        "recuento": 53
       },
       {
         "COD_PROVINCIA_VEH": "BI",
         "provincia": "Bizkaia",
-        "recuento": 43
+        "recuento": 47
       },
       {
         "COD_PROVINCIA_VEH": "C",
         "provincia": "A Coruña",
-        "recuento": 40
+        "recuento": 45
       },
       {
         "COD_PROVINCIA_VEH": "CA",
         "provincia": "Cádiz",
-        "recuento": 40
+        "recuento": 45
       },
       {
         "COD_PROVINCIA_VEH": "CR",
         "provincia": "Ciudad Real",
-        "recuento": 40
+        "recuento": 44
       },
       {
         "COD_PROVINCIA_VEH": "VA",
         "provincia": "Valladolid",
-        "recuento": 38
+        "recuento": 41
       },
       {
         "COD_PROVINCIA_VEH": "PO",
         "provincia": "Pontevedra",
-        "recuento": 37
+        "recuento": 39
       },
       {
-        "COD_PROVINCIA_VEH": "CS",
-        "provincia": "Castellón/Castelló",
-        "recuento": 33
+        "COD_PROVINCIA_VEH": "GR",
+        "provincia": "Granada",
+        "recuento": 38
       }
     ],
     "evolucion_mensual": [
@@ -1770,6 +1779,15 @@
         "domicilio_otras_provincias": 251,
         "domicilio_no_informado": 0,
         "porcentaje_madrid": 79.144
+      },
+      {
+        "periodo": "2026-10",
+        "matriculaciones": 1056,
+        "domicilio_segovia": 7,
+        "domicilio_madrid": 846,
+        "domicilio_otras_provincias": 203,
+        "domicilio_no_informado": 0,
+        "porcentaje_madrid": 80.1136
       }
     ]
   },

@@ -8,7 +8,8 @@
     "2026-06",
     "2026-07",
     "2026-08",
-    "2026-09"
+    "2026-09",
+    "2026-10"
   ],
   "criterio_geografico": {
     "matriculacion": "Provincia de matriculación del vehículo nuevo (COD_PROVINCIA_MAT).",
@@ -16,22 +17,22 @@
   },
   "totales_y_concentracion": {
     "matriculacion": {
-      "total": 219565,
+      "total": 244618,
       "provincias": 52,
-      "top_5_recuento": 100998,
-      "top_5_porcentaje": 45.9991,
-      "top_10_recuento": 142389,
-      "top_10_porcentaje": 64.8505
+      "top_5_recuento": 112182,
+      "top_5_porcentaje": 45.8601,
+      "top_10_recuento": 158651,
+      "top_10_porcentaje": 64.8566
     },
     "domicilio_vehiculo": {
-      "total": 3078,
-      "provincias": 51,
-      "top_5_recuento": 1451,
-      "top_5_porcentaje": 47.141,
-      "top_10_recuento": 1983,
-      "top_10_porcentaje": 64.425
+      "total": 3421,
+      "provincias": 52,
+      "top_5_recuento": 1601,
+      "top_5_porcentaje": 46.7992,
+      "top_10_recuento": 2190,
+      "top_10_porcentaje": 64.0164
     }
   },
   "codigos_provinciales_vacios": [],
-  "nota_interpretacion": "Los recuentos de nuevos y usados usan ámbitos geográficos distintos. Los usados representan cambios de titularidad y no todas las compraventas."
+  "nota_interpretacion": "Los recuentos de nuevos y usados usan ámbitos geográficos distintos. Los registros Usado de este agregado son matriculaciones de vehículos con IND_NUEVO_USADO=U (trámite 1); no representan transferencias ni el total de cambios de titularidad. Las transferencias se identifican por separado mediante CLAVE_TRAMITE=2 y su COD_POSESION."
 }

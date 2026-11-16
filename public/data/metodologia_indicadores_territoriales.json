@@ -8,7 +8,8 @@
     "2026-06",
     "2026-07",
     "2026-08",
-    "2026-09"
+    "2026-09",
+    "2026-10"
   ],
   "ambito": "Motocicletas nuevas (COD_TIPO 50 y 51), provincia de matriculación",
   "poblacion": {
@@ -28,7 +29,14 @@
   },
   "alerta": {
     "umbral_pct": 25.0,
-    "criterio": "Marca REVISAR cuando las matriculaciones acumuladas igualan o superan el 25% del parque de referencia. Es un umbral operativo de revisión, no una anomalía confirmada ni una tasa de renovación."
+    "criterio": "Marca REVISAR cuando las matriculaciones acumuladas igualan o superan el 25% del parque de referencia, salvo excepciones contextuales documentadas. Es un umbral operativo de revisión, no una anomalía confirmada ni una tasa de renovación.",
+    "excepciones_contextuales": [
+      {
+        "COD_PROVINCIA": "SG",
+        "provincia": "Segovia",
+        "motivo": "Flujo de flotas ya comprobado: empresas matriculan en Segovia y destinan los vehículos a otras provincias. Se mantienen íntegros los recuentos e indicadores; no se genera alerta activa."
+      }
+    ]
   },
   "limitaciones": [
     "Los nuevos se asignan por provincia de matriculación; el parque se asigna por provincia del parque registrado por la DGT.",

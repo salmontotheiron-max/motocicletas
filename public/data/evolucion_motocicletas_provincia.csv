@@ -855,3 +855,100 @@
 2026-09,matriculacion,ZA,Zamora,13,0.0465
 2026-09,matriculacion,Z,Zaragoza,585,2.0932
 2026-09,matriculacion,AV,Ávila,6,0.0215
+2026-10,domicilio_vehiculo,C,A Coruña,4,1.1662
+2026-10,domicilio_vehiculo,AB,Albacete,1,0.2915
+2026-10,domicilio_vehiculo,A,Alicante/Alacant,43,12.5364
+2026-10,domicilio_vehiculo,AL,Almería,10,2.9155
+2026-10,domicilio_vehiculo,VI,Araba/Álava,1,0.2915
+2026-10,domicilio_vehiculo,BA,Badajoz,2,0.5831
+2026-10,domicilio_vehiculo,B,Barcelona,32,9.3294
+2026-10,domicilio_vehiculo,BI,Bizkaia,2,0.5831
+2026-10,domicilio_vehiculo,BU,Burgos,2,0.5831
+2026-10,domicilio_vehiculo,S,Cantabria,6,1.7493
+2026-10,domicilio_vehiculo,CS,Castellón/Castelló,3,0.8746
+2026-10,domicilio_vehiculo,CR,Ciudad Real,3,0.8746
+2026-10,domicilio_vehiculo,CU,Cuenca,2,0.5831
+2026-10,domicilio_vehiculo,CC,Cáceres,4,1.1662
+2026-10,domicilio_vehiculo,CA,Cádiz,6,1.7493
+2026-10,domicilio_vehiculo,CO,Córdoba,4,1.1662
+2026-10,domicilio_vehiculo,SS,Gipuzkoa,5,1.4577
+2026-10,domicilio_vehiculo,GI,Girona,5,1.4577
+2026-10,domicilio_vehiculo,GR,Granada,9,2.6239
+2026-10,domicilio_vehiculo,GU,Guadalajara,1,0.2915
+2026-10,domicilio_vehiculo,H,Huelva,5,1.4577
+2026-10,domicilio_vehiculo,HU,Huesca,3,0.8746
+2026-10,domicilio_vehiculo,IB,Illes Balears,15,4.3732
+2026-10,domicilio_vehiculo,J,Jaén,2,0.5831
+2026-10,domicilio_vehiculo,LO,La Rioja,3,0.8746
+2026-10,domicilio_vehiculo,GC,Las Palmas,2,0.5831
+2026-10,domicilio_vehiculo,LE,León,5,1.4577
+2026-10,domicilio_vehiculo,L,Lleida,1,0.2915
+2026-10,domicilio_vehiculo,LU,Lugo,7,2.0408
+2026-10,domicilio_vehiculo,M,Madrid,33,9.621
+2026-10,domicilio_vehiculo,ML,Melilla,2,0.5831
+2026-10,domicilio_vehiculo,MU,Murcia,22,6.414
+2026-10,domicilio_vehiculo,MA,Málaga,20,5.8309
+2026-10,domicilio_vehiculo,NA,Navarra,6,1.7493
+2026-10,domicilio_vehiculo,OU,Ourense,1,0.2915
+2026-10,domicilio_vehiculo,PO,Pontevedra,10,2.9155
+2026-10,domicilio_vehiculo,SA,Salamanca,3,0.8746
+2026-10,domicilio_vehiculo,TF,Santa Cruz de Tenerife,13,3.7901
+2026-10,domicilio_vehiculo,SE,Sevilla,9,2.6239
+2026-10,domicilio_vehiculo,T,Tarragona,9,2.6239
+2026-10,domicilio_vehiculo,TE,Teruel,1,0.2915
+2026-10,domicilio_vehiculo,TO,Toledo,7,2.0408
+2026-10,domicilio_vehiculo,V,Valencia/València,14,4.0816
+2026-10,domicilio_vehiculo,VA,Valladolid,2,0.5831
+2026-10,domicilio_vehiculo,Z,Zaragoza,3,0.8746
+2026-10,matriculacion,C,A Coruña,173,0.6905
+2026-10,matriculacion,AB,Albacete,178,0.7105
+2026-10,matriculacion,A,Alicante/Alacant,1039,4.1472
+2026-10,matriculacion,AL,Almería,269,1.0737
+2026-10,matriculacion,VI,Araba/Álava,111,0.4431
+2026-10,matriculacion,O,Asturias,407,1.6246
+2026-10,matriculacion,BA,Badajoz,156,0.6227
+2026-10,matriculacion,B,Barcelona,4406,17.5867
+2026-10,matriculacion,BI,Bizkaia,319,1.2733
+2026-10,matriculacion,BU,Burgos,63,0.2515
+2026-10,matriculacion,S,Cantabria,210,0.8382
+2026-10,matriculacion,CS,Castellón/Castelló,191,0.7624
+2026-10,matriculacion,CE,Ceuta,95,0.3792
+2026-10,matriculacion,CR,Ciudad Real,84,0.3353
+2026-10,matriculacion,CU,Cuenca,11,0.0439
+2026-10,matriculacion,CC,Cáceres,87,0.3473
+2026-10,matriculacion,CA,Cádiz,1076,4.2949
+2026-10,matriculacion,CO,Córdoba,962,3.8399
+2026-10,matriculacion,SS,Gipuzkoa,248,0.9899
+2026-10,matriculacion,GI,Girona,308,1.2294
+2026-10,matriculacion,GR,Granada,497,1.9838
+2026-10,matriculacion,GU,Guadalajara,66,0.2634
+2026-10,matriculacion,H,Huelva,240,0.958
+2026-10,matriculacion,HU,Huesca,28,0.1118
+2026-10,matriculacion,IB,Illes Balears,824,3.289
+2026-10,matriculacion,J,Jaén,332,1.3252
+2026-10,matriculacion,LO,La Rioja,66,0.2634
+2026-10,matriculacion,GC,Las Palmas,783,3.1254
+2026-10,matriculacion,LE,León,87,0.3473
+2026-10,matriculacion,L,Lleida,116,0.463
+2026-10,matriculacion,LU,Lugo,47,0.1876
+2026-10,matriculacion,M,Madrid,2735,10.9169
+2026-10,matriculacion,ML,Melilla,88,0.3513
+2026-10,matriculacion,MU,Murcia,882,3.5205
+2026-10,matriculacion,MA,Málaga,1588,6.3386
+2026-10,matriculacion,NA,Navarra,197,0.7863
+2026-10,matriculacion,OU,Ourense,29,0.1158
+2026-10,matriculacion,P,Palencia,22,0.0878
+2026-10,matriculacion,PO,Pontevedra,389,1.5527
+2026-10,matriculacion,SA,Salamanca,61,0.2435
+2026-10,matriculacion,TF,Santa Cruz de Tenerife,549,2.1914
+2026-10,matriculacion,SG,Segovia,1056,4.2151
+2026-10,matriculacion,SE,Sevilla,1197,4.7779
+2026-10,matriculacion,SO,Soria,10,0.0399
+2026-10,matriculacion,T,Tarragona,507,2.0237
+2026-10,matriculacion,TE,Teruel,45,0.1796
+2026-10,matriculacion,TO,Toledo,123,0.491
+2026-10,matriculacion,V,Valencia/València,1379,5.5043
+2026-10,matriculacion,VA,Valladolid,186,0.7424
+2026-10,matriculacion,ZA,Zamora,14,0.0559
+2026-10,matriculacion,Z,Zaragoza,515,2.0556
+2026-10,matriculacion,AV,Ávila,2,0.008

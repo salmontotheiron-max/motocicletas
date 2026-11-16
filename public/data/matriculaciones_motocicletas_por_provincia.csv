@@ -965,3 +965,112 @@
 2026-09,matriculacion,VI,Araba/Álava,51,Nuevo,1
 2026-09,matriculacion,Z,Zaragoza,50,Nuevo,585
 2026-09,matriculacion,ZA,Zamora,50,Nuevo,13
+2026-10,domicilio_vehiculo,A,Alicante/Alacant,50,Usado,43
+2026-10,domicilio_vehiculo,AB,Albacete,50,Usado,1
+2026-10,domicilio_vehiculo,AL,Almería,50,Usado,10
+2026-10,domicilio_vehiculo,B,Barcelona,50,Usado,30
+2026-10,domicilio_vehiculo,B,Barcelona,51,Usado,2
+2026-10,domicilio_vehiculo,BA,Badajoz,50,Usado,2
+2026-10,domicilio_vehiculo,BI,Bizkaia,50,Usado,2
+2026-10,domicilio_vehiculo,BU,Burgos,50,Usado,2
+2026-10,domicilio_vehiculo,C,A Coruña,50,Usado,4
+2026-10,domicilio_vehiculo,CA,Cádiz,50,Usado,6
+2026-10,domicilio_vehiculo,CC,Cáceres,50,Usado,4
+2026-10,domicilio_vehiculo,CO,Córdoba,50,Usado,4
+2026-10,domicilio_vehiculo,CR,Ciudad Real,50,Usado,3
+2026-10,domicilio_vehiculo,CS,Castellón/Castelló,50,Usado,3
+2026-10,domicilio_vehiculo,CU,Cuenca,50,Usado,2
+2026-10,domicilio_vehiculo,GC,Las Palmas,50,Usado,2
+2026-10,domicilio_vehiculo,GI,Girona,50,Usado,5
+2026-10,domicilio_vehiculo,GR,Granada,50,Usado,9
+2026-10,domicilio_vehiculo,GU,Guadalajara,50,Usado,1
+2026-10,domicilio_vehiculo,H,Huelva,50,Usado,5
+2026-10,domicilio_vehiculo,HU,Huesca,50,Usado,3
+2026-10,domicilio_vehiculo,IB,Illes Balears,50,Usado,15
+2026-10,domicilio_vehiculo,J,Jaén,50,Usado,2
+2026-10,domicilio_vehiculo,L,Lleida,50,Usado,1
+2026-10,domicilio_vehiculo,LE,León,50,Usado,5
+2026-10,domicilio_vehiculo,LO,La Rioja,50,Usado,3
+2026-10,domicilio_vehiculo,LU,Lugo,50,Usado,7
+2026-10,domicilio_vehiculo,M,Madrid,50,Usado,33
+2026-10,domicilio_vehiculo,MA,Málaga,50,Usado,20
+2026-10,domicilio_vehiculo,ML,Melilla,50,Usado,2
+2026-10,domicilio_vehiculo,MU,Murcia,50,Usado,22
+2026-10,domicilio_vehiculo,NA,Navarra,50,Usado,6
+2026-10,domicilio_vehiculo,OU,Ourense,50,Usado,1
+2026-10,domicilio_vehiculo,PO,Pontevedra,50,Usado,10
+2026-10,domicilio_vehiculo,S,Cantabria,50,Usado,6
+2026-10,domicilio_vehiculo,SA,Salamanca,50,Usado,3
+2026-10,domicilio_vehiculo,SE,Sevilla,50,Usado,8
+2026-10,domicilio_vehiculo,SE,Sevilla,51,Usado,1
+2026-10,domicilio_vehiculo,SS,Gipuzkoa,50,Usado,3
+2026-10,domicilio_vehiculo,SS,Gipuzkoa,51,Usado,2
+2026-10,domicilio_vehiculo,T,Tarragona,50,Usado,9
+2026-10,domicilio_vehiculo,TE,Teruel,50,Usado,1
+2026-10,domicilio_vehiculo,TF,Santa Cruz de Tenerife,50,Usado,13
+2026-10,domicilio_vehiculo,TO,Toledo,50,Usado,7
+2026-10,domicilio_vehiculo,V,Valencia/València,50,Usado,13
+2026-10,domicilio_vehiculo,V,Valencia/València,51,Usado,1
+2026-10,domicilio_vehiculo,VA,Valladolid,50,Usado,2
+2026-10,domicilio_vehiculo,VI,Araba/Álava,50,Usado,1
+2026-10,domicilio_vehiculo,Z,Zaragoza,50,Usado,2
+2026-10,domicilio_vehiculo,Z,Zaragoza,51,Usado,1
+2026-10,matriculacion,A,Alicante/Alacant,50,Nuevo,1027
+2026-10,matriculacion,A,Alicante/Alacant,51,Nuevo,12
+2026-10,matriculacion,AB,Albacete,50,Nuevo,178
+2026-10,matriculacion,AL,Almería,50,Nuevo,269
+2026-10,matriculacion,AV,Ávila,50,Nuevo,2
+2026-10,matriculacion,B,Barcelona,50,Nuevo,4406
+2026-10,matriculacion,BA,Badajoz,50,Nuevo,156
+2026-10,matriculacion,BI,Bizkaia,50,Nuevo,318
+2026-10,matriculacion,BI,Bizkaia,51,Nuevo,1
+2026-10,matriculacion,BU,Burgos,50,Nuevo,63
+2026-10,matriculacion,C,A Coruña,50,Nuevo,173
+2026-10,matriculacion,CA,Cádiz,50,Nuevo,1076
+2026-10,matriculacion,CC,Cáceres,50,Nuevo,87
+2026-10,matriculacion,CE,Ceuta,50,Nuevo,95
+2026-10,matriculacion,CO,Córdoba,50,Nuevo,962
+2026-10,matriculacion,CR,Ciudad Real,50,Nuevo,84
+2026-10,matriculacion,CS,Castellón/Castelló,50,Nuevo,190
+2026-10,matriculacion,CS,Castellón/Castelló,51,Nuevo,1
+2026-10,matriculacion,CU,Cuenca,50,Nuevo,11
+2026-10,matriculacion,GC,Las Palmas,50,Nuevo,783
+2026-10,matriculacion,GI,Girona,50,Nuevo,308
+2026-10,matriculacion,GR,Granada,50,Nuevo,497
+2026-10,matriculacion,GU,Guadalajara,50,Nuevo,66
+2026-10,matriculacion,H,Huelva,50,Nuevo,240
+2026-10,matriculacion,HU,Huesca,50,Nuevo,28
+2026-10,matriculacion,IB,Illes Balears,50,Nuevo,824
+2026-10,matriculacion,J,Jaén,50,Nuevo,332
+2026-10,matriculacion,L,Lleida,50,Nuevo,116
+2026-10,matriculacion,LE,León,50,Nuevo,87
+2026-10,matriculacion,LO,La Rioja,50,Nuevo,66
+2026-10,matriculacion,LU,Lugo,50,Nuevo,47
+2026-10,matriculacion,M,Madrid,50,Nuevo,2656
+2026-10,matriculacion,M,Madrid,51,Nuevo,79
+2026-10,matriculacion,MA,Málaga,50,Nuevo,1588
+2026-10,matriculacion,ML,Melilla,50,Nuevo,88
+2026-10,matriculacion,MU,Murcia,50,Nuevo,882
+2026-10,matriculacion,NA,Navarra,50,Nuevo,197
+2026-10,matriculacion,O,Asturias,50,Nuevo,407
+2026-10,matriculacion,OU,Ourense,50,Nuevo,29
+2026-10,matriculacion,P,Palencia,50,Nuevo,22
+2026-10,matriculacion,PO,Pontevedra,50,Nuevo,388
+2026-10,matriculacion,PO,Pontevedra,51,Nuevo,1
+2026-10,matriculacion,S,Cantabria,50,Nuevo,210
+2026-10,matriculacion,SA,Salamanca,50,Nuevo,61
+2026-10,matriculacion,SE,Sevilla,50,Nuevo,1197
+2026-10,matriculacion,SG,Segovia,50,Nuevo,1056
+2026-10,matriculacion,SO,Soria,50,Nuevo,10
+2026-10,matriculacion,SS,Gipuzkoa,50,Nuevo,248
+2026-10,matriculacion,T,Tarragona,50,Nuevo,507
+2026-10,matriculacion,TE,Teruel,50,Nuevo,45
+2026-10,matriculacion,TF,Santa Cruz de Tenerife,50,Nuevo,549
+2026-10,matriculacion,TO,Toledo,50,Nuevo,123
+2026-10,matriculacion,V,Valencia/València,50,Nuevo,1371
+2026-10,matriculacion,V,Valencia/València,51,Nuevo,8
+2026-10,matriculacion,VA,Valladolid,50,Nuevo,185
+2026-10,matriculacion,VA,Valladolid,51,Nuevo,1
+2026-10,matriculacion,VI,Araba/Álava,50,Nuevo,111
+2026-10,matriculacion,Z,Zaragoza,50,Nuevo,515
+2026-10,matriculacion,ZA,Zamora,50,Nuevo,14

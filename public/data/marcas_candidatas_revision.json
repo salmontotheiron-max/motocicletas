@@ -21,17 +21,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "3PLUSCOCO",
-          "recuento": 27
+          "recuento": 29
         }
       ],
-      "recuento_nuevas_matriculaciones": 27,
+      "recuento_nuevas_matriculaciones": 29,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 22,
+        "90": 24,
         "91": 5
       },
       "coincidencias_inventario": [],
@@ -45,10 +46,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "AIXAM",
-          "recuento": 112
+          "recuento": 123
         }
       ],
-      "recuento_nuevas_matriculaciones": 112,
+      "recuento_nuevas_matriculaciones": 123,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -58,10 +59,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 112
+        "90": 123
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -74,10 +76,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "AJP",
-          "recuento": 62
+          "recuento": 70
         }
       ],
-      "recuento_nuevas_matriculaciones": 62,
+      "recuento_nuevas_matriculaciones": 70,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -87,10 +89,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 62
+        "50": 70
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -103,20 +106,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "ALPINA DI RENANIA",
-          "recuento": 8
+          "recuento": 9
         }
       ],
-      "recuento_nuevas_matriculaciones": 8,
+      "recuento_nuevas_matriculaciones": 9,
       "periodos_observados": [
         "2026-01",
         "2026-03",
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 8
+        "50": 9
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -129,10 +133,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ANDES",
-          "recuento": 20
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 20,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -141,10 +145,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 20
+        "50": 21
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -157,10 +162,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "APRILIA",
-          "recuento": 3463
+          "recuento": 3901
         }
       ],
-      "recuento_nuevas_matriculaciones": 3463,
+      "recuento_nuevas_matriculaciones": 3901,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -170,12 +175,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2909,
-        "51": 65,
-        "90": 489
+        "50": 3217,
+        "51": 69,
+        "90": 615
       },
       "coincidencias_inventario": [
         {
@@ -194,10 +200,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ARENA",
-          "recuento": 26
+          "recuento": 30
         }
       ],
-      "recuento_nuevas_matriculaciones": 26,
+      "recuento_nuevas_matriculaciones": 30,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -207,10 +213,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 26
+        "50": 30
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -223,20 +230,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "ARIIC",
-          "recuento": 11
+          "recuento": 15
         }
       ],
-      "recuento_nuevas_matriculaciones": 11,
+      "recuento_nuevas_matriculaciones": 15,
       "periodos_observados": [
         "2026-01",
         "2026-03",
         "2026-04",
         "2026-05",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 11
+        "50": 15
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -337,10 +345,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BAJAJ",
-          "recuento": 1027
+          "recuento": 1156
         }
       ],
-      "recuento_nuevas_matriculaciones": 1027,
+      "recuento_nuevas_matriculaciones": 1156,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -350,11 +358,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 875,
-        "51": 152
+        "50": 989,
+        "51": 167
       },
       "coincidencias_inventario": [
         {
@@ -373,16 +382,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "BEIJIBAO",
-          "recuento": 4
+          "recuento": 5
         }
       ],
-      "recuento_nuevas_matriculaciones": 4,
+      "recuento_nuevas_matriculaciones": 5,
       "periodos_observados": [
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 4
+        "90": 5
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -395,10 +405,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BENDA",
-          "recuento": 919
+          "recuento": 991
         }
       ],
-      "recuento_nuevas_matriculaciones": 919,
+      "recuento_nuevas_matriculaciones": 991,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -408,10 +418,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 919
+        "50": 991
       },
       "coincidencias_inventario": [
         {
@@ -430,10 +441,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BENELLI",
-          "recuento": 842
+          "recuento": 989
         }
       ],
-      "recuento_nuevas_matriculaciones": 842,
+      "recuento_nuevas_matriculaciones": 989,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -443,10 +454,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 841,
+        "50": 988,
         "51": 1
       },
       "coincidencias_inventario": [
@@ -487,10 +499,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BETA",
-          "recuento": 1073
+          "recuento": 1239
         }
       ],
-      "recuento_nuevas_matriculaciones": 1073,
+      "recuento_nuevas_matriculaciones": 1239,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -500,12 +512,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 665,
+        "50": 776,
         "51": 1,
-        "90": 404,
+        "90": 459,
         "91": 3
       },
       "coincidencias_inventario": [
@@ -546,10 +559,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BMW",
-          "recuento": 9912
+          "recuento": 10794
         }
       ],
-      "recuento_nuevas_matriculaciones": 9912,
+      "recuento_nuevas_matriculaciones": 10794,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -559,11 +572,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9902,
-        "51": 8,
+        "50": 10783,
+        "51": 9,
         "90": 2
       },
       "coincidencias_inventario": [],
@@ -577,10 +591,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BRIXTON",
-          "recuento": 110
+          "recuento": 114
         }
       ],
-      "recuento_nuevas_matriculaciones": 110,
+      "recuento_nuevas_matriculaciones": 114,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -590,10 +604,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 110
+        "50": 114
       },
       "coincidencias_inventario": [
         {
@@ -634,10 +649,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BSA",
-          "recuento": 168
+          "recuento": 181
         }
       ],
-      "recuento_nuevas_matriculaciones": 168,
+      "recuento_nuevas_matriculaciones": 181,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -647,10 +662,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 168
+        "50": 181
       },
       "coincidencias_inventario": [
         {
@@ -754,10 +770,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "CECOTEC",
-          "recuento": 196
+          "recuento": 218
         }
       ],
-      "recuento_nuevas_matriculaciones": 196,
+      "recuento_nuevas_matriculaciones": 218,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -767,12 +783,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 95,
+        "50": 106,
         "51": 1,
-        "90": 100
+        "90": 111
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -785,10 +802,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "CFMOTO",
-          "recuento": 3642
+          "recuento": 4052
         }
       ],
-      "recuento_nuevas_matriculaciones": 3642,
+      "recuento_nuevas_matriculaciones": 4052,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -798,11 +815,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 3637,
-        "51": 5
+        "50": 4045,
+        "51": 7
       },
       "coincidencias_inventario": [
         {
@@ -849,18 +867,20 @@
       "variantes_observadas": [
         {
           "valor_observado": "CITROEN",
-          "recuento": 11
+          "recuento": 18
         }
       ],
-      "recuento_nuevas_matriculaciones": 11,
+      "recuento_nuevas_matriculaciones": 18,
       "periodos_observados": [
         "2026-01",
         "2026-03",
         "2026-06",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 11
+        "90": 17,
+        "91": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -895,10 +915,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "CYCLONE",
-          "recuento": 1437
+          "recuento": 1565
         }
       ],
-      "recuento_nuevas_matriculaciones": 1437,
+      "recuento_nuevas_matriculaciones": 1565,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -908,10 +928,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1435,
+        "50": 1563,
         "51": 2
       },
       "coincidencias_inventario": [
@@ -979,10 +1000,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "DERBI",
-          "recuento": 55
+          "recuento": 61
         }
       ],
-      "recuento_nuevas_matriculaciones": 55,
+      "recuento_nuevas_matriculaciones": 61,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -992,10 +1013,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 55
+        "90": 61
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1165,10 +1187,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "DUCATI",
-          "recuento": 1754
+          "recuento": 1922
         }
       ],
-      "recuento_nuevas_matriculaciones": 1754,
+      "recuento_nuevas_matriculaciones": 1922,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1178,10 +1200,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1750,
+        "50": 1918,
         "90": 4
       },
       "coincidencias_inventario": [
@@ -1201,60 +1224,6 @@
       "variantes_observadas": [
         {
           "valor_observado": "E-BROH",
-          "recuento": 33
-        }
-      ],
-      "recuento_nuevas_matriculaciones": 33,
-      "periodos_observados": [
-        "2026-01",
-        "2026-02",
-        "2026-03",
-        "2026-04",
-        "2026-05",
-        "2026-06",
-        "2026-07",
-        "2026-08",
-        "2026-09"
-      ],
-      "tipos_vehiculo": {
-        "50": 25,
-        "90": 8
-      },
-      "coincidencias_inventario": [],
-      "estado_revision": "nueva_candidata",
-      "fuente": "DGT MATRABA microdatos mensuales",
-      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
-      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
-    },
-    {
-      "marca_normalizada": "e max vmoto",
-      "variantes_observadas": [
-        {
-          "valor_observado": "E-MAX, VMOTO",
-          "recuento": 12
-        }
-      ],
-      "recuento_nuevas_matriculaciones": 12,
-      "periodos_observados": [
-        "2026-01",
-        "2026-02",
-        "2026-04",
-        "2026-08"
-      ],
-      "tipos_vehiculo": {
-        "90": 12
-      },
-      "coincidencias_inventario": [],
-      "estado_revision": "nueva_candidata",
-      "fuente": "DGT MATRABA microdatos mensuales",
-      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
-      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
-    },
-    {
-      "marca_normalizada": "e ride pro",
-      "variantes_observadas": [
-        {
-          "valor_observado": "E RIDE PRO",
           "recuento": 34
         }
       ],
@@ -1268,11 +1237,68 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 27,
-        "90": 7
+        "50": 26,
+        "90": 8
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "e max vmoto",
+      "variantes_observadas": [
+        {
+          "valor_observado": "E-MAX, VMOTO",
+          "recuento": 13
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 13,
+      "periodos_observados": [
+        "2026-01",
+        "2026-02",
+        "2026-04",
+        "2026-08",
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 13
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "e ride pro",
+      "variantes_observadas": [
+        {
+          "valor_observado": "E RIDE PRO",
+          "recuento": 43
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 43,
+      "periodos_observados": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09",
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 33,
+        "90": 10
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1353,10 +1379,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "EFUN",
-          "recuento": 507
+          "recuento": 556
         }
       ],
-      "recuento_nuevas_matriculaciones": 507,
+      "recuento_nuevas_matriculaciones": 556,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1366,11 +1392,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 484,
-        "90": 23
+        "50": 532,
+        "90": 24
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1383,10 +1410,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ELECTRIC MOTION",
-          "recuento": 18
+          "recuento": 20
         }
       ],
-      "recuento_nuevas_matriculaciones": 18,
+      "recuento_nuevas_matriculaciones": 20,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1394,10 +1421,11 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 18
+        "50": 20
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1410,17 +1438,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "ENGTIAN",
-          "recuento": 5
+          "recuento": 16
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 16,
       "periodos_observados": [
         "2026-02",
         "2026-05",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 5
+        "90": 16
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1475,17 +1504,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "EUROCKA",
-          "recuento": 7
+          "recuento": 9
         }
       ],
-      "recuento_nuevas_matriculaciones": 7,
+      "recuento_nuevas_matriculaciones": 9,
       "periodos_observados": [
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 5,
-        "90": 2
+        "90": 4
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1540,10 +1570,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "F.B MONDIAL",
-          "recuento": 12
+          "recuento": 14
         }
       ],
-      "recuento_nuevas_matriculaciones": 12,
+      "recuento_nuevas_matriculaciones": 14,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1551,10 +1581,11 @@
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 12
+        "50": 14
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1567,10 +1598,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "FANTIC MOTOR",
-          "recuento": 242
+          "recuento": 261
         }
       ],
-      "recuento_nuevas_matriculaciones": 242,
+      "recuento_nuevas_matriculaciones": 261,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1580,12 +1611,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 138,
+        "50": 146,
         "51": 10,
-        "90": 94
+        "90": 105
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1675,10 +1707,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "FELQ",
-          "recuento": 39
+          "recuento": 42
         }
       ],
-      "recuento_nuevas_matriculaciones": 39,
+      "recuento_nuevas_matriculaciones": 42,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1688,12 +1720,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 18,
         "51": 2,
-        "90": 19
+        "90": 22
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1727,15 +1760,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "FRISON",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-04"
+        "2026-04",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1
+        "50": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1769,16 +1803,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "G.A.C.",
-          "recuento": 3
+          "recuento": 4
         }
       ],
-      "recuento_nuevas_matriculaciones": 3,
+      "recuento_nuevas_matriculaciones": 4,
       "periodos_observados": [
         "2026-01",
-        "2026-03"
+        "2026-03",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 3
+        "90": 4
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1834,15 +1869,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "GAC MOBYLETTE",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-01"
+        "2026-01",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 1
+        "90": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -1855,10 +1891,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "GASGAS",
-          "recuento": 150
+          "recuento": 186
         }
       ],
-      "recuento_nuevas_matriculaciones": 150,
+      "recuento_nuevas_matriculaciones": 186,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -1868,10 +1904,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 150
+        "50": 186
       },
       "coincidencias_inventario": [
         {
@@ -1933,17 +1970,39 @@
       "variantes_observadas": [
         {
           "valor_observado": "GILERA",
-          "recuento": 3
+          "recuento": 4
         }
       ],
-      "recuento_nuevas_matriculaciones": 3,
+      "recuento_nuevas_matriculaciones": 4,
       "periodos_observados": [
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 1,
-        "90": 2
+        "90": 3
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "golden lion",
+      "variantes_observadas": [
+        {
+          "valor_observado": "GOLDEN LION",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2069,10 +2128,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HARLEY-DAVIDSON",
-          "recuento": 577
+          "recuento": 634
         }
       ],
-      "recuento_nuevas_matriculaciones": 577,
+      "recuento_nuevas_matriculaciones": 634,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2082,10 +2141,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 577
+        "50": 634
       },
       "coincidencias_inventario": [
         {
@@ -2125,10 +2185,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HERO MOTOCORP",
-          "recuento": 479
+          "recuento": 546
         }
       ],
-      "recuento_nuevas_matriculaciones": 479,
+      "recuento_nuevas_matriculaciones": 546,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2138,10 +2198,32 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 479
+        "50": 546
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "hitway",
+      "variantes_observadas": [
+        {
+          "valor_observado": "HITWAY",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2154,10 +2236,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HONDA",
-          "recuento": 41376
+          "recuento": 45487
         }
       ],
-      "recuento_nuevas_matriculaciones": 41376,
+      "recuento_nuevas_matriculaciones": 45487,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2167,12 +2249,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 41356,
-        "51": 16,
-        "90": 4
+        "50": 45465,
+        "51": 17,
+        "90": 5
       },
       "coincidencias_inventario": [
         {
@@ -2212,10 +2295,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HORWIN",
-          "recuento": 42
+          "recuento": 50
         }
       ],
-      "recuento_nuevas_matriculaciones": 42,
+      "recuento_nuevas_matriculaciones": 50,
       "periodos_observados": [
         "2026-01",
         "2026-03",
@@ -2224,11 +2307,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 18,
-        "90": 24
+        "90": 32
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2241,10 +2325,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HUSQVARNA",
-          "recuento": 796
+          "recuento": 926
         }
       ],
-      "recuento_nuevas_matriculaciones": 796,
+      "recuento_nuevas_matriculaciones": 926,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2254,10 +2338,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 796
+        "50": 926
       },
       "coincidencias_inventario": [
         {
@@ -2351,10 +2436,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "INDIAN MOTORCYCLE",
-          "recuento": 254
+          "recuento": 279
         }
       ],
-      "recuento_nuevas_matriculaciones": 254,
+      "recuento_nuevas_matriculaciones": 279,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2364,10 +2449,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 254
+        "50": 279
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2447,14 +2533,35 @@
       "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
     },
     {
+      "marca_normalizada": "iotostark",
+      "variantes_observadas": [
+        {
+          "valor_observado": "IOTOSTARK",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 1
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
       "marca_normalizada": "italjet",
       "variantes_observadas": [
         {
           "valor_observado": "ITALJET",
-          "recuento": 157
+          "recuento": 179
         }
       ],
-      "recuento_nuevas_matriculaciones": 157,
+      "recuento_nuevas_matriculaciones": 179,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2464,10 +2571,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 156,
+        "50": 178,
         "51": 1
       },
       "coincidencias_inventario": [
@@ -2509,20 +2617,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "JIAJUE",
-          "recuento": 36
+          "recuento": 37
         }
       ],
-      "recuento_nuevas_matriculaciones": 36,
+      "recuento_nuevas_matriculaciones": 37,
       "periodos_observados": [
         "2026-02",
         "2026-05",
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 24,
+        "50": 25,
         "90": 12
       },
       "coincidencias_inventario": [],
@@ -2580,17 +2689,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "JYMOTO",
-          "recuento": 5
+          "recuento": 7
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 7,
       "periodos_observados": [
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5
+        "50": 7
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2624,16 +2734,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "KAINING",
-          "recuento": 2
+          "recuento": 4
         }
       ],
-      "recuento_nuevas_matriculaciones": 2,
+      "recuento_nuevas_matriculaciones": 4,
       "periodos_observados": [
         "2026-03",
-        "2026-05"
+        "2026-05",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2
+        "50": 4
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2646,10 +2757,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "KAWASAKI",
-          "recuento": 6475
+          "recuento": 7104
         }
       ],
-      "recuento_nuevas_matriculaciones": 6475,
+      "recuento_nuevas_matriculaciones": 7104,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2659,10 +2770,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 6474,
+        "50": 7103,
         "51": 1
       },
       "coincidencias_inventario": [
@@ -2682,10 +2794,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "KEEWAY",
-          "recuento": 2812
+          "recuento": 3146
         }
       ],
-      "recuento_nuevas_matriculaciones": 2812,
+      "recuento_nuevas_matriculaciones": 3146,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2695,12 +2807,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2625,
+        "50": 2930,
         "51": 2,
-        "90": 185
+        "90": 214
       },
       "coincidencias_inventario": [
         {
@@ -2719,10 +2832,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "KOVE",
-          "recuento": 2053
+          "recuento": 2572
         }
       ],
-      "recuento_nuevas_matriculaciones": 2053,
+      "recuento_nuevas_matriculaciones": 2572,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2732,10 +2845,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2053
+        "50": 2571,
+        "51": 1
       },
       "coincidencias_inventario": [
         {
@@ -2754,17 +2869,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "KRC",
-          "recuento": 28
+          "recuento": 41
         }
       ],
-      "recuento_nuevas_matriculaciones": 28,
+      "recuento_nuevas_matriculaciones": 41,
       "periodos_observados": [
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 22,
-        "90": 6
+        "50": 31,
+        "90": 10
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2777,10 +2893,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "KTM",
-          "recuento": 3939
+          "recuento": 4431
         }
       ],
-      "recuento_nuevas_matriculaciones": 3939,
+      "recuento_nuevas_matriculaciones": 4431,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2790,11 +2906,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 3934,
-        "51": 5
+        "50": 4423,
+        "51": 8
       },
       "coincidencias_inventario": [
         {
@@ -2813,10 +2930,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "KYMCO",
-          "recuento": 11510
+          "recuento": 12677
         }
       ],
-      "recuento_nuevas_matriculaciones": 11510,
+      "recuento_nuevas_matriculaciones": 12677,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2826,12 +2943,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 10609,
+        "50": 11669,
         "51": 11,
-        "90": 888,
+        "90": 995,
         "91": 2
       },
       "coincidencias_inventario": [
@@ -2851,10 +2969,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LAMBRETTA",
-          "recuento": 319
+          "recuento": 346
         }
       ],
-      "recuento_nuevas_matriculaciones": 319,
+      "recuento_nuevas_matriculaciones": 346,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2864,11 +2982,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 303,
-        "90": 16
+        "50": 329,
+        "90": 17
       },
       "coincidencias_inventario": [
         {
@@ -2887,10 +3006,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LEONART",
-          "recuento": 121
+          "recuento": 134
         }
       ],
-      "recuento_nuevas_matriculaciones": 121,
+      "recuento_nuevas_matriculaciones": 134,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2900,10 +3019,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 121
+        "50": 134
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -2916,10 +3036,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LETBE",
-          "recuento": 837
+          "recuento": 944
         }
       ],
-      "recuento_nuevas_matriculaciones": 837,
+      "recuento_nuevas_matriculaciones": 944,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2929,12 +3049,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 786,
+        "50": 888,
         "51": 10,
-        "90": 36,
+        "90": 41,
         "91": 5
       },
       "coincidencias_inventario": [],
@@ -2970,10 +3091,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LIGIER",
-          "recuento": 89
+          "recuento": 100
         }
       ],
-      "recuento_nuevas_matriculaciones": 89,
+      "recuento_nuevas_matriculaciones": 100,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -2983,10 +3104,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 89
+        "90": 100
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3020,10 +3142,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LINHAI",
-          "recuento": 127
+          "recuento": 134
         }
       ],
-      "recuento_nuevas_matriculaciones": 127,
+      "recuento_nuevas_matriculaciones": 134,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3033,10 +3155,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 127
+        "50": 134
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3115,10 +3238,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LVNENG",
-          "recuento": 19
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 19,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3126,11 +3249,12 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 2,
-        "90": 17
+        "90": 19
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3143,10 +3267,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MACBOR",
-          "recuento": 1627
+          "recuento": 1785
         }
       ],
-      "recuento_nuevas_matriculaciones": 1627,
+      "recuento_nuevas_matriculaciones": 1785,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3156,10 +3280,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1623,
+        "50": 1781,
         "51": 4
       },
       "coincidencias_inventario": [
@@ -3179,10 +3304,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MALAGUTI",
-          "recuento": 43
+          "recuento": 46
         }
       ],
-      "recuento_nuevas_matriculaciones": 43,
+      "recuento_nuevas_matriculaciones": 46,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -3191,10 +3316,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 43
+        "50": 46
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3259,17 +3385,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "MARSHAL MOTO",
-          "recuento": 32
+          "recuento": 34
         }
       ],
-      "recuento_nuevas_matriculaciones": 32,
+      "recuento_nuevas_matriculaciones": 34,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 32
+        "50": 34
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3345,20 +3472,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "MBP",
-          "recuento": 15
+          "recuento": 18
         }
       ],
-      "recuento_nuevas_matriculaciones": 15,
+      "recuento_nuevas_matriculaciones": 18,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 15
+        "50": 18
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3371,15 +3499,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "MECATECNO",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-06"
+        "2026-06",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 1
+        "90": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3392,10 +3521,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MH MOTORCYCLES",
-          "recuento": 1412
+          "recuento": 1529
         }
       ],
-      "recuento_nuevas_matriculaciones": 1412,
+      "recuento_nuevas_matriculaciones": 1529,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3405,12 +3534,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1277,
+        "50": 1384,
         "51": 1,
-        "90": 134
+        "90": 144
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3423,10 +3553,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MITT",
-          "recuento": 2124
+          "recuento": 2449
         }
       ],
-      "recuento_nuevas_matriculaciones": 2124,
+      "recuento_nuevas_matriculaciones": 2449,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3436,11 +3566,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1993,
-        "90": 131
+        "50": 2315,
+        "90": 134
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3501,10 +3632,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOBYLETTE",
-          "recuento": 29
+          "recuento": 32
         }
       ],
-      "recuento_nuevas_matriculaciones": 29,
+      "recuento_nuevas_matriculaciones": 32,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3514,10 +3645,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 29
+        "90": 32
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3552,10 +3684,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MONDIAL",
-          "recuento": 18
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 18,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3564,10 +3696,11 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 18
+        "50": 21
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3580,17 +3713,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "MONKEY BIKES",
-          "recuento": 14
+          "recuento": 16
         }
       ],
-      "recuento_nuevas_matriculaciones": 14,
+      "recuento_nuevas_matriculaciones": 16,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 12,
+        "50": 14,
         "90": 2
       },
       "coincidencias_inventario": [],
@@ -3647,10 +3781,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MONTESA",
-          "recuento": 72
+          "recuento": 78
         }
       ],
-      "recuento_nuevas_matriculaciones": 72,
+      "recuento_nuevas_matriculaciones": 78,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3659,10 +3793,11 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 70,
+        "50": 76,
         "90": 2
       },
       "coincidencias_inventario": [],
@@ -3676,10 +3811,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MORBIDELLI",
-          "recuento": 1146
+          "recuento": 1275
         }
       ],
-      "recuento_nuevas_matriculaciones": 1146,
+      "recuento_nuevas_matriculaciones": 1275,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3689,10 +3824,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1146
+        "50": 1275
       },
       "coincidencias_inventario": [
         {
@@ -3732,10 +3868,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOTO GUZZI",
-          "recuento": 401
+          "recuento": 440
         }
       ],
-      "recuento_nuevas_matriculaciones": 401,
+      "recuento_nuevas_matriculaciones": 440,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3745,11 +3881,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 392,
-        "51": 9
+        "50": 430,
+        "51": 10
       },
       "coincidencias_inventario": [
         {
@@ -3768,10 +3905,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOTO MORINI",
-          "recuento": 859
+          "recuento": 913
         }
       ],
-      "recuento_nuevas_matriculaciones": 859,
+      "recuento_nuevas_matriculaciones": 913,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -3781,11 +3918,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 838,
-        "51": 21
+        "50": 891,
+        "51": 22
       },
       "coincidencias_inventario": [
         {
@@ -3804,19 +3942,41 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOTO VESPA",
-          "recuento": 6
+          "recuento": 8
         }
       ],
-      "recuento_nuevas_matriculaciones": 6,
+      "recuento_nuevas_matriculaciones": 8,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-04",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 6
+        "90": 8
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "motobecane",
+      "variantes_observadas": [
+        {
+          "valor_observado": "MOTOBECANE",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3895,10 +4055,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOTRON MOTORRAD",
-          "recuento": 25
+          "recuento": 27
         }
       ],
-      "recuento_nuevas_matriculaciones": 25,
+      "recuento_nuevas_matriculaciones": 27,
       "periodos_observados": [
         "2026-01",
         "2026-03",
@@ -3907,10 +4067,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 20,
+        "50": 22,
         "90": 5
       },
       "coincidencias_inventario": [],
@@ -3924,10 +4085,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MTR BIKES",
-          "recuento": 44
+          "recuento": 46
         }
       ],
-      "recuento_nuevas_matriculaciones": 44,
+      "recuento_nuevas_matriculaciones": 46,
       "periodos_observados": [
         "2026-01",
         "2026-03",
@@ -3936,10 +4097,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 44
+        "50": 46
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3952,15 +4114,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "MUSATTI",
-          "recuento": 1
+          "recuento": 8
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 8,
       "periodos_observados": [
-        "2026-02"
+        "2026-02",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1
+        "50": 8
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -3994,10 +4157,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MV AGUSTA",
-          "recuento": 85
+          "recuento": 90
         }
       ],
-      "recuento_nuevas_matriculaciones": 85,
+      "recuento_nuevas_matriculaciones": 90,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4007,10 +4170,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 85
+        "50": 90
       },
       "coincidencias_inventario": [
         {
@@ -4050,10 +4214,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NERVA",
-          "recuento": 58
+          "recuento": 67
         }
       ],
-      "recuento_nuevas_matriculaciones": 58,
+      "recuento_nuevas_matriculaciones": 67,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4063,11 +4227,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 56,
-        "51": 2
+        "50": 64,
+        "51": 3
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4080,10 +4245,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NEXT",
-          "recuento": 488
+          "recuento": 537
         }
       ],
-      "recuento_nuevas_matriculaciones": 488,
+      "recuento_nuevas_matriculaciones": 537,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4093,12 +4258,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 393,
-        "51": 1,
-        "90": 94
+        "50": 421,
+        "51": 11,
+        "90": 105
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4111,10 +4277,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NEXTELECTRICMOTORS",
-          "recuento": 20
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 20,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -4122,10 +4288,12 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 20
+        "50": 20,
+        "51": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4138,10 +4306,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NIU",
-          "recuento": 342
+          "recuento": 414
         }
       ],
-      "recuento_nuevas_matriculaciones": 342,
+      "recuento_nuevas_matriculaciones": 414,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4151,12 +4319,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 297,
+        "50": 359,
         "51": 1,
-        "90": 44
+        "90": 54
       },
       "coincidencias_inventario": [
         {
@@ -4186,6 +4355,27 @@
       ],
       "tipos_vehiculo": {
         "50": 3
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "norton",
+      "variantes_observadas": [
+        {
+          "valor_observado": "NORTON",
+          "recuento": 2
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 2,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4250,20 +4440,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "ORCAL",
-          "recuento": 9
+          "recuento": 13
         }
       ],
-      "recuento_nuevas_matriculaciones": 9,
+      "recuento_nuevas_matriculaciones": 13,
       "periodos_observados": [
         "2026-01",
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9
+        "50": 13
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4297,19 +4488,20 @@
       "variantes_observadas": [
         {
           "valor_observado": "OTTOBIKE",
-          "recuento": 9
+          "recuento": 10
         }
       ],
-      "recuento_nuevas_matriculaciones": 9,
+      "recuento_nuevas_matriculaciones": 10,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9
+        "50": 10
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4346,10 +4538,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "PEUGEOT",
-          "recuento": 3092
+          "recuento": 3406
         }
       ],
-      "recuento_nuevas_matriculaciones": 3092,
+      "recuento_nuevas_matriculaciones": 3406,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4359,12 +4551,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2030,
+        "50": 2202,
         "51": 4,
-        "90": 1058
+        "90": 1200
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4377,10 +4570,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "PIAGGIO",
-          "recuento": 6635
+          "recuento": 7254
         }
       ],
-      "recuento_nuevas_matriculaciones": 6635,
+      "recuento_nuevas_matriculaciones": 7254,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4390,12 +4583,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5399,
-        "51": 473,
-        "90": 762,
+        "50": 5908,
+        "51": 490,
+        "90": 855,
         "91": 1
       },
       "coincidencias_inventario": [
@@ -4415,10 +4609,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "PUCH",
-          "recuento": 27
+          "recuento": 28
         }
       ],
-      "recuento_nuevas_matriculaciones": 27,
+      "recuento_nuevas_matriculaciones": 28,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4428,10 +4622,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 27
+        "90": 28
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4465,10 +4660,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "QJMOTOR",
-          "recuento": 6305
+          "recuento": 6995
         }
       ],
-      "recuento_nuevas_matriculaciones": 6305,
+      "recuento_nuevas_matriculaciones": 6995,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4478,12 +4673,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 6115,
+        "50": 6778,
         "51": 2,
-        "90": 188
+        "90": 215
       },
       "coincidencias_inventario": [
         {
@@ -4502,10 +4698,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "QUAZZAR",
-          "recuento": 84
+          "recuento": 95
         }
       ],
-      "recuento_nuevas_matriculaciones": 84,
+      "recuento_nuevas_matriculaciones": 95,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -4514,12 +4710,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 33,
-        "51": 40,
-        "90": 11
+        "50": 34,
+        "51": 44,
+        "90": 17
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4553,10 +4750,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "RAY ELECTRIC MOTORS",
-          "recuento": 13
+          "recuento": 15
         }
       ],
-      "recuento_nuevas_matriculaciones": 13,
+      "recuento_nuevas_matriculaciones": 15,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4564,10 +4761,11 @@
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 13
+        "50": 15
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4622,10 +4820,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "REDMOTO",
-          "recuento": 57
+          "recuento": 62
         }
       ],
-      "recuento_nuevas_matriculaciones": 57,
+      "recuento_nuevas_matriculaciones": 62,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4635,10 +4833,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 57
+        "50": 62
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4651,14 +4850,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "REGAL-RAPTOR",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
+        "90": 1,
         "91": 1
       },
       "coincidencias_inventario": [],
@@ -4693,10 +4894,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "RIEJU",
-          "recuento": 6073
+          "recuento": 6632
         }
       ],
-      "recuento_nuevas_matriculaciones": 6073,
+      "recuento_nuevas_matriculaciones": 6632,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4706,11 +4907,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 4060,
-        "90": 2013
+        "50": 4379,
+        "90": 2253
       },
       "coincidencias_inventario": [
         {
@@ -4752,20 +4954,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "RODEA",
-          "recuento": 27
+          "recuento": 32
         }
       ],
-      "recuento_nuevas_matriculaciones": 27,
+      "recuento_nuevas_matriculaciones": 32,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 27
+        "50": 32
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4825,19 +5028,20 @@
       "variantes_observadas": [
         {
           "valor_observado": "ROYAL ALLOY",
-          "recuento": 10
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 10,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 10
+        "50": 11
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -4850,10 +5054,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ROYAL ENFIELD",
-          "recuento": 1072
+          "recuento": 1163
         }
       ],
-      "recuento_nuevas_matriculaciones": 1072,
+      "recuento_nuevas_matriculaciones": 1163,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4863,10 +5067,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1072
+        "50": 1163
       },
       "coincidencias_inventario": [
         {
@@ -4908,18 +5113,19 @@
       "variantes_observadas": [
         {
           "valor_observado": "SAKURA",
-          "recuento": 8
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 8,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-03",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 7,
+        "50": 10,
         "90": 1
       },
       "coincidencias_inventario": [],
@@ -4984,10 +5190,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SCORPA",
-          "recuento": 141
+          "recuento": 172
         }
       ],
-      "recuento_nuevas_matriculaciones": 141,
+      "recuento_nuevas_matriculaciones": 172,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -4997,12 +5203,34 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 77,
+        "50": 93,
         "51": 1,
-        "90": 63
+        "90": 78
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "scutum",
+      "variantes_observadas": [
+        {
+          "valor_observado": "SCUTUM",
+          "recuento": 2
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 2,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5015,10 +5243,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SEGWAY",
-          "recuento": 163
+          "recuento": 185
         }
       ],
-      "recuento_nuevas_matriculaciones": 163,
+      "recuento_nuevas_matriculaciones": 185,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5028,11 +5256,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 127,
-        "51": 1,
+        "50": 146,
+        "51": 4,
         "90": 35
       },
       "coincidencias_inventario": [],
@@ -5067,18 +5296,19 @@
       "variantes_observadas": [
         {
           "valor_observado": "SENKE",
-          "recuento": 5
+          "recuento": 6
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 6,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5
+        "50": 6
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5091,21 +5321,22 @@
       "variantes_observadas": [
         {
           "valor_observado": "SHANSU",
-          "recuento": 15
+          "recuento": 16
         }
       ],
-      "recuento_nuevas_matriculaciones": 15,
+      "recuento_nuevas_matriculaciones": 16,
       "periodos_observados": [
         "2026-03",
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "90": 11,
-        "91": 4
+        "91": 5
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5141,10 +5372,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SHERCO",
-          "recuento": 1333
+          "recuento": 1483
         }
       ],
-      "recuento_nuevas_matriculaciones": 1333,
+      "recuento_nuevas_matriculaciones": 1483,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5154,12 +5385,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 455,
+        "50": 518,
         "51": 1,
-        "90": 876,
+        "90": 963,
         "91": 1
       },
       "coincidencias_inventario": [
@@ -5179,10 +5411,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SILENCE",
-          "recuento": 2160
+          "recuento": 2478
         }
       ],
-      "recuento_nuevas_matriculaciones": 2160,
+      "recuento_nuevas_matriculaciones": 2478,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5192,12 +5424,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1906,
-        "51": 14,
-        "90": 239,
+        "50": 2167,
+        "51": 17,
+        "90": 293,
         "91": 1
       },
       "coincidencias_inventario": [
@@ -5259,17 +5492,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "SKY TEAM",
-          "recuento": 5
+          "recuento": 7
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 7,
       "periodos_observados": [
         "2026-03",
         "2026-05",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5
+        "50": 7
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5346,10 +5580,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "STARK",
-          "recuento": 363
+          "recuento": 434
         }
       ],
-      "recuento_nuevas_matriculaciones": 363,
+      "recuento_nuevas_matriculaciones": 434,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5359,11 +5593,33 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 351,
-        "51": 12
+        "50": 419,
+        "51": 15
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "sumco",
+      "variantes_observadas": [
+        {
+          "valor_observado": "SUMCO",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5399,10 +5655,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SUPER SOCO",
-          "recuento": 155
+          "recuento": 185
         }
       ],
-      "recuento_nuevas_matriculaciones": 155,
+      "recuento_nuevas_matriculaciones": 185,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5412,11 +5668,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 149,
-        "90": 6
+        "50": 177,
+        "51": 1,
+        "90": 7
       },
       "coincidencias_inventario": [
         {
@@ -5435,10 +5693,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SURRON",
-          "recuento": 28
+          "recuento": 35
         }
       ],
-      "recuento_nuevas_matriculaciones": 28,
+      "recuento_nuevas_matriculaciones": 35,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5448,11 +5706,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 12,
-        "90": 16
+        "50": 16,
+        "90": 19
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5465,10 +5724,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SUZUKI",
-          "recuento": 3292
+          "recuento": 3648
         }
       ],
-      "recuento_nuevas_matriculaciones": 3292,
+      "recuento_nuevas_matriculaciones": 3648,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5478,10 +5737,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 3287,
+        "50": 3643,
         "51": 2,
         "90": 3
       },
@@ -5502,10 +5762,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SWM",
-          "recuento": 72
+          "recuento": 80
         }
       ],
-      "recuento_nuevas_matriculaciones": 72,
+      "recuento_nuevas_matriculaciones": 80,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5515,10 +5775,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 62,
+        "50": 70,
         "51": 8,
         "90": 2
       },
@@ -5533,10 +5794,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SYM",
-          "recuento": 12291
+          "recuento": 13527
         }
       ],
-      "recuento_nuevas_matriculaciones": 12291,
+      "recuento_nuevas_matriculaciones": 13527,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5546,12 +5807,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 10924,
+        "50": 11992,
         "51": 4,
-        "90": 1360,
+        "90": 1528,
         "91": 3
       },
       "coincidencias_inventario": [
@@ -5592,10 +5854,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "TALARIA",
-          "recuento": 203
+          "recuento": 260
         }
       ],
-      "recuento_nuevas_matriculaciones": 203,
+      "recuento_nuevas_matriculaciones": 260,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5605,12 +5867,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 111,
+        "50": 146,
         "51": 3,
-        "90": 88,
+        "90": 110,
         "91": 1
       },
       "coincidencias_inventario": [],
@@ -5708,10 +5971,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "TM MOTO",
-          "recuento": 17
+          "recuento": 18
         }
       ],
-      "recuento_nuevas_matriculaciones": 17,
+      "recuento_nuevas_matriculaciones": 18,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5720,10 +5983,11 @@
         "2026-05",
         "2026-06",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 17
+        "50": 18
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5757,21 +6021,22 @@
       "variantes_observadas": [
         {
           "valor_observado": "TNT MOTOR",
-          "recuento": 17
+          "recuento": 25
         }
       ],
-      "recuento_nuevas_matriculaciones": 17,
+      "recuento_nuevas_matriculaciones": 25,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2,
-        "90": 15
+        "50": 3,
+        "90": 22
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5784,21 +6049,22 @@
       "variantes_observadas": [
         {
           "valor_observado": "TORROT",
-          "recuento": 10
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 10,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 2,
-        "90": 8
+        "90": 9
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5811,10 +6077,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "TRIUMPH",
-          "recuento": 2433
+          "recuento": 2674
         }
       ],
-      "recuento_nuevas_matriculaciones": 2433,
+      "recuento_nuevas_matriculaciones": 2674,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5824,10 +6090,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2432,
+        "50": 2673,
         "51": 1
       },
       "coincidencias_inventario": [
@@ -5868,10 +6135,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "TRS",
-          "recuento": 154
+          "recuento": 162
         }
       ],
-      "recuento_nuevas_matriculaciones": 154,
+      "recuento_nuevas_matriculaciones": 162,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -5881,10 +6148,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 153,
+        "50": 161,
         "51": 1
       },
       "coincidencias_inventario": [
@@ -5904,17 +6172,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "TVS",
-          "recuento": 28
+          "recuento": 33
         }
       ],
-      "recuento_nuevas_matriculaciones": 28,
+      "recuento_nuevas_matriculaciones": 33,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 28
+        "50": 33
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -5991,10 +6260,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ULTRAVIOLETTE AUTOMOTIVE PRIVA",
-          "recuento": 52
+          "recuento": 57
         }
       ],
-      "recuento_nuevas_matriculaciones": 52,
+      "recuento_nuevas_matriculaciones": 57,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6003,10 +6272,11 @@
         "2026-05",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 52
+        "50": 57
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6019,10 +6289,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "UM",
-          "recuento": 53
+          "recuento": 73
         }
       ],
-      "recuento_nuevas_matriculaciones": 53,
+      "recuento_nuevas_matriculaciones": 73,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6032,10 +6302,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 48,
+        "50": 68,
         "90": 5
       },
       "coincidencias_inventario": [],
@@ -6137,10 +6408,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VELCA",
-          "recuento": 469
+          "recuento": 546
         }
       ],
-      "recuento_nuevas_matriculaciones": 469,
+      "recuento_nuevas_matriculaciones": 546,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6150,11 +6421,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 446,
-        "90": 23
+        "50": 520,
+        "90": 26
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6255,10 +6527,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VENT S.R.L.",
-          "recuento": 130
+          "recuento": 146
         }
       ],
-      "recuento_nuevas_matriculaciones": 130,
+      "recuento_nuevas_matriculaciones": 146,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6268,11 +6540,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 48,
-        "90": 82
+        "50": 53,
+        "90": 93
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6306,20 +6579,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "VERTIGO MOTORS",
-          "recuento": 9
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 9,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9
+        "50": 11
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6365,10 +6639,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VESPINO",
-          "recuento": 142
+          "recuento": 159
         }
       ],
-      "recuento_nuevas_matriculaciones": 142,
+      "recuento_nuevas_matriculaciones": 159,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6378,10 +6652,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 142
+        "90": 159
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6418,10 +6693,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VMOTO",
-          "recuento": 288
+          "recuento": 370
         }
       ],
-      "recuento_nuevas_matriculaciones": 288,
+      "recuento_nuevas_matriculaciones": 370,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6431,12 +6706,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 224,
+        "50": 299,
         "51": 1,
-        "90": 62,
+        "90": 69,
         "91": 1
       },
       "coincidencias_inventario": [
@@ -6456,10 +6732,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VOGE",
-          "recuento": 17136
+          "recuento": 18651
         }
       ],
-      "recuento_nuevas_matriculaciones": 17136,
+      "recuento_nuevas_matriculaciones": 18651,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6469,11 +6745,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 17125,
-        "51": 11
+        "50": 18639,
+        "51": 12
       },
       "coincidencias_inventario": [
         {
@@ -6515,10 +6792,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "WOTTAN",
-          "recuento": 160
+          "recuento": 163
         }
       ],
-      "recuento_nuevas_matriculaciones": 160,
+      "recuento_nuevas_matriculaciones": 163,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6528,10 +6805,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 160
+        "50": 163
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6637,10 +6915,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "YADEA",
-          "recuento": 20
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 20,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -6649,11 +6927,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 8,
-        "90": 12
+        "90": 13
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6666,10 +6945,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "YAMAHA",
-          "recuento": 29966
+          "recuento": 32976
         }
       ],
-      "recuento_nuevas_matriculaciones": 29966,
+      "recuento_nuevas_matriculaciones": 32976,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6679,12 +6958,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 29726,
-        "51": 10,
-        "90": 229,
+        "50": 32691,
+        "51": 11,
+        "90": 273,
         "91": 1
       },
       "coincidencias_inventario": [
@@ -6725,17 +7005,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "YIBEN",
-          "recuento": 15
+          "recuento": 25
         }
       ],
-      "recuento_nuevas_matriculaciones": 15,
+      "recuento_nuevas_matriculaciones": 25,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 15
+        "50": 25
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6771,18 +7052,19 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZAIRON",
-          "recuento": 86
+          "recuento": 114
         }
       ],
-      "recuento_nuevas_matriculaciones": 86,
+      "recuento_nuevas_matriculaciones": 114,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 70,
-        "51": 16
+        "50": 90,
+        "51": 24
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6795,16 +7077,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZEEHO",
-          "recuento": 2
+          "recuento": 3
         }
       ],
-      "recuento_nuevas_matriculaciones": 2,
+      "recuento_nuevas_matriculaciones": 3,
       "periodos_observados": [
         "2026-05",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2
+        "50": 3
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6817,10 +7100,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZERO MOTORCYCLES",
-          "recuento": 189
+          "recuento": 219
         }
       ],
-      "recuento_nuevas_matriculaciones": 189,
+      "recuento_nuevas_matriculaciones": 219,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6830,12 +7113,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 147,
-        "51": 36,
-        "90": 6
+        "50": 164,
+        "51": 47,
+        "90": 8
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6869,10 +7153,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZNEN",
-          "recuento": 86
+          "recuento": 89
         }
       ],
-      "recuento_nuevas_matriculaciones": 86,
+      "recuento_nuevas_matriculaciones": 89,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6882,11 +7166,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 62,
-        "90": 24
+        "50": 64,
+        "90": 25
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6899,10 +7184,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZONTES",
-          "recuento": 27626
+          "recuento": 32804
         }
       ],
-      "recuento_nuevas_matriculaciones": 27626,
+      "recuento_nuevas_matriculaciones": 32804,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -6912,11 +7197,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 27605,
-        "51": 21
+        "50": 32773,
+        "51": 31
       },
       "coincidencias_inventario": [
         {
@@ -6956,15 +7242,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZXMCO",
-          "recuento": 2
+          "recuento": 3
         }
       ],
-      "recuento_nuevas_matriculaciones": 2,
+      "recuento_nuevas_matriculaciones": 3,
       "periodos_observados": [
-        "2026-01"
+        "2026-01",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2
+        "50": 3
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -6977,16 +7264,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZXMOTO",
-          "recuento": 21
+          "recuento": 122
         }
       ],
-      "recuento_nuevas_matriculaciones": 21,
+      "recuento_nuevas_matriculaciones": 122,
       "periodos_observados": [
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 21
+        "50": 122
       },
       "coincidencias_inventario": [
         {
@@ -7007,17 +7295,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "3PLUSCOCO",
-          "recuento": 27
+          "recuento": 29
         }
       ],
-      "recuento_nuevas_matriculaciones": 27,
+      "recuento_nuevas_matriculaciones": 29,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 22,
+        "90": 24,
         "91": 5
       },
       "coincidencias_inventario": [],
@@ -7031,10 +7320,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "AIXAM",
-          "recuento": 112
+          "recuento": 123
         }
       ],
-      "recuento_nuevas_matriculaciones": 112,
+      "recuento_nuevas_matriculaciones": 123,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7044,10 +7333,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 112
+        "90": 123
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7060,10 +7350,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "AJP",
-          "recuento": 62
+          "recuento": 70
         }
       ],
-      "recuento_nuevas_matriculaciones": 62,
+      "recuento_nuevas_matriculaciones": 70,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7073,10 +7363,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 62
+        "50": 70
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7089,20 +7380,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "ALPINA DI RENANIA",
-          "recuento": 8
+          "recuento": 9
         }
       ],
-      "recuento_nuevas_matriculaciones": 8,
+      "recuento_nuevas_matriculaciones": 9,
       "periodos_observados": [
         "2026-01",
         "2026-03",
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 8
+        "50": 9
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7115,10 +7407,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ANDES",
-          "recuento": 20
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 20,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -7127,10 +7419,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 20
+        "50": 21
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7143,10 +7436,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ARENA",
-          "recuento": 26
+          "recuento": 30
         }
       ],
-      "recuento_nuevas_matriculaciones": 26,
+      "recuento_nuevas_matriculaciones": 30,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7156,10 +7449,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 26
+        "50": 30
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7172,20 +7466,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "ARIIC",
-          "recuento": 11
+          "recuento": 15
         }
       ],
-      "recuento_nuevas_matriculaciones": 11,
+      "recuento_nuevas_matriculaciones": 15,
       "periodos_observados": [
         "2026-01",
         "2026-03",
         "2026-04",
         "2026-05",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 11
+        "50": 15
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7286,16 +7581,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "BEIJIBAO",
-          "recuento": 4
+          "recuento": 5
         }
       ],
-      "recuento_nuevas_matriculaciones": 4,
+      "recuento_nuevas_matriculaciones": 5,
       "periodos_observados": [
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 4
+        "90": 5
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7350,10 +7646,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "BMW",
-          "recuento": 9912
+          "recuento": 10794
         }
       ],
-      "recuento_nuevas_matriculaciones": 9912,
+      "recuento_nuevas_matriculaciones": 10794,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7363,11 +7659,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9902,
-        "51": 8,
+        "50": 10783,
+        "51": 9,
         "90": 2
       },
       "coincidencias_inventario": [],
@@ -7488,10 +7785,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "CECOTEC",
-          "recuento": 196
+          "recuento": 218
         }
       ],
-      "recuento_nuevas_matriculaciones": 196,
+      "recuento_nuevas_matriculaciones": 218,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7501,12 +7798,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 95,
+        "50": 106,
         "51": 1,
-        "90": 100
+        "90": 111
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7547,18 +7845,20 @@
       "variantes_observadas": [
         {
           "valor_observado": "CITROEN",
-          "recuento": 11
+          "recuento": 18
         }
       ],
-      "recuento_nuevas_matriculaciones": 11,
+      "recuento_nuevas_matriculaciones": 18,
       "periodos_observados": [
         "2026-01",
         "2026-03",
         "2026-06",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 11
+        "90": 17,
+        "91": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7641,10 +7941,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "DERBI",
-          "recuento": 55
+          "recuento": 61
         }
       ],
-      "recuento_nuevas_matriculaciones": 55,
+      "recuento_nuevas_matriculaciones": 61,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7654,10 +7954,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 55
+        "90": 61
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7827,60 +8128,6 @@
       "variantes_observadas": [
         {
           "valor_observado": "E-BROH",
-          "recuento": 33
-        }
-      ],
-      "recuento_nuevas_matriculaciones": 33,
-      "periodos_observados": [
-        "2026-01",
-        "2026-02",
-        "2026-03",
-        "2026-04",
-        "2026-05",
-        "2026-06",
-        "2026-07",
-        "2026-08",
-        "2026-09"
-      ],
-      "tipos_vehiculo": {
-        "50": 25,
-        "90": 8
-      },
-      "coincidencias_inventario": [],
-      "estado_revision": "nueva_candidata",
-      "fuente": "DGT MATRABA microdatos mensuales",
-      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
-      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
-    },
-    {
-      "marca_normalizada": "e max vmoto",
-      "variantes_observadas": [
-        {
-          "valor_observado": "E-MAX, VMOTO",
-          "recuento": 12
-        }
-      ],
-      "recuento_nuevas_matriculaciones": 12,
-      "periodos_observados": [
-        "2026-01",
-        "2026-02",
-        "2026-04",
-        "2026-08"
-      ],
-      "tipos_vehiculo": {
-        "90": 12
-      },
-      "coincidencias_inventario": [],
-      "estado_revision": "nueva_candidata",
-      "fuente": "DGT MATRABA microdatos mensuales",
-      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
-      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
-    },
-    {
-      "marca_normalizada": "e ride pro",
-      "variantes_observadas": [
-        {
-          "valor_observado": "E RIDE PRO",
           "recuento": 34
         }
       ],
@@ -7894,11 +8141,68 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 27,
-        "90": 7
+        "50": 26,
+        "90": 8
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "e max vmoto",
+      "variantes_observadas": [
+        {
+          "valor_observado": "E-MAX, VMOTO",
+          "recuento": 13
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 13,
+      "periodos_observados": [
+        "2026-01",
+        "2026-02",
+        "2026-04",
+        "2026-08",
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 13
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "e ride pro",
+      "variantes_observadas": [
+        {
+          "valor_observado": "E RIDE PRO",
+          "recuento": 43
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 43,
+      "periodos_observados": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09",
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 33,
+        "90": 10
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -7979,10 +8283,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "EFUN",
-          "recuento": 507
+          "recuento": 556
         }
       ],
-      "recuento_nuevas_matriculaciones": 507,
+      "recuento_nuevas_matriculaciones": 556,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -7992,11 +8296,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 484,
-        "90": 23
+        "50": 532,
+        "90": 24
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8009,10 +8314,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ELECTRIC MOTION",
-          "recuento": 18
+          "recuento": 20
         }
       ],
-      "recuento_nuevas_matriculaciones": 18,
+      "recuento_nuevas_matriculaciones": 20,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -8020,10 +8325,11 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 18
+        "50": 20
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8036,17 +8342,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "ENGTIAN",
-          "recuento": 5
+          "recuento": 16
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 16,
       "periodos_observados": [
         "2026-02",
         "2026-05",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 5
+        "90": 16
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8101,17 +8408,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "EUROCKA",
-          "recuento": 7
+          "recuento": 9
         }
       ],
-      "recuento_nuevas_matriculaciones": 7,
+      "recuento_nuevas_matriculaciones": 9,
       "periodos_observados": [
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 5,
-        "90": 2
+        "90": 4
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8166,10 +8474,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "F.B MONDIAL",
-          "recuento": 12
+          "recuento": 14
         }
       ],
-      "recuento_nuevas_matriculaciones": 12,
+      "recuento_nuevas_matriculaciones": 14,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -8177,10 +8485,11 @@
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 12
+        "50": 14
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8193,10 +8502,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "FANTIC MOTOR",
-          "recuento": 242
+          "recuento": 261
         }
       ],
-      "recuento_nuevas_matriculaciones": 242,
+      "recuento_nuevas_matriculaciones": 261,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -8206,12 +8515,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 138,
+        "50": 146,
         "51": 10,
-        "90": 94
+        "90": 105
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8301,10 +8611,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "FELQ",
-          "recuento": 39
+          "recuento": 42
         }
       ],
-      "recuento_nuevas_matriculaciones": 39,
+      "recuento_nuevas_matriculaciones": 42,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -8314,12 +8624,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 18,
         "51": 2,
-        "90": 19
+        "90": 22
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8353,15 +8664,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "FRISON",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-04"
+        "2026-04",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1
+        "50": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8395,16 +8707,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "G.A.C.",
-          "recuento": 3
+          "recuento": 4
         }
       ],
-      "recuento_nuevas_matriculaciones": 3,
+      "recuento_nuevas_matriculaciones": 4,
       "periodos_observados": [
         "2026-01",
-        "2026-03"
+        "2026-03",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 3
+        "90": 4
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8460,15 +8773,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "GAC MOBYLETTE",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-01"
+        "2026-01",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 1
+        "90": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8524,17 +8838,39 @@
       "variantes_observadas": [
         {
           "valor_observado": "GILERA",
-          "recuento": 3
+          "recuento": 4
         }
       ],
-      "recuento_nuevas_matriculaciones": 3,
+      "recuento_nuevas_matriculaciones": 4,
       "periodos_observados": [
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 1,
-        "90": 2
+        "90": 3
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "golden lion",
+      "variantes_observadas": [
+        {
+          "valor_observado": "GOLDEN LION",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8681,10 +9017,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HERO MOTOCORP",
-          "recuento": 479
+          "recuento": 546
         }
       ],
-      "recuento_nuevas_matriculaciones": 479,
+      "recuento_nuevas_matriculaciones": 546,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -8694,10 +9030,32 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 479
+        "50": 546
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "hitway",
+      "variantes_observadas": [
+        {
+          "valor_observado": "HITWAY",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8731,10 +9089,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "HORWIN",
-          "recuento": 42
+          "recuento": 50
         }
       ],
-      "recuento_nuevas_matriculaciones": 42,
+      "recuento_nuevas_matriculaciones": 50,
       "periodos_observados": [
         "2026-01",
         "2026-03",
@@ -8743,11 +9101,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 18,
-        "90": 24
+        "90": 32
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8806,10 +9165,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "INDIAN MOTORCYCLE",
-          "recuento": 254
+          "recuento": 279
         }
       ],
-      "recuento_nuevas_matriculaciones": 254,
+      "recuento_nuevas_matriculaciones": 279,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -8819,10 +9178,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 254
+        "50": 279
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -8902,6 +9262,27 @@
       "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
     },
     {
+      "marca_normalizada": "iotostark",
+      "variantes_observadas": [
+        {
+          "valor_observado": "IOTOSTARK",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 1
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
       "marca_normalizada": "jcadi",
       "variantes_observadas": [
         {
@@ -8928,20 +9309,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "JIAJUE",
-          "recuento": 36
+          "recuento": 37
         }
       ],
-      "recuento_nuevas_matriculaciones": 36,
+      "recuento_nuevas_matriculaciones": 37,
       "periodos_observados": [
         "2026-02",
         "2026-05",
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 24,
+        "50": 25,
         "90": 12
       },
       "coincidencias_inventario": [],
@@ -8999,17 +9381,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "JYMOTO",
-          "recuento": 5
+          "recuento": 7
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 7,
       "periodos_observados": [
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5
+        "50": 7
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9043,16 +9426,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "KAINING",
-          "recuento": 2
+          "recuento": 4
         }
       ],
-      "recuento_nuevas_matriculaciones": 2,
+      "recuento_nuevas_matriculaciones": 4,
       "periodos_observados": [
         "2026-03",
-        "2026-05"
+        "2026-05",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2
+        "50": 4
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9065,17 +9449,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "KRC",
-          "recuento": 28
+          "recuento": 41
         }
       ],
-      "recuento_nuevas_matriculaciones": 28,
+      "recuento_nuevas_matriculaciones": 41,
       "periodos_observados": [
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 22,
-        "90": 6
+        "50": 31,
+        "90": 10
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9088,10 +9473,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LEONART",
-          "recuento": 121
+          "recuento": 134
         }
       ],
-      "recuento_nuevas_matriculaciones": 121,
+      "recuento_nuevas_matriculaciones": 134,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9101,10 +9486,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 121
+        "50": 134
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9117,10 +9503,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LETBE",
-          "recuento": 837
+          "recuento": 944
         }
       ],
-      "recuento_nuevas_matriculaciones": 837,
+      "recuento_nuevas_matriculaciones": 944,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9130,12 +9516,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 786,
+        "50": 888,
         "51": 10,
-        "90": 36,
+        "90": 41,
         "91": 5
       },
       "coincidencias_inventario": [],
@@ -9171,10 +9558,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LIGIER",
-          "recuento": 89
+          "recuento": 100
         }
       ],
-      "recuento_nuevas_matriculaciones": 89,
+      "recuento_nuevas_matriculaciones": 100,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9184,10 +9571,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 89
+        "90": 100
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9221,10 +9609,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LINHAI",
-          "recuento": 127
+          "recuento": 134
         }
       ],
-      "recuento_nuevas_matriculaciones": 127,
+      "recuento_nuevas_matriculaciones": 134,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9234,10 +9622,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 127
+        "50": 134
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9316,10 +9705,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "LVNENG",
-          "recuento": 19
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 19,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9327,11 +9716,12 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 2,
-        "90": 17
+        "90": 19
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9344,10 +9734,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MALAGUTI",
-          "recuento": 43
+          "recuento": 46
         }
       ],
-      "recuento_nuevas_matriculaciones": 43,
+      "recuento_nuevas_matriculaciones": 46,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -9356,10 +9746,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 43
+        "50": 46
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9424,17 +9815,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "MARSHAL MOTO",
-          "recuento": 32
+          "recuento": 34
         }
       ],
-      "recuento_nuevas_matriculaciones": 32,
+      "recuento_nuevas_matriculaciones": 34,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 32
+        "50": 34
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9510,20 +9902,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "MBP",
-          "recuento": 15
+          "recuento": 18
         }
       ],
-      "recuento_nuevas_matriculaciones": 15,
+      "recuento_nuevas_matriculaciones": 18,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 15
+        "50": 18
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9536,15 +9929,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "MECATECNO",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-06"
+        "2026-06",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 1
+        "90": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9557,10 +9951,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MH MOTORCYCLES",
-          "recuento": 1412
+          "recuento": 1529
         }
       ],
-      "recuento_nuevas_matriculaciones": 1412,
+      "recuento_nuevas_matriculaciones": 1529,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9570,12 +9964,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1277,
+        "50": 1384,
         "51": 1,
-        "90": 134
+        "90": 144
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9588,10 +9983,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MITT",
-          "recuento": 2124
+          "recuento": 2449
         }
       ],
-      "recuento_nuevas_matriculaciones": 2124,
+      "recuento_nuevas_matriculaciones": 2449,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9601,11 +9996,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1993,
-        "90": 131
+        "50": 2315,
+        "90": 134
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9666,10 +10062,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOBYLETTE",
-          "recuento": 29
+          "recuento": 32
         }
       ],
-      "recuento_nuevas_matriculaciones": 29,
+      "recuento_nuevas_matriculaciones": 32,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9679,10 +10075,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 29
+        "90": 32
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9717,10 +10114,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MONDIAL",
-          "recuento": 18
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 18,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9729,10 +10126,11 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 18
+        "50": 21
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9745,17 +10143,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "MONKEY BIKES",
-          "recuento": 14
+          "recuento": 16
         }
       ],
-      "recuento_nuevas_matriculaciones": 14,
+      "recuento_nuevas_matriculaciones": 16,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 12,
+        "50": 14,
         "90": 2
       },
       "coincidencias_inventario": [],
@@ -9812,10 +10211,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MONTESA",
-          "recuento": 72
+          "recuento": 78
         }
       ],
-      "recuento_nuevas_matriculaciones": 72,
+      "recuento_nuevas_matriculaciones": 78,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -9824,10 +10223,11 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 70,
+        "50": 76,
         "90": 2
       },
       "coincidencias_inventario": [],
@@ -9862,19 +10262,41 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOTO VESPA",
-          "recuento": 6
+          "recuento": 8
         }
       ],
-      "recuento_nuevas_matriculaciones": 6,
+      "recuento_nuevas_matriculaciones": 8,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-04",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 6
+        "90": 8
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "motobecane",
+      "variantes_observadas": [
+        {
+          "valor_observado": "MOTOBECANE",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "90": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -9953,10 +10375,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MOTRON MOTORRAD",
-          "recuento": 25
+          "recuento": 27
         }
       ],
-      "recuento_nuevas_matriculaciones": 25,
+      "recuento_nuevas_matriculaciones": 27,
       "periodos_observados": [
         "2026-01",
         "2026-03",
@@ -9965,10 +10387,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 20,
+        "50": 22,
         "90": 5
       },
       "coincidencias_inventario": [],
@@ -9982,10 +10405,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "MTR BIKES",
-          "recuento": 44
+          "recuento": 46
         }
       ],
-      "recuento_nuevas_matriculaciones": 44,
+      "recuento_nuevas_matriculaciones": 46,
       "periodos_observados": [
         "2026-01",
         "2026-03",
@@ -9994,10 +10417,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 44
+        "50": 46
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10010,15 +10434,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "MUSATTI",
-          "recuento": 1
+          "recuento": 8
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 8,
       "periodos_observados": [
-        "2026-02"
+        "2026-02",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 1
+        "50": 8
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10073,10 +10498,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NERVA",
-          "recuento": 58
+          "recuento": 67
         }
       ],
-      "recuento_nuevas_matriculaciones": 58,
+      "recuento_nuevas_matriculaciones": 67,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10086,11 +10511,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 56,
-        "51": 2
+        "50": 64,
+        "51": 3
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10103,10 +10529,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NEXT",
-          "recuento": 488
+          "recuento": 537
         }
       ],
-      "recuento_nuevas_matriculaciones": 488,
+      "recuento_nuevas_matriculaciones": 537,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10116,12 +10542,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 393,
-        "51": 1,
-        "90": 94
+        "50": 421,
+        "51": 11,
+        "90": 105
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10134,10 +10561,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "NEXTELECTRICMOTORS",
-          "recuento": 20
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 20,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -10145,10 +10572,12 @@
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 20
+        "50": 20,
+        "51": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10172,6 +10601,27 @@
       ],
       "tipos_vehiculo": {
         "50": 3
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "norton",
+      "variantes_observadas": [
+        {
+          "valor_observado": "NORTON",
+          "recuento": 2
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 2,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10236,20 +10686,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "ORCAL",
-          "recuento": 9
+          "recuento": 13
         }
       ],
-      "recuento_nuevas_matriculaciones": 9,
+      "recuento_nuevas_matriculaciones": 13,
       "periodos_observados": [
         "2026-01",
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9
+        "50": 13
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10283,19 +10734,20 @@
       "variantes_observadas": [
         {
           "valor_observado": "OTTOBIKE",
-          "recuento": 9
+          "recuento": 10
         }
       ],
-      "recuento_nuevas_matriculaciones": 9,
+      "recuento_nuevas_matriculaciones": 10,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9
+        "50": 10
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10332,10 +10784,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "PEUGEOT",
-          "recuento": 3092
+          "recuento": 3406
         }
       ],
-      "recuento_nuevas_matriculaciones": 3092,
+      "recuento_nuevas_matriculaciones": 3406,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10345,12 +10797,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2030,
+        "50": 2202,
         "51": 4,
-        "90": 1058
+        "90": 1200
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10363,10 +10816,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "PUCH",
-          "recuento": 27
+          "recuento": 28
         }
       ],
-      "recuento_nuevas_matriculaciones": 27,
+      "recuento_nuevas_matriculaciones": 28,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10376,10 +10829,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 27
+        "90": 28
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10413,10 +10867,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "QUAZZAR",
-          "recuento": 84
+          "recuento": 95
         }
       ],
-      "recuento_nuevas_matriculaciones": 84,
+      "recuento_nuevas_matriculaciones": 95,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -10425,12 +10879,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 33,
-        "51": 40,
-        "90": 11
+        "50": 34,
+        "51": 44,
+        "90": 17
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10464,10 +10919,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "RAY ELECTRIC MOTORS",
-          "recuento": 13
+          "recuento": 15
         }
       ],
-      "recuento_nuevas_matriculaciones": 13,
+      "recuento_nuevas_matriculaciones": 15,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10475,10 +10930,11 @@
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 13
+        "50": 15
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10533,10 +10989,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "REDMOTO",
-          "recuento": 57
+          "recuento": 62
         }
       ],
-      "recuento_nuevas_matriculaciones": 57,
+      "recuento_nuevas_matriculaciones": 62,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10546,10 +11002,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 57
+        "50": 62
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10562,14 +11019,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "REGAL-RAPTOR",
-          "recuento": 1
+          "recuento": 2
         }
       ],
-      "recuento_nuevas_matriculaciones": 1,
+      "recuento_nuevas_matriculaciones": 2,
       "periodos_observados": [
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
+        "90": 1,
         "91": 1
       },
       "coincidencias_inventario": [],
@@ -10627,20 +11086,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "RODEA",
-          "recuento": 27
+          "recuento": 32
         }
       ],
-      "recuento_nuevas_matriculaciones": 27,
+      "recuento_nuevas_matriculaciones": 32,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 27
+        "50": 32
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10700,19 +11160,20 @@
       "variantes_observadas": [
         {
           "valor_observado": "ROYAL ALLOY",
-          "recuento": 10
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 10,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 10
+        "50": 11
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10748,18 +11209,19 @@
       "variantes_observadas": [
         {
           "valor_observado": "SAKURA",
-          "recuento": 8
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 8,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-03",
         "2026-06",
         "2026-07",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 7,
+        "50": 10,
         "90": 1
       },
       "coincidencias_inventario": [],
@@ -10824,10 +11286,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SCORPA",
-          "recuento": 141
+          "recuento": 172
         }
       ],
-      "recuento_nuevas_matriculaciones": 141,
+      "recuento_nuevas_matriculaciones": 172,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10837,12 +11299,34 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 77,
+        "50": 93,
         "51": 1,
-        "90": 63
+        "90": 78
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "scutum",
+      "variantes_observadas": [
+        {
+          "valor_observado": "SCUTUM",
+          "recuento": 2
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 2,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 2
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10855,10 +11339,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SEGWAY",
-          "recuento": 163
+          "recuento": 185
         }
       ],
-      "recuento_nuevas_matriculaciones": 163,
+      "recuento_nuevas_matriculaciones": 185,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -10868,11 +11352,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 127,
-        "51": 1,
+        "50": 146,
+        "51": 4,
         "90": 35
       },
       "coincidencias_inventario": [],
@@ -10907,18 +11392,19 @@
       "variantes_observadas": [
         {
           "valor_observado": "SENKE",
-          "recuento": 5
+          "recuento": 6
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 6,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5
+        "50": 6
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -10931,21 +11417,22 @@
       "variantes_observadas": [
         {
           "valor_observado": "SHANSU",
-          "recuento": 15
+          "recuento": 16
         }
       ],
-      "recuento_nuevas_matriculaciones": 15,
+      "recuento_nuevas_matriculaciones": 16,
       "periodos_observados": [
         "2026-03",
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "90": 11,
-        "91": 4
+        "91": 5
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11023,17 +11510,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "SKY TEAM",
-          "recuento": 5
+          "recuento": 7
         }
       ],
-      "recuento_nuevas_matriculaciones": 5,
+      "recuento_nuevas_matriculaciones": 7,
       "periodos_observados": [
         "2026-03",
         "2026-05",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 5
+        "50": 7
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11110,10 +11598,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "STARK",
-          "recuento": 363
+          "recuento": 434
         }
       ],
-      "recuento_nuevas_matriculaciones": 363,
+      "recuento_nuevas_matriculaciones": 434,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11123,11 +11611,33 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 351,
-        "51": 12
+        "50": 419,
+        "51": 15
+      },
+      "coincidencias_inventario": [],
+      "estado_revision": "nueva_candidata",
+      "fuente": "DGT MATRABA microdatos mensuales",
+      "criterio": "CLAVE_TRAMITE=1; NUEVO_USADO=N; COD_TIPO en 50,51,90,91",
+      "nota": "Una observación de matriculación no acredita por sí sola comercialización vigente, importador actual ni red de venta o posventa."
+    },
+    {
+      "marca_normalizada": "sumco",
+      "variantes_observadas": [
+        {
+          "valor_observado": "SUMCO",
+          "recuento": 1
+        }
+      ],
+      "recuento_nuevas_matriculaciones": 1,
+      "periodos_observados": [
+        "2026-10"
+      ],
+      "tipos_vehiculo": {
+        "50": 1
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11163,10 +11673,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SURRON",
-          "recuento": 28
+          "recuento": 35
         }
       ],
-      "recuento_nuevas_matriculaciones": 28,
+      "recuento_nuevas_matriculaciones": 35,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11176,11 +11686,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 12,
-        "90": 16
+        "50": 16,
+        "90": 19
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11193,10 +11704,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "SWM",
-          "recuento": 72
+          "recuento": 80
         }
       ],
-      "recuento_nuevas_matriculaciones": 72,
+      "recuento_nuevas_matriculaciones": 80,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11206,10 +11717,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 62,
+        "50": 70,
         "51": 8,
         "90": 2
       },
@@ -11245,10 +11757,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "TALARIA",
-          "recuento": 203
+          "recuento": 260
         }
       ],
-      "recuento_nuevas_matriculaciones": 203,
+      "recuento_nuevas_matriculaciones": 260,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11258,12 +11770,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 111,
+        "50": 146,
         "51": 3,
-        "90": 88,
+        "90": 110,
         "91": 1
       },
       "coincidencias_inventario": [],
@@ -11361,10 +11874,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "TM MOTO",
-          "recuento": 17
+          "recuento": 18
         }
       ],
-      "recuento_nuevas_matriculaciones": 17,
+      "recuento_nuevas_matriculaciones": 18,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11373,10 +11886,11 @@
         "2026-05",
         "2026-06",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 17
+        "50": 18
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11410,21 +11924,22 @@
       "variantes_observadas": [
         {
           "valor_observado": "TNT MOTOR",
-          "recuento": 17
+          "recuento": 25
         }
       ],
-      "recuento_nuevas_matriculaciones": 17,
+      "recuento_nuevas_matriculaciones": 25,
       "periodos_observados": [
         "2026-04",
         "2026-05",
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2,
-        "90": 15
+        "50": 3,
+        "90": 22
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11437,21 +11952,22 @@
       "variantes_observadas": [
         {
           "valor_observado": "TORROT",
-          "recuento": 10
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 10,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
         "2026-07",
-        "2026-08"
+        "2026-08",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 2,
-        "90": 8
+        "90": 9
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11485,17 +12001,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "TVS",
-          "recuento": 28
+          "recuento": 33
         }
       ],
-      "recuento_nuevas_matriculaciones": 28,
+      "recuento_nuevas_matriculaciones": 33,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 28
+        "50": 33
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11572,10 +12089,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ULTRAVIOLETTE AUTOMOTIVE PRIVA",
-          "recuento": 52
+          "recuento": 57
         }
       ],
-      "recuento_nuevas_matriculaciones": 52,
+      "recuento_nuevas_matriculaciones": 57,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11584,10 +12101,11 @@
         "2026-05",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 52
+        "50": 57
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11600,10 +12118,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "UM",
-          "recuento": 53
+          "recuento": 73
         }
       ],
-      "recuento_nuevas_matriculaciones": 53,
+      "recuento_nuevas_matriculaciones": 73,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11613,10 +12131,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 48,
+        "50": 68,
         "90": 5
       },
       "coincidencias_inventario": [],
@@ -11718,10 +12237,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VELCA",
-          "recuento": 469
+          "recuento": 546
         }
       ],
-      "recuento_nuevas_matriculaciones": 469,
+      "recuento_nuevas_matriculaciones": 546,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11731,11 +12250,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 446,
-        "90": 23
+        "50": 520,
+        "90": 26
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11836,10 +12356,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VENT S.R.L.",
-          "recuento": 130
+          "recuento": 146
         }
       ],
-      "recuento_nuevas_matriculaciones": 130,
+      "recuento_nuevas_matriculaciones": 146,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11849,11 +12369,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 48,
-        "90": 82
+        "50": 53,
+        "90": 93
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11887,20 +12408,21 @@
       "variantes_observadas": [
         {
           "valor_observado": "VERTIGO MOTORS",
-          "recuento": 9
+          "recuento": 11
         }
       ],
-      "recuento_nuevas_matriculaciones": 9,
+      "recuento_nuevas_matriculaciones": 11,
       "periodos_observados": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
         "2026-06",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 9
+        "50": 11
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11913,10 +12435,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "VESPINO",
-          "recuento": 142
+          "recuento": 159
         }
       ],
-      "recuento_nuevas_matriculaciones": 142,
+      "recuento_nuevas_matriculaciones": 159,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -11926,10 +12448,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "90": 142
+        "90": 159
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -11989,10 +12512,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "WOTTAN",
-          "recuento": 160
+          "recuento": 163
         }
       ],
-      "recuento_nuevas_matriculaciones": 160,
+      "recuento_nuevas_matriculaciones": 163,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -12002,10 +12525,11 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 160
+        "50": 163
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12111,10 +12635,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "YADEA",
-          "recuento": 20
+          "recuento": 21
         }
       ],
-      "recuento_nuevas_matriculaciones": 20,
+      "recuento_nuevas_matriculaciones": 21,
       "periodos_observados": [
         "2026-02",
         "2026-03",
@@ -12123,11 +12647,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
         "50": 8,
-        "90": 12
+        "90": 13
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12161,17 +12686,18 @@
       "variantes_observadas": [
         {
           "valor_observado": "YIBEN",
-          "recuento": 15
+          "recuento": 25
         }
       ],
-      "recuento_nuevas_matriculaciones": 15,
+      "recuento_nuevas_matriculaciones": 25,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 15
+        "50": 25
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12207,18 +12733,19 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZAIRON",
-          "recuento": 86
+          "recuento": 114
         }
       ],
-      "recuento_nuevas_matriculaciones": 86,
+      "recuento_nuevas_matriculaciones": 114,
       "periodos_observados": [
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 70,
-        "51": 16
+        "50": 90,
+        "51": 24
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12231,16 +12758,17 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZEEHO",
-          "recuento": 2
+          "recuento": 3
         }
       ],
-      "recuento_nuevas_matriculaciones": 2,
+      "recuento_nuevas_matriculaciones": 3,
       "periodos_observados": [
         "2026-05",
-        "2026-07"
+        "2026-07",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2
+        "50": 3
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12253,10 +12781,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZERO MOTORCYCLES",
-          "recuento": 189
+          "recuento": 219
         }
       ],
-      "recuento_nuevas_matriculaciones": 189,
+      "recuento_nuevas_matriculaciones": 219,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -12266,12 +12794,13 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 147,
-        "51": 36,
-        "90": 6
+        "50": 164,
+        "51": 47,
+        "90": 8
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12305,10 +12834,10 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZNEN",
-          "recuento": 86
+          "recuento": 89
         }
       ],
-      "recuento_nuevas_matriculaciones": 86,
+      "recuento_nuevas_matriculaciones": 89,
       "periodos_observados": [
         "2026-01",
         "2026-02",
@@ -12318,11 +12847,12 @@
         "2026-06",
         "2026-07",
         "2026-08",
-        "2026-09"
+        "2026-09",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 62,
-        "90": 24
+        "50": 64,
+        "90": 25
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
@@ -12356,15 +12886,16 @@
       "variantes_observadas": [
         {
           "valor_observado": "ZXMCO",
-          "recuento": 2
+          "recuento": 3
         }
       ],
-      "recuento_nuevas_matriculaciones": 2,
+      "recuento_nuevas_matriculaciones": 3,
       "periodos_observados": [
-        "2026-01"
+        "2026-01",
+        "2026-10"
       ],
       "tipos_vehiculo": {
-        "50": 2
+        "50": 3
       },
       "coincidencias_inventario": [],
       "estado_revision": "nueva_candidata",
