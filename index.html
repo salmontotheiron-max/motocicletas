@@ -347,9 +347,9 @@ function renderProvinceMap(f){
   const ranked=[...totals].filter(([,value])=>value>0).sort((a,b)=>b[1]-a[1]);
   const rank=selectedCode?ranked.findIndex(([code])=>code===selectedCode)+1:0;
   el("mapProvinceName").innerHTML=f.province==="all"?"<strong>Todas las provincias</strong>":"<strong>"+escapeHTML(f.province)+"</strong>";
-  el("mapProvinceValue").textContent=f.province==="all"?fmt(values.reduce((a,b)=>a+b,0)):selectedValue===undefined?"Sin datos":fmt(selectedValue);
+  el("mapProvinceValue").textContent=f.province==="all"?fmt(values.reduce((a,b)=>a+b,0)):selectedValue==null?"Sin datos":fmt(selectedValue);
   el("mapProvinceMeta").textContent=f.province==="all"?fmt(ranked.length)+" provincias con registros · "+mode.toLocaleLowerCase("es"):
-    selectedValue===undefined?"No hay registros para esta provincia y selección.": "Puesto "+rank+" de "+ranked.length+" provincias · "+(selectedValue/Math.max(1,values.reduce((a,b)=>a+b,0))*100).toLocaleString("es-ES",{maximumFractionDigits:2})+"% del total mostrado.";
+    selectedValue==null?"No hay registros para esta provincia y selección.": "Puesto "+rank+" de "+ranked.length+" provincias · "+(selectedValue/Math.max(1,values.reduce((a,b)=>a+b,0))*100).toLocaleString("es-ES",{maximumFractionDigits:2})+"% del total mostrado.";
 }
 function renderMonthlyChanges(f){
   const periods=state.periods.slice().sort();
