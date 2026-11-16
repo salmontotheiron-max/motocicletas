@@ -108,6 +108,21 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
       <p class="small" id="intensityNote">Indicadores publicados por MATRABA para el acumulado de periodos disponible. No se recalculan al cambiar el filtro mensual.</p>
     </article>
   </section>
+  <section class="panel" aria-label="Variación mensual provincial">
+    <h2>Variación mensual provincial</h2>
+    <p class="small">Compara los dos últimos periodos publicados. Los cambios porcentuales se calculan sobre el periodo anterior; si la base es cero, se muestran como no calculables.</p>
+    <p class="small" id="monthlyComparisonNote">—</p>
+    <div class="grid-2">
+      <article class="panel">
+        <h3>Nuevas · provincia de matriculación</h3>
+        <div style="overflow-x:auto"><table><thead><tr><th>Provincia</th><th>Anterior</th><th>Último</th><th>Variación</th><th>%</th></tr></thead><tbody id="monthlyNewChanges"></tbody></table></div>
+      </article>
+      <article class="panel">
+        <h3>Usadas · domicilio registral</h3>
+        <div style="overflow-x:auto"><table><thead><tr><th>Provincia</th><th>Anterior</th><th>Último</th><th>Variación</th><th>%</th></tr></thead><tbody id="monthlyUsedChanges"></tbody></table></div>
+      </article>
+    </div>
+  </section>
   <section class="panel" aria-label="Concentración y ranking territorial">
     <h2>Concentración y ranking territorial</h2>
     <p class="small">Comparación provincial separada por dimensión geográfica. Las matriculaciones nuevas se ordenan por provincia de matriculación; las usadas, por domicilio registral del vehículo.</p>
@@ -225,7 +240,41 @@ function render(){
   el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
-  renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
+  renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderMonthlyChanges(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();
+}
+function renderMonthlyChanges(f){
+  const periods=state.periods.slice().sort();
+  if(periods.length<2){
+    el("monthlyComparisonNote").textContent="Se necesitan al menos dos periodos publicados para calcular variaciones.";
+    el("monthlyNewChanges").innerHTML="<tr><td colspan='5'>Comparación no disponible.</td></tr>";
+    el("monthlyUsedChanges").innerHTML="<tr><td colspan='5'>Comparación no disponible.</td></tr>";
+    return;
+  }
+  const previous=periods[periods.length-2],latest=periods[periods.length-1];
+  el("monthlyComparisonNote").textContent="Comparación "+previous+" → "+latest+". Se incluyen provincias con registros en al menos uno de los dos periodos. Código: "+(f.kind==="motos"?"50/51":f.kind==="all"?"todos los tipos observados":f.kind)+".";
+  function build(scope,used,target){
+    const kindLabel=used?"Usado":"Nuevo";
+    const totals=new Map();
+    state.provincial.filter(r=>(r.periodo===previous||r.periodo===latest)&&
+      r.ambito_provincial===scope&&r.nuevo_usado===kindLabel&&typeOK(r,f.kind))
+      .forEach(r=>{
+        const item=totals.get(r.provincia)||{province:r.provincia,previous:0,latest:0};
+        if(r.periodo===previous)item.previous+=Number(r.recuento)||0;
+        else item.latest+=Number(r.recuento)||0;
+        totals.set(r.provincia,item);
+      });
+    const rows=[...totals.values()].map(r=>({...r,delta:r.latest-r.previous,pct:r.previous?((r.latest-r.previous)/r.previous*100):null}));
+    const increases=rows.filter(r=>r.delta>0).sort((a,b)=>b.delta-a.delta).slice(0,5);
+    const decreases=rows.filter(r=>r.delta<0).sort((a,b)=>a.delta-b.delta).slice(0,5);
+    const display=[...increases,...decreases];
+    el(target).innerHTML=display.map(r=>{
+      const selected=f.province!=="all"&&f.province===r.province;
+      const sign=r.delta>0?"+":"";
+      return "<tr"+(selected?" style='font-weight:800;background:#eff8ff'":"")+"><td>"+escapeHTML(r.province)+(selected?" · seleccionada":"")+"</td><td>"+fmt(r.previous)+"</td><td>"+fmt(r.latest)+"</td><td>"+sign+fmt(r.delta)+"</td><td>"+(r.pct===null?"n.c.":sign+dec(r.pct,2)+"%")+"</td></tr>";
+    }).join("")||"<tr><td colspan='5'>No hay variaciones para mostrar.</td></tr>";
+  }
+  build("matriculacion",false,"monthlyNewChanges");
+  build("domicilio_vehiculo",true,"monthlyUsedChanges");
 }
 function renderTerritorial(f){
   const scope=el("territorialScope").value;
