@@ -184,6 +184,8 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
 <script>
 "use strict";
 const BASE = "public/data/";
+// Archivo pesado servido temporalmente desde GitHub Raw; sustituir por la URL pública de R2 al completar su configuración.
+const MODEL_DATA_URL = "https://raw.githubusercontent.com/salmontotheiron-max/motocicletas/main/public/data/matriculaciones_marca_modelo_segmento.csv";
 const FILES = {
   manifest: "manifest.json",
   periods: "periodos.json",
@@ -216,7 +218,8 @@ function parseCSV(text){
   return rows.filter(r=>r.some(v=>v!=="")).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??""])));
 }
 async function loadText(path){
-  const response=await fetch(BASE+path,{cache:"no-store"});
+  const url=path===FILES.models?MODEL_DATA_URL:BASE+path;
+  const response=await fetch(url,{cache:"no-store"});
   if(!response.ok) throw new Error("No se pudo cargar "+path+" (HTTP "+response.status+")");
   return response.text();
 }
