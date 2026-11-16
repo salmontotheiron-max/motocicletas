@@ -290,7 +290,11 @@ async function loadProvinceMap(){
     const object=topology.objects&&topology.objects.provinces;
     if(!object)throw new Error("El atlas no contiene el objeto de provincias esperado.");
     const collection=topojson.feature(topology,object);
-    if(!collection.features||collection.features.length<50)throw new Error("La geometría provincial está incompleta.");
+    if(!collection.features||collection.features.length!==52)throw new Error("La geometría provincial debe contener exactamente 52 provincias; recibidas: "+(collection.features?.length||0)+".");
+    const atlasIds=collection.features.map(feature=>String(feature.id??"").padStart(2,"0"));
+    if(new Set(atlasIds).size!==52)throw new Error("El atlas contiene identificadores provinciales duplicados o ausentes.");
+    const unmatched=atlasIds.filter(id=>!Object.prototype.hasOwnProperty.call(INE_TO_DGT_PROVINCE,id));
+    if(unmatched.length)throw new Error("Hay códigos INE sin correspondencia DGT: "+unmatched.join(", ")+".");
     provinceMapState.features=collection.features;provinceMapState.ready=true;
     renderProvinceMap(selected());
   }catch(error){
