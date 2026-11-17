@@ -184,8 +184,8 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
 <script>
 "use strict";
 const BASE = "public/data/";
-// Archivo pesado servido temporalmente desde GitHub Raw; sustituir por la URL pública de R2 al completar su configuración.
-const MODEL_DATA_URL = "https://raw.githubusercontent.com/salmontotheiron-max/motocicletas/main/public/data/matriculaciones_marca_modelo_segmento.csv";
+// Archivo pesado servido desde el bucket público de Cloudflare R2.
+const MODEL_DATA_URL = "https://pub-dff8f54cfab847568b9f2fba49e7a3ef.r2.dev/matriculaciones_marca_modelo_segmento.csv";
 const FILES = {
   manifest: "manifest.json",
   periods: "periodos.json",
