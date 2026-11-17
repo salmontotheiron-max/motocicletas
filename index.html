@@ -518,10 +518,10 @@ function populateModelOptions(){
   el("modelMultiHelp").textContent=(available.length>shown.length?"Mostrando 500 de "+fmt(available.length)+" modelos. ":"")+ "Sin selección: todos los modelos que coincidan con la búsqueda. Usa Ctrl/Cmd para elegir varios.";
 }
 function renderModels(f){
-  const brands=selectedValues(el("modelBrand")),models=selectedValues(el("modelMulti")),operation=el("modelOperation").value;
+  const brands=selectedValues(el("modelBrand")),models=selectedValues(el("modelMulti")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),operation=el("modelOperation").value;
   const rows=state.models.filter(r=>(f.period==="all"||r.periodo===f.period)&&
     typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province)&&
-    (!brands.length||brands.includes(r.marca))&&(!models.length||models.includes(r.modelo))&&(operation==="all"||r.tipo_registro===operation));
+    (!brands.length||brands.includes(r.marca))&&(models.length?models.includes(r.modelo):(!query||(r.modelo||"").toLocaleLowerCase("es").includes(query)))&&(operation==="all"||r.tipo_registro===operation));
   const groups=new Map();
   rows.forEach(r=>{
     const key=[r.marca,r.modelo,r.COD_TIPO,r.provincia,r.tipo_registro].join("|");
