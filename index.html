@@ -28,7 +28,7 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,t
 .note{border-left:3px solid #98a2b3;padding:.2rem .7rem;color:var(--muted);font-size:.85rem;margin:.7rem 0}
 footer{position:relative;z-index:1;max-width:1240px;margin:auto;padding:1rem;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
 a{color:var(--accent)}.nowrap{white-space:nowrap}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:100px 1fr 65px}th,td{padding:.48rem .22rem;font-size:.82rem}.header-brand{align-items:flex-start}.header-logo{width:54px;height:48px}body:before{background-size:78vw;background-position:center 58%;opacity:.035}}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:100px 1fr 65px}th,td{padding:.48rem .22rem;font-size:.82rem}.header-brand{align-items:flex-start}.header-logo{width:54px;height:48px}body:before{background-size:55vw;background-position:center 58%;opacity:.035}}
 .province-map-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(230px,.8fr);gap:1rem;align-items:start}
 #provinceMap{width:100%;height:auto;display:block;min-height:280px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}
 #provinceMap path{stroke:#fff;stroke-width:1.15;cursor:pointer;transition:opacity .12s,stroke-width .12s}
@@ -69,7 +69,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="panel" aria-label="Análisis por marca">
     <h2>Volumen por marca y segmento</h2>
     <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
-      <div><label for="brandSearch">Buscar sólo una marca</label><input id="brandSearch" type="search" placeholder="Buscar una única marca…" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
+      <div><label for="brandSearch">Buscar sólo una marca</label><input id="brandSearch" type="search" placeholder="Escribe el nombre exacto de una marca…" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
       <div><label for="brandMulti">Marcas (selección múltiple)</label><select id="brandMulti" multiple size="5" aria-describedby="brandMultiHelp" style="width:100%;min-height:8rem;border:1px solid #c8d1da;border-radius:8px;padding:.35rem"></select><p class="small" id="brandMultiHelp">Sin selección: todas las marcas. Usa Ctrl/Cmd para elegir varias.</p></div>
       <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="motos" selected>Motocicletas · 50 + 51</option><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
       <div><label for="brandOperation">Operación</label><select id="brandOperation"><option value="matriculacion_nueva">Matriculación nueva</option><option value="venta">Venta declarada DGT (COD_POSESION=V)</option><option value="subasta">Subasta</option><option value="transferencia_sin_clasificar">Transferencia sin clasificar</option></select></div>
@@ -555,7 +555,7 @@ function renderBrands(){
  const universe=new Map();baseRows.forEach(r=>universe.set(r.marca,(universe.get(r.marca)||0)+(Number(r.recuento)||0)));
  const total=[...universe.values()].reduce((s,v)=>s+v,0),grouped=new Map();
  baseRows.filter(r=>!selectedBrands.length||selectedBrands.includes(r.marca)).forEach(r=>{const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}},n=Number(r.recuento)||0;item.volume+=n;item.types[r.COD_TIPO]=(item.types[r.COD_TIPO]||0)+n;grouped.set(r.marca,item);});
- const rows=[...grouped.values()].filter(item=>item.name.toLocaleLowerCase("es").includes(query)).sort((a,b)=>b.volume-a.volume),visibleTotal=rows.reduce((s,r)=>s+r.volume,0);
+ const rows=[...grouped.values()].filter(item=>!query||item.name.toLocaleLowerCase("es")===query).sort((a,b)=>b.volume-a.volume),visibleTotal=rows.reduce((s,r)=>s+r.volume,0);
  const operationLabel={"matriculacion_nueva":"Matriculaciones nuevas","venta":"Ventas declaradas DGT (COD_POSESION=V)","subasta":"Subastas","transferencia_sin_clasificar":"Transferencias sin clasificar"}[operation]||operation;
  el("brandScope").textContent=operationLabel+" · "+(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+" · "+fmt(visibleTotal)+" unidades seleccionadas · "+fmt(total)+" unidades del universo filtrado · "+dec(total?visibleTotal/total*100:0,2)+"% del total · "+provinceLabel(f)+" · "+periodLabel(f)+".";
  el("brandRanking").innerHTML=rows.map(item=>{const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>DGT</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(total?item.volume/total*100:0,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";}).join("")||"<tr><td colspan='4'>Sin marcas para este filtro.</td></tr>";
