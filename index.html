@@ -53,8 +53,8 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
 <main>
   <div id="status" class="status" role="status" aria-live="polite">Cargando datos oficiales de MATRABA…</div>
   <section class="filters" aria-label="Filtros del observatorio">
-    <div><label for="period">Periodos</label><select id="period" multiple size="5" aria-describedby="periodHelp"><option value="all">Todos los meses disponibles</option></select><p class="small" id="periodHelp">Sin selección: todos los periodos. Selecciona varios meses para formar trimestres, cuatrimestres o semestres.</p></div>
-    <div><label for="province">Provincias</label><select id="province" multiple size="5" aria-describedby="provinceHelp"><option value="all">Todas las provincias</option></select><p class="small" id="provinceHelp">Sin selección: todas las provincias. Puedes elegir varias para comparar o agrupar.</p></div>
+    <div><label for="period">Periodos</label><select id="period" multiple size="5" aria-describedby="periodHelp"></select><p class="small" id="periodHelp">Sin selección: todos los periodos. Selecciona varios meses para formar trimestres, cuatrimestres o semestres.</p></div>
+    <div><label for="province">Provincias</label><select id="province" multiple size="5" aria-describedby="provinceHelp"></select><p class="small" id="provinceHelp">Sin selección: todas las provincias. Puedes elegir varias para comparar o agrupar.</p></div>
     <div><label for="kind">Categoría registral</label><select id="kind"><option value="motos" selected>Motocicletas (50 + 51)</option><option value="50">Tipo 50 · Dos ruedas sin sidecar</option><option value="51">Tipo 51 · Con sidecar</option><option value="all">Todos los tipos observados</option></select></div>
     <div class="actions"><button id="csv">Exportar datos filtrados</button><button id="pdf" class="secondary">Imprimir / PDF</button></div>
   </section>
@@ -241,7 +241,7 @@ async function loadData(){
 }
 function populateFilters(){
   const p=el("period");state.periods.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;p.appendChild(o);});
-  const prov=[...new Set(state.provincial.filter(x=>x.ambito_provincial==="matriculacion"&&x.nuevo_usado==="Nuevo"&&["50","51"].includes(x.COD_TIPO)).map(x=>x.provincia))].sort((a,b)=>a.localeCompare(b,"es"));
+  const prov=[...new Set(state.provincial.filter(x=>["matriculacion","domicilio_vehiculo"].includes(x.ambito_provincial)&&["Nuevo","Usado"].includes(x.nuevo_usado)&&["50","51"].includes(x.COD_TIPO)).map(x=>x.provincia).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
   const s=el("province");prov.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;s.appendChild(o);});
 }
 function selected(){
@@ -287,9 +287,7 @@ const INE_TO_DGT_PROVINCE={
 async function loadProvinceMap(){
   try{
     if(!window.d3||!window.topojson||!d3.geoMercator)throw new Error("No se han podido cargar D3 o TopoJSON.");
-    const response=await fetch("https://cdn.jsdelivr.net/npm/es-atlas@0.6.0/es/provinces.json",{mode:"cors",cache:"force-cache"});
-    if(!response.ok)throw new Error("Atlas provincial no disponible (HTTP "+response.status+").");
-    const topology=await response.json();
+    let topology,lastError;for(const url of ["https://cdn.jsdelivr.net/npm/es-atlas@0.6.0/es/provinces.json","https://unpkg.com/es-atlas@0.6.0/es/provinces.json"]){try{const response=await fetch(url,{mode:"cors",cache:"force-cache"});if(!response.ok)throw new Error("HTTP "+response.status);topology=await response.json();break;}catch(error){lastError=error;}}if(!topology)throw new Error("No se pudo descargar el atlas provincial desde los CDN disponibles: "+(lastError?.message||"error de red"));
     const object=topology.objects&&topology.objects.provinces;
     if(!object)throw new Error("El atlas no contiene el objeto de provincias esperado.");
     const collection=topojson.feature(topology,object);
@@ -601,7 +599,7 @@ function exportCSV(){
   document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),0);
 }
-["period","province","kind"].forEach(id=>el(id).addEventListener("change",()=>{if(id==="period"&&selectedValues(el("period")).includes("all"))[...el("period").options].forEach(o=>o.selected=o.value==="all");if(id==="province"&&selectedValues(el("province")).includes("all"))[...el("province").options].forEach(o=>o.selected=o.value==="all");populateModelBrands();render();}));
+["period","province","kind"].forEach(id=>el(id).addEventListener("change",()=>{populateModelBrands();render();}));
 el("territorialScope").addEventListener("change",()=>renderTerritorial(selected()));
 el("mapScope").addEventListener("change",()=>renderProvinceMap(selected()));
 el("brandSearch").addEventListener("input",()=>{const active=!!el("brandSearch").value.trim();el("brandMulti").disabled=active;if(active)[...el("brandMulti").options].forEach(o=>o.selected=false);renderBrands();});
