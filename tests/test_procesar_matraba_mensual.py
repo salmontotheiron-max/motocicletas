@@ -237,7 +237,7 @@ class MonthlyProcessorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             row = make_record(
                 FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
-                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07", CILINDRADA_CC="250",
                 COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
                 COD_POSESION="X", COD_PROVINCIA_VEH="MU",
                 FEC_PROCESO="31082026",
@@ -296,6 +296,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             self.assertEqual(rows[0]["naturaleza_operacion"], "transferencia_sin_clasificar")
             self.assertEqual(rows[0]["CLAVE_TRAMITE"], "2")
             self.assertEqual(rows[0]["IND_NUEVO_USADO"], "U")
+            self.assertEqual(rows[0]["cilindrada_cc"], "250")
 
     def test_duplicate_rows_are_not_silently_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
