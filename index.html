@@ -370,7 +370,7 @@ function renderMonthlyChanges(f){
   function build(scope,used,target){
     const kindLabel=used?"Usado":"Nuevo";
     const totals=new Map();
-    state.provincial.filter(r=>(r.periodo===previous||r.periodo===latest)&&
+    state.provincial.filter(r=>(r.periodo===previous||r.periodo===latest)&&provinceOK(r,f)&&
       r.ambito_provincial===scope&&r.nuevo_usado===kindLabel&&typeOK(r,f.kind))
       .forEach(r=>{
         const item=totals.get(r.provincia)||{province:r.provincia,previous:0,latest:0};
@@ -397,7 +397,7 @@ function renderTerritorial(f){
   const dimension=used?"domicilio_vehiculo":"matriculacion";
   const condition=used?"Usado":"Nuevo";
   const totals=new Map();
-  state.provincial.filter(r=>periodOK(r,f)&&
+  state.provincial.filter(r=>periodOK(r,f)&&provinceOK(r,f)&&
     r.ambito_provincial===dimension&&r.nuevo_usado===condition&&typeOK(r,f.kind))
     .forEach(r=>totals.set(r.provincia,(totals.get(r.provincia)||0)+(Number(r.recuento)||0)));
   const rows=[...totals].map(([province,value])=>({province,value}))
@@ -413,22 +413,22 @@ function renderTerritorial(f){
   el("top10Count").textContent=fmt(top10)+" de "+fmt(total)+" registros";
   el("territorialProvinceCount").textContent=fmt(rows.length);
   const scopeLabel=used?"usadas · domicilio registral":"nuevas · provincia de matriculación";
-  const periodLabel=periodLabel(f);
+  const periodText=periodLabel(f);
   const kindLabel=f.kind==="motos"?"códigos 50/51":f.kind==="all"?"todos los tipos observados":"código "+f.kind;
-  el("territorialNote").textContent="Distribución de matriculaciones "+scopeLabel+" · "+periodLabel+" · "+kindLabel+
+  el("territorialNote").textContent="Distribución de matriculaciones "+scopeLabel+" · "+periodText+" · "+kindLabel+
     (f.province.length?" · provincias seleccionadas: "+provinceLabel(f):" · ranking nacional.");
   let accumulated=0;
   el("territorialRanking").innerHTML=rows.slice(0,20).map((r,i)=>{
     accumulated+=r.value;
     const share=total?r.value/total*100:0,acc=total?accumulated/total*100:0;
-    const highlight=f.province!=="all"&&r.province===f.province;
+    const highlight=f.province.includes(r.province);
     return "<tr"+(highlight?" style='font-weight:800;background:#eff8ff'":"")+"><td>"+(i+1)+"</td><td>"+escapeHTML(r.province)+(highlight?" · seleccionada":"")+"</td><td>"+fmt(r.value)+"</td><td>"+dec(share,2)+"%</td><td>"+dec(acc,2)+"%</td></tr>";
   }).join("")||"<tr><td colspan='5'>Sin datos para los filtros seleccionados.</td></tr>";
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
   const periods=f.period.length?f.period:state.periods;
-  const points=periods.map(p=>({p,n:provincialSum(p,f.province,f.kind,"matriculacion",false),u:provincialSum(p,f.province,f.kind,"domicilio_vehiculo",true)}));
+  const points=periods.map(p=>({p,n:provincialSum([p],f.province,f.kind,"matriculacion",false),u:provincialSum([p],f.province,f.kind,"domicilio_vehiculo",true)}));
   const maxN=Math.max(1,...points.map(x=>x.n)),maxU=Math.max(1,...points.map(x=>x.u));
   const x=i=>L+(points.length===1?plotW/2:i*plotW/(points.length-1));
   const yN=v=>T+plotH-(v/maxN)*plotH,yU=v=>T+plotH-(v/maxU)*plotH;
@@ -465,8 +465,8 @@ function renderTypes(f){
   const max=Math.max(1,...entries.map(item=>item[1]));
   const typeLabel=f.kind==="motos"?"Motocicletas 50/51":f.kind==="all"?"Todos los tipos observados":"Tipo DGT "+f.kind;
   const periodLabel=periodLabel(f);
-  const provinceLabel=provinceLabel(f)+" · provincia de matriculación";
-  el("typeNote").textContent="Matriculaciones nuevas · "+typeLabel+" · "+provinceLabel+" · "+periodLabel+".";
+  const provinceText=provinceLabel(f)+" · provincia de matriculación";
+  el("typeNote").textContent="Matriculaciones nuevas · "+typeLabel+" · "+provinceText+" · "+periodText+".";
   el("typeBars").innerHTML=entries.map(([code,value])=>{
     const name=descriptions[code]||("Tipo DGT "+code);
     const share=total?value/total*100:0;
@@ -552,33 +552,16 @@ function renderFlows(f){
   }).join("")||"<tr><td colspan='6'>Sin registros con provincias de origen y domicilio conocidas.</td></tr>";
 }
 function renderBrands(){
-  const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es");
-  const selectedBrands=selectedValues(el("brandMulti"));
-  const segment=el("brandSegment").value, operation=el("brandOperation").value, f=selected();
-  const grouped=new Map();
-  state.models.filter(r=>r.tipo_registro===operation&&
-    periodOK(r,f)&&
-    provinceOK(r,f)&&typeOK(r,f.kind)&&(!selectedBrands.length||selectedBrands.includes(r.marca))&&
-    (segment==="all"||(segment==="motos"?["50","51"].includes(r.COD_TIPO):r.COD_TIPO===segment)))
-  .forEach(r=>{
-    const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}};
-    const n=Number(r.recuento)||0;item.volume+=n;
-    item.types[r.COD_TIPO]=(item.types[r.COD_TIPO]||0)+n;
-    grouped.set(r.marca,item);
-  });
-  const allRows=[...grouped.values()].sort((a,b)=>b.volume-a.volume);
-  const total=allRows.reduce((sum,item)=>sum+item.volume,0);
-  const rows=allRows.filter(item=>item.name.toLocaleLowerCase("es").includes(query));
-  const visibleTotal=rows.reduce((sum,item)=>sum+item.volume,0);
-  const operationLabel={"matriculacion_nueva":"Matriculaciones nuevas","venta":"Ventas declaradas DGT (COD_POSESION=V)","subasta":"Subastas","transferencia_sin_clasificar":"Transferencias sin clasificar"}[operation]||operation;
-  el("brandScope").textContent=operationLabel+" · "+(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
-    " · "+fmt(visibleTotal)+" unidades en el resultado mostrado · "+fmt(total)+" unidades antes de la búsqueda de texto · "+(provinceLabel(f))+" · "+(periodLabel(f))+" · "+rows.length+" marcas.";
-  el("brandRanking").innerHTML=rows.map(item=>{
-    const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
-    const share=total?item.volume/total*100:0;
-    return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>DGT</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(share,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";
-  }).join("")||"<tr><td colspan='4'>Sin marcas para este filtro.</td></tr>";
-  el("brandTotal").innerHTML=rows.length?"<tr><th>SUMA DE UNIDADES · RESULTADO ACTUAL</th><th>"+fmt(visibleTotal)+"</th><th>"+dec(total?visibleTotal/total*100:0,2)+"%</th><th>"+rows.length+" marcas</th></tr>":"";
+ const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es"),selectedBrands=selectedValues(el("brandMulti"));
+ const segment=el("brandSegment").value,operation=el("brandOperation").value,f=selected(),baseRows=activeModelRows(operation,segment,f);
+ const universe=new Map();baseRows.forEach(r=>universe.set(r.marca,(universe.get(r.marca)||0)+(Number(r.recuento)||0)));
+ const total=[...universe.values()].reduce((s,v)=>s+v,0),grouped=new Map();
+ baseRows.filter(r=>!selectedBrands.length||selectedBrands.includes(r.marca)).forEach(r=>{const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}},n=Number(r.recuento)||0;item.volume+=n;item.types[r.COD_TIPO]=(item.types[r.COD_TIPO]||0)+n;grouped.set(r.marca,item);});
+ const rows=[...grouped.values()].filter(item=>item.name.toLocaleLowerCase("es").includes(query)).sort((a,b)=>b.volume-a.volume),visibleTotal=rows.reduce((s,r)=>s+r.volume,0);
+ const operationLabel={"matriculacion_nueva":"Matriculaciones nuevas","venta":"Ventas declaradas DGT (COD_POSESION=V)","subasta":"Subastas","transferencia_sin_clasificar":"Transferencias sin clasificar"}[operation]||operation;
+ el("brandScope").textContent=operationLabel+" · "+(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+" · "+fmt(visibleTotal)+" unidades seleccionadas · "+fmt(total)+" unidades del universo filtrado · "+dec(total?visibleTotal/total*100:0,2)+"% del total · "+provinceLabel(f)+" · "+periodLabel(f)+".";
+ el("brandRanking").innerHTML=rows.map(item=>{const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");return "<tr><td>"+escapeHTML(item.name)+" <span class='tag'>DGT</span></td><td>"+fmt(item.volume)+"</td><td>"+dec(total?item.volume/total*100:0,2)+"%</td><td>"+escapeHTML(mix)+"</td></tr>";}).join("")||"<tr><td colspan='4'>Sin marcas para este filtro.</td></tr>";
+ el("brandTotal").innerHTML=rows.length?"<tr><th>SUMA DE UNIDADES · RESULTADO ACTUAL</th><th>"+fmt(visibleTotal)+"</th><th>"+dec(total?visibleTotal/total*100:0,2)+"%</th><th>"+rows.length+" marcas</th></tr>":"";
 }
 function escapeHTML(value){
   return String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
