@@ -21,6 +21,12 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
             self.html,
         )
 
+    def test_period_and_province_filters_are_multivalued(self):
+        self.assertIn('id="period" multiple', self.html)
+        self.assertIn('id="province" multiple', self.html)
+        self.assertIn("function periodOK(row,f)", self.html)
+        self.assertIn("function provinceOK(row,f", self.html)
+
     def test_type_predicate_keeps_motorcycles_separate(self):
         self.assertIn(
             'if(k==="motos")return ["50","51"].includes(String(r.COD_TIPO));',
@@ -60,6 +66,12 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('"marca","modelo","recuento"', export)
         self.assertIn('["marca_modelo",period,r.tipo_registro', export)
         self.assertIn('"matriculacion_nueva":"Matriculación nueva"', export)
+
+    def test_brand_selectors_use_active_volume_order_and_partial_universe_totals(self):
+        self.assertIn("function activeModelRows(operation,segment,f)", self.html)
+        self.assertIn("function rankedBrands(rows)", self.html)
+        self.assertIn("unidades del universo filtrado", self.html)
+        self.assertIn("SUMA DE UNIDADES · RESULTADO ACTUAL", self.html)
 
     def test_used_registration_is_not_exported_as_a_transfer(self):
         self.assertIn('"matriculacion_usada":"Matriculación de vehículo usado"', self.html)
