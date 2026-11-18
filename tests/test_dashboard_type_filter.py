@@ -54,7 +54,7 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
 
     def test_csv_export_includes_all_filtered_operation_families(self):
         start = self.html.index("function exportCSV(){")
-        end = self.html.index('\n["period","province","kind"]', start)
+        end = self.html.index('\n["period","province","kind","cylinder"]', start)
         export = self.html[start:end]
         self.assertIn('r.tipo_registro', export)
         self.assertIn('"venta":"Transferencia · venta declarada DGT"', export)
@@ -72,6 +72,9 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn("function rankedBrands(rows)", self.html)
         self.assertIn("unidades del universo filtrado", self.html)
         self.assertIn("SUMA DE UNIDADES · RESULTADO ACTUAL", self.html)
+        self.assertIn('id="cylinder" multiple', self.html)
+        self.assertIn('cilindrada_cc', self.html)
+        self.assertIn("f.cylinder.includes", self.html)
 
     def test_dashboard_filter_accessor_does_not_collide_with_selected_locals(self):
         self.assertIn("function getDashboardFilters()", self.html)
