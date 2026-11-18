@@ -244,7 +244,7 @@ function populateFilters(){
   const prov=[...new Set(state.provincial.filter(x=>["matriculacion","domicilio_vehiculo"].includes(x.ambito_provincial)&&["Nuevo","Usado"].includes(x.nuevo_usado)&&["50","51"].includes(x.COD_TIPO)).map(x=>x.provincia).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
   const s=el("province");prov.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;s.appendChild(o);});
 }
-function selected(){
+function getDashboardFilters(){
   const period=selectedValues(el("period")).filter(v=>v!=="all"),province=selectedValues(el("province")).filter(v=>v!=="all");
   return {period,province,kind:el("kind").value};
 }
@@ -258,7 +258,7 @@ function provincialSum(periods,provinces,kind,scope,used){
 }
 function nationalNew(periods,kind){return state.monthly.filter(r=>(!periods.length||periods.includes(r.periodo))&&r.nuevo_usado==="Nuevo"&&typeOK(r,kind)).reduce((s,r)=>s+(Number(r.recuento)||0),0);}
 function render(){
-  const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
+  const f=getDashboardFilters(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
   const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
   const transferRows=state.models.filter(r=>["venta","subasta","transferencia_sin_clasificar"].includes(r.tipo_registro)&&
     periodOK(r,f)&&typeOK(r,f.kind)&&
@@ -302,7 +302,7 @@ async function loadProvinceMap(){
     const unmatched=atlasIds.filter(id=>!Object.prototype.hasOwnProperty.call(INE_TO_DGT_PROVINCE,id));
     if(unmatched.length)throw new Error("Hay códigos INE sin correspondencia DGT: "+unmatched.join(", ")+".");
     provinceMapState.features=collection.features;provinceMapState.ready=true;
-    renderProvinceMap(selected());
+    renderProvinceMap(getDashboardFilters());
   }catch(error){
     provinceMapState.failed=true;
     el("mapStatus").textContent="Mapa no disponible: "+error.message+" · Los rankings y tablas siguen operativos.";
@@ -517,14 +517,14 @@ function syncBrandControls(){
  if(hasSelection)el("brandSearch").value="";
 }
 function populateModelBrands(){
- const f=selected(),modelBrands=rankedBrands(activeModelRows(el("modelOperation").value,"all",f)),brandBrands=rankedBrands(activeModelRows(el("brandOperation").value,el("brandSegment").value,f));
+ const f=getDashboardFilters(),modelBrands=rankedBrands(activeModelRows(el("modelOperation").value,"all",f)),brandBrands=rankedBrands(activeModelRows(el("brandOperation").value,el("brandSegment").value,f));
  populateMultiSelect(el("modelBrand"),modelBrands,selectedValues(el("modelBrand")).filter(v=>modelBrands.includes(v)));
  populateMultiSelect(el("brandMulti"),brandBrands,selectedValues(el("brandMulti")).filter(v=>brandBrands.includes(v)));
  syncBrandControls();
  populateModelOptions();
 }
 function populateModelOptions(){
- const f=selected(),brands=selectedValues(el("modelBrand")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),selected=selectedValues(el("modelMulti"));
+ const f=getDashboardFilters(),brands=selectedValues(el("modelBrand")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),selected=selectedValues(el("modelMulti"));
  const rows=activeModelRows(el("modelOperation").value,"all",f).filter(row=>(!brands.length||brands.includes(row.marca))&&(!query||(row.modelo||"").toLocaleLowerCase("es").includes(query)));
  const totals=new Map();rows.forEach(row=>totals.set(row.modelo,(totals.get(row.modelo)||0)+(Number(row.recuento)||0)));
  const available=[...totals].filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]||String(a[0]).localeCompare(String(b[0]),"es")).map(([model])=>model).filter(Boolean),shown=available.slice(0,500);
@@ -564,7 +564,7 @@ function renderFlows(f){
 }
 function renderBrands(){
  const query=(el("brandSearch").value||"").trim().toLocaleLowerCase("es"),selectedBrands=selectedValues(el("brandMulti"));
- const segment=el("brandSegment").value,operation=el("brandOperation").value,f=selected(),baseRows=activeModelRows(operation,segment,f);
+ const segment=el("brandSegment").value,operation=el("brandOperation").value,f=getDashboardFilters(),baseRows=activeModelRows(operation,segment,f);
  const universe=new Map();baseRows.forEach(r=>universe.set(r.marca,(universe.get(r.marca)||0)+(Number(r.recuento)||0)));
  const total=[...universe.values()].reduce((s,v)=>s+v,0),grouped=new Map();
  baseRows.filter(r=>!selectedBrands.length||selectedBrands.includes(r.marca)).forEach(r=>{const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}},n=Number(r.recuento)||0;item.volume+=n;item.types[r.COD_TIPO]=(item.types[r.COD_TIPO]||0)+n;grouped.set(r.marca,item);});
@@ -578,7 +578,7 @@ function escapeHTML(value){
   return String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 }
 function exportCSV(){
-  const f=selected(),rows=[];
+  const f=getDashboardFilters(),rows=[];
   const periods=state.periods.filter(period=>(!f.period.length||f.period.includes(period)));
   const operationLabels={
     "matriculacion_nueva":"Matriculación nueva",
@@ -613,16 +613,16 @@ function exportCSV(){
   setTimeout(()=>URL.revokeObjectURL(url),0);
 }
 ["period","province","kind"].forEach(id=>el(id).addEventListener("change",()=>{populateModelBrands();render();}));
-el("territorialScope").addEventListener("change",()=>renderTerritorial(selected()));
-el("mapScope").addEventListener("change",()=>renderProvinceMap(selected()));
+el("territorialScope").addEventListener("change",()=>renderTerritorial(getDashboardFilters()));
+el("mapScope").addEventListener("change",()=>renderProvinceMap(getDashboardFilters()));
 el("brandSearch").addEventListener("input",()=>{const active=!!el("brandSearch").value.trim();el("brandMulti").disabled=active;if(active)[...el("brandMulti").options].forEach(o=>o.selected=false);renderBrands();});
 el("brandMulti").addEventListener("change",()=>{const active=selectedValues(el("brandMulti")).length>0;el("brandSearch").disabled=active;if(active)el("brandSearch").value="";renderBrands();});
 el("brandSegment").addEventListener("change",()=>{populateModelBrands();renderBrands();});
 el("brandOperation").addEventListener("change",()=>{populateModelBrands();renderBrands();});
-el("modelBrand").addEventListener("change",()=>{populateModelOptions();renderModels(selected());});
-el("modelMulti").addEventListener("change",()=>renderModels(selected()));
-el("modelOperation").addEventListener("change",()=>{populateModelBrands();renderModels(selected());});
-el("modelSearch").addEventListener("input",()=>{populateModelOptions();renderModels(selected());});
+el("modelBrand").addEventListener("change",()=>{populateModelOptions();renderModels(getDashboardFilters());});
+el("modelMulti").addEventListener("change",()=>renderModels(getDashboardFilters()));
+el("modelOperation").addEventListener("change",()=>{populateModelBrands();renderModels(getDashboardFilters());});
+el("modelSearch").addEventListener("input",()=>{populateModelOptions();renderModels(getDashboardFilters());});
 el("csv").addEventListener("click",exportCSV);el("pdf").addEventListener("click",()=>window.print());
 loadData().catch(error=>{el("status").className="status error";el("status").textContent="No se han podido cargar los agregados MATRABA. "+error.message+" Comprueba que el dashboard se sirve desde la raíz del repositorio y que public/data está publicado.";});
 </script>
