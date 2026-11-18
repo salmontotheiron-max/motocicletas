@@ -11,7 +11,7 @@
 header{background:#101828;color:white;padding:1.4rem max(1rem,calc((100vw - 1240px)/2))}
 header .eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#b2ccff}
 header h1{margin:.2rem 0;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15}
-header p{margin:.55rem 0 0;color:#d0d5dd;max-width:850px}
+header p{margin:.55rem 0 0;color:#d0d5dd;max-width:850px}.header-brand{display:flex;align-items:center;gap:1rem}.header-logo{width:76px;height:64px;object-fit:contain;flex:none}body{position:relative}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:url("assets/logo.webp");background-repeat:no-repeat;background-position:center center;background-size:min(46vw,520px);opacity:.045}
 main{max-width:1240px;margin:1.2rem auto;padding:0 1rem 2rem}
 .status{padding:.8rem 1rem;border:1px solid #b2ddff;background:#eff8ff;border-radius:10px;margin-bottom:1rem}
 .status.error{border-color:#fda29b;background:#fef3f2}.status.warn{border-color:#fedf89;background:#fffaeb}
@@ -28,7 +28,7 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,t
 .note{border-left:3px solid #98a2b3;padding:.2rem .7rem;color:var(--muted);font-size:.85rem;margin:.7rem 0}
 footer{max-width:1240px;margin:auto;padding:1rem;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
 a{color:var(--accent)}.nowrap{white-space:nowrap}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:100px 1fr 65px}th,td{padding:.48rem .22rem;font-size:.82rem}}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.actions{align-items:stretch}.bar-row{grid-template-columns:100px 1fr 65px}th,td{padding:.48rem .22rem;font-size:.82rem}.header-brand{align-items:flex-start}.header-logo{width:54px;height:48px}body:before{background-size:78vw;background-position:center 58%;opacity:.035}}
 .province-map-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(230px,.8fr);gap:1rem;align-items:start}
 #provinceMap{width:100%;height:auto;display:block;min-height:280px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}
 #provinceMap path{stroke:#fff;stroke-width:1.15;cursor:pointer;transition:opacity .12s,stroke-width .12s}
@@ -46,15 +46,15 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
 </head>
 <body>
 <header>
-  <div class="eyebrow">Observatorio del mercado · Fuente DGT MATRABA</div>
-  <h1>Motocicletas en España</h1>
+  <div class="header-brand"><img class="header-logo" src="assets/logo.webp" alt="Salmon to the iron"><div><div class="eyebrow">Observatorio del mercado · Fuente DGT MATRABA</div>
+  <h1>Motocicletas en España</h1></div></div>
   <p>Matriculaciones nuevas, cambios de titularidad y distribución territorial. Datos agregados descargados del repositorio de capturas mensuales y actualizados cuando se publica una nueva versión válida.</p>
 </header>
 <main>
   <div id="status" class="status" role="status" aria-live="polite">Cargando datos oficiales de MATRABA…</div>
   <section class="filters" aria-label="Filtros del observatorio">
-    <div><label for="period">Periodo</label><select id="period"><option value="all">Todos los meses disponibles</option></select></div>
-    <div><label for="province">Provincia</label><select id="province"><option value="all">Todas las provincias</option></select></div>
+    <div><label for="period">Periodos</label><select id="period" multiple size="5" aria-describedby="periodHelp"><option value="all">Todos los meses disponibles</option></select><p class="small" id="periodHelp">Sin selección: todos los periodos. Selecciona varios meses para formar trimestres, cuatrimestres o semestres.</p></div>
+    <div><label for="province">Provincias</label><select id="province" multiple size="5" aria-describedby="provinceHelp"><option value="all">Todas las provincias</option></select><p class="small" id="provinceHelp">Sin selección: todas las provincias. Puedes elegir varias para comparar o agrupar.</p></div>
     <div><label for="kind">Categoría registral</label><select id="kind"><option value="motos" selected>Motocicletas (50 + 51)</option><option value="50">Tipo 50 · Dos ruedas sin sidecar</option><option value="51">Tipo 51 · Con sidecar</option><option value="all">Todos los tipos observados</option></select></div>
     <div class="actions"><button id="csv">Exportar datos filtrados</button><button id="pdf" class="secondary">Imprimir / PDF</button></div>
   </section>
@@ -69,7 +69,7 @@ a{color:var(--accent)}.nowrap{white-space:nowrap}
   <section class="panel" aria-label="Análisis por marca">
     <h2>Volumen por marca y segmento</h2>
     <div class="filters" style="padding:0;border:0;margin:.5rem 0 1rem">
-      <div><label for="brandSearch">Buscar marca</label><input id="brandSearch" type="search" placeholder="Filtrar marcas…" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
+      <div><label for="brandSearch">Buscar sólo una marca</label><input id="brandSearch" type="search" placeholder="Buscar una única marca…" style="font:inherit;border:1px solid #c8d1da;border-radius:8px;padding:.65rem;width:100%"></div>
       <div><label for="brandMulti">Marcas (selección múltiple)</label><select id="brandMulti" multiple size="5" aria-describedby="brandMultiHelp" style="width:100%;min-height:8rem;border:1px solid #c8d1da;border-radius:8px;padding:.35rem"></select><p class="small" id="brandMultiHelp">Sin selección: todas las marcas. Usa Ctrl/Cmd para elegir varias.</p></div>
       <div><label for="brandSegment">Segmento DGT</label><select id="brandSegment"><option value="motos" selected>Motocicletas · 50 + 51</option><option value="all">Todos los segmentos observados</option><option value="50">Motocicleta 2 ruedas</option><option value="51">Motocicleta con sidecar</option><option value="90">Ciclomotor 2 ruedas</option><option value="91">Ciclomotor 3 ruedas</option></select></div>
       <div><label for="brandOperation">Operación</label><select id="brandOperation"><option value="matriculacion_nueva">Matriculación nueva</option><option value="venta">Venta declarada DGT (COD_POSESION=V)</option><option value="subasta">Subasta</option><option value="transferencia_sin_clasificar">Transferencia sin clasificar</option></select></div>
@@ -245,8 +245,13 @@ function populateFilters(){
   const s=el("province");prov.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;s.appendChild(o);});
 }
 function selected(){
-  return {period:el("period").value,province:el("province").value,kind:el("kind").value};
+  const period=selectedValues(el("period")).filter(v=>v!=="all"),province=selectedValues(el("province")).filter(v=>v!=="all");
+  return {period,province,kind:el("kind").value};
 }
+function periodOK(row,f){return !f.period.length||f.period.includes(row.periodo);}
+function provinceOK(row,f,field="provincia"){return !f.province.length||f.province.includes(row[field]);}
+function periodLabel(f){return f.period.length?f.period.join(", "):"todos los periodos";}
+function provinceLabel(f){return f.province.length?f.province.join(", "):"todas las provincias";}
 function typeOK(r,k){if(k==="motos")return ["50","51"].includes(String(r.COD_TIPO));if(k==="all")return true;return String(r.COD_TIPO)===String(k);}
 function provincialSum(period,province,kind,scope,used){
   return state.provincial.filter(r=>(period==="all"||r.periodo===period)&&r.ambito_provincial===scope&&typeOK(r,kind)&&
@@ -261,22 +266,22 @@ function render(){
   const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
   const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
   const transferRows=state.models.filter(r=>["venta","subasta","transferencia_sin_clasificar"].includes(r.tipo_registro)&&
-    (f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
-    (f.province==="all"||r.provincia===f.province));
+    periodOK(r,f)&&typeOK(r,f.kind)&&
+    provinceOK(r,f));
   const saleRows=transferRows.filter(r=>r.tipo_registro==="venta");
   const transferAvailable=(state.manifest.archivos||[]).some(item=>item.tipo_fuente==="transferencias");
   const transferValue=transferRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
   const saleValue=saleRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
   const national=nationalNew(f.period,f.kind);
-  const share=f.province==="all"?100:(national?newValue/national*100:0);
+  const share=!f.province.length?100:(national?newValue/national*100:0);
   el("newTotal").textContent=fmt(newValue);el("usedTotal").textContent=fmt(usedValue);
   el("transferTotal").textContent=transferAvailable?fmt(transferValue):"—";
   el("transferScope").textContent=transferAvailable?"Cambios de titularidad · domicilio registral":"Pendiente de primera captura de microdatos de transferencias";
   el("saleTotal").textContent=transferAvailable?fmt(saleValue):"—";
   el("saleScope").textContent=transferAvailable?"COD_POSESION=V · domicilio registral, no provincia de venta":"Pendiente de primera captura de microdatos de transferencias";
   el("provinceShare").textContent=dec(share,2)+"%";
-  el("periodCount").textContent=f.period==="all"?String(state.periods.length):"1";
-  el("newScope").textContent=f.province==="all"?"España · provincia de matriculación":f.province+" · provincia de matriculación";
+  el("periodCount").textContent=f.period.length?String(f.period.length):String(state.periods.length);
+  el("newScope").textContent=f.province.length?provinceLabel(f)+" · provincias seleccionadas":"España · provincia de matriculación";
   el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
   renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderMonthlyChanges(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();renderProvinceMap(f);
@@ -311,7 +316,7 @@ function renderProvinceMap(f){
   const used=el("mapScope").value==="usado";
   const scope=used?"domicilio_vehiculo":"matriculacion",condition=used?"Usado":"Nuevo";
   const totals=new Map(),names=new Map();
-  state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial===scope&&r.nuevo_usado===condition&&typeOK(r,f.kind))
+  state.provincial.filter(r=>periodOK(r,f)&&r.ambito_provincial===scope&&r.nuevo_usado===condition&&typeOK(r,f.kind))
     .forEach(r=>{const code=String(r.COD_PROVINCIA||"");totals.set(code,(totals.get(code)||0)+(Number(r.recuento)||0));names.set(code,r.provincia);});
   const values=[...totals.values()].filter(v=>v>0),max=Math.max(1,...values);
   const color=d3.scaleSequential(used?d3.interpolatePuBuGn:d3.interpolateBlues).domain([0,max]);
@@ -327,7 +332,7 @@ function renderProvinceMap(f){
     })
     .attr("class",feature=>{
       const id=String(feature.id??"").replace(/^ES-/,"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id];
-      return code&&names.get(code)===f.province?"selected":"";
+      return code&&f.province.includes(names.get(code))?"selected":"";
     })
     .attr("tabindex",0).attr("role","button")
     .attr("aria-label",feature=>{
@@ -339,7 +344,7 @@ function renderProvinceMap(f){
       if(event.type==="keydown")event.preventDefault();
       const id=String(feature.id??"").replace(/^ES-/,"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id],name=code?names.get(code):null;
       if(!name)return;
-      el("province").value=name;render();
+      const option=[...el("province").options].find(item=>item.value===name);if(option){option.selected=!option.selected;render();}
     });
   features.append("title").text(feature=>{
     const id=String(feature.id??"").padStart(2,"0"),code=INE_TO_DGT_PROVINCE[id],name=code?(names.get(code)||feature.properties?.name||"Provincia"):(feature.properties?.name||"Provincia");
@@ -348,15 +353,14 @@ function renderProvinceMap(f){
   el("mapGradient").className="map-gradient"+(used?" used":"");
   el("mapMax").textContent=fmt(max);
   const mode=used?"Usadas · domicilio registral":"Nuevas · provincia de matriculación";
-  el("mapStatus").textContent=mode+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+(f.kind==="motos"?"códigos 50/51":f.kind==="all"?"todos los tipos observados":"tipo "+f.kind)+". Las provincias grises no tienen dato en esta selección.";
-  const selectedCode=[...names].find(([,name])=>name===f.province)?.[0];
-  const selectedValue=selectedCode?totals.get(selectedCode):null;
+  el("mapStatus").textContent=mode+" · "+(periodLabel(f))+" · "+(f.kind==="motos"?"códigos 50/51":f.kind==="all"?"todos los tipos observados":"tipo "+f.kind)+". Las provincias grises no tienen dato en esta selección.";
+  const selectedCodes=[...names].filter(([,name])=>f.province.includes(name)).map(([code])=>code);
+  const selectedValue=selectedCodes.reduce((sum,code)=>sum+(totals.get(code)||0),0);
   const ranked=[...totals].filter(([,value])=>value>0).sort((a,b)=>b[1]-a[1]);
-  const rank=selectedCode?ranked.findIndex(([code])=>code===selectedCode)+1:0;
-  el("mapProvinceName").innerHTML=f.province==="all"?"<strong>Todas las provincias</strong>":"<strong>"+escapeHTML(f.province)+"</strong>";
-  el("mapProvinceValue").textContent=f.province==="all"?fmt(values.reduce((a,b)=>a+b,0)):selectedValue==null?"Sin datos":fmt(selectedValue);
-  el("mapProvinceMeta").textContent=f.province==="all"?fmt(ranked.length)+" provincias con registros · "+mode.toLocaleLowerCase("es"):
-    selectedValue==null?"No hay registros para esta provincia y selección.": "Puesto "+rank+" de "+ranked.length+" provincias · "+(selectedValue/Math.max(1,values.reduce((a,b)=>a+b,0))*100).toLocaleString("es-ES",{maximumFractionDigits:2})+"% del total mostrado.";
+  const rank=selectedCodes.map(code=>ranked.findIndex(([item])=>item===code)+1).filter(n=>n>0).join(", ");
+  el("mapProvinceName").innerHTML=f.province.length?"<strong>"+escapeHTML(provinceLabel(f))+"</strong>":"<strong>Todas las provincias</strong>";
+  el("mapProvinceValue").textContent=f.province.length?fmt(selectedValue):fmt(values.reduce((a,b)=>a+b,0));
+  el("mapProvinceMeta").textContent=f.province.length?f.province.length+" provincias seleccionadas · puestos "+rank+" · "+(selectedValue/Math.max(1,values.reduce((a,b)=>a+b,0))*100).toLocaleString("es-ES",{maximumFractionDigits:2})+"% del total":fmt(ranked.length)+" provincias con registros · "+mode.toLocaleLowerCase("es");
 }
 function renderMonthlyChanges(f){
   const periods=state.periods.slice().sort();
@@ -384,7 +388,7 @@ function renderMonthlyChanges(f){
     const decreases=rows.filter(r=>r.delta<0).sort((a,b)=>a.delta-b.delta).slice(0,5);
     const display=[...increases,...decreases];
     el(target).innerHTML=display.map(r=>{
-      const selected=f.province!=="all"&&f.province===r.province;
+      const selected=f.province.includes(r.province);
       const sign=r.delta>0?"+":"";
       return "<tr"+(selected?" style='font-weight:800;background:#eff8ff'":"")+"><td>"+escapeHTML(r.province)+(selected?" · seleccionada":"")+"</td><td>"+fmt(r.previous)+"</td><td>"+fmt(r.latest)+"</td><td>"+sign+fmt(r.delta)+"</td><td>"+(r.pct===null?"n.c.":sign+dec(r.pct,2)+"%")+"</td></tr>";
     }).join("")||"<tr><td colspan='5'>No hay variaciones para mostrar.</td></tr>";
@@ -398,7 +402,7 @@ function renderTerritorial(f){
   const dimension=used?"domicilio_vehiculo":"matriculacion";
   const condition=used?"Usado":"Nuevo";
   const totals=new Map();
-  state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&
+  state.provincial.filter(r=>periodOK(r,f)&&
     r.ambito_provincial===dimension&&r.nuevo_usado===condition&&typeOK(r,f.kind))
     .forEach(r=>totals.set(r.provincia,(totals.get(r.provincia)||0)+(Number(r.recuento)||0)));
   const rows=[...totals].map(([province,value])=>({province,value}))
@@ -406,7 +410,7 @@ function renderTerritorial(f){
   const total=rows.reduce((sum,r)=>sum+r.value,0);
   const top5=rows.slice(0,5).reduce((sum,r)=>sum+r.value,0);
   const top10=rows.slice(0,10).reduce((sum,r)=>sum+r.value,0);
-  const selectedRow=f.province==="all"?null:rows.find(r=>r.province===f.province);
+  const selectedRow=null;
   const selectedRank=selectedRow?rows.findIndex(r=>r.province===f.province)+1:null;
   el("top5Share").textContent=dec(total?top5/total*100:0,2)+"%";
   el("top10Share").textContent=dec(total?top10/total*100:0,2)+"%";
@@ -414,10 +418,10 @@ function renderTerritorial(f){
   el("top10Count").textContent=fmt(top10)+" de "+fmt(total)+" registros";
   el("territorialProvinceCount").textContent=fmt(rows.length);
   const scopeLabel=used?"usadas · domicilio registral":"nuevas · provincia de matriculación";
-  const periodLabel=f.period==="all"?"todos los periodos":f.period;
+  const periodLabel=periodLabel(f);
   const kindLabel=f.kind==="motos"?"códigos 50/51":f.kind==="all"?"todos los tipos observados":"código "+f.kind;
   el("territorialNote").textContent="Distribución de matriculaciones "+scopeLabel+" · "+periodLabel+" · "+kindLabel+
-    (f.province!=="all"?(selectedRow?" · "+f.province+": puesto "+selectedRank+" de "+rows.length+" ("+fmt(selectedRow.value)+"; "+dec(total?selectedRow.value/total*100:0,2)+"%).":" · "+f.province+": sin registros en esta selección."):" · ranking nacional.");
+    (f.province.length?" · provincias seleccionadas: "+provinceLabel(f):" · ranking nacional.");
   let accumulated=0;
   el("territorialRanking").innerHTML=rows.slice(0,20).map((r,i)=>{
     accumulated+=r.value;
@@ -428,7 +432,7 @@ function renderTerritorial(f){
 }
 function renderTrend(f){
   const W=700,H=270,L=52,R=18,T=18,B=42,plotW=W-L-R,plotH=H-T-B;
-  const periods=f.period==="all"?state.periods:[f.period];
+  const periods=f.period.length?f.period:state.periods;
   const points=periods.map(p=>({p,n:provincialSum(p,f.province,f.kind,"matriculacion",false),u:provincialSum(p,f.province,f.kind,"domicilio_vehiculo",true)}));
   const maxN=Math.max(1,...points.map(x=>x.n)),maxU=Math.max(1,...points.map(x=>x.u));
   const x=i=>L+(points.length===1?plotW/2:i*plotW/(points.length-1));
@@ -442,9 +446,9 @@ function renderTrend(f){
   el("trend").innerHTML=svg;
 }
 function renderTypes(f){
-  const source=f.province==="all"?state.monthly:state.provincial;
-  const rows=source.filter(r=>(f.period==="all"||r.periodo===f.period)&&
-    (f.province==="all"||(r.ambito_provincial==="matriculacion"&&r.provincia===f.province))&&
+  const source=f.province.length?state.provincial:state.monthly;
+  const rows=source.filter(r=>periodOK(r,f)&&
+    (!f.province.length||(r.ambito_provincial==="matriculacion"&&provinceOK(r,f)))&&
     r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind));
   const descriptions={
     "50":"Motocicleta de dos ruedas sin sidecar",
@@ -465,8 +469,8 @@ function renderTypes(f){
   const total=entries.reduce((sum,item)=>sum+item[1],0);
   const max=Math.max(1,...entries.map(item=>item[1]));
   const typeLabel=f.kind==="motos"?"Motocicletas 50/51":f.kind==="all"?"Todos los tipos observados":"Tipo DGT "+f.kind;
-  const periodLabel=f.period==="all"?"todos los periodos":f.period;
-  const provinceLabel=f.province==="all"?"España":f.province+" · provincia de matriculación";
+  const periodLabel=periodLabel(f);
+  const provinceLabel=provinceLabel(f)+" · provincia de matriculación";
   el("typeNote").textContent="Matriculaciones nuevas · "+typeLabel+" · "+provinceLabel+" · "+periodLabel+".";
   el("typeBars").innerHTML=entries.map(([code,value])=>{
     const name=descriptions[code]||("Tipo DGT "+code);
@@ -480,7 +484,7 @@ function renderRanking(f){
     rows=state.ranking.filter(r=>r.ambito_provincial==="matriculacion").sort((a,b)=>Number(a.puesto)-Number(b.puesto)).slice(0,10).map(r=>({name:r.provincia,value:Number(r.recuento)}));
   }else{
     const map=new Map();
-    state.provincial.filter(r=>(f.period==="all"||r.periodo===f.period)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province))
+    state.provincial.filter(r=>periodOK(r,f)&&r.ambito_provincial==="matriculacion"&&r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&provinceOK(r,f))
       .forEach(r=>map.set(r.provincia,(map.get(r.provincia)||0)+Number(r.recuento||0)));
     rows=[...map].map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value).slice(0,10);
   }
@@ -489,7 +493,7 @@ function renderRanking(f){
 }
 function renderIntensity(f){
   let rows=state.intensity.slice().sort((a,b)=>Number(b.matriculaciones_por_1000_habitantes)-Number(a.matriculaciones_por_1000_habitantes));
-  if(f.province!=="all")rows=rows.filter(r=>r.provincia===f.province);
+  if(f.province.length)rows=rows.filter(r=>provinceOK(r,f));
   rows=rows.slice(0,10);
   el("intensity").innerHTML=rows.map(r=>'<tr><td>'+r.provincia+'</td><td>'+fmt(Number(r.matriculaciones_nuevas))+'</td><td>'+dec(Number(r.matriculaciones_por_1000_habitantes),2)+'</td><td>'+dec(Number(r.matriculaciones_sobre_parque_pct),2)+'%</td></tr>').join("")||'<tr><td colspan="4">Sin datos</td></tr>';
   const months=state.intensity[0]?.periodos?.split("|")||[];
@@ -518,8 +522,8 @@ function populateModelOptions(){
 }
 function renderModels(f){
   const brands=selectedValues(el("modelBrand")),models=selectedValues(el("modelMulti")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),operation=el("modelOperation").value;
-  const rows=state.models.filter(r=>(f.period==="all"||r.periodo===f.period)&&
-    typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province)&&
+  const rows=state.models.filter(r=>periodOK(r,f)&&
+    typeOK(r,f.kind)&&provinceOK(r,f)&&
     (!brands.length||brands.includes(r.marca))&&(models.length?models.includes(r.modelo):(!query||(r.modelo||"").toLocaleLowerCase("es").includes(query)))&&(operation==="all"||r.tipo_registro===operation));
   const groups=new Map();
   rows.forEach(r=>{
@@ -539,8 +543,8 @@ function renderModels(f){
 }
 function renderFlows(f){
   const groups=new Map();
-  state.cross.filter(r=>(f.period==="all"||r.periodo===f.period)&&typeOK(r,f.kind)&&
-    (f.province==="all"||r.provincia_matriculacion===f.province)&&
+  state.cross.filter(r=>periodOK(r,f)&&typeOK(r,f.kind)&&
+    (provinceOK(r,f,"provincia_matriculacion"))&&
     r.provincia_matriculacion&&r.provincia_domicilio_vehiculo&&
     r.provincia_matriculacion!=="(vacío)"&&r.provincia_domicilio_vehiculo!=="(vacío)")
   .forEach(r=>{
@@ -564,8 +568,8 @@ function renderBrands(){
   const segment=el("brandSegment").value, operation=el("brandOperation").value, f=selected();
   const grouped=new Map();
   state.models.filter(r=>r.tipo_registro===operation&&
-    (f.period==="all"||r.periodo===f.period)&&
-    (f.province==="all"||r.provincia===f.province)&&typeOK(r,f.kind)&&(!selectedBrands.length||selectedBrands.includes(r.marca))&&
+    periodOK(r,f)&&
+    provinceOK(r,f)&&typeOK(r,f.kind)&&(!selectedBrands.length||selectedBrands.includes(r.marca))&&
     (segment==="all"||(segment==="motos"?["50","51"].includes(r.COD_TIPO):r.COD_TIPO===segment)))
   .forEach(r=>{
     const item=grouped.get(r.marca)||{name:r.marca,volume:0,types:{}};
@@ -579,7 +583,7 @@ function renderBrands(){
   const visibleTotal=rows.reduce((sum,item)=>sum+item.volume,0);
   const operationLabel={"matriculacion_nueva":"Matriculaciones nuevas","venta":"Ventas declaradas DGT (COD_POSESION=V)","subasta":"Subastas","transferencia_sin_clasificar":"Transferencias sin clasificar"}[operation]||operation;
   el("brandScope").textContent=operationLabel+" · "+(segment==="all"?"Todos los segmentos observados":segment==="motos"?"Motocicletas · códigos 50 + 51":"Código DGT "+segment)+
-    " · "+fmt(visibleTotal)+" unidades en el resultado mostrado · "+fmt(total)+" unidades antes de la búsqueda de texto · "+(f.province==="all"?"España":f.province)+" · "+(f.period==="all"?"todos los periodos":f.period)+" · "+rows.length+" marcas.";
+    " · "+fmt(visibleTotal)+" unidades en el resultado mostrado · "+fmt(total)+" unidades antes de la búsqueda de texto · "+(provinceLabel(f))+" · "+(periodLabel(f))+" · "+rows.length+" marcas.";
   el("brandRanking").innerHTML=rows.map(item=>{
     const mix=Object.entries(item.types).sort((a,b)=>b[1]-a[1]).map(([code,value])=>code+": "+fmt(value)).join(" · ");
     const share=total?item.volume/total*100:0;
@@ -592,7 +596,7 @@ function escapeHTML(value){
 }
 function exportCSV(){
   const f=selected(),rows=[];
-  const periods=state.periods.filter(period=>f.period==="all"||period===f.period);
+  const periods=state.periods.filter(period=>(!f.period.length||f.period.includes(period)));
   const operationLabels={
     "matriculacion_nueva":"Matriculación nueva",
     "matriculacion_usada":"Matriculación de vehículo usado",
@@ -602,12 +606,12 @@ function exportCSV(){
   };
   periods.forEach(period=>{
     const newRows=state.provincial.filter(r=>r.periodo===period&&r.ambito_provincial==="matriculacion"&&
-      r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+      r.nuevo_usado==="Nuevo"&&typeOK(r,f.kind)&&provinceOK(r,f));
     const usedRows=state.provincial.filter(r=>r.periodo===period&&r.ambito_provincial==="domicilio_vehiculo"&&
-      r.nuevo_usado==="Usado"&&typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+      r.nuevo_usado==="Usado"&&typeOK(r,f.kind)&&provinceOK(r,f));
     const modelRows=state.models.filter(r=>r.periodo===period&&
       Object.prototype.hasOwnProperty.call(operationLabels,r.tipo_registro)&&
-      typeOK(r,f.kind)&&(f.province==="all"||r.provincia===f.province));
+      typeOK(r,f.kind)&&provinceOK(r,f));
     newRows.forEach(r=>rows.push(["provincia",period,"matriculacion_nueva",operationLabels.matriculacion_nueva,
       "Provincia de matriculación",r.provincia,r.COD_TIPO,"","",r.recuento]));
     usedRows.forEach(r=>rows.push(["provincia",period,"matriculacion_usada",operationLabels.matriculacion_usada,
@@ -625,11 +629,11 @@ function exportCSV(){
   document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),0);
 }
-["period","province","kind"].forEach(id=>el(id).addEventListener("change",render));
+["period","province","kind"].forEach(id=>el(id).addEventListener("change",()=>{if(id==="period"&&selectedValues(el("period")).includes("all"))[...el("period").options].forEach(o=>o.selected=o.value==="all");if(id==="province"&&selectedValues(el("province")).includes("all"))[...el("province").options].forEach(o=>o.selected=o.value==="all");populateModelBrands();render();}));
 el("territorialScope").addEventListener("change",()=>renderTerritorial(selected()));
 el("mapScope").addEventListener("change",()=>renderProvinceMap(selected()));
-el("brandSearch").addEventListener("input",renderBrands);
-el("brandMulti").addEventListener("change",renderBrands);
+el("brandSearch").addEventListener("input",()=>{const active=!!el("brandSearch").value.trim();el("brandMulti").disabled=active;if(active)[...el("brandMulti").options].forEach(o=>o.selected=false);renderBrands();});
+el("brandMulti").addEventListener("change",()=>{const active=selectedValues(el("brandMulti")).length>0;el("brandSearch").disabled=active;if(active)el("brandSearch").value="";renderBrands();});
 el("brandSegment").addEventListener("change",renderBrands);
 el("brandOperation").addEventListener("change",renderBrands);
 el("modelBrand").addEventListener("change",()=>{populateModelOptions();renderModels(selected());});
