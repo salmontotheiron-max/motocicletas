@@ -63,7 +63,7 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('typeOK(r,f.kind)', export)
         self.assertIn('provinceOK(r,f)', export)
         self.assertIn('"nivel_agregacion","periodo","tipo_registro"', export)
-        self.assertIn('"marca","modelo","recuento"', export)
+        self.assertIn('"marca","modelo","cilindrada_cc","recuento"', export)
         self.assertIn('["marca_modelo",period,r.tipo_registro', export)
         self.assertIn('"matriculacion_nueva":"Matriculación nueva"', export)
 
