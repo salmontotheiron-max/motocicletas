@@ -464,7 +464,7 @@ function renderTypes(f){
   const total=entries.reduce((sum,item)=>sum+item[1],0);
   const max=Math.max(1,...entries.map(item=>item[1]));
   const typeLabel=f.kind==="motos"?"Motocicletas 50/51":f.kind==="all"?"Todos los tipos observados":"Tipo DGT "+f.kind;
-  const periodLabel=periodLabel(f);
+  const periodText=periodLabel(f);
   const provinceText=provinceLabel(f)+" · provincia de matriculación";
   el("typeNote").textContent="Matriculaciones nuevas · "+typeLabel+" · "+provinceText+" · "+periodText+".";
   el("typeBars").innerHTML=entries.map(([code,value])=>{
