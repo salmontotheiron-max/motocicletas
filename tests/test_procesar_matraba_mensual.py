@@ -195,7 +195,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
             key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
-                   "matriculacion_nueva", "matriculacion", "A", "")
+                   "matriculacion_nueva", "matriculacion", "A", "", "(no informada)")
             self.assertEqual(models[key], 1)
 
     def test_matriculation_model_discards_incidental_possession_code(self):
@@ -212,7 +212,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
             key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
-                   "matriculacion_nueva", "matriculacion", "A", "")
+                   "matriculacion_nueva", "matriculacion", "A", "", "(no informada)")
             self.assertEqual(models[key], 1)
 
     def test_transfer_model_uses_vehicle_domicile_not_a_sale_province(self):
@@ -229,7 +229,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-08", include_transfers=True)
             key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
-                   "venta", "domicilio_vehiculo", "MU", "V")
+                   "venta", "domicilio_vehiculo", "MU", "V", "(no informada)")
             self.assertEqual(models[key], 1)
 
 
@@ -251,7 +251,7 @@ class MonthlyProcessorTests(unittest.TestCase):
                 archive, "2026-08", include_transfers=True
             )
             key = ("2026-08", "YAMAHA", "MT-07", "50", "U",
-                   "transferencia_sin_clasificar", "domicilio_vehiculo", "MU", "X")
+                   "transferencia_sin_clasificar", "domicilio_vehiculo", "MU", "X", "(no informada)")
             self.assertEqual(models[key], 1)
 
 
@@ -331,7 +331,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             self.assertEqual(info["registros"], 1)
             self.assertEqual(
                 models[("2026-08", "YAMAHA", "MT-07", "50", "U",
-                        "venta", "domicilio_vehiculo", "MU", "V")],
+                        "venta", "domicilio_vehiculo", "MU", "V", "(no informada)")],
                 1,
             )
 
