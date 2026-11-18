@@ -237,7 +237,7 @@ class MonthlyProcessorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             row = make_record(
                 FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
-                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07", CILINDRADA_CC="250",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
                 COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
                 COD_POSESION="X", COD_PROVINCIA_VEH="MU",
                 FEC_PROCESO="31082026",
@@ -265,7 +265,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             transfers_dir.mkdir()
             row = make_record(
                 FEC_MATRICULA="15072020", FEC_TRAMITACION="15082026",
-                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07",
+                MARCA_ITV="YAMAHA", MODELO_ITV="MT-07", CILINDRADA_CC="250",
                 COD_TIPO="50", CLAVE_TRAMITE="2", NUEVO_USADO="U",
                 COD_POSESION="X", COD_PROVINCIA_VEH="MU",
                 FEC_PROCESO="31082026",
