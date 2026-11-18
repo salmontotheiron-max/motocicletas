@@ -253,15 +253,10 @@ function provinceOK(row,f,field="provincia"){return !f.province.length||f.provin
 function periodLabel(f){return f.period.length?f.period.join(", "):"todos los periodos";}
 function provinceLabel(f){return f.province.length?f.province.join(", "):"todas las provincias";}
 function typeOK(r,k){if(k==="motos")return ["50","51"].includes(String(r.COD_TIPO));if(k==="all")return true;return String(r.COD_TIPO)===String(k);}
-function provincialSum(period,province,kind,scope,used){
-  return state.provincial.filter(r=>(period==="all"||r.periodo===period)&&r.ambito_provincial===scope&&typeOK(r,kind)&&
-    (used?r.nuevo_usado==="Usado":r.nuevo_usado==="Nuevo")&&(province==="all"||r.provincia===province))
-    .reduce((s,r)=>s+(Number(r.recuento)||0),0);
+function provincialSum(periods,provinces,kind,scope,used){
+  return state.provincial.filter(r=>(!periods.length||periods.includes(r.periodo))&&r.ambito_provincial===scope&&typeOK(r,kind)&&(used?r.nuevo_usado==="Usado":r.nuevo_usado==="Nuevo")&&(!provinces.length||provinces.includes(r.provincia))).reduce((s,r)=>s+(Number(r.recuento)||0),0);
 }
-function nationalNew(period,kind){
-  return state.monthly.filter(r=>(period==="all"||r.periodo===period)&&r.nuevo_usado==="Nuevo"&&typeOK(r,kind))
-    .reduce((s,r)=>s+(Number(r.recuento)||0),0);
-}
+function nationalNew(periods,kind){return state.monthly.filter(r=>(!periods.length||periods.includes(r.periodo))&&r.nuevo_usado==="Nuevo"&&typeOK(r,kind)).reduce((s,r)=>s+(Number(r.recuento)||0),0);}
 function render(){
   const f=selected(),newValue=provincialSum(f.period,f.province,f.kind,"matriculacion",false);
   const usedValue=provincialSum(f.period,f.province,f.kind,"domicilio_vehiculo",true);
@@ -282,7 +277,7 @@ function render(){
   el("provinceShare").textContent=dec(share,2)+"%";
   el("periodCount").textContent=f.period.length?String(f.period.length):String(state.periods.length);
   el("newScope").textContent=f.province.length?provinceLabel(f)+" · provincias seleccionadas":"España · provincia de matriculación";
-  el("usedScope").textContent=f.province==="all"?"España · domicilio registral":f.province+" · domicilio registral";
+  el("usedScope").textContent=f.province.length?provinceLabel(f)+" · domicilio registral":"España · domicilio registral";
   el("cutoff").textContent="Último periodo disponible: "+state.periods[state.periods.length-1];
   renderTrend(f);renderTypes(f);renderRanking(f);renderTerritorial(f);renderMonthlyChanges(f);renderIntensity(f);renderFlows(f);renderModels(f);renderBrands();renderProvinceMap(f);
 }
@@ -480,7 +475,7 @@ function renderTypes(f){
 }
 function renderRanking(f){
   let rows;
-  if(f.period==="all"&&f.province==="all"&&f.kind==="motos"){
+  if(!f.period.length&&!f.province.length&&f.kind==="motos"){
     rows=state.ranking.filter(r=>r.ambito_provincial==="matriculacion").sort((a,b)=>Number(a.puesto)-Number(b.puesto)).slice(0,10).map(r=>({name:r.provincia,value:Number(r.recuento)}));
   }else{
     const map=new Map();
@@ -504,42 +499,36 @@ function populateMultiSelect(select,values,selected=[]){
   const keep=new Set(selected);
   select.innerHTML=values.map(value=>"<option value='"+escapeHTML(value)+"'"+(keep.has(value)?" selected":"")+">"+escapeHTML(value)+"</option>").join("");
 }
+function activeModelRows(operation,segment,f){
+ return state.models.filter(row=>periodOK(row,f)&&provinceOK(row,f)&&typeOK(row,f.kind)&&(operation==="all"||row.tipo_registro===operation)&&(segment==="all"||(segment==="motos"?["50","51"].includes(row.COD_TIPO):row.COD_TIPO===segment)));
+}
+function rankedBrands(rows){
+ const totals=new Map();rows.forEach(row=>totals.set(row.marca,(totals.get(row.marca)||0)+(Number(row.recuento)||0)));
+ return [...totals].filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"es")).map(([name])=>name);
+}
 function populateModelBrands(){
-  const brands=[...new Set(state.models.map(row=>row.marca).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
-  populateMultiSelect(el("modelBrand"),brands,selectedValues(el("modelBrand")));
-  populateMultiSelect(el("brandMulti"),brands,selectedValues(el("brandMulti")));
-  populateModelOptions();
+ const f=selected(),modelBrands=rankedBrands(activeModelRows(el("modelOperation").value,"all",f)),brandBrands=rankedBrands(activeModelRows(el("brandOperation").value,el("brandSegment").value,f));
+ populateMultiSelect(el("modelBrand"),modelBrands,selectedValues(el("modelBrand")).filter(v=>modelBrands.includes(v)));
+ populateMultiSelect(el("brandMulti"),brandBrands,selectedValues(el("brandMulti")).filter(v=>brandBrands.includes(v)));
+ populateModelOptions();
 }
 function populateModelOptions(){
-  const brands=selectedValues(el("modelBrand")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es");
-  const selected=selectedValues(el("modelMulti"));
-  const available=[...new Set(state.models.filter(row=>(!brands.length||brands.includes(row.marca))&&
-    (!query||(row.modelo||"").toLocaleLowerCase("es").includes(query)))
-    .map(row=>row.modelo).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
-  const shown=available.slice(0,500);
-  populateMultiSelect(el("modelMulti"),shown,selected.filter(value=>shown.includes(value)));
-  el("modelMultiHelp").textContent=(available.length>shown.length?"Mostrando 500 de "+fmt(available.length)+" modelos. ":"")+ "Sin selección: todos los modelos que coincidan con la búsqueda. Usa Ctrl/Cmd para elegir varios.";
+ const f=selected(),brands=selectedValues(el("modelBrand")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),selected=selectedValues(el("modelMulti"));
+ const rows=activeModelRows(el("modelOperation").value,"all",f).filter(row=>(!brands.length||brands.includes(row.marca))&&(!query||(row.modelo||"").toLocaleLowerCase("es").includes(query)));
+ const totals=new Map();rows.forEach(row=>totals.set(row.modelo,(totals.get(row.modelo)||0)+(Number(row.recuento)||0)));
+ const available=[...totals].filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]||String(a[0]).localeCompare(String(b[0]),"es")).map(([model])=>model).filter(Boolean),shown=available.slice(0,500);
+ populateMultiSelect(el("modelMulti"),shown,selected.filter(v=>shown.includes(v)));
+ el("modelMultiHelp").textContent=(available.length>shown.length?"Mostrando 500 de "+fmt(available.length)+" modelos. ":"")+"Ordenados por volumen. Sin selección: todos los modelos que coincidan con la búsqueda.";
 }
 function renderModels(f){
-  const brands=selectedValues(el("modelBrand")),models=selectedValues(el("modelMulti")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),operation=el("modelOperation").value;
-  const rows=state.models.filter(r=>periodOK(r,f)&&
-    typeOK(r,f.kind)&&provinceOK(r,f)&&
-    (!brands.length||brands.includes(r.marca))&&(models.length?models.includes(r.modelo):(!query||(r.modelo||"").toLocaleLowerCase("es").includes(query)))&&(operation==="all"||r.tipo_registro===operation));
-  const groups=new Map();
-  rows.forEach(r=>{
-    const key=[r.marca,r.modelo,r.COD_TIPO,r.provincia,r.tipo_registro].join("|");
-    const item=groups.get(key)||{...r,recuento:0};
-    item.recuento+=Number(r.recuento)||0;groups.set(key,item);
-  });
-  const ranked=[...groups.values()].sort((a,b)=>Number(b.recuento)-Number(a.recuento));
-  const total=ranked.reduce((sum,r)=>sum+Number(r.recuento),0);
-  el("modelScope").textContent=fmt(total)+" registros · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"mostrando todas");
-  el("modelRanking").innerHTML=ranked.slice(0,100).map(r=>{
-    const typeLabel={"50":"Moto 2 ruedas","51":"Moto con sidecar","90":"Ciclomotor 2 ruedas","91":"Ciclomotor 3 ruedas"}[r.COD_TIPO]||r.COD_TIPO;
-    const operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","venta":"Venta DGT","subasta":"Subasta","transferencia_sin_clasificar":"Transferencia sin clasificar"}[r.tipo_registro]||r.tipo_registro;
-    return "<tr><td>"+escapeHTML(r.marca)+"</td><td>"+escapeHTML(r.modelo)+"</td><td>"+fmt(Number(r.recuento))+"</td><td>"+escapeHTML(typeLabel)+"</td><td>"+escapeHTML(r.provincia)+"</td><td>"+escapeHTML(operationLabel)+"</td></tr>";
-  }).join("")||"<tr><td colspan='6'>Sin registros para los filtros seleccionados.</td></tr>";
-  el("modelTotal").innerHTML=ranked.length?"<tr><th colspan='2'>SUMA DE UNIDADES · RESULTADO ACTUAL</th><th>"+fmt(total)+"</th><th colspan='3'>"+fmt(ranked.length)+" combinaciones · "+(ranked.length>100?"tabla limitada a 100 filas":"todas las filas")+"</th></tr>":"";
+ const brands=selectedValues(el("modelBrand")),models=selectedValues(el("modelMulti")),query=(el("modelSearch").value||"").trim().toLocaleLowerCase("es"),operation=el("modelOperation").value;
+ const baseRows=activeModelRows(operation,"all",f),universe=baseRows.reduce((sum,r)=>sum+(Number(r.recuento)||0),0);
+ const rows=baseRows.filter(r=>(!brands.length||brands.includes(r.marca))&&(models.length?models.includes(r.modelo):(!query||(r.modelo||"").toLocaleLowerCase("es").includes(query))));
+ const groups=new Map();rows.forEach(r=>{const key=[r.marca,r.modelo,r.COD_TIPO,r.provincia,r.tipo_registro].join("|"),item=groups.get(key)||{...r,recuento:0};item.recuento+=Number(r.recuento)||0;groups.set(key,item);});
+ const ranked=[...groups.values()].sort((a,b)=>Number(b.recuento)-Number(a.recuento)),total=ranked.reduce((sum,r)=>sum+Number(r.recuento),0),share=universe?total/universe*100:0;
+ el("modelScope").textContent=fmt(total)+" unidades seleccionadas · "+fmt(universe)+" unidades del universo filtrado · "+dec(share,2)+"% del total · "+ranked.length+" combinaciones marca/modelo/segmento/provincia/operación · "+(ranked.length>100?"mostrando las 100 primeras":"mostrando todas");
+ el("modelRanking").innerHTML=ranked.slice(0,100).map(r=>{const typeLabel={"50":"Moto 2 ruedas","51":"Moto con sidecar","90":"Ciclomotor 2 ruedas","91":"Ciclomotor 3 ruedas"}[r.COD_TIPO]||r.COD_TIPO,operationLabel={"matriculacion_nueva":"Nueva","matriculacion_usada":"Usada","venta":"Venta DGT","subasta":"Subasta","transferencia_sin_clasificar":"Transferencia sin clasificar"}[r.tipo_registro]||r.tipo_registro;return "<tr><td>"+escapeHTML(r.marca)+"</td><td>"+escapeHTML(r.modelo)+"</td><td>"+fmt(Number(r.recuento))+"</td><td>"+escapeHTML(typeLabel)+"</td><td>"+escapeHTML(r.provincia)+"</td><td>"+escapeHTML(operationLabel)+"</td></tr>";}).join("")||"<tr><td colspan='6'>Sin registros para los filtros seleccionados.</td></tr>";
+ el("modelTotal").innerHTML=ranked.length?"<tr><th colspan='2'>SUMA DE UNIDADES · RESULTADO ACTUAL</th><th>"+fmt(total)+"</th><th colspan='3'>"+dec(share,2)+"% del universo · "+fmt(ranked.length)+" combinaciones · "+(ranked.length>100?"tabla limitada a 100 filas":"todas las filas")+"</th></tr>":"";
 }
 function renderFlows(f){
   const groups=new Map();
@@ -634,11 +623,11 @@ el("territorialScope").addEventListener("change",()=>renderTerritorial(selected(
 el("mapScope").addEventListener("change",()=>renderProvinceMap(selected()));
 el("brandSearch").addEventListener("input",()=>{const active=!!el("brandSearch").value.trim();el("brandMulti").disabled=active;if(active)[...el("brandMulti").options].forEach(o=>o.selected=false);renderBrands();});
 el("brandMulti").addEventListener("change",()=>{const active=selectedValues(el("brandMulti")).length>0;el("brandSearch").disabled=active;if(active)el("brandSearch").value="";renderBrands();});
-el("brandSegment").addEventListener("change",renderBrands);
-el("brandOperation").addEventListener("change",renderBrands);
+el("brandSegment").addEventListener("change",()=>{populateModelBrands();renderBrands();});
+el("brandOperation").addEventListener("change",()=>{populateModelBrands();renderBrands();});
 el("modelBrand").addEventListener("change",()=>{populateModelOptions();renderModels(selected());});
 el("modelMulti").addEventListener("change",()=>renderModels(selected()));
-el("modelOperation").addEventListener("change",()=>renderModels(selected()));
+el("modelOperation").addEventListener("change",()=>{populateModelBrands();renderModels(selected());});
 el("modelSearch").addEventListener("input",()=>{populateModelOptions();renderModels(selected());});
 el("csv").addEventListener("click",exportCSV);el("pdf").addEventListener("click",()=>window.print());
 loadData().catch(error=>{el("status").className="status error";el("status").textContent="No se han podido cargar los agregados MATRABA. "+error.message+" Comprueba que el dashboard se sirve desde la raíz del repositorio y que public/data está publicado.";});
