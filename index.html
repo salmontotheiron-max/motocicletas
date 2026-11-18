@@ -600,7 +600,7 @@ function exportCSV(){
     newRows.forEach(r=>rows.push(["provincia",period,"matriculacion_nueva",operationLabels.matriculacion_nueva,
       "Provincia de matriculación",r.provincia,r.COD_TIPO,"","","",r.recuento]));
     usedRows.forEach(r=>rows.push(["provincia",period,"matriculacion_usada",operationLabels.matriculacion_usada,
-      "Domicilio registral",r.provincia,r.COD_TIPO,"","",r.recuento]));
+      "Domicilio registral",r.provincia,r.COD_TIPO,"","","",r.recuento]));
     modelRows.forEach(r=>rows.push(["marca_modelo",period,r.tipo_registro,operationLabels[r.tipo_registro],
       r.tipo_registro==="matriculacion_nueva"?"Provincia de matriculación":"Domicilio registral",
       r.provincia,r.COD_TIPO,r.marca||"",r.modelo||"",r.cilindrada_cc||"",r.recuento]));
