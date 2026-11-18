@@ -509,10 +509,18 @@ function rankedBrands(rows){
  const totals=new Map();rows.forEach(row=>totals.set(row.marca,(totals.get(row.marca)||0)+(Number(row.recuento)||0)));
  return [...totals].filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"es")).map(([name])=>name);
 }
+function syncBrandControls(){
+ const hasSearch=!!el("brandSearch").value.trim(),hasSelection=selectedValues(el("brandMulti")).length>0;
+ el("brandMulti").disabled=hasSearch;
+ el("brandSearch").disabled=hasSelection;
+ if(hasSearch)[...el("brandMulti").options].forEach(option=>option.selected=false);
+ if(hasSelection)el("brandSearch").value="";
+}
 function populateModelBrands(){
  const f=selected(),modelBrands=rankedBrands(activeModelRows(el("modelOperation").value,"all",f)),brandBrands=rankedBrands(activeModelRows(el("brandOperation").value,el("brandSegment").value,f));
  populateMultiSelect(el("modelBrand"),modelBrands,selectedValues(el("modelBrand")).filter(v=>modelBrands.includes(v)));
  populateMultiSelect(el("brandMulti"),brandBrands,selectedValues(el("brandMulti")).filter(v=>brandBrands.includes(v)));
+ syncBrandControls();
  populateModelOptions();
 }
 function populateModelOptions(){
