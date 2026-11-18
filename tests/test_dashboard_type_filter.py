@@ -73,6 +73,11 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn("unidades del universo filtrado", self.html)
         self.assertIn("SUMA DE UNIDADES · RESULTADO ACTUAL", self.html)
 
+    def test_dashboard_filter_accessor_does_not_collide_with_selected_locals(self):
+        self.assertIn("function getDashboardFilters()", self.html)
+        self.assertNotIn("function selected()", self.html)
+        self.assertNotIn("selected()", self.html)
+
     def test_brand_search_and_multiselect_remain_mutually_exclusive(self):
         self.assertIn("function syncBrandControls()", self.html)
         self.assertIn('el("brandMulti").disabled=hasSearch', self.html)
