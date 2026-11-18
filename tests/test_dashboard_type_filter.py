@@ -45,7 +45,7 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         start = self.html.index("function renderTypes(f){")
         end = self.html.index("\nfunction renderRanking(f){", start)
         chart = self.html[start:end]
-        self.assertIn('const source=f.province==="all"?state.monthly:state.provincial;', chart)
+        self.assertIn('const source=f.province.length?state.provincial:state.monthly;', chart)
         self.assertIn("typeOK(r,f.kind)", chart)
         self.assertIn('r.ambito_provincial==="matriculacion"', chart)
         self.assertIn('"90":"Ciclomotor de dos ruedas"', chart)
@@ -61,7 +61,7 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn('"subasta":"Transferencia · subasta"', export)
         self.assertIn('"transferencia_sin_clasificar":"Transferencia · sin clasificar"', export)
         self.assertIn('typeOK(r,f.kind)', export)
-        self.assertIn('r.provincia===f.province', export)
+        self.assertIn('provinceOK(r,f)', export)
         self.assertIn('"nivel_agregacion","periodo","tipo_registro"', export)
         self.assertIn('"marca","modelo","recuento"', export)
         self.assertIn('["marca_modelo",period,r.tipo_registro', export)
