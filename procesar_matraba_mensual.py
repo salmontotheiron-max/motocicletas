@@ -170,6 +170,7 @@ def process_archive(path, period, include_transfers=False):
         brand_itv = values[3] or "(sin marca)"
         model_itv = values[4] or "(sin modelo)"
         possession_code = values[36]
+        cylinder_cc = values[9] or "(no informada)"
 
         if vehicle_type not in TARGET_TYPE_CODES:
             excluded[vehicle_type or "(vacío)"] += 1
@@ -257,7 +258,7 @@ def process_archive(path, period, include_transfers=False):
             model_counts[(
                 reference_period, brand_itv, model_itv, vehicle_type,
                 new_used, "matriculacion_nueva" if new_used == "N" else "matriculacion_usada",
-                province_scope, province_code or "(vacío)", ""
+                province_scope, province_code or "(vacío)", "", cylinder_cc
             )] += 1
         if operation in OPS and transaction_date and transaction_date.strftime("%Y-%m") >= START:
             opcounts[(transaction_date.strftime("%Y-%m"), operation, False)] += 1
@@ -271,7 +272,8 @@ def process_archive(path, period, include_transfers=False):
                 model_counts[(
                     transaction_date.strftime("%Y-%m"), brand_itv, model_itv,
                     vehicle_type, new_used or "(vacío)", transfer_type,
-                    "domicilio_vehiculo", province_vehicle or "(vacío)", possession_code
+                    "domicilio_vehiculo", province_vehicle or "(vacío)", possession_code,
+                    cylinder_cc
                 )] += 1
 
     digest = hashlib.sha256(payload).hexdigest()
@@ -440,10 +442,10 @@ def main():
             "periodo", "marca", "modelo", "COD_TIPO", "nuevo_usado",
             "CLAVE_TRAMITE", "IND_NUEVO_USADO", "COD_POSESION", "naturaleza_operacion",
             "tipo_registro", "ambito_provincial", "COD_PROVINCIA", "provincia",
-            "recuento",
+            "recuento", "cilindrada_cc",
         ])
         for key, value in sorted(model_counts.items()):
-            period, brand, model, vehicle_type, new_used, record_type, scope, province_code, raw_possession_code = key
+            period, brand, model, vehicle_type, new_used, record_type, scope, province_code, raw_possession_code, cylinder_cc = key
             operation_code, original_condition, possession_code, operation_nature = semantic_model_fields(
                 new_used, record_type, raw_possession_code
             )
@@ -452,7 +454,7 @@ def main():
                 operation_code, original_condition, possession_code, operation_nature,
                 record_type, scope, province_code,
                 PROVINCES.get(province_code, "Código no catalogado") if province_code != "(vacío)" else "Código vacío",
-                value,
+                value, cylinder_cc,
             ])
 
     with (output / "tipo_operacion.csv").open("w", newline="", encoding="utf-8-sig") as handle:
