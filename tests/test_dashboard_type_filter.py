@@ -73,6 +73,16 @@ class DashboardMotorcycleFilterTests(unittest.TestCase):
         self.assertIn("unidades del universo filtrado", self.html)
         self.assertIn("SUMA DE UNIDADES · RESULTADO ACTUAL", self.html)
 
+    def test_brand_search_and_multiselect_remain_mutually_exclusive(self):
+        self.assertIn("function syncBrandControls()", self.html)
+        self.assertIn('el("brandMulti").disabled=hasSearch', self.html)
+        self.assertIn('el("brandSearch").disabled=hasSelection', self.html)
+
+    def test_map_loader_is_async_and_has_fallback_sources(self):
+        self.assertIn("async function loadProvinceMap()", self.html)
+        self.assertIn("https://unpkg.com/d3@7/dist/d3.min.js", self.html)
+        self.assertIn("https://unpkg.com/es-atlas@0.6.0/es/provinces.json", self.html)
+
     def test_used_registration_is_not_exported_as_a_transfer(self):
         self.assertIn('"matriculacion_usada":"Matriculación de vehículo usado"', self.html)
         self.assertNotIn('"Usada · cambio de titularidad"', self.html)
