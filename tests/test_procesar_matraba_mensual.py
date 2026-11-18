@@ -16,7 +16,7 @@ import descargar_transferencias_mensual as dt
 def make_record(**fields):
     values = [""] * 69
     indexes = {"FEC_MATRICULA": 0, "FEC_TRAMITACION": 22, "MARCA_ITV": 3, "MODELO_ITV": 4, "COD_TIPO": 7,
-               "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "COD_POSESION": 36, "COD_PROVINCIA_VEH": 19, "COD_PROVINCIA_MAT": 20, "FEC_PROCESO": 68}
+               "CLAVE_TRAMITE": 21, "NUEVO_USADO": 25, "COD_POSESION": 36, "COD_PROVINCIA_VEH": 19, "COD_PROVINCIA_MAT": 20, "CILINDRADA_CC": 9, "FEC_PROCESO": 68}
     for name, value in fields.items():
         values[indexes[name]] = value
     return "".join(value.ljust(width)[:width] for value, width in zip(values, p.WIDTHS)).encode("cp1252")
@@ -185,7 +185,7 @@ class MonthlyProcessorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             row = make_record(
                 FEC_MATRICULA="15072026", FEC_TRAMITACION="15072026",
-                MARCA_ITV="HONDA", MODELO_ITV="CB 500 X",
+                MARCA_ITV="HONDA", MODELO_ITV="CB 500 X", CILINDRADA_CC="125",
                 COD_TIPO="50", CLAVE_TRAMITE="1", NUEVO_USADO="N",
                 COD_PROVINCIA_VEH="MU", COD_PROVINCIA_MAT="A",
                 FEC_PROCESO="31072026",
@@ -195,7 +195,7 @@ class MonthlyProcessorTests(unittest.TestCase):
             archive.write_bytes(payload)
             _, _, _, _, models, _, _, _ = p.process_archive(archive, "2026-07")
             key = ("2026-07", "HONDA", "CB 500 X", "50", "N",
-                   "matriculacion_nueva", "matriculacion", "A", "", "(no informada)")
+                   "matriculacion_nueva", "matriculacion", "A", "", "125")
             self.assertEqual(models[key], 1)
 
     def test_matriculation_model_discards_incidental_possession_code(self):
