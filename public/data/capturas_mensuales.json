@@ -1,6 +1,6 @@
 {
   "esquema": 1,
-  "ultima_captura_utc": "2026-11-21T06:14:59.683168+00:00",
+  "ultima_captura_utc": "2026-11-22T06:15:08.145121+00:00",
   "ejecuciones": [
     {
       "fecha_captura_utc": "2026-11-07T17:54:52.777652+00:00",
@@ -1196,6 +1196,32 @@
     },
     {
       "fecha_captura_utc": "2026-11-21T06:14:59.683168+00:00",
+      "periodos_consultados": [
+        "2026-10",
+        "2026-11"
+      ],
+      "capturas": [
+        {
+          "periodo": "2026-10",
+          "estado": "descargado_validado",
+          "archivo": "datos/matraba_mensual/nuevos/2026-10/export_mensual_mat_202610_dbcf2983623492923f6f3ed6d272829aa54663f7ca40f7e99032a21979fe03e2.zip",
+          "nombre_txt": null,
+          "sha256": "dbcf2983623492923f6f3ed6d272829aa54663f7ca40f7e99032a21979fe03e2",
+          "bytes_zip": 16729094,
+          "bytes_txt": 126786025,
+          "registros": 177323,
+          "url": "https://www.dgt.es/microdatos/salida/2026/10/vehiculos/matriculaciones/export_mensual_mat_202610.zip"
+        },
+        {
+          "periodo": "2026-11",
+          "estado": "no_disponible_en_barrido",
+          "http_status": 404,
+          "url": "https://www.dgt.es/microdatos/salida/2026/11/vehiculos/matriculaciones/export_mensual_mat_202611.zip"
+        }
+      ]
+    },
+    {
+      "fecha_captura_utc": "2026-11-22T06:15:08.145121+00:00",
       "periodos_consultados": [
         "2026-10",
         "2026-11"
